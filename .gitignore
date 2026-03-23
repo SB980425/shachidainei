@@ -1,0 +1,16 @@
+*.py[cod]
+*.pem
+*.log
+
+.env
+.env.*
+!.env.example
+!.env.account2.example
+
+__pycache__/
+*.pyc
+.pytest_cache/
+
+logs/
+lp对策/logs/
+lp对策/**/__pycache__/

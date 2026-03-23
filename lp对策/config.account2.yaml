@@ -1,0 +1,20 @@
+risk_limits:
+  enabled: true
+  max_single_inventory: 4000.0
+
+capital:
+  auto_scale_by_balance: true
+  total_allocated: 5137.3
+  max_per_market: 4000.0
+  reserve_ratio: 0.0
+
+microstructure_guard:
+  enabled: false
+
+two_sided_mode:
+  enabled: true
+  use_account_balance: true
+  relax_inventory_limit: true
+  min_size: 1.0
+
+market_overrides: {}

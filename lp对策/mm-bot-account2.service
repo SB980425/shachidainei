@@ -1,0 +1,21 @@
+[Unit]
+Description=Prediction Market MM Bot (account2)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/mm-bot
+Environment=MM_INSTANCE_NAME=account2
+Environment=MM_ENV_FILE=/home/ubuntu/mm-bot/.env.account2
+Environment=MM_CONFIG_OVERRIDE_FILE=/home/ubuntu/mm-bot/config.account2.yaml
+Environment=MM_LOG_FILE=/home/ubuntu/mm-bot/logs/mm-account2.log
+ExecStart=/home/ubuntu/mm-bot/venv/bin/python /home/ubuntu/mm-bot/main.py
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

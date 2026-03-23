@@ -1,0 +1,19 @@
+capital:
+  auto_scale_by_balance: true
+  max_per_market: 1000.0
+  reserve_ratio: 0.0
+
+risk_limits:
+  enabled: true
+  max_single_inventory: 1000.0
+
+microstructure_guard:
+  enabled: false
+
+two_sided_mode:
+  enabled: false
+  use_account_balance: true
+  relax_inventory_limit: true
+  min_size: 1.0
+
+market_overrides: {}

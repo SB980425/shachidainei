@@ -1,0 +1,305 @@
+# ============================================================
+# Prediction Market Making Strategy Configuration
+# ============================================================
+
+logit:
+  clamp_min: 0.0001
+  clamp_max: 0.9999
+
+volatility_regimes:
+  low:
+    sigma_max: 1.5
+    spread_pct: [0.01, 0.02]
+    position_limit_mult: 1.0
+  normal:
+    sigma_range: [1.5, 3.0]
+    spread_pct: [0.02, 0.04]
+    position_limit_mult: 1.0
+  high:
+    sigma_range: [3.0, 5.0]
+    spread_pct: [0.04, 0.08]
+    position_limit_mult: 0.5
+  crisis:
+    sigma_min: 5.0
+    spread_pct: [0.08, 0.15]
+    position_limit_mult: 0.1
+
+jump:
+  routine:
+    lambda_range: [0.5, 1.0]
+    size_range: [0.1, 0.3]
+  scheduled_event:
+    lambda_range: [1.0, 3.0]
+    size_range: [0.3, 1.0]
+    spread_multiplier: 2.5
+  breaking_news:
+    size_range: [1.0, 3.0]
+    action: crisis_regime
+  black_swan:
+    size_threshold: 3.0
+    action: full_withdrawal
+
+greeks:
+  delta_zones:
+    deep_certainty:
+      prob_range: [0.0, 0.10]
+      risk_level: low
+      spread_policy: tight
+      position_limit_mult: 1.5
+    moderate:
+      prob_range: [0.10, 0.35]
+      risk_level: medium
+      spread_policy: standard
+      position_limit_mult: 1.0
+    swing:
+      prob_range: [0.35, 0.65]
+      risk_level: high
+      spread_policy: wide
+      position_limit_mult: 0.625
+
+quoting:
+  risk_aversion: 0.12
+  base_spread_logit: 0.55
+  min_spread_prob: 0.003
+  min_spread_prob_swing: 0.005
+  max_spread_prob: 0.050
+  quote_refresh_ms: 500
+  min_order_size: 200.0
+  size_update_threshold_ratio: 0.20
+  imbalance_levels: 3
+  depth_signal_weight: 0.10
+  fill_signal_weight: 0.16
+  fill_bias_halflife_seconds: 45.0
+  fill_signal_size_scale: 300.0
+  signal_spread_multiplier: 0.50
+  signal_size_dampen: 0.35
+  gamma_asymmetry_weight: 0.25
+
+uncertainty:
+  min_spread_scale: 0.20
+
+kalman:
+  process_noise: 0.01
+  measurement_noise: 0.05
+  initial_variance: 1.0
+
+em:
+  max_iterations: 50
+  convergence_threshold: 1.0e-6
+  jump_threshold_sigma: 1.75
+  min_diffusion_fraction: 0.5
+  calibration_window: 100
+  min_observations: 60
+  em_throttle_ticks: 10
+
+vol_surface:
+  time_buckets: [0.25, 0.5, 1.0, 2.0, 5.0, 10.0, 30.0]
+  prob_buckets: [0.05, 0.15, 0.30, 0.50, 0.70, 0.85, 0.95]
+  lookback_window: 168
+  update_interval: 3600
+
+event_risk:
+  pre_event_horizon_days: 14
+  forecast_sigma_ratio_trigger: 1.2
+  forecast_sigma_floor: 2.5
+  pre_event_spread_multiplier: 1.5
+  pre_event_position_limit_multiplier: 0.8
+
+risk_limits:
+  max_single_inventory: 600
+  portfolio_delta_limit: 45.0
+  correlation_cluster_max: 0.35
+  crisis_spread_multiplier: 3.0
+  jump_pause_seconds: 180
+  max_daily_loss_pct: 0.040
+  max_drawdown_per_event: 0.03
+  inventory_turnover_alert_hours: 12
+
+metrics:
+  spread_capture_target: 0.60
+  spread_capture_alert: 0.40
+  adverse_selection_max: 0.30
+  adverse_selection_alert: 0.50
+  vol_forecast_rmse_max: 0.15
+  jump_detection_latency_max: 300
+
+multi_market:
+  correlation_window: 720
+  correlation_update_interval: 60
+  min_contracts_for_correlation: 3
+
+hedging:
+  belief_vega_threshold: 50.0
+  correlation_vega_threshold: 75.0
+  gamma_threshold: 0.04
+  jump_lambda_threshold: 1.0
+  variance_swap_notional: 100.0
+  corridor_notional: 100.0
+  correlation_swap_notional: 100.0
+  first_touch_payout: 250.0
+  corridor_low: 0.35
+  corridor_high: 0.65
+  first_touch_barrier_buffer: 0.15
+
+adaptive_tuning:
+  enabled: true
+  min_fills_for_performance: 3
+  min_forecast_samples: 20
+  min_holding_samples: 1
+  min_order_size_ratio: 0.50
+  uncertainty_high: 0.23
+  gamma_threshold: 0.04
+  belief_vega_threshold: 50.0
+  correlation_vega_threshold: 75.0
+  tighten_spread_factor: 0.94
+  boost_size_factor: 1.12
+  widen_spread_factor: 1.12
+  cut_size_factor: 0.78
+  adverse_widen_factor: 1.35
+  adverse_size_factor: 0.70
+  uncertainty_spread_factor: 1.10
+  uncertainty_size_factor: 0.90
+  gamma_spread_factor: 1.05
+  gamma_vulnerable_side_factor: 0.82
+  vega_spread_factor: 1.08
+  vega_size_factor: 0.85
+  correlation_spread_factor: 1.08
+  correlation_size_factor: 0.85
+  holding_spread_factor: 1.06
+  inventory_exit_factor: 0.50
+  inventory_relief_factor: 1.15
+  rmse_spread_factor: 1.08
+  rmse_size_factor: 0.90
+  min_spread_multiplier: 0.85
+  max_spread_multiplier: 1.60
+  min_size_multiplier: 0.50
+  max_size_multiplier: 1.30
+  min_position_limit_multiplier: 0.60
+  max_position_limit_multiplier: 1.20
+
+reward_priority:
+  enabled: true
+  strict_inside_max_spread: true
+  enforce_min_size: true
+  metadata_refresh_seconds: 1800
+
+microstructure_guard:
+  enabled: true
+  levels: 3
+  max_spread_ticks_for_guard: 1
+  retreat_depth_ratio: 15.0
+  disable_depth_ratio: 50.0
+  top_level_retreat_ratio: 10.0
+  top_level_disable_ratio: 30.0
+  retreat_ticks: 2
+  retreat_size_factor: 1.0
+  sustained_disable_seconds: 3.0
+  sustained_disable_min_observations: 4
+  min_depth_notional: 5000.0
+  top_level_min_depth_notional: 1000.0
+
+stale_order_guard:
+  enabled: true
+  max_order_age_seconds: 8.0
+  same_tick_only: true
+  dangerous_side_only: true
+  min_adverse_drift_ticks: 0.25
+  min_side_signal_strength: 0.35
+  min_fill_pressure: 0.15
+
+market_overrides:
+  Santa Clara Broncos ML:
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  Akron Zips ML:
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  Hofstra Pride ML:
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  Texas A&M Aggies vs. Houston Cougars:
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  Texas Longhorns vs. Gonzaga Bulldogs:
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  Vanderbilt Commodores vs. Nebraska Cornhuskers:
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  Saint Louis Billikens vs. Michigan Wolverines:
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  Utah State Aggies vs. Arizona Wildcats:
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  UCLA Bruins vs. Connecticut Huskies:
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  Iowa Hawkeyes vs. Florida Gators:
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  "90165392354287523194649928276156650853679653157996853313489593575944678845533":
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  TCU Horned Frogs vs. Duke Blue Devils:
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  "26879357605581648552030763042288008630825370418236877925670628276238616411768":
+    order_size_floor: 1000.0
+    position_limit_floor: 1000.0
+  US x Iran ceasefire by March 31:
+    order_size_floor: 500.0
+    position_limit_floor: 2000.0
+  Kharg Island no longer under Iranian control by March 31:
+    order_size_floor: 500.0
+    position_limit_floor: 2000.0
+  US forces enter Iran by March 31:
+    order_size_floor: 500.0
+    position_limit_floor: 2000.0
+  Iranian regime falls by April 30:
+    order_size_floor: 400.0
+    position_limit_floor: 1500.0
+  Iranian regime falls by June 30:
+    order_size_floor: 300.0
+    position_limit_floor: 1500.0
+
+capital:
+  total_allocated: 220.0
+  max_per_market: 200.0
+  reserve_ratio: 0.10
+  auto_scale_by_balance: true
+  balance_refresh_seconds: 60
+  min_balance_size_scale: 0.50
+  max_balance_size_scale: 1.50
+
+# 毒性流量检测 (VPIN)
+toxicity:
+  bucket_volume: 500.0
+  n_buckets: 50
+  toxic_threshold: 0.70
+  withdraw_threshold: 0.85
+  spread_scale_factor: 2.0
+  cooldown_seconds: 5.0
+
+# 自适应报价刷新频率
+adaptive_refresh:
+  enabled: true
+  fast_refresh_ms: 100
+  fill_rate_threshold: 2.0
+  window_seconds: 5.0
+
+# 连续同向成交急停
+burst_guard:
+  window_seconds: 5.0
+  max_same_side: 3
+  pause_seconds: 5.0
+
+# 成交后冷却期
+cooldown:
+  post_fill_seconds: 2.0
+
+# 单边挂单: 有库存时只挂减仓方向
+inventory_only_reduce: true
+
+# Orderbook 最低厚度要求 (USDC notional)
+min_book_depth_notional: 500.0
