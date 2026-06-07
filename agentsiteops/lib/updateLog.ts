@@ -12,6 +12,38 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-07",
+    step: "M3-15 GSC, Bing, and IndexNow launch checklist",
+    status: "completed",
+    keyPoints: [
+      "Added a public launch checklist for ownership verification, canonical host checks, sitemap submission, and IndexNow notifications.",
+      "Added a source pack bounded to official Google Search Console, Bing Webmaster Tools, Bing Webmaster Guidelines, and IndexNow documentation.",
+      "Updated the route registry, page registry, page review actions, and homepage card set so the checklist enters the public review loop."
+    ],
+    aiAngle:
+      "AI and search crawlers can now cite the exact launch sequence used by AgentSiteOps without treating sitemap or IndexNow submission as an indexing guarantee.",
+    files: [
+      "app/checklists/gsc-bing-indexnow-launch/page.tsx",
+      "docs/source-pack-search-console-indexnow-launch.md",
+      "app/page.tsx",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "docs/competitor-learning-baseline.md"
+    ],
+    verification: [
+      "typecheck pass",
+      "production build pass",
+      "dependency audit pass",
+      "technical SEO CI pass with 16 sitemap routes",
+      "production deploy pass",
+      "IndexNow submit pass with 16 URLs"
+    ],
+    next:
+      "Build the AI citation readiness checklist and keep payment channels paused until a verified payout route exists."
+  },
+  {
+    date: "2026-06-07",
     step: "M3-14 Small-site AI visibility metrics guide",
     status: "completed",
     keyPoints: [

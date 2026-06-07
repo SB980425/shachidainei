@@ -69,6 +69,15 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/checklists/gsc-bing-indexnow-launch/",
+      "pageType": "checklist",
+      "template": "checklist",
+      "cluster": "search_console_launch",
+      "index": true,
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/guides/ai-citation-grounding-metrics/",
       "pageType": "guide",
       "template": "guide",

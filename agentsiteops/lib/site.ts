@@ -288,6 +288,57 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/checklists/gsc-bing-indexnow-launch/",
+    pageType: "checklist",
+    title: "GSC, Bing, and IndexNow Launch Checklist",
+    description:
+      "A launch checklist for verifying search ownership, submitting sitemap.xml, keeping canonical URLs clean, and notifying IndexNow after each site update.",
+    answer:
+      "A small website launch should verify ownership first, confirm HTTPS and canonical host behavior, submit the sitemap in Google Search Console and Bing Webmaster Tools, then notify IndexNow after production updates.",
+    primaryAction: { label: "View AI visibility metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+    secondaryAction: { label: "Download starter pack", href: "/downloads/agentsiteops-starter-pack.md" },
+    aiTarget: "Expose a repeatable search launch workflow that AI agents can cite without inventing unsupported indexing guarantees.",
+    humanAction: "Run the checklist after every production update that changes indexable URLs, sitemap entries, or verification files.",
+    sections: [
+      {
+        title: "Pre-submit checks",
+        body:
+          "Run these checks before touching search consoles. They prevent the common error of submitting URLs that later need to be redirected, removed, or corrected.",
+        rows: [
+          { label: "Canonical host", value: "Production URLs use https://agentsiteops.com and www redirects with 301." },
+          { label: "Sitemap", value: "sitemap.xml returns 200, uses absolute canonical URLs, and excludes redirected or noindex pages." },
+          { label: "Robots", value: "robots.txt allows intended crawlers and points to the production sitemap." },
+          { label: "Verification files", value: "Ownership files remain public and are not removed after verification." }
+        ]
+      },
+      {
+        title: "Console sequence",
+        body:
+          "Verify Google Search Console first, submit sitemap.xml, then import or verify in Bing Webmaster Tools and submit the same sitemap there.",
+        rows: [
+          { label: "Google", value: "Use URL-prefix or domain verification, then submit sitemap.xml in the Sitemaps report." },
+          { label: "Bing", value: "Import the verified GSC property when available, or verify manually and submit the sitemap." },
+          { label: "IndexNow", value: "Deploy a host key file and submit the current sitemap URL list after production deployment." }
+        ]
+      },
+      {
+        title: "Failure handling",
+        body:
+          "If a sitemap cannot be fetched, confirm the URL, HTTP status, robots access, XML format, property host, and redirects. Do not keep resubmitting a sitemap that already shows success."
+      },
+      {
+        title: "Post-submit review",
+        body:
+          "At day 1, confirm sitemap status. At day 7, inspect sample URLs. At day 30, review impressions, indexed pages, crawler issues, and continuation actions before adding another batch."
+      }
+    ],
+    related: [
+      { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+      { label: "AI Website Validation Starter Pack", href: "/templates/starter-pack/" },
+      { label: "SEO Repo Skeleton", href: "/templates/seo-repo-skeleton/" }
+    ]
+  },
+  {
     path: "/guides/ai-citation-grounding-metrics/",
     pageType: "guide",
     title: "AI Citation and Grounding Metrics",
