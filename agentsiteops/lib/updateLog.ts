@@ -12,6 +12,36 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-07",
+    step: "M3-13 Starter pack and payment-channel hold",
+    status: "completed",
+    keyPoints: [
+      "Added a free AI Website Validation Starter Pack page and download file so the site has a payment-independent product asset.",
+      "Recorded the competitor learning baseline from AI visibility and SEO platforms without copying product claims or interfaces.",
+      "Paused Stripe and Lemon Squeezy integration until a real supported legal payout route exists."
+    ],
+    aiAngle:
+      "AI crawlers and human readers can now see the product wedge: a small execution pack for scoring, blueprinting, gating, shipping, and reviewing AI-assisted websites.",
+    files: [
+      "app/templates/starter-pack/page.tsx",
+      "public/downloads/agentsiteops-starter-pack.md",
+      "docs/competitor-learning-baseline.md",
+      "docs/payment-channel-hold.md",
+      "app/layout.tsx",
+      "app/page.tsx",
+      "lib/site.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "production build pass",
+      "dependency audit pass",
+      "technical SEO CI pass with 14 sitemap routes",
+      "production deploy pass"
+    ],
+    next:
+      "Build the next page from the baseline: a small-website AI visibility metrics page that does not claim live platform monitoring."
+  },
+  {
+    date: "2026-06-07",
     step: "M3-08 English MVP and AgentSiteOps brand cleanup",
     status: "completed",
     keyPoints: [

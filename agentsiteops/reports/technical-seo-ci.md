@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-07T13:34:41.242Z
+- Generated: 2026-06-07T14:21:03.218Z
 - Status: PASS
-- Base URL: http://127.0.0.1:3000
+- Base URL: http://127.0.0.1:3001
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 13
+- Sitemap routes: 14
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 13 |
+| Routes passed | 14 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -19,19 +19,20 @@
 
 | Route | Status | HTTP | Title | Canonical | JSON-LD | Links | Mobile | Issues |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| / | pass | 200 | AgentSiteOps | https://agentsiteops.com/ | 1 | 13 | pass | - |
-| /ai-website-operating-system/ | pass | 200 | AI Website Operating System \| AgentSiteOps | https://agentsiteops.com/ai-website-operating-system/ | 1 | 12 | pass | - |
-| /tools/website-opportunity-scorer/ | pass | 200 | Website Opportunity Scorer \| AgentSiteOps | https://agentsiteops.com/tools/website-opportunity-scorer/ | 1 | 12 | pass | - |
-| /templates/seo-repo-skeleton/ | pass | 200 | SEO Repo Skeleton \| AgentSiteOps | https://agentsiteops.com/templates/seo-repo-skeleton/ | 1 | 12 | pass | - |
-| /checklists/ai-content-quality-gate/ | pass | 200 | AI Content Quality Gate \| AgentSiteOps | https://agentsiteops.com/checklists/ai-content-quality-gate/ | 1 | 12 | pass | - |
-| /checklists/programmatic-seo-gate/ | pass | 200 | Programmatic SEO Gate \| AgentSiteOps | https://agentsiteops.com/checklists/programmatic-seo-gate/ | 1 | 12 | pass | - |
-| /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 12 | pass | - |
-| /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 11 | pass | - |
-| /authors/ | pass | 200 | Authors and Review Status \| AgentSiteOps | https://agentsiteops.com/authors/ | 1 | 11 | pass | - |
-| /editorial-policy/ | pass | 200 | Editorial Policy \| AgentSiteOps | https://agentsiteops.com/editorial-policy/ | 1 | 11 | pass | - |
-| /privacy/ | pass | 200 | Privacy Policy \| AgentSiteOps | https://agentsiteops.com/privacy/ | 1 | 11 | pass | - |
-| /disclosure/ | pass | 200 | Disclosure \| AgentSiteOps | https://agentsiteops.com/disclosure/ | 1 | 11 | pass | - |
-| /updates/ | pass | 200 | Updates \| AgentSiteOps | https://agentsiteops.com/updates/ | 1 | 11 | pass | - |
+| / | pass | 200 | AgentSiteOps | https://agentsiteops.com/ | 1 | 14 | pass | - |
+| /ai-website-operating-system/ | pass | 200 | AI Website Operating System \| AgentSiteOps | https://agentsiteops.com/ai-website-operating-system/ | 1 | 13 | pass | - |
+| /tools/website-opportunity-scorer/ | pass | 200 | Website Opportunity Scorer \| AgentSiteOps | https://agentsiteops.com/tools/website-opportunity-scorer/ | 1 | 13 | pass | - |
+| /templates/starter-pack/ | pass | 200 | AI Website Validation Starter Pack \| AgentSiteOps | https://agentsiteops.com/templates/starter-pack/ | 1 | 12 | pass | - |
+| /templates/seo-repo-skeleton/ | pass | 200 | SEO Repo Skeleton \| AgentSiteOps | https://agentsiteops.com/templates/seo-repo-skeleton/ | 1 | 13 | pass | - |
+| /checklists/ai-content-quality-gate/ | pass | 200 | AI Content Quality Gate \| AgentSiteOps | https://agentsiteops.com/checklists/ai-content-quality-gate/ | 1 | 13 | pass | - |
+| /checklists/programmatic-seo-gate/ | pass | 200 | Programmatic SEO Gate \| AgentSiteOps | https://agentsiteops.com/checklists/programmatic-seo-gate/ | 1 | 13 | pass | - |
+| /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 13 | pass | - |
+| /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 12 | pass | - |
+| /authors/ | pass | 200 | Authors and Review Status \| AgentSiteOps | https://agentsiteops.com/authors/ | 1 | 12 | pass | - |
+| /editorial-policy/ | pass | 200 | Editorial Policy \| AgentSiteOps | https://agentsiteops.com/editorial-policy/ | 1 | 12 | pass | - |
+| /privacy/ | pass | 200 | Privacy Policy \| AgentSiteOps | https://agentsiteops.com/privacy/ | 1 | 12 | pass | - |
+| /disclosure/ | pass | 200 | Disclosure \| AgentSiteOps | https://agentsiteops.com/disclosure/ | 1 | 12 | pass | - |
+| /updates/ | pass | 200 | Updates \| AgentSiteOps | https://agentsiteops.com/updates/ | 1 | 12 | pass | - |
 
 ## Blocking Issues
 
@@ -67,8 +68,8 @@ jobs:
       - run: npm audit --audit-level=moderate
       - run: npx playwright install --with-deps chromium
       - run: npm run build
-      - run: npm run start -- --hostname 127.0.0.1 --port 3000 > next-start.log 2>&1 &
-      - run: for attempt in {1..45}; do curl -fsS "$SITE_AUDIT_BASE_URL" > /dev/null && exit 0; sleep 2; done; cat next-start.log; exit 1
+      - run: npx serve@latest out -l 3000 > serve-start.log 2>&1 &
+      - run: for attempt in {1..45}; do curl -fsS "$SITE_AUDIT_BASE_URL" > /dev/null && exit 0; sleep 2; done; cat serve-start.log; exit 1
       - run: npm run seo:ci
 ```
 

@@ -23,7 +23,7 @@
 | Dependency audit | `npm audit --audit-level=moderate` | moderate or higher vulnerability exists |
 | Browser install | `npx playwright install --with-deps chromium` | Chromium cannot install |
 | Production build | `npm run build` | Next build fails |
-| Local server | `npm run start -- --hostname 127.0.0.1 --port 3000` | server does not respond |
+| Local server | `npx serve@latest out -l 3000` | static export server does not respond |
 | Technical SEO CI | `npm run seo:ci` | route, metadata, canonical, JSON-LD, internal links, mojibake, noindex, sitemap, robots, or mobile check fails |
 
 ## Artifacts
@@ -31,7 +31,7 @@
 The workflow uploads:
 
 - `reports/technical-seo-ci.md`
-- `next-start.log`
+- `serve-start.log`
 
 ## Release Blockers
 

@@ -33,6 +33,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/templates/starter-pack/",
+      "pageType": "template",
+      "template": "template",
+      "cluster": "starter_pack",
+      "index": true,
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/templates/seo-repo-skeleton/",
       "pageType": "template",
       "template": "template",

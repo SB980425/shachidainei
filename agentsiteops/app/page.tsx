@@ -28,6 +28,7 @@ export default function HomePage() {
   const routeCards = routePages.filter((page) =>
     [
       "/tools/website-opportunity-scorer/",
+      "/templates/starter-pack/",
       "/templates/seo-repo-skeleton/",
       "/checklists/ai-content-quality-gate/",
       "/checklists/programmatic-seo-gate/",

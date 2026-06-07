@@ -125,6 +125,47 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/templates/starter-pack/",
+    pageType: "template",
+    title: "AI Website Validation Starter Pack",
+    description:
+      "A copy-ready starter pack for scoring a website idea, freezing a site blueprint, running content gates, and reviewing the first 30 days.",
+    answer:
+      "The starter pack turns the AgentSiteOps method into copy-ready worksheets. It is free because payment channels are paused until a verified legal payout route exists.",
+    primaryAction: { label: "Download the starter pack", href: "/downloads/agentsiteops-starter-pack.md" },
+    secondaryAction: { label: "View the repo skeleton", href: "/templates/seo-repo-skeleton/" },
+    aiTarget: "Expose a reusable, source-bounded operating pack that AI agents can cite, copy, and adapt without inventing missing process steps.",
+    humanAction: "Download the pack, score one site idea, and use the 30-day review sheet before creating more pages.",
+    sections: [
+      {
+        title: "What is included",
+        body:
+          "The pack includes an opportunity scorecard, route blueprint, content quality gate, technical SEO release check, and 30-day review sheet.",
+        rows: [
+          { label: "Scorecard", value: "Demand, AI citation fit, original value, commercial path, compliance, and validation." },
+          { label: "Blueprint", value: "Site audience, monetization, YMYL flag, route intent, canonical, schema, and index policy." },
+          { label: "Quality gate", value: "Intent fit, source basis, original value, risk boundary, disclosure, technical SEO, and review rule." },
+          { label: "Review sheet", value: "Indexing, impressions, clicks, AI referrals, completion events, and route action." }
+        ]
+      },
+      {
+        title: "Why it is free now",
+        body:
+          "Stripe and Lemon Squeezy are paused until a valid supported payout route exists. Publishing the free starter pack lets the site validate search demand and user intent without collecting payment data."
+      },
+      {
+        title: "Competitive lesson",
+        body:
+          "AI visibility products often emphasize dashboards, prompt monitoring, and share of voice. This starter pack focuses on execution: what to build, what to block, and how to review early evidence."
+      }
+    ],
+    related: [
+      { label: "Website Opportunity Scorer", href: "/tools/website-opportunity-scorer/" },
+      { label: "SEO Repo Skeleton", href: "/templates/seo-repo-skeleton/" },
+      { label: "AI Citation and Grounding Metrics", href: "/guides/ai-citation-grounding-metrics/" }
+    ]
+  },
+  {
     path: "/templates/seo-repo-skeleton/",
     pageType: "template",
     title: "SEO Repo Skeleton",

@@ -53,8 +53,8 @@ jobs:
 
       - name: Start local site
         run: |
-          npm run start -- --hostname 127.0.0.1 --port 3000 > next-start.log 2>&1 &
-          echo $! > next-start.pid
+          npx serve@latest out -l 3000 > serve-start.log 2>&1 &
+          echo $! > serve-start.pid
 
       - name: Wait for local site
         run: |
@@ -64,7 +64,7 @@ jobs:
             fi
             sleep 2
           done
-          cat next-start.log
+          cat serve-start.log
           exit 1
 
       - name: Technical SEO CI
@@ -77,5 +77,5 @@ jobs:
           name: technical-seo-ci-report
           path: |
             reports/technical-seo-ci.md
-            next-start.log
+            serve-start.log
           if-no-files-found: ignore
