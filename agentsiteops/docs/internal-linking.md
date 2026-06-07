@@ -2,51 +2,60 @@
 
 ## Goal
 
-让 AI crawler、传统搜索引擎和真人用户都能理解页面层级、主题关系和下一步动作。
+Internal links must help search crawlers, AI retrieval systems, and human readers understand page hierarchy, topic relationships, proof boundaries, and next actions.
 
 ## Link Hierarchy
 
-| Source Page | Must Link To | Reason |
+| Source page | Must link to | Reason |
 |---|---|---|
-| Home | Pillar, scorer, repo template, AI content gate, pSEO gate, AI metrics guide | 建立主入口与核心动作。 |
-| Pillar | All first-cluster pages | 作为主题中心。 |
-| Tool | Methodology, pillar, repo template, analytics plan later | 解释评分依据，并引导进入执行。 |
-| Repo template | Pillar, technical SEO CI page later, pSEO gate, AI content gate | 把模板与发布门禁绑定。 |
-| AI content gate | Content brief template, editorial policy, pillar | 强化审稿与信任。 |
-| pSEO gate | Repo template, methodology, pillar | 把批量页面治理与技术执行绑定。 |
-| AI metrics guide | 90-day validation, weekly review later, scorer | 把指标解释和行动连接。 |
-| Methodology | Tool, pillar, evidence register | 解释评分模型来源。 |
-| Trust pages | Editorial policy, author, privacy, disclosure | 建立责任链。 |
+| Home | Pillar, scorer, starter pack, launch checklist, citation readiness, evidence ledger, and methodology | Establish the main entry points and proof boundary. |
+| Pillar | First-cluster execution pages | Keep the operating system as the topic center. |
+| Tool | Methodology, pillar, repo skeleton, and evidence ledger | Explain scoring basis and connect results to execution and review. |
+| Starter pack | Scorer, repo skeleton, content gate, and evidence ledger | Connect downloadable assets to reviewable proof. |
+| Repo template | Pillar, pSEO gate, AI content gate, and GitHub CI evidence | Tie structure to release controls. |
+| AI content gate | Editorial policy, disclosure, pSEO gate, and evidence ledger | Reinforce review, risk, and proof boundaries. |
+| pSEO gate | Repo template, methodology, and weekly review evidence | Keep batch pages governed by evidence. |
+| Launch checklist | AI citation readiness, small-site metrics, and evidence ledger | Connect search setup to measured outcomes. |
+| AI citation readiness | Crawler access audit, small-site metrics, and evidence ledger | Separate crawl eligibility from guaranteed citation claims. |
+| Metrics guides | Evidence ledger, weekly review, scorer, and launch checklist | Connect measurement language to route decisions. |
+| Methodology | Tool, pillar, and evidence ledger | Explain score inputs and validation limits. |
+| Evidence ledger | Updates, metrics guide, launch checklist, and citation readiness | Show verified and pending evidence with next review paths. |
+| Trust pages | Editorial policy, author page, privacy, disclosure, and evidence ledger | Build responsibility and correction paths. |
+| Updates | Evidence ledger, content gates, and launch checklist | Connect execution logs to current proof status. |
 
 ## Anchor Text Rules
 
 Use descriptive anchors:
 
-- Good: `网站机会评分器`
-- Good: `Programmatic SEO 发布门禁`
-- Good: `AI citation 与 grounding query 指标`
-- Bad: `点击这里`
-- Bad: `更多`
+- Good: `website opportunity scorer`
+- Good: `AI citation readiness checklist`
+- Good: `search evidence import contract`
+- Good: `Evidence Ledger`
+- Bad: `click here`
+- Bad: `more`
 
 ## First Cluster Required Links
 
 Every first-cluster page must include:
 
-1. Link back to `/ai-website-operating-system/`.
-2. Link to one adjacent execution page.
-3. Link to one trust or methodology page.
-4. Link to one conversion action.
+1. A link back to `/ai-website-operating-system/` or a directly related operating-system page.
+2. A link to one adjacent execution page.
+3. A link to one trust, methodology, evidence, or update page.
+4. A link to one human continuation action.
 
 ## Conversion Paths
 
-| User State | Next Link |
+| User state | Next link |
 |---|---|
-| 不知道做什么网站 | `/tools/website-opportunity-scorer/` |
-| 已有方向但不会建结构 | `/templates/seo-repo-skeleton/` |
-| 担心 AI 内容低质 | `/checklists/ai-content-quality-gate/` |
-| 想批量做页面 | `/checklists/programmatic-seo-gate/` |
-| 想理解 AI 搜索指标 | `/guides/ai-citation-grounding-metrics/` |
-| 想质疑评分模型 | `/methodology/website-opportunity-scoring/` |
+| Does not know whether a site idea is worth building | `/tools/website-opportunity-scorer/` |
+| Has a direction but no structure | `/templates/seo-repo-skeleton/` |
+| Needs a free working asset | `/templates/starter-pack/` |
+| Worries AI content is low quality | `/checklists/ai-content-quality-gate/` |
+| Wants batch or programmatic pages | `/checklists/programmatic-seo-gate/` |
+| Needs search-console setup | `/checklists/gsc-bing-indexnow-launch/` |
+| Wants AI citation readiness | `/checklists/ai-citation-readiness/` |
+| Wants metrics and review rules | `/guides/small-website-ai-visibility-metrics/` |
+| Wants proof boundaries | `/evidence/` |
 
 ## Noindex Link Policy
 
@@ -57,4 +66,3 @@ Examples:
 - Tool result share pages: noindex by default until enough unique value exists.
 - Filtered result pages: noindex unless explicitly approved by pSEO gate.
 - Draft or experimental pages: noindex and excluded from sitemap.
-

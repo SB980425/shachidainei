@@ -105,6 +105,15 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/evidence/",
+      "pageType": "evidence",
+      "template": "evidence_ledger",
+      "cluster": "trust_and_policy",
+      "index": true,
+      "priority": 0.7,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/methodology/website-opportunity-scoring/",
       "pageType": "methodology",
       "template": "methodology",

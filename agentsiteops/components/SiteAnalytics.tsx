@@ -35,6 +35,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/checklists/programmatic-seo-gate/": ["pseo_batch_audit_view", "pseo_index_map_view"],
   "/guides/small-website-ai-visibility-metrics/": ["small_ai_visibility_metrics_view"],
   "/guides/ai-citation-grounding-metrics/": ["ai_metric_matrix_view", "review_window_view"],
+  "/evidence/": ["evidence_ledger_view"],
   "/methodology/website-opportunity-scoring/": [
     "scoring_methodology_view",
     "scoring_model_limit_view"

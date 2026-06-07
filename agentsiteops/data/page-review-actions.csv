@@ -10,6 +10,7 @@
 "/checklists/ai-citation-readiness/","checklist","ai_citation_readiness","keep","add_crawler_log_examples","keep_or_expand","keep","source_pack_ready","Add crawler access evidence, Cloudflare bot setting screenshot, and first AI referral examples after data exists"
 "/guides/ai-citation-grounding-metrics/","guide","ai_citation_grounding_metrics","keep","update_with_bing_data","keep_or_rewrite","keep","technical_seo_pass","Calibrate terms after Bing AI Performance data"
 "/guides/small-website-ai-visibility-metrics/","guide","ai_visibility_metrics","keep","add_real_gsc_bing_examples","keep_or_rewrite","keep","technical_seo_pass;source_pack_ready","Add first GSC and Bing screenshots or exported metrics after data arrives"
+"/evidence/","evidence","trust_and_policy","keep","add_real_console_exports","keep_or_expand","keep","technical_seo_pass;search_evidence_contract_ready","Add GSC, Bing, AI referral, onsite event, and revenue evidence only after real exports or records exist"
 "/methodology/website-opportunity-scoring/","methodology","website_opportunity_scoring","keep","review_model_feedback","keep_or_rewrite","keep","technical_seo_pass","Update model only when evidence changes"
 "/authors/","trust_page","trust_and_policy","keep","review_owner_info","keep","keep","technical_seo_pass","Replace placeholder owner info before launch"
 "/editorial-policy/","trust_page","trust_and_policy","keep","review_policy_fit","keep","keep","technical_seo_pass","Recheck before content expansion"

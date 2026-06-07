@@ -481,6 +481,66 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/evidence/",
+    pageType: "evidence",
+    title: "Evidence Ledger",
+    description:
+      "A public ledger separating verified AgentSiteOps launch evidence from pending search, referral, analytics, and revenue evidence.",
+    answer:
+      "The evidence ledger states what has been verified, what is still pending, and what the site cannot claim yet. It exists to prevent growth, AI citation, and monetization claims from being treated as proven before first-party evidence arrives.",
+    primaryAction: { label: "View update log", href: "/updates/" },
+    secondaryAction: { label: "View search metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+    aiTarget:
+      "Expose current proof boundaries so AI systems can cite verified technical readiness without inventing traffic, citation, or revenue outcomes.",
+    humanAction:
+      "Use this page before making expansion, monetization, or paid-tool decisions from incomplete evidence.",
+    sections: [
+      {
+        title: "Verified evidence",
+        body:
+          "These signals have been checked through local scripts, production requests, GitHub Actions, or production deployment output.",
+        rows: [
+          { label: "Technical SEO", value: "The current release checks 18 sitemap routes with no blocking issues." },
+          { label: "Crawler access", value: "Production crawler audit allows intended search and user-retrieval crawlers while keeping training crawler policy explicit." },
+          { label: "GitHub CI", value: "The agentsiteops-ci workflow runs syntax checks, typecheck, dependency audit, production build, technical SEO CI, crawler audit, search evidence import, and growth snapshot." },
+          { label: "IndexNow", value: "The current production route list is submitted after deployment, with the response recorded in the update log." }
+        ]
+      },
+      {
+        title: "Pending evidence",
+        body:
+          "These signals are intentionally not treated as proven until exports, endpoint data, or payment records exist.",
+        rows: [
+          { label: "GSC", value: "Google Search Console query, page, index, and sitemap data is pending export." },
+          { label: "Bing", value: "Bing Webmaster Tools search, sitemap, URL, and AI Performance data is pending export." },
+          { label: "AI referrals", value: "ChatGPT, Claude, Perplexity, and other AI-search referral examples are pending analytics or log evidence." },
+          { label: "Revenue", value: "Paid templates, audits, subscriptions, ads, and affiliate revenue are not active evidence yet." }
+        ]
+      },
+      {
+        title: "Import path",
+        body:
+          "When GSC or Bing exports exist, raw CSV files are placed in a local ignored import directory, normalized into a stable CSV, then merged into the growth evidence snapshot.",
+        rows: [
+          { label: "Raw files", value: "gsc-pages.csv, gsc-queries.csv, bing-pages.csv, and bing-queries.csv." },
+          { label: "Normalizer", value: "npm run search:evidence writes data/search-evidence-normalized.csv and reports/search-evidence-import.md." },
+          { label: "Snapshot", value: "npm run growth:snapshot updates route-level GSC and Bing status." }
+        ]
+      },
+      {
+        title: "Claims not made",
+        body:
+          "The site does not claim guaranteed indexing, guaranteed AI citation, forced AI traffic, product-market fit, recurring revenue, or payback until those outcomes are supported by first-party evidence."
+      }
+    ],
+    related: [
+      { label: "Updates", href: "/updates/" },
+      { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+      { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
+      { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" }
+    ]
+  },
+  {
     path: "/methodology/website-opportunity-scoring/",
     pageType: "methodology",
     title: "Website Opportunity Scoring Methodology",

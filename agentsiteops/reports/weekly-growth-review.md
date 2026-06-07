@@ -15,8 +15,8 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 17 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 17/17 routes pass |
+| Route registry | docs/routes.json | 18 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 18/18 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | IndexNow | latest command output | 17 URLs submitted successfully in current deployment cycle |
 | Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
@@ -46,6 +46,7 @@
 | /checklists/ai-citation-readiness/ | checklist | ai_citation_readiness | pass | site_pass | keep | Add crawler access evidence, Cloudflare bot setting screenshot, and first AI referral examples after data exists |
 | /guides/ai-citation-grounding-metrics/ | guide | ai_citation_grounding_metrics | pass | site_pass | keep | Calibrate terms after Bing AI Performance data |
 | /guides/small-website-ai-visibility-metrics/ | guide | ai_visibility_metrics | pass | site_pass | keep | Add first GSC and Bing screenshots or exported metrics after data arrives |
+| /evidence/ | evidence | trust_and_policy | pass | site_pass | keep | Add GSC, Bing, AI referral, onsite event, and revenue evidence only after real exports or records exist |
 | /methodology/website-opportunity-scoring/ | methodology | website_opportunity_scoring | pass | site_pass | keep | Update model only when evidence changes |
 | /authors/ | trust_page | trust_and_policy | pass | site_pass | keep | Replace placeholder owner info before launch |
 | /editorial-policy/ | trust_page | trust_and_policy | pass | site_pass | keep | Recheck before content expansion |

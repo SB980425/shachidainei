@@ -32,6 +32,7 @@ The event layer records page and interaction events for release testing and futu
 | `small_ai_visibility_metrics_view` | `/guides/small-website-ai-visibility-metrics/` load | `path` |
 | `ai_metric_matrix_view` | `/guides/ai-citation-grounding-metrics/` load | `path` |
 | `review_window_view` | `/guides/ai-citation-grounding-metrics/` load | `path` |
+| `evidence_ledger_view` | `/evidence/` load | `path` |
 | `scoring_methodology_view` | `/methodology/website-opportunity-scoring/` load | `path` |
 | `scoring_model_limit_view` | `/methodology/website-opportunity-scoring/` load | `path` |
 | `trust_policy_view` | `/authors/`, `/editorial-policy/`, `/privacy/`, or `/disclosure/` load | `path` |

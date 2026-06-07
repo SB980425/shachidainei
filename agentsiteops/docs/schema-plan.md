@@ -19,6 +19,7 @@
 | `/checklists/ai-content-quality-gate/` | `HowTo`, `BreadcrumbList` | name, steps | Only use if checklist is presented as steps. |
 | `/checklists/programmatic-seo-gate/` | `HowTo`, `BreadcrumbList` | name, steps | Avoid false claims of guaranteed indexing. |
 | `/guides/ai-citation-grounding-metrics/` | `Article`, `BreadcrumbList` | headline, author, dateModified, citations | Include source register on page. |
+| `/evidence/` | `CollectionPage`, `BreadcrumbList` | name, dateModified, hasPart | Public proof boundary for verified and pending evidence. |
 | `/methodology/website-opportunity-scoring/` | `TechArticle`, `BreadcrumbList` | headline, author, dateModified | Explain scoring model and limitations. |
 | `/authors/` | `ProfilePage`, `Person`, `BreadcrumbList` | name, url, sameAs if available | Keep only true credentials. |
 | `/editorial-policy/` | `WebPage`, `BreadcrumbList` | name, dateModified | Explain AI content, fact-check, correction process. |

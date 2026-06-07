@@ -1,6 +1,6 @@
 # Search Evidence Import
 
-- Generated: 2026-06-07T16:14:13.123Z
+- Generated: 2026-06-07T16:33:18.941Z
 - Status: waiting_for_exports
 - Import files found: 0
 - Normalized rows: 0
@@ -29,6 +29,7 @@
 | /checklists/ai-citation-readiness/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /guides/ai-citation-grounding-metrics/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /guides/small-website-ai-visibility-metrics/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /evidence/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /methodology/website-opportunity-scoring/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /authors/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /editorial-policy/ | 0 | 0 | 0 | 0 | 0 | 0 |

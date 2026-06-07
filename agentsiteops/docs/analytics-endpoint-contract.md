@@ -1,6 +1,6 @@
 # Analytics Endpoint Contract
 
-用途：当决定接入真实事件收集时，约束 `NEXT_PUBLIC_ANALYTICS_ENDPOINT` 指向的 endpoint。当前未实现真实 endpoint。
+Purpose: define the expected contract for the optional endpoint behind `NEXT_PUBLIC_ANALYTICS_ENDPOINT`. A real endpoint is not enabled yet.
 
 ## Endpoint Shape
 
@@ -37,6 +37,7 @@ Minimum v1 allowlist:
 
 - `page_view`
 - `update_log_view`
+- `evidence_ledger_view`
 - `tool_page_view`
 - `starter_pack_view`
 - `search_console_launch_checklist_view`

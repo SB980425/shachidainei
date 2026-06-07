@@ -36,6 +36,7 @@ export default function HomePage() {
       "/checklists/ai-citation-readiness/",
       "/guides/small-website-ai-visibility-metrics/",
       "/guides/ai-citation-grounding-metrics/",
+      "/evidence/",
       "/methodology/website-opportunity-scoring/"
     ].includes(page.path)
   );

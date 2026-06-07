@@ -1,15 +1,15 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-07T16:14:13.476Z
+- Generated: 2026-06-07T16:33:19.299Z
 - Status: baseline_ready
-- Routes: 17
-- Technical SEO pass routes: 17
+- Routes: 18
+- Technical SEO pass routes: 18
 - Crawler access status: pass
-- GSC status: pending export for 17 routes
-- Bing status: pending export for 17 routes
+- GSC status: pending export for 18 routes
+- Bing status: pending export for 18 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 17 routes
+- Onsite event status: local buffer only for 18 routes
 
 ## Route Evidence Table
 
@@ -26,6 +26,7 @@
 | /checklists/ai-citation-readiness/ | checklist | ai_citation_readiness | pass | site_pass | keep | Add crawler access evidence, Cloudflare bot setting screenshot, and first AI referral examples after data exists |
 | /guides/ai-citation-grounding-metrics/ | guide | ai_citation_grounding_metrics | pass | site_pass | keep | Calibrate terms after Bing AI Performance data |
 | /guides/small-website-ai-visibility-metrics/ | guide | ai_visibility_metrics | pass | site_pass | keep | Add first GSC and Bing screenshots or exported metrics after data arrives |
+| /evidence/ | evidence | trust_and_policy | pass | site_pass | keep | Add GSC, Bing, AI referral, onsite event, and revenue evidence only after real exports or records exist |
 | /methodology/website-opportunity-scoring/ | methodology | website_opportunity_scoring | pass | site_pass | keep | Update model only when evidence changes |
 | /authors/ | trust_page | trust_and_policy | pass | site_pass | keep | Replace placeholder owner info before launch |
 | /editorial-policy/ | trust_page | trust_and_policy | pass | site_pass | keep | Recheck before content expansion |

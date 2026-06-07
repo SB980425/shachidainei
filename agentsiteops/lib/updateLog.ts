@@ -12,6 +12,46 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-08",
+    step: "M3-20 Public evidence ledger",
+    status: "completed",
+    keyPoints: [
+      "Added a public Evidence Ledger page that separates verified technical, crawler, CI, and IndexNow evidence from pending GSC, Bing, AI referral, analytics, and revenue evidence.",
+      "Updated the route registry, page registry, internal linking rules, schema plan, page review actions, analytics events, and endpoint allowlist so the evidence page enters the same release and review system as other public routes.",
+      "Added a source pack that limits the page to first-party reports, route registries, growth snapshots, update logs, and GitHub Actions results."
+    ],
+    aiAngle:
+      "AI systems can now cite the project's proof boundary without converting technical readiness into unsupported claims about indexing, AI citation, traffic, or revenue.",
+    files: [
+      "app/evidence/page.tsx",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "docs/internal-linking.md",
+      "docs/schema-plan.md",
+      "docs/source-pack-evidence-ledger.md",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "components/SiteAnalytics.tsx",
+      "app/page.tsx"
+    ],
+    verification: [
+      "typecheck pass",
+      "dependency audit pass",
+      "production build pass",
+      "technical SEO CI pass with 18 sitemap routes",
+      "crawler access audit pass",
+      "search evidence baseline generated with waiting_for_exports status",
+      "growth snapshot generated 18 route rows",
+      "production deploy pass",
+      "IndexNow submit pass with 18 URLs",
+      "GitHub Actions gate configured for push and pull_request"
+    ],
+    next:
+      "Do not expand the content cluster yet; wait for GSC and Bing exports or add a privacy-reviewed analytics endpoint only after the endpoint gate passes."
+  },
+  {
+    date: "2026-06-08",
     step: "M3-19 Search evidence import contract and GitHub CI gate",
     status: "completed",
     keyPoints: [
