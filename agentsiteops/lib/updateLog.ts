@@ -12,6 +12,42 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-07",
+    step: "M3-18 First-party evidence snapshot and weekly review automation",
+    status: "completed",
+    keyPoints: [
+      "Added a growth evidence snapshot script that reads route registry, page review actions, technical SEO results, and crawler audit status.",
+      "Generated a current 17-route evidence snapshot and refreshed the weekly growth review so it separates confirmed technical evidence from pending GSC, Bing, referral, event, and revenue evidence.",
+      "Expanded local analytics events for starter pack, search console checklist, AI citation readiness, and small-site AI visibility pages while keeping the real endpoint disabled until privacy and storage gates pass."
+    ],
+    aiAngle:
+      "AI and search crawlers can now inspect a public execution log while maintainers have a machine-readable evidence table showing what is proven, what is pending, and what must happen before content scale.",
+    files: [
+      "scripts/growth-evidence-snapshot.mjs",
+      "data/growth-evidence-snapshot.csv",
+      "reports/growth-evidence-snapshot.md",
+      "reports/weekly-growth-review.md",
+      "docs/first-party-evidence-plan.md",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "components/SiteAnalytics.tsx",
+      "package.json"
+    ],
+    verification: [
+      "growth snapshot script syntax pass",
+      "growth snapshot generated 17 route rows",
+      "typecheck pass",
+      "production build pass",
+      "dependency audit pass",
+      "technical SEO CI pass with 17 sitemap routes",
+      "crawler access audit pass",
+      "production deploy pass",
+      "IndexNow submit pass with 17 URLs"
+    ],
+    next:
+      "Wait for GSC and Bing data exports, then update the evidence snapshot instead of adding a large content batch."
+  },
+  {
+    date: "2026-06-07",
     step: "M3-17 Crawler access policy and production audit",
     status: "completed",
     keyPoints: [

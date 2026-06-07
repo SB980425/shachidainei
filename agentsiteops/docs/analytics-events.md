@@ -1,50 +1,62 @@
 # Analytics Events
 
-本文件登记站内事件层。当前实现是第一方轻量事件层：默认只写入浏览器内存和 `sessionStorage`，只有设置 `NEXT_PUBLIC_ANALYTICS_ENDPOINT` 时才会上报。
+Status: local event layer active; real endpoint disabled until privacy and storage review.
 
-## 事件原则
+## Purpose
 
-- 不采集敏感个人数据。
-- 不记录表单原文、邮箱、电话、账号、IP、cookie 或设备指纹。
-- 事件 payload 只允许字符串、数字、布尔值和 null。
-- 字符串会截断到 200 字符，key 会截断到 64 字符。
-- 浏览器内最多保留最近 100 条事件。
-- 事件用于 30/60/90 天复盘，不用于诱导点击。
+The event layer records page and interaction events for release testing and future 30/60/90 day reviews. By default, events are stored only in browser memory and `sessionStorage`. Events are sent to a real endpoint only when `NEXT_PUBLIC_ANALYTICS_ENDPOINT` is configured.
 
-## 当前事件
+## Data Rules
+
+- Do not collect email, phone, account ID, payment data, IP address, cookie ID, device fingerprint, or raw user text.
+- Payload values may only be strings, numbers, booleans, or null.
+- Payload keys are truncated to 64 characters.
+- Payload strings are truncated to 200 characters.
+- The browser keeps the most recent 100 events per session.
+- Events support page review decisions; they are not used to manipulate clicks or rankings.
+
+## Current Events
 
 | Event | Trigger | Payload |
 |---|---|---|
-| `page_view` | 任意路由加载 | `path` |
-| `update_log_view` | `/updates/` 加载 | `path` |
-| `tool_page_view` | `/tools/website-opportunity-scorer/` 加载 | `path` |
-| `tool_started` | 用户首次修改评分器输入、滑块或硬阻断 | `tool`, `trigger`, `score`, `decision` |
-| `tool_completed` | 用户复制结果或下载 CSV | `tool`, `export_method`, `score`, `decision` |
-| `tool_result_export` | 用户复制结果或下载 CSV | `tool`, `export_method`, `score`, `decision` |
-| `template_copy_click` | 用户复制 Repo Skeleton 模板 | `label`, `length` |
-| `checklist_copy_click` | 用户复制 AI 内容门禁或 pSEO 门禁 | `label`, `length` |
-| `repo_skeleton_matrix_view` | `/templates/seo-repo-skeleton/` 加载 | `path` |
-| `ci_gate_matrix_view` | `/templates/seo-repo-skeleton/` 加载 | `path` |
-| `pseo_batch_audit_view` | `/checklists/programmatic-seo-gate/` 加载 | `path` |
-| `pseo_index_map_view` | `/checklists/programmatic-seo-gate/` 加载 | `path` |
-| `ai_metric_matrix_view` | `/guides/ai-citation-grounding-metrics/` 加载 | `path` |
-| `review_window_view` | `/guides/ai-citation-grounding-metrics/` 加载 | `path` |
-| `scoring_methodology_view` | `/methodology/website-opportunity-scoring/` 加载 | `path` |
-| `scoring_model_limit_view` | `/methodology/website-opportunity-scoring/` 加载 | `path` |
-| `trust_policy_view` | 作者、编辑政策、隐私或披露页加载 | `path` |
-| `cta_click` | 带 `data-analytics-event` 的 CTA 被点击 | `label`, `target`, `type` |
-| `source_link_click` | 用户点击外部来源链接 | `href`, `label` |
+| `page_view` | Any route load | `path` |
+| `update_log_view` | `/updates/` load | `path` |
+| `tool_page_view` | `/tools/website-opportunity-scorer/` load | `path` |
+| `starter_pack_view` | `/templates/starter-pack/` load | `path` |
+| `repo_skeleton_matrix_view` | `/templates/seo-repo-skeleton/` load | `path` |
+| `ci_gate_matrix_view` | `/templates/seo-repo-skeleton/` load | `path` |
+| `search_console_launch_checklist_view` | `/checklists/gsc-bing-indexnow-launch/` load | `path` |
+| `ai_citation_readiness_view` | `/checklists/ai-citation-readiness/` load | `path` |
+| `pseo_batch_audit_view` | `/checklists/programmatic-seo-gate/` load | `path` |
+| `pseo_index_map_view` | `/checklists/programmatic-seo-gate/` load | `path` |
+| `small_ai_visibility_metrics_view` | `/guides/small-website-ai-visibility-metrics/` load | `path` |
+| `ai_metric_matrix_view` | `/guides/ai-citation-grounding-metrics/` load | `path` |
+| `review_window_view` | `/guides/ai-citation-grounding-metrics/` load | `path` |
+| `scoring_methodology_view` | `/methodology/website-opportunity-scoring/` load | `path` |
+| `scoring_model_limit_view` | `/methodology/website-opportunity-scoring/` load | `path` |
+| `trust_policy_view` | `/authors/`, `/editorial-policy/`, `/privacy/`, or `/disclosure/` load | `path` |
+| `tool_started` | First scorer input, slider, or hard-blocker change | `tool`, `trigger`, `score`, `decision` |
+| `tool_completed` | User copies or exports scorer result | `tool`, `export_method`, `score`, `decision` |
+| `tool_result_export` | User copies or downloads scorer result | `tool`, `export_method`, `score`, `decision` |
+| `template_copy_click` | User copies a template block | `label`, `length` |
+| `checklist_copy_click` | User copies checklist content | `label`, `length` |
+| `cta_click` | Click on an element with `data-analytics-event` | `label`, `target`, `type` |
+| `source_link_click` | Click on an external source link | `href`, `label` |
 
-## 存储位置
+## Storage Locations
 
 | Location | Purpose |
 |---|---|
-| `window.__codexAnalyticsEvents` | 当前页面调试与浏览器验证 |
-| `sessionStorage["codex-seo-events"]` | 当前会话最近 100 条事件 |
-| `NEXT_PUBLIC_ANALYTICS_ENDPOINT` | 可选真实上报接口 |
+| `window.__codexAnalyticsEvents` | Current page debugging and browser verification |
+| `sessionStorage["codex-seo-events"]` | Most recent 100 events in the current browser session |
+| `NEXT_PUBLIC_ANALYTICS_ENDPOINT` | Optional real collection endpoint; not configured by default |
 
-## 后续接入条件
+## Endpoint Gate
 
-- 接入 GA4、Plausible、Umami、PostHog、BigQuery 或自建 endpoint 前，先更新隐私政策。
-- 若使用 cookie、广告功能、跨站追踪或邮箱订阅，先执行 monetization/compliance gate。
-- 若 endpoint 接收用户标识，必须重新定义 consent、保留周期和删除路径。
+Do not enable a real endpoint until:
+
+- `/privacy/` describes the endpoint, payload, retention, and deletion boundary.
+- `docs/analytics-endpoint-contract.md` has been implemented and tested.
+- Sensitive payload tests are rejected.
+- Unknown event names are rejected.
+- `npm run seo:ci`, `npm run crawler:audit`, and `npm run growth:snapshot` pass.

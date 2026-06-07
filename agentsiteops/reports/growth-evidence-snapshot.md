@@ -1,37 +1,15 @@
-# Weekly Growth Review
+# Growth Evidence Snapshot
 
-- Date: 2026-06-07
-- Review type: production baseline evidence review
-- Decision: continue evidence collection; do not scale content clusters yet
+- Generated: 2026-06-07T16:06:35.035Z
+- Status: baseline_ready
+- Routes: 17
+- Technical SEO pass routes: 17
+- Crawler access status: pass
+- GSC status: pending export for 17 routes
+- Bing status: pending export for 17 routes
+- Onsite event status: local buffer only for 17 routes
 
-## Conclusion
-
-- The production site has 17 indexable routes with technical SEO passing.
-- Production crawler access audit is passing for intended search and user-retrieval crawlers.
-- GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.
-- The next operating step is to collect first-party evidence, not to add a large content batch.
-
-## Confirmed
-
-| Area | Evidence | Status |
-|---|---|---|
-| Route registry | docs/routes.json | 17 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 17/17 routes pass |
-| Crawler access | reports/crawler-access-audit.md | pass |
-| IndexNow | latest command output | 17 URLs submitted successfully in current deployment cycle |
-| Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
-
-## Unverified
-
-| Area | Missing evidence | Impact |
-|---|---|---|
-| Google Search Console | Page and query export | Cannot evaluate impressions, clicks, CTR, or index coverage yet |
-| Bing Webmaster Tools | Search and AI Performance export | Cannot evaluate Bing queries, AI citations, cited URLs, or grounding phrases yet |
-| ChatGPT referrals | Analytics endpoint or server logs | Cannot confirm ChatGPT traffic yet |
-| Onsite conversions | Approved analytics endpoint | Cannot measure real scorer completion, copy actions, or source clicks yet |
-| Revenue | Payment or lead channel | Cannot evaluate paid conversion or payback yet |
-
-## Page Action Table
+## Route Evidence Table
 
 | URL | Type | Cluster | Tech SEO | Crawler | Current action | Next evidence |
 |---|---|---|---|---|---|---|
@@ -53,18 +31,9 @@
 | /disclosure/ | trust_page | trust_and_policy | pass | site_pass | keep | Update before ads, affiliate, sponsor, or paid recommendations |
 | /updates/ | log | trust_and_policy | pass | site_pass | keep | Append every major execution step |
 
-## 30 / 60 / 90 Status
+## Evidence Rules
 
-| Window | Current status | Required evidence before decision |
-|---|---|---|
-| Day 30 | Not enough live search data | GSC indexing, Bing status, first impressions, crawler audit, internal link review |
-| Day 60 | Not started | Query breadth, CTR, page improvement actions, onsite continuation events |
-| Day 90 | Not started | Keep, rewrite, merge, noindex, delete, continue, pivot, or stop decisions |
-
-## Next Week Backlog
-
-1. Export GSC sitemap, indexing, and performance data when the console has enough data.
-2. Export Bing Webmaster sitemap, URL, search, and AI Performance data when available.
-3. Decide whether to connect a privacy-reviewed analytics endpoint.
-4. Use Semrush only for trial-window exports: prompts, keyword clusters, SERP gaps, and competitor feature claims.
-5. Keep all new pages behind source packs, technical SEO CI, crawler access audit, and IndexNow submission.
+- Do not scale a new content cluster until GSC and Bing export data exists.
+- Do not buy paid AI visibility monitoring until first-party evidence creates a concrete question that free tools cannot answer.
+- Keep technical SEO and crawler access as release gates for every route batch.
+- Treat local event buffering as implementation evidence only; it is not real user behavior until an approved endpoint is connected.

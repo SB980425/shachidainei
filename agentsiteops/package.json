@@ -8,6 +8,7 @@
     "start": "next start",
     "preview:static": "npx serve@latest out",
     "crawler:audit": "node scripts/crawler-access-audit.mjs",
+    "growth:snapshot": "node scripts/growth-evidence-snapshot.mjs",
     "indexnow:submit": "node scripts/submit-indexnow.mjs",
     "lint": "next lint",
     "seo:ci": "node scripts/technical-seo-ci.mjs",

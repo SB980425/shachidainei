@@ -38,6 +38,10 @@ Minimum v1 allowlist:
 - `page_view`
 - `update_log_view`
 - `tool_page_view`
+- `starter_pack_view`
+- `search_console_launch_checklist_view`
+- `ai_citation_readiness_view`
+- `small_ai_visibility_metrics_view`
 - `tool_started`
 - `tool_completed`
 - `tool_result_export`

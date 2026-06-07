@@ -28,8 +28,12 @@ const sessionKey = "codex-seo-events";
 const pathViewEvents: Record<string, string[]> = {
   "/updates/": ["update_log_view"],
   "/tools/website-opportunity-scorer/": ["tool_page_view"],
+  "/templates/starter-pack/": ["starter_pack_view"],
   "/templates/seo-repo-skeleton/": ["repo_skeleton_matrix_view", "ci_gate_matrix_view"],
+  "/checklists/gsc-bing-indexnow-launch/": ["search_console_launch_checklist_view"],
+  "/checklists/ai-citation-readiness/": ["ai_citation_readiness_view"],
   "/checklists/programmatic-seo-gate/": ["pseo_batch_audit_view", "pseo_index_map_view"],
+  "/guides/small-website-ai-visibility-metrics/": ["small_ai_visibility_metrics_view"],
   "/guides/ai-citation-grounding-metrics/": ["ai_metric_matrix_view", "review_window_view"],
   "/methodology/website-opportunity-scoring/": [
     "scoring_methodology_view",
