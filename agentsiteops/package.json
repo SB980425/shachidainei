@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "preview:static": "npx serve@latest out",
     "lint": "next lint",
     "seo:ci": "node scripts/technical-seo-ci.mjs",
     "typecheck": "tsc --noEmit"
