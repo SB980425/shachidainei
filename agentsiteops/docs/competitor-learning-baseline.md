@@ -46,6 +46,6 @@ AgentSiteOps should not compete head-on as an AI visibility dashboard in phase o
 | Page idea | Intent | Decision |
 |---|---|---|
 | AI Website Validation Starter Pack | Downloadable operating asset | build now |
-| AI visibility metrics for small websites | Explain metrics without dashboard claims | build next |
+| AI visibility metrics for small websites | Explain metrics without dashboard claims | built |
 | GSC + Bing + IndexNow launch checklist | Capture launch workflow already proven | build next |
 | AI citation readiness checklist | Turn citation theory into a simple page gate | build after metrics page |

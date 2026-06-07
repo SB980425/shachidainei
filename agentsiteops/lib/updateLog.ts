@@ -12,6 +12,38 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-07",
+    step: "M3-14 Small-site AI visibility metrics guide",
+    status: "completed",
+    keyPoints: [
+      "Added a small-website AI visibility metrics guide focused on retrieval, discovery, citation readiness, search evidence, and continuation.",
+      "Added a source pack that limits claims to GSC sitemap status, Bing Webmaster signals, IndexNow submission, and page-level review decisions.",
+      "Updated route registry, page registry, page review actions, and competitor baseline so the new guide enters the weekly review system."
+    ],
+    aiAngle:
+      "AI and search crawlers can now identify that AgentSiteOps measures visibility as a page-level operating loop, not as a claimed live LLM monitoring platform.",
+    files: [
+      "app/guides/small-website-ai-visibility-metrics/page.tsx",
+      "docs/source-pack-ai-visibility-metrics.md",
+      "app/page.tsx",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "docs/competitor-learning-baseline.md"
+    ],
+    verification: [
+      "typecheck pass",
+      "production build pass",
+      "dependency audit pass",
+      "technical SEO CI pass with 15 sitemap routes",
+      "production deploy pass",
+      "IndexNow submit pass"
+    ],
+    next:
+      "Build the GSC, Bing, and IndexNow launch checklist from the already executed verification workflow."
+  },
+  {
+    date: "2026-06-07",
     step: "M3-13 Starter pack and payment-channel hold",
     status: "completed",
     keyPoints: [

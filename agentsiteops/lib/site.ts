@@ -329,6 +329,53 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/guides/small-website-ai-visibility-metrics/",
+    pageType: "guide",
+    title: "Small Website AI Visibility Metrics",
+    description:
+      "A practical metric stack for small websites that need to measure crawlability, sitemap health, AI citation readiness, search discovery, and user continuation.",
+    answer:
+      "Small sites should not start by buying a broad AI visibility dashboard. The first useful metric stack is retrieval health, index discovery, citeable page structure, source mentions, and the human action that happens after arrival.",
+    primaryAction: { label: "Download starter pack", href: "/downloads/agentsiteops-starter-pack.md" },
+    secondaryAction: { label: "View citation metrics", href: "/guides/ai-citation-grounding-metrics/" },
+    aiTarget: "Define a small-site measurement ladder for AI search readiness without claiming live cross-model monitoring.",
+    humanAction: "Use the metrics to decide whether a page needs technical repair, stronger answer blocks, better internal links, or a clearer continuation action.",
+    sections: [
+      {
+        title: "Metric ladder",
+        body:
+          "The first version should be small enough to review every week. Measure whether engines can retrieve the page, whether search tools discover it, whether the page has citeable structure, and whether visitors continue.",
+        rows: [
+          { label: "Retrieval", value: "HTTPS 200, robots allow, sitemap reachable, canonical matches the production URL." },
+          { label: "Discovery", value: "GSC sitemap status, Bing sitemap status, IndexNow acceptance, and sample URL inspection." },
+          { label: "Citation readiness", value: "Clear answer block, tables, named methods, updated date, policy pages, and internal links." },
+          { label: "Search evidence", value: "Queries, impressions, clicks, page discovery, and crawler errors from search consoles." },
+          { label: "Continuation", value: "Tool completion, template download, checklist copy, source link click, or repeat visit." }
+        ]
+      },
+      {
+        title: "What not to measure first",
+        body:
+          "Do not start by chasing forced AI clicks, fake model prompts, or broad share-of-voice claims. For a new site, those numbers are easy to misread before pages are indexed, linked, and repeatedly useful."
+      },
+      {
+        title: "30-day review",
+        body:
+          "At day 30, choose one action per page: keep, repair technical issues, rewrite the answer block, add a template, merge weak pages, noindex thin pages, or stop the route."
+      },
+      {
+        title: "Source boundary",
+        body:
+          "Google Search Console sitemap status, Bing Webmaster data, and IndexNow submission responses are useful inputs. They do not guarantee indexing, citation, traffic, or revenue."
+      }
+    ],
+    related: [
+      { label: "AI Citation and Grounding Metrics", href: "/guides/ai-citation-grounding-metrics/" },
+      { label: "AI Website Validation Starter Pack", href: "/templates/starter-pack/" },
+      { label: "Technical SEO gate", href: "/templates/seo-repo-skeleton/" }
+    ]
+  },
+  {
     path: "/methodology/website-opportunity-scoring/",
     pageType: "methodology",
     title: "Website Opportunity Scoring Methodology",

@@ -78,6 +78,15 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/guides/small-website-ai-visibility-metrics/",
+      "pageType": "guide",
+      "template": "guide",
+      "cluster": "ai_visibility_metrics",
+      "index": true,
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/methodology/website-opportunity-scoring/",
       "pageType": "methodology",
       "template": "methodology",

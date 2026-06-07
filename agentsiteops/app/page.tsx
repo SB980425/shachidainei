@@ -32,6 +32,7 @@ export default function HomePage() {
       "/templates/seo-repo-skeleton/",
       "/checklists/ai-content-quality-gate/",
       "/checklists/programmatic-seo-gate/",
+      "/guides/small-website-ai-visibility-metrics/",
       "/guides/ai-citation-grounding-metrics/",
       "/methodology/website-opportunity-scoring/"
     ].includes(page.path)
