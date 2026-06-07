@@ -12,6 +12,37 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-07",
+    step: "M3-17 Crawler access policy and production audit",
+    status: "completed",
+    keyPoints: [
+      "Made robots.txt policy explicit: search and user-retrieval crawlers are allowed, while OpenAI and Anthropic training crawlers are disallowed.",
+      "Added a production crawler access audit script that checks robots.txt, sitemap.xml, the AI citation readiness page, and crawler-specific HTTP access.",
+      "Separated AI search visibility from model-training access so the site can pursue citation eligibility without treating training crawlers as required."
+    ],
+    aiAngle:
+      "AI search systems and future maintainers can now see a machine-readable crawler policy plus a repeatable audit proving whether the production site is reachable to intended search and retrieval bots.",
+    files: [
+      "app/robots.ts",
+      "scripts/crawler-access-audit.mjs",
+      "package.json",
+      "reports/crawler-access-audit.md",
+      "reports/technical-seo-ci.md"
+    ],
+    verification: [
+      "crawler audit script syntax pass",
+      "typecheck pass",
+      "production build pass",
+      "dependency audit pass",
+      "technical SEO CI pass with 17 sitemap routes",
+      "production deploy pass",
+      "production crawler access audit pass",
+      "IndexNow submit pass with 17 URLs"
+    ],
+    next:
+      "Collect first-party crawl, search console, Bing, and referral evidence before using paid AI visibility monitoring."
+  },
+  {
+    date: "2026-06-07",
     step: "M3-16 AI citation readiness checklist and Semrush trial plan",
     status: "completed",
     keyPoints: [

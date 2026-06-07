@@ -77,6 +77,44 @@ function normalizeRoutePath(input) {
   return routePath;
 }
 
+function hasWildcardRootDisallow(robotsText) {
+  const groups = [];
+  let current = null;
+
+  for (const rawLine of robotsText.split(/\r?\n/)) {
+    const line = rawLine.replace(/#.*/, "").trim();
+    if (!line) continue;
+
+    const separator = line.indexOf(":");
+    if (separator === -1) continue;
+
+    const key = line.slice(0, separator).trim().toLowerCase();
+    const value = line.slice(separator + 1).trim().toLowerCase();
+
+    if (key === "user-agent") {
+      if (!current || current.seenRule) {
+        current = { agents: [], disallow: [], seenRule: false };
+        groups.push(current);
+      }
+      current.agents.push(value);
+      continue;
+    }
+
+    if (!current) continue;
+
+    if (key === "disallow") {
+      current.disallow.push(value || "");
+      current.seenRule = true;
+    }
+
+    if (key === "allow") {
+      current.seenRule = true;
+    }
+  }
+
+  return groups.some((group) => group.agents.includes("*") && group.disallow.includes("/"));
+}
+
 async function fetchText(pathOrUrl, options = {}) {
   const target = pathOrUrl.startsWith("http") ? pathOrUrl : `${baseUrl}${pathOrUrl}`;
   const { timeoutMs = 10000, ...requestOptions } = options;
@@ -262,7 +300,7 @@ async function loadRoutesFromSitemap() {
     if (!robots.text.includes(expectedSitemapLine)) {
       addBlocker("/robots.txt", `missing ${expectedSitemapLine}`);
     }
-    if (/disallow:\s*\/\s*$/im.test(robots.text)) {
+    if (hasWildcardRootDisallow(robots.text)) {
       addBlocker("/robots.txt", "global disallow conflicts with sitemap");
     }
   }
