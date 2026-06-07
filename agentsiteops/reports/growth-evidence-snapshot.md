@@ -1,12 +1,14 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-07T16:06:35.035Z
+- Generated: 2026-06-07T16:14:13.476Z
 - Status: baseline_ready
 - Routes: 17
 - Technical SEO pass routes: 17
 - Crawler access status: pass
 - GSC status: pending export for 17 routes
 - Bing status: pending export for 17 routes
+- Imported GSC route evidence: 0
+- Imported Bing route evidence: 0
 - Onsite event status: local buffer only for 17 routes
 
 ## Route Evidence Table

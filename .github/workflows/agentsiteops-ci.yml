@@ -1,0 +1,54 @@
+name: agentsiteops-ci
+
+on:
+  pull_request:
+    paths:
+      - "agentsiteops/**"
+      - ".github/workflows/agentsiteops-ci.yml"
+  push:
+    branches:
+      - main
+      - master
+      - "codex/**"
+    paths:
+      - "agentsiteops/**"
+      - ".github/workflows/agentsiteops-ci.yml"
+  workflow_dispatch:
+
+jobs:
+  technical-seo:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: agentsiteops
+    env:
+      SITE_AUDIT_BASE_URL: http://127.0.0.1:3000
+      SITE_PUBLIC_URL: https://agentsiteops.com
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: agentsiteops/package-lock.json
+      - run: npm ci
+      - run: node --check scripts/technical-seo-ci.mjs
+      - run: node --check scripts/crawler-access-audit.mjs
+      - run: node --check scripts/growth-evidence-snapshot.mjs
+      - run: node --check scripts/import-search-evidence.mjs
+      - run: npm run typecheck
+      - run: npm audit --audit-level=moderate
+      - run: npx playwright install --with-deps chromium
+      - run: npm run search:evidence
+      - run: npm run build
+      - run: npx serve@latest out -l 3000 > serve-start.log 2>&1 &
+      - run: |
+          for attempt in {1..45}; do
+            curl -fsS "$SITE_AUDIT_BASE_URL/sitemap.xml" > /dev/null && exit 0
+            sleep 2
+          done
+          cat serve-start.log
+          exit 1
+      - run: npm run seo:ci
+      - run: npm run crawler:audit
+      - run: npm run growth:snapshot

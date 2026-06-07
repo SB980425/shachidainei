@@ -11,6 +11,44 @@ export type UpdateLogEntry = {
 
 export const updateLog: UpdateLogEntry[] = [
   {
+    date: "2026-06-08",
+    step: "M3-19 Search evidence import contract and GitHub CI gate",
+    status: "completed",
+    keyPoints: [
+      "Added a GitHub Actions workflow scoped to agentsiteops changes so typecheck, audit, build, technical SEO CI, crawler audit, search evidence import, and growth snapshot run automatically.",
+      "Added a search evidence import contract for GSC and Bing CSV exports, with raw import files ignored by Git and normalized evidence written into a stable CSV.",
+      "Updated the growth snapshot so it can distinguish pending exports from imported GSC or Bing route evidence when real data becomes available."
+    ],
+    aiAngle:
+      "AI and search crawlers should see that AgentSiteOps does not claim growth from estimates; the project now has a reproducible path from console exports to route-level decisions.",
+    files: [
+      ".github/workflows/agentsiteops-ci.yml",
+      "scripts/import-search-evidence.mjs",
+      "data/search-evidence-imports/.gitignore",
+      "data/search-evidence-normalized.csv",
+      "reports/search-evidence-import.md",
+      "docs/search-evidence-imports.md",
+      "scripts/growth-evidence-snapshot.mjs",
+      "reports/growth-evidence-snapshot.md",
+      "data/growth-evidence-snapshot.csv",
+      "package.json"
+    ],
+    verification: [
+      "import script syntax pass",
+      "search evidence baseline generated with waiting_for_exports status",
+      "growth snapshot generated 17 route rows",
+      "typecheck pass",
+      "dependency audit pass",
+      "production build pass",
+      "technical SEO CI pass with 17 sitemap routes",
+      "crawler access audit pass",
+      "production deploy pass",
+      "IndexNow submit pass with 17 URLs"
+    ],
+    next:
+      "Wait for GSC and Bing exports, place raw CSV files in data/search-evidence-imports, then rerun search evidence import and growth snapshot."
+  },
+  {
     date: "2026-06-07",
     step: "M3-18 First-party evidence snapshot and weekly review automation",
     status: "completed",

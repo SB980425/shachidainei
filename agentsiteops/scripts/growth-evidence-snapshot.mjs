@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -8,6 +8,7 @@ const registryPath = resolve(rootDir, "docs", "page-registry.csv");
 const actionsPath = resolve(rootDir, "data", "page-review-actions.csv");
 const technicalReportPath = resolve(rootDir, "reports", "technical-seo-ci.md");
 const crawlerReportPath = resolve(rootDir, "reports", "crawler-access-audit.md");
+const searchEvidencePath = resolve(rootDir, "data", "search-evidence-normalized.csv");
 const snapshotCsvPath = resolve(rootDir, "data", "growth-evidence-snapshot.csv");
 const snapshotReportPath = resolve(rootDir, "reports", "growth-evidence-snapshot.md");
 const weeklyReportPath = resolve(rootDir, "reports", "weekly-growth-review.md");
@@ -109,12 +110,46 @@ function registryFor(path, registry) {
   return registry.find((row) => row.url === path) ?? {};
 }
 
+function optionalCsv(path) {
+  if (!existsSync(path)) {
+    return [];
+  }
+  return parseCsv(read(path));
+}
+
+function evidenceStatusFor(path, source, searchEvidence) {
+  const rows = searchEvidence.filter((row) => row.source === source && row.page_path === path);
+  if (!rows.length) {
+    return "pending_export";
+  }
+
+  const impressions = rows.reduce((sum, row) => sum + Number(row.impressions || 0), 0);
+  const clicks = rows.reduce((sum, row) => sum + Number(row.clicks || 0), 0);
+
+  if (impressions > 0 || clicks > 0) {
+    return "imported_with_search_activity";
+  }
+
+  return "imported_no_activity";
+}
+
+function localDateString(date) {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(date);
+}
+
 const generatedAt = new Date().toISOString();
+const reportDate = localDateString(new Date(generatedAt));
 const routeDoc = JSON.parse(read(routesPath));
 const registry = parseCsv(read(registryPath));
 const actions = parseCsv(read(actionsPath));
 const technicalReport = read(technicalReportPath);
 const crawlerReport = read(crawlerReportPath);
+const searchEvidence = optionalCsv(searchEvidencePath);
 const technicalStatus = parseReportStatus(technicalReport);
 const crawlerStatus = parseReportStatus(crawlerReport);
 const technicalRoutes = parseTechnicalRoutes(technicalReport);
@@ -124,6 +159,9 @@ const routeRows = routeDoc.routes.map((route) => {
   const actionRow = routeActionFor(route.path, actions);
   const technical = technicalRoutes.get(route.path);
 
+  const gscStatus = evidenceStatusFor(route.path, "gsc", searchEvidence);
+  const bingStatus = evidenceStatusFor(route.path, "bing", searchEvidence);
+
   return {
     url: route.path,
     page_type: route.pageType,
@@ -132,8 +170,8 @@ const routeRows = routeDoc.routes.map((route) => {
     technical_seo_status: technical?.status ?? "not_checked",
     http_status: technical?.http ?? "not_checked",
     crawler_access_status: crawlerStatus === "pass" ? "site_pass" : crawlerStatus,
-    gsc_status: "pending_export",
-    bing_status: "pending_export",
+    gsc_status: gscStatus,
+    bing_status: bingStatus,
     ai_referral_status: "pending_endpoint_or_referral",
     onsite_event_status: "local_buffer_only",
     current_action: actionRow.current_action || "keep",
@@ -173,6 +211,8 @@ const summary = {
   crawlerStatus,
   pendingGsc: routeRows.filter((row) => row.gsc_status === "pending_export").length,
   pendingBing: routeRows.filter((row) => row.bing_status === "pending_export").length,
+  importedGsc: routeRows.filter((row) => row.gsc_status !== "pending_export").length,
+  importedBing: routeRows.filter((row) => row.bing_status !== "pending_export").length,
   localOnlyEvents: routeRows.filter((row) => row.onsite_event_status === "local_buffer_only").length
 };
 
@@ -208,6 +248,8 @@ const snapshotReport = [
   `- Crawler access status: ${summary.crawlerStatus}`,
   `- GSC status: pending export for ${summary.pendingGsc} routes`,
   `- Bing status: pending export for ${summary.pendingBing} routes`,
+  `- Imported GSC route evidence: ${summary.importedGsc}`,
+  `- Imported Bing route evidence: ${summary.importedBing}`,
   `- Onsite event status: local buffer only for ${summary.localOnlyEvents} routes`,
   "",
   "## Route Evidence Table",
@@ -227,7 +269,7 @@ const snapshotReport = [
 const weeklyReport = [
   "# Weekly Growth Review",
   "",
-  `- Date: ${generatedAt.slice(0, 10)}`,
+  `- Date: ${reportDate}`,
   "- Review type: production baseline evidence review",
   "- Decision: continue evidence collection; do not scale content clusters yet",
   "",
