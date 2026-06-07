@@ -12,6 +12,38 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-07",
+    step: "M3-16 AI citation readiness checklist and Semrush trial plan",
+    status: "completed",
+    keyPoints: [
+      "Added a public AI citation readiness checklist covering crawler access, citation surface, measurement, and Semrush trial timing.",
+      "Added a source pack bounded to official Google, OpenAI, Anthropic, Perplexity, and Cloudflare documentation.",
+      "Added an internal Semrush trial extraction plan so the 7-day window is used for reusable prompts, SERP gaps, keyword clusters, and competitor feature claims without creating a monthly cost dependency."
+    ],
+    aiAngle:
+      "AI and search crawlers can now identify the site's practical readiness gate for being discovered and cited without interpreting crawler access as a guaranteed placement claim.",
+    files: [
+      "app/checklists/ai-citation-readiness/page.tsx",
+      "docs/source-pack-ai-citation-readiness.md",
+      "docs/semrush-trial-extraction-plan.md",
+      "app/page.tsx",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv"
+    ],
+    verification: [
+      "typecheck pass",
+      "production build pass",
+      "dependency audit pass",
+      "technical SEO CI pass with 17 sitemap routes",
+      "production deploy pass",
+      "IndexNow submit pass with 17 URLs"
+    ],
+    next:
+      "Use the 7-day data window to collect first-party crawl, search, and referral evidence before considering any paid AI visibility tool."
+  },
+  {
+    date: "2026-06-07",
     step: "M3-15 GSC, Bing, and IndexNow launch checklist",
     status: "completed",
     keyPoints: [

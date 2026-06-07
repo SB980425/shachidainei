@@ -78,6 +78,15 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/checklists/ai-citation-readiness/",
+      "pageType": "checklist",
+      "template": "checklist",
+      "cluster": "ai_citation_readiness",
+      "index": true,
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/guides/ai-citation-grounding-metrics/",
       "pageType": "guide",
       "template": "guide",

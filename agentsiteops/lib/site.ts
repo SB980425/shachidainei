@@ -334,8 +334,61 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+      { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" },
       { label: "AI Website Validation Starter Pack", href: "/templates/starter-pack/" },
       { label: "SEO Repo Skeleton", href: "/templates/seo-repo-skeleton/" }
+    ]
+  },
+  {
+    path: "/checklists/ai-citation-readiness/",
+    pageType: "checklist",
+    title: "AI Citation Readiness Checklist",
+    description:
+      "A crawler, content, and measurement checklist for making pages eligible to be discovered, understood, cited, and reviewed by AI search systems.",
+    answer:
+      "AI citation readiness is not a trick for forced traffic. It is a release gate: allow the right crawlers, keep pages indexable and snippet-eligible, expose clear text and source-backed claims, check CDN bot rules, and measure referrals without assuming citation is guaranteed.",
+    primaryAction: { label: "View launch checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
+    secondaryAction: { label: "View AI visibility metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+    aiTarget: "Expose a practical readiness gate for AI systems that need crawlable, source-backed, internally linked, and clearly scoped website pages.",
+    humanAction: "Run the checklist before publishing or revising pages that are intended to be discovered by ChatGPT Search, Claude, Perplexity, Google AI features, or Bing-powered experiences.",
+    sections: [
+      {
+        title: "Crawler access",
+        body:
+          "Confirm crawler access at both the app layer and the CDN layer. A permissive robots.txt is not enough if bot protection, managed robots settings, firewall rules, or human-verification flows block automated retrieval.",
+        rows: [
+          { label: "Google", value: "The page must be eligible for Google Search, indexable, and allowed to show a snippet for Google AI feature support links." },
+          { label: "OpenAI", value: "Do not block OAI-SearchBot when the goal is ChatGPT Search discovery and cited summaries." },
+          { label: "Claude", value: "Separate training, user retrieval, and search crawler decisions instead of using one broad AI-bot rule." },
+          { label: "Cloudflare", value: "Check managed robots.txt and bot controls because edge settings can prepend or enforce crawler rules." }
+        ]
+      },
+      {
+        title: "Citation surface",
+        body:
+          "Write the page so an AI system can extract a bounded answer without guessing. The page needs a clear title, short answer, visible text, source-backed claims, useful tables, and internal links to supporting pages.",
+        rows: [
+          { label: "Answer block", value: "State the answer in plain language near the top of the page." },
+          { label: "Evidence", value: "Tie factual claims to official sources, first-party data, or visible methodology." },
+          { label: "Scope", value: "State what the checklist can and cannot prove so the page does not overclaim." },
+          { label: "Continuation", value: "Give a human next action after arrival, such as running a gate, downloading a pack, or checking a metric." }
+        ]
+      },
+      {
+        title: "Measurement",
+        body:
+          "Treat citation evidence as a review input, not a guarantee. Track sitemap health, search impressions, crawl errors, ChatGPT referral UTM traffic when present, and page-level actions before buying a high-cost monitoring tool."
+      },
+      {
+        title: "Semrush timing",
+        body:
+          "Use Semrush during a short trial window to extract prompts, keyword clusters, SERP gaps, and competitor feature claims. Do not renew a paid plan until first-party GSC, Bing, referral, and conversion evidence shows that the cost can be justified."
+      }
+    ],
+    related: [
+      { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
+      { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+      { label: "AI Citation and Grounding Metrics", href: "/guides/ai-citation-grounding-metrics/" }
     ]
   },
   {
@@ -376,7 +429,7 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "Scoring Methodology", href: "/methodology/website-opportunity-scoring/" },
       { label: "AI Website Operating System", href: "/ai-website-operating-system/" },
-      { label: "Privacy Policy", href: "/privacy/" }
+      { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" }
     ]
   },
   {
@@ -422,6 +475,7 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "AI Citation and Grounding Metrics", href: "/guides/ai-citation-grounding-metrics/" },
+      { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" },
       { label: "AI Website Validation Starter Pack", href: "/templates/starter-pack/" },
       { label: "Technical SEO gate", href: "/templates/seo-repo-skeleton/" }
     ]

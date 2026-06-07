@@ -33,6 +33,7 @@ export default function HomePage() {
       "/checklists/ai-content-quality-gate/",
       "/checklists/programmatic-seo-gate/",
       "/checklists/gsc-bing-indexnow-launch/",
+      "/checklists/ai-citation-readiness/",
       "/guides/small-website-ai-visibility-metrics/",
       "/guides/ai-citation-grounding-metrics/",
       "/methodology/website-opportunity-scoring/"

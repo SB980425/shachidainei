@@ -11,7 +11,7 @@ This note captures what AgentSiteOps should learn from AI visibility and SEO pla
 
 | Product | Positioning observed | Useful lesson | AgentSiteOps response |
 |---|---|---|---|
-| Semrush | SEO suite with AI search and content visibility messaging | Traditional SEO users still need dashboards, audits, gap analysis, and recommendations | Keep technical SEO checks and route-level decisions visible before expanding content |
+| Semrush | SEO suite with AI search and content visibility messaging | Traditional SEO users still need dashboards, audits, gap analysis, and recommendations | Use the trial window for reusable prompt, keyword, SERP, and competitor-feature exports; avoid paid renewal before revenue or first-party evidence |
 | AthenaHQ | AI search command center with monitoring, recommendations, citation intelligence, and content workflow | Larger teams buy cross-platform monitoring and action prioritization | Stay smaller: publish a practical operating pack for solo builders and small sites |
 | Peec AI | AI search analytics for marketing teams | Prompt-level visibility and competitor benchmarking are becoming expected | Track prompt and citation concepts, but avoid claiming live monitoring until data exists |
 | Otterly.ai | AI search monitoring and brand visibility tracking | Users want trend monitoring across AI engines | Build review templates first; add automated monitoring only after traffic and budget exist |
@@ -48,4 +48,5 @@ AgentSiteOps should not compete head-on as an AI visibility dashboard in phase o
 | AI Website Validation Starter Pack | Downloadable operating asset | build now |
 | AI visibility metrics for small websites | Explain metrics without dashboard claims | built |
 | GSC + Bing + IndexNow launch checklist | Capture launch workflow already proven | built |
-| AI citation readiness checklist | Turn citation theory into a simple page gate | build after metrics page |
+| AI citation readiness checklist | Turn citation theory into a simple page gate | built |
+| Semrush trial extraction plan | Use a short paid-tool window without creating recurring cost dependency | internal plan ready |
