@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "preview:static": "npx serve@latest out",
+    "indexnow:submit": "node scripts/submit-indexnow.mjs",
     "lint": "next lint",
     "seo:ci": "node scripts/technical-seo-ci.mjs",
     "typecheck": "tsc --noEmit"
