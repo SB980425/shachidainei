@@ -1,0 +1,10 @@
+"decision_id","date","decision","status","reason","next_review"
+"D001","2026-06-07","English-first public site","active","Best fit for global AI search, GitHub distribution, and developer buyers","Day 30 after launch"
+"D002","2026-06-07","AI website operating system positioning","active","Narrower than generic SEO and more connected to current assets","Day 30 after launch"
+"D003","2026-06-07","Audit service before template sales","active","Fastest plausible path to cover AI subscription cost before traffic scales","After first audit request"
+"D004","2026-06-07","Template bundle waitlist before paid checkout","active","Avoids payment/compliance overhead before demand evidence","After behavior signal"
+"D005","2026-06-07","Ads blocked in phase 1","active","Early ad yield is likely too low and adds compliance overhead","After 10000 monthly visits or day 90"
+"D006","2026-06-07","Affiliate links blocked until review","active","Commercial recommendations require disclosure and product evidence","After production privacy/disclosure update"
+"D007","2026-06-07","SaaS blocked until repeated paid demand","active","Avoids building recurring maintenance before revenue proof","After 3 paid audits or 10 template purchase intents"
+"D008","2026-06-07","30-day stop rule","active","Prevents cost expansion without evidence","Day 30 after launch"
+

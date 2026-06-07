@@ -1,0 +1,126 @@
+{
+  "site": {
+    "workingName": "AgentSiteOps",
+    "baseUrl": "https://agentsiteops.com",
+    "language": "en"
+  },
+  "routes": [
+    {
+      "path": "/",
+      "pageType": "home",
+      "template": "home",
+      "cluster": "ai_website_operating_system",
+      "index": true,
+      "priority": 1.0,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/ai-website-operating-system/",
+      "pageType": "pillar",
+      "template": "pillar",
+      "cluster": "ai_website_operating_system",
+      "index": true,
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/tools/website-opportunity-scorer/",
+      "pageType": "tool",
+      "template": "tool",
+      "cluster": "website_opportunity_scoring",
+      "index": true,
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/templates/seo-repo-skeleton/",
+      "pageType": "template",
+      "template": "template",
+      "cluster": "seo_repo_skeleton",
+      "index": true,
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/checklists/ai-content-quality-gate/",
+      "pageType": "checklist",
+      "template": "checklist",
+      "cluster": "ai_content_quality_gate",
+      "index": true,
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/checklists/programmatic-seo-gate/",
+      "pageType": "checklist",
+      "template": "checklist",
+      "cluster": "programmatic_seo_gate",
+      "index": true,
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/guides/ai-citation-grounding-metrics/",
+      "pageType": "guide",
+      "template": "guide",
+      "cluster": "ai_citation_grounding_metrics",
+      "index": true,
+      "priority": 0.8,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/methodology/website-opportunity-scoring/",
+      "pageType": "methodology",
+      "template": "methodology",
+      "cluster": "website_opportunity_scoring",
+      "index": true,
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/authors/",
+      "pageType": "trust_page",
+      "template": "author_index",
+      "cluster": "trust_and_policy",
+      "index": true,
+      "priority": 0.5,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/editorial-policy/",
+      "pageType": "trust_page",
+      "template": "policy",
+      "cluster": "trust_and_policy",
+      "index": true,
+      "priority": 0.5,
+      "changefreq": "yearly"
+    },
+    {
+      "path": "/privacy/",
+      "pageType": "trust_page",
+      "template": "policy",
+      "cluster": "trust_and_policy",
+      "index": true,
+      "priority": 0.5,
+      "changefreq": "yearly"
+    },
+    {
+      "path": "/disclosure/",
+      "pageType": "trust_page",
+      "template": "policy",
+      "cluster": "trust_and_policy",
+      "index": true,
+      "priority": 0.5,
+      "changefreq": "yearly"
+    },
+    {
+      "path": "/updates/",
+      "pageType": "log",
+      "template": "update_log",
+      "cluster": "trust_and_policy",
+      "index": true,
+      "priority": 0.7,
+      "changefreq": "weekly"
+    }
+  ]
+}

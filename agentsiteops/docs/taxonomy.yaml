@@ -1,0 +1,130 @@
+site:
+  working_name: "AgentSiteOps"
+  language: "en"
+  region: "global"
+  primary_site_type: "template_tool_method_library"
+  first_cluster: "ai_website_operating_system"
+
+clusters:
+  ai_website_operating_system:
+    label: "AI Website Operating System"
+    role: "pillar"
+    description: "A workflow that connects opportunity scoring, site blueprints, content gates, technical SEO, compliance boundaries, and review loops."
+    parent: null
+    priority: 1
+    index_default: true
+    children:
+      - website_opportunity_scoring
+      - seo_repo_skeleton
+      - ai_content_quality_gate
+      - programmatic_seo_gate
+      - ai_citation_grounding_metrics
+
+  website_opportunity_scoring:
+    label: "Website Opportunity Scoring"
+    role: "tool_and_method"
+    description: "A scoring model that decides whether a site direction should proceed, pilot, pivot, stop, or remain blocked."
+    parent: "ai_website_operating_system"
+    priority: 1
+    index_default: true
+    entities:
+      - niche
+      - keyword
+      - site_type
+      - monetization_model
+      - compliance_risk
+
+  seo_repo_skeleton:
+    label: "SEO Repo Skeleton"
+    role: "template"
+    description: "A repository structure for docs, data, checklists, routes, CI, reports, and issue tracking."
+    parent: "ai_website_operating_system"
+    priority: 1
+    index_default: true
+    entities:
+      - github_repo
+      - ci_gate
+      - route_registry
+      - page_template
+
+  ai_content_quality_gate:
+    label: "AI Content Quality Gate"
+    role: "checklist"
+    description: "A publishing gate that blocks unsourced, unoriginal, misleading, high-risk, or low-value AI-assisted content."
+    parent: "ai_website_operating_system"
+    priority: 1
+    index_default: true
+    entities:
+      - source_pack
+      - fact_check
+      - author
+      - reviewer
+      - publish_decision
+
+  programmatic_seo_gate:
+    label: "Programmatic SEO Gate"
+    role: "checklist"
+    description: "A pre-launch gate for batch pages, canonical rules, noindex policy, sitemap inclusion, and sample audits."
+    parent: "ai_website_operating_system"
+    priority: 1
+    index_default: true
+    entities:
+      - template
+      - data_source
+      - canonical
+      - sitemap
+      - noindex
+
+  ai_citation_grounding_metrics:
+    label: "AI Citation and Grounding Metrics"
+    role: "guide"
+    description: "A metrics guide for AI citations, grounding queries, cited URLs, Search Console data, crawler logs, and onsite actions."
+    parent: "ai_website_operating_system"
+    priority: 1
+    index_default: true
+    entities:
+      - ai_citation
+      - grounding_query
+      - cited_url
+      - gsc_query
+      - bing_webmaster_tools
+
+  trust_and_policy:
+    label: "Trust and Policy"
+    role: "trust_infrastructure"
+    description: "Author, editorial, privacy, disclosure, methodology, and update-log pages."
+    parent: null
+    priority: 1
+    index_default: true
+    children:
+      - authors
+      - editorial_policy
+      - privacy
+      - disclosure
+      - methodology
+
+page_types:
+  home:
+    index_default: true
+    update_frequency: "monthly"
+  pillar:
+    index_default: true
+    update_frequency: "monthly"
+  tool:
+    index_default: true
+    update_frequency: "biweekly"
+  template:
+    index_default: true
+    update_frequency: "monthly"
+  checklist:
+    index_default: true
+    update_frequency: "monthly"
+  guide:
+    index_default: true
+    update_frequency: "monthly"
+  methodology:
+    index_default: true
+    update_frequency: "when_model_changes"
+  trust_page:
+    index_default: true
+    update_frequency: "semiannual_or_policy_change"

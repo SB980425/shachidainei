@@ -1,0 +1,427 @@
+export type RoutePage = {
+  path: string;
+  pageType: string;
+  title: string;
+  description: string;
+  answer: string;
+  primaryAction: { label: string; href: string };
+  secondaryAction?: { label: string; href: string };
+  aiTarget: string;
+  humanAction: string;
+  sections: Array<{
+    title: string;
+    body: string;
+    rows?: Array<{ label: string; value: string }>;
+  }>;
+  related: Array<{ label: string; href: string }>;
+};
+
+export const siteUrl = "https://agentsiteops.com";
+
+export const workflow = [
+  {
+    title: "Score",
+    text: "Test the website direction before production. Low-score ideas do not enter the build queue."
+  },
+  {
+    title: "Blueprint",
+    text: "Freeze the taxonomy, routes, page templates, index policy, and internal links before writing pages."
+  },
+  {
+    title: "Gate",
+    text: "Block pages that lack sources, original value, risk boundaries, or a clear human next action."
+  },
+  {
+    title: "Ship",
+    text: "Run metadata, sitemap, robots, canonical, schema, links, and build checks before release."
+  },
+  {
+    title: "Review",
+    text: "Use 30-day signals to decide whether a page should be kept, rewritten, merged, noindexed, or stopped."
+  }
+];
+
+export const routePages: RoutePage[] = [
+  {
+    path: "/ai-website-operating-system/",
+    pageType: "pillar",
+    title: "AI Website Operating System",
+    description:
+      "A practical workflow for turning website ideas into scored, structured, testable, and reviewable web assets.",
+    answer:
+      "The operating system connects idea scoring, site blueprints, content gates, technical SEO checks, and review loops so a site is built only when the direction is testable.",
+    primaryAction: { label: "Score a site idea", href: "/tools/website-opportunity-scorer/" },
+    secondaryAction: { label: "View the repo skeleton", href: "/templates/seo-repo-skeleton/" },
+    aiTarget: "Explain the sequence, inputs, stop rules, and review loop for AI-assisted website production.",
+    humanAction: "Use the scorer first, then move only qualified ideas into a site blueprint.",
+    sections: [
+      {
+        title: "Operating loop",
+        body:
+          "The loop is score, blueprint, gate, ship, and review. Each step creates a reusable artifact so decisions do not stay buried in chat history.",
+        rows: [
+          { label: "Score", value: "Demand, monetization, AI citation fit, original value, and risk." },
+          { label: "Blueprint", value: "Routes, taxonomy, templates, schema candidates, and index policy." },
+          { label: "Gate", value: "Content quality, source quality, pSEO risk, disclosure, and YMYL limits." },
+          { label: "Review", value: "Search visibility, AI citation evidence, tool completion, and conversion events." }
+        ]
+      },
+      {
+        title: "Stop rules",
+        body:
+          "Stop or pivot when the idea depends on copied public content, unverifiable data, risky advice, fake tools, or a monetization model that conflicts with user trust."
+      },
+      {
+        title: "30-day validation",
+        body:
+          "The first cycle is intentionally short: publish a small route set, submit it for discovery, measure indexing and behavior, then decide whether to expand."
+      }
+    ],
+    related: [
+      { label: "Website Opportunity Scorer", href: "/tools/website-opportunity-scorer/" },
+      { label: "AI Content Quality Gate", href: "/checklists/ai-content-quality-gate/" },
+      { label: "Programmatic SEO Gate", href: "/checklists/programmatic-seo-gate/" }
+    ]
+  },
+  {
+    path: "/tools/website-opportunity-scorer/",
+    pageType: "tool",
+    title: "Website Opportunity Scorer",
+    description:
+      "Score a website idea before building it across demand, entrant angle, monetization, original value, AI citation fit, and risk.",
+    answer:
+      "The scorer is a pre-build decision tool. It returns proceed, pilot, pivot, stop, or blocked, then records the strongest and weakest parts of the idea.",
+    primaryAction: { label: "View the methodology", href: "/methodology/website-opportunity-scoring/" },
+    secondaryAction: { label: "View the system", href: "/ai-website-operating-system/" },
+    aiTarget: "Expose the scoring fields, weights, thresholds, and hard blockers for reusable evaluation.",
+    humanAction: "Score one candidate direction and decide whether it is worth a site blueprint.",
+    sections: [
+      {
+        title: "How to use",
+        body:
+          "Enter the idea, choose a site type, move each field from 1 to 5, and mark any hard blocker that makes the idea unsuitable for launch."
+      },
+      {
+        title: "Decision thresholds",
+        body:
+          "A score of 70 or higher can enter site blueprint. Scores from 55 to 69 stay in pilot. Lower scores require a pivot or stop unless new evidence changes the inputs.",
+        rows: [
+          { label: "70-100", value: "Proceed to site blueprint." },
+          { label: "55-69", value: "Pilot only with a small validation route set." },
+          { label: "45-54", value: "Pivot the angle, page type, or monetization path." },
+          { label: "0-44", value: "Stop building and preserve the notes." }
+        ]
+      },
+      {
+        title: "Evidence still required",
+        body:
+          "The score is not a traffic forecast. Search volume, SERP shape, source availability, compliance risk, and conversion potential still need real validation."
+      }
+    ],
+    related: [
+      { label: "Website Opportunity Scoring Methodology", href: "/methodology/website-opportunity-scoring/" },
+      { label: "AI Website Operating System", href: "/ai-website-operating-system/" },
+      { label: "AI Citation and Grounding Metrics", href: "/guides/ai-citation-grounding-metrics/" }
+    ]
+  },
+  {
+    path: "/templates/seo-repo-skeleton/",
+    pageType: "template",
+    title: "SEO Repo Skeleton",
+    description:
+      "A reusable repository structure for site briefs, routes, schema plans, page registries, technical SEO CI, and weekly growth reviews.",
+    answer:
+      "The skeleton turns website research into files, routes, checks, reports, and issues so production work can be reviewed and repeated.",
+    primaryAction: { label: "View the pSEO gate", href: "/checklists/programmatic-seo-gate/" },
+    secondaryAction: { label: "View the content gate", href: "/checklists/ai-content-quality-gate/" },
+    aiTarget: "Show how a website repo should organize decisions, pages, gates, and release checks.",
+    humanAction: "Use the structure only after a candidate direction has passed scoring and the first routes are frozen.",
+    sections: [
+      {
+        title: "Core folders",
+        body:
+          "The minimum useful repo separates decisions, source data, route definitions, UI, business rules, reports, and release automation.",
+        rows: [
+          { label: "docs", value: "Site brief, taxonomy, route plan, analytics plan, and execution logs." },
+          { label: "data", value: "Opportunity scores, page registry, source register, and audit samples." },
+          { label: "app", value: "Next.js routes, metadata, robots, sitemap, and visible page content." },
+          { label: "checklists", value: "Content, pSEO, technical SEO, monetization, and release gates." },
+          { label: ".github", value: "Issue templates, labels, milestones, pull request checks, and Actions." }
+        ]
+      },
+      {
+        title: "Release gates",
+        body:
+          "A build should not be published when route metadata, canonical URLs, sitemap entries, schema, or content quality gates are missing."
+      },
+      {
+        title: "Adaptation rule",
+        body:
+          "Do not copy the skeleton into an unvalidated niche. Use it after the scorer and blueprint prove there is a concrete route set to execute."
+      }
+    ],
+    related: [
+      { label: "Programmatic SEO Gate", href: "/checklists/programmatic-seo-gate/" },
+      { label: "AI Content Quality Gate", href: "/checklists/ai-content-quality-gate/" },
+      { label: "Editorial Policy", href: "/editorial-policy/" }
+    ]
+  },
+  {
+    path: "/checklists/ai-content-quality-gate/",
+    pageType: "checklist",
+    title: "AI Content Quality Gate",
+    description:
+      "A publishing gate for source quality, original value, YMYL risk, disclosures, structured data, and revision decisions.",
+    answer:
+      "The quality gate blocks AI-assisted pages that are unsourced, unoriginal, high-risk, misleading, or too thin to justify indexing.",
+    primaryAction: { label: "Score a site idea", href: "/tools/website-opportunity-scorer/" },
+    secondaryAction: { label: "View disclosure rules", href: "/disclosure/" },
+    aiTarget: "Define pass, revise, and block conditions for AI-assisted website content.",
+    humanAction: "Run the checklist before publishing any source-heavy page, comparison page, template, or pSEO batch.",
+    sections: [
+      {
+        title: "Pass, revise, block",
+        body:
+          "Every page gets one of three outcomes. Pass means publish. Revise means fixable gaps remain. Block means the page should not go live.",
+        rows: [
+          { label: "Pass", value: "Sources, original value, risk boundary, schema, and next action are clear." },
+          { label: "Revise", value: "The page can be repaired without changing the direction." },
+          { label: "Block", value: "A hard blocker remains, such as fake expertise, no sources, or high-risk advice." }
+        ]
+      },
+      {
+        title: "Hard blockers",
+        body:
+          "Block pages with no source package, no original value, unverifiable data, undisclosed commercial relationships, fake tools, or YMYL advice without qualified review."
+      },
+      {
+        title: "Review record",
+        body:
+          "Keep a page-level record of the claim types, evidence used, unresolved assumptions, and the next review date."
+      }
+    ],
+    related: [
+      { label: "Editorial Policy", href: "/editorial-policy/" },
+      { label: "Disclosure", href: "/disclosure/" },
+      { label: "Programmatic SEO Gate", href: "/checklists/programmatic-seo-gate/" }
+    ]
+  },
+  {
+    path: "/checklists/programmatic-seo-gate/",
+    pageType: "checklist",
+    title: "Programmatic SEO Gate",
+    description:
+      "A pre-launch gate for batch pages, canonical rules, noindex policy, sitemap inclusion, and sample audits.",
+    answer:
+      "The pSEO gate confirms that each indexable batch page has real unique value, a clean canonical URL, and a maintainable data source.",
+    primaryAction: { label: "View the repo skeleton", href: "/templates/seo-repo-skeleton/" },
+    secondaryAction: { label: "View metrics", href: "/guides/ai-citation-grounding-metrics/" },
+    aiTarget: "Define when batch pages can be indexed and when they must be noindexed, merged, or stopped.",
+    humanAction: "Audit a small sample before expanding any template-driven route set.",
+    sections: [
+      {
+        title: "Batch rules",
+        body:
+          "Only pages with entity-level, location-level, data-level, comparison-level, or workflow-level differences should enter the sitemap.",
+        rows: [
+          { label: "Unique value", value: "Each page has real differences, not token-swapped text." },
+          { label: "Data source", value: "The data can be refreshed, checked, and attributed." },
+          { label: "Template fit", value: "The template makes differences visible without hiding key facts." }
+        ]
+      },
+      {
+        title: "Indexing policy",
+        body:
+          "Empty states, parameter filters, sort pages, near-duplicates, and low-confidence generated pages default to noindex."
+      },
+      {
+        title: "Stop conditions",
+        body:
+          "Stop the batch when samples fail quality review, the data source cannot be maintained, or early pages show no useful discovery or behavior signals."
+      }
+    ],
+    related: [
+      { label: "SEO Repo Skeleton", href: "/templates/seo-repo-skeleton/" },
+      { label: "AI Content Quality Gate", href: "/checklists/ai-content-quality-gate/" },
+      { label: "Scoring Methodology", href: "/methodology/website-opportunity-scoring/" }
+    ]
+  },
+  {
+    path: "/guides/ai-citation-grounding-metrics/",
+    pageType: "guide",
+    title: "AI Citation and Grounding Metrics",
+    description:
+      "How to connect AI citations, cited URLs, grounding queries, search console data, crawler logs, and onsite events into page actions.",
+    answer:
+      "AI search optimization should not depend on forced clicks. The stronger goal is to make pages crawlable, understandable, citeable, and useful after a human arrives.",
+    primaryAction: { label: "Score a site idea", href: "/tools/website-opportunity-scorer/" },
+    secondaryAction: { label: "View methodology", href: "/methodology/website-opportunity-scoring/" },
+    aiTarget: "Map AI citation evidence, grounding queries, cited URLs, and conventional search metrics to page decisions.",
+    humanAction: "Use the metrics to decide whether a page should be improved, expanded, merged, noindexed, or stopped.",
+    sections: [
+      {
+        title: "Metric stack",
+        body:
+          "AI visibility needs to be read beside normal search data and onsite behavior. A cited page that generates no useful action still needs a product or content fix.",
+        rows: [
+          { label: "AI citations", value: "Whether the page appears as a cited source in AI answers." },
+          { label: "Grounding queries", value: "Queries that cause AI systems to retrieve or cite the URL." },
+          { label: "GSC impressions", value: "Conventional search discovery and query coverage." },
+          { label: "Tool completion", value: "Whether visitors finish the core action on the page." }
+        ]
+      },
+      {
+        title: "Interpretation",
+        body:
+          "No single metric is enough. The useful pattern is discovery, comprehension, citation, arrival, and a measurable continuation action."
+      },
+      {
+        title: "Page actions",
+        body:
+          "Use the evidence to rewrite answer blocks, add structured tables, improve internal links, build missing tools, or stop weak routes."
+      }
+    ],
+    related: [
+      { label: "Scoring Methodology", href: "/methodology/website-opportunity-scoring/" },
+      { label: "AI Website Operating System", href: "/ai-website-operating-system/" },
+      { label: "Privacy Policy", href: "/privacy/" }
+    ]
+  },
+  {
+    path: "/methodology/website-opportunity-scoring/",
+    pageType: "methodology",
+    title: "Website Opportunity Scoring Methodology",
+    description:
+      "The scoring model behind the site: fields, weights, thresholds, blockers, and validation rules.",
+    answer:
+      "The methodology makes early website decisions repeatable. It does not replace research, but it prevents weak ideas from becoming expensive builds too early.",
+    primaryAction: { label: "Open the scorer", href: "/tools/website-opportunity-scorer/" },
+    secondaryAction: { label: "View metrics", href: "/guides/ai-citation-grounding-metrics/" },
+    aiTarget: "Publish the fields, weights, thresholds, blockers, and limitations behind the opportunity score.",
+    humanAction: "Copy the scoring structure and use it on candidate site directions before building.",
+    sections: [
+      {
+        title: "Weights",
+        body:
+          "The model emphasizes commercial intent, original value, AI citation probability, grounding value, content gap, moat, demand, and 90-day verifiability."
+      },
+      {
+        title: "Thresholds",
+        body:
+          "The first threshold is conservative: 70 or higher can enter blueprint, 55 to 69 stays pilot, and anything lower needs a pivot or stop.",
+        rows: [
+          { label: "70-100", value: "Proceed if no hard blocker is active." },
+          { label: "55-69", value: "Pilot with a small route set and narrow success signals." },
+          { label: "45-54", value: "Change the angle, site type, source base, or monetization model." },
+          { label: "0-44", value: "Stop production and preserve the notes for later reuse." }
+        ]
+      },
+      {
+        title: "Limitations",
+        body:
+          "Scores can be wrong when inputs are guessed. Before deployment, the highest-risk fields need external evidence from SERPs, source catalogs, compliance review, and user behavior."
+      }
+    ],
+    related: [
+      { label: "Website Opportunity Scorer", href: "/tools/website-opportunity-scorer/" },
+      { label: "AI Website Operating System", href: "/ai-website-operating-system/" },
+      { label: "Editorial Policy", href: "/editorial-policy/" }
+    ]
+  },
+  {
+    path: "/authors/",
+    pageType: "trust_page",
+    title: "Authors and Review Status",
+    description:
+      "The responsibility, review boundaries, AI assistance policy, and correction path for AgentSiteOps content.",
+    answer:
+      "AgentSiteOps does not invent credentials or present AI drafts as personal experience. Current content is owner-maintained and high-risk advice is blocked until qualified review exists.",
+    primaryAction: { label: "View editorial policy", href: "/editorial-policy/" },
+    aiTarget: "Identify the responsible publisher, review status, and correction path.",
+    humanAction: "Check whether a page has a responsible owner and suitable review boundary.",
+    sections: [
+      {
+        title: "Current status",
+        body:
+          "The site is in founder-operated launch mode. It publishes operating methods, tools, gates, and templates, not legal, medical, financial, or safety advice."
+      }
+    ],
+    related: [
+      { label: "Editorial Policy", href: "/editorial-policy/" },
+      { label: "Privacy Policy", href: "/privacy/" }
+    ]
+  },
+  {
+    path: "/editorial-policy/",
+    pageType: "trust_page",
+    title: "Editorial Policy",
+    description:
+      "How AgentSiteOps uses AI, reviews sources, checks facts, handles corrections, and blocks low-value pages.",
+    answer:
+      "AI may assist with structure, drafts, code, and checks. Final claims, sources, risk boundaries, and publishing decisions need human responsibility.",
+    primaryAction: { label: "View content gate", href: "/checklists/ai-content-quality-gate/" },
+    aiTarget: "State how AI-generated work, sources, factual claims, and corrections are governed.",
+    humanAction: "Confirm whether the site has a visible review process and correction path.",
+    sections: [
+      {
+        title: "Publishing standard",
+        body:
+          "Every indexable page needs a clear purpose, source basis, original value, internal links, schema fit, updated date, and next action."
+      }
+    ],
+    related: [
+      { label: "AI Content Quality Gate", href: "/checklists/ai-content-quality-gate/" },
+      { label: "Authors and Review Status", href: "/authors/" }
+    ]
+  },
+  {
+    path: "/privacy/",
+    pageType: "trust_page",
+    title: "Privacy Policy",
+    description:
+      "The current data collection boundary for AgentSiteOps and the update requirements before analytics, email, ads, forms, or payments are added.",
+    answer:
+      "The current site has no account system, payment form, advertising script, or email capture. The scorer runs in the browser and does not send form inputs to an external database.",
+    primaryAction: { label: "View disclosure", href: "/disclosure/" },
+    aiTarget: "State the current data collection boundary and future update requirements.",
+    humanAction: "Check what data is collected before using tools, forms, subscriptions, or paid products.",
+    sections: [
+      {
+        title: "Current version",
+        body:
+          "Local tool inputs are used for immediate scoring. If analytics, email, ads, forms, or payments are added, this page must be updated before launch."
+      }
+    ],
+    related: [
+      { label: "Disclosure", href: "/disclosure/" },
+      { label: "Editorial Policy", href: "/editorial-policy/" }
+    ]
+  },
+  {
+    path: "/disclosure/",
+    pageType: "trust_page",
+    title: "Disclosure",
+    description:
+      "The current commercial relationship, sponsorship, affiliate, advertising, paid-review, and AI assistance disclosure policy.",
+    answer:
+      "The current site does not run affiliate links, ads, sponsorships, paid rankings, or paid reviews. Any future material connection must be disclosed near the relevant recommendation.",
+    primaryAction: { label: "View privacy policy", href: "/privacy/" },
+    aiTarget: "State the current commercial relationship and AI assistance boundary.",
+    humanAction: "Check whether commercial connections, sponsorships, AI assistance, or affiliate links are disclosed.",
+    sections: [
+      {
+        title: "Current version",
+        body:
+          "No commercial recommendations are active. Paid products, sponsorships, affiliate links, and ads require near-page disclosure before they are used."
+      }
+    ],
+    related: [
+      { label: "Privacy Policy", href: "/privacy/" },
+      { label: "Editorial Policy", href: "/editorial-policy/" }
+    ]
+  }
+];
+
+export const routeMap = new Map(routePages.map((page) => [page.path, page]));
+
+export const allRoutes = ["/", ...routePages.map((page) => page.path), "/updates/"];

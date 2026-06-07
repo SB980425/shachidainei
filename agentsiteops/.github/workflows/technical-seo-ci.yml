@@ -1,0 +1,81 @@
+name: technical-seo-ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: technical-seo-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    env:
+      SITE_AUDIT_BASE_URL: http://127.0.0.1:3000
+      SITE_PUBLIC_URL: https://agentsiteops.com
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check SEO CI script syntax
+        run: node --check scripts/technical-seo-ci.mjs
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Dependency audit
+        run: npm audit --audit-level=moderate
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build
+        run: npm run build
+
+      - name: Start local site
+        run: |
+          npm run start -- --hostname 127.0.0.1 --port 3000 > next-start.log 2>&1 &
+          echo $! > next-start.pid
+
+      - name: Wait for local site
+        run: |
+          for attempt in {1..45}; do
+            if curl -fsS "$SITE_AUDIT_BASE_URL" > /dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          cat next-start.log
+          exit 1
+
+      - name: Technical SEO CI
+        run: npm run seo:ci
+
+      - name: Upload SEO report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: technical-seo-ci-report
+          path: |
+            reports/technical-seo-ci.md
+            next-start.log
+          if-no-files-found: ignore
