@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-- The production site has 17 indexable routes with technical SEO passing.
+- The production site has 18 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.
 - The next operating step is to collect first-party evidence, not to add a large content batch.
@@ -18,7 +18,7 @@
 | Route registry | docs/routes.json | 18 routes registered |
 | Technical SEO | reports/technical-seo-ci.md | 18/18 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
-| IndexNow | latest command output | 17 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 18 URLs submitted successfully in current deployment cycle |
 | Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
 
 ## Unverified

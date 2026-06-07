@@ -9,6 +9,7 @@
     "preview:static": "npx serve@latest out",
     "crawler:audit": "node scripts/crawler-access-audit.mjs",
     "growth:snapshot": "node scripts/growth-evidence-snapshot.mjs",
+    "analytics:gate": "node scripts/analytics-endpoint-gate.mjs",
     "search:evidence": "node scripts/import-search-evidence.mjs",
     "indexnow:submit": "node scripts/submit-indexnow.mjs",
     "lint": "next lint",

@@ -36,9 +36,11 @@ jobs:
       - run: node --check scripts/crawler-access-audit.mjs
       - run: node --check scripts/growth-evidence-snapshot.mjs
       - run: node --check scripts/import-search-evidence.mjs
+      - run: node --check scripts/analytics-endpoint-gate.mjs
       - run: npm run typecheck
       - run: npm audit --audit-level=moderate
       - run: npx playwright install --with-deps chromium
+      - run: npm run analytics:gate
       - run: npm run search:evidence
       - run: npm run build
       - run: npx serve@latest out -l 3000 > serve-start.log 2>&1 &

@@ -12,6 +12,45 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-08",
+    step: "M3-21 Analytics endpoint compliance gate",
+    status: "completed",
+    keyPoints: [
+      "Added an analytics endpoint gate script that validates the future endpoint contract without enabling production event collection.",
+      "Rewrote the monetization and data collection compliance gate in English, disclosed Cloudflare-managed hosting analytics as a separate boundary, and kept external analytics, email, ads, affiliate, lead forms, and YMYL advice blocked until review.",
+      "Updated CI, privacy copy, analytics docs, and weekly snapshot generation so analytics activation cannot bypass privacy and evidence checks."
+    ],
+    aiAngle:
+      "AI and search systems can now distinguish local event readiness from real user-data collection; the site has a validation path but still does not claim onsite conversion evidence.",
+    files: [
+      "scripts/analytics-endpoint-gate.mjs",
+      "reports/analytics-endpoint-gate.md",
+      "checklists/monetization-compliance.md",
+      ".github/workflows/agentsiteops-ci.yml",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "scripts/growth-evidence-snapshot.mjs",
+      "reports/weekly-growth-review.md",
+      "lib/site.ts",
+      "package.json"
+    ],
+    verification: [
+      "analytics endpoint gate pass with 10 test cases",
+      "typecheck pass",
+      "dependency audit pass",
+      "production build pass",
+      "technical SEO CI pass with 18 sitemap routes",
+      "crawler access audit pass",
+      "search evidence baseline generated with waiting_for_exports status",
+      "growth snapshot generated 18 route rows",
+      "production deploy pass",
+      "IndexNow submit pass with 18 URLs",
+      "GitHub Actions gate configured for analytics:gate"
+    ],
+    next:
+      "Keep real analytics collection disabled until the endpoint, retention period, deletion path, and privacy page are approved."
+  },
+  {
+    date: "2026-06-08",
     step: "M3-20 Public evidence ledger",
     status: "completed",
     keyPoints: [

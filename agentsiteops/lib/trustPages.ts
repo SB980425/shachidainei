@@ -125,9 +125,9 @@ export const trustPages: Record<string, TrustPage> = {
     eyebrow: "Privacy boundary",
     h1: "Privacy Policy",
     summary:
-      "The current site has no account system, payment form, advertising script, email capture, or third-party analytics script. The scorer runs in the browser.",
+      "The current site has no account system, payment form, advertising script, or email capture. The scorer runs in the browser, and production hosting may include Cloudflare-managed analytics or edge logs.",
     decision:
-      "Current status: no sensitive personal data collection and no external analytics reporting. This page must be updated before analytics, email, ads, forms, or payments are enabled.",
+      "Current status: no sensitive personal data collection and no first-party analytics endpoint. Cloudflare-managed hosting analytics must remain disclosed and reviewed before any additional analytics, email, ads, forms, or payments are enabled.",
     jsonLdType: "WebPage",
     sections: [
       {
@@ -146,6 +146,16 @@ export const trustPages: Record<string, TrustPage> = {
           "The local event layer may store recent page, tool, export, and source-click events in browser memory and sessionStorage for debugging when no reporting endpoint is configured."
       },
       {
+        title: "Analytics endpoint gate",
+        body:
+          "A real first-party analytics endpoint is not enabled. Before activation, the endpoint must reject unknown events, sensitive payloads, stale timestamps, future timestamps, external page URLs, nested payload objects, and oversized bodies."
+      },
+      {
+        title: "Cloudflare hosting analytics",
+        body:
+          "Production pages may include Cloudflare-managed scripts, edge logs, or web analytics from the hosting layer. Those records are separate from the site event endpoint and should be reviewed in Cloudflare account settings."
+      },
+      {
         title: "Hosting logs",
         body:
           "A production host may create basic server or edge logs. The exact retention and processing boundaries depend on the deployment platform."
@@ -160,7 +170,7 @@ export const trustPages: Record<string, TrustPage> = {
       "Do not add data collection scripts without updating this page.",
       "Email capture must state purpose, frequency, and unsubscribe path.",
       "Forms must state purpose, sharing, retention, and follow-up boundaries.",
-      "Analytics endpoints, cookies, or third-party scripts require review before release.",
+      "Analytics endpoints, cookies, host-managed analytics, or third-party scripts require review before release.",
       "The privacy statement must match the actual code and service providers."
     ],
     sources: [

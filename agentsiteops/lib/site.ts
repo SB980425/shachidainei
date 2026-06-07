@@ -642,7 +642,12 @@ export const routePages: RoutePage[] = [
       {
         title: "Current version",
         body:
-          "Local tool inputs are used for immediate scoring. If analytics, email, ads, forms, or payments are added, this page must be updated before launch."
+          "Local tool inputs are used for immediate scoring. The current event layer stores only a short browser-local buffer unless an approved endpoint is configured. If analytics collection, email, ads, forms, or payments are added, this page must be updated before launch."
+      },
+      {
+        title: "Analytics endpoint gate",
+        body:
+          "A real analytics endpoint is not enabled. Before activation, the endpoint must reject unknown events, sensitive payloads, stale timestamps, future timestamps, external page URLs, nested payload objects, and oversized bodies."
       }
     ],
     related: [

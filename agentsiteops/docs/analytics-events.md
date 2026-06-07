@@ -6,6 +6,8 @@ Status: local event layer active; real endpoint disabled until privacy and stora
 
 The event layer records page and interaction events for release testing and future 30/60/90 day reviews. By default, events are stored only in browser memory and `sessionStorage`. Events are sent to a real endpoint only when `NEXT_PUBLIC_ANALYTICS_ENDPOINT` is configured.
 
+This file covers the first-party event layer only. Cloudflare-managed hosting analytics, edge logs, or injected hosting scripts are separate and must be reviewed through the privacy and compliance gate.
+
 ## Data Rules
 
 - Do not collect email, phone, account ID, payment data, IP address, cookie ID, device fingerprint, or raw user text.
@@ -60,4 +62,4 @@ Do not enable a real endpoint until:
 - `docs/analytics-endpoint-contract.md` has been implemented and tested.
 - Sensitive payload tests are rejected.
 - Unknown event names are rejected.
-- `npm run seo:ci`, `npm run crawler:audit`, and `npm run growth:snapshot` pass.
+- `npm run analytics:gate`, `npm run seo:ci`, `npm run crawler:audit`, and `npm run growth:snapshot` pass.

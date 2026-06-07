@@ -2,6 +2,8 @@
 
 Purpose: define the expected contract for the optional endpoint behind `NEXT_PUBLIC_ANALYTICS_ENDPOINT`. A real endpoint is not enabled yet.
 
+This contract does not govern Cloudflare-managed hosting analytics, edge logs, or injected hosting scripts.
+
 ## Endpoint Shape
 
 | Field | Value |
@@ -107,3 +109,4 @@ Do not enable endpoint until:
 - A test event is accepted and visible in a non-production test table.
 - A malformed event is rejected.
 - A sensitive payload test is rejected.
+- `npm run analytics:gate` passes.
