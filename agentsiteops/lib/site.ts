@@ -503,6 +503,7 @@ export const routePages: RoutePage[] = [
           { label: "Technical SEO", value: "The current release checks 18 sitemap routes with no blocking issues." },
           { label: "Crawler access", value: "Production crawler audit allows intended search and user-retrieval crawlers while keeping training crawler policy explicit." },
           { label: "GitHub CI", value: "The agentsiteops-ci workflow runs syntax checks, typecheck, dependency audit, production build, technical SEO CI, crawler audit, search evidence import, and growth snapshot." },
+          { label: "Production health", value: "The production health monitor checks apex/www behavior, sitemap, robots, IndexNow key, updates, evidence, and privacy boundary pages." },
           { label: "IndexNow", value: "The current production route list is submitted after deployment, with the response recorded in the update log." }
         ]
       },

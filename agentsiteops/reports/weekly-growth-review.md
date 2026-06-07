@@ -18,6 +18,7 @@
 | Route registry | docs/routes.json | 18 routes registered |
 | Technical SEO | reports/technical-seo-ci.md | 18/18 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
+| Production health | reports/production-health-monitor.md | pass |
 | IndexNow | latest command output | 18 URLs submitted successfully in current deployment cycle |
 | Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
 

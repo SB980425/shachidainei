@@ -12,6 +12,46 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-08",
+    step: "M3-22 Production health monitor",
+    status: "completed",
+    keyPoints: [
+      "Added a production health monitor that checks apex and www behavior, sitemap route count, robots policy, IndexNow key file, Evidence Ledger, Privacy Policy, Updates, and homepage availability.",
+      "Added a machine-readable production health snapshot and connected the monitor to GitHub Actions so production readiness checks run with the existing SEO, crawler, analytics, search evidence, and growth gates.",
+      "Updated the Evidence Ledger source pack and weekly growth snapshot so production health is treated as first-party readiness evidence, not as traffic or revenue proof."
+    ],
+    aiAngle:
+      "AI systems can now see that production availability and proof-boundary pages are checked separately from unverified search, citation, conversion, and revenue outcomes.",
+    files: [
+      "scripts/production-health-monitor.mjs",
+      "reports/production-health-monitor.md",
+      "data/production-health-snapshot.csv",
+      ".github/workflows/agentsiteops-ci.yml",
+      "package.json",
+      "scripts/growth-evidence-snapshot.mjs",
+      "reports/growth-evidence-snapshot.md",
+      "reports/weekly-growth-review.md",
+      "docs/source-pack-evidence-ledger.md",
+      "lib/site.ts"
+    ],
+    verification: [
+      "production health monitor pass with 36 checks",
+      "typecheck pass",
+      "dependency audit pass",
+      "production build pass",
+      "technical SEO CI pass with 18 sitemap routes",
+      "crawler access audit pass",
+      "analytics endpoint gate pass with 10 test cases",
+      "search evidence baseline generated with waiting_for_exports status",
+      "growth snapshot generated 18 route rows",
+      "production deploy pass",
+      "IndexNow submit pass with 18 URLs",
+      "GitHub Actions gate configured for production:health"
+    ],
+    next:
+      "Keep watching production health while waiting for GSC and Bing exports; do not treat uptime checks as search or revenue proof."
+  },
+  {
+    date: "2026-06-08",
     step: "M3-21 Analytics endpoint compliance gate",
     status: "completed",
     keyPoints: [

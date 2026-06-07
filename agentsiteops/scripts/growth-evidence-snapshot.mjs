@@ -8,6 +8,7 @@ const registryPath = resolve(rootDir, "docs", "page-registry.csv");
 const actionsPath = resolve(rootDir, "data", "page-review-actions.csv");
 const technicalReportPath = resolve(rootDir, "reports", "technical-seo-ci.md");
 const crawlerReportPath = resolve(rootDir, "reports", "crawler-access-audit.md");
+const productionHealthReportPath = resolve(rootDir, "reports", "production-health-monitor.md");
 const searchEvidencePath = resolve(rootDir, "data", "search-evidence-normalized.csv");
 const snapshotCsvPath = resolve(rootDir, "data", "growth-evidence-snapshot.csv");
 const snapshotReportPath = resolve(rootDir, "reports", "growth-evidence-snapshot.md");
@@ -149,9 +150,15 @@ const registry = parseCsv(read(registryPath));
 const actions = parseCsv(read(actionsPath));
 const technicalReport = read(technicalReportPath);
 const crawlerReport = read(crawlerReportPath);
+const productionHealthReport = existsSync(productionHealthReportPath)
+  ? read(productionHealthReportPath)
+  : "";
 const searchEvidence = optionalCsv(searchEvidencePath);
 const technicalStatus = parseReportStatus(technicalReport);
 const crawlerStatus = parseReportStatus(crawlerReport);
+const productionHealthStatus = productionHealthReport
+  ? parseReportStatus(productionHealthReport)
+  : "not_checked";
 const technicalRoutes = parseTechnicalRoutes(technicalReport);
 
 const routeRows = routeDoc.routes.map((route) => {
@@ -209,6 +216,7 @@ const summary = {
   routes: routeRows.length,
   technicalPass: routeRows.filter((row) => row.technical_seo_status === "pass").length,
   crawlerStatus,
+  productionHealthStatus,
   pendingGsc: routeRows.filter((row) => row.gsc_status === "pending_export").length,
   pendingBing: routeRows.filter((row) => row.bing_status === "pending_export").length,
   importedGsc: routeRows.filter((row) => row.gsc_status !== "pending_export").length,
@@ -246,6 +254,7 @@ const snapshotReport = [
   `- Routes: ${summary.routes}`,
   `- Technical SEO pass routes: ${summary.technicalPass}`,
   `- Crawler access status: ${summary.crawlerStatus}`,
+  `- Production health status: ${summary.productionHealthStatus}`,
   `- GSC status: pending export for ${summary.pendingGsc} routes`,
   `- Bing status: pending export for ${summary.pendingBing} routes`,
   `- Imported GSC route evidence: ${summary.importedGsc}`,
@@ -287,6 +296,7 @@ const weeklyReport = [
   `| Route registry | docs/routes.json | ${summary.routes} routes registered |`,
   `| Technical SEO | reports/technical-seo-ci.md | ${summary.technicalPass}/${summary.routes} routes pass |`,
   `| Crawler access | reports/crawler-access-audit.md | ${summary.crawlerStatus} |`,
+  `| Production health | reports/production-health-monitor.md | ${summary.productionHealthStatus} |`,
   `| IndexNow | latest command output | ${summary.routes} URLs submitted successfully in current deployment cycle |`,
   "| Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |",
   "",

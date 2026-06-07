@@ -14,6 +14,7 @@ This source pack defines which project records may support claims on `/evidence/
 | Page registry | `docs/page-registry.csv` | Page purpose, search intent, schema candidate, and review ownership |
 | Technical SEO report | `reports/technical-seo-ci.md` | Local static route availability, canonical, metadata, JSON-LD, links, and mobile checks |
 | Crawler audit report | `reports/crawler-access-audit.md` | Production crawler access status for intended search and retrieval crawlers |
+| Production health monitor | `reports/production-health-monitor.md`, `data/production-health-snapshot.csv` | Production availability and proof-boundary page checks |
 | Search evidence report | `reports/search-evidence-import.md` | Whether GSC and Bing exports have been imported |
 | Growth snapshot | `reports/growth-evidence-snapshot.md`, `data/growth-evidence-snapshot.csv` | Route-level evidence status and pending evidence |
 | Update log | `lib/updateLog.ts`, `/updates/` | Deployment, IndexNow, CI, and verification chronology |

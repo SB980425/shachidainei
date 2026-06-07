@@ -37,6 +37,7 @@ jobs:
       - run: node --check scripts/growth-evidence-snapshot.mjs
       - run: node --check scripts/import-search-evidence.mjs
       - run: node --check scripts/analytics-endpoint-gate.mjs
+      - run: node --check scripts/production-health-monitor.mjs
       - run: npm run typecheck
       - run: npm audit --audit-level=moderate
       - run: npx playwright install --with-deps chromium
@@ -53,4 +54,5 @@ jobs:
           exit 1
       - run: npm run seo:ci
       - run: npm run crawler:audit
+      - run: npm run production:health
       - run: npm run growth:snapshot
