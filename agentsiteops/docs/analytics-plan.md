@@ -38,9 +38,10 @@ Current implementation:
 
 | Event | Trigger | Primary Pages |
 |---|---|---|
-| `tool_started` | User starts scorer | `/tools/website-opportunity-scorer/` |
-| `tool_completed` | User reaches scorer result | `/tools/website-opportunity-scorer/` |
-| `tool_result_export` | User copies/downloads score | `/tools/website-opportunity-scorer/` |
+| `tool_started` | User starts a local tool | Scorer, readiness tool, audit scope builder |
+| `tool_completed` | User reaches or copies a local tool result | Scorer, readiness tool, audit scope builder |
+| `tool_result_export` | User copies/downloads a tool result | Scorer, readiness tool, audit scope builder |
+| `audit_scope_builder_view` | User opens the local audit scope builder | `/tools/audit-scope-builder/` |
 | `template_copy_click` | User copies a template block | `/templates/seo-repo-skeleton/` |
 | `template_download_click` | User downloads template file | `/templates/seo-repo-skeleton/` |
 | `github_repo_click` | User clicks GitHub repo | Template/tool pages |
@@ -60,6 +61,7 @@ Current implementation:
 | `indexnow_cloudflare_pages_view` | User views IndexNow deployment workflow | `/guides/indexnow-cloudflare-pages/` |
 | `gsc_bing_sitemap_verification_view` | User views sitemap verification workflow | `/guides/gsc-bing-sitemap-verification/` |
 | `evidence_ledger_template_view` | User views proof-boundary template | `/templates/evidence-ledger-template/` |
+| `route_evidence_dashboard_view` | User views route-level evidence status | `/reports/route-evidence-dashboard/` |
 | `opportunity_scoring_template_view` | User views candidate scorecard template | `/templates/website-opportunity-scoring-template/` |
 | `scoring_methodology_view` | User views scoring fields and thresholds | `/methodology/website-opportunity-scoring/` |
 | `scoring_model_limit_view` | User views model limits and update rules | `/methodology/website-opportunity-scoring/` |

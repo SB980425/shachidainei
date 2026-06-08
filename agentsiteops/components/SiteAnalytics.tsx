@@ -31,6 +31,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/tools/ai-crawler-readiness/": ["ai_crawler_readiness_view"],
   "/examples/agentsiteops-self-audit/": ["sample_audit_view"],
   "/services/ai-website-opportunity-audit/": ["audit_intent_page_view"],
+  "/tools/audit-scope-builder/": ["audit_scope_builder_view"],
   "/templates/starter-pack/": ["starter_pack_view"],
   "/templates/seo-repo-skeleton/": ["repo_skeleton_matrix_view", "ci_gate_matrix_view"],
   "/checklists/gsc-bing-indexnow-launch/": ["search_console_launch_checklist_view"],
@@ -42,6 +43,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/guides/small-website-ai-visibility-metrics/": ["small_ai_visibility_metrics_view"],
   "/guides/ai-citation-grounding-metrics/": ["ai_metric_matrix_view", "review_window_view"],
   "/evidence/": ["evidence_ledger_view"],
+  "/reports/route-evidence-dashboard/": ["route_evidence_dashboard_view"],
   "/templates/evidence-ledger-template/": ["evidence_ledger_template_view"],
   "/templates/website-opportunity-scoring-template/": ["opportunity_scoring_template_view"],
   "/methodology/website-opportunity-scoring/": [

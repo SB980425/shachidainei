@@ -1,17 +1,17 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-08T00:45:23.927Z
+- Generated: 2026-06-08T06:45:28.328Z
 - Status: baseline_ready
-- Routes: 26
-- Technical SEO pass routes: 26
+- Routes: 28
+- Technical SEO pass routes: 28
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
-- GSC status: pending export for 26 routes
-- Bing status: pending export for 26 routes
+- GSC status: pending export for 28 routes
+- Bing status: pending export for 28 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 26 routes
+- Onsite event status: local buffer only for 28 routes
 
 ## Route Evidence Table
 
@@ -23,6 +23,7 @@
 | /tools/ai-crawler-readiness/ | tool | ai_crawler_readiness | pass | site_pass | keep | Measure readiness report copies and sample audit clicks before paid audit expansion |
 | /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
 | /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep checkout disabled until a real request, identity, terms, refund policy, and payment support exist |
+| /tools/audit-scope-builder/ | tool | commercial_validation | pass | site_pass | keep | Measure audit_scope_builder_view, tool_completed, and tool_result_export before adding forms or payment |
 | /templates/starter-pack/ | template | starter_pack | pass | site_pass | keep | Measure starter pack downloads and query exposure after analytics endpoint |
 | /templates/seo-repo-skeleton/ | template | seo_repo_skeleton | pass | site_pass | keep | Measure template_copy_click after real endpoint |
 | /checklists/ai-content-quality-gate/ | checklist | ai_content_quality_gate | pass | site_pass | keep | Measure checklist_copy_click after real endpoint |
@@ -35,6 +36,7 @@
 | /guides/ai-citation-grounding-metrics/ | guide | ai_citation_grounding_metrics | pass | site_pass | keep | Calibrate terms after Bing AI Performance data |
 | /guides/small-website-ai-visibility-metrics/ | guide | ai_visibility_metrics | pass | site_pass | keep | Add first GSC and Bing screenshots or exported metrics after data arrives |
 | /evidence/ | evidence | trust_and_policy | pass | site_pass | keep | Add GSC, Bing, AI referral, onsite event, and revenue evidence only after real exports or records exist |
+| /reports/route-evidence-dashboard/ | report | trust_and_policy | pass | site_pass | keep | Regenerate growth evidence snapshot after every route batch and compare pending evidence by page type |
 | /templates/evidence-ledger-template/ | template | trust_and_policy | pass | site_pass | keep | Measure template copy or source-link clicks before creating more evidence templates |
 | /templates/website-opportunity-scoring-template/ | template | website_opportunity_scoring | pass | site_pass | keep | Measure scorer usage and template copy before expanding scoring variants |
 | /methodology/website-opportunity-scoring/ | methodology | website_opportunity_scoring | pass | site_pass | keep | Update model only when evidence changes |

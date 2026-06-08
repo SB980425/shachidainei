@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-08T00:38:03.502Z
+- Generated: 2026-06-08T06:30:11.519Z
 - Status: pass
-- Checks: 21
+- Checks: 28
 - Blockers: 0
 
 ## Summary
@@ -15,6 +15,8 @@
 | app | pass | /examples/agentsiteops-self-audit/ has app page |
 | routes | pass | /services/ai-website-opportunity-audit/ registered in docs/routes.json |
 | app | pass | /services/ai-website-opportunity-audit/ has app page |
+| routes | pass | /tools/audit-scope-builder/ registered in docs/routes.json |
+| app | pass | /tools/audit-scope-builder/ has app page |
 | service_boundary | pass | service page states checkout is disabled |
 | service_boundary | pass | service page blocks ranking and revenue promises |
 | revenue_experiments | pass | audit price is intent test, not active checkout |
@@ -25,8 +27,13 @@
 | readiness_tool | pass | readiness tool has 13 weighted checks; found 13 |
 | readiness_tool | pass | readiness tool weights total 100 |
 | readiness_tool | pass | tool states evidence boundary |
+| audit_scope_builder | pass | scope builder states local-only boundary |
+| audit_scope_builder | pass | scope builder blocks request-submission claim |
+| audit_scope_builder | pass | scope page states no payment or account step |
+| audit_scope_builder | pass | scope builder has no network submit or payment integration |
 | mojibake | pass | components/CopyAction.tsx has no visible mojibake marker |
 | mojibake | pass | components/AICrawlerReadinessTool.tsx has no visible mojibake marker |
+| mojibake | pass | components/AuditScopeBuilder.tsx has no visible mojibake marker |
 | mojibake | pass | lib/site.ts has no visible mojibake marker |
 | mojibake | pass | docs/site-brief.md has no visible mojibake marker |
 | mojibake | pass | checklists/monetization-compliance.md has no visible mojibake marker |

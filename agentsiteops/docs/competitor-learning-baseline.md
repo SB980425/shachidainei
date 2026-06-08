@@ -54,4 +54,6 @@ AgentSiteOps should not compete head-on as an AI visibility dashboard in phase o
 | GSC and Bing sitemap verification | Turn early sitemap errors and success states into a troubleshooting guide | built |
 | Evidence Ledger Template | Make proof boundaries copy-ready instead of only descriptive | built |
 | Website Opportunity Scoring Template | Make candidate comparison copy-ready before more site directions are built | built |
+| Audit Scope Builder | Convert service interest into a local pre-payment scope draft without collecting form data | built |
+| Route Evidence Dashboard | Turn route evidence into a public table before claiming growth or monetization proof | built |
 | Semrush trial extraction plan | Use a short paid-tool window without creating recurring cost dependency | internal plan ready |

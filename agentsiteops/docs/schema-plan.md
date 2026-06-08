@@ -18,6 +18,7 @@
 | `/tools/ai-crawler-readiness/` | `SoftwareApplication` or `WebApplication`, `BreadcrumbList` | name, applicationCategory, operatingSystem, offers | Manual checklist tool; do not claim live crawl coverage. |
 | `/examples/agentsiteops-self-audit/` | `WebPage`, `BreadcrumbList` | name, dateModified, mainEntity if sample is expanded | Sample report must not imply customer proof. |
 | `/services/ai-website-opportunity-audit/` | `Service`, `WebPage`, `BreadcrumbList` | name, serviceType, provider, areaServed if enabled | Checkout is disabled; no aggregate ratings or fake offers. |
+| `/tools/audit-scope-builder/` | `SoftwareApplication` or `WebApplication`, `BreadcrumbList` | name, applicationCategory, operatingSystem | Local-only scope builder; no request submission, payment, account, or guarantee claims. |
 | `/templates/seo-repo-skeleton/` | `TechArticle`, `BreadcrumbList` | headline, dependencies, proficiencyLevel if useful | Use code/template examples visibly on page. |
 | `/checklists/ai-content-quality-gate/` | `HowTo`, `BreadcrumbList` | name, steps | Only use if checklist is presented as steps. |
 | `/checklists/programmatic-seo-gate/` | `HowTo`, `BreadcrumbList` | name, steps | Avoid false claims of guaranteed indexing. |
@@ -26,6 +27,7 @@
 | `/guides/gsc-bing-sitemap-verification/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, citations | Troubleshooting workflow for sitemap fetch and inspection states. |
 | `/guides/ai-citation-grounding-metrics/` | `Article`, `BreadcrumbList` | headline, author, dateModified, citations | Include source register on page. |
 | `/evidence/` | `CollectionPage`, `BreadcrumbList` | name, dateModified, hasPart | Public proof boundary for verified and pending evidence. |
+| `/reports/route-evidence-dashboard/` | `Dataset`, `WebPage`, `BreadcrumbList` | name, description, variableMeasured | Must match the generated route evidence snapshot and no-guarantee boundary. |
 | `/templates/evidence-ledger-template/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | Copy-ready proof worksheet; no fake downloads or claims. |
 | `/templates/website-opportunity-scoring-template/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | Copy-ready scoring worksheet tied to scorer and methodology. |
 | `/methodology/website-opportunity-scoring/` | `TechArticle`, `BreadcrumbList` | headline, author, dateModified | Explain scoring model and limitations. |

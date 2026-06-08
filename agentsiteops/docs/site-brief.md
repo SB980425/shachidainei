@@ -54,6 +54,7 @@ AI Website Operating System.
 | `/tools/ai-crawler-readiness/` | Tool | Score crawler, structure, evidence, and continuation readiness before audit requests. |
 | `/examples/agentsiteops-self-audit/` | Example | Show the audit format and current proof gaps before asking for payment. |
 | `/services/ai-website-opportunity-audit/` | Service | Collect manual audit intent without checkout or form storage. |
+| `/tools/audit-scope-builder/` | Tool | Build a local-only audit scope draft before forms, accounts, payment, or external request handling. |
 | `/templates/seo-repo-skeleton/` | Template | Provide the repo structure and release gate model. |
 | `/templates/evidence-ledger-template/` | Template | Provide a copy-ready proof ledger for verified and pending evidence. |
 | `/templates/website-opportunity-scoring-template/` | Template | Provide a copy-ready candidate scoring worksheet for 3-5 site directions. |
@@ -65,6 +66,7 @@ AI Website Operating System.
 | `/guides/ai-citation-grounding-metrics/` | Guide | Explain AI citation, grounding, GSC, Bing, and onsite signals. |
 | `/guides/small-website-ai-visibility-metrics/` | Guide | Connect crawl, sitemap, console, citation readiness, and continuation evidence. |
 | `/evidence/` | Evidence | Separate verified launch evidence from pending search, referral, usage, and revenue proof. |
+| `/reports/route-evidence-dashboard/` | Report | Show route-level technical, crawler, search, event, action, and next-evidence status. |
 | `/methodology/website-opportunity-scoring/` | Methodology | Publish the scoring fields, weights, thresholds, blockers, and limitations. |
 
 Trust and policy pages:

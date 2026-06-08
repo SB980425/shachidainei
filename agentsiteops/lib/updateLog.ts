@@ -12,6 +12,48 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-08",
+    step: "M3-26 Local evidence and scope tools",
+    status: "completed",
+    keyPoints: [
+      "Added a local-only Audit Scope Builder so visitors can create a bounded manual audit draft before accounts, forms, checkout, payment, identity checks, or external request handling are enabled.",
+      "Added a public Route Evidence Dashboard that reads the growth evidence snapshot and exposes route-level technical SEO, crawler access, GSC, Bing, onsite event, current action, and next-evidence status.",
+      "Expanded the site from 26 to 28 indexable routes while keeping GSC, Bing, AI referral, onsite event, customer, and revenue evidence marked as pending instead of claimed."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect a route-level evidence table and a pre-payment audit scope tool instead of inferring commercial readiness from a service page.",
+    files: [
+      "components/AuditScopeBuilder.tsx",
+      "app/tools/audit-scope-builder/page.tsx",
+      "app/reports/route-evidence-dashboard/page.tsx",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "docs/source-pack-audit-scope-builder.md",
+      "docs/source-pack-route-evidence-dashboard.md",
+      "reports/growth-evidence-snapshot.md",
+      "data/growth-evidence-snapshot.csv"
+    ],
+    verification: [
+      "typecheck pass",
+      "dependency audit pass",
+      "production build pass with 32 static output entries",
+      "analytics endpoint gate pass with 10 test cases",
+      "commercial validation gate pass with 28 checks",
+      "search evidence baseline generated with waiting_for_exports status",
+      "crawler access audit pass",
+      "technical SEO CI pass with 28 sitemap routes",
+      "Playwright UI check pass for desktop and mobile with 28 dashboard rows",
+      "growth snapshot generated 28 route rows",
+      "production deploy pass on Cloudflare Pages master branch",
+      "production health monitor pass",
+      "IndexNow submit pass with 28 URLs"
+    ],
+    next:
+      "Continue improving evidence quality, local diagnostic usefulness, and route-level review actions while keeping checkout and external data collection disabled until real demand and payment readiness exist."
+  },
+  {
+    date: "2026-06-08",
     step: "M3-25 Production deploy and IndexNow refresh",
     status: "completed",
     keyPoints: [

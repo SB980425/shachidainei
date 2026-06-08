@@ -44,6 +44,7 @@ Minimum v1 allowlist:
 - `ai_crawler_readiness_view`
 - `sample_audit_view`
 - `audit_intent_page_view`
+- `audit_scope_builder_view`
 - `starter_pack_view`
 - `search_console_launch_checklist_view`
 - `ai_citation_readiness_view`
@@ -63,6 +64,7 @@ Minimum v1 allowlist:
 - `ai_metric_matrix_view`
 - `review_window_view`
 - `evidence_ledger_template_view`
+- `route_evidence_dashboard_view`
 - `opportunity_scoring_template_view`
 - `scoring_methodology_view`
 - `scoring_model_limit_view`

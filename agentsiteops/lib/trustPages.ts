@@ -138,7 +138,7 @@ export const trustPages: Record<string, TrustPage> = {
       {
         title: "Local tool data",
         body:
-          "The website opportunity scorer uses form inputs in the browser for immediate calculation. The current version does not send those inputs to an external database."
+          "The website opportunity scorer, AI crawler readiness tool, and audit scope builder use form inputs in the browser for immediate calculation or copy-ready output. The current version does not send those inputs to an external database."
       },
       {
         title: "Local event buffer",

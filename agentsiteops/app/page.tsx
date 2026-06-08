@@ -31,6 +31,7 @@ export default function HomePage() {
       "/tools/ai-crawler-readiness/",
       "/examples/agentsiteops-self-audit/",
       "/services/ai-website-opportunity-audit/",
+      "/tools/audit-scope-builder/",
       "/templates/starter-pack/",
       "/templates/seo-repo-skeleton/",
       "/checklists/ai-content-quality-gate/",
@@ -43,6 +44,7 @@ export default function HomePage() {
       "/guides/small-website-ai-visibility-metrics/",
       "/guides/ai-citation-grounding-metrics/",
       "/evidence/",
+      "/reports/route-evidence-dashboard/",
       "/templates/evidence-ledger-template/",
       "/templates/website-opportunity-scoring-template/",
       "/methodology/website-opportunity-scoring/"

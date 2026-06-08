@@ -60,6 +60,15 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/tools/audit-scope-builder/",
+      "pageType": "tool",
+      "template": "tool",
+      "cluster": "commercial_validation",
+      "index": true,
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/templates/starter-pack/",
       "pageType": "template",
       "template": "template",
@@ -162,6 +171,15 @@
       "path": "/evidence/",
       "pageType": "evidence",
       "template": "evidence_ledger",
+      "cluster": "trust_and_policy",
+      "index": true,
+      "priority": 0.7,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/reports/route-evidence-dashboard/",
+      "pageType": "report",
+      "template": "dashboard",
       "cluster": "trust_and_policy",
       "index": true,
       "priority": 0.7,

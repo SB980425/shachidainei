@@ -27,6 +27,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `ai_crawler_readiness_view` | `/tools/ai-crawler-readiness/` load | `path` |
 | `sample_audit_view` | `/examples/agentsiteops-self-audit/` load | `path` |
 | `audit_intent_page_view` | `/services/ai-website-opportunity-audit/` load | `path` |
+| `audit_scope_builder_view` | `/tools/audit-scope-builder/` load | `path` |
 | `starter_pack_view` | `/templates/starter-pack/` load | `path` |
 | `repo_skeleton_matrix_view` | `/templates/seo-repo-skeleton/` load | `path` |
 | `ci_gate_matrix_view` | `/templates/seo-repo-skeleton/` load | `path` |
@@ -41,14 +42,15 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `ai_metric_matrix_view` | `/guides/ai-citation-grounding-metrics/` load | `path` |
 | `review_window_view` | `/guides/ai-citation-grounding-metrics/` load | `path` |
 | `evidence_ledger_view` | `/evidence/` load | `path` |
+| `route_evidence_dashboard_view` | `/reports/route-evidence-dashboard/` load | `path` |
 | `evidence_ledger_template_view` | `/templates/evidence-ledger-template/` load | `path` |
 | `opportunity_scoring_template_view` | `/templates/website-opportunity-scoring-template/` load | `path` |
 | `scoring_methodology_view` | `/methodology/website-opportunity-scoring/` load | `path` |
 | `scoring_model_limit_view` | `/methodology/website-opportunity-scoring/` load | `path` |
 | `trust_policy_view` | `/authors/`, `/editorial-policy/`, `/privacy/`, or `/disclosure/` load | `path` |
-| `tool_started` | First scorer input, slider, or hard-blocker change | `tool`, `trigger`, `score`, `decision` |
-| `tool_completed` | User copies or exports scorer result | `tool`, `export_method`, `score`, `decision` |
-| `tool_result_export` | User copies or downloads scorer result | `tool`, `export_method`, `score`, `decision` |
+| `tool_started` | First tool input, slider, evidence, or hard-blocker change | `tool`, `trigger`, `score`, `decision` |
+| `tool_completed` | User copies or exports a tool result | `tool`, `export_method`, `score`, `decision` |
+| `tool_result_export` | User copies or downloads a tool result | `tool`, `export_method`, `score`, `decision` |
 | `template_copy_click` | User copies a template block | `label`, `length` |
 | `checklist_copy_click` | User copies checklist content | `label`, `length` |
 | `cta_click` | Click on an element with `data-analytics-event` | `label`, `target`, `type` |

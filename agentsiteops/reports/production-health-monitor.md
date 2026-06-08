@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-08T00:43:51.434Z
+- Generated: 2026-06-08T06:43:59.087Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 36
+- Checks: 48
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 26 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 28 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -35,6 +35,18 @@
 | /evidence/ | pass | Verified evidence | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Pending evidence | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Claims not made | [link](https://agentsiteops.com/evidence/) |
+| /tools/audit-scope-builder/ | pass | HTTP 200 | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
+| /tools/audit-scope-builder/ | pass | HTML title exists | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
+| /tools/audit-scope-builder/ | pass | canonical points to production URL | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
+| /tools/audit-scope-builder/ | pass | Audit Scope Builder | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
+| /tools/audit-scope-builder/ | pass | local-only | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
+| /tools/audit-scope-builder/ | pass | No payment, account, identity | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
+| /reports/route-evidence-dashboard/ | pass | HTTP 200 | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
+| /reports/route-evidence-dashboard/ | pass | HTML title exists | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
+| /reports/route-evidence-dashboard/ | pass | canonical points to production URL | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
+| /reports/route-evidence-dashboard/ | pass | Route Evidence Dashboard | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
+| /reports/route-evidence-dashboard/ | pass | Route evidence table | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
+| /reports/route-evidence-dashboard/ | pass | GSC pending | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
 | /privacy/ | pass | HTTP 200 | [link](https://agentsiteops.com/privacy/) |
 | /privacy/ | pass | HTML title exists | [link](https://agentsiteops.com/privacy/) |
 | /privacy/ | pass | canonical points to production URL | [link](https://agentsiteops.com/privacy/) |
@@ -45,8 +57,8 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M3-25 Production deploy and IndexNow refresh | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | IndexNow submit pass with 26 URLs | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M3-26 Local evidence and scope tools | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | IndexNow submit pass with 28 URLs | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

@@ -22,6 +22,7 @@ This source pack defines which project records may support claims on `/evidence/
 | Search verification guides | `/guides/gsc-bing-sitemap-verification/`, `/guides/indexnow-cloudflare-pages/` | Submission, fetch, inspection, and no-guarantee boundaries for search setup |
 | Search evidence report | `reports/search-evidence-import.md` | Whether GSC and Bing exports have been imported |
 | Growth snapshot | `reports/growth-evidence-snapshot.md`, `data/growth-evidence-snapshot.csv` | Route-level evidence status and pending evidence |
+| Route Evidence Dashboard | `/reports/route-evidence-dashboard/` | Public route-level table for technical SEO, crawler access, search evidence status, onsite event status, action, and next evidence |
 | Update log | `lib/updateLog.ts`, `/updates/` | Deployment, IndexNow, CI, and verification chronology |
 | GitHub Actions | `agentsiteops-ci` workflow run status | Whether automated release checks pass |
 

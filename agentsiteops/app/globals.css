@@ -1392,6 +1392,224 @@ textarea {
   line-height: 1.55;
 }
 
+.scope-builder {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.scope-form,
+.scope-panel {
+  min-width: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 18px;
+}
+
+.scope-form {
+  display: grid;
+  gap: 14px;
+}
+
+.field-block {
+  display: grid;
+  gap: 8px;
+}
+
+.field-block span,
+.checkbox-row span {
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.field-block input,
+.field-block select,
+.field-block textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+  padding: 12px 13px;
+}
+
+.field-block textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.checkbox-row {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+}
+
+.checkbox-row input {
+  margin-top: 2px;
+}
+
+.scope-panel {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
+.scope-score {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--green-soft);
+  padding: 14px;
+}
+
+.scope-score span {
+  display: grid;
+  place-items: center;
+  min-height: 72px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--green);
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.scope-score strong {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.scope-score p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.scope-check-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.compact-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.compact-list li {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.dashboard-page {
+  padding: 44px clamp(18px, 5vw, 72px) 60px;
+}
+
+.dashboard-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: 24px;
+  align-items: start;
+  margin: 0 auto 24px;
+  max-width: 1180px;
+}
+
+.dashboard-hero h1 {
+  margin: 8px 0 12px;
+  max-width: 780px;
+  font-size: clamp(42px, 6vw, 78px);
+  letter-spacing: 0;
+  line-height: 0.96;
+}
+
+.dashboard-hero p {
+  max-width: 740px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.dashboard-summary {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 auto 26px;
+  max-width: 1180px;
+}
+
+.dashboard-summary article {
+  min-width: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 16px;
+}
+
+.dashboard-summary span {
+  display: block;
+  color: var(--green);
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.dashboard-summary strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.dashboard-table-section {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.route-evidence-table {
+  min-width: 1040px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.route-evidence-table th,
+.route-evidence-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.route-evidence-table thead th {
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.route-evidence-table tbody th {
+  max-width: 260px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.route-evidence-table td:last-child {
+  min-width: 260px;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -1426,10 +1644,12 @@ textarea {
   .hero,
   .page-grid,
   .scorer-layout,
+  .scope-builder,
   .pillar-hero,
   .split-section,
   .gate-hero,
   .updates-hero,
+  .dashboard-hero,
   .update-entry {
     grid-template-columns: 1fr;
   }
@@ -1445,6 +1665,7 @@ textarea {
   .repo-grid,
   .contract-grid,
   .loop-grid,
+  .dashboard-summary,
   .update-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1565,6 +1786,7 @@ textarea {
   .repo-grid,
   .contract-grid,
   .loop-grid,
+  .dashboard-summary,
   .update-grid {
     grid-template-columns: 1fr;
   }

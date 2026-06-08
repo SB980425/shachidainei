@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-08T00:45:11.281Z
+- Generated: 2026-06-08T06:45:18.045Z
 - Status: PASS
 - Base URL: https://agentsiteops.com
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 26
+- Sitemap routes: 28
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 26 |
+| Routes passed | 28 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -19,12 +19,13 @@
 
 | Route | Status | HTTP | Title | Canonical | JSON-LD | Links | Mobile | Issues |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| / | pass | 200 | AgentSiteOps | https://agentsiteops.com/ | 1 | 26 | pass | - |
+| / | pass | 200 | AgentSiteOps | https://agentsiteops.com/ | 1 | 28 | pass | - |
 | /ai-website-operating-system/ | pass | 200 | AI Website Operating System \| AgentSiteOps | https://agentsiteops.com/ai-website-operating-system/ | 1 | 14 | pass | - |
 | /tools/website-opportunity-scorer/ | pass | 200 | Website Opportunity Scorer \| AgentSiteOps | https://agentsiteops.com/tools/website-opportunity-scorer/ | 1 | 14 | pass | - |
 | /tools/ai-crawler-readiness/ | pass | 200 | AI Crawler Readiness Tool \| AgentSiteOps | https://agentsiteops.com/tools/ai-crawler-readiness/ | 1 | 15 | pass | - |
 | /examples/agentsiteops-self-audit/ | pass | 200 | AgentSiteOps Self-Audit Sample \| AgentSiteOps | https://agentsiteops.com/examples/agentsiteops-self-audit/ | 1 | 15 | pass | - |
-| /services/ai-website-opportunity-audit/ | pass | 200 | AI Website Opportunity Audit \| AgentSiteOps | https://agentsiteops.com/services/ai-website-opportunity-audit/ | 1 | 14 | pass | - |
+| /services/ai-website-opportunity-audit/ | pass | 200 | AI Website Opportunity Audit \| AgentSiteOps | https://agentsiteops.com/services/ai-website-opportunity-audit/ | 1 | 15 | pass | - |
+| /tools/audit-scope-builder/ | pass | 200 | Audit Scope Builder \| AgentSiteOps | https://agentsiteops.com/tools/audit-scope-builder/ | 1 | 16 | pass | - |
 | /templates/starter-pack/ | pass | 200 | AI Website Validation Starter Pack \| AgentSiteOps | https://agentsiteops.com/templates/starter-pack/ | 1 | 13 | pass | - |
 | /templates/seo-repo-skeleton/ | pass | 200 | SEO Repo Skeleton \| AgentSiteOps | https://agentsiteops.com/templates/seo-repo-skeleton/ | 1 | 14 | pass | - |
 | /checklists/ai-content-quality-gate/ | pass | 200 | AI Content Quality Gate \| AgentSiteOps | https://agentsiteops.com/checklists/ai-content-quality-gate/ | 1 | 14 | pass | - |
@@ -33,7 +34,8 @@
 | /checklists/ai-citation-readiness/ | pass | 200 | AI Citation Readiness Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/ai-citation-readiness/ | 1 | 16 | pass | - |
 | /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 15 | pass | - |
 | /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 15 | pass | - |
-| /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 17 | pass | - |
+| /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 18 | pass | - |
+| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 28 | pass | - |
 | /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 14 | pass | - |
 | /guides/ai-search-friendly-robots-txt/ | pass | 200 | AI Search Friendly Robots.txt \| AgentSiteOps | https://agentsiteops.com/guides/ai-search-friendly-robots-txt/ | 1 | 16 | pass | - |
 | /guides/indexnow-cloudflare-pages/ | pass | 200 | IndexNow on Cloudflare Pages \| AgentSiteOps | https://agentsiteops.com/guides/indexnow-cloudflare-pages/ | 1 | 16 | pass | - |

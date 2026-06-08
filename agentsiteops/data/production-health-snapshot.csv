@@ -1,37 +1,49 @@
 generated_at,scope,status,detail,url
-2026-06-08T00:43:51.434Z,www_redirect,pass,HTTP 301 to https://agentsiteops.com/,https://www.agentsiteops.com/
-2026-06-08T00:43:51.434Z,sitemap,pass,HTTP 200,https://agentsiteops.com/sitemap.xml
-2026-06-08T00:43:51.434Z,sitemap,pass,26 URLs match route registry,https://agentsiteops.com/sitemap.xml
-2026-06-08T00:43:51.434Z,robots,pass,HTTP 200,https://agentsiteops.com/robots.txt
-2026-06-08T00:43:51.434Z,robots,pass,OAI-SearchBot policy visible,https://agentsiteops.com/robots.txt
-2026-06-08T00:43:51.434Z,robots,pass,ChatGPT-User policy visible,https://agentsiteops.com/robots.txt
-2026-06-08T00:43:51.434Z,robots,pass,PerplexityBot policy visible,https://agentsiteops.com/robots.txt
-2026-06-08T00:43:51.434Z,robots,pass,GPTBot policy visible,https://agentsiteops.com/robots.txt
-2026-06-08T00:43:51.434Z,robots,pass,training crawler disallow visible,https://agentsiteops.com/robots.txt
-2026-06-08T00:43:51.434Z,robots,pass,sitemap pointer visible,https://agentsiteops.com/robots.txt
-2026-06-08T00:43:51.434Z,indexnow_key,pass,HTTP 200,https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt
-2026-06-08T00:43:51.434Z,indexnow_key,pass,key file content matches public key,https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt
-2026-06-08T00:43:51.434Z,/,pass,HTTP 200,https://agentsiteops.com/
-2026-06-08T00:43:51.434Z,/,pass,HTML title exists,https://agentsiteops.com/
-2026-06-08T00:43:51.434Z,/,pass,canonical points to production URL,https://agentsiteops.com/
-2026-06-08T00:43:51.434Z,/,pass,AI Website Operating System,https://agentsiteops.com/
-2026-06-08T00:43:51.434Z,/,pass,Score a site idea,https://agentsiteops.com/
-2026-06-08T00:43:51.434Z,/evidence/,pass,HTTP 200,https://agentsiteops.com/evidence/
-2026-06-08T00:43:51.434Z,/evidence/,pass,HTML title exists,https://agentsiteops.com/evidence/
-2026-06-08T00:43:51.434Z,/evidence/,pass,canonical points to production URL,https://agentsiteops.com/evidence/
-2026-06-08T00:43:51.434Z,/evidence/,pass,Evidence Ledger,https://agentsiteops.com/evidence/
-2026-06-08T00:43:51.434Z,/evidence/,pass,Verified evidence,https://agentsiteops.com/evidence/
-2026-06-08T00:43:51.434Z,/evidence/,pass,Pending evidence,https://agentsiteops.com/evidence/
-2026-06-08T00:43:51.434Z,/evidence/,pass,Claims not made,https://agentsiteops.com/evidence/
-2026-06-08T00:43:51.434Z,/privacy/,pass,HTTP 200,https://agentsiteops.com/privacy/
-2026-06-08T00:43:51.434Z,/privacy/,pass,HTML title exists,https://agentsiteops.com/privacy/
-2026-06-08T00:43:51.434Z,/privacy/,pass,canonical points to production URL,https://agentsiteops.com/privacy/
-2026-06-08T00:43:51.434Z,/privacy/,pass,Analytics endpoint gate,https://agentsiteops.com/privacy/
-2026-06-08T00:43:51.434Z,/privacy/,pass,Cloudflare hosting analytics,https://agentsiteops.com/privacy/
-2026-06-08T00:43:51.434Z,/privacy/,pass,not enabled,https://agentsiteops.com/privacy/
-2026-06-08T00:43:51.434Z,/updates/,pass,HTTP 200,https://agentsiteops.com/updates/
-2026-06-08T00:43:51.434Z,/updates/,pass,HTML title exists,https://agentsiteops.com/updates/
-2026-06-08T00:43:51.434Z,/updates/,pass,canonical points to production URL,https://agentsiteops.com/updates/
-2026-06-08T00:43:51.434Z,/updates/,pass,Updates,https://agentsiteops.com/updates/
-2026-06-08T00:43:51.434Z,/updates/,pass,M3-25 Production deploy and IndexNow refresh,https://agentsiteops.com/updates/
-2026-06-08T00:43:51.434Z,/updates/,pass,IndexNow submit pass with 26 URLs,https://agentsiteops.com/updates/
+2026-06-08T06:43:59.087Z,www_redirect,pass,HTTP 301 to https://agentsiteops.com/,https://www.agentsiteops.com/
+2026-06-08T06:43:59.087Z,sitemap,pass,HTTP 200,https://agentsiteops.com/sitemap.xml
+2026-06-08T06:43:59.087Z,sitemap,pass,28 URLs match route registry,https://agentsiteops.com/sitemap.xml
+2026-06-08T06:43:59.087Z,robots,pass,HTTP 200,https://agentsiteops.com/robots.txt
+2026-06-08T06:43:59.087Z,robots,pass,OAI-SearchBot policy visible,https://agentsiteops.com/robots.txt
+2026-06-08T06:43:59.087Z,robots,pass,ChatGPT-User policy visible,https://agentsiteops.com/robots.txt
+2026-06-08T06:43:59.087Z,robots,pass,PerplexityBot policy visible,https://agentsiteops.com/robots.txt
+2026-06-08T06:43:59.087Z,robots,pass,GPTBot policy visible,https://agentsiteops.com/robots.txt
+2026-06-08T06:43:59.087Z,robots,pass,training crawler disallow visible,https://agentsiteops.com/robots.txt
+2026-06-08T06:43:59.087Z,robots,pass,sitemap pointer visible,https://agentsiteops.com/robots.txt
+2026-06-08T06:43:59.087Z,indexnow_key,pass,HTTP 200,https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt
+2026-06-08T06:43:59.087Z,indexnow_key,pass,key file content matches public key,https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt
+2026-06-08T06:43:59.087Z,/,pass,HTTP 200,https://agentsiteops.com/
+2026-06-08T06:43:59.087Z,/,pass,HTML title exists,https://agentsiteops.com/
+2026-06-08T06:43:59.087Z,/,pass,canonical points to production URL,https://agentsiteops.com/
+2026-06-08T06:43:59.087Z,/,pass,AI Website Operating System,https://agentsiteops.com/
+2026-06-08T06:43:59.087Z,/,pass,Score a site idea,https://agentsiteops.com/
+2026-06-08T06:43:59.087Z,/evidence/,pass,HTTP 200,https://agentsiteops.com/evidence/
+2026-06-08T06:43:59.087Z,/evidence/,pass,HTML title exists,https://agentsiteops.com/evidence/
+2026-06-08T06:43:59.087Z,/evidence/,pass,canonical points to production URL,https://agentsiteops.com/evidence/
+2026-06-08T06:43:59.087Z,/evidence/,pass,Evidence Ledger,https://agentsiteops.com/evidence/
+2026-06-08T06:43:59.087Z,/evidence/,pass,Verified evidence,https://agentsiteops.com/evidence/
+2026-06-08T06:43:59.087Z,/evidence/,pass,Pending evidence,https://agentsiteops.com/evidence/
+2026-06-08T06:43:59.087Z,/evidence/,pass,Claims not made,https://agentsiteops.com/evidence/
+2026-06-08T06:43:59.087Z,/tools/audit-scope-builder/,pass,HTTP 200,https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-08T06:43:59.087Z,/tools/audit-scope-builder/,pass,HTML title exists,https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-08T06:43:59.087Z,/tools/audit-scope-builder/,pass,canonical points to production URL,https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-08T06:43:59.087Z,/tools/audit-scope-builder/,pass,Audit Scope Builder,https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-08T06:43:59.087Z,/tools/audit-scope-builder/,pass,local-only,https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-08T06:43:59.087Z,/tools/audit-scope-builder/,pass,"No payment, account, identity",https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-08T06:43:59.087Z,/reports/route-evidence-dashboard/,pass,HTTP 200,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-08T06:43:59.087Z,/reports/route-evidence-dashboard/,pass,HTML title exists,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-08T06:43:59.087Z,/reports/route-evidence-dashboard/,pass,canonical points to production URL,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-08T06:43:59.087Z,/reports/route-evidence-dashboard/,pass,Route Evidence Dashboard,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-08T06:43:59.087Z,/reports/route-evidence-dashboard/,pass,Route evidence table,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-08T06:43:59.087Z,/reports/route-evidence-dashboard/,pass,GSC pending,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-08T06:43:59.087Z,/privacy/,pass,HTTP 200,https://agentsiteops.com/privacy/
+2026-06-08T06:43:59.087Z,/privacy/,pass,HTML title exists,https://agentsiteops.com/privacy/
+2026-06-08T06:43:59.087Z,/privacy/,pass,canonical points to production URL,https://agentsiteops.com/privacy/
+2026-06-08T06:43:59.087Z,/privacy/,pass,Analytics endpoint gate,https://agentsiteops.com/privacy/
+2026-06-08T06:43:59.087Z,/privacy/,pass,Cloudflare hosting analytics,https://agentsiteops.com/privacy/
+2026-06-08T06:43:59.087Z,/privacy/,pass,not enabled,https://agentsiteops.com/privacy/
+2026-06-08T06:43:59.087Z,/updates/,pass,HTTP 200,https://agentsiteops.com/updates/
+2026-06-08T06:43:59.087Z,/updates/,pass,HTML title exists,https://agentsiteops.com/updates/
+2026-06-08T06:43:59.087Z,/updates/,pass,canonical points to production URL,https://agentsiteops.com/updates/
+2026-06-08T06:43:59.087Z,/updates/,pass,Updates,https://agentsiteops.com/updates/
+2026-06-08T06:43:59.087Z,/updates/,pass,M3-26 Local evidence and scope tools,https://agentsiteops.com/updates/
+2026-06-08T06:43:59.087Z,/updates/,pass,IndexNow submit pass with 28 URLs,https://agentsiteops.com/updates/

@@ -8,7 +8,8 @@ const reportPath = resolve(rootDir, "reports", "commercial-validation-gate.md");
 const requiredRoutes = [
   "/tools/ai-crawler-readiness/",
   "/examples/agentsiteops-self-audit/",
-  "/services/ai-website-opportunity-audit/"
+  "/services/ai-website-opportunity-audit/",
+  "/tools/audit-scope-builder/"
 ];
 
 const checks = [];
@@ -78,10 +79,28 @@ function checkReadinessTool() {
   addCheck("readiness_tool", hasBoundary ? "pass" : "fail", "tool states evidence boundary");
 }
 
+function checkAuditScopeBuilder() {
+  const tool = read("components/AuditScopeBuilder.tsx");
+  const page = read("app/tools/audit-scope-builder/page.tsx");
+
+  requireText("audit_scope_builder", tool, "local-only", "scope builder states local-only boundary");
+  requireText("audit_scope_builder", tool, "does not submit a request", "scope builder blocks request-submission claim");
+  requireText("audit_scope_builder", page, "No payment, account, identity, or external platform step is required.", "scope page states no payment or account step");
+
+  addCheck(
+    "audit_scope_builder",
+    !/fetch\(|XMLHttpRequest|sendBeacon|form action=|paypal|stripe|lemonsqueezy/i.test(tool)
+      ? "pass"
+      : "fail",
+    "scope builder has no network submit or payment integration"
+  );
+}
+
 function checkMojibake() {
   const files = [
     "components/CopyAction.tsx",
     "components/AICrawlerReadinessTool.tsx",
+    "components/AuditScopeBuilder.tsx",
     "lib/site.ts",
     "docs/site-brief.md",
     "checklists/monetization-compliance.md"
@@ -128,6 +147,7 @@ function main() {
   checkRoutes();
   checkCommercialBoundary();
   checkReadinessTool();
+  checkAuditScopeBuilder();
   checkMojibake();
 
   const status = renderReport(new Date().toISOString());

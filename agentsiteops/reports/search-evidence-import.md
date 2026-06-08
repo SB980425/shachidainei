@@ -1,6 +1,6 @@
 # Search Evidence Import
 
-- Generated: 2026-06-08T00:38:03.554Z
+- Generated: 2026-06-08T06:30:11.963Z
 - Status: waiting_for_exports
 - Import files found: 0
 - Normalized rows: 0
@@ -24,6 +24,7 @@
 | /tools/ai-crawler-readiness/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /examples/agentsiteops-self-audit/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /services/ai-website-opportunity-audit/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /tools/audit-scope-builder/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/starter-pack/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/seo-repo-skeleton/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /checklists/ai-content-quality-gate/ | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -36,6 +37,7 @@
 | /guides/ai-citation-grounding-metrics/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /guides/small-website-ai-visibility-metrics/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /evidence/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /reports/route-evidence-dashboard/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/evidence-ledger-template/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/website-opportunity-scoring-template/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /methodology/website-opportunity-scoring/ | 0 | 0 | 0 | 0 | 0 | 0 |

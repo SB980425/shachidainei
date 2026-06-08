@@ -260,7 +260,52 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "AgentSiteOps Self-Audit Sample", href: "/examples/agentsiteops-self-audit/" },
       { label: "AI Crawler Readiness Tool", href: "/tools/ai-crawler-readiness/" },
-      { label: "Website Opportunity Scorer", href: "/tools/website-opportunity-scorer/" }
+      { label: "Website Opportunity Scorer", href: "/tools/website-opportunity-scorer/" },
+      { label: "Audit Scope Builder", href: "/tools/audit-scope-builder/" }
+    ]
+  },
+  {
+    path: "/tools/audit-scope-builder/",
+    pageType: "tool",
+    title: "Audit Scope Builder",
+    description:
+      "A local-only tool for creating a copy-ready website audit scope draft before payment, accounts, identity checks, or external forms are enabled.",
+    answer:
+      "The audit scope builder turns a website URL, candidate idea, target market, evidence checklist, and decision need into a bounded audit request draft. It does not submit a request, collect payment, store personal data, or guarantee search, AI citation, traffic, conversion, revenue, legal, financial, or tax outcomes.",
+    primaryAction: { label: "Build a scope draft", href: "/tools/audit-scope-builder/" },
+    secondaryAction: { label: "View the sample audit", href: "/examples/agentsiteops-self-audit/" },
+    aiTarget:
+      "Expose the minimum evidence and decision fields needed before a manual website opportunity audit can be scoped.",
+    humanAction:
+      "Create a local scope draft, remove sensitive details, then use it only when a manual audit request path is ready.",
+    sections: [
+      {
+        title: "What it collects locally",
+        body:
+          "The tool uses browser-local fields for URL, candidate idea, target market, status, decision need, page count, evidence availability, and YMYL risk."
+      },
+      {
+        title: "Readiness logic",
+        body:
+          "A higher score means the audit question and evidence set are clearer. YMYL or regulated topics are blocked until qualified review exists.",
+        rows: [
+          { label: "70-100", value: "Scope is ready for manual review if no hard blocker exists." },
+          { label: "45-69", value: "More evidence is needed before a paid or manual audit is useful." },
+          { label: "0-44", value: "The site direction is not ready for an audit request." },
+          { label: "YMYL", value: "Blocked until qualified review and risk boundaries exist." }
+        ]
+      },
+      {
+        title: "Why this exists before checkout",
+        body:
+          "A new site should not enable checkout before the service scope, refund boundary, privacy handling, and payment path are operational. This page creates the pre-payment qualification layer."
+      }
+    ],
+    related: [
+      { label: "AI Website Opportunity Audit", href: "/services/ai-website-opportunity-audit/" },
+      { label: "AgentSiteOps Self-Audit Sample", href: "/examples/agentsiteops-self-audit/" },
+      { label: "Evidence Ledger", href: "/evidence/" },
+      { label: "Privacy Policy", href: "/privacy/" }
     ]
   },
   {
@@ -682,10 +727,49 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Updates", href: "/updates/" },
+      { label: "Route Evidence Dashboard", href: "/reports/route-evidence-dashboard/" },
       { label: "Evidence Ledger Template", href: "/templates/evidence-ledger-template/" },
       { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
       { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
       { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" }
+    ]
+  },
+  {
+    path: "/reports/route-evidence-dashboard/",
+    pageType: "report",
+    title: "Route Evidence Dashboard",
+    description:
+      "A public route-level dashboard showing technical SEO status, crawler access, search evidence status, onsite event status, current action, and next required evidence.",
+    answer:
+      "The route evidence dashboard converts the growth evidence snapshot into a visible table. It shows which pages are technically ready and which still need GSC, Bing, AI referral, onsite event, or revenue evidence before expansion claims can be made.",
+    primaryAction: { label: "View the evidence ledger", href: "/evidence/" },
+    secondaryAction: { label: "View update log", href: "/updates/" },
+    aiTarget:
+      "Expose route-level verified and pending evidence without inventing search, AI citation, traffic, conversion, or revenue outcomes.",
+    humanAction:
+      "Use the table to decide which page needs technical repair, content rewrite, evidence capture, consolidation, noindex, or expansion.",
+    sections: [
+      {
+        title: "Data source",
+        body:
+          "The dashboard reads the local growth evidence snapshot generated by the site review workflow. The table is only as current as the last local run and deployment."
+      },
+      {
+        title: "What it proves",
+        body:
+          "It can prove route inclusion, release checks, crawler audit status, and current evidence labels. It cannot prove indexing, ranking, AI citation, paid demand, or revenue."
+      },
+      {
+        title: "Next evidence",
+        body:
+          "Rows point to the smallest next evidence item: search console export, Bing data, AI referral example, onsite event, payment record, or a route-level decision."
+      }
+    ],
+    related: [
+      { label: "Evidence Ledger", href: "/evidence/" },
+      { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+      { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
+      { label: "Updates", href: "/updates/" }
     ]
   },
   {
