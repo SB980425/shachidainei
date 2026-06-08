@@ -1,6 +1,6 @@
 # Search Evidence Import
 
-- Generated: 2026-06-08T00:08:00.362Z
+- Generated: 2026-06-08T00:38:03.554Z
 - Status: waiting_for_exports
 - Import files found: 0
 - Normalized rows: 0
@@ -30,9 +30,14 @@
 | /checklists/programmatic-seo-gate/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /checklists/gsc-bing-indexnow-launch/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /checklists/ai-citation-readiness/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /guides/ai-search-friendly-robots-txt/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /guides/indexnow-cloudflare-pages/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /guides/gsc-bing-sitemap-verification/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /guides/ai-citation-grounding-metrics/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /guides/small-website-ai-visibility-metrics/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /evidence/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /templates/evidence-ledger-template/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /templates/website-opportunity-scoring-template/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /methodology/website-opportunity-scoring/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /authors/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /editorial-policy/ | 0 | 0 | 0 | 0 | 0 | 0 |

@@ -19,10 +19,13 @@ Internal links must help search crawlers, AI retrieval systems, and human reader
 | AI content gate | Editorial policy, disclosure, pSEO gate, and evidence ledger | Reinforce review, risk, and proof boundaries. |
 | pSEO gate | Repo template, methodology, and weekly review evidence | Keep batch pages governed by evidence. |
 | Launch checklist | AI citation readiness, small-site metrics, and evidence ledger | Connect search setup to measured outcomes. |
-| AI citation readiness | Crawler access audit, small-site metrics, and evidence ledger | Separate crawl eligibility from guaranteed citation claims. |
-| Metrics guides | Evidence ledger, weekly review, scorer, and launch checklist | Connect measurement language to route decisions. |
+| AI citation readiness | AI search friendly robots.txt, crawler access audit, small-site metrics, and evidence ledger | Separate crawl eligibility from guaranteed citation claims. |
+| Search verification guides | Launch checklist, IndexNow guide, sitemap verification guide, metrics, and evidence ledger | Keep submit, fetch, inspect, and evidence capture as separate steps. |
+| Metrics guides | Evidence ledger, weekly review, scorer, launch checklist, and sitemap verification | Connect measurement language to route decisions. |
 | Methodology | Tool, pillar, and evidence ledger | Explain score inputs and validation limits. |
-| Evidence ledger | Updates, metrics guide, launch checklist, and citation readiness | Show verified and pending evidence with next review paths. |
+| Evidence ledger | Evidence template, updates, metrics guide, launch checklist, and citation readiness | Show verified and pending evidence with next review paths. |
+| Evidence template | Evidence ledger, sample audit, updates, and metrics guide | Convert proof boundaries into a reusable worksheet. |
+| Scoring template | Scorer, methodology, pillar, and evidence template | Convert candidate selection into a reusable worksheet. |
 | Trust pages | Editorial policy, author page, privacy, disclosure, and evidence ledger | Build responsibility and correction paths. |
 | Updates | Evidence ledger, content gates, and launch checklist | Connect execution logs to current proof status. |
 
@@ -56,12 +59,17 @@ Every first-cluster page must include:
 | Worries AI content is low quality | `/checklists/ai-content-quality-gate/` |
 | Wants batch or programmatic pages | `/checklists/programmatic-seo-gate/` |
 | Needs search-console setup | `/checklists/gsc-bing-indexnow-launch/` |
+| Needs sitemap submission troubleshooting | `/guides/gsc-bing-sitemap-verification/` |
+| Needs IndexNow deployment steps | `/guides/indexnow-cloudflare-pages/` |
 | Wants AI citation readiness | `/checklists/ai-citation-readiness/` |
+| Wants crawler policy separation | `/guides/ai-search-friendly-robots-txt/` |
 | Wants a crawler-readiness score | `/tools/ai-crawler-readiness/` |
 | Wants to see the paid audit format first | `/examples/agentsiteops-self-audit/` |
 | Wants manual help after reviewing proof | `/services/ai-website-opportunity-audit/` |
 | Wants metrics and review rules | `/guides/small-website-ai-visibility-metrics/` |
 | Wants proof boundaries | `/evidence/` |
+| Wants a proof ledger worksheet | `/templates/evidence-ledger-template/` |
+| Wants a candidate scoring worksheet | `/templates/website-opportunity-scoring-template/` |
 
 ## Noindex Link Policy
 

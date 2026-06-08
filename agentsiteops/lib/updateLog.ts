@@ -12,6 +12,78 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-08",
+    step: "M3-25 Production deploy and IndexNow refresh",
+    status: "completed",
+    keyPoints: [
+      "Deployed the 26-route search-entry batch to the Cloudflare Pages production branch that serves agentsiteops.com.",
+      "Verified the production sitemap exposes 26 canonical URLs and spot-checked the five new pages with HTTP 200 responses.",
+      "Submitted the current production URL list through IndexNow and kept the result as notification evidence, not as an indexing, ranking, AI citation, traffic, conversion, or revenue claim."
+    ],
+    aiAngle:
+      "AI and search systems can now retrieve the new crawler, sitemap, IndexNow, evidence, and scoring-template pages from the production domain rather than only from local build output.",
+    files: [
+      "lib/updateLog.ts",
+      "reports/production-health-monitor.md",
+      "data/production-health-snapshot.csv",
+      "reports/growth-evidence-snapshot.md",
+      "data/growth-evidence-snapshot.csv"
+    ],
+    verification: [
+      "Cloudflare Pages deploy pass on production branch master",
+      "production custom domain verified with 26 sitemap URLs",
+      "five new production pages verified with HTTP 200",
+      "production health monitor pass with 36 checks",
+      "IndexNow submit pass with 26 URLs"
+    ],
+    next:
+      "Wait for Google Search Console and Bing Webmaster Tools exports; do not add another content batch or enable checkout until search, usage, or audit-intent evidence appears."
+  },
+  {
+    date: "2026-06-08",
+    step: "M3-24 Search-entry expansion",
+    status: "completed",
+    keyPoints: [
+      "Added five English search-entry pages focused on AI crawler policy, IndexNow on Cloudflare Pages, GSC/Bing sitemap verification, an evidence ledger template, and a website opportunity scoring template.",
+      "Kept the batch bounded to official-source and first-party evidence pages; no checkout, subscription, email capture, ads, affiliate links, or revenue claims were enabled.",
+      "Updated route registry, page registry, page review actions, internal linking, schema plan, analytics events, analytics endpoint contract, site brief, competitor baseline, source packs, and growth evidence snapshot inputs."
+    ],
+    aiAngle:
+      "AI search systems can now find narrower pages for crawler access, sitemap submission, verification, proof logging, and candidate scoring instead of relying on broad pillar pages.",
+    files: [
+      "app/guides/ai-search-friendly-robots-txt/page.tsx",
+      "app/guides/indexnow-cloudflare-pages/page.tsx",
+      "app/guides/gsc-bing-sitemap-verification/page.tsx",
+      "app/templates/evidence-ledger-template/page.tsx",
+      "app/templates/website-opportunity-scoring-template/page.tsx",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "docs/internal-linking.md",
+      "docs/schema-plan.md",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "docs/source-pack-ai-search-friendly-robots.md",
+      "docs/source-pack-indexnow-cloudflare-pages.md",
+      "docs/source-pack-gsc-bing-sitemap-verification.md",
+      "docs/source-pack-templates-evidence-and-scoring.md"
+    ],
+    verification: [
+      "typecheck pass",
+      "dependency audit pass",
+      "production build pass with 30 static output entries",
+      "analytics endpoint gate pass with 10 test cases",
+      "commercial validation gate pass with 21 checks",
+      "search evidence baseline generated with waiting_for_exports status",
+      "crawler access audit pass",
+      "technical SEO CI pass with 26 sitemap routes",
+      "growth snapshot generated 26 route rows"
+    ],
+    next:
+      "Deploy the 26-route batch to production, submit IndexNow, run production health, then wait for GSC and Bing export evidence before adding another content batch."
+  },
+  {
+    date: "2026-06-08",
     step: "M3-23 Commercial proof repair",
     status: "completed",
     keyPoints: [

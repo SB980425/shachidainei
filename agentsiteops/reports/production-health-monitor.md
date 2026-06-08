@@ -1,6 +1,6 @@
 # Production Health Monitor
 
-- Generated: 2026-06-08T00:18:16.173Z
+- Generated: 2026-06-08T00:43:51.434Z
 - Status: pass
 - Site: https://agentsiteops.com
 - Checks: 36
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 21 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 26 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -45,8 +45,8 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M3-21 Analytics endpoint compliance gate | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | IndexNow submit pass with 18 URLs | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M3-25 Production deploy and IndexNow refresh | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | IndexNow submit pass with 26 URLs | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

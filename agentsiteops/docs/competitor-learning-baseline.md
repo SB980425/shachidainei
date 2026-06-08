@@ -49,4 +49,9 @@ AgentSiteOps should not compete head-on as an AI visibility dashboard in phase o
 | AI visibility metrics for small websites | Explain metrics without dashboard claims | built |
 | GSC + Bing + IndexNow launch checklist | Capture launch workflow already proven | built |
 | AI citation readiness checklist | Turn citation theory into a simple page gate | built |
+| AI search friendly robots.txt | Capture crawler-policy separation and CDN/WAF risk | built |
+| IndexNow on Cloudflare Pages | Turn the production submission workflow into a reusable guide | built |
+| GSC and Bing sitemap verification | Turn early sitemap errors and success states into a troubleshooting guide | built |
+| Evidence Ledger Template | Make proof boundaries copy-ready instead of only descriptive | built |
+| Website Opportunity Scoring Template | Make candidate comparison copy-ready before more site directions are built | built |
 | Semrush trial extraction plan | Use a short paid-tool window without creating recurring cost dependency | internal plan ready |

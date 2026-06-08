@@ -17,6 +17,9 @@ This source pack defines which project records may support claims on `/evidence/
 | Production health monitor | `reports/production-health-monitor.md`, `data/production-health-snapshot.csv` | Production availability and proof-boundary page checks |
 | Commercial validation gate | `reports/commercial-validation-gate.md` | Whether service pages remain in intent-test mode with checkout and subscription blocked |
 | Self-audit sample | `/examples/agentsiteops-self-audit/` | Public audit format, current weaknesses, and no-checkout boundary |
+| Evidence Ledger Template | `/templates/evidence-ledger-template/` | Reusable proof-boundary structure for verified, pending, inferred, stale, blocked, and not-claimed evidence |
+| Website Opportunity Scoring Template | `/templates/website-opportunity-scoring-template/` | Reusable candidate scoring structure and hard-blocker model |
+| Search verification guides | `/guides/gsc-bing-sitemap-verification/`, `/guides/indexnow-cloudflare-pages/` | Submission, fetch, inspection, and no-guarantee boundaries for search setup |
 | Search evidence report | `reports/search-evidence-import.md` | Whether GSC and Bing exports have been imported |
 | Growth snapshot | `reports/growth-evidence-snapshot.md`, `data/growth-evidence-snapshot.csv` | Route-level evidence status and pending evidence |
 | Update log | `lib/updateLog.ts`, `/updates/` | Deployment, IndexNow, CI, and verification chronology |

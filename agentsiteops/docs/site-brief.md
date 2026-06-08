@@ -55,9 +55,16 @@ AI Website Operating System.
 | `/examples/agentsiteops-self-audit/` | Example | Show the audit format and current proof gaps before asking for payment. |
 | `/services/ai-website-opportunity-audit/` | Service | Collect manual audit intent without checkout or form storage. |
 | `/templates/seo-repo-skeleton/` | Template | Provide the repo structure and release gate model. |
+| `/templates/evidence-ledger-template/` | Template | Provide a copy-ready proof ledger for verified and pending evidence. |
+| `/templates/website-opportunity-scoring-template/` | Template | Provide a copy-ready candidate scoring worksheet for 3-5 site directions. |
 | `/checklists/ai-content-quality-gate/` | Checklist | Block weak AI-assisted content before publishing. |
 | `/checklists/programmatic-seo-gate/` | Checklist | Govern pSEO batches, canonical rules, noindex policy, and sample audits. |
+| `/guides/ai-search-friendly-robots-txt/` | Guide | Separate search, user-retrieval, and training crawler policies. |
+| `/guides/indexnow-cloudflare-pages/` | Guide | Explain the production-safe IndexNow key and changed-URL submission workflow. |
+| `/guides/gsc-bing-sitemap-verification/` | Guide | Troubleshoot sitemap fetch, processing, and sample URL inspection states. |
 | `/guides/ai-citation-grounding-metrics/` | Guide | Explain AI citation, grounding, GSC, Bing, and onsite signals. |
+| `/guides/small-website-ai-visibility-metrics/` | Guide | Connect crawl, sitemap, console, citation readiness, and continuation evidence. |
+| `/evidence/` | Evidence | Separate verified launch evidence from pending search, referral, usage, and revenue proof. |
 | `/methodology/website-opportunity-scoring/` | Methodology | Publish the scoring fields, weights, thresholds, blockers, and limitations. |
 
 Trust and policy pages:

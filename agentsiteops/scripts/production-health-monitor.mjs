@@ -238,7 +238,7 @@ async function main() {
   await checkPage("/", ["AI Website Operating System", "Score a site idea"]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Pending evidence", "Claims not made"]);
   await checkPage("/privacy/", ["Analytics endpoint gate", "Cloudflare hosting analytics", "not enabled"]);
-  await checkPage("/updates/", ["Updates", "M3-21 Analytics endpoint compliance gate", "IndexNow submit pass with 18 URLs"]);
+  await checkPage("/updates/", ["Updates", "M3-25 Production deploy and IndexNow refresh", "IndexNow submit pass with 26 URLs"]);
 
   const report = renderReport(generatedAt);
 

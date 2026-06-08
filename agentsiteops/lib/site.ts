@@ -121,6 +121,7 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "Website Opportunity Scoring Methodology", href: "/methodology/website-opportunity-scoring/" },
       { label: "AI Website Operating System", href: "/ai-website-operating-system/" },
+      { label: "Website Opportunity Scoring Template", href: "/templates/website-opportunity-scoring-template/" },
       { label: "AI Citation and Grounding Metrics", href: "/guides/ai-citation-grounding-metrics/" }
     ]
   },
@@ -158,6 +159,7 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "AgentSiteOps Self-Audit Sample", href: "/examples/agentsiteops-self-audit/" },
       { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" },
+      { label: "AI Search Friendly Robots.txt", href: "/guides/ai-search-friendly-robots-txt/" },
       { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" }
     ]
   },
@@ -471,6 +473,8 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+      { label: "GSC and Bing Sitemap Verification", href: "/guides/gsc-bing-sitemap-verification/" },
+      { label: "IndexNow on Cloudflare Pages", href: "/guides/indexnow-cloudflare-pages/" },
       { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" },
       { label: "AI Website Validation Starter Pack", href: "/templates/starter-pack/" },
       { label: "SEO Repo Skeleton", href: "/templates/seo-repo-skeleton/" }
@@ -524,6 +528,7 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
+      { label: "AI Search Friendly Robots.txt", href: "/guides/ai-search-friendly-robots-txt/" },
       { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
       { label: "AI Citation and Grounding Metrics", href: "/guides/ai-citation-grounding-metrics/" }
     ]
@@ -613,6 +618,7 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "AI Citation and Grounding Metrics", href: "/guides/ai-citation-grounding-metrics/" },
       { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" },
+      { label: "GSC and Bing Sitemap Verification", href: "/guides/gsc-bing-sitemap-verification/" },
       { label: "AI Website Validation Starter Pack", href: "/templates/starter-pack/" },
       { label: "Technical SEO gate", href: "/templates/seo-repo-skeleton/" }
     ]
@@ -637,7 +643,7 @@ export const routePages: RoutePage[] = [
         body:
           "These signals have been checked through local scripts, production requests, GitHub Actions, or production deployment output.",
         rows: [
-          { label: "Technical SEO", value: "The current release checks 18 sitemap routes with no blocking issues." },
+          { label: "Technical SEO", value: "The current release checks 26 sitemap routes with no blocking issues after the M3-24 search-entry expansion." },
           { label: "Crawler access", value: "Production crawler audit allows intended search and user-retrieval crawlers while keeping training crawler policy explicit." },
           { label: "GitHub CI", value: "The agentsiteops-ci workflow runs syntax checks, typecheck, dependency audit, production build, technical SEO CI, crawler audit, search evidence import, and growth snapshot." },
           { label: "Production health", value: "The production health monitor checks apex/www behavior, sitemap, robots, IndexNow key, updates, evidence, and privacy boundary pages." },
@@ -676,6 +682,7 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Updates", href: "/updates/" },
+      { label: "Evidence Ledger Template", href: "/templates/evidence-ledger-template/" },
       { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
       { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
       { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" }
@@ -719,7 +726,254 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "Website Opportunity Scorer", href: "/tools/website-opportunity-scorer/" },
       { label: "AI Website Operating System", href: "/ai-website-operating-system/" },
+      { label: "Website Opportunity Scoring Template", href: "/templates/website-opportunity-scoring-template/" },
       { label: "Editorial Policy", href: "/editorial-policy/" }
+    ]
+  },
+  {
+    path: "/guides/ai-search-friendly-robots-txt/",
+    pageType: "guide",
+    title: "AI Search Friendly Robots.txt",
+    description:
+      "A practical robots.txt and CDN review guide for allowing search and user-retrieval crawlers while blocking unwanted training crawlers.",
+    answer:
+      "An AI-search-friendly robots.txt does not mean allowing every AI bot. The safer pattern is to allow search and user-retrieval crawlers needed for discovery, keep pages indexable when citation is desired, block training crawlers separately, and verify CDN or WAF rules do not override the file.",
+    primaryAction: { label: "Run crawler readiness", href: "/tools/ai-crawler-readiness/" },
+    secondaryAction: { label: "View citation checklist", href: "/checklists/ai-citation-readiness/" },
+    aiTarget:
+      "Explain crawler policy separation for AI search discovery without implying that crawler access guarantees citation, traffic, or revenue.",
+    humanAction:
+      "Compare robots.txt, CDN bot controls, WAF rules, and sitemap access before publishing pages intended for AI search discovery.",
+    sections: [
+      {
+        title: "Crawler policy split",
+        body:
+          "Treat search discovery, user-directed retrieval, and model-training crawlers as separate policy lanes. A single broad AI-bot rule can accidentally block the crawler that a search or answer system needs.",
+        rows: [
+          { label: "Search discovery", value: "Allow crawlers used to discover and link public pages when the page is meant to appear in answers." },
+          { label: "User retrieval", value: "Review user-triggered fetchers separately because some providers document them apart from crawlers." },
+          { label: "Training", value: "Block training crawlers when training use is not desired; do not treat training access as required for search visibility." },
+          { label: "Noindex", value: "Use noindex or access control when a page should not appear; robots.txt alone can prevent crawlers from reading noindex." }
+        ]
+      },
+      {
+        title: "Minimum file checks",
+        body:
+          "The file should be reachable at /robots.txt, avoid a wildcard root disallow for indexable pages, point to the production sitemap, and name the intended AI search crawlers explicitly when policy clarity matters."
+      },
+      {
+        title: "CDN and WAF checks",
+        body:
+          "A crawler can pass robots.txt and still fail at the edge. Check bot-management settings, managed robots.txt features, firewall rules, challenge pages, and provider IP verification before treating crawler access as solved."
+      },
+      {
+        title: "Evidence boundary",
+        body:
+          "Crawler access is only an eligibility signal. It does not prove indexing, AI citation, search ranking, referral traffic, conversion, revenue, or payback."
+      }
+    ],
+    related: [
+      { label: "AI Crawler Readiness Tool", href: "/tools/ai-crawler-readiness/" },
+      { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" },
+      { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+      { label: "Evidence Ledger", href: "/evidence/" }
+    ]
+  },
+  {
+    path: "/guides/indexnow-cloudflare-pages/",
+    pageType: "guide",
+    title: "IndexNow on Cloudflare Pages",
+    description:
+      "A small-site workflow for hosting the IndexNow key file, submitting changed URLs after Cloudflare Pages deployment, and verifying acceptance in Bing.",
+    answer:
+      "For a Cloudflare Pages site, IndexNow needs a public key file on the same host, a list of changed canonical URLs, and a submission after production deployment. A 200 response confirms the notification was accepted, not that the URL will be crawled, indexed, ranked, cited, or monetized.",
+    primaryAction: { label: "View launch checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
+    secondaryAction: { label: "View evidence ledger", href: "/evidence/" },
+    aiTarget:
+      "Expose a deployment-safe IndexNow workflow with verification and no unsupported indexing guarantee.",
+    humanAction:
+      "Submit only changed production URLs after deployment, then record the response and wait for Bing or other participating engines to process the notification.",
+    sections: [
+      {
+        title: "Deployment sequence",
+        body:
+          "Place the key file in the public asset folder, build the static site, deploy to the production branch, verify the key file returns 200, then submit the canonical URL list."
+      },
+      {
+        title: "Submission payload",
+        body:
+          "Bulk submission sends the host, key, keyLocation, and urlList to the IndexNow API. The URL list should use production canonical URLs from the current sitemap, not preview URLs or stale drafts.",
+        rows: [
+          { label: "host", value: "agentsiteops.com for the apex production site." },
+          { label: "key", value: "The public IndexNow key already hosted as a text file." },
+          { label: "keyLocation", value: "The absolute URL of the hosted key file." },
+          { label: "urlList", value: "Only added, updated, or deleted URLs from the current production release." }
+        ]
+      },
+      {
+        title: "Failure handling",
+        body:
+          "A 400 usually indicates invalid format, 403 indicates a key problem, 422 can mean URLs do not belong to the host or schema, and 429 indicates rate pressure. Fix the cause instead of repeating the same request."
+      },
+      {
+        title: "Evidence boundary",
+        body:
+          "IndexNow makes participating engines aware of changes. It is not proof that engines will crawl, index, rank, cite, or send traffic to the submitted pages."
+      }
+    ],
+    related: [
+      { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
+      { label: "GSC and Bing Sitemap Verification", href: "/guides/gsc-bing-sitemap-verification/" },
+      { label: "Evidence Ledger", href: "/evidence/" },
+      { label: "Updates", href: "/updates/" }
+    ]
+  },
+  {
+    path: "/guides/gsc-bing-sitemap-verification/",
+    pageType: "guide",
+    title: "GSC and Bing Sitemap Verification",
+    description:
+      "A troubleshooting guide for Search Console and Bing sitemap submission, couldn't fetch errors, URL inspection, and post-submit evidence capture.",
+    answer:
+      "Sitemap verification is a file-fetch and discovery workflow, not an indexing guarantee. Submit the canonical sitemap after ownership verification, confirm it can be fetched, inspect sample URLs, then wait for first-party search evidence before expanding another page batch.",
+    primaryAction: { label: "View launch checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
+    secondaryAction: { label: "View metrics guide", href: "/guides/small-website-ai-visibility-metrics/" },
+    aiTarget:
+      "Provide a bounded sitemap verification path that separates fetch success from indexing, ranking, citation, and revenue claims.",
+    humanAction:
+      "Use the guide when GSC or Bing shows processing, success, or couldn't-fetch states after a sitemap submission.",
+    sections: [
+      {
+        title: "Before submission",
+        body:
+          "Confirm the property matches the canonical host, sitemap.xml returns 200, URLs are absolute canonical URLs, robots.txt allows sitemap fetches, and redirects do not change the host unexpectedly."
+      },
+      {
+        title: "Status meanings",
+        body:
+          "A success status means the sitemap was fetched and read. A couldn't-fetch status means the search system could not retrieve the sitemap file itself and needs a transport, robots, host, or access check.",
+        rows: [
+          { label: "Success", value: "The sitemap file was fetched and parsed; URL-level indexing still needs separate inspection." },
+          { label: "Could not fetch", value: "Check robots.txt blocks, HTTP status, host mismatch, manual action, redirects, and file availability." },
+          { label: "Processing", value: "Wait before resubmitting unless the URL, host, or file changed." },
+          { label: "URL inspection", value: "Use a few sample URLs to check crawl, canonical, and index signals after sitemap submission." }
+        ]
+      },
+      {
+        title: "Evidence capture",
+        body:
+          "Record submission date, sitemap URL, status, last-read date, sample URL inspection status, and any crawl errors. Do not treat a console screenshot as traffic or conversion proof."
+      },
+      {
+        title: "Expansion rule",
+        body:
+          "Do not add another content batch only because sitemap status is successful. Expand after at least one of these appears: indexed sample URLs, query impressions, crawl logs, tool usage, template copies, or audit intent."
+      }
+    ],
+    related: [
+      { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
+      { label: "IndexNow on Cloudflare Pages", href: "/guides/indexnow-cloudflare-pages/" },
+      { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+      { label: "Evidence Ledger", href: "/evidence/" }
+    ]
+  },
+  {
+    path: "/templates/evidence-ledger-template/",
+    pageType: "template",
+    title: "Evidence Ledger Template",
+    description:
+      "A copy-ready evidence ledger structure for separating verified website signals from pending search, AI referral, usage, and revenue claims.",
+    answer:
+      "An evidence ledger prevents a new website from converting technical readiness into unsupported growth claims. The template records verified signals, pending signals, source files, decision rules, and next evidence needed before expansion or monetization.",
+    primaryAction: { label: "View evidence ledger", href: "/evidence/" },
+    secondaryAction: { label: "View weekly review", href: "/guides/small-website-ai-visibility-metrics/" },
+    aiTarget:
+      "Provide a reusable proof-boundary template that AI systems and human reviewers can use without inventing missing traffic, citation, or revenue evidence.",
+    humanAction:
+      "Copy the ledger structure, fill it with first-party records, and block expansion when evidence is missing.",
+    sections: [
+      {
+        title: "Ledger fields",
+        body:
+          "Use one row per claim, signal, or route-level outcome. Each row should identify the source, status, owner, decision impact, and next evidence required.",
+        rows: [
+          { label: "Claim", value: "The exact statement the site wants to make." },
+          { label: "Status", value: "Verified, pending, inferred, stale, blocked, or not claimed." },
+          { label: "Source", value: "Report, console export, log, screenshot, customer request, payment record, or public page." },
+          { label: "Decision", value: "Keep, repair, rewrite, merge, noindex, pause monetization, or expand." }
+        ]
+      },
+      {
+        title: "Copy-ready table",
+        body:
+          "Claim | Status | Source | Date | Route | Decision impact | Next evidence. Keep the language exact enough that another reviewer can reject unsupported conclusions."
+      },
+      {
+        title: "Blocked claims",
+        body:
+          "Keep guaranteed indexing, guaranteed AI citation, forced AI traffic, recurring revenue, payback, and product-market fit out of public copy until first-party evidence supports them."
+      },
+      {
+        title: "Review rhythm",
+        body:
+          "Update the ledger after each deployment, search console export, crawler audit, analytics endpoint review, audit request, or payment record. Do not wait for a monthly summary when a blocker changes."
+      }
+    ],
+    related: [
+      { label: "Evidence Ledger", href: "/evidence/" },
+      { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+      { label: "AgentSiteOps Self-Audit Sample", href: "/examples/agentsiteops-self-audit/" },
+      { label: "Updates", href: "/updates/" }
+    ]
+  },
+  {
+    path: "/templates/website-opportunity-scoring-template/",
+    pageType: "template",
+    title: "Website Opportunity Scoring Template",
+    description:
+      "A copy-ready scoring template for comparing candidate website directions before building pages, tools, or payment flows.",
+    answer:
+      "The scoring template turns candidate website directions into a decision table. It is not a search-volume replacement or revenue forecast; it is a way to stop weak ideas before they consume build time.",
+    primaryAction: { label: "Open the scorer", href: "/tools/website-opportunity-scorer/" },
+    secondaryAction: { label: "View scoring methodology", href: "/methodology/website-opportunity-scoring/" },
+    aiTarget:
+      "Expose the candidate evaluation table, hard blockers, and proceed threshold for AI-assisted website planning.",
+    humanAction:
+      "Score 3-5 candidate directions, keep only ideas above the proceed threshold or with a clear pilot test, and record the evidence behind every high score.",
+    sections: [
+      {
+        title: "Template rows",
+        body:
+          "Use one row per candidate direction. Keep evidence separate from guesses so the same table can be reviewed after search and usage data arrives.",
+        rows: [
+          { label: "Candidate", value: "Short name and target user." },
+          { label: "Demand", value: "Known query, customer, forum, tool, or workflow evidence." },
+          { label: "Original value", value: "Tool, template, data, workflow, audit sample, or first-party proof." },
+          { label: "Risk", value: "YMYL, privacy, data-source, copyright, payment, or low-value-content blocker." },
+          { label: "Decision", value: "Proceed, pilot, pivot, stop, or blocked." }
+        ]
+      },
+      {
+        title: "Copy-ready table",
+        body:
+          "Candidate | User job | Demand evidence | Original value | AI/search fit | Monetization path | Risk blockers | 30-day proof | Score | Decision."
+      },
+      {
+        title: "Hard blockers",
+        body:
+          "Block ideas that depend on copied content, unverifiable claims, unsupported YMYL advice, unclear data rights, unsupported payment flow, or pages created only for a keyword."
+      },
+      {
+        title: "Expansion rule",
+        body:
+          "A candidate over 70 can enter a small blueprint and route batch. A candidate below 70 stays in research unless new evidence changes the score."
+      }
+    ],
+    related: [
+      { label: "Website Opportunity Scorer", href: "/tools/website-opportunity-scorer/" },
+      { label: "Website Opportunity Scoring Methodology", href: "/methodology/website-opportunity-scoring/" },
+      { label: "AI Website Operating System", href: "/ai-website-operating-system/" },
+      { label: "Evidence Ledger Template", href: "/templates/evidence-ledger-template/" }
     ]
   },
   {

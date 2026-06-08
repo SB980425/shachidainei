@@ -3,6 +3,8 @@
 Date: 2026-06-07
 Status: source pack for `/checklists/gsc-bing-indexnow-launch/`
 
+Related pages: `/guides/gsc-bing-sitemap-verification/` and `/guides/indexnow-cloudflare-pages/`
+
 ## Official Sources
 
 | Source | URL | Use in AgentSiteOps |
@@ -23,6 +25,7 @@ Status: source pack for `/checklists/gsc-bing-indexnow-launch/`
 - Bing can import verified GSC sites, but manual verification remains a fallback.
 - IndexNow acceptance means the notification was received; it does not guarantee indexing or ranking.
 - Canonical host consistency, robots, sitemap, HTTPS, and redirects must be checked before submitting URLs.
+- Detailed troubleshooting can be split into dedicated GSC/Bing sitemap verification and IndexNow deployment pages when the checklist becomes too broad.
 
 ## Claims Not Allowed
 

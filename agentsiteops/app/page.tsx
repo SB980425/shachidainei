@@ -37,9 +37,14 @@ export default function HomePage() {
       "/checklists/programmatic-seo-gate/",
       "/checklists/gsc-bing-indexnow-launch/",
       "/checklists/ai-citation-readiness/",
+      "/guides/ai-search-friendly-robots-txt/",
+      "/guides/indexnow-cloudflare-pages/",
+      "/guides/gsc-bing-sitemap-verification/",
       "/guides/small-website-ai-visibility-metrics/",
       "/guides/ai-citation-grounding-metrics/",
       "/evidence/",
+      "/templates/evidence-ledger-template/",
+      "/templates/website-opportunity-scoring-template/",
       "/methodology/website-opportunity-scoring/"
     ].includes(page.path)
   );

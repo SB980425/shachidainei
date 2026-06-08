@@ -21,8 +21,13 @@
 | `/templates/seo-repo-skeleton/` | `TechArticle`, `BreadcrumbList` | headline, dependencies, proficiencyLevel if useful | Use code/template examples visibly on page. |
 | `/checklists/ai-content-quality-gate/` | `HowTo`, `BreadcrumbList` | name, steps | Only use if checklist is presented as steps. |
 | `/checklists/programmatic-seo-gate/` | `HowTo`, `BreadcrumbList` | name, steps | Avoid false claims of guaranteed indexing. |
+| `/guides/ai-search-friendly-robots-txt/` | `Article`, `BreadcrumbList` | headline, author, dateModified, citations | Crawler policy guide; no claim of guaranteed citation. |
+| `/guides/indexnow-cloudflare-pages/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | Deployment workflow; no claim of indexing guarantee. |
+| `/guides/gsc-bing-sitemap-verification/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, citations | Troubleshooting workflow for sitemap fetch and inspection states. |
 | `/guides/ai-citation-grounding-metrics/` | `Article`, `BreadcrumbList` | headline, author, dateModified, citations | Include source register on page. |
 | `/evidence/` | `CollectionPage`, `BreadcrumbList` | name, dateModified, hasPart | Public proof boundary for verified and pending evidence. |
+| `/templates/evidence-ledger-template/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | Copy-ready proof worksheet; no fake downloads or claims. |
+| `/templates/website-opportunity-scoring-template/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | Copy-ready scoring worksheet tied to scorer and methodology. |
 | `/methodology/website-opportunity-scoring/` | `TechArticle`, `BreadcrumbList` | headline, author, dateModified | Explain scoring model and limitations. |
 | `/authors/` | `ProfilePage`, `Person`, `BreadcrumbList` | name, url, sameAs if available | Keep only true credentials. |
 | `/editorial-policy/` | `WebPage`, `BreadcrumbList` | name, dateModified | Explain AI content, fact-check, correction process. |

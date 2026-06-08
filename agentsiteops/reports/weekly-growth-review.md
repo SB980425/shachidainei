@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-- The production site has 21 indexable routes with technical SEO passing.
+- The production site has 26 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; checkout and subscription remain blocked until real demand and payment readiness exist.
 - GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.
@@ -16,12 +16,12 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 21 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 21/21 routes pass |
+| Route registry | docs/routes.json | 26 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 26/26 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
-| IndexNow | latest command output | 21 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 26 URLs submitted successfully in current deployment cycle |
 | Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
 
 ## Unverified
@@ -50,9 +50,14 @@
 | /checklists/programmatic-seo-gate/ | checklist | programmatic_seo_gate | pass | site_pass | keep | Review pSEO query exposure and checklist_copy_click at Day 30 |
 | /checklists/gsc-bing-indexnow-launch/ | checklist | search_console_launch | pass | site_pass | keep | Add GSC and Bing screenshots or exported status after 7 day data window |
 | /checklists/ai-citation-readiness/ | checklist | ai_citation_readiness | pass | site_pass | keep | Add crawler access evidence, Cloudflare bot setting screenshot, and first AI referral examples after data exists |
+| /guides/ai-search-friendly-robots-txt/ | guide | ai_crawler_readiness | pass | site_pass | keep | Add Cloudflare robots and WAF evidence only after account-level settings are exported or screenshotted |
+| /guides/indexnow-cloudflare-pages/ | guide | search_console_launch | pass | site_pass | keep | Record IndexNow response codes after each production deployment and compare with Bing crawl status |
+| /guides/gsc-bing-sitemap-verification/ | guide | search_console_launch | pass | site_pass | keep | Add GSC and Bing sitemap status evidence after first crawl window |
 | /guides/ai-citation-grounding-metrics/ | guide | ai_citation_grounding_metrics | pass | site_pass | keep | Calibrate terms after Bing AI Performance data |
 | /guides/small-website-ai-visibility-metrics/ | guide | ai_visibility_metrics | pass | site_pass | keep | Add first GSC and Bing screenshots or exported metrics after data arrives |
 | /evidence/ | evidence | trust_and_policy | pass | site_pass | keep | Add GSC, Bing, AI referral, onsite event, and revenue evidence only after real exports or records exist |
+| /templates/evidence-ledger-template/ | template | trust_and_policy | pass | site_pass | keep | Measure template copy or source-link clicks before creating more evidence templates |
+| /templates/website-opportunity-scoring-template/ | template | website_opportunity_scoring | pass | site_pass | keep | Measure scorer usage and template copy before expanding scoring variants |
 | /methodology/website-opportunity-scoring/ | methodology | website_opportunity_scoring | pass | site_pass | keep | Update model only when evidence changes |
 | /authors/ | trust_page | trust_and_policy | pass | site_pass | keep | Replace placeholder owner info before launch |
 | /editorial-policy/ | trust_page | trust_and_policy | pass | site_pass | keep | Recheck before content expansion |

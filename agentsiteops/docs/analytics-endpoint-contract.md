@@ -57,8 +57,13 @@ Minimum v1 allowlist:
 - `ci_gate_matrix_view`
 - `pseo_batch_audit_view`
 - `pseo_index_map_view`
+- `ai_search_robots_guide_view`
+- `indexnow_cloudflare_pages_view`
+- `gsc_bing_sitemap_verification_view`
 - `ai_metric_matrix_view`
 - `review_window_view`
+- `evidence_ledger_template_view`
+- `opportunity_scoring_template_view`
 - `scoring_methodology_view`
 - `scoring_model_limit_view`
 - `trust_policy_view`

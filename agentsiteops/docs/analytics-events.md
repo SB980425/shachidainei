@@ -34,10 +34,15 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `ai_citation_readiness_view` | `/checklists/ai-citation-readiness/` load | `path` |
 | `pseo_batch_audit_view` | `/checklists/programmatic-seo-gate/` load | `path` |
 | `pseo_index_map_view` | `/checklists/programmatic-seo-gate/` load | `path` |
+| `ai_search_robots_guide_view` | `/guides/ai-search-friendly-robots-txt/` load | `path` |
+| `indexnow_cloudflare_pages_view` | `/guides/indexnow-cloudflare-pages/` load | `path` |
+| `gsc_bing_sitemap_verification_view` | `/guides/gsc-bing-sitemap-verification/` load | `path` |
 | `small_ai_visibility_metrics_view` | `/guides/small-website-ai-visibility-metrics/` load | `path` |
 | `ai_metric_matrix_view` | `/guides/ai-citation-grounding-metrics/` load | `path` |
 | `review_window_view` | `/guides/ai-citation-grounding-metrics/` load | `path` |
 | `evidence_ledger_view` | `/evidence/` load | `path` |
+| `evidence_ledger_template_view` | `/templates/evidence-ledger-template/` load | `path` |
+| `opportunity_scoring_template_view` | `/templates/website-opportunity-scoring-template/` load | `path` |
 | `scoring_methodology_view` | `/methodology/website-opportunity-scoring/` load | `path` |
 | `scoring_model_limit_view` | `/methodology/website-opportunity-scoring/` load | `path` |
 | `trust_policy_view` | `/authors/`, `/editorial-policy/`, `/privacy/`, or `/disclosure/` load | `path` |

@@ -1,17 +1,17 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-08T00:18:29.626Z
+- Generated: 2026-06-08T00:45:23.927Z
 - Status: baseline_ready
-- Routes: 21
-- Technical SEO pass routes: 21
+- Routes: 26
+- Technical SEO pass routes: 26
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
-- GSC status: pending export for 21 routes
-- Bing status: pending export for 21 routes
+- GSC status: pending export for 26 routes
+- Bing status: pending export for 26 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 21 routes
+- Onsite event status: local buffer only for 26 routes
 
 ## Route Evidence Table
 
@@ -29,9 +29,14 @@
 | /checklists/programmatic-seo-gate/ | checklist | programmatic_seo_gate | pass | site_pass | keep | Review pSEO query exposure and checklist_copy_click at Day 30 |
 | /checklists/gsc-bing-indexnow-launch/ | checklist | search_console_launch | pass | site_pass | keep | Add GSC and Bing screenshots or exported status after 7 day data window |
 | /checklists/ai-citation-readiness/ | checklist | ai_citation_readiness | pass | site_pass | keep | Add crawler access evidence, Cloudflare bot setting screenshot, and first AI referral examples after data exists |
+| /guides/ai-search-friendly-robots-txt/ | guide | ai_crawler_readiness | pass | site_pass | keep | Add Cloudflare robots and WAF evidence only after account-level settings are exported or screenshotted |
+| /guides/indexnow-cloudflare-pages/ | guide | search_console_launch | pass | site_pass | keep | Record IndexNow response codes after each production deployment and compare with Bing crawl status |
+| /guides/gsc-bing-sitemap-verification/ | guide | search_console_launch | pass | site_pass | keep | Add GSC and Bing sitemap status evidence after first crawl window |
 | /guides/ai-citation-grounding-metrics/ | guide | ai_citation_grounding_metrics | pass | site_pass | keep | Calibrate terms after Bing AI Performance data |
 | /guides/small-website-ai-visibility-metrics/ | guide | ai_visibility_metrics | pass | site_pass | keep | Add first GSC and Bing screenshots or exported metrics after data arrives |
 | /evidence/ | evidence | trust_and_policy | pass | site_pass | keep | Add GSC, Bing, AI referral, onsite event, and revenue evidence only after real exports or records exist |
+| /templates/evidence-ledger-template/ | template | trust_and_policy | pass | site_pass | keep | Measure template copy or source-link clicks before creating more evidence templates |
+| /templates/website-opportunity-scoring-template/ | template | website_opportunity_scoring | pass | site_pass | keep | Measure scorer usage and template copy before expanding scoring variants |
 | /methodology/website-opportunity-scoring/ | methodology | website_opportunity_scoring | pass | site_pass | keep | Update model only when evidence changes |
 | /authors/ | trust_page | trust_and_policy | pass | site_pass | keep | Replace placeholder owner info before launch |
 | /editorial-policy/ | trust_page | trust_and_policy | pass | site_pass | keep | Recheck before content expansion |

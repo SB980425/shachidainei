@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-08T00:10:42.772Z
+- Generated: 2026-06-08T00:45:11.281Z
 - Status: PASS
-- Base URL: http://127.0.0.1:3002
+- Base URL: https://agentsiteops.com
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 21
+- Sitemap routes: 26
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 21 |
+| Routes passed | 26 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -19,7 +19,7 @@
 
 | Route | Status | HTTP | Title | Canonical | JSON-LD | Links | Mobile | Issues |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| / | pass | 200 | AgentSiteOps | https://agentsiteops.com/ | 1 | 21 | pass | - |
+| / | pass | 200 | AgentSiteOps | https://agentsiteops.com/ | 1 | 26 | pass | - |
 | /ai-website-operating-system/ | pass | 200 | AI Website Operating System \| AgentSiteOps | https://agentsiteops.com/ai-website-operating-system/ | 1 | 14 | pass | - |
 | /tools/website-opportunity-scorer/ | pass | 200 | Website Opportunity Scorer \| AgentSiteOps | https://agentsiteops.com/tools/website-opportunity-scorer/ | 1 | 14 | pass | - |
 | /tools/ai-crawler-readiness/ | pass | 200 | AI Crawler Readiness Tool \| AgentSiteOps | https://agentsiteops.com/tools/ai-crawler-readiness/ | 1 | 15 | pass | - |
@@ -29,12 +29,17 @@
 | /templates/seo-repo-skeleton/ | pass | 200 | SEO Repo Skeleton \| AgentSiteOps | https://agentsiteops.com/templates/seo-repo-skeleton/ | 1 | 14 | pass | - |
 | /checklists/ai-content-quality-gate/ | pass | 200 | AI Content Quality Gate \| AgentSiteOps | https://agentsiteops.com/checklists/ai-content-quality-gate/ | 1 | 14 | pass | - |
 | /checklists/programmatic-seo-gate/ | pass | 200 | Programmatic SEO Gate \| AgentSiteOps | https://agentsiteops.com/checklists/programmatic-seo-gate/ | 1 | 14 | pass | - |
-| /checklists/gsc-bing-indexnow-launch/ | pass | 200 | GSC, Bing, and IndexNow Launch Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/gsc-bing-indexnow-launch/ | 1 | 15 | pass | - |
-| /checklists/ai-citation-readiness/ | pass | 200 | AI Citation Readiness Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/ai-citation-readiness/ | 1 | 15 | pass | - |
+| /checklists/gsc-bing-indexnow-launch/ | pass | 200 | GSC, Bing, and IndexNow Launch Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/gsc-bing-indexnow-launch/ | 1 | 17 | pass | - |
+| /checklists/ai-citation-readiness/ | pass | 200 | AI Citation Readiness Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/ai-citation-readiness/ | 1 | 16 | pass | - |
 | /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 15 | pass | - |
-| /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 14 | pass | - |
-| /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 16 | pass | - |
-| /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 13 | pass | - |
+| /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 15 | pass | - |
+| /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 17 | pass | - |
+| /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 14 | pass | - |
+| /guides/ai-search-friendly-robots-txt/ | pass | 200 | AI Search Friendly Robots.txt \| AgentSiteOps | https://agentsiteops.com/guides/ai-search-friendly-robots-txt/ | 1 | 16 | pass | - |
+| /guides/indexnow-cloudflare-pages/ | pass | 200 | IndexNow on Cloudflare Pages \| AgentSiteOps | https://agentsiteops.com/guides/indexnow-cloudflare-pages/ | 1 | 16 | pass | - |
+| /guides/gsc-bing-sitemap-verification/ | pass | 200 | GSC and Bing Sitemap Verification \| AgentSiteOps | https://agentsiteops.com/guides/gsc-bing-sitemap-verification/ | 1 | 17 | pass | - |
+| /templates/evidence-ledger-template/ | pass | 200 | Evidence Ledger Template \| AgentSiteOps | https://agentsiteops.com/templates/evidence-ledger-template/ | 1 | 16 | pass | - |
+| /templates/website-opportunity-scoring-template/ | pass | 200 | Website Opportunity Scoring Template \| AgentSiteOps | https://agentsiteops.com/templates/website-opportunity-scoring-template/ | 1 | 15 | pass | - |
 | /authors/ | pass | 200 | Authors and Review Status \| AgentSiteOps | https://agentsiteops.com/authors/ | 1 | 13 | pass | - |
 | /editorial-policy/ | pass | 200 | Editorial Policy \| AgentSiteOps | https://agentsiteops.com/editorial-policy/ | 1 | 13 | pass | - |
 | /privacy/ | pass | 200 | Privacy Policy \| AgentSiteOps | https://agentsiteops.com/privacy/ | 1 | 13 | pass | - |

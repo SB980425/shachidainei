@@ -36,9 +36,14 @@ const pathViewEvents: Record<string, string[]> = {
   "/checklists/gsc-bing-indexnow-launch/": ["search_console_launch_checklist_view"],
   "/checklists/ai-citation-readiness/": ["ai_citation_readiness_view"],
   "/checklists/programmatic-seo-gate/": ["pseo_batch_audit_view", "pseo_index_map_view"],
+  "/guides/ai-search-friendly-robots-txt/": ["ai_search_robots_guide_view"],
+  "/guides/indexnow-cloudflare-pages/": ["indexnow_cloudflare_pages_view"],
+  "/guides/gsc-bing-sitemap-verification/": ["gsc_bing_sitemap_verification_view"],
   "/guides/small-website-ai-visibility-metrics/": ["small_ai_visibility_metrics_view"],
   "/guides/ai-citation-grounding-metrics/": ["ai_metric_matrix_view", "review_window_view"],
   "/evidence/": ["evidence_ledger_view"],
+  "/templates/evidence-ledger-template/": ["evidence_ledger_template_view"],
+  "/templates/website-opportunity-scoring-template/": ["opportunity_scoring_template_view"],
   "/methodology/website-opportunity-scoring/": [
     "scoring_methodology_view",
     "scoring_model_limit_view"

@@ -56,6 +56,11 @@ Current implementation:
 | `ci_gate_matrix_view` | User views technical SEO CI gate matrix | `/templates/seo-repo-skeleton/` |
 | `ai_metric_matrix_view` | User views AI/search metric matrix | `/guides/ai-citation-grounding-metrics/` |
 | `review_window_view` | User views 30/60/90 review rules | `/guides/ai-citation-grounding-metrics/` |
+| `ai_search_robots_guide_view` | User views crawler policy separation | `/guides/ai-search-friendly-robots-txt/` |
+| `indexnow_cloudflare_pages_view` | User views IndexNow deployment workflow | `/guides/indexnow-cloudflare-pages/` |
+| `gsc_bing_sitemap_verification_view` | User views sitemap verification workflow | `/guides/gsc-bing-sitemap-verification/` |
+| `evidence_ledger_template_view` | User views proof-boundary template | `/templates/evidence-ledger-template/` |
+| `opportunity_scoring_template_view` | User views candidate scorecard template | `/templates/website-opportunity-scoring-template/` |
 | `scoring_methodology_view` | User views scoring fields and thresholds | `/methodology/website-opportunity-scoring/` |
 | `scoring_model_limit_view` | User views model limits and update rules | `/methodology/website-opportunity-scoring/` |
 | `trust_policy_view` | User views author/editorial/privacy/disclosure policy | Trust pages |
