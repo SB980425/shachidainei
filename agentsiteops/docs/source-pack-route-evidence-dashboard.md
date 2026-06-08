@@ -16,6 +16,7 @@ This source pack defines which records support claims on `/reports/route-evidenc
 | Search evidence status | `reports/search-evidence-import.md`, `data/search-evidence-normalized.csv` | Pending until GSC and Bing exports are available |
 | Route-level action and next evidence | `data/page-review-actions.csv`, `data/growth-evidence-snapshot.csv` | Supported by route review action table and snapshot |
 | Public dashboard rendering | `app/reports/route-evidence-dashboard/page.tsx` | Supported by static page reading the snapshot |
+| Local filtering | `components/RouteEvidenceExplorer.tsx` | Supported as browser-local filtering; it does not change evidence status or collect raw search text |
 
 ## Disallowed Claims
 

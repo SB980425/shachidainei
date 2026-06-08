@@ -1572,6 +1572,53 @@ textarea {
   margin: 0 auto;
 }
 
+.route-evidence-explorer {
+  display: grid;
+  gap: 14px;
+}
+
+.dashboard-filters {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.4fr) repeat(3, minmax(160px, 0.8fr));
+  gap: 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 14px;
+}
+
+.filter-result-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 12px 14px;
+}
+
+.filter-result-bar strong,
+.filter-result-bar span {
+  overflow-wrap: anywhere;
+}
+
+.filter-result-bar span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.filter-result-bar button {
+  min-height: 40px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+  font-weight: 800;
+  padding: 0 12px;
+}
+
 .table-scroll {
   overflow-x: auto;
   border: 1px solid var(--line-strong);
@@ -1665,6 +1712,7 @@ textarea {
   .repo-grid,
   .contract-grid,
   .loop-grid,
+  .dashboard-filters,
   .dashboard-summary,
   .update-grid {
     grid-template-columns: 1fr 1fr;
@@ -1799,5 +1847,11 @@ textarea {
   .footer-links {
     margin-top: 18px;
     flex-wrap: wrap;
+  }
+
+  .dashboard-filters,
+  .filter-result-bar {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }

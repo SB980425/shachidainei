@@ -45,6 +45,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `review_window_view` | `/guides/ai-citation-grounding-metrics/` load | `path` |
 | `evidence_ledger_view` | `/evidence/` load | `path` |
 | `route_evidence_dashboard_view` | `/reports/route-evidence-dashboard/` load | `path` |
+| `route_evidence_filter_used` | User filters the route evidence dashboard | `filter_type`, `filter_value`, `has_query`, `visible_count` |
 | `evidence_ledger_template_view` | `/templates/evidence-ledger-template/` load | `path` |
 | `opportunity_scoring_template_view` | `/templates/website-opportunity-scoring-template/` load | `path` |
 | `scoring_methodology_view` | `/methodology/website-opportunity-scoring/` load | `path` |

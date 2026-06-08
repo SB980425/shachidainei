@@ -20,6 +20,9 @@
 | Audit Scope Builder production default page count | 28 |
 | Route Evidence Dashboard table rows | 28 |
 | Route Evidence Dashboard production table rows | 28 |
+| Route Evidence Dashboard local filter interaction | pass |
+| Route Evidence Dashboard filter event recording | pass |
+| Route Evidence Dashboard production filter interaction | pass |
 
 ## Interpretation
 

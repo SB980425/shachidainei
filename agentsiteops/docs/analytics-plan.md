@@ -64,6 +64,7 @@ Current implementation:
 | `gsc_bing_sitemap_verification_view` | User views sitemap verification workflow | `/guides/gsc-bing-sitemap-verification/` |
 | `evidence_ledger_template_view` | User views proof-boundary template | `/templates/evidence-ledger-template/` |
 | `route_evidence_dashboard_view` | User views route-level evidence status | `/reports/route-evidence-dashboard/` |
+| `route_evidence_filter_used` | User filters route-level evidence locally | `/reports/route-evidence-dashboard/` |
 | `opportunity_scoring_template_view` | User views candidate scorecard template | `/templates/website-opportunity-scoring-template/` |
 | `scoring_methodology_view` | User views scoring fields and thresholds | `/methodology/website-opportunity-scoring/` |
 | `scoring_model_limit_view` | User views model limits and update rules | `/methodology/website-opportunity-scoring/` |

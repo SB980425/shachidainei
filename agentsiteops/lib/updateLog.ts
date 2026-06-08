@@ -12,6 +12,41 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-08",
+    step: "M3-28 Route evidence filtering",
+    status: "completed",
+    keyPoints: [
+      "Upgraded the Route Evidence Dashboard with local filtering by query, page type, evidence state, and current action.",
+      "Added visible route counts and a clear-filters control so the dashboard can support route review decisions without external analytics or accounts.",
+      "Added route_evidence_filter_used as a first-party event while redacting raw search text from the payload."
+    ],
+    aiAngle:
+      "AI and search systems can now see not only the route evidence table, but also the review dimensions operators use to decide repair, rewrite, evidence capture, or expansion.",
+    files: [
+      "components/RouteEvidenceExplorer.tsx",
+      "app/reports/route-evidence-dashboard/page.tsx",
+      "app/globals.css",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "docs/analytics-plan.md",
+      "docs/source-pack-route-evidence-dashboard.md",
+      "reports/ui-check-summary.md",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "analytics endpoint gate pass with 10 test cases",
+      "route consistency gate pass with 149 checks",
+      "production build pass with 32 static output entries",
+      "Playwright filter check pass with 28 initial rows and no desktop or mobile overflow",
+      "production deploy pass on Cloudflare Pages master branch",
+      "production health monitor pass",
+      "IndexNow submit pass with 28 URLs"
+    ],
+    next:
+      "Use the filtered dashboard during future GSC/Bing imports to decide which routes need source evidence, rewrite work, internal links, noindex, merge, or expansion."
+  },
+  {
+    date: "2026-06-08",
     step: "M3-27 Route consistency gate",
     status: "completed",
     keyPoints: [

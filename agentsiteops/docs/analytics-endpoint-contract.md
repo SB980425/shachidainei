@@ -67,6 +67,7 @@ Minimum v1 allowlist:
 - `review_window_view`
 - `evidence_ledger_template_view`
 - `route_evidence_dashboard_view`
+- `route_evidence_filter_used`
 - `opportunity_scoring_template_view`
 - `scoring_methodology_view`
 - `scoring_model_limit_view`

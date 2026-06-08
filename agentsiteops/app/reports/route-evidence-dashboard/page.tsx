@@ -2,24 +2,11 @@ import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RouteEvidenceExplorer, type RouteEvidenceRow } from "@/components/RouteEvidenceExplorer";
 import { routeMap, siteUrl } from "@/lib/site";
 
 const path = "/reports/route-evidence-dashboard/";
 const page = routeMap.get(path);
-
-type EvidenceRow = {
-  url: string;
-  page_type: string;
-  cluster: string;
-  technical_seo_status: string;
-  crawler_access_status: string;
-  gsc_status: string;
-  bing_status: string;
-  ai_referral_status: string;
-  onsite_event_status: string;
-  current_action: string;
-  next_required_evidence: string;
-};
 
 export const metadata: Metadata = {
   title: page?.title,
@@ -86,7 +73,7 @@ function parseCsv(text: string) {
   const [header, ...body] = rows;
   return body.map((values) =>
     Object.fromEntries(header.map((key, index) => [key, values[index] ?? ""]))
-  ) as EvidenceRow[];
+  ) as RouteEvidenceRow[];
 }
 
 function readRows() {
@@ -94,7 +81,7 @@ function readRows() {
   return parseCsv(readFileSync(csvPath, "utf8"));
 }
 
-function count(rows: EvidenceRow[], predicate: (row: EvidenceRow) => boolean) {
+function count(rows: RouteEvidenceRow[], predicate: (row: RouteEvidenceRow) => boolean) {
   return rows.filter(predicate).length;
 }
 
@@ -166,38 +153,7 @@ export default function Page() {
             signal status, current action, and the next evidence needed before expansion.
           </p>
         </div>
-        <div className="table-scroll">
-          <table className="data-table route-evidence-table">
-            <thead>
-              <tr>
-                <th scope="col">URL</th>
-                <th scope="col">Type</th>
-                <th scope="col">Tech</th>
-                <th scope="col">Crawler</th>
-                <th scope="col">GSC</th>
-                <th scope="col">Bing</th>
-                <th scope="col">Action</th>
-                <th scope="col">Next evidence</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row) => (
-                <tr key={row.url}>
-                  <th scope="row">
-                    <Link href={row.url}>{row.url}</Link>
-                  </th>
-                  <td>{row.page_type}</td>
-                  <td>{row.technical_seo_status}</td>
-                  <td>{row.crawler_access_status}</td>
-                  <td>{row.gsc_status}</td>
-                  <td>{row.bing_status}</td>
-                  <td>{row.current_action}</td>
-                  <td>{row.next_required_evidence}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+        <RouteEvidenceExplorer rows={rows} />
       </section>
     </main>
   );
