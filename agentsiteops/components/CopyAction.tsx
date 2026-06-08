@@ -12,7 +12,7 @@ type Props = {
 };
 
 export function CopyAction({
-  buttonLabel = "复制",
+  buttonLabel = "Copy",
   description,
   eventLabel,
   eventName,
@@ -36,13 +36,13 @@ export function CopyAction({
         textarea.remove();
       }
 
-      setState("已复制");
+      setState("Copied");
       window.codexAnalytics?.track(eventName, {
         label: eventLabel,
         length: text.length
       });
     } catch {
-      setState("复制失败");
+      setState("Copy failed");
     }
 
     window.setTimeout(() => setState(buttonLabel), 1600);

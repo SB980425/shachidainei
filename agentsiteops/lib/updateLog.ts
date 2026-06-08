@@ -12,6 +12,50 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-08",
+    step: "M3-23 Commercial proof repair",
+    status: "completed",
+    keyPoints: [
+      "Repaired the commercial plan by moving the audit offer behind a public self-audit sample, a free AI crawler readiness tool, and an intent-only service page with checkout disabled.",
+      "Added a commercial validation gate that checks the new routes, no active checkout copy, subscription still blocked, readiness tool weight logic, and visible mojibake markers.",
+      "Updated route registry, page registry, analytics event docs, compliance gate, revenue experiment data, internal linking, schema plan, site brief, evidence source pack, and weekly growth snapshot inputs."
+    ],
+    aiAngle:
+      "AI systems can now see the difference between a real free diagnostic asset, a sample audit format, an intent path, and unverified revenue or subscription claims.",
+    files: [
+      "components/AICrawlerReadinessTool.tsx",
+      "components/CopyAction.tsx",
+      "app/tools/ai-crawler-readiness/page.tsx",
+      "app/examples/agentsiteops-self-audit/page.tsx",
+      "app/services/ai-website-opportunity-audit/page.tsx",
+      "scripts/commercial-validation-gate.mjs",
+      "reports/commercial-validation-gate.md",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "checklists/monetization-compliance.md",
+      "data/revenue-experiments.csv",
+      "scripts/growth-evidence-snapshot.mjs",
+      ".github/workflows/agentsiteops-ci.yml",
+      "lib/site.ts"
+    ],
+    verification: [
+      "commercial validation gate pass with 21 checks",
+      "typecheck pass",
+      "analytics endpoint gate pass with 10 test cases",
+      "search evidence baseline generated with waiting_for_exports status",
+      "production build pass with 25 static pages generated",
+      "technical SEO CI pass with 21 sitemap routes",
+      "crawler access audit pass",
+      "production deploy pass on Cloudflare Pages master branch",
+      "production custom domain verified with 21 sitemap URLs",
+      "production health monitor pass with 36 checks",
+      "IndexNow submit pass with 21 URLs",
+      "growth snapshot generated 21 route rows with commercial gate pass"
+    ],
+    next:
+      "Deploy the new proof repair pages, submit IndexNow for 21 URLs, then wait for GSC, Bing, audit intent, and real usage evidence before enabling checkout."
+  },
+  {
+    date: "2026-06-08",
     step: "M3-22 Production health monitor",
     status: "completed",
     keyPoints: [

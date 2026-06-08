@@ -37,19 +37,20 @@ The operating target for this project is therefore:
 
 ### Phase 1: Audit Service
 
-Primary offer:
+Primary offer test:
 
 - AI Website Opportunity Audit
-- Price test: USD 99
+- Price test: USD 49-99 after a request exists
 - Delivery: one scored opportunity, risk summary, 30-day validation plan, and repo/action backlog
-- Reason: fastest route to cash because it uses existing scoring, SEO, CI, and site-planning assets.
+- Reason: fastest route to cash if the buyer has inspected a public sample and still needs a decision.
+- Current boundary: no checkout until sample report, free readiness tool, identity, terms, refund policy, and payment support are ready.
 
 Break-even:
 
-| Goal | Needed at USD 99 |
-|---|---:|
-| USD 100 monthly reserve | 2 audits before fees and refunds |
-| USD 200 monthly reserve | 3 audits before fees and refunds |
+| Goal | Needed at USD 49 | Needed at USD 99 |
+|---|---:|---:|
+| USD 100 monthly reserve | 3 audits before fees and refunds | 2 audits before fees and refunds |
+| USD 200 monthly reserve | 5 audits before fees and refunds | 3 audits before fees and refunds |
 
 ### Phase 2: Template Bundle Waitlist
 
@@ -83,7 +84,7 @@ Do not build SaaS until repeated paid demand appears.
 |---|---|---|
 | 1-3 | Domain, production deployment, GSC/Bing setup | No monetization yet. |
 | 4-7 | Crawlable pages and analytics events | Add request-audit intent copy if compliance allows. |
-| 8-14 | Tool completion or template copy events | Add audit offer draft and manual contact path. |
+| 8-14 | Tool completion, readiness report copy, template copy, or sample audit view | Add audit intent page and manual GitHub issue path. |
 | 15-30 | At least one explicit audit or template interest signal | Prepare payment workflow or stop commercial expansion. |
 
 ## Stop Conditions
@@ -97,4 +98,3 @@ Stop paid-product expansion if all are true by day 30:
 - No audit request, email/contact intent, or direct buying signal.
 
 If the stop condition triggers, preserve the site as a public case study and reduce future cost to domain-only.
-

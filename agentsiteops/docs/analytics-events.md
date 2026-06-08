@@ -24,6 +24,9 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `page_view` | Any route load | `path` |
 | `update_log_view` | `/updates/` load | `path` |
 | `tool_page_view` | `/tools/website-opportunity-scorer/` load | `path` |
+| `ai_crawler_readiness_view` | `/tools/ai-crawler-readiness/` load | `path` |
+| `sample_audit_view` | `/examples/agentsiteops-self-audit/` load | `path` |
+| `audit_intent_page_view` | `/services/ai-website-opportunity-audit/` load | `path` |
 | `starter_pack_view` | `/templates/starter-pack/` load | `path` |
 | `repo_skeleton_matrix_view` | `/templates/seo-repo-skeleton/` load | `path` |
 | `ci_gate_matrix_view` | `/templates/seo-repo-skeleton/` load | `path` |

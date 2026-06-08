@@ -8,9 +8,12 @@ Internal links must help search crawlers, AI retrieval systems, and human reader
 
 | Source page | Must link to | Reason |
 |---|---|---|
-| Home | Pillar, scorer, starter pack, launch checklist, citation readiness, evidence ledger, and methodology | Establish the main entry points and proof boundary. |
+| Home | Pillar, scorer, crawler readiness tool, starter pack, launch checklist, citation readiness, evidence ledger, and methodology | Establish the main entry points and proof boundary. |
 | Pillar | First-cluster execution pages | Keep the operating system as the topic center. |
 | Tool | Methodology, pillar, repo skeleton, and evidence ledger | Explain scoring basis and connect results to execution and review. |
+| Crawler readiness tool | Sample audit, citation readiness, small-site metrics, and evidence ledger | Convert free diagnosis into a visible proof and repair path. |
+| Sample audit | Readiness tool, evidence ledger, service page, and updates | Show the audit format before any buyer request. |
+| Service page | Sample audit, readiness tool, scorer, and disclosure | Keep commercial intent behind proof and compliance boundaries. |
 | Starter pack | Scorer, repo skeleton, content gate, and evidence ledger | Connect downloadable assets to reviewable proof. |
 | Repo template | Pillar, pSEO gate, AI content gate, and GitHub CI evidence | Tie structure to release controls. |
 | AI content gate | Editorial policy, disclosure, pSEO gate, and evidence ledger | Reinforce review, risk, and proof boundaries. |
@@ -54,6 +57,9 @@ Every first-cluster page must include:
 | Wants batch or programmatic pages | `/checklists/programmatic-seo-gate/` |
 | Needs search-console setup | `/checklists/gsc-bing-indexnow-launch/` |
 | Wants AI citation readiness | `/checklists/ai-citation-readiness/` |
+| Wants a crawler-readiness score | `/tools/ai-crawler-readiness/` |
+| Wants to see the paid audit format first | `/examples/agentsiteops-self-audit/` |
+| Wants manual help after reviewing proof | `/services/ai-website-opportunity-audit/` |
 | Wants metrics and review rules | `/guides/small-website-ai-visibility-metrics/` |
 | Wants proof boundaries | `/evidence/` |
 

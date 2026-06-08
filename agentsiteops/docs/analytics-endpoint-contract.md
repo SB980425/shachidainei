@@ -41,6 +41,9 @@ Minimum v1 allowlist:
 - `update_log_view`
 - `evidence_ledger_view`
 - `tool_page_view`
+- `ai_crawler_readiness_view`
+- `sample_audit_view`
+- `audit_intent_page_view`
 - `starter_pack_view`
 - `search_console_launch_checklist_view`
 - `ai_citation_readiness_view`

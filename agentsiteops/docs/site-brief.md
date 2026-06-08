@@ -51,6 +51,9 @@ AI Website Operating System.
 | `/` | Home | State positioning and route visitors into the scorer and system pages. |
 | `/ai-website-operating-system/` | Pillar | Define the operating system and stop rules. |
 | `/tools/website-opportunity-scorer/` | Tool | Score candidate website directions. |
+| `/tools/ai-crawler-readiness/` | Tool | Score crawler, structure, evidence, and continuation readiness before audit requests. |
+| `/examples/agentsiteops-self-audit/` | Example | Show the audit format and current proof gaps before asking for payment. |
+| `/services/ai-website-opportunity-audit/` | Service | Collect manual audit intent without checkout or form storage. |
 | `/templates/seo-repo-skeleton/` | Template | Provide the repo structure and release gate model. |
 | `/checklists/ai-content-quality-gate/` | Checklist | Block weak AI-assisted content before publishing. |
 | `/checklists/programmatic-seo-gate/` | Checklist | Govern pSEO batches, canonical rules, noindex policy, and sample audits. |
@@ -69,8 +72,8 @@ Trust and policy pages:
 
 | Stage | Monetization | Condition |
 |---|---|---|
-| Early | Free templates, GitHub repo distribution, email capture later | Tool completions, template copies, or repo interest appears |
-| Mid | Paid template pack or lightweight audit service | Repeated demand appears after deployment signals |
+| Early | Free tools, sample audit, templates, GitHub distribution | Tool completions, readiness report copies, sample views, template copies, or repo interest appears |
+| Mid | Lightweight audit service or paid template pack | Explicit request or repeated demand appears after deployment signals |
 | Later | Sponsorship or affiliate | Stable traffic, disclosure system, and editorial boundaries are in place |
 
 ## Non Goals
@@ -86,6 +89,8 @@ Trust and policy pages:
 At least one signal should appear before expansion:
 
 - Tool completion events.
+- Readiness report copy events.
+- Sample audit views followed by audit intent clicks.
 - Template copy or download intent.
 - Search Console or Bing discovery for target routes.
 - AI citation or cited URL evidence.

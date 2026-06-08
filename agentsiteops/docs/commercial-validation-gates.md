@@ -61,6 +61,7 @@ Required evidence:
 Allowed action:
 
 - Add request-audit page or manual contact CTA after compliance review.
+- Publish a public self-audit sample and free readiness tool before asking for a paid decision.
 
 Blocked action:
 
@@ -73,12 +74,13 @@ Target window: day 15-30.
 Required evidence:
 
 - One audit request, waitlist signup, direct inquiry, GitHub issue, or explicit buying signal.
+- A reviewed sample audit exists so the buyer can inspect the output format before requesting work.
 
 Allowed action:
 
 - Prepare payment processor.
 - Draft refund policy and service terms.
-- Test USD 99 audit offer manually.
+- Test USD 49-99 audit pricing manually after a request exists.
 
 Blocked action:
 
@@ -103,4 +105,3 @@ Allowed action:
 Stop condition:
 
 - If 30 days pass with no index, no behavior signal, and no commercial intent, stop expansion and reduce the project to domain-only maintenance.
-

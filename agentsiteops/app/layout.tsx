@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 const navItems = [
   { href: "/ai-website-operating-system/", label: "System" },
   { href: "/tools/website-opportunity-scorer/", label: "Scorer" },
+  { href: "/tools/ai-crawler-readiness/", label: "Crawler" },
   { href: "/templates/starter-pack/", label: "Pack" },
   { href: "/templates/seo-repo-skeleton/", label: "Templates" },
   { href: "/checklists/ai-content-quality-gate/", label: "Gates" },

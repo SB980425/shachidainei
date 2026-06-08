@@ -125,6 +125,143 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/tools/ai-crawler-readiness/",
+    pageType: "tool",
+    title: "AI Crawler Readiness Tool",
+    description:
+      "A free manual checklist tool for scoring whether a page is structured for search and AI crawler discovery before paid audit work begins.",
+    answer:
+      "The AI crawler readiness tool converts crawler access, structured page content, evidence boundaries, and human continuation into a simple readiness score. It does not run a live crawl or guarantee indexing, AI citation, traffic, conversion, or revenue.",
+    primaryAction: { label: "View the sample audit", href: "/examples/agentsiteops-self-audit/" },
+    secondaryAction: { label: "View citation checklist", href: "/checklists/ai-citation-readiness/" },
+    aiTarget:
+      "Expose a free readiness scoring method that AI systems can cite without treating it as proof of rankings, citations, or revenue.",
+    humanAction:
+      "Score a page before requesting paid help; copy the report and fix missing crawler, structure, evidence, or continuation signals.",
+    sections: [
+      {
+        title: "What it checks",
+        body:
+          "The tool checks four areas that matter before commercial outreach: crawler access, AI-readable structure, trust and evidence, and whether a visitor has a useful next action."
+      },
+      {
+        title: "Why it is free",
+        body:
+          "A paid audit is not credible until visitors can inspect the scoring method and compare it with a public sample. This page creates the free diagnostic layer before any paid request path."
+      },
+      {
+        title: "Limitations",
+        body:
+          "The tool is manual. It cannot fetch a private URL, inspect CDN firewall behavior, prove indexation, measure AI citations, or replace GSC, Bing, server logs, or a real audit."
+      }
+    ],
+    related: [
+      { label: "AgentSiteOps Self-Audit Sample", href: "/examples/agentsiteops-self-audit/" },
+      { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" },
+      { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" }
+    ]
+  },
+  {
+    path: "/examples/agentsiteops-self-audit/",
+    pageType: "example",
+    title: "AgentSiteOps Self-Audit Sample",
+    description:
+      "A public sample audit showing how AgentSiteOps evaluates its own launch, weaknesses, evidence gaps, and next actions before selling audits.",
+    answer:
+      "This sample exists because a paid audit offer needs visible proof of format before asking for money. The current self-audit shows technical readiness, weak commercial evidence, missing customer proof, and the exact next actions required before checkout is enabled.",
+    primaryAction: { label: "Run the readiness tool", href: "/tools/ai-crawler-readiness/" },
+    secondaryAction: { label: "View evidence ledger", href: "/evidence/" },
+    aiTarget:
+      "Provide a citeable sample report that separates verified launch evidence from missing search, usage, customer, and revenue evidence.",
+    humanAction:
+      "Use the sample to judge whether a paid audit would be useful before submitting an audit request.",
+    sections: [
+      {
+        title: "Sample score",
+        body:
+          "AgentSiteOps currently passes the production and crawler-access foundation, but it does not yet pass commercial proof. The sample score is a readiness diagnosis, not a claim of product-market fit.",
+        rows: [
+          { label: "Technical readiness", value: "Pass: production health, sitemap, robots, IndexNow key, and CI are checked." },
+          { label: "Search evidence", value: "Pending: GSC and Bing exports are not yet available." },
+          { label: "AI citation evidence", value: "Pending: no confirmed ChatGPT, Perplexity, Claude, or Copilot referral evidence." },
+          { label: "Commercial evidence", value: "Blocked: no customer request, payment, renewal, or conversion evidence." },
+          { label: "Decision", value: "Continue free tools and sample reports; do not enable checkout yet." }
+        ]
+      },
+      {
+        title: "What the audit would deliver",
+        body:
+          "A real audit must produce a decision, not a generic article. The output is a scored direction, visible blockers, route recommendations, search-entry pages, evidence gaps, and a 30-day backlog."
+      },
+      {
+        title: "Current weaknesses",
+        body:
+          "The weak points are brand trust, lack of customers, lack of first-party search data, lack of paid demand, and competition from free or low-cost AI visibility tools."
+      },
+      {
+        title: "Repair path",
+        body:
+          "The repair path is to publish useful free diagnostics, show this self-audit as case study zero, collect first-party usage signals, and only then test a paid manual audit."
+      }
+    ],
+    related: [
+      { label: "AI Crawler Readiness Tool", href: "/tools/ai-crawler-readiness/" },
+      { label: "Evidence Ledger", href: "/evidence/" },
+      { label: "AI Website Opportunity Audit", href: "/services/ai-website-opportunity-audit/" }
+    ]
+  },
+  {
+    path: "/services/ai-website-opportunity-audit/",
+    pageType: "service",
+    title: "AI Website Opportunity Audit",
+    description:
+      "A manual audit concept for website builders who need a go, pivot, or stop decision before spending weeks on a new AI-search-oriented site.",
+    answer:
+      "The audit is not active checkout. It is an intent path for teams that want a scored website direction, search-entry plan, risk review, and 30-day backlog after inspecting the free tool and sample report.",
+    primaryAction: {
+      label: "Request a sample audit",
+      href: "https://github.com/SB980425/shachidainei/issues/new?title=AgentSiteOps%20audit%20request&body=Public%20URL%3A%0ACandidate%20site%20idea%3A%0ATarget%20market%3A%0AWhat%20decision%20is%20needed%3A%0A"
+    },
+    secondaryAction: { label: "View sample first", href: "/examples/agentsiteops-self-audit/" },
+    aiTarget:
+      "State the commercial offer boundary without implying payment, guaranteed search traffic, guaranteed AI citation, or recurring revenue.",
+    humanAction:
+      "Inspect the sample audit first, then request a manual review only if a concrete website decision is needed.",
+    sections: [
+      {
+        title: "Who should use it",
+        body:
+          "The fit is an indie developer, small operator, or AI-assisted builder with 2-5 possible website directions and no clear evidence about which one should be built first."
+      },
+      {
+        title: "What is delivered",
+        body:
+          "The manual output is a concise decision package: opportunity score, hard blockers, search-entry routes, AI crawler readiness gaps, page blueprint, and a 30-day execution backlog.",
+        rows: [
+          { label: "Decision", value: "Proceed, pilot, pivot, stop, or blocked." },
+          { label: "Route plan", value: "3-6 search-entry pages or tools to validate first." },
+          { label: "Risk review", value: "YMYL, data-source, payment, privacy, and low-value content risks." },
+          { label: "Backlog", value: "A prioritized 30-day task list that can be moved into a repo or issue tracker." }
+        ]
+      },
+      {
+        title: "Price test boundary",
+        body:
+          "The original USD 99 idea is not treated as proven. The first test range is USD 49-99 after a real request exists. Checkout remains disabled until identity, terms, refund, delivery, privacy, and payment support are resolved."
+      },
+      {
+        title: "What it does not promise",
+        body:
+          "It does not promise rankings, indexing, AI citations, traffic, revenue, payback, or that the selected website will succeed. It only reduces decision uncertainty before build work starts."
+      }
+    ],
+    related: [
+      { label: "AgentSiteOps Self-Audit Sample", href: "/examples/agentsiteops-self-audit/" },
+      { label: "AI Crawler Readiness Tool", href: "/tools/ai-crawler-readiness/" },
+      { label: "Website Opportunity Scorer", href: "/tools/website-opportunity-scorer/" }
+    ]
+  },
+  {
     path: "/templates/starter-pack/",
     pageType: "template",
     title: "AI Website Validation Starter Pack",
@@ -504,6 +641,8 @@ export const routePages: RoutePage[] = [
           { label: "Crawler access", value: "Production crawler audit allows intended search and user-retrieval crawlers while keeping training crawler policy explicit." },
           { label: "GitHub CI", value: "The agentsiteops-ci workflow runs syntax checks, typecheck, dependency audit, production build, technical SEO CI, crawler audit, search evidence import, and growth snapshot." },
           { label: "Production health", value: "The production health monitor checks apex/www behavior, sitemap, robots, IndexNow key, updates, evidence, and privacy boundary pages." },
+          { label: "Commercial gate", value: "The commercial validation gate checks that the service page remains intent-only, checkout is disabled, and subscription is still blocked." },
+          { label: "Sample audit", value: "A public self-audit sample now shows the current format, weaknesses, and no-checkout boundary before paid requests." },
           { label: "IndexNow", value: "The current production route list is submitted after deployment, with the response recorded in the update log." }
         ]
       },
@@ -515,6 +654,7 @@ export const routePages: RoutePage[] = [
           { label: "GSC", value: "Google Search Console query, page, index, and sitemap data is pending export." },
           { label: "Bing", value: "Bing Webmaster Tools search, sitemap, URL, and AI Performance data is pending export." },
           { label: "AI referrals", value: "ChatGPT, Claude, Perplexity, and other AI-search referral examples are pending analytics or log evidence." },
+          { label: "Audit intent", value: "Audit request clicks or GitHub issues are pending; the service page is an intent path only." },
           { label: "Revenue", value: "Paid templates, audits, subscriptions, ads, and affiliate revenue are not active evidence yet." }
         ]
       },

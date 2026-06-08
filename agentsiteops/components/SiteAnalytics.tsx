@@ -28,6 +28,9 @@ const sessionKey = "codex-seo-events";
 const pathViewEvents: Record<string, string[]> = {
   "/updates/": ["update_log_view"],
   "/tools/website-opportunity-scorer/": ["tool_page_view"],
+  "/tools/ai-crawler-readiness/": ["ai_crawler_readiness_view"],
+  "/examples/agentsiteops-self-audit/": ["sample_audit_view"],
+  "/services/ai-website-opportunity-audit/": ["audit_intent_page_view"],
   "/templates/starter-pack/": ["starter_pack_view"],
   "/templates/seo-repo-skeleton/": ["repo_skeleton_matrix_view", "ci_gate_matrix_view"],
   "/checklists/gsc-bing-indexnow-launch/": ["search_console_launch_checklist_view"],

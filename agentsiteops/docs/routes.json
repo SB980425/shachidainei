@@ -33,6 +33,33 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/tools/ai-crawler-readiness/",
+      "pageType": "tool",
+      "template": "tool",
+      "cluster": "ai_crawler_readiness",
+      "index": true,
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/examples/agentsiteops-self-audit/",
+      "pageType": "example",
+      "template": "sample_audit",
+      "cluster": "commercial_validation",
+      "index": true,
+      "priority": 0.8,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/services/ai-website-opportunity-audit/",
+      "pageType": "service",
+      "template": "service",
+      "cluster": "commercial_validation",
+      "index": true,
+      "priority": 0.7,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/templates/starter-pack/",
       "pageType": "template",
       "template": "template",

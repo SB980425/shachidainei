@@ -28,6 +28,9 @@ export default function HomePage() {
   const routeCards = routePages.filter((page) =>
     [
       "/tools/website-opportunity-scorer/",
+      "/tools/ai-crawler-readiness/",
+      "/examples/agentsiteops-self-audit/",
+      "/services/ai-website-opportunity-audit/",
       "/templates/starter-pack/",
       "/templates/seo-repo-skeleton/",
       "/checklists/ai-content-quality-gate/",
@@ -58,8 +61,8 @@ export default function HomePage() {
             <Link className="primary-action" href="/tools/website-opportunity-scorer/">
               Score a site idea
             </Link>
-            <Link className="secondary-action" href="/ai-website-operating-system/">
-              View the system
+            <Link className="secondary-action" href="/tools/ai-crawler-readiness/">
+              Check crawler readiness
             </Link>
           </div>
           <div className="proof-grid" aria-label="System summary">
@@ -99,7 +102,7 @@ export default function HomePage() {
       <section className="route-section">
         <div className="section-head">
           <h2>First release pages</h2>
-          <p>The initial set focuses on the scorer, repo template, publishing gates, and metrics before any large content expansion.</p>
+          <p>The initial set focuses on free diagnostics, sample proof, repo structure, publishing gates, and metrics before checkout or large content expansion.</p>
         </div>
         <div className="route-grid">
           {routeCards.map((page) => (

@@ -1,16 +1,17 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-07T23:17:25.355Z
+- Generated: 2026-06-08T00:18:29.626Z
 - Status: baseline_ready
-- Routes: 18
-- Technical SEO pass routes: 18
+- Routes: 21
+- Technical SEO pass routes: 21
 - Crawler access status: pass
 - Production health status: pass
-- GSC status: pending export for 18 routes
-- Bing status: pending export for 18 routes
+- Commercial validation status: pass
+- GSC status: pending export for 21 routes
+- Bing status: pending export for 21 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 18 routes
+- Onsite event status: local buffer only for 21 routes
 
 ## Route Evidence Table
 
@@ -19,6 +20,9 @@
 | / | home | ai_website_operating_system | pass | site_pass | keep | Measure homepage CTA click rate after real analytics endpoint |
 | /ai-website-operating-system/ | pillar | ai_website_operating_system | pass | site_pass | keep | Review impressions and source_link_click after GSC/Bing setup |
 | /tools/website-opportunity-scorer/ | tool | website_opportunity_scoring | pass | site_pass | keep | Measure tool_completed and tool_result_export after real endpoint |
+| /tools/ai-crawler-readiness/ | tool | ai_crawler_readiness | pass | site_pass | keep | Measure readiness report copies and sample audit clicks before paid audit expansion |
+| /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
+| /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep checkout disabled until a real request, identity, terms, refund policy, and payment support exist |
 | /templates/starter-pack/ | template | starter_pack | pass | site_pass | keep | Measure starter pack downloads and query exposure after analytics endpoint |
 | /templates/seo-repo-skeleton/ | template | seo_repo_skeleton | pass | site_pass | keep | Measure template_copy_click after real endpoint |
 | /checklists/ai-content-quality-gate/ | checklist | ai_content_quality_gate | pass | site_pass | keep | Measure checklist_copy_click after real endpoint |

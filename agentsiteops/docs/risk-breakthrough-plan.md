@@ -14,7 +14,7 @@ The breakthrough point is not better writing. The breakthrough point is turning 
 |---|---|---|
 | Strong competition | Avoid all-in-one SEO tooling and focus on execution packs for small operators | Clear positioning and no claim to replace Ahrefs, Semrush, or Scrunch. |
 | No brand trust | Publish decision logs, technical SEO reports, validation logs, and failures | Weekly public update and visible methodology pages. |
-| No customer case | Use this site as case study zero | Production data recorded after launch. |
+| No customer case | Use this site as case study zero and publish a self-audit sample | Production data recorded after launch plus a visible sample report. |
 | No AI citation data | Track fixed AI search prompts and cited URLs weekly | Prompt log with date, model/platform, answer summary, and cited sources. |
 | Templates can be copied | Make free assets useful and paid assets time-saving | Paid value must include packaging, updates, explanation, and audit output. |
 | AI answers can reduce clicks | Put continuation assets on pages | Download, copy, scoring, repo, and audit paths exist on core pages. |
@@ -22,12 +22,13 @@ The breakthrough point is not better writing. The breakthrough point is turning 
 | No payment trust | Delay payment until identity, refund, terms, and disclosure are ready | Compliance gate passes before collecting money. |
 | No proprietary dataset | Create a small first-party validation dataset | Page action table, citation tests, event logs, and weekly reviews. |
 | No savings proof | Measure manual steps avoided | Each asset states the task replaced and expected time saved. |
+| Audit price too high too early | Test USD 49-99 only after intent | Free sample and readiness tool must exist before checkout. |
 
 ## Breakthrough Strategy
 
 1. Use the site itself as the first transparent experiment.
 2. Build a small evidence base that competitors cannot copy instantly because it depends on live execution.
-3. Sell a manual audit before selling software.
+3. Publish a self-audit sample and free readiness tool before selling a manual audit.
 4. Convert repeated audit steps into templates.
 5. Convert repeated template usage into product features only after demand is proven.
 
@@ -45,4 +46,3 @@ The breakthrough point is not better writing. The breakthrough point is turning 
 | Where do first users come from? | GitHub, developer communities, SEO communities, tool directories, and direct case-study distribution. |
 | When to stop? | Stop expansion if day-30 signals are absent. |
 | What must not be touched? | YMYL advice, fake revenue, fake citations, fake customers, unauthorized data, and undisclosed commercial relationships. |
-

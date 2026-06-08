@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-07T23:11:23.337Z
+- Generated: 2026-06-08T00:10:42.772Z
 - Status: PASS
-- Base URL: http://127.0.0.1:3001
+- Base URL: http://127.0.0.1:3002
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 18
+- Sitemap routes: 21
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 18 |
+| Routes passed | 21 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -19,24 +19,27 @@
 
 | Route | Status | HTTP | Title | Canonical | JSON-LD | Links | Mobile | Issues |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| / | pass | 200 | AgentSiteOps | https://agentsiteops.com/ | 1 | 18 | pass | - |
-| /ai-website-operating-system/ | pass | 200 | AI Website Operating System \| AgentSiteOps | https://agentsiteops.com/ai-website-operating-system/ | 1 | 13 | pass | - |
-| /tools/website-opportunity-scorer/ | pass | 200 | Website Opportunity Scorer \| AgentSiteOps | https://agentsiteops.com/tools/website-opportunity-scorer/ | 1 | 13 | pass | - |
-| /templates/starter-pack/ | pass | 200 | AI Website Validation Starter Pack \| AgentSiteOps | https://agentsiteops.com/templates/starter-pack/ | 1 | 12 | pass | - |
-| /templates/seo-repo-skeleton/ | pass | 200 | SEO Repo Skeleton \| AgentSiteOps | https://agentsiteops.com/templates/seo-repo-skeleton/ | 1 | 13 | pass | - |
-| /checklists/ai-content-quality-gate/ | pass | 200 | AI Content Quality Gate \| AgentSiteOps | https://agentsiteops.com/checklists/ai-content-quality-gate/ | 1 | 13 | pass | - |
-| /checklists/programmatic-seo-gate/ | pass | 200 | Programmatic SEO Gate \| AgentSiteOps | https://agentsiteops.com/checklists/programmatic-seo-gate/ | 1 | 13 | pass | - |
-| /checklists/gsc-bing-indexnow-launch/ | pass | 200 | GSC, Bing, and IndexNow Launch Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/gsc-bing-indexnow-launch/ | 1 | 14 | pass | - |
-| /checklists/ai-citation-readiness/ | pass | 200 | AI Citation Readiness Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/ai-citation-readiness/ | 1 | 14 | pass | - |
-| /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 14 | pass | - |
-| /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 13 | pass | - |
-| /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 15 | pass | - |
-| /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 12 | pass | - |
-| /authors/ | pass | 200 | Authors and Review Status \| AgentSiteOps | https://agentsiteops.com/authors/ | 1 | 12 | pass | - |
-| /editorial-policy/ | pass | 200 | Editorial Policy \| AgentSiteOps | https://agentsiteops.com/editorial-policy/ | 1 | 12 | pass | - |
-| /privacy/ | pass | 200 | Privacy Policy \| AgentSiteOps | https://agentsiteops.com/privacy/ | 1 | 12 | pass | - |
-| /disclosure/ | pass | 200 | Disclosure \| AgentSiteOps | https://agentsiteops.com/disclosure/ | 1 | 12 | pass | - |
-| /updates/ | pass | 200 | Updates \| AgentSiteOps | https://agentsiteops.com/updates/ | 1 | 12 | pass | - |
+| / | pass | 200 | AgentSiteOps | https://agentsiteops.com/ | 1 | 21 | pass | - |
+| /ai-website-operating-system/ | pass | 200 | AI Website Operating System \| AgentSiteOps | https://agentsiteops.com/ai-website-operating-system/ | 1 | 14 | pass | - |
+| /tools/website-opportunity-scorer/ | pass | 200 | Website Opportunity Scorer \| AgentSiteOps | https://agentsiteops.com/tools/website-opportunity-scorer/ | 1 | 14 | pass | - |
+| /tools/ai-crawler-readiness/ | pass | 200 | AI Crawler Readiness Tool \| AgentSiteOps | https://agentsiteops.com/tools/ai-crawler-readiness/ | 1 | 15 | pass | - |
+| /examples/agentsiteops-self-audit/ | pass | 200 | AgentSiteOps Self-Audit Sample \| AgentSiteOps | https://agentsiteops.com/examples/agentsiteops-self-audit/ | 1 | 15 | pass | - |
+| /services/ai-website-opportunity-audit/ | pass | 200 | AI Website Opportunity Audit \| AgentSiteOps | https://agentsiteops.com/services/ai-website-opportunity-audit/ | 1 | 14 | pass | - |
+| /templates/starter-pack/ | pass | 200 | AI Website Validation Starter Pack \| AgentSiteOps | https://agentsiteops.com/templates/starter-pack/ | 1 | 13 | pass | - |
+| /templates/seo-repo-skeleton/ | pass | 200 | SEO Repo Skeleton \| AgentSiteOps | https://agentsiteops.com/templates/seo-repo-skeleton/ | 1 | 14 | pass | - |
+| /checklists/ai-content-quality-gate/ | pass | 200 | AI Content Quality Gate \| AgentSiteOps | https://agentsiteops.com/checklists/ai-content-quality-gate/ | 1 | 14 | pass | - |
+| /checklists/programmatic-seo-gate/ | pass | 200 | Programmatic SEO Gate \| AgentSiteOps | https://agentsiteops.com/checklists/programmatic-seo-gate/ | 1 | 14 | pass | - |
+| /checklists/gsc-bing-indexnow-launch/ | pass | 200 | GSC, Bing, and IndexNow Launch Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/gsc-bing-indexnow-launch/ | 1 | 15 | pass | - |
+| /checklists/ai-citation-readiness/ | pass | 200 | AI Citation Readiness Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/ai-citation-readiness/ | 1 | 15 | pass | - |
+| /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 15 | pass | - |
+| /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 14 | pass | - |
+| /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 16 | pass | - |
+| /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 13 | pass | - |
+| /authors/ | pass | 200 | Authors and Review Status \| AgentSiteOps | https://agentsiteops.com/authors/ | 1 | 13 | pass | - |
+| /editorial-policy/ | pass | 200 | Editorial Policy \| AgentSiteOps | https://agentsiteops.com/editorial-policy/ | 1 | 13 | pass | - |
+| /privacy/ | pass | 200 | Privacy Policy \| AgentSiteOps | https://agentsiteops.com/privacy/ | 1 | 13 | pass | - |
+| /disclosure/ | pass | 200 | Disclosure \| AgentSiteOps | https://agentsiteops.com/disclosure/ | 1 | 13 | pass | - |
+| /updates/ | pass | 200 | Updates \| AgentSiteOps | https://agentsiteops.com/updates/ | 1 | 13 | pass | - |
 
 ## Blocking Issues
 

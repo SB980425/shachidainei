@@ -6,8 +6,9 @@
 
 ## Conclusion
 
-- The production site has 18 indexable routes with technical SEO passing.
+- The production site has 21 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
+- Commercial validation is checked separately from revenue evidence; checkout and subscription remain blocked until real demand and payment readiness exist.
 - GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.
 - The next operating step is to collect first-party evidence, not to add a large content batch.
 
@@ -15,11 +16,12 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 18 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 18/18 routes pass |
+| Route registry | docs/routes.json | 21 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 21/21 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
-| IndexNow | latest command output | 18 URLs submitted successfully in current deployment cycle |
+| Commercial validation | reports/commercial-validation-gate.md | pass |
+| IndexNow | latest command output | 21 URLs submitted successfully in current deployment cycle |
 | Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
 
 ## Unverified
@@ -39,6 +41,9 @@
 | / | home | ai_website_operating_system | pass | site_pass | keep | Measure homepage CTA click rate after real analytics endpoint |
 | /ai-website-operating-system/ | pillar | ai_website_operating_system | pass | site_pass | keep | Review impressions and source_link_click after GSC/Bing setup |
 | /tools/website-opportunity-scorer/ | tool | website_opportunity_scoring | pass | site_pass | keep | Measure tool_completed and tool_result_export after real endpoint |
+| /tools/ai-crawler-readiness/ | tool | ai_crawler_readiness | pass | site_pass | keep | Measure readiness report copies and sample audit clicks before paid audit expansion |
+| /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
+| /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep checkout disabled until a real request, identity, terms, refund policy, and payment support exist |
 | /templates/starter-pack/ | template | starter_pack | pass | site_pass | keep | Measure starter pack downloads and query exposure after analytics endpoint |
 | /templates/seo-repo-skeleton/ | template | seo_repo_skeleton | pass | site_pass | keep | Measure template_copy_click after real endpoint |
 | /checklists/ai-content-quality-gate/ | checklist | ai_content_quality_gate | pass | site_pass | keep | Measure checklist_copy_click after real endpoint |

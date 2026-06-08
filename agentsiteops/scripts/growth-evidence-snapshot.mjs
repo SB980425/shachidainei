@@ -9,6 +9,7 @@ const actionsPath = resolve(rootDir, "data", "page-review-actions.csv");
 const technicalReportPath = resolve(rootDir, "reports", "technical-seo-ci.md");
 const crawlerReportPath = resolve(rootDir, "reports", "crawler-access-audit.md");
 const productionHealthReportPath = resolve(rootDir, "reports", "production-health-monitor.md");
+const commercialReportPath = resolve(rootDir, "reports", "commercial-validation-gate.md");
 const searchEvidencePath = resolve(rootDir, "data", "search-evidence-normalized.csv");
 const snapshotCsvPath = resolve(rootDir, "data", "growth-evidence-snapshot.csv");
 const snapshotReportPath = resolve(rootDir, "reports", "growth-evidence-snapshot.md");
@@ -153,12 +154,14 @@ const crawlerReport = read(crawlerReportPath);
 const productionHealthReport = existsSync(productionHealthReportPath)
   ? read(productionHealthReportPath)
   : "";
+const commercialReport = existsSync(commercialReportPath) ? read(commercialReportPath) : "";
 const searchEvidence = optionalCsv(searchEvidencePath);
 const technicalStatus = parseReportStatus(technicalReport);
 const crawlerStatus = parseReportStatus(crawlerReport);
 const productionHealthStatus = productionHealthReport
   ? parseReportStatus(productionHealthReport)
   : "not_checked";
+const commercialGateStatus = commercialReport ? parseReportStatus(commercialReport) : "not_checked";
 const technicalRoutes = parseTechnicalRoutes(technicalReport);
 
 const routeRows = routeDoc.routes.map((route) => {
@@ -217,6 +220,7 @@ const summary = {
   technicalPass: routeRows.filter((row) => row.technical_seo_status === "pass").length,
   crawlerStatus,
   productionHealthStatus,
+  commercialGateStatus,
   pendingGsc: routeRows.filter((row) => row.gsc_status === "pending_export").length,
   pendingBing: routeRows.filter((row) => row.bing_status === "pending_export").length,
   importedGsc: routeRows.filter((row) => row.gsc_status !== "pending_export").length,
@@ -255,6 +259,7 @@ const snapshotReport = [
   `- Technical SEO pass routes: ${summary.technicalPass}`,
   `- Crawler access status: ${summary.crawlerStatus}`,
   `- Production health status: ${summary.productionHealthStatus}`,
+  `- Commercial validation status: ${summary.commercialGateStatus}`,
   `- GSC status: pending export for ${summary.pendingGsc} routes`,
   `- Bing status: pending export for ${summary.pendingBing} routes`,
   `- Imported GSC route evidence: ${summary.importedGsc}`,
@@ -286,6 +291,7 @@ const weeklyReport = [
   "",
   `- The production site has ${summary.routes} indexable routes with technical SEO passing.`,
   "- Production crawler access audit is passing for intended search and user-retrieval crawlers.",
+  "- Commercial validation is checked separately from revenue evidence; checkout and subscription remain blocked until real demand and payment readiness exist.",
   "- GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.",
   "- The next operating step is to collect first-party evidence, not to add a large content batch.",
   "",
@@ -297,6 +303,7 @@ const weeklyReport = [
   `| Technical SEO | reports/technical-seo-ci.md | ${summary.technicalPass}/${summary.routes} routes pass |`,
   `| Crawler access | reports/crawler-access-audit.md | ${summary.crawlerStatus} |`,
   `| Production health | reports/production-health-monitor.md | ${summary.productionHealthStatus} |`,
+  `| Commercial validation | reports/commercial-validation-gate.md | ${summary.commercialGateStatus} |`,
   `| IndexNow | latest command output | ${summary.routes} URLs submitted successfully in current deployment cycle |`,
   "| Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |",
   "",

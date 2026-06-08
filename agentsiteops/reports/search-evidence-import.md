@@ -1,6 +1,6 @@
 # Search Evidence Import
 
-- Generated: 2026-06-07T23:11:27.712Z
+- Generated: 2026-06-08T00:08:00.362Z
 - Status: waiting_for_exports
 - Import files found: 0
 - Normalized rows: 0
@@ -21,6 +21,9 @@
 | / | 0 | 0 | 0 | 0 | 0 | 0 |
 | /ai-website-operating-system/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /tools/website-opportunity-scorer/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /tools/ai-crawler-readiness/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /examples/agentsiteops-self-audit/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /services/ai-website-opportunity-audit/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/starter-pack/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/seo-repo-skeleton/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /checklists/ai-content-quality-gate/ | 0 | 0 | 0 | 0 | 0 | 0 |

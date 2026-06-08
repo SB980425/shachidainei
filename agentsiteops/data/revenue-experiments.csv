@@ -1,7 +1,6 @@
 "experiment_id","date","offer","price_usd","status","start_condition","success_threshold","stop_condition"
-"R001","2026-06-07","AI Website Opportunity Audit","99","planned","Production launch plus compliance-safe contact path","At least 1 explicit request by day 30; 3 paid audits to cover USD 200 target before fees","No request by day 30"
+"R001","2026-06-08","AI Website Opportunity Audit","49-99","intent_test","Public sample audit plus free readiness tool plus compliance-safe GitHub issue path","At least 1 explicit request by day 30; paid checkout only after identity, terms, refund, and payment support are ready","No request by day 30"
 "R002","2026-06-07","AI Website Launch Operating Kit waitlist","29-49","planned","Tool completion or template copy signal exists","5 waitlist or request-access signals in 30 days","No copy/download signal by day 30"
 "R003","2026-06-07","AI Citation Readiness Review","99-199","deferred","At least one AI citation or AI visibility inquiry","2 qualified requests in 30 days","No AI citation testing evidence"
 "R004","2026-06-07","Affiliate recommendations","variable","blocked","Disclosure, privacy, and product-use evidence complete","Revenue without trust regression","No disclosure or weak content quality"
 "R005","2026-06-07","SaaS subscription","TBD","blocked","Repeated paid demand from audits or templates","3 paid audits or 10 purchase-intent signals","No paid demand"
-

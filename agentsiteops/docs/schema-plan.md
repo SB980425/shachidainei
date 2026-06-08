@@ -15,6 +15,9 @@
 | `/` | `WebSite`, `Organization`, `BreadcrumbList` | site name, url, publisher | Organization fields stay minimal until brand identity is real. |
 | `/ai-website-operating-system/` | `Article`, `BreadcrumbList` | headline, datePublished, dateModified, author, publisher | Use when article-like pillar is published. |
 | `/tools/website-opportunity-scorer/` | `SoftwareApplication` or `WebApplication`, `BreadcrumbList` | name, applicationCategory, operatingSystem, offers if paid | Do not claim ratings before real reviews exist. |
+| `/tools/ai-crawler-readiness/` | `SoftwareApplication` or `WebApplication`, `BreadcrumbList` | name, applicationCategory, operatingSystem, offers | Manual checklist tool; do not claim live crawl coverage. |
+| `/examples/agentsiteops-self-audit/` | `WebPage`, `BreadcrumbList` | name, dateModified, mainEntity if sample is expanded | Sample report must not imply customer proof. |
+| `/services/ai-website-opportunity-audit/` | `Service`, `WebPage`, `BreadcrumbList` | name, serviceType, provider, areaServed if enabled | Checkout is disabled; no aggregate ratings or fake offers. |
 | `/templates/seo-repo-skeleton/` | `TechArticle`, `BreadcrumbList` | headline, dependencies, proficiencyLevel if useful | Use code/template examples visibly on page. |
 | `/checklists/ai-content-quality-gate/` | `HowTo`, `BreadcrumbList` | name, steps | Only use if checklist is presented as steps. |
 | `/checklists/programmatic-seo-gate/` | `HowTo`, `BreadcrumbList` | name, steps | Avoid false claims of guaranteed indexing. |
