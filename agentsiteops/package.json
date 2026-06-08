@@ -11,6 +11,7 @@
     "growth:snapshot": "node scripts/growth-evidence-snapshot.mjs",
     "analytics:gate": "node scripts/analytics-endpoint-gate.mjs",
     "commercial:gate": "node scripts/commercial-validation-gate.mjs",
+    "routes:gate": "node scripts/route-consistency-gate.mjs",
     "production:health": "node scripts/production-health-monitor.mjs",
     "search:evidence": "node scripts/import-search-evidence.mjs",
     "indexnow:submit": "node scripts/submit-indexnow.mjs",

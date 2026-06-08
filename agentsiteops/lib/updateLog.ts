@@ -12,6 +12,42 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-08",
+    step: "M3-27 Route consistency gate",
+    status: "completed",
+    keyPoints: [
+      "Added a route consistency gate that checks alignment across docs/routes.json, lib/site.ts, app pages, page registry, page review actions, growth snapshot, SiteAnalytics, and the analytics event allowlist.",
+      "Connected the gate to package scripts and GitHub Actions so route drift becomes a release blocker instead of a manual memory check.",
+      "Closed two route-specific analytics warning gaps by adding operating_system_view and content_quality_gate_view events."
+    ],
+    aiAngle:
+      "AI and search systems benefit from consistent route records because sitemap entries, page content, review actions, and evidence tables no longer rely on separate unsynchronized files.",
+    files: [
+      "scripts/route-consistency-gate.mjs",
+      "reports/route-consistency-gate.md",
+      "package.json",
+      ".github/workflows/agentsiteops-ci.yml",
+      "components/SiteAnalytics.tsx",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "docs/analytics-plan.md",
+      "docs/source-pack-evidence-ledger.md",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "route consistency gate syntax pass",
+      "route consistency gate pass with 149 checks",
+      "analytics endpoint gate pass with 10 test cases",
+      "typecheck pass",
+      "production build pass with 32 static output entries",
+      "production deploy pass on Cloudflare Pages master branch",
+      "production health monitor pass",
+      "IndexNow submit pass with 28 URLs"
+    ],
+    next:
+      "Continue using route consistency, technical SEO, commercial, analytics, crawler, production health, and growth snapshot gates before adding any more public routes."
+  },
+  {
+    date: "2026-06-08",
     step: "M3-26 Local evidence and scope tools",
     status: "completed",
     keyPoints: [

@@ -51,6 +51,8 @@ Current implementation:
 | `internal_search_used` | User searches site | Future search UI |
 | `source_link_click` | User opens source link | Guide/methodology pages |
 | `update_log_view` | User opens the public update log | `/updates/` |
+| `operating_system_view` | User views the core operating-system pillar | `/ai-website-operating-system/` |
+| `content_quality_gate_view` | User views the AI content quality gate | `/checklists/ai-content-quality-gate/` |
 | `pseo_batch_audit_view` | User views pSEO batch audit rules | `/checklists/programmatic-seo-gate/` |
 | `pseo_index_map_view` | User views index/noindex map | `/checklists/programmatic-seo-gate/` |
 | `repo_skeleton_matrix_view` | User views repo directory matrix | `/templates/seo-repo-skeleton/` |

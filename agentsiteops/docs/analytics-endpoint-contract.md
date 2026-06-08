@@ -39,6 +39,7 @@ Minimum v1 allowlist:
 
 - `page_view`
 - `update_log_view`
+- `operating_system_view`
 - `evidence_ledger_view`
 - `tool_page_view`
 - `ai_crawler_readiness_view`
@@ -56,6 +57,7 @@ Minimum v1 allowlist:
 - `source_link_click`
 - `repo_skeleton_matrix_view`
 - `ci_gate_matrix_view`
+- `content_quality_gate_view`
 - `pseo_batch_audit_view`
 - `pseo_index_map_view`
 - `ai_search_robots_guide_view`

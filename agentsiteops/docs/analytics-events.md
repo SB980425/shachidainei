@@ -23,6 +23,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 |---|---|---|
 | `page_view` | Any route load | `path` |
 | `update_log_view` | `/updates/` load | `path` |
+| `operating_system_view` | `/ai-website-operating-system/` load | `path` |
 | `tool_page_view` | `/tools/website-opportunity-scorer/` load | `path` |
 | `ai_crawler_readiness_view` | `/tools/ai-crawler-readiness/` load | `path` |
 | `sample_audit_view` | `/examples/agentsiteops-self-audit/` load | `path` |
@@ -31,6 +32,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `starter_pack_view` | `/templates/starter-pack/` load | `path` |
 | `repo_skeleton_matrix_view` | `/templates/seo-repo-skeleton/` load | `path` |
 | `ci_gate_matrix_view` | `/templates/seo-repo-skeleton/` load | `path` |
+| `content_quality_gate_view` | `/checklists/ai-content-quality-gate/` load | `path` |
 | `search_console_launch_checklist_view` | `/checklists/gsc-bing-indexnow-launch/` load | `path` |
 | `ai_citation_readiness_view` | `/checklists/ai-citation-readiness/` load | `path` |
 | `pseo_batch_audit_view` | `/checklists/programmatic-seo-gate/` load | `path` |

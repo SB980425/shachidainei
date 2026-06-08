@@ -13,6 +13,7 @@ This source pack defines which project records may support claims on `/evidence/
 | Route registry | `docs/routes.json` | Current sitemap route count and route types |
 | Page registry | `docs/page-registry.csv` | Page purpose, search intent, schema candidate, and review ownership |
 | Technical SEO report | `reports/technical-seo-ci.md` | Local static route availability, canonical, metadata, JSON-LD, links, and mobile checks |
+| Route consistency gate | `reports/route-consistency-gate.md` | Alignment across route registry, app pages, page registry, review actions, analytics events, and growth snapshot |
 | Crawler audit report | `reports/crawler-access-audit.md` | Production crawler access status for intended search and retrieval crawlers |
 | Production health monitor | `reports/production-health-monitor.md`, `data/production-health-snapshot.csv` | Production availability and proof-boundary page checks |
 | Commercial validation gate | `reports/commercial-validation-gate.md` | Whether service pages remain in intent-test mode with checkout and subscription blocked |
