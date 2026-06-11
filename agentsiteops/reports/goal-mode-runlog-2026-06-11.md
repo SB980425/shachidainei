@@ -66,9 +66,18 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Updated the public update log and production health monitor so `/updates/` must show the M4-12 entry after deployment.
 - Deployed the M4-12 update to Cloudflare Pages and submitted 41 URLs through IndexNow.
 
+### M4-13 Search Evidence Import Guardrail
+
+- Strengthened `scripts/import-search-evidence.mjs` so malformed present GSC/Bing export files return `blocked` instead of silently creating weak evidence rows.
+- Preserved `waiting_for_exports` for missing GSC/Bing files so absence of exports is not treated as zero search demand.
+- Added `data/search-evidence-import-templates/import-manifest-template.csv` for date-window notes without storing private account identifiers.
+- Updated `docs/search-evidence-imports.md` to reject screenshot rewrites, third-party estimates, missing dimensions, and missing core metrics.
+- Extended `scripts/code-quality-gate.mjs` so the search evidence contract checks the new malformed-import guard and manifest template.
+
 ## Verification Snapshot
 
 - `npm run lint`: pass.
+- `npm run lint`: pass, 14 checks after adding search import contract assertions.
 - `npm run typecheck`: pass.
 - `npm run analytics:gate`: pass.
 - `npm run commercial:gate`: pass, 83 checks.
@@ -77,6 +86,8 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run build`: pass, 46 generated static pages.
 - `npm run seo:ci`: pass, 41 routes, 0 blockers, 0 warnings.
 - `npm run crawler:audit`: pass.
+- `npm run search:evidence`: pass, waiting_for_exports, 0 imported rows.
+- Temporary malformed `gsc-pages.csv` test: blocked as expected, then removed and restored to waiting_for_exports.
 - `npm run production:health`: pass, 116 checks.
 - `npm run production:health`: pass, 117 checks after M4-12 deployment.
 - `npm run indexnow:submit`: pass, 41 URLs, HTTP 200.

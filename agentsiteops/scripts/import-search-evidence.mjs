@@ -182,6 +182,53 @@ function normalizeRows(spec, rows, siteBaseUrl) {
   });
 }
 
+function hasCoreMetrics(row) {
+  return row.clicks !== "" && row.impressions !== "";
+}
+
+function hasDimension(spec, row) {
+  if (spec.grain === "page") {
+    return row.page_path !== "" && row.page_url !== "";
+  }
+
+  return row.query !== "";
+}
+
+function validateRows(spec, rows) {
+  const acceptedRows = [];
+  let rejectedRows = 0;
+
+  if (!rows.length) {
+    validationIssues.push(`${spec.file}: no data rows found`);
+    return { acceptedRows, rejectedRows };
+  }
+
+  rows.forEach((row, index) => {
+    const rowNumber = index + 2;
+    const missingDimension = !hasDimension(spec, row);
+    const missingMetrics = !hasCoreMetrics(row);
+
+    if (missingDimension || missingMetrics) {
+      rejectedRows += 1;
+      validationIssues.push(
+        `${spec.file}: row ${rowNumber} missing ${[
+          missingDimension ? (spec.grain === "page" ? "page URL" : "query") : "",
+          missingMetrics ? "clicks or impressions" : ""
+        ].filter(Boolean).join(" and ")}`
+      );
+      return;
+    }
+
+    if (row.ctr === "" || row.average_position === "") {
+      validationWarnings.push(`${spec.file}: row ${rowNumber} missing CTR or average position`);
+    }
+
+    acceptedRows.push(row);
+  });
+
+  return { acceptedRows, rejectedRows };
+}
+
 function summarizeRouteCoverage(routes, rows, source) {
   return routes.map((route) => {
     const matching = rows.filter((row) => row.source === source && row.page_path === route.path);
@@ -200,6 +247,8 @@ const generatedAt = new Date().toISOString();
 const routeDoc = JSON.parse(read(routesPath));
 const normalizedRows = [];
 const fileSummaries = [];
+const validationIssues = [];
+const validationWarnings = [];
 
 mkdirSync(dirname(outputPath), { recursive: true });
 mkdirSync(dirname(reportPath), { recursive: true });
@@ -214,12 +263,14 @@ for (const spec of importSpecs) {
 
   const parsedRows = parseCsv(read(path));
   const importedRows = normalizeRows(spec, parsedRows, routeDoc.site.baseUrl);
-  normalizedRows.push(...importedRows);
+  const validation = validateRows(spec, importedRows);
+  normalizedRows.push(...validation.acceptedRows);
   fileSummaries.push({
     ...spec,
-    status: "imported",
+    status: validation.rejectedRows ? "blocked" : "imported",
     inputRows: parsedRows.length,
-    normalizedRows: importedRows.length
+    normalizedRows: validation.acceptedRows.length,
+    rejectedRows: validation.rejectedRows
   });
 }
 
@@ -233,7 +284,8 @@ writeFileSync(outputPath, `${outputLines.join("\n")}\n`);
 const gscCoverage = summarizeRouteCoverage(routeDoc.routes, normalizedRows, "gsc");
 const bingCoverage = summarizeRouteCoverage(routeDoc.routes, normalizedRows, "bing");
 const importedFileCount = fileSummaries.filter((file) => file.status === "imported").length;
-const status = importedFileCount > 0 ? "imported" : "waiting_for_exports";
+const blockedFileCount = fileSummaries.filter((file) => file.status === "blocked").length;
+const status = validationIssues.length ? "blocked" : importedFileCount > 0 ? "imported" : "waiting_for_exports";
 
 const report = [
   "# Search Evidence Import",
@@ -241,14 +293,15 @@ const report = [
   `- Generated: ${generatedAt}`,
   `- Status: ${status}`,
   `- Import files found: ${importedFileCount}`,
+  `- Blocked files: ${blockedFileCount}`,
   `- Normalized rows: ${normalizedRows.length}`,
   `- Import directory: ${importDir}`,
   `- Template directory: ${templateDir}`,
   "",
   "## File Status",
   "",
-  "| File | Source | Grain | Status | Input rows | Normalized rows |",
-  "|---|---|---|---|---|---|",
+  "| File | Source | Grain | Status | Input rows | Normalized rows | Rejected rows |",
+  "|---|---|---|---|---|---|---|",
   ...fileSummaries.map((file) =>
     [
       "|",
@@ -263,9 +316,19 @@ const report = [
       file.inputRows,
       "|",
       file.normalizedRows,
+      "|",
+      file.rejectedRows ?? 0,
       "|"
     ].join(" ")
   ),
+  "",
+  "## Validation Issues",
+  "",
+  ...(validationIssues.length ? validationIssues.map((issue) => `- ${mdEscape(issue)}`) : ["- None"]),
+  "",
+  "## Validation Warnings",
+  "",
+  ...(validationWarnings.length ? validationWarnings.map((warning) => `- ${mdEscape(warning)}`) : ["- None"]),
   "",
   "## Route Coverage",
   "",
@@ -308,6 +371,9 @@ console.log(
     {
       status,
       importedFileCount,
+      blockedFileCount,
+      validationIssues: validationIssues.length,
+      validationWarnings: validationWarnings.length,
       normalizedRows: normalizedRows.length,
       output: outputPath,
       report: reportPath
@@ -316,3 +382,7 @@ console.log(
     2
   )
 );
+
+if (validationIssues.length) {
+  process.exitCode = 1;
+}

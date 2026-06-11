@@ -1,8 +1,8 @@
 # Code Quality Gate
 
-- Generated: 2026-06-11T11:25:53.729Z
+- Generated: 2026-06-11T11:37:47.027Z
 - Status: pass
-- Checks: 12
+- Checks: 14
 - Blockers: 0
 
 ## Summary
@@ -18,7 +18,9 @@
 | production_health | pass | production monitor checks the Launch Blueprint Fit Checker route |
 | search_evidence | pass | search importer writes normalized evidence CSV |
 | search_evidence | pass | search importer report points to tracked template directory |
-| search_evidence | pass | tracked GSC and Bing import templates exist |
+| search_evidence | pass | search importer blocks malformed present export files |
+| search_evidence | pass | search importer treats missing exports as waiting state |
+| search_evidence | pass | tracked GSC, Bing, and import-manifest templates exist |
 | search_evidence | pass | growth snapshot marks missing search exports as pending |
 | search_evidence | pass | growth snapshot can distinguish imported search activity |
 

@@ -43,6 +43,31 @@ The importer accepts common column names such as `Page`, `Top pages`, `URL`, `Qu
 - Keep the export date range in the filename notes or in the report that accompanies the import.
 - Do not paste screenshots into the evidence workflow. Use CSV rows so route evidence can be reproduced.
 - If a platform export has different column names, keep the original file and update `scripts/import-search-evidence.mjs` only after confirming the column meaning.
+- Do not manually rewrite screenshots or third-party estimates into the import files. Imported rows must come from first-party GSC or Bing exports.
+- Page-level files must contain a usable page URL plus clicks and impressions.
+- Query-level files must contain a usable query plus clicks and impressions.
+- Missing CTR or average position is allowed as a warning, but missing the dimension or core metrics blocks the import.
+
+## Blocked States
+
+The importer returns `blocked` and exits with a non-zero status when a present export file has malformed rows. Examples:
+
+- A page file without page URLs.
+- A query file without query text.
+- A row without clicks or impressions.
+- A pasted table whose headers cannot be mapped to accepted fields.
+
+Missing files are not blocked. They are treated as `waiting_for_exports` because missing exports do not prove zero search demand.
+
+## Date Window Record
+
+When exports are added, create a private note outside the public repo or use the optional manifest template:
+
+```text
+data/search-evidence-import-templates/import-manifest-template.csv
+```
+
+Record the source, export date range, export date, platform property, and operator note. Do not include private account identifiers.
 
 ## Commands
 

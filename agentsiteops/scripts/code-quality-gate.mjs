@@ -122,14 +122,17 @@ function checkSearchEvidenceContract() {
     "data/search-evidence-import-templates/gsc-pages-template.csv",
     "data/search-evidence-import-templates/gsc-queries-template.csv",
     "data/search-evidence-import-templates/bing-pages-template.csv",
-    "data/search-evidence-import-templates/bing-queries-template.csv"
+    "data/search-evidence-import-templates/bing-queries-template.csv",
+    "data/search-evidence-import-templates/import-manifest-template.csv"
   ];
   addCheck("search_evidence", importer.includes("search-evidence-normalized.csv") ? "pass" : "fail", "search importer writes normalized evidence CSV");
   addCheck("search_evidence", importer.includes("search-evidence-import-templates") ? "pass" : "fail", "search importer report points to tracked template directory");
+  addCheck("search_evidence", importer.includes("validationIssues") ? "pass" : "fail", "search importer blocks malformed present export files");
+  addCheck("search_evidence", importer.includes("waiting_for_exports") ? "pass" : "fail", "search importer treats missing exports as waiting state");
   addCheck(
     "search_evidence",
     templates.every((template) => existsSync(resolve(rootDir, template))) ? "pass" : "fail",
-    "tracked GSC and Bing import templates exist"
+    "tracked GSC, Bing, and import-manifest templates exist"
   );
   addCheck("search_evidence", snapshot.includes("pending_export") ? "pass" : "fail", "growth snapshot marks missing search exports as pending");
   addCheck("search_evidence", snapshot.includes("imported_with_search_activity") ? "pass" : "fail", "growth snapshot can distinguish imported search activity");

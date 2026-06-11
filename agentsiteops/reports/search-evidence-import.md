@@ -1,20 +1,29 @@
 # Search Evidence Import
 
-- Generated: 2026-06-11T11:01:03.304Z
+- Generated: 2026-06-11T11:37:47.027Z
 - Status: waiting_for_exports
 - Import files found: 0
+- Blocked files: 0
 - Normalized rows: 0
 - Import directory: C:\Users\98043\AppData\Local\Temp\codex-shachidainei-3cb8642f75f440c28c27c5ff6bffe097\agentsiteops\data\search-evidence-imports
 - Template directory: C:\Users\98043\AppData\Local\Temp\codex-shachidainei-3cb8642f75f440c28c27c5ff6bffe097\agentsiteops\data\search-evidence-import-templates
 
 ## File Status
 
-| File | Source | Grain | Status | Input rows | Normalized rows |
-|---|---|---|---|---|---|
-| gsc-pages.csv | gsc | page | missing | 0 | 0 |
-| gsc-queries.csv | gsc | query | missing | 0 | 0 |
-| bing-pages.csv | bing | page | missing | 0 | 0 |
-| bing-queries.csv | bing | query | missing | 0 | 0 |
+| File | Source | Grain | Status | Input rows | Normalized rows | Rejected rows |
+|---|---|---|---|---|---|---|
+| gsc-pages.csv | gsc | page | missing | 0 | 0 | 0 |
+| gsc-queries.csv | gsc | query | missing | 0 | 0 | 0 |
+| bing-pages.csv | bing | page | missing | 0 | 0 | 0 |
+| bing-queries.csv | bing | query | missing | 0 | 0 | 0 |
+
+## Validation Issues
+
+- None
+
+## Validation Warnings
+
+- None
 
 ## Route Coverage
 

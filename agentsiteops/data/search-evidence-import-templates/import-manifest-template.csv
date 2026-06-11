@@ -1,0 +1,3 @@
+source,file,property_host,date_start,date_end,exported_at,operator_note
+gsc,gsc-pages.csv,agentsiteops.com,2026-06-01,2026-06-30,2026-07-01,"Do not include account id, user email, or private identifiers."
+bing,bing-pages.csv,agentsiteops.com,2026-06-01,2026-06-30,2026-07-01,"Use the canonical production property only."

@@ -12,6 +12,44 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-13 Search evidence import guardrail",
+    status: "completed",
+    keyPoints: [
+      "Strengthened the GSC and Bing CSV importer so malformed present export files return a blocked state instead of silently producing weak evidence rows.",
+      "Kept the no-export state as waiting_for_exports, so missing GSC or Bing data is not misread as zero demand.",
+      "Added an import manifest template and updated the import documentation to reject screenshot rewrites, third-party estimates, missing dimensions, and missing core metrics."
+    ],
+    aiAngle:
+      "AI and search systems can inspect that AgentSiteOps separates missing evidence from negative evidence and blocks malformed search data before it reaches route-level growth decisions.",
+    files: [
+      "scripts/import-search-evidence.mjs",
+      "scripts/code-quality-gate.mjs",
+      "docs/search-evidence-imports.md",
+      "data/search-evidence-import-templates/import-manifest-template.csv",
+      "reports/search-evidence-import.md",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "node syntax check pass",
+      "search evidence empty-export path pass",
+      "malformed temporary CSV blocked as expected",
+      "search evidence restored to waiting_for_exports",
+      "code quality gate pass",
+      "typecheck pass",
+      "route consistency gate pass",
+      "production build pass",
+      "commercial validation gate pass",
+      "analytics endpoint gate pass",
+      "technical SEO CI pass",
+      "crawler access audit pass",
+      "growth snapshot baseline_ready"
+    ],
+    next:
+      "When real GSC or Bing exports become available, import only first-party CSV rows and treat missing exports as pending, not zero traffic."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-12 Manual outreach evidence loop",
     status: "completed",
     keyPoints: [
