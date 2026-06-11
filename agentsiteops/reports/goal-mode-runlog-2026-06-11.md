@@ -49,17 +49,25 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Registered the sample across sitemap, page registry, review actions, analytics events, funnel template, commercial validation, production health, and update log.
 - Deployed production and submitted 41 URLs through IndexNow.
 
+### M4-11 Delivery Artifact Templates
+
+- Added `docs/delivery-fit-review-template.md` for actual USD 29 Fit Review fulfillment.
+- Added `docs/delivery-launch-blueprint-template.md` for actual USD 99 Launch Blueprint fulfillment.
+- Added `data/delivery-quality-checklist.csv` so both products block sensitive data storage, guarantee claims, unsafe automation, and regulated-advice drift before delivery.
+- Extended `docs/manual-fulfillment-runbook.md` and `scripts/commercial-validation-gate.mjs` so the delivery templates are part of the operational gate.
+- Deployed production update log and submitted 41 URLs through IndexNow.
+
 ## Verification Snapshot
 
 - `npm run lint`: pass.
 - `npm run typecheck`: pass.
 - `npm run analytics:gate`: pass.
-- `npm run commercial:gate`: pass, 75 checks.
+- `npm run commercial:gate`: pass, 83 checks.
 - `npm run routes:gate`: pass, 215 checks.
 - `npm run build`: pass, 46 generated static pages.
 - `npm run seo:ci`: pass, 41 routes, 0 blockers, 0 warnings.
 - `npm run crawler:audit`: pass.
-- `npm run production:health`: pass, 115 checks.
+- `npm run production:health`: pass, 116 checks.
 - `npm run indexnow:submit`: pass, 41 URLs, HTTP 200.
 - Playwright static build checks passed for `/examples/fit-review-sample/`, `/starter-review/`, and `/pricing/` on desktop and mobile without horizontal overflow.
 - Final production read-only checks passed for `/examples/fit-review-sample/`, `/starter-review/`, `/pricing/`, `/evidence/`, `/updates/`, `/intake/`, `/buy/`, and `/sitemap.xml`.
@@ -69,7 +77,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Production domain: `https://agentsiteops.com`
 - Sitemap route count: 41.
 - Current branch: `codex/launch-blueprint-reset`.
-- Latest pushed commit at this log point: `cf3b24a Record fit review sample production evidence`.
+- Latest pushed commit at this log point: `6f824c1 Record delivery templates production evidence`.
 
 ## Current Risk Register
 
@@ -77,6 +85,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - No confirmed PayPal payment or qualified intake exists in the repo, so Fit Review and Launch Blueprint revenue remain unproven.
 - Local/session analytics are active only as a browser event buffer; no production analytics endpoint is enabled.
 - Public pages are stronger, but both paid offers still need confirmed payment plus usable intake before subscriptions or higher pricing can be justified.
+- Delivery templates now exist, but no real buyer artifact has been delivered yet.
 
 ## Next Execution Queue
 
@@ -85,3 +94,4 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 3. Review the funnel template weekly: fit completion, Fit Review sample view, full sample view, compare view, payment click, intake click, confirmed payment, qualified order.
 4. Do not add subscriptions until repeat demand and manual delivery capacity are proven.
 5. If no qualified signal appears, rewrite the starter offer and sample before increasing content volume.
+6. If a real order appears, use the delivery templates and checklist first; do not improvise a new scope in email.
