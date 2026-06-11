@@ -56,6 +56,7 @@ export default function Page() {
           <ul className="compact-list">
             <li>The service provides a manual launch blueprint based on buyer-submitted details.</li>
             <li>Delivery includes offer, buyer, landing page structure, pricing angle, outreach, and validation sequence.</li>
+            <li>Payment is currently handled through PayPal-hosted payment links; the site does not collect card data.</li>
             <li>The service does not include software development, platform automation, paid advertising, account management, or legal review.</li>
             <li>Delivery depends on receiving usable intake details after payment.</li>
           </ul>

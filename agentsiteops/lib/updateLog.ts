@@ -12,6 +12,48 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-02 Brand icon, payment test, and pricing evidence boundary",
+    status: "completed",
+    keyPoints: [
+      "Added public AgentSiteOps SVG favicon and apple icon files so the browser tab no longer falls back to a generic site icon.",
+      "Added a temporary USD 1 PayPal payment test link on the buy and pricing pages without treating it as a Launch Blueprint purchase.",
+      "Added visible data-source, authority-boundary, and pricing-position sections so buyers can see what the route is based on and what it does not prove."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect a clearer commercial trust layer: branded icon, payment-path test, source inputs, no-guarantee boundary, and competitor-positioning context.",
+    files: [
+      "public/icon.svg",
+      "public/apple-icon.svg",
+      "app/layout.tsx",
+      "app/page.tsx",
+      "app/buy/page.tsx",
+      "app/pricing/page.tsx",
+      "app/terms/page.tsx",
+      "app/disclaimer/page.tsx",
+      "app/globals.css",
+      "lib/launch.ts",
+      "lib/payments.ts",
+      "data/revenue-experiments.csv",
+      "checklists/monetization-compliance.md",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs"
+    ],
+    verification: [
+      "typecheck pass",
+      "analytics endpoint gate pass with 10 test cases",
+      "commercial validation gate pass with 50 checks",
+      "route consistency gate pass with 195 checks",
+      "production build pass with 42 static output entries",
+      "Playwright local visual check pass for home, buy, and pricing on desktop and mobile",
+      "local icon.svg check pass with HTTP 200 and brand label"
+    ],
+    next:
+      "Use the USD 1 PayPal link only to verify payment receipt. Remove the public test link after confirmation, then measure whether the USD 99 page gets real qualified clicks or messages."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-01 Launch Blueprint reset and payment flow",
     status: "completed",
     keyPoints: [

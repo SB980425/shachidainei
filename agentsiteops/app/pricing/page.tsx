@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, CreditCard, FileText, Mail, ShieldCheck } from "lucide-react";
-import { launchDeliverables, launchProduct } from "@/lib/launch";
-import { paypal, primaryOffer } from "@/lib/payments";
+import { ArrowRight, CheckCircle2, CreditCard, DatabaseZap, FileText, Mail, ShieldCheck } from "lucide-react";
+import {
+  authorityBoundaries,
+  blueprintEvidenceInputs,
+  launchDeliverables,
+  launchProduct,
+  pricingBenchmarks
+} from "@/lib/launch";
+import { paypal, primaryOffer, testPaymentOffer } from "@/lib/payments";
 import { siteUrl } from "@/lib/site";
 
 const path = "/pricing/";
@@ -77,9 +83,21 @@ export default function Page() {
             <CreditCard aria-hidden="true" size={17} />
             Pay USD {primaryOffer.price}
           </a>
+          <a
+            className="secondary-action test-payment-action"
+            data-analytics-event="test_payment_cta_click"
+            data-analytics-label="pricing_paypal_test_usd_1"
+            href={testPaymentOffer.href}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <CreditCard aria-hidden="true" size={17} />
+            Test USD {testPaymentOffer.price}
+          </a>
           <small>
             Payment opens PayPal. Delivery remains manual after confirmation and intake details.
           </small>
+          <small>{testPaymentOffer.purpose}</small>
         </aside>
       </section>
 
@@ -100,6 +118,62 @@ export default function Page() {
               <h3>{item.split(" and ")[0]}</h3>
               <p>{item}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="pricing-grid-section">
+        <div className="section-head">
+          <h2>Data source and accuracy boundary</h2>
+          <p>
+            The route is not generated from confidence alone. It is assembled from declared
+            inputs, visible evidence, and explicit stop conditions.
+          </p>
+        </div>
+        <div className="pricing-grid">
+          {blueprintEvidenceInputs.map((item) => (
+            <article key={item.title}>
+              <span aria-hidden="true">
+                <DatabaseZap size={18} />
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+        <div className="authority-note">
+          {authorityBoundaries.map((item) => (
+            <p key={item}>{item}</p>
+          ))}
+        </div>
+      </section>
+
+      <section className="pricing-grid-section">
+        <div className="section-head">
+          <h2>Pricing position</h2>
+          <p>
+            USD {primaryOffer.price} is not priced as ongoing SEO or AI-monitoring software.
+            It is priced as a single manual decision artifact for the first validation cycle.
+          </p>
+        </div>
+        <div className="comparison-table" role="table" aria-label="Pricing comparison">
+          <div role="row">
+            <strong role="columnheader">Option</strong>
+            <strong role="columnheader">Price shape</strong>
+            <strong role="columnheader">What it is better for</strong>
+          </div>
+          {pricingBenchmarks.map((item) => (
+            <a
+              href={item.href}
+              key={item.name}
+              rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+              role="row"
+              target={item.href.startsWith("http") ? "_blank" : undefined}
+            >
+              <span role="cell">{item.name}</span>
+              <span role="cell">{item.price}</span>
+              <span role="cell">{item.position}</span>
+            </a>
           ))}
         </div>
       </section>

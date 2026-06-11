@@ -60,6 +60,59 @@ export const marketSignals = [
   }
 ];
 
+export const blueprintEvidenceInputs = [
+  {
+    title: "User-provided operating facts",
+    body:
+      "The blueprint starts from the buyer's actual skills, tools, previous work, public demos, available weekly time, target price range, and delivery limits."
+  },
+  {
+    title: "Public page and repo evidence",
+    body:
+      "When available, the review uses the buyer's website, GitHub, portfolio, social profile, offer copy, sample output, and public competitor pages."
+  },
+  {
+    title: "Search and AI visibility evidence",
+    body:
+      "If the buyer provides GSC, Bing, analytics, or AI referral exports, those signals override generic assumptions. Without exports, the blueprint marks search demand as unverified."
+  },
+  {
+    title: "AgentSiteOps gates",
+    body:
+      "The decision is constrained by the scorer, crawler-readiness checks, route evidence snapshot, content-quality gate, monetization boundary, and stop/pivot rules."
+  }
+];
+
+export const authorityBoundaries = [
+  "AgentSiteOps is not more authoritative because it is an AI. Its advantage is a narrow workflow: source intake, route scoring, offer compression, page structure, outreach copy, and explicit stop rules.",
+  "The output is only as strong as the provided evidence. Missing search data, weak proof, unclear delivery ability, or regulated subject matter lowers confidence.",
+  "The blueprint does not guarantee a correct market, buyer, ranking, citation, customer, or revenue outcome. It reduces ambiguity for one validation cycle."
+];
+
+export const pricingBenchmarks = [
+  {
+    name: "AgentSiteOps Launch Blueprint",
+    price: "USD 99 one time",
+    position:
+      "Manual offer, page, pricing, outreach, and 7-day validation plan. No monitoring dashboard or guaranteed demand.",
+    href: "/pricing/"
+  },
+  {
+    name: "Ahrefs",
+    price: "Paid SEO platform plans commonly start above USD 100 per month",
+    position:
+      "SEO research and monitoring software. Stronger ongoing data platform, not a manual first-offer blueprint.",
+    href: "https://ahrefs.com/pricing"
+  },
+  {
+    name: "Otterly.AI",
+    price: "AI search monitoring plans are monthly software subscriptions",
+    position:
+      "AI visibility monitoring. Stronger citation tracking, not a done-for-you first launch route.",
+    href: "https://otterly.ai/pricing/"
+  }
+];
+
 export const sampleReportSections = [
   {
     title: "Current capability",

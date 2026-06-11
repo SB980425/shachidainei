@@ -23,7 +23,9 @@ export const metadata: Metadata = {
   description:
     "Turn scattered AI capability into one sellable offer, one landing page structure, and one 7-day validation path.",
   icons: {
-    icon: "/icon.svg"
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }]
   },
   alternates: {
     canonical: "/"

@@ -10,7 +10,8 @@ Status: active gate.
 | Analytics endpoint validator | `pass` | `npm run analytics:gate` rejects unknown events, sensitive payloads, stale timestamps, future timestamps, external URLs, and oversized bodies. |
 | External analytics endpoint | `block_until_review` | Requires selected endpoint, retention period, privacy notice, deletion path, security review, and production activation decision. |
 | Cloudflare managed analytics or edge logs | `disclose_and_review` | Production hosting may include Cloudflare scripts, web analytics, or edge logs that are separate from the first-party event endpoint. |
-| Audit intent page | `pass_with_boundary` | The service page may describe scope and link to GitHub issue intent, but checkout, form storage, and payment collection remain disabled. |
+| Launch Blueprint payment path | `pass_with_boundary` | PayPal.me handles payment externally; the site shows price, scope, delivery timing, refund policy, limits, contact route, and manual intake before delivery. |
+| Audit intent page | `legacy_pass_with_boundary` | The older audit page remains public context, but qualified commercial intent should route to the Launch Blueprint pricing, sample, buy, and intake path. |
 | Email signup | `block_until_review` | Requires purpose, sender, frequency, unsubscribe path, and retention notice. |
 | Ads | `block_until_review` | Requires content quality review, ad placement review, privacy/cookie disclosure, and platform policy review. |
 | Affiliate links | `block_until_review` | Requires near-page material-connection disclosure. |
@@ -52,8 +53,10 @@ Status: active gate.
 | No affiliate links | `pass` |
 | No email signup | `pass` |
 | No lead form | `pass` |
-| No payment or account system | `pass` |
-| Audit intent page has no checkout | `pass` |
+| Manual PayPal payment path disclosed | `pass` |
+| No card data collected by site | `pass` |
+| No user account system | `pass` |
+| Audit intent page routes commercial intent to current Launch Blueprint path | `pass` |
 | No external analytics endpoint enabled | `pass` |
 | Cloudflare managed analytics disclosed | `pass` |
 | Local event buffer disclosed | `pass` |
@@ -67,5 +70,5 @@ Status: active gate.
 - Analytics destination or first-party proxy.
 - Retention period and deletion path.
 - Whether email, affiliate, ads, sponsorship, paid templates, forms, or accounts will be used.
-- Whether the GitHub issue intent path is acceptable as the first manual contact route before any payment processor is enabled.
+- Whether the USD 1 payment test should remain public after PayPal path verification.
 - Legal review for jurisdiction-specific privacy, cookie, tax, professional advice, or advertising obligations.

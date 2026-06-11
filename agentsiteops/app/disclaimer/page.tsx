@@ -56,7 +56,7 @@ export default function Page() {
         </div>
         <div className="loop-grid">
           {[
-            "No traffic, ranking, AI citation, or brand mention guarantee.",
+            "No guaranteed traffic, ranking, AI citation, or brand mention.",
             "No customer acquisition, revenue, or profit guarantee.",
             "No legal, tax, financial, medical, security, or regulated professional advice.",
             "No automated posting, commenting, messaging, scraping, or platform-growth workflow.",

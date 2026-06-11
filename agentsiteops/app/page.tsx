@@ -4,6 +4,7 @@ import {
   ArrowRight,
   BadgeDollarSign,
   CheckCircle2,
+  DatabaseZap,
   FileText,
   Gauge,
   Mail,
@@ -12,8 +13,15 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
+import { BrandLogo } from "@/components/BrandLogo";
 import { ScorerPanel } from "@/components/ScorerPanel";
-import { launchDeliverables, launchProduct, marketSignals } from "@/lib/launch";
+import {
+  authorityBoundaries,
+  blueprintEvidenceInputs,
+  launchDeliverables,
+  launchProduct,
+  marketSignals
+} from "@/lib/launch";
 import { primaryOffer } from "@/lib/payments";
 import { allRoutes, siteUrl } from "@/lib/site";
 
@@ -90,7 +98,23 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <ScorerPanel />
+        <div className="hero-side">
+          <aside className="brand-signal-card" aria-label="AgentSiteOps brand signal">
+            <BrandLogo />
+            <div className="signal-map" aria-hidden="true">
+              <span>Input</span>
+              <i />
+              <span>Evidence</span>
+              <i />
+              <span>Route</span>
+            </div>
+            <p>
+              A visible brand mark, source boundary, and one commercial route replace the
+              previous generic static-site feel.
+            </p>
+          </aside>
+          <ScorerPanel />
+        </div>
       </section>
 
       <section className="workflow-section">
@@ -130,6 +154,33 @@ export default function HomePage() {
               <h3>{signal.title}</h3>
               <p>{signal.summary}</p>
             </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="pricing-grid-section">
+        <div className="section-head">
+          <h2>What the route is based on</h2>
+          <p>
+            The blueprint is not positioned as a superior generic AI answer. It is a
+            constrained decision process that uses declared inputs, visible evidence, and
+            stop rules.
+          </p>
+        </div>
+        <div className="pricing-grid">
+          {blueprintEvidenceInputs.map((item) => (
+            <article key={item.title}>
+              <span aria-hidden="true">
+                <DatabaseZap size={18} />
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+        <div className="authority-note">
+          {authorityBoundaries.map((item) => (
+            <p key={item}>{item}</p>
           ))}
         </div>
       </section>

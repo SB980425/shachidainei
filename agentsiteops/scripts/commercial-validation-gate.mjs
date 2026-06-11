@@ -9,7 +9,14 @@ const requiredRoutes = [
   "/tools/ai-crawler-readiness/",
   "/examples/agentsiteops-self-audit/",
   "/services/ai-website-opportunity-audit/",
-  "/tools/audit-scope-builder/"
+  "/tools/audit-scope-builder/",
+  "/pricing/",
+  "/buy/",
+  "/intake/",
+  "/terms/",
+  "/refund-policy/",
+  "/disclaimer/",
+  "/contact/"
 ];
 
 const checks = [];
@@ -49,18 +56,32 @@ function checkRoutes() {
 }
 
 function checkCommercialBoundary() {
-  const site = read("lib/site.ts");
+  const payments = read("lib/payments.ts");
+  const launch = read("lib/launch.ts");
+  const pricingPage = read("app/pricing/page.tsx");
+  const buyPage = read("app/buy/page.tsx");
   const revenue = read("data/revenue-experiments.csv");
   const compliance = read("checklists/monetization-compliance.md");
+  const terms = read("app/terms/page.tsx");
+  const refund = read("app/refund-policy/page.tsx");
+  const disclaimer = read("app/disclaimer/page.tsx");
 
-  requireText("service_boundary", site, "Checkout remains disabled", "service page states checkout is disabled");
-  requireText("service_boundary", site, "It does not promise rankings", "service page blocks ranking and revenue promises");
-  requireText("revenue_experiments", revenue, '"R001","2026-06-08","AI Website Opportunity Audit","49-99","intent_test"', "audit price is intent test, not active checkout");
+  requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
+  requireText("payment_path", payments, "https://paypal.me/agentsiteops/1USD", "temporary USD 1 PayPal test link is configured");
+  requireText("payment_path", pricingPage, "Test USD", "pricing page exposes payment test boundary");
+  requireText("payment_path", buyPage, "Test PayPal with USD", "buy page exposes payment test boundary");
+  requireText("service_boundary", launch, "No guaranteed traffic, rankings, revenue, customers, AI citations", "launch product blocks guarantee claims");
+  requireText("service_boundary", disclaimer, "No guaranteed traffic", "disclaimer blocks guarantee claims");
+  requireText("trust_pages", terms, "PayPal", "terms page covers PayPal payment path");
+  requireText("trust_pages", refund, "refund", "refund page exists and states refund boundary");
+  requireText("revenue_experiments", revenue, '"R006","2026-06-11","AgentSiteOps Launch Blueprint","99","live_validation"', "Launch Blueprint is recorded as live validation");
+  requireText("revenue_experiments", revenue, '"R007","2026-06-11","PayPal payment path test","1","temporary_payment_test"', "USD 1 test is recorded as temporary payment test");
   requireText("revenue_experiments", revenue, '"R005","2026-06-07","SaaS subscription","TBD","blocked"', "subscription remains blocked");
-  requireText("compliance", compliance, "| Audit intent page | `pass_with_boundary` |", "audit intent page has compliance boundary");
-  requireText("compliance", compliance, "| No payment or account system | `pass` |", "payment and account system remain absent");
+  requireText("compliance", compliance, "| Launch Blueprint payment path | `pass_with_boundary` |", "current payment path has compliance boundary");
+  requireText("compliance", compliance, "| Manual PayPal payment path disclosed | `pass` |", "manual PayPal path is disclosed");
+  requireText("compliance", compliance, "| No card data collected by site | `pass` |", "site does not collect card data");
 
-  addCheck("service_boundary", !/Buy now|Start checkout|Subscribe now/.test(site) ? "pass" : "fail", "no active checkout CTA copy in site data");
+  addCheck("service_boundary", !/guaranteed rankings|guaranteed revenue|guaranteed customers/i.test(launch) ? "pass" : "fail", "launch copy avoids guarantee claims");
 }
 
 function checkReadinessTool() {
@@ -133,9 +154,9 @@ function renderReport(generatedAt) {
     "",
     "## Interpretation",
     "",
-    "- This gate checks whether commercial pages remain in intent-test mode.",
+    "- This gate checks whether the live manual PayPal path has visible scope, limits, refund, contact, and evidence boundaries.",
     "- It does not prove buyer demand, paid conversion, revenue, or product-market fit.",
-    "- Checkout remains blocked until identity, terms, refund policy, payment support, and first request evidence exist."
+    "- The USD 1 payment link is temporary verification only and should be removed after payment-path confirmation."
   ];
 
   mkdirSync(dirname(reportPath), { recursive: true });

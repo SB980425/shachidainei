@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CreditCard, FileText, Mail, ShieldCheck } from "lucide-react";
 import { launchDeliverables, launchProduct } from "@/lib/launch";
-import { primaryOffer } from "@/lib/payments";
+import { primaryOffer, testPaymentOffer } from "@/lib/payments";
 import { siteUrl } from "@/lib/site";
 
 const path = "/buy/";
@@ -72,7 +72,19 @@ export default function Page() {
             <CreditCard aria-hidden="true" size={17} />
             Pay with PayPal
           </a>
+          <a
+            className="secondary-action test-payment-action"
+            data-analytics-event="test_payment_cta_click"
+            data-analytics-label="buy_paypal_test_usd_1"
+            href={testPaymentOffer.href}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <CreditCard aria-hidden="true" size={17} />
+            Test PayPal with USD {testPaymentOffer.price}
+          </a>
           <small>{launchProduct.timeline}</small>
+          <small>{testPaymentOffer.purpose}</small>
         </aside>
       </section>
 

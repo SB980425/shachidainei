@@ -159,6 +159,19 @@ async function checkIndexNowKey() {
   requireText("indexnow_key", response.text.trim(), "32bc6ba6e277f850a701747381a57c48", "key file content matches public key", url);
 }
 
+async function checkBrandIcon() {
+  const url = `${siteUrl}/icon.svg`;
+  const response = await fetchText(url);
+  addCheck("brand_icon", response.ok ? "pass" : "fail", `HTTP ${response.status}`, url);
+
+  if (!response.ok) {
+    return;
+  }
+
+  requireText("brand_icon", response.text, "<svg", "SVG icon exists", url);
+  requireText("brand_icon", response.text, "AgentSiteOps", "icon has accessible brand label", url);
+}
+
 function renderReport(generatedAt) {
   const status = blockers.length ? "blocked" : warnings.length ? "warning" : "pass";
   const lines = [
@@ -235,6 +248,7 @@ async function main() {
   await checkSitemap(routeDoc);
   await checkRobots();
   await checkIndexNowKey();
+  await checkBrandIcon();
   await checkPage("/", [
     "Turn scattered AI skills into one sellable offer",
     "Buy the USD",
@@ -242,7 +256,7 @@ async function main() {
   ]);
   await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "USD", "Pay with PayPal"]);
   await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "Buy the Blueprint"]);
-  await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "USD"]);
+  await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "Test PayPal with USD", "USD"]);
   await checkPage("/intake/", ["Launch Blueprint Intake", "Email intake", "Required fields"]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Pending evidence", "Claims not made"]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);

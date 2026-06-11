@@ -53,6 +53,8 @@ Minimum v1 allowlist:
 - `tool_started`
 - `tool_completed`
 - `tool_result_export`
+- `payment_cta_click`
+- `test_payment_cta_click`
 - `cta_click`
 - `source_link_click`
 - `repo_skeleton_matrix_view`

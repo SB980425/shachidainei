@@ -1839,6 +1839,12 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+  .comparison-table > div,
+  .comparison-table > a {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
   .gate-hero h1,
   .updates-hero h1 {
     font-size: 40px;
@@ -3612,6 +3618,128 @@ textarea {
   margin: 0;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.pricing-receipt .secondary-action {
+  width: 100%;
+}
+
+.test-payment-action {
+  border-style: dashed;
+  background: #fffdf6;
+  color: #5f3d00;
+}
+
+.hero-side {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+}
+
+.brand-signal-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(75, 124, 255, 0.12), transparent 34%),
+    linear-gradient(215deg, rgba(32, 166, 106, 0.12), transparent 42%),
+    #fffef8;
+  box-shadow: var(--shadow-soft);
+  padding: 18px;
+}
+
+.brand-signal-card::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  width: 92px;
+  height: 92px;
+  border: 1px solid rgba(17, 23, 15, 0.12);
+  background-image:
+    linear-gradient(90deg, rgba(17, 23, 15, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(17, 23, 15, 0.1) 1px, transparent 1px);
+  background-size: 18px 18px;
+  opacity: 0.75;
+}
+
+.brand-signal-card p {
+  position: relative;
+  z-index: 1;
+  max-width: 330px;
+  margin: 16px 0 0;
+  color: var(--muted);
+}
+
+.signal-map {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #11170f;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.signal-map i {
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--green), var(--coral));
+}
+
+.authority-note {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 18px;
+  border-left: 4px solid var(--green);
+  background: #f7fbf3;
+}
+
+.authority-note p {
+  margin: 0;
+  color: #273120;
+}
+
+.comparison-table {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.comparison-table > div,
+.comparison-table > a {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr 1.4fr;
+  gap: 16px;
+  align-items: start;
+  padding: 16px 18px;
+  color: #11170f;
+  text-decoration: none;
+}
+
+.comparison-table > div {
+  background: #eef4e8;
+}
+
+.comparison-table > a + a,
+.comparison-table > div + a {
+  border-top: 1px solid var(--line);
+}
+
+.comparison-table > a:hover {
+  background: #fffdf6;
+}
+
+.comparison-table span {
+  color: var(--muted);
 }
 
 .update-entry {
