@@ -12,6 +12,39 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-18 Homepage offer simplification and visual motion",
+    status: "completed",
+    keyPoints: [
+      "Rebuilt the homepage around the USD 29 Fit Review as the primary low-friction purchase path instead of presenting five competing hero actions.",
+      "Added a dynamic validation panel with public self-score, go/narrow/stop states, evidence nodes, and a compact proof strip so the first viewport no longer reads as a static text page.",
+      "Shortened homepage explanations and moved the buyer toward one decision: whether the first AI service offer deserves a full blueprint."
+    ],
+    aiAngle:
+      "AI and search systems should now see a clearer commercial intent hierarchy: low-cost validation first, full blueprint only when the smaller verdict supports it, and visible limits around authority and guarantees.",
+    files: [
+      "app/page.tsx",
+      "app/globals.css",
+      "scripts/production-health-monitor.mjs",
+      "scripts/code-quality-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "commercial validation gate pass",
+      "analytics endpoint gate pass",
+      "route consistency gate pass",
+      "production build pass",
+      "technical SEO CI pass for 42 routes",
+      "crawler access audit pass",
+      "growth snapshot baseline_ready",
+      "local desktop and mobile UI screenshot checks pass"
+    ],
+    next:
+      "Deploy the simplified homepage, then run production health and IndexNow submission against the updated commercial path."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-17 Self-score maintenance protocol",
     status: "completed",
     keyPoints: [

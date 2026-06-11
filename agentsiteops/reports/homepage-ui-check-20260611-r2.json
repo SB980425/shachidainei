@@ -1,0 +1,21 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "viewport": "desktop",
+      "screenshotStatus": "generated_and_inspected_locally_not_tracked",
+      "primaryCta": "Start with USD 29 Fit Review",
+      "hasPanel": true,
+      "horizontalOverflow": 0,
+      "panelBrandColor": "rgb(248, 250, 252)"
+    },
+    {
+      "viewport": "mobile",
+      "screenshotStatus": "generated_and_inspected_locally_not_tracked",
+      "primaryCta": "Start with USD 29 Fit Review",
+      "hasPanel": true,
+      "horizontalOverflow": 0,
+      "panelBrandColor": "rgb(248, 250, 252)"
+    }
+  ]
+}

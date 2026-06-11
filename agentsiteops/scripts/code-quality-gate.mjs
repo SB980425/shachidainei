@@ -100,8 +100,8 @@ function checkProductionHealthAssertions() {
   const monitor = read("scripts/production-health-monitor.mjs");
   addCheck(
     "production_health",
-    monitor.includes("Check fit before payment") ? "pass" : "fail",
-    "production monitor checks the current homepage fit-check CTA"
+    monitor.includes("Start with USD 29 Fit Review") ? "pass" : "fail",
+    "production monitor checks the current homepage Fit Review CTA"
   );
   addCheck(
     "production_health",

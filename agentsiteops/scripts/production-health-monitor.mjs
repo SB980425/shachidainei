@@ -263,9 +263,9 @@ async function main() {
   await checkIndexNowKey();
   await checkBrandIcon();
   await checkPage("/", [
-    "Turn scattered AI skills into one sellable offer",
-    "Check fit before payment",
-    "Launch Readiness"
+    "Validate your first AI service offer before building the site",
+    "Start with USD 29 Fit Review",
+    "52/100"
   ]);
   await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "Fit Review", "USD", "PayPal"]);
   await checkPage("/pricing/", ["Objections that should block or redirect payment", "I can ask ChatGPT for this."]);
