@@ -268,9 +268,11 @@ async function main() {
     "Launch Readiness"
   ]);
   await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "Fit Review", "USD", "PayPal"]);
+  await checkPage("/pricing/", ["Objections that should block or redirect payment", "I can ask ChatGPT for this."]);
   await checkPage("/examples/fit-review-sample/", ["A smaller paid verdict", "Do not buy the USD 99 blueprint yet", "It does not prove traffic"]);
   await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "What the paid file must contain", "Check fit first"]);
   await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
+  await checkPage("/compare/", ["Common objections before payment", "I need someone to build it, not just advise."]);
   await checkPage("/starter-review/", ["Pay for a fit verdict", "USD 29", "It can reject the sale"]);
   await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "Acceptance criteria", "If the route is not ready"]);
   await checkPage("/intake/", ["Order Intake", "Email intake", "Payment confirmation", "Manual delivery process"]);
@@ -281,6 +283,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-14 Objection response conversion layer",
     "M4-13 Search evidence import guardrail",
     "M4-12 Manual outreach evidence loop",
     "M4-11 Delivery artifact templates",

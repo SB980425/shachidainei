@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T11:36:27.044Z
+- Generated: 2026-06-11T11:48:43.689Z
 - Status: pass
-- Checks: 95
+- Checks: 101
 - Blockers: 0
 
 ## Summary
@@ -50,6 +50,12 @@
 | service_boundary | pass | fit review sample can recommend not buying the full blueprint |
 | service_boundary | pass | fit review sample states proof boundary |
 | service_boundary | pass | launch product blocks guarantee claims |
+| service_boundary | pass | launch objections include generic AI alternative |
+| service_boundary | pass | launch objections include implementation-demand mismatch |
+| service_boundary | pass | pricing page shows objection-based payment redirects |
+| service_boundary | pass | pricing page can tell unclear buyers not to pay |
+| service_boundary | pass | pricing page addresses new-site PayPal trust objection |
+| service_boundary | pass | buy page blocks software expectation |
 | service_boundary | pass | disclaimer blocks guarantee claims |
 | trust_pages | pass | terms page covers PayPal payment path |
 | trust_pages | pass | refund page exists and states refund boundary |

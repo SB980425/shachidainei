@@ -7,6 +7,7 @@ import {
   launchDeliverables,
   launchProduct,
   pricingBenchmarks,
+  purchaseObjectionResponses,
   starterReviewAcceptanceCriteria,
   starterReviewDeliverables,
   starterReviewProduct
@@ -269,6 +270,31 @@ export default function Page() {
               <span role="cell">{item.price}</span>
               <span role="cell">{item.position}</span>
             </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="pricing-grid-section">
+        <div className="section-head">
+          <h2>Objections that should block or redirect payment</h2>
+          <p>
+            Payment should happen only when the buyer understands why this is different
+            from generic AI chat, software, consulting, and implementation services.
+            If the sample deliverables and fit checker do not make the value clear, do not pay yet.
+            For trust, this site uses PayPal-hosted payment instead of collecting card data directly.
+          </p>
+        </div>
+        <div className="pricing-grid">
+          {purchaseObjectionResponses.map((item) => (
+            <article key={item.objection}>
+              <span aria-hidden="true">
+                <ShieldCheck size={18} />
+              </span>
+              <h3>{item.objection}</h3>
+              <p>{item.response}</p>
+              <p>{item.proofPath}</p>
+              <small>{item.nextAction}</small>
+            </article>
           ))}
         </div>
       </section>

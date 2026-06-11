@@ -92,6 +92,12 @@ function checkCommercialBoundary() {
   requireText("service_boundary", fitReviewSamplePage, "Do not buy the USD 99 blueprint yet", "fit review sample can recommend not buying the full blueprint");
   requireText("service_boundary", fitReviewSamplePage, "It does not prove traffic, revenue, citations, or demand.", "fit review sample states proof boundary");
   requireText("service_boundary", launch, "No guaranteed traffic, rankings, revenue, customers, AI citations", "launch product blocks guarantee claims");
+  requireText("service_boundary", launch, "I can ask ChatGPT for this.", "launch objections include generic AI alternative");
+  requireText("service_boundary", launch, "I need someone to build it, not just advise.", "launch objections include implementation-demand mismatch");
+  requireText("service_boundary", pricingPage, "Objections that should block or redirect payment", "pricing page shows objection-based payment redirects");
+  requireText("service_boundary", pricingPage, "do not pay", "pricing page can tell unclear buyers not to pay");
+  requireText("service_boundary", pricingPage, "PayPal-hosted payment instead of collecting card data directly", "pricing page addresses new-site PayPal trust objection");
+  requireText("service_boundary", buyPage, "No login account, dashboard, or subscription workspace", "buy page blocks software expectation");
   requireText("service_boundary", disclaimer, "No guaranteed traffic", "disclaimer blocks guarantee claims");
   requireText("trust_pages", terms, "PayPal", "terms page covers PayPal payment path");
   requireText("trust_pages", refund, "refund", "refund page exists and states refund boundary");

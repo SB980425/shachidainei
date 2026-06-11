@@ -75,6 +75,13 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Extended `scripts/code-quality-gate.mjs` so the search evidence contract checks the new malformed-import guard and manifest template.
 - Deployed the M4-13 update to Cloudflare Pages and submitted 41 URLs through IndexNow.
 
+### M4-14 Objection Response Conversion Layer
+
+- Added `purchaseObjectionResponses` for four current conversion blockers: generic AI alternative, implementation demand, unclear deliverable, and new-site PayPal trust.
+- Displayed the objection responses on `/pricing/` and `/compare/`.
+- Added visible pricing-page copy that tells unclear buyers not to pay yet and explains PayPal-hosted payment instead of direct card collection.
+- Extended commercial validation and production health checks so the objection layer remains visible.
+
 ## Verification Snapshot
 
 - `npm run lint`: pass.
@@ -83,6 +90,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run analytics:gate`: pass.
 - `npm run commercial:gate`: pass, 83 checks.
 - `npm run commercial:gate`: pass, 95 checks after adding outreach validation.
+- `npm run commercial:gate`: pass, 101 checks after adding objection response validation.
 - `npm run routes:gate`: pass, 215 checks.
 - `npm run build`: pass, 46 generated static pages.
 - `npm run seo:ci`: pass, 41 routes, 0 blockers, 0 warnings.

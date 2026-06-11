@@ -285,6 +285,41 @@ export const purchaseFitRules = {
   ]
 };
 
+export const purchaseObjectionResponses = [
+  {
+    objection: "I can ask ChatGPT for this.",
+    response:
+      "Use ChatGPT when you already know the buyer, offer, proof, page structure, and next action. AgentSiteOps is useful when those inputs are messy and the output must choose one route, reject alternatives, and define a stop rule.",
+    proofPath:
+      "Check the samples, fit checker, delivery templates, and evidence ledger before paying. If those do not clarify the difference, do not buy yet.",
+    nextAction: "View the Fit Review sample before using a payment link."
+  },
+  {
+    objection: "I need someone to build it, not just advise.",
+    response:
+      "Then the current Launch Blueprint may be the wrong product. It is a route and launch artifact for buyers who can execute. If implementation demand repeats, the offer should pivot to a done-for-you AI offer page and intake funnel setup.",
+    proofPath:
+      "The buy page lists no dashboard, no automation, no account takeover, and no done-for-you build scope.",
+    nextAction: "Use the Fit Review or contact first instead of buying the full blueprint."
+  },
+  {
+    objection: "I do not understand what I receive.",
+    response:
+      "The product is not a score. The full blueprint returns one selected offer, rejected routes, buyer trigger, landing page structure, pricing boundary, outreach messages, and a seven-day keep or stop rule.",
+    proofPath:
+      "The public Launch Blueprint sample and Fit Review sample show the artifact shape before payment.",
+    nextAction: "Read the sample pages; if the artifact is still unclear, do not pay."
+  },
+  {
+    objection: "I do not trust a new site with a PayPal link.",
+    response:
+      "That risk is valid. The site uses same-domain terms, refund policy, privacy page, public update log, manual intake, and PayPal-hosted payment instead of collecting card data directly.",
+    proofPath:
+      "Commercial gates verify PayPal disclosure, refund boundary, no card collection, no guarantee claims, and manual fulfillment templates.",
+    nextAction: "Use the USD 29 Fit Review first or send a contact email before the full blueprint."
+  }
+];
+
 export const comparisonSources = [
   {
     label: "Ahrefs pricing",

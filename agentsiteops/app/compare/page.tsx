@@ -13,6 +13,7 @@ import {
   comparisonSources,
   launchComparisons,
   launchProduct,
+  purchaseObjectionResponses,
   purchaseFitRules
 } from "@/lib/launch";
 import { primaryOffer, starterOffer } from "@/lib/payments";
@@ -214,6 +215,29 @@ export default function Page() {
               buyers. It can recommend collecting more proof before paying USD {primaryOffer.price}.
             </p>
           </article>
+        </div>
+      </section>
+
+      <section className="pricing-grid-section">
+        <div className="section-head">
+          <h2>Common objections before payment</h2>
+          <p>
+            These objections are treated as product evidence. If they repeat after outreach,
+            the offer should be rewritten or narrowed before scaling traffic.
+          </p>
+        </div>
+        <div className="pricing-grid">
+          {purchaseObjectionResponses.map((item) => (
+            <article key={item.objection}>
+              <span aria-hidden="true">
+                <ShieldAlert size={18} />
+              </span>
+              <h3>{item.objection}</h3>
+              <p>{item.response}</p>
+              <p>{item.proofPath}</p>
+              <small>{item.nextAction}</small>
+            </article>
+          ))}
         </div>
       </section>
 

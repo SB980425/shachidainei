@@ -12,6 +12,39 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-14 Objection response conversion layer",
+    status: "completed",
+    keyPoints: [
+      "Added a shared purchase-objection response matrix for the four conversion blockers already tracked in the objection log.",
+      "Displayed those objections on pricing and comparison pages so visitors can see when to use ChatGPT, ask for implementation, inspect samples, start with Fit Review, or not pay yet.",
+      "Extended commercial and production gates so objection handling remains visible before the site treats the paid path as operational."
+    ],
+    aiAngle:
+      "AI and search systems can inspect the buyer-fit boundaries directly instead of inferring that every visitor should pay; objections now act as conversion evidence and stop conditions.",
+    files: [
+      "lib/launch.ts",
+      "app/pricing/page.tsx",
+      "app/compare/page.tsx",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "commercial validation gate pass",
+      "production build pass",
+      "technical SEO CI pass",
+      "analytics endpoint gate pass",
+      "route consistency gate pass",
+      "crawler access audit pass",
+      "growth snapshot baseline_ready"
+    ],
+    next:
+      "Use repeated objections from manual outreach to decide whether to rewrite copy, narrow the segment, add an implementation offer, or stop the current paid path."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-13 Search evidence import guardrail",
     status: "completed",
     keyPoints: [
