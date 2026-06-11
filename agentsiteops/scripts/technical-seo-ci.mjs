@@ -1,5 +1,6 @@
-import { existsSync, mkdirSync, writeFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { createServer } from "node:http";
+import { dirname, extname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -14,6 +15,7 @@ const baseOrigin = new URL(baseUrl).origin;
 const blockers = [];
 const warnings = [];
 const routeResults = [];
+let ownedStaticServer;
 
 const mojibakePatterns = [
   "�",
@@ -36,6 +38,92 @@ const mojibakePatterns = [
 
 function stripTrailingSlash(value) {
   return value.replace(/\/+$/, "");
+}
+
+function isLocalBaseUrl() {
+  const url = new URL(baseUrl);
+  return ["localhost", "127.0.0.1", "::1"].includes(url.hostname);
+}
+
+function contentType(filePath) {
+  const types = {
+    ".css": "text/css; charset=utf-8",
+    ".html": "text/html; charset=utf-8",
+    ".js": "application/javascript; charset=utf-8",
+    ".json": "application/json; charset=utf-8",
+    ".svg": "image/svg+xml; charset=utf-8",
+    ".txt": "text/plain; charset=utf-8",
+    ".xml": "application/xml; charset=utf-8",
+    ".webmanifest": "application/manifest+json; charset=utf-8"
+  };
+  return types[extname(filePath)] ?? "application/octet-stream";
+}
+
+function staticFileForPath(pathname) {
+  const cleanPath = decodeURIComponent(pathname).replace(/^\/+/, "");
+  const candidates = [];
+
+  if (!cleanPath) {
+    candidates.push(resolve(rootDir, "out", "index.html"));
+  } else {
+    candidates.push(resolve(rootDir, "out", cleanPath));
+    candidates.push(resolve(rootDir, "out", cleanPath, "index.html"));
+  }
+
+  const outDir = resolve(rootDir, "out");
+  return candidates.find((candidate) => {
+    if (!candidate.startsWith(outDir) || !existsSync(candidate)) {
+      return false;
+    }
+    return statSync(candidate).isFile();
+  });
+}
+
+async function startStaticServerIfNeeded() {
+  if (!isLocalBaseUrl()) {
+    return;
+  }
+
+  try {
+    const probe = await fetchText("/");
+    if (probe.ok) {
+      return;
+    }
+  } catch {
+    // Start the deterministic static server below.
+  }
+
+  const url = new URL(baseUrl);
+  const hostname = url.hostname === "localhost" ? "127.0.0.1" : url.hostname;
+  const port = Number(url.port || 80);
+
+  ownedStaticServer = createServer((request, response) => {
+    const requestUrl = new URL(request.url ?? "/", baseUrl);
+    const filePath = staticFileForPath(requestUrl.pathname);
+
+    if (!filePath) {
+      response.writeHead(404, { "content-type": "text/plain; charset=utf-8" });
+      response.end("Not found");
+      return;
+    }
+
+    response.writeHead(200, { "content-type": contentType(filePath) });
+    response.end(readFileSync(filePath));
+  });
+
+  await new Promise((resolveListen, rejectListen) => {
+    ownedStaticServer.once("error", rejectListen);
+    ownedStaticServer.listen(port, hostname, resolveListen);
+  });
+}
+
+async function stopStaticServer() {
+  if (!ownedStaticServer) {
+    return;
+  }
+
+  await new Promise((resolveClose) => ownedStaticServer.close(resolveClose));
+  ownedStaticServer = undefined;
 }
 
 function htmlDecode(value) {
@@ -597,9 +685,7 @@ function renderReport(routes) {
     "      - run: npm audit --audit-level=moderate",
     "      - run: npx playwright install --with-deps chromium",
     "      - run: npm run build",
-    "      - run: npx serve@latest out -l 3000 > serve-start.log 2>&1 &",
-    "      - run: for attempt in {1..45}; do curl -fsS \"$SITE_AUDIT_BASE_URL\" > /dev/null && exit 0; sleep 2; done; cat serve-start.log; exit 1",
-    "      - run: npm run seo:ci",
+    "      - run: npm run seo:ci # starts a local static server for out/ when needed",
     "```",
     "",
     "## Follow-up Issues",
@@ -618,26 +704,32 @@ function renderReport(routes) {
 
 async function main() {
   console.log(`technical-seo-ci start: ${baseUrl}`);
-  const routes = await loadRoutesFromSitemap();
-  const knownRoutes = new Set(routes);
-  console.log(`routes discovered: ${routes.length}`);
+  await startStaticServerIfNeeded();
 
-  for (const route of routes) {
-    console.log(`route check ${route}`);
-    await auditRoute(route, knownRoutes);
-  }
+  try {
+    const routes = await loadRoutesFromSitemap();
+    const knownRoutes = new Set(routes);
+    console.log(`routes discovered: ${routes.length}`);
 
-  console.log("mobile checks start");
-  await auditMobile(routes);
-  const summary = renderReport(routes);
+    for (const route of routes) {
+      console.log(`route check ${route}`);
+      await auditRoute(route, knownRoutes);
+    }
 
-  console.log(
-    `technical-seo-ci ${summary.status}: ${summary.passedRoutes} passed, ${summary.failedRoutes} failed, ${blockers.length} blockers, ${warnings.length} warnings`
-  );
-  console.log(`report: ${reportPath}`);
+    console.log("mobile checks start");
+    await auditMobile(routes);
+    const summary = renderReport(routes);
 
-  if (blockers.length > 0) {
-    process.exitCode = 1;
+    console.log(
+      `technical-seo-ci ${summary.status}: ${summary.passedRoutes} passed, ${summary.failedRoutes} failed, ${blockers.length} blockers, ${warnings.length} warnings`
+    );
+    console.log(`report: ${reportPath}`);
+
+    if (blockers.length > 0) {
+      process.exitCode = 1;
+    }
+  } finally {
+    await stopStaticServer();
   }
 }
 

@@ -1,6 +1,6 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-11T09:43:29.538Z
+- Generated: 2026-06-11T09:52:11.935Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
@@ -93,9 +93,7 @@ jobs:
       - run: npm audit --audit-level=moderate
       - run: npx playwright install --with-deps chromium
       - run: npm run build
-      - run: npx serve@latest out -l 3000 > serve-start.log 2>&1 &
-      - run: for attempt in {1..45}; do curl -fsS "$SITE_AUDIT_BASE_URL" > /dev/null && exit 0; sleep 2; done; cat serve-start.log; exit 1
-      - run: npm run seo:ci
+      - run: npm run seo:ci # starts a local static server for out/ when needed
 ```
 
 ## Follow-up Issues

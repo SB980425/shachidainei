@@ -40,7 +40,9 @@ export const updateLog: UpdateLogEntry[] = [
       "crawler access audit pass",
       "search evidence import waiting_for_exports state verified",
       "growth snapshot baseline_ready",
-      "production health monitor pending until deploy"
+      "production deploy pass on Cloudflare Pages master branch",
+      "production health monitor pass with 96 checks",
+      "IndexNow submit pass with 39 URLs"
     ],
     next:
       "Keep payment available only after fit checking and sample review; use delivery and inquiry evidence to decide whether the USD 99 offer should remain, narrow, or pivot."
