@@ -738,6 +738,7 @@ export const routePages: RoutePage[] = [
           { label: "GitHub CI", value: "The agentsiteops-ci workflow is treated as a release target, while local release gates currently verify typecheck, build, code quality, SEO CI, crawler audit, commercial validation, search evidence import, and growth snapshot." },
           { label: "Production health", value: "The production health monitor checks apex/www behavior, sitemap, robots, IndexNow key, updates, evidence, and privacy boundary pages." },
           { label: "Commercial gate", value: "The commercial validation gate checks the manual PayPal path, refund boundary, terms, disclaimer, and no-guarantee claims." },
+          { label: "Manual fulfillment", value: "The intake page, fulfillment log template, and runbook define how payment evidence, project details, delivery pauses, and completion are handled without storing sensitive payment data." },
           { label: "Sample blueprint", value: "A public sample now shows input facts, selected offer, rejected paths, landing page outline, outreach angle, seven-day validation, and missing-evidence boundaries before payment." },
           { label: "IndexNow", value: "The current production route list is submitted after deployment, with the response recorded in the update log." }
         ]
@@ -751,16 +752,18 @@ export const routePages: RoutePage[] = [
           { label: "Bing", value: "Bing Webmaster Tools search, sitemap, URL, and AI Performance data is pending export." },
           { label: "AI referrals", value: "ChatGPT, Claude, Perplexity, and other AI-search referral examples are pending analytics or log evidence." },
           { label: "Audit intent", value: "Audit request clicks or GitHub issues are pending; the service page is an intent path only." },
-          { label: "Revenue", value: "Paid templates, audits, subscriptions, ads, and affiliate revenue are not active evidence yet." }
+          { label: "Funnel movement", value: "Fit checker completion, sample inspection, comparison views, PayPal clicks, intake emails, and qualified orders are pending aggregate evidence." },
+          { label: "Revenue", value: "PayPal clicks are not revenue. Confirmed payments and qualified orders are pending PayPal and intake evidence outside the public repo." }
         ]
       },
       {
         title: "Import path",
         body:
-          "When GSC or Bing exports exist, raw CSV files are placed in a local ignored import directory, normalized into a stable CSV, then merged into the growth evidence snapshot.",
+          "When GSC, Bing, or launch-funnel exports exist, raw or sensitive files stay outside the public repo. Only normalized, aggregate, non-sensitive evidence should be committed.",
         rows: [
           { label: "Raw files", value: "gsc-pages.csv, gsc-queries.csv, bing-pages.csv, and bing-queries.csv." },
           { label: "Templates", value: "Tracked example files live in data/search-evidence-import-templates/ so future exports use reproducible columns." },
+          { label: "Funnel template", value: "data/launch-funnel-evidence-template.csv defines aggregate review columns for fit, sample, compare, payment intent, intake, and confirmed-payment stages." },
           { label: "Normalizer", value: "npm run search:evidence writes data/search-evidence-normalized.csv and reports/search-evidence-import.md." },
           { label: "Snapshot", value: "npm run growth:snapshot updates route-level GSC and Bing status." }
         ]

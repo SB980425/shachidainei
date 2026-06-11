@@ -12,6 +12,40 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-08 Launch funnel evidence boundary",
+    status: "completed",
+    keyPoints: [
+      "Added an aggregate launch-funnel evidence template so fit completions, sample views, comparison views, PayPal clicks, intake clicks, confirmed payments, and qualified orders are not mixed together.",
+      "Added a funnel evidence runbook that states page views, PayPal clicks, intake emails, and confirmed payments are different evidence stages.",
+      "Updated the public evidence ledger and analytics event contract so future conversion review does not treat local browser events as revenue proof."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect the commercial evidence ladder and see that AgentSiteOps separates attention, intent, payment, and qualified-order proof.",
+    files: [
+      "data/launch-funnel-evidence-template.csv",
+      "docs/launch-funnel-evidence-runbook.md",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "lib/site.ts",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "analytics endpoint gate pass",
+      "commercial validation gate pass",
+      "route consistency gate pass",
+      "production build pass",
+      "technical SEO CI pass",
+      "crawler access audit pass",
+      "growth snapshot baseline_ready"
+    ],
+    next:
+      "Do not change pricing from page views alone; wait for aggregate fit, sample, payment-intent, intake, confirmed-payment, and qualified-order evidence."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-07 Intake and manual fulfillment path",
     status: "completed",
     keyPoints: [

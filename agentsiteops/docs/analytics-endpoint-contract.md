@@ -74,6 +74,12 @@ Minimum v1 allowlist:
 - `scoring_methodology_view`
 - `scoring_model_limit_view`
 - `launch_blueprint_compare_view`
+- `launch_blueprint_pricing_view`
+- `launch_blueprint_sample_view`
+- `launch_blueprint_buy_view`
+- `launch_blueprint_intake_view`
+- `intake_email_click`
+- `contact_email_click`
 - `trust_policy_view`
 
 ## Validation Rules

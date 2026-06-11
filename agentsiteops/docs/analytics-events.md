@@ -66,6 +66,8 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `template_copy_click` | User copies a template block | `label`, `length` |
 | `checklist_copy_click` | User copies checklist content | `label`, `length` |
 | `payment_cta_click` | User clicks the live PayPal Launch Blueprint payment link | `label`, `target`, `type` |
+| `intake_email_click` | User clicks the intake email link | `label`, `target`, `type` |
+| `contact_email_click` | User clicks the contact email link | `label`, `target`, `type` |
 | `cta_click` | Click on an element with `data-analytics-event` | `label`, `target`, `type` |
 | `source_link_click` | Click on an external source link | `href`, `label` |
 
