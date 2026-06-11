@@ -83,6 +83,14 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Extended commercial validation and production health checks so the objection layer remains visible.
 - Deployed the M4-14 update to Cloudflare Pages and submitted 41 URLs through IndexNow.
 
+### M4-15 Launch Validation Decision Gate
+
+- Added `/checklists/launch-validation-decision-gate/` as the public continue, rewrite, reprice, narrow, pivot_to_implementation, or stop gate.
+- Added `data/launch-validation-decision-gate.csv` so the evidence threshold is machine-readable and reviewable.
+- The gate blocks treating pageviews, sitemap success, IndexNow success, crawler access, private confidence, or PayPal clicks without confirmed payment as proof of demand or revenue.
+- Registered the page across route registry, page registry, page review actions, analytics events, commercial validation, production health monitoring, growth snapshot, sitemap, and update log.
+- Deployed the M4-15 update to Cloudflare Pages and submitted 42 URLs through IndexNow.
+
 ## Verification Snapshot
 
 - `npm run lint`: pass.
@@ -92,9 +100,10 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run commercial:gate`: pass, 83 checks.
 - `npm run commercial:gate`: pass, 95 checks after adding outreach validation.
 - `npm run commercial:gate`: pass, 101 checks after adding objection response validation.
-- `npm run routes:gate`: pass, 215 checks.
-- `npm run build`: pass, 46 generated static pages.
-- `npm run seo:ci`: pass, 41 routes, 0 blockers, 0 warnings.
+- `npm run commercial:gate`: pass, 112 checks after adding the validation decision gate.
+- `npm run routes:gate`: pass, 220 checks.
+- `npm run build`: pass, 47 generated static pages.
+- `npm run seo:ci`: pass, 42 routes, 0 blockers, 0 warnings.
 - `npm run crawler:audit`: pass.
 - `npm run search:evidence`: pass, waiting_for_exports, 0 imported rows.
 - Temporary malformed `gsc-pages.csv` test: blocked as expected, then removed and restored to waiting_for_exports.
@@ -102,16 +111,17 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run production:health`: pass, 117 checks after M4-12 deployment.
 - `npm run production:health`: pass, 118 checks after M4-13 deployment.
 - `npm run production:health`: pass, 130 checks after M4-14 deployment.
-- `npm run indexnow:submit`: pass, 41 URLs, HTTP 200.
+- `npm run production:health`: pass, 139 checks after M4-15 deployment.
+- `npm run indexnow:submit`: pass, 42 URLs, HTTP 200.
 - Playwright static build checks passed for `/examples/fit-review-sample/`, `/starter-review/`, and `/pricing/` on desktop and mobile without horizontal overflow.
 - Final production read-only checks passed for `/examples/fit-review-sample/`, `/starter-review/`, `/pricing/`, `/evidence/`, `/updates/`, `/intake/`, `/buy/`, and `/sitemap.xml`.
 
 ## Production State
 
 - Production domain: `https://agentsiteops.com`
-- Sitemap route count: 41.
+- Sitemap route count: 42.
 - Current branch: `codex/launch-blueprint-reset`.
-- Latest pushed commit at this log point before M4-14 evidence commit: `ddccc7d Add objection response conversion layer`.
+- Latest pushed commit at this log point before M4-15 evidence commit: `56d2149 Add launch validation decision gate`.
 
 ## Current Risk Register
 
@@ -120,6 +130,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Local/session analytics are active only as a browser event buffer; no production analytics endpoint is enabled.
 - Public pages are stronger, but both paid offers still need confirmed payment plus usable intake before subscriptions or higher pricing can be justified.
 - Delivery templates now exist, but no real buyer artifact has been delivered yet.
+- The validation decision gate is now public, but its strongest thresholds remain unmet until confirmed payment plus usable intake or qualified reply patterns exist.
 
 ## Next Execution Queue
 

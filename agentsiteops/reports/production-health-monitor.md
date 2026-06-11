@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T11:50:47.832Z
+- Generated: 2026-06-11T12:47:24.182Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 130
+- Checks: 139
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 41 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 42 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -111,6 +111,14 @@
 | /tools/launch-blueprint-fit-checker/ | pass | Launch Blueprint Fit Checker | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
 | /tools/launch-blueprint-fit-checker/ | pass | Do not buy | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
 | /tools/launch-blueprint-fit-checker/ | pass | No request, account, payment | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
+| /checklists/launch-validation-decision-gate/ | pass | HTTP 200 | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
+| /checklists/launch-validation-decision-gate/ | pass | HTML title exists | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
+| /checklists/launch-validation-decision-gate/ | pass | canonical points to production URL | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
+| /checklists/launch-validation-decision-gate/ | pass | Launch Validation Decision Gate | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
+| /checklists/launch-validation-decision-gate/ | pass | Stop, rewrite, or pivot before scaling | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
+| /checklists/launch-validation-decision-gate/ | pass | PayPal clicks without confirmed payment are not revenue | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
+| /checklists/launch-validation-decision-gate/ | pass | IndexNow success is not demand | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
+| /checklists/launch-validation-decision-gate/ | pass | pivot_to_implementation | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
 | /reports/route-evidence-dashboard/ | pass | HTTP 200 | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
 | /reports/route-evidence-dashboard/ | pass | HTML title exists | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
 | /reports/route-evidence-dashboard/ | pass | canonical points to production URL | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
@@ -127,6 +135,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-15 Launch validation decision gate | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-14 Objection response conversion layer | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-13 Search evidence import guardrail | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-12 Manual outreach evidence loop | [link](https://agentsiteops.com/updates/) |

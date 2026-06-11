@@ -45,7 +45,8 @@ export const updateLog: UpdateLogEntry[] = [
       "technical SEO CI pass",
       "crawler access audit pass",
       "search evidence import waiting_for_exports",
-      "production health pending after deployment"
+      "production health pass",
+      "IndexNow submit pass for 42 URLs"
     ],
     next:
       "Apply this gate before adding more launch pages, buying more research tools, expanding outreach volume, raising price, or switching to a subscription model."
