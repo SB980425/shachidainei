@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T09:27:21.903Z
+- Generated: 2026-06-11T09:45:01.288Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 94
+- Checks: 96
 - Blockers: 0
 - Warnings: 0
 
@@ -57,7 +57,8 @@
 | /buy/ | pass | canonical points to production URL | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | Get one sellable offer | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | Pay with PayPal | [link](https://agentsiteops.com/buy/) |
-| /buy/ | pass | USD | [link](https://agentsiteops.com/buy/) |
+| /buy/ | pass | Acceptance criteria | [link](https://agentsiteops.com/buy/) |
+| /buy/ | pass | If the route is not ready | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/buy/) |
 | /intake/ | pass | HTTP 200 | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | HTML title exists | [link](https://agentsiteops.com/intake/) |
@@ -100,6 +101,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-06 Purchase acceptance and encoding gate | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-05 Quality gate and evidence-ready sample | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-04 Pre-purchase fit checker | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-03 Launch comparison and sample depth | [link](https://agentsiteops.com/updates/) |
