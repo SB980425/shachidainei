@@ -37,6 +37,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `content_quality_gate_view` | `/checklists/ai-content-quality-gate/` load | `path` |
 | `search_console_launch_checklist_view` | `/checklists/gsc-bing-indexnow-launch/` load | `path` |
 | `ai_citation_readiness_view` | `/checklists/ai-citation-readiness/` load | `path` |
+| `launch_validation_decision_gate_view` | `/checklists/launch-validation-decision-gate/` load | `path` |
 | `pseo_batch_audit_view` | `/checklists/programmatic-seo-gate/` load | `path` |
 | `pseo_index_map_view` | `/checklists/programmatic-seo-gate/` load | `path` |
 | `ai_search_robots_guide_view` | `/guides/ai-search-friendly-robots-txt/` load | `path` |

@@ -62,6 +62,7 @@ Current implementation:
 | `ai_search_robots_guide_view` | User views crawler policy separation | `/guides/ai-search-friendly-robots-txt/` |
 | `indexnow_cloudflare_pages_view` | User views IndexNow deployment workflow | `/guides/indexnow-cloudflare-pages/` |
 | `gsc_bing_sitemap_verification_view` | User views sitemap verification workflow | `/guides/gsc-bing-sitemap-verification/` |
+| `launch_validation_decision_gate_view` | User views the continue, rewrite, reprice, pivot, or stop gate | `/checklists/launch-validation-decision-gate/` |
 | `evidence_ledger_template_view` | User views proof-boundary template | `/templates/evidence-ledger-template/` |
 | `route_evidence_dashboard_view` | User views route-level evidence status | `/reports/route-evidence-dashboard/` |
 | `route_evidence_filter_used` | User filters route-level evidence locally | `/reports/route-evidence-dashboard/` |

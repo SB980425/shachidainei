@@ -12,6 +12,46 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-15 Launch validation decision gate",
+    status: "completed",
+    keyPoints: [
+      "Added a public validation decision gate that separates continue, rewrite, reprice, narrow, pivot_to_implementation, and stop outcomes.",
+      "Defined which early signals count as proof and which signals are only technical availability, including sitemap success, IndexNow success, crawler access, and PayPal clicks without confirmed payment.",
+      "Registered the gate across route registry, page registry, review actions, analytics events, commercial validation, and production health monitoring."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect the project stop rules directly; the site no longer has to infer that more content or more traffic is the correct next action when revenue and intake evidence are missing.",
+    files: [
+      "app/checklists/launch-validation-decision-gate/page.tsx",
+      "data/launch-validation-decision-gate.csv",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "components/SiteAnalytics.tsx",
+      "docs/analytics-events.md",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "analytics endpoint gate pass",
+      "commercial validation gate pass",
+      "route consistency gate pass",
+      "growth snapshot baseline_ready",
+      "production build pass",
+      "technical SEO CI pass",
+      "crawler access audit pass",
+      "search evidence import waiting_for_exports",
+      "production health pending after deployment"
+    ],
+    next:
+      "Apply this gate before adding more launch pages, buying more research tools, expanding outreach volume, raising price, or switching to a subscription model."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-14 Objection response conversion layer",
     status: "completed",
     keyPoints: [

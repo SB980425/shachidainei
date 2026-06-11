@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-11T11:47:39.478Z
+- Generated: 2026-06-11T12:41:36.667Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 41
+- Sitemap routes: 42
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 41 |
+| Routes passed | 42 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -33,10 +33,11 @@
 | /checklists/programmatic-seo-gate/ | pass | 200 | Programmatic SEO Gate \| AgentSiteOps | https://agentsiteops.com/checklists/programmatic-seo-gate/ | 1 | 25 | pass | - |
 | /checklists/gsc-bing-indexnow-launch/ | pass | 200 | GSC, Bing, and IndexNow Launch Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/gsc-bing-indexnow-launch/ | 1 | 26 | pass | - |
 | /checklists/ai-citation-readiness/ | pass | 200 | AI Citation Readiness Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/ai-citation-readiness/ | 1 | 25 | pass | - |
+| /checklists/launch-validation-decision-gate/ | pass | 200 | Launch Validation Decision Gate \| AgentSiteOps | https://agentsiteops.com/checklists/launch-validation-decision-gate/ | 1 | 23 | pass | - |
 | /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 23 | pass | - |
 | /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 25 | pass | - |
 | /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 25 | pass | - |
-| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 41 | pass | - |
+| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 42 | pass | - |
 | /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 23 | pass | - |
 | /guides/ai-search-friendly-robots-txt/ | pass | 200 | AI Search Friendly Robots.txt \| AgentSiteOps | https://agentsiteops.com/guides/ai-search-friendly-robots-txt/ | 1 | 24 | pass | - |
 | /guides/indexnow-cloudflare-pages/ | pass | 200 | IndexNow on Cloudflare Pages \| AgentSiteOps | https://agentsiteops.com/guides/indexnow-cloudflare-pages/ | 1 | 24 | pass | - |

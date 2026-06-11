@@ -279,10 +279,18 @@ async function main() {
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Funnel template", "Claims not made"]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);
   await checkPage("/tools/launch-blueprint-fit-checker/", ["Launch Blueprint Fit Checker", "Do not buy", "No request, account, payment"]);
+  await checkPage("/checklists/launch-validation-decision-gate/", [
+    "Launch Validation Decision Gate",
+    "Stop, rewrite, or pivot before scaling",
+    "PayPal clicks without confirmed payment are not revenue",
+    "IndexNow success is not demand",
+    "pivot_to_implementation"
+  ]);
   await checkPage("/reports/route-evidence-dashboard/", ["Route Evidence Dashboard", "Route evidence table", "GSC pending"]);
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-15 Launch validation decision gate",
     "M4-14 Objection response conversion layer",
     "M4-13 Search evidence import guardrail",
     "M4-12 Manual outreach evidence loop",

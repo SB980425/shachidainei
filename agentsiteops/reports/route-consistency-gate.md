@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-11T11:47:09.552Z
+- Generated: 2026-06-11T12:42:31.767Z
 - Status: pass
-- Checks: 215
+- Checks: 220
 - Blockers: 0
 - Warnings: 0
 
@@ -13,9 +13,9 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 41 routes aligned |
-| page_registry | pass | 41 routes aligned |
-| page_review_actions | pass | 41 routes aligned |
+| site_routes | pass | 42 routes aligned |
+| page_registry | pass | 42 routes aligned |
+| page_review_actions | pass | 42 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /ai-website-operating-system/ has canonical slash shape |
@@ -46,6 +46,8 @@
 | route_index | pass | /checklists/gsc-bing-indexnow-launch/ index flag is true |
 | route_shape | pass | /checklists/ai-citation-readiness/ has canonical slash shape |
 | route_index | pass | /checklists/ai-citation-readiness/ index flag is true |
+| route_shape | pass | /checklists/launch-validation-decision-gate/ has canonical slash shape |
+| route_index | pass | /checklists/launch-validation-decision-gate/ index flag is true |
 | route_shape | pass | /guides/ai-search-friendly-robots-txt/ has canonical slash shape |
 | route_index | pass | /guides/ai-search-friendly-robots-txt/ index flag is true |
 | route_shape | pass | /guides/indexnow-cloudflare-pages/ has canonical slash shape |
@@ -113,6 +115,7 @@
 | app_page | pass | /checklists/programmatic-seo-gate/ app page exists |
 | app_page | pass | /checklists/gsc-bing-indexnow-launch/ app page exists |
 | app_page | pass | /checklists/ai-citation-readiness/ app page exists |
+| app_page | pass | /checklists/launch-validation-decision-gate/ app page exists |
 | app_page | pass | /guides/ai-search-friendly-robots-txt/ app page exists |
 | app_page | pass | /guides/indexnow-cloudflare-pages/ app page exists |
 | app_page | pass | /guides/gsc-bing-sitemap-verification/ app page exists |
@@ -154,6 +157,7 @@
 | analytics_allowlist | pass | content_quality_gate_view is registered |
 | analytics_allowlist | pass | search_console_launch_checklist_view is registered |
 | analytics_allowlist | pass | ai_citation_readiness_view is registered |
+| analytics_allowlist | pass | launch_validation_decision_gate_view is registered |
 | analytics_allowlist | pass | pseo_batch_audit_view is registered |
 | analytics_allowlist | pass | pseo_index_map_view is registered |
 | analytics_allowlist | pass | ai_search_robots_guide_view is registered |
@@ -198,6 +202,7 @@
 | route_view_event | pass | /checklists/programmatic-seo-gate/ has view event |
 | route_view_event | pass | /checklists/gsc-bing-indexnow-launch/ has view event |
 | route_view_event | pass | /checklists/ai-citation-readiness/ has view event |
+| route_view_event | pass | /checklists/launch-validation-decision-gate/ has view event |
 | route_view_event | pass | /guides/ai-search-friendly-robots-txt/ has view event |
 | route_view_event | pass | /guides/indexnow-cloudflare-pages/ has view event |
 | route_view_event | pass | /guides/gsc-bing-sitemap-verification/ has view event |
@@ -224,7 +229,7 @@
 | route_view_event | pass | /refund-policy/ has view event |
 | route_view_event | pass | /disclaimer/ has view event |
 | route_view_event | pass | /contact/ has view event |
-| growth_snapshot | pass | 41 routes aligned |
+| growth_snapshot | pass | 42 routes aligned |
 
 ## Blocking Issues
 

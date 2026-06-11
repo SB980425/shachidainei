@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-- The production site has 41 indexable routes with technical SEO passing.
+- The production site has 42 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.
@@ -16,13 +16,13 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 41 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 41/41 routes pass |
+| Route registry | docs/routes.json | 42 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 42/42 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
-| IndexNow | latest command output | 41 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 42 URLs submitted successfully in current deployment cycle |
 | Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
 
 ## Unverified
@@ -54,6 +54,7 @@
 | /checklists/programmatic-seo-gate/ | checklist | programmatic_seo_gate | pass | site_pass | keep | Review pSEO query exposure and checklist_copy_click at Day 30 |
 | /checklists/gsc-bing-indexnow-launch/ | checklist | search_console_launch | pass | site_pass | keep | Add GSC and Bing screenshots or exported status after 7 day data window |
 | /checklists/ai-citation-readiness/ | checklist | ai_citation_readiness | pass | site_pass | keep | Add crawler access evidence, Cloudflare bot setting screenshot, and first AI referral examples after data exists |
+| /checklists/launch-validation-decision-gate/ | checklist | launch_blueprint | pass | site_pass | keep | Use this page to decide whether weak launch signals require continuing, rewriting, repricing, narrowing, pivoting to implementation, or stopping before adding more content |
 | /guides/ai-search-friendly-robots-txt/ | guide | ai_crawler_readiness | pass | site_pass | keep | Add Cloudflare robots and WAF evidence only after account-level settings are exported or screenshotted |
 | /guides/indexnow-cloudflare-pages/ | guide | search_console_launch | pass | site_pass | keep | Record IndexNow response codes after each production deployment and compare with Bing crawl status |
 | /guides/gsc-bing-sitemap-verification/ | guide | search_console_launch | pass | site_pass | keep | Add GSC and Bing sitemap status evidence after first crawl window |

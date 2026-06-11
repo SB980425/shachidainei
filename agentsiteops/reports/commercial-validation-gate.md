@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T11:48:43.689Z
+- Generated: 2026-06-11T12:40:41.924Z
 - Status: pass
-- Checks: 101
+- Checks: 112
 - Blockers: 0
 
 ## Summary
@@ -21,6 +21,8 @@
 | app | pass | /tools/audit-scope-builder/ has app page |
 | routes | pass | /tools/launch-blueprint-fit-checker/ registered in docs/routes.json |
 | app | pass | /tools/launch-blueprint-fit-checker/ has app page |
+| routes | pass | /checklists/launch-validation-decision-gate/ registered in docs/routes.json |
+| app | pass | /checklists/launch-validation-decision-gate/ has app page |
 | routes | pass | /pricing/ registered in docs/routes.json |
 | app | pass | /pricing/ has app page |
 | routes | pass | /compare/ registered in docs/routes.json |
@@ -89,6 +91,14 @@
 | manual_outreach | pass | outreach tracker separates confirmed payments |
 | manual_outreach | pass | outreach tracker separates usable intake |
 | manual_outreach | pass | outreach tracker stores only aggregate records |
+| validation_decision_gate | pass | validation gate states anti-scaling decision boundary |
+| validation_decision_gate | pass | validation gate names the strongest early proof |
+| validation_decision_gate | pass | validation gate blocks payment-click-as-revenue logic |
+| validation_decision_gate | pass | validation gate blocks technical success as demand proof |
+| validation_decision_gate | pass | validation gate includes implementation-demand pivot path |
+| validation_decision_gate | pass | validation CSV records confirmed payment plus usable intake threshold |
+| validation_decision_gate | pass | validation CSV records implementation pivot |
+| validation_decision_gate | pass | validation CSV blocks payment clicks without confirmation |
 | service_boundary | pass | launch copy avoids guarantee claims |
 | readiness_tool | pass | readiness tool has 13 weighted checks; found 13 |
 | readiness_tool | pass | readiness tool weights total 100 |
@@ -105,6 +115,7 @@
 | mojibake | pass | components/AICrawlerReadinessTool.tsx has no visible mojibake marker |
 | mojibake | pass | components/AuditScopeBuilder.tsx has no visible mojibake marker |
 | mojibake | pass | data/outreach-templates.json has no visible mojibake marker |
+| mojibake | pass | data/launch-validation-decision-gate.csv has no visible mojibake marker |
 | mojibake | pass | docs/manual-outreach-runbook.md has no visible mojibake marker |
 | mojibake | pass | lib/site.ts has no visible mojibake marker |
 | mojibake | pass | lib/launch.ts has no visible mojibake marker |

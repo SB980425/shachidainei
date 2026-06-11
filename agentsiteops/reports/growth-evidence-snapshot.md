@@ -1,18 +1,18 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-11T11:51:33.758Z
+- Generated: 2026-06-11T12:42:18.130Z
 - Status: baseline_ready
-- Routes: 41
-- Technical SEO pass routes: 41
+- Routes: 42
+- Technical SEO pass routes: 42
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 41 routes
-- Bing status: pending export for 41 routes
+- GSC status: pending export for 42 routes
+- Bing status: pending export for 42 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 41 routes
+- Onsite event status: local buffer only for 42 routes
 
 ## Route Evidence Table
 
@@ -33,6 +33,7 @@
 | /checklists/programmatic-seo-gate/ | checklist | programmatic_seo_gate | pass | site_pass | keep | Review pSEO query exposure and checklist_copy_click at Day 30 |
 | /checklists/gsc-bing-indexnow-launch/ | checklist | search_console_launch | pass | site_pass | keep | Add GSC and Bing screenshots or exported status after 7 day data window |
 | /checklists/ai-citation-readiness/ | checklist | ai_citation_readiness | pass | site_pass | keep | Add crawler access evidence, Cloudflare bot setting screenshot, and first AI referral examples after data exists |
+| /checklists/launch-validation-decision-gate/ | checklist | launch_blueprint | pass | site_pass | keep | Use this page to decide whether weak launch signals require continuing, rewriting, repricing, narrowing, pivoting to implementation, or stopping before adding more content |
 | /guides/ai-search-friendly-robots-txt/ | guide | ai_crawler_readiness | pass | site_pass | keep | Add Cloudflare robots and WAF evidence only after account-level settings are exported or screenshotted |
 | /guides/indexnow-cloudflare-pages/ | guide | search_console_launch | pass | site_pass | keep | Record IndexNow response codes after each production deployment and compare with Bing crawl status |
 | /guides/gsc-bing-sitemap-verification/ | guide | search_console_launch | pass | site_pass | keep | Add GSC and Bing sitemap status evidence after first crawl window |

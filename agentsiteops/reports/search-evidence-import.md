@@ -1,6 +1,6 @@
 # Search Evidence Import
 
-- Generated: 2026-06-11T11:37:47.027Z
+- Generated: 2026-06-11T12:41:04.805Z
 - Status: waiting_for_exports
 - Import files found: 0
 - Blocked files: 0
@@ -44,6 +44,7 @@
 | /checklists/programmatic-seo-gate/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /checklists/gsc-bing-indexnow-launch/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /checklists/ai-citation-readiness/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /checklists/launch-validation-decision-gate/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /guides/ai-search-friendly-robots-txt/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /guides/indexnow-cloudflare-pages/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /guides/gsc-bing-sitemap-verification/ | 0 | 0 | 0 | 0 | 0 | 0 |

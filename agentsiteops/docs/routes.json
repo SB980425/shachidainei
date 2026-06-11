@@ -141,6 +141,15 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/checklists/launch-validation-decision-gate/",
+      "pageType": "checklist",
+      "template": "checklist",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.78,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/guides/ai-search-friendly-robots-txt/",
       "pageType": "guide",
       "template": "guide",

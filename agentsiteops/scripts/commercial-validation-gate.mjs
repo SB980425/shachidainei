@@ -12,6 +12,7 @@ const requiredRoutes = [
   "/services/ai-website-opportunity-audit/",
   "/tools/audit-scope-builder/",
   "/tools/launch-blueprint-fit-checker/",
+  "/checklists/launch-validation-decision-gate/",
   "/pricing/",
   "/compare/",
   "/starter-review/",
@@ -62,6 +63,7 @@ function checkRoutes() {
 function checkCommercialBoundary() {
   const payments = read("lib/payments.ts");
   const launch = read("lib/launch.ts");
+  const site = read("lib/site.ts");
   const pricingPage = read("app/pricing/page.tsx");
   const starterReviewPage = read("app/starter-review/page.tsx");
   const fitReviewSamplePage = read("app/examples/fit-review-sample/page.tsx");
@@ -80,6 +82,7 @@ function checkCommercialBoundary() {
   const outreachTemplates = read("data/outreach-templates.json");
   const outreachRunbook = read("docs/manual-outreach-runbook.md");
   const outreachTracker = read("data/outreach-tracker-template.csv");
+  const validationGate = read("data/launch-validation-decision-gate.csv");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -131,6 +134,14 @@ function checkCommercialBoundary() {
   requireText("manual_outreach", outreachTracker, "confirmed_payment_count", "outreach tracker separates confirmed payments");
   requireText("manual_outreach", outreachTracker, "usable_intake_count", "outreach tracker separates usable intake");
   requireText("manual_outreach", outreachTracker, "Aggregate only", "outreach tracker stores only aggregate records");
+  requireText("validation_decision_gate", site, "Stop, rewrite, or pivot before scaling", "validation gate states anti-scaling decision boundary");
+  requireText("validation_decision_gate", site, "Confirmed payment plus usable intake", "validation gate names the strongest early proof");
+  requireText("validation_decision_gate", site, "PayPal clicks without confirmed payment are not revenue", "validation gate blocks payment-click-as-revenue logic");
+  requireText("validation_decision_gate", site, "IndexNow success is not demand", "validation gate blocks technical success as demand proof");
+  requireText("validation_decision_gate", site, "pivot_to_implementation", "validation gate includes implementation-demand pivot path");
+  requireText("validation_decision_gate", validationGate, "confirmed_payment_plus_usable_intake", "validation CSV records confirmed payment plus usable intake threshold");
+  requireText("validation_decision_gate", validationGate, "pivot_to_implementation", "validation CSV records implementation pivot");
+  requireText("validation_decision_gate", validationGate, "PayPal_click_without_confirmed_payment", "validation CSV blocks payment clicks without confirmation");
 
   addCheck("service_boundary", !/guaranteed rankings|guaranteed revenue|guaranteed customers/i.test(launch) ? "pass" : "fail", "launch copy avoids guarantee claims");
 }
@@ -191,6 +202,7 @@ function checkMojibake() {
     "components/AICrawlerReadinessTool.tsx",
     "components/AuditScopeBuilder.tsx",
     "data/outreach-templates.json",
+    "data/launch-validation-decision-gate.csv",
     "docs/manual-outreach-runbook.md",
     "lib/site.ts",
     "lib/launch.ts",

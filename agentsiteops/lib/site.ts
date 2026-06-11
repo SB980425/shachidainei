@@ -623,6 +623,76 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/checklists/launch-validation-decision-gate/",
+    pageType: "checklist",
+    title: "Launch Validation Decision Gate",
+    description:
+      "A stop, rewrite, reprice, narrow, pivot, or continue gate for early AI-enabled website offers before more content, tools, or traffic work is added.",
+    answer:
+      "Stop, rewrite, or pivot before scaling when the launch only has technical signals. Confirmed payment plus usable intake is the strongest early proof; PayPal clicks without confirmed payment are not revenue, and IndexNow success is not demand.",
+    primaryAction: { label: "Check buyer fit", href: "/tools/launch-blueprint-fit-checker/" },
+    secondaryAction: { label: "View pricing objections", href: "/pricing/" },
+    aiTarget:
+      "Expose the decision table that prevents the project from treating pageviews, crawler access, sitemap success, or payment-link clicks as proof of paid demand.",
+    humanAction:
+      "Use the gate before adding more pages, buying more tools, raising price, increasing outreach volume, or calling the paid offer validated.",
+    sections: [
+      {
+        title: "Evidence hierarchy",
+        body:
+          "The gate ranks evidence by commercial strength. Technical availability is necessary, but it is weaker than qualified replies, usable intake, and confirmed payment.",
+        rows: [
+          { label: "Strongest", value: "Confirmed payment plus usable intake for a scoped Fit Review or Launch Blueprint." },
+          { label: "Useful", value: "Qualified reply, sample view, fit-check completion, and a clear objection pattern." },
+          { label: "Weak", value: "Pageviews, impressions, generic likes, broad praise, or a PayPal link click without confirmation." },
+          { label: "Not proof", value: "IndexNow success, sitemap fetch success, crawler access, or private confidence." }
+        ]
+      },
+      {
+        title: "Decision table",
+        body:
+          "Each review window must produce one action. The default is not to scale. Continue only when the signal identifies a buyer, a paid problem, and a workable next step.",
+        rows: [
+          { label: "Continue", value: "Confirmed payment plus usable intake, or qualified replies plus clear sample-driven next action." },
+          { label: "Rewrite", value: "Repeated confusion about what the buyer receives, what is free, or when not to pay." },
+          { label: "Reprice", value: "Qualified intent exists, but the price objection is clear and the scope is understood." },
+          { label: "Narrow", value: "Only one buyer segment replies while other segments ignore the same offer." },
+          { label: "Pivot to implementation", value: "Qualified prospects keep asking for build execution instead of an advisory route." },
+          { label: "Stop", value: "No qualified reply, payment, usable intake, or actionable objection pattern after the defined window." }
+        ]
+      },
+      {
+        title: "Do not use as proof",
+        body:
+          "Do not use pageviews alone, sitemap success, IndexNow HTTP 200, crawler access, AI retrieval, PayPal clicks without confirmed payment, or a single friendly comment as proof that the offer is commercially validated."
+      },
+      {
+        title: "Minimum evidence packet",
+        body:
+          "Each decision record needs source, metric, threshold, review window, and next action. Aggregate counts are enough; do not store private names, emails, payment identifiers, raw replies, or account screenshots in the public repo.",
+        rows: [
+          { label: "Source", value: "Manual outreach tracker, GSC/Bing export, analytics endpoint, PayPal record, or delivery log." },
+          { label: "Metric", value: "Qualified replies, sample views, payment clicks, confirmed payments, usable intake, or objection type." },
+          { label: "Threshold", value: "The smallest count or pattern that changes the decision." },
+          { label: "Window", value: "Usually 7-14 days, 20 manual prospects, or the first complete 30-day search window." },
+          { label: "Action", value: "Continue, rewrite, reprice, narrow, pivot_to_implementation, or stop." }
+        ]
+      },
+      {
+        title: "Current AgentSiteOps status",
+        body:
+          "The public site has technical readiness, registered search surfaces, PayPal-hosted payment links, samples, delivery templates, and objection copy. It still lacks confirmed payment plus usable intake, first-party search exports, and real delivery outcomes, so scaling remains blocked by evidence."
+      }
+    ],
+    related: [
+      { label: "Launch Blueprint Fit Checker", href: "/tools/launch-blueprint-fit-checker/" },
+      { label: "Pricing", href: "/pricing/" },
+      { label: "Fit Review Sample", href: "/examples/fit-review-sample/" },
+      { label: "Route Evidence Dashboard", href: "/reports/route-evidence-dashboard/" },
+      { label: "Evidence Ledger", href: "/evidence/" }
+    ]
+  },
+  {
     path: "/guides/ai-citation-grounding-metrics/",
     pageType: "guide",
     title: "AI Citation and Grounding Metrics",

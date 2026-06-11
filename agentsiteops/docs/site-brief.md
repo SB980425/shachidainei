@@ -60,6 +60,7 @@ AI Website Operating System.
 | `/templates/website-opportunity-scoring-template/` | Template | Provide a copy-ready candidate scoring worksheet for 3-5 site directions. |
 | `/checklists/ai-content-quality-gate/` | Checklist | Block weak AI-assisted content before publishing. |
 | `/checklists/programmatic-seo-gate/` | Checklist | Govern pSEO batches, canonical rules, noindex policy, and sample audits. |
+| `/checklists/launch-validation-decision-gate/` | Checklist | Decide continue, rewrite, reprice, narrow, pivot, or stop before scaling content or outreach. |
 | `/guides/ai-search-friendly-robots-txt/` | Guide | Separate search, user-retrieval, and training crawler policies. |
 | `/guides/indexnow-cloudflare-pages/` | Guide | Explain the production-safe IndexNow key and changed-URL submission workflow. |
 | `/guides/gsc-bing-sitemap-verification/` | Guide | Troubleshoot sitemap fetch, processing, and sample URL inspection states. |
