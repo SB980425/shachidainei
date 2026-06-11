@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T05:42:33.466Z
+- Generated: 2026-06-11T06:34:05.404Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 73
+- Checks: 77
 - Blockers: 0
 - Warnings: 0
 
@@ -23,6 +23,9 @@
 | robots | pass | sitemap pointer visible | [link](https://agentsiteops.com/robots.txt) |
 | indexnow_key | pass | HTTP 200 | [link](https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt) |
 | indexnow_key | pass | key file content matches public key | [link](https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt) |
+| brand_icon | pass | HTTP 200 | [link](https://agentsiteops.com/icon.svg) |
+| brand_icon | pass | SVG icon exists | [link](https://agentsiteops.com/icon.svg) |
+| brand_icon | pass | icon has accessible brand label | [link](https://agentsiteops.com/icon.svg) |
 | / | pass | HTTP 200 | [link](https://agentsiteops.com/) |
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
@@ -46,6 +49,7 @@
 | /buy/ | pass | canonical points to production URL | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | Get one sellable offer | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | Pay with PayPal | [link](https://agentsiteops.com/buy/) |
+| /buy/ | pass | Test PayPal with USD | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | USD | [link](https://agentsiteops.com/buy/) |
 | /intake/ | pass | HTTP 200 | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | HTML title exists | [link](https://agentsiteops.com/intake/) |
