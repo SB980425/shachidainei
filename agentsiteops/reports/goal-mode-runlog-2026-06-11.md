@@ -64,6 +64,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Added `data/outreach-tracker-template.csv` for aggregate-only outreach tracking.
 - Extended `scripts/commercial-validation-gate.mjs` so outreach cannot pass the commercial gate if it promises traffic, rankings, AI citations, revenue, automated DMs, or public storage of private lead data.
 - Updated the public update log and production health monitor so `/updates/` must show the M4-12 entry after deployment.
+- Deployed the M4-12 update to Cloudflare Pages and submitted 41 URLs through IndexNow.
 
 ## Verification Snapshot
 
@@ -77,6 +78,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run seo:ci`: pass, 41 routes, 0 blockers, 0 warnings.
 - `npm run crawler:audit`: pass.
 - `npm run production:health`: pass, 116 checks.
+- `npm run production:health`: pass, 117 checks after M4-12 deployment.
 - `npm run indexnow:submit`: pass, 41 URLs, HTTP 200.
 - Playwright static build checks passed for `/examples/fit-review-sample/`, `/starter-review/`, and `/pricing/` on desktop and mobile without horizontal overflow.
 - Final production read-only checks passed for `/examples/fit-review-sample/`, `/starter-review/`, `/pricing/`, `/evidence/`, `/updates/`, `/intake/`, `/buy/`, and `/sitemap.xml`.
@@ -86,7 +88,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Production domain: `https://agentsiteops.com`
 - Sitemap route count: 41.
 - Current branch: `codex/launch-blueprint-reset`.
-- Latest pushed commit at this log point: `6f824c1 Record delivery templates production evidence`.
+- Latest pushed commit at this log point before M4-12 evidence commit: `b234ba1 Add manual outreach evidence loop`.
 
 ## Current Risk Register
 
