@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T07:01:45.107Z
+- Generated: 2026-06-11T07:43:58.361Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 78
+- Checks: 85
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 37 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 38 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -45,6 +45,12 @@
 | /sample/ | pass | What a Launch Blueprint looks like | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | Sample | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | Buy the Blueprint | [link](https://agentsiteops.com/sample/) |
+| /compare/ | pass | HTTP 200 | [link](https://agentsiteops.com/compare/) |
+| /compare/ | pass | HTML title exists | [link](https://agentsiteops.com/compare/) |
+| /compare/ | pass | canonical points to production URL | [link](https://agentsiteops.com/compare/) |
+| /compare/ | pass | Compare AgentSiteOps before buying | [link](https://agentsiteops.com/compare/) |
+| /compare/ | pass | Generic AI chat | [link](https://agentsiteops.com/compare/) |
+| /compare/ | pass | Do not buy for these jobs | [link](https://agentsiteops.com/compare/) |
 | /buy/ | pass | HTTP 200 | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | HTML title exists | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | canonical points to production URL | [link](https://agentsiteops.com/buy/) |
@@ -87,8 +93,9 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-03 Launch comparison and sample depth | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-01 Launch Blueprint reset and payment flow | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | IndexNow submit pass with 37 URLs | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | IndexNow submit pass | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

@@ -1,6 +1,6 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-11T07:36:06.466Z
+- Generated: 2026-06-11T07:44:33.357Z
 - Status: baseline_ready
 - Routes: 38
 - Technical SEO pass routes: 38
