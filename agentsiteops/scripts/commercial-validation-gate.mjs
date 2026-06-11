@@ -62,11 +62,14 @@ function checkCommercialBoundary() {
   const launch = read("lib/launch.ts");
   const pricingPage = read("app/pricing/page.tsx");
   const buyPage = read("app/buy/page.tsx");
+  const intakePage = read("app/intake/page.tsx");
   const revenue = read("data/revenue-experiments.csv");
   const compliance = read("checklists/monetization-compliance.md");
   const terms = read("app/terms/page.tsx");
   const refund = read("app/refund-policy/page.tsx");
   const disclaimer = read("app/disclaimer/page.tsx");
+  const fulfillmentTemplate = read("data/manual-fulfillment-log-template.csv");
+  const fulfillmentRunbook = read("docs/manual-fulfillment-runbook.md");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   addCheck("payment_path", !/testPayment|test_payment|temporary_payment/i.test(payments) ? "pass" : "fail", "payment config contains only current paid offer paths");
@@ -82,6 +85,11 @@ function checkCommercialBoundary() {
   requireText("compliance", compliance, "| Launch Blueprint payment path | `pass_with_boundary` |", "current payment path has compliance boundary");
   requireText("compliance", compliance, "| Manual PayPal payment path disclosed | `pass` |", "manual PayPal path is disclosed");
   requireText("compliance", compliance, "| No card data collected by site | `pass` |", "site does not collect card data");
+  requireText("manual_fulfillment", intakePage, "Payment confirmation", "intake page requests payment confirmation");
+  requireText("manual_fulfillment", intakePage, "Manual delivery process", "intake page explains manual delivery process");
+  requireText("manual_fulfillment", fulfillmentTemplate, "paypal_reference", "manual fulfillment template records payment reference");
+  requireText("manual_fulfillment", fulfillmentTemplate, "Do not store card data", "manual fulfillment template blocks sensitive payment data storage");
+  requireText("manual_fulfillment", fulfillmentRunbook, "Do not store", "manual fulfillment runbook states data boundary");
 
   addCheck("service_boundary", !/guaranteed rankings|guaranteed revenue|guaranteed customers/i.test(launch) ? "pass" : "fail", "launch copy avoids guarantee claims");
 }

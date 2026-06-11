@@ -12,6 +12,41 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-07 Intake and manual fulfillment path",
+    status: "completed",
+    keyPoints: [
+      "Expanded the intake page from a basic email form into a payment confirmation, project intake, delivery process, ready-to-send, and delivery-pause checklist.",
+      "Added a local manual fulfillment log template and runbook so the first PayPal orders can be tracked without storing card data, passwords, API keys, or private customer lists.",
+      "Extended commercial and production gates to require the new intake and manual fulfillment boundaries."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect what happens after payment: how payment evidence is matched, which projects pause delivery, and what completion means before any account portal exists.",
+    files: [
+      "app/intake/page.tsx",
+      "lib/launch.ts",
+      "data/manual-fulfillment-log-template.csv",
+      "docs/manual-fulfillment-runbook.md",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "analytics endpoint gate pass",
+      "commercial validation gate pass with 63 checks",
+      "route consistency gate pass",
+      "production build pass",
+      "technical SEO CI pass with self-starting static server",
+      "crawler access audit pass",
+      "search evidence import waiting_for_exports state verified",
+      "growth snapshot baseline_ready"
+    ],
+    next:
+      "Use the fulfillment template only for real payment or serious intake evidence; keep raw payment and customer-sensitive data out of the repo."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-06 Purchase acceptance and encoding gate",
     status: "completed",
     keyPoints: [

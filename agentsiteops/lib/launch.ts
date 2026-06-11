@@ -68,6 +68,37 @@ export const intakeFields = [
   "Any legal, regulated, platform, or account-safety limits that may affect the offer."
 ];
 
+export const paymentConfirmationFields = [
+  "PayPal payment name or payer email.",
+  "PayPal transaction ID or payment receipt reference.",
+  "Payment date and amount.",
+  "Launch Blueprint Fit Checker result if you used it.",
+  "The email address where the blueprint should be delivered."
+];
+
+export const deliveryProcessSteps = [
+  {
+    title: "1. Confirm payment and intake",
+    body:
+      "Payment evidence and intake details are matched manually before work starts. Missing payment or unusable intake pauses delivery."
+  },
+  {
+    title: "2. Screen scope and safety",
+    body:
+      "Projects involving regulated advice, private account access, spam automation, or unsafe claims are narrowed, rejected, or refunded before work begins."
+  },
+  {
+    title: "3. Build the blueprint",
+    body:
+      "The deliverable chooses one route, explains rejected paths, drafts the landing page structure, and writes the first validation sequence."
+  },
+  {
+    title: "4. Send and close the cycle",
+    body:
+      "The buyer receives the manual artifact by email or document link, then executes the seven-day validation plan before requesting another round."
+  }
+];
+
 export const marketSignals = [
   {
     title: "AI search and traditional SEO now overlap",

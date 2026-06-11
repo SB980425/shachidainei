@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T09:40:29.421Z
+- Generated: 2026-06-11T10:01:02.487Z
 - Status: pass
-- Checks: 58
+- Checks: 63
 - Blockers: 0
 
 ## Summary
@@ -49,6 +49,11 @@
 | compliance | pass | current payment path has compliance boundary |
 | compliance | pass | manual PayPal path is disclosed |
 | compliance | pass | site does not collect card data |
+| manual_fulfillment | pass | intake page requests payment confirmation |
+| manual_fulfillment | pass | intake page explains manual delivery process |
+| manual_fulfillment | pass | manual fulfillment template records payment reference |
+| manual_fulfillment | pass | manual fulfillment template blocks sensitive payment data storage |
+| manual_fulfillment | pass | manual fulfillment runbook states data boundary |
 | service_boundary | pass | launch copy avoids guarantee claims |
 | readiness_tool | pass | readiness tool has 13 weighted checks; found 13 |
 | readiness_tool | pass | readiness tool weights total 100 |
