@@ -1,10 +1,10 @@
 # IndexNow Submission
 
-- Generated: 2026-06-11T07:44:01.694Z
+- Generated: 2026-06-11T08:38:54.298Z
 - Endpoint: https://www.bing.com/indexnow
 - Host: agentsiteops.com
 - Key location: https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt
-- Submitted URL count: 38
+- Submitted URL count: 39
 - Status: 200
 
 ## Submitted URLs
@@ -16,6 +16,7 @@
 - https://agentsiteops.com/examples/agentsiteops-self-audit/
 - https://agentsiteops.com/services/ai-website-opportunity-audit/
 - https://agentsiteops.com/tools/audit-scope-builder/
+- https://agentsiteops.com/tools/launch-blueprint-fit-checker/
 - https://agentsiteops.com/templates/starter-pack/
 - https://agentsiteops.com/templates/seo-repo-skeleton/
 - https://agentsiteops.com/checklists/ai-content-quality-gate/

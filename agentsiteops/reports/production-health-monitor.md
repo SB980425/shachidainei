@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T07:43:58.361Z
+- Generated: 2026-06-11T08:38:12.559Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 85
+- Checks: 92
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 38 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 39 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -30,7 +30,7 @@
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
 | / | pass | Turn scattered AI skills into one sellable offer | [link](https://agentsiteops.com/) |
-| / | pass | Buy the USD | [link](https://agentsiteops.com/) |
+| / | pass | Check fit before payment | [link](https://agentsiteops.com/) |
 | / | pass | Launch Readiness | [link](https://agentsiteops.com/) |
 | /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
@@ -77,6 +77,12 @@
 | /tools/audit-scope-builder/ | pass | Audit Scope Builder | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
 | /tools/audit-scope-builder/ | pass | local-only | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
 | /tools/audit-scope-builder/ | pass | No payment, account, identity | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
+| /tools/launch-blueprint-fit-checker/ | pass | HTTP 200 | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
+| /tools/launch-blueprint-fit-checker/ | pass | HTML title exists | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
+| /tools/launch-blueprint-fit-checker/ | pass | canonical points to production URL | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
+| /tools/launch-blueprint-fit-checker/ | pass | Launch Blueprint Fit Checker | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
+| /tools/launch-blueprint-fit-checker/ | pass | Do not buy | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
+| /tools/launch-blueprint-fit-checker/ | pass | No request, account, payment | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
 | /reports/route-evidence-dashboard/ | pass | HTTP 200 | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
 | /reports/route-evidence-dashboard/ | pass | HTML title exists | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
 | /reports/route-evidence-dashboard/ | pass | canonical points to production URL | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
@@ -93,6 +99,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-04 Pre-purchase fit checker | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-03 Launch comparison and sample depth | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-01 Launch Blueprint reset and payment flow | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | IndexNow submit pass | [link](https://agentsiteops.com/updates/) |
