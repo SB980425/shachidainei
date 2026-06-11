@@ -181,13 +181,16 @@ export const routePages: RoutePage[] = [
       {
         title: "Sample score",
         body:
-          "AgentSiteOps currently passes the production and crawler-access foundation, but it does not yet pass commercial proof. The sample score is a readiness diagnosis, not a claim of product-market fit.",
+          "AgentSiteOps currently scores 52/100 as a launch system. The technical foundation is strong, but the project is commercially unvalidated because search exports, AI referral evidence, confirmed payment, usable intake, and delivered buyer outcomes are still missing. The sample score is a readiness diagnosis, not a claim of product-market fit.",
         rows: [
-          { label: "Technical readiness", value: "Pass: production health, sitemap, robots, IndexNow key, and CI are checked." },
-          { label: "Search evidence", value: "Pending: GSC and Bing exports are not yet available." },
-          { label: "AI citation evidence", value: "Pending: no confirmed ChatGPT, Perplexity, Claude, or Copilot referral evidence." },
-          { label: "Commercial evidence", value: "Blocked: no customer request, payment, renewal, or conversion evidence." },
-          { label: "Decision", value: "Continue free tools and sample reports; do not enable checkout yet." }
+          { label: "Overall score", value: "52/100: technically launchable, commercially unvalidated." },
+          { label: "Technical foundation", value: "92/100: production health, sitemap, robots, canonical, mobile, and crawler checks pass." },
+          { label: "Search evidence", value: "15/100: GSC and Bing exports are still pending, so demand is not proven." },
+          { label: "AI visibility readiness", value: "45/100: crawler access and answer structure exist, but no confirmed AI citation or referral evidence exists." },
+          { label: "Product clarity", value: "68/100: fit checker, samples, objections, comparison, intake, and delivery templates exist; buyer feedback is still missing." },
+          { label: "Commercial validation", value: "18/100: PayPal-hosted links exist, but no confirmed payment plus usable intake is recorded." },
+          { label: "Delivery readiness", value: "70/100: templates and runbook exist, but no real buyer artifact has been delivered." },
+          { label: "Decision", value: "Continue bounded manual validation; do not scale content, paid tools, higher pricing, or subscriptions yet." }
         ]
       },
       {
@@ -203,7 +206,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Repair path",
         body:
-          "The repair path is to publish useful free diagnostics, show this self-audit as case study zero, collect first-party usage signals, and only then test a paid manual audit."
+          "The repair path is to publish useful free diagnostics, show this self-audit as case study zero, collect first-party usage and search signals, run small manual outreach, and let the validation decision gate decide continue, rewrite, reprice, pivot_to_implementation, or stop."
       }
     ],
     related: [
@@ -811,6 +814,20 @@ export const routePages: RoutePage[] = [
           { label: "Manual fulfillment", value: "The intake page, fulfillment log template, and runbook define how Fit Review and Launch Blueprint payment evidence, project details, delivery pauses, and completion are handled without storing sensitive payment data." },
           { label: "Sample artifacts", value: "Public samples now show both the USD 29 Fit Review verdict format and the USD 99 Launch Blueprint structure before payment." },
           { label: "IndexNow", value: "The current production route list is submitted after deployment, with the response recorded in the update log." }
+        ]
+      },
+      {
+        title: "Current objective self-score",
+        body:
+          "The current weighted score is 52/100. This means the site is technically launchable but commercially unvalidated. The score is recorded in data/agentsiteops-self-score-2026-06-11.csv and should move only when first-party evidence changes.",
+        rows: [
+          { label: "Technical foundation", value: "92/100: release gates, production health, sitemap, robots, mobile, and crawler access pass." },
+          { label: "Search evidence", value: "15/100: GSC and Bing exports are pending; no demand claim is allowed." },
+          { label: "AI visibility readiness", value: "45/100: crawler access exists, but no confirmed AI citation or referral data exists." },
+          { label: "Product clarity", value: "68/100: paid path, samples, objections, and intake exist, but buyer feedback is missing." },
+          { label: "Commercial validation", value: "18/100: payment links exist, but confirmed payment plus usable intake is absent." },
+          { label: "Delivery readiness", value: "70/100: delivery templates exist, but no real buyer artifact has been shipped." },
+          { label: "Overall verdict", value: "52/100: continue bounded validation; do not scale content, subscriptions, paid tools, or pricing yet." }
         ]
       },
       {

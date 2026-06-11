@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T12:40:41.924Z
+- Generated: 2026-06-11T12:53:36.166Z
 - Status: pass
-- Checks: 112
+- Checks: 118
 - Blockers: 0
 
 ## Summary
@@ -99,6 +99,11 @@
 | validation_decision_gate | pass | validation CSV records confirmed payment plus usable intake threshold |
 | validation_decision_gate | pass | validation CSV records implementation pivot |
 | validation_decision_gate | pass | validation CSV blocks payment clicks without confirmation |
+| self_score | pass | self-audit states objective current score and verdict |
+| self_score | pass | self-audit blocks premature scaling |
+| self_score | pass | self-score CSV records overall 52 score |
+| self_score | pass | self-score CSV records missing commercial proof |
+| self_score | pass | self-score CSV records commercial verdict |
 | service_boundary | pass | launch copy avoids guarantee claims |
 | readiness_tool | pass | readiness tool has 13 weighted checks; found 13 |
 | readiness_tool | pass | readiness tool weights total 100 |
@@ -116,6 +121,7 @@
 | mojibake | pass | components/AuditScopeBuilder.tsx has no visible mojibake marker |
 | mojibake | pass | data/outreach-templates.json has no visible mojibake marker |
 | mojibake | pass | data/launch-validation-decision-gate.csv has no visible mojibake marker |
+| mojibake | pass | data/agentsiteops-self-score-2026-06-11.csv has no visible mojibake marker |
 | mojibake | pass | docs/manual-outreach-runbook.md has no visible mojibake marker |
 | mojibake | pass | lib/site.ts has no visible mojibake marker |
 | mojibake | pass | lib/launch.ts has no visible mojibake marker |

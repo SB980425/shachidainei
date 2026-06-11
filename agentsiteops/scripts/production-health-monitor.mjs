@@ -273,10 +273,11 @@ async function main() {
   await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "What the paid file must contain", "Check fit first"]);
   await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
   await checkPage("/compare/", ["Common objections before payment", "I need someone to build it, not just advise."]);
+  await checkPage("/examples/agentsiteops-self-audit/", ["AgentSiteOps Self-Audit Sample", "52/100", "commercially unvalidated"]);
   await checkPage("/starter-review/", ["Pay for a fit verdict", "USD 29", "It can reject the sale"]);
   await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "Acceptance criteria", "If the route is not ready"]);
   await checkPage("/intake/", ["Order Intake", "Email intake", "Payment confirmation", "Manual delivery process"]);
-  await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Funnel template", "Claims not made"]);
+  await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Current objective self-score", "52/100", "Claims not made"]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);
   await checkPage("/tools/launch-blueprint-fit-checker/", ["Launch Blueprint Fit Checker", "Do not buy", "No request, account, payment"]);
   await checkPage("/checklists/launch-validation-decision-gate/", [
@@ -290,6 +291,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-16 Objective self-score calibration",
     "M4-15 Launch validation decision gate",
     "M4-14 Objection response conversion layer",
     "M4-13 Search evidence import guardrail",

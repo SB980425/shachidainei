@@ -83,6 +83,7 @@ function checkCommercialBoundary() {
   const outreachRunbook = read("docs/manual-outreach-runbook.md");
   const outreachTracker = read("data/outreach-tracker-template.csv");
   const validationGate = read("data/launch-validation-decision-gate.csv");
+  const selfScore = read("data/agentsiteops-self-score-2026-06-11.csv");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -142,6 +143,11 @@ function checkCommercialBoundary() {
   requireText("validation_decision_gate", validationGate, "confirmed_payment_plus_usable_intake", "validation CSV records confirmed payment plus usable intake threshold");
   requireText("validation_decision_gate", validationGate, "pivot_to_implementation", "validation CSV records implementation pivot");
   requireText("validation_decision_gate", validationGate, "PayPal_click_without_confirmed_payment", "validation CSV blocks payment clicks without confirmation");
+  requireText("self_score", site, "52/100: technically launchable, commercially unvalidated.", "self-audit states objective current score and verdict");
+  requireText("self_score", site, "do not scale content, paid tools, higher pricing, or subscriptions yet", "self-audit blocks premature scaling");
+  requireText("self_score", selfScore, '"overall","100","52"', "self-score CSV records overall 52 score");
+  requireText("self_score", selfScore, "confirmed payment plus usable intake is absent", "self-score CSV records missing commercial proof");
+  requireText("self_score", selfScore, "commercially_unvalidated", "self-score CSV records commercial verdict");
 
   addCheck("service_boundary", !/guaranteed rankings|guaranteed revenue|guaranteed customers/i.test(launch) ? "pass" : "fail", "launch copy avoids guarantee claims");
 }
@@ -203,6 +209,7 @@ function checkMojibake() {
     "components/AuditScopeBuilder.tsx",
     "data/outreach-templates.json",
     "data/launch-validation-decision-gate.csv",
+    "data/agentsiteops-self-score-2026-06-11.csv",
     "docs/manual-outreach-runbook.md",
     "lib/site.ts",
     "lib/launch.ts",

@@ -12,6 +12,39 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-16 Objective self-score calibration",
+    status: "completed",
+    keyPoints: [
+      "Added a weighted self-score file for AgentSiteOps with technical foundation, search evidence, AI visibility readiness, product clarity, commercial validation, and delivery readiness dimensions.",
+      "Updated the public self-audit and evidence ledger so the site states its current 52/100 score and commercially unvalidated status instead of implying that technical launch readiness equals product validation.",
+      "Extended commercial and production gates so the self-score, missing confirmed payment plus usable intake, and no-scaling decision remain visible."
+    ],
+    aiAngle:
+      "AI and search systems can now cite the site weaknesses directly: technical launch is working, but the current offer cannot be treated as validated until first-party search, referral, payment, intake, and delivery evidence appears.",
+    files: [
+      "data/agentsiteops-self-score-2026-06-11.csv",
+      "lib/site.ts",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "commercial validation gate pass",
+      "analytics endpoint gate pass",
+      "route consistency gate pass",
+      "production build pass",
+      "technical SEO CI pass",
+      "crawler access audit pass",
+      "search evidence import waiting_for_exports",
+      "growth snapshot baseline_ready"
+    ],
+    next:
+      "Move the self-score only when first-party evidence changes; keep the paid path in bounded validation until confirmed payment plus usable intake or qualified objection patterns exist."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-15 Launch validation decision gate",
     status: "completed",
     keyPoints: [
