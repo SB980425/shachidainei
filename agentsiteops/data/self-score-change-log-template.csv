@@ -1,0 +1,2 @@
+"date","dimension","previous_score","new_score","evidence_source","date_window","threshold_crossed","public_claim_affected","next_action","privacy_boundary"
+"YYYY-MM-DD","commercial_validation","18","TBD","paypal_record_and_usable_intake_count","YYYY-MM-DD_to_YYYY-MM-DD","confirmed_payment_plus_usable_intake","current self-score and paid-offer validation status","update score only after commercial gate passes","Aggregate only; do not store names emails payment identifiers raw replies account screenshots bank details IP addresses cookies or API keys"

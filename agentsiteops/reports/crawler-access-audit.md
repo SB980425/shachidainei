@@ -1,6 +1,6 @@
 # Crawler Access Audit
 
-- Generated: 2026-06-11T12:54:35.573Z
+- Generated: 2026-06-11T13:04:18.518Z
 - Status: PASS
 - Site: https://agentsiteops.com
 - Target: https://agentsiteops.com/checklists/ai-citation-readiness/

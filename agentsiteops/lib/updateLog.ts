@@ -12,6 +12,41 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-17 Self-score maintenance protocol",
+    status: "completed",
+    keyPoints: [
+      "Added a self-score maintenance protocol so the public 52/100 score cannot be increased from pageviews, sitemap success, IndexNow success, crawler access, PayPal clicks without confirmed payment, or private confidence.",
+      "Added a score-change log template for recording dimension, previous score, new score, evidence source, date window, threshold crossed, public claim affected, next action, and privacy boundary.",
+      "Updated the evidence ledger and commercial gate so score increases require first-party evidence while score decreases can happen immediately after a gate failure."
+    ],
+    aiAngle:
+      "AI and search systems can inspect not only the current score but also the conditions for changing it; this reduces the risk that the site later inflates its own validation status.",
+    files: [
+      "docs/self-score-maintenance-protocol.md",
+      "data/self-score-change-log-template.csv",
+      "lib/site.ts",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "commercial validation gate pass",
+      "analytics endpoint gate pass",
+      "route consistency gate pass",
+      "production build pass",
+      "technical SEO CI pass",
+      "crawler access audit pass",
+      "search evidence import waiting_for_exports",
+      "growth snapshot baseline_ready",
+      "production health pending after deployment"
+    ],
+    next:
+      "Use the protocol before changing the public self-score, commercial claims, pricing confidence, subscription status, or scaling decision."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-16 Objective self-score calibration",
     status: "completed",
     keyPoints: [

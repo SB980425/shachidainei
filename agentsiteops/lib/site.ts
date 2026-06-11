@@ -831,6 +831,18 @@ export const routePages: RoutePage[] = [
         ]
       },
       {
+        title: "Score update rules",
+        body:
+          "The self-score can decrease whenever a gate fails, but it cannot increase from pageviews, sitemap success, IndexNow success, crawler access, generic praise, PayPal clicks without confirmed payment, or private confidence. Score increases require first-party evidence and a recorded change packet.",
+        rows: [
+          { label: "Protocol", value: "docs/self-score-maintenance-protocol.md defines the dimensions, thresholds, and release checks." },
+          { label: "Change log", value: "data/self-score-change-log-template.csv defines the minimum evidence packet for score changes." },
+          { label: "Commercial score", value: "Cannot increase until confirmed payment plus usable intake, qualified order, or delivered buyer artifact exists." },
+          { label: "Search score", value: "Cannot increase until first-party GSC or Bing export rows are imported from a defined date window." },
+          { label: "AI visibility score", value: "Cannot increase until crawler logs, AI referral examples, Bing AI Performance data, or repeatable citation evidence exists." }
+        ]
+      },
+      {
         title: "Pending evidence",
         body:
           "These signals are intentionally not treated as proven until exports, endpoint data, or payment records exist.",

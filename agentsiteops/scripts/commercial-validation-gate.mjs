@@ -84,6 +84,8 @@ function checkCommercialBoundary() {
   const outreachTracker = read("data/outreach-tracker-template.csv");
   const validationGate = read("data/launch-validation-decision-gate.csv");
   const selfScore = read("data/agentsiteops-self-score-2026-06-11.csv");
+  const selfScoreProtocol = read("docs/self-score-maintenance-protocol.md");
+  const selfScoreChangeLog = read("data/self-score-change-log-template.csv");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -148,6 +150,13 @@ function checkCommercialBoundary() {
   requireText("self_score", selfScore, '"overall","100","52"', "self-score CSV records overall 52 score");
   requireText("self_score", selfScore, "confirmed payment plus usable intake is absent", "self-score CSV records missing commercial proof");
   requireText("self_score", selfScore, "commercially_unvalidated", "self-score CSV records commercial verdict");
+  requireText("self_score", site, "Score update rules", "evidence page shows score update rules");
+  requireText("self_score", site, "cannot increase from pageviews, sitemap success, IndexNow success, crawler access", "evidence page blocks weak self-score increases");
+  requireText("self_score", selfScoreProtocol, "The current public score is `52/100`", "self-score protocol records current score");
+  requireText("self_score", selfScoreProtocol, "Do not raise the overall score from pageviews, sitemap success, IndexNow success, crawler access", "self-score protocol blocks technical-only score increases");
+  requireText("self_score", selfScoreProtocol, "Decrease a score immediately when a gate fails", "self-score protocol allows immediate score decreases");
+  requireText("self_score", selfScoreChangeLog, "confirmed_payment_plus_usable_intake", "self-score change log template records commercial threshold");
+  requireText("self_score", selfScoreChangeLog, "Aggregate only; do not store names emails payment identifiers", "self-score change log template blocks private data storage");
 
   addCheck("service_boundary", !/guaranteed rankings|guaranteed revenue|guaranteed customers/i.test(launch) ? "pass" : "fail", "launch copy avoids guarantee claims");
 }
@@ -210,6 +219,8 @@ function checkMojibake() {
     "data/outreach-templates.json",
     "data/launch-validation-decision-gate.csv",
     "data/agentsiteops-self-score-2026-06-11.csv",
+    "data/self-score-change-log-template.csv",
+    "docs/self-score-maintenance-protocol.md",
     "docs/manual-outreach-runbook.md",
     "lib/site.ts",
     "lib/launch.ts",

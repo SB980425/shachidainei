@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T12:53:36.166Z
+- Generated: 2026-06-11T13:03:36.883Z
 - Status: pass
-- Checks: 118
+- Checks: 127
 - Blockers: 0
 
 ## Summary
@@ -104,6 +104,13 @@
 | self_score | pass | self-score CSV records overall 52 score |
 | self_score | pass | self-score CSV records missing commercial proof |
 | self_score | pass | self-score CSV records commercial verdict |
+| self_score | pass | evidence page shows score update rules |
+| self_score | pass | evidence page blocks weak self-score increases |
+| self_score | pass | self-score protocol records current score |
+| self_score | pass | self-score protocol blocks technical-only score increases |
+| self_score | pass | self-score protocol allows immediate score decreases |
+| self_score | pass | self-score change log template records commercial threshold |
+| self_score | pass | self-score change log template blocks private data storage |
 | service_boundary | pass | launch copy avoids guarantee claims |
 | readiness_tool | pass | readiness tool has 13 weighted checks; found 13 |
 | readiness_tool | pass | readiness tool weights total 100 |
@@ -122,6 +129,8 @@
 | mojibake | pass | data/outreach-templates.json has no visible mojibake marker |
 | mojibake | pass | data/launch-validation-decision-gate.csv has no visible mojibake marker |
 | mojibake | pass | data/agentsiteops-self-score-2026-06-11.csv has no visible mojibake marker |
+| mojibake | pass | data/self-score-change-log-template.csv has no visible mojibake marker |
+| mojibake | pass | docs/self-score-maintenance-protocol.md has no visible mojibake marker |
 | mojibake | pass | docs/manual-outreach-runbook.md has no visible mojibake marker |
 | mojibake | pass | lib/site.ts has no visible mojibake marker |
 | mojibake | pass | lib/launch.ts has no visible mojibake marker |
