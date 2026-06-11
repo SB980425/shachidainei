@@ -8,7 +8,7 @@
 
 - The production site has 37 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
-- Commercial validation is checked separately from revenue evidence; checkout and subscription remain blocked until real demand and payment readiness exist.
+- Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.
 - The next operating step is to collect first-party evidence, not to add a large content batch.
 
@@ -32,7 +32,7 @@
 | Bing Webmaster Tools | Search and AI Performance export | Cannot evaluate Bing queries, AI citations, cited URLs, or grounding phrases yet |
 | ChatGPT referrals | Analytics endpoint or server logs | Cannot confirm ChatGPT traffic yet |
 | Onsite conversions | Approved analytics endpoint | Cannot measure real scorer completion, copy actions, or source clicks yet |
-| Revenue | Payment or lead channel | Cannot evaluate paid conversion or payback yet |
+| Revenue | PayPal transaction or qualified paid lead export | Cannot evaluate paid conversion or payback yet |
 
 ## Page Action Table
 
@@ -43,7 +43,7 @@
 | /tools/website-opportunity-scorer/ | tool | website_opportunity_scoring | pass | site_pass | keep | Measure tool_completed and tool_result_export after real endpoint |
 | /tools/ai-crawler-readiness/ | tool | ai_crawler_readiness | pass | site_pass | keep | Measure readiness report copies and sample audit clicks before paid audit expansion |
 | /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
-| /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep checkout disabled until a real request, identity, terms, refund policy, and payment support exist |
+| /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Launch Blueprint pricing, sample, buy, and intake path |
 | /tools/audit-scope-builder/ | tool | commercial_validation | pass | site_pass | keep | Measure audit_scope_builder_view, tool_completed, and tool_result_export before adding forms or payment |
 | /templates/starter-pack/ | template | starter_pack | pass | site_pass | keep | Measure starter pack downloads and query exposure after analytics endpoint |
 | /templates/seo-repo-skeleton/ | template | seo_repo_skeleton | pass | site_pass | keep | Measure template_copy_click after real endpoint |

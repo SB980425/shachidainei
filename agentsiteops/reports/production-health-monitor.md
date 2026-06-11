@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-08T07:14:22.059Z
+- Generated: 2026-06-11T05:39:28.657Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 48
+- Checks: 73
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 28 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 37 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -26,8 +26,33 @@
 | / | pass | HTTP 200 | [link](https://agentsiteops.com/) |
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
-| / | pass | AI Website Operating System | [link](https://agentsiteops.com/) |
-| / | pass | Score a site idea | [link](https://agentsiteops.com/) |
+| / | pass | Turn scattered AI skills into one sellable offer | [link](https://agentsiteops.com/) |
+| / | pass | Buy the USD | [link](https://agentsiteops.com/) |
+| / | pass | Launch Readiness | [link](https://agentsiteops.com/) |
+| /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | canonical points to production URL | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | AgentSiteOps Launch Blueprint | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | USD | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | Pay with PayPal | [link](https://agentsiteops.com/pricing/) |
+| /sample/ | pass | HTTP 200 | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | HTML title exists | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | canonical points to production URL | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | What a Launch Blueprint looks like | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Sample | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Buy the Blueprint | [link](https://agentsiteops.com/sample/) |
+| /buy/ | pass | HTTP 200 | [link](https://agentsiteops.com/buy/) |
+| /buy/ | pass | HTML title exists | [link](https://agentsiteops.com/buy/) |
+| /buy/ | pass | canonical points to production URL | [link](https://agentsiteops.com/buy/) |
+| /buy/ | pass | Get one sellable offer | [link](https://agentsiteops.com/buy/) |
+| /buy/ | pass | Pay with PayPal | [link](https://agentsiteops.com/buy/) |
+| /buy/ | pass | USD | [link](https://agentsiteops.com/buy/) |
+| /intake/ | pass | HTTP 200 | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | HTML title exists | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | canonical points to production URL | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Launch Blueprint Intake | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Email intake | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Required fields | [link](https://agentsiteops.com/intake/) |
 | /evidence/ | pass | HTTP 200 | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | HTML title exists | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | canonical points to production URL | [link](https://agentsiteops.com/evidence/) |
@@ -50,15 +75,15 @@
 | /privacy/ | pass | HTTP 200 | [link](https://agentsiteops.com/privacy/) |
 | /privacy/ | pass | HTML title exists | [link](https://agentsiteops.com/privacy/) |
 | /privacy/ | pass | canonical points to production URL | [link](https://agentsiteops.com/privacy/) |
-| /privacy/ | pass | Analytics endpoint gate | [link](https://agentsiteops.com/privacy/) |
-| /privacy/ | pass | Cloudflare hosting analytics | [link](https://agentsiteops.com/privacy/) |
-| /privacy/ | pass | not enabled | [link](https://agentsiteops.com/privacy/) |
+| /privacy/ | pass | PayPal | [link](https://agentsiteops.com/privacy/) |
+| /privacy/ | pass | manual | [link](https://agentsiteops.com/privacy/) |
+| /privacy/ | pass | no account | [link](https://agentsiteops.com/privacy/) |
 | /updates/ | pass | HTTP 200 | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M3-26 Local evidence and scope tools | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | IndexNow submit pass with 28 URLs | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-01 Launch Blueprint reset and payment flow | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | IndexNow submit pass with 37 URLs | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

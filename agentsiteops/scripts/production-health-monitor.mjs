@@ -235,12 +235,24 @@ async function main() {
   await checkSitemap(routeDoc);
   await checkRobots();
   await checkIndexNowKey();
-  await checkPage("/", ["AI Website Operating System", "Score a site idea"]);
+  await checkPage("/", [
+    "Turn scattered AI skills into one sellable offer",
+    "Buy the USD",
+    "Launch Readiness"
+  ]);
+  await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "USD", "Pay with PayPal"]);
+  await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "Buy the Blueprint"]);
+  await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "USD"]);
+  await checkPage("/intake/", ["Launch Blueprint Intake", "Email intake", "Required fields"]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Pending evidence", "Claims not made"]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);
   await checkPage("/reports/route-evidence-dashboard/", ["Route Evidence Dashboard", "Route evidence table", "GSC pending"]);
-  await checkPage("/privacy/", ["Analytics endpoint gate", "Cloudflare hosting analytics", "not enabled"]);
-  await checkPage("/updates/", ["Updates", "M3-26 Local evidence and scope tools", "IndexNow submit pass with 28 URLs"]);
+  await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
+  await checkPage("/updates/", [
+    "Updates",
+    "M4-01 Launch Blueprint reset and payment flow",
+    "IndexNow submit pass with 37 URLs"
+  ]);
 
   const report = renderReport(generatedAt);
 

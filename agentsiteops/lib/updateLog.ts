@@ -11,6 +11,50 @@ export type UpdateLogEntry = {
 
 export const updateLog: UpdateLogEntry[] = [
   {
+    date: "2026-06-11",
+    step: "M4-01 Launch Blueprint reset and payment flow",
+    status: "completed",
+    keyPoints: [
+      "Reset the public product from a broad one-time audit into a concrete Launch Blueprint offer with pricing, sample output, buy, intake, terms, refunds, disclaimer, and contact routes.",
+      "Connected the live PayPal payment path to the buy and pricing pages while keeping delivery manual and explicit because there is no login system, account portal, or automated fulfillment yet.",
+      "Expanded the production sitemap from 28 to 37 indexable routes and submitted all 37 current URLs through IndexNow."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect a complete commercial path: offer promise, price, sample deliverable, payment action, intake fields, delivery limits, refund terms, and contact route.",
+    files: [
+      "app/page.tsx",
+      "app/pricing/page.tsx",
+      "app/sample/page.tsx",
+      "app/buy/page.tsx",
+      "app/intake/page.tsx",
+      "app/terms/page.tsx",
+      "app/refund-policy/page.tsx",
+      "app/disclaimer/page.tsx",
+      "app/contact/page.tsx",
+      "components/BrandLogo.tsx",
+      "components/SiteAnalytics.tsx",
+      "lib/launch.ts",
+      "lib/payments.ts",
+      "lib/site.ts",
+      "scripts/production-health-monitor.mjs",
+      "scripts/submit-indexnow.mjs"
+    ],
+    verification: [
+      "typecheck pass",
+      "production build pass with 42 static output entries",
+      "technical SEO CI pass with 37 sitemap routes",
+      "route consistency gate pass with 195 checks",
+      "analytics endpoint gate pass with 10 test cases",
+      "commercial validation gate pass with 28 checks",
+      "crawler access audit pass",
+      "production deploy pass on Cloudflare Pages master branch",
+      "production health monitor pass with 73 checks",
+      "IndexNow submit pass with 37 URLs"
+    ],
+    next:
+      "Monitor GSC and Bing for indexing evidence, validate whether visitors click the buy or intake routes, and replace pricing or offer scope if no qualified demand appears."
+  },
+  {
     date: "2026-06-08",
     step: "M3-28 Route evidence filtering",
     status: "completed",

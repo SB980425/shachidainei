@@ -1,6 +1,6 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-11T05:10:34.606Z
+- Generated: 2026-06-11T05:36:48.787Z
 - Status: baseline_ready
 - Routes: 37
 - Technical SEO pass routes: 37
@@ -22,7 +22,7 @@
 | /tools/website-opportunity-scorer/ | tool | website_opportunity_scoring | pass | site_pass | keep | Measure tool_completed and tool_result_export after real endpoint |
 | /tools/ai-crawler-readiness/ | tool | ai_crawler_readiness | pass | site_pass | keep | Measure readiness report copies and sample audit clicks before paid audit expansion |
 | /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
-| /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep checkout disabled until a real request, identity, terms, refund policy, and payment support exist |
+| /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Launch Blueprint pricing, sample, buy, and intake path |
 | /tools/audit-scope-builder/ | tool | commercial_validation | pass | site_pass | keep | Measure audit_scope_builder_view, tool_completed, and tool_result_export before adding forms or payment |
 | /templates/starter-pack/ | template | starter_pack | pass | site_pass | keep | Measure starter pack downloads and query exposure after analytics endpoint |
 | /templates/seo-repo-skeleton/ | template | seo_repo_skeleton | pass | site_pass | keep | Measure template_copy_click after real endpoint |
