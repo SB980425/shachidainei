@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T10:16:38.435Z
+- Generated: 2026-06-11T10:52:09.404Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 99
+- Checks: 108
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 39 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 40 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -36,8 +36,9 @@
 | /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | canonical points to production URL | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | AgentSiteOps Launch Blueprint | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | Fit Review | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | USD | [link](https://agentsiteops.com/pricing/) |
-| /pricing/ | pass | Pay with PayPal | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | PayPal | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/pricing/) |
 | /sample/ | pass | HTTP 200 | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | HTML title exists | [link](https://agentsiteops.com/sample/) |
@@ -52,6 +53,13 @@
 | /compare/ | pass | Compare AgentSiteOps before buying | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | Generic AI chat | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | Do not buy for these jobs | [link](https://agentsiteops.com/compare/) |
+| /starter-review/ | pass | HTTP 200 | [link](https://agentsiteops.com/starter-review/) |
+| /starter-review/ | pass | HTML title exists | [link](https://agentsiteops.com/starter-review/) |
+| /starter-review/ | pass | canonical points to production URL | [link](https://agentsiteops.com/starter-review/) |
+| /starter-review/ | pass | Pay for a fit verdict | [link](https://agentsiteops.com/starter-review/) |
+| /starter-review/ | pass | USD 29 | [link](https://agentsiteops.com/starter-review/) |
+| /starter-review/ | pass | It can reject the sale | [link](https://agentsiteops.com/starter-review/) |
+| /starter-review/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/starter-review/) |
 | /buy/ | pass | HTTP 200 | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | HTML title exists | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | canonical points to production URL | [link](https://agentsiteops.com/buy/) |
@@ -63,7 +71,7 @@
 | /intake/ | pass | HTTP 200 | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | HTML title exists | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | canonical points to production URL | [link](https://agentsiteops.com/intake/) |
-| /intake/ | pass | Launch Blueprint Intake | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Order Intake | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Email intake | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Payment confirmation | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Manual delivery process | [link](https://agentsiteops.com/intake/) |
@@ -102,6 +110,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-09 Fit Review entry offer | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-08 Launch funnel evidence boundary | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-07 Intake and manual fulfillment path | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-06 Purchase acceptance and encoding gate | [link](https://agentsiteops.com/updates/) |

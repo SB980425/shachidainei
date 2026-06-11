@@ -17,7 +17,7 @@
 | Area | Evidence | Status |
 |---|---|---|
 | Route registry | docs/routes.json | 40 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 39/40 routes pass |
+| Technical SEO | reports/technical-seo-ci.md | 40/40 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
@@ -72,7 +72,7 @@
 | /pricing/ | pricing | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /sample/ | example | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /compare/ | comparison | launch_blueprint | pass | site_pass | keep | Measure comparison page exits to sample pricing buy and source links |
-| /starter-review/ | commerce | launch_blueprint | not_checked | site_pass | keep | Measure Fit Review PayPal clicks, confirmed payments, usable intake, verdict outcomes, and upsell or stop decisions |
+| /starter-review/ | commerce | launch_blueprint | pass | site_pass | keep | Measure Fit Review PayPal clicks, confirmed payments, usable intake, verdict outcomes, and upsell or stop decisions |
 | /buy/ | commerce | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /intake/ | intake | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /terms/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |

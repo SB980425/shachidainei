@@ -272,7 +272,7 @@ async function main() {
   await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
   await checkPage("/starter-review/", ["Pay for a fit verdict", "USD 29", "It can reject the sale"]);
   await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "Acceptance criteria", "If the route is not ready"]);
-  await checkPage("/intake/", ["Launch Blueprint Intake", "Email intake", "Payment confirmation", "Manual delivery process"]);
+  await checkPage("/intake/", ["Order Intake", "Email intake", "Payment confirmation", "Manual delivery process"]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Funnel template", "Claims not made"]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);
   await checkPage("/tools/launch-blueprint-fit-checker/", ["Launch Blueprint Fit Checker", "Do not buy", "No request, account, payment"]);

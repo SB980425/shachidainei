@@ -1,9 +1,9 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-11T10:41:33.570Z
+- Generated: 2026-06-11T10:52:32.612Z
 - Status: baseline_ready
 - Routes: 40
-- Technical SEO pass routes: 39
+- Technical SEO pass routes: 40
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
@@ -51,7 +51,7 @@
 | /pricing/ | pricing | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /sample/ | example | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /compare/ | comparison | launch_blueprint | pass | site_pass | keep | Measure comparison page exits to sample pricing buy and source links |
-| /starter-review/ | commerce | launch_blueprint | not_checked | site_pass | keep | Measure Fit Review PayPal clicks, confirmed payments, usable intake, verdict outcomes, and upsell or stop decisions |
+| /starter-review/ | commerce | launch_blueprint | pass | site_pass | keep | Measure Fit Review PayPal clicks, confirmed payments, usable intake, verdict outcomes, and upsell or stop decisions |
 | /buy/ | commerce | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /intake/ | intake | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /terms/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
