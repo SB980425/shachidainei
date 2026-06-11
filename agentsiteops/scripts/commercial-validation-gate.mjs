@@ -10,6 +10,7 @@ const requiredRoutes = [
   "/examples/agentsiteops-self-audit/",
   "/services/ai-website-opportunity-audit/",
   "/tools/audit-scope-builder/",
+  "/tools/launch-blueprint-fit-checker/",
   "/pricing/",
   "/compare/",
   "/buy/",
@@ -118,6 +119,23 @@ function checkAuditScopeBuilder() {
   );
 }
 
+function checkLaunchFitChecker() {
+  const tool = read("components/LaunchBlueprintFitChecker.tsx");
+  const page = read("app/tools/launch-blueprint-fit-checker/page.tsx");
+
+  requireText("launch_fit_checker", tool, "Do not buy", "fit checker can block bad-fit buyers");
+  requireText("launch_fit_checker", tool, "guaranteed traffic or revenue", "fit checker blocks guarantee expectations");
+  requireText("launch_fit_checker", page, "No request, account, payment, or personal data is submitted.", "fit checker page states local-only boundary");
+
+  addCheck(
+    "launch_fit_checker",
+    !/fetch\(|XMLHttpRequest|sendBeacon|form action=|stripe|lemonsqueezy/i.test(tool)
+      ? "pass"
+      : "fail",
+    "fit checker has no network submit or third-party payment integration"
+  );
+}
+
 function checkMojibake() {
   const files = [
     "components/CopyAction.tsx",
@@ -170,6 +188,7 @@ function main() {
   checkCommercialBoundary();
   checkReadinessTool();
   checkAuditScopeBuilder();
+  checkLaunchFitChecker();
   checkMojibake();
 
   const status = renderReport(new Date().toISOString());

@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-11T07:33:44.031Z
+- Generated: 2026-06-11T08:21:23.350Z
 - Status: pass
-- Checks: 200
+- Checks: 205
 - Blockers: 0
 - Warnings: 0
 
@@ -13,9 +13,9 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 38 routes aligned |
-| page_registry | pass | 38 routes aligned |
-| page_review_actions | pass | 38 routes aligned |
+| site_routes | pass | 39 routes aligned |
+| page_registry | pass | 39 routes aligned |
+| page_review_actions | pass | 39 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /ai-website-operating-system/ has canonical slash shape |
@@ -30,6 +30,8 @@
 | route_index | pass | /services/ai-website-opportunity-audit/ index flag is true |
 | route_shape | pass | /tools/audit-scope-builder/ has canonical slash shape |
 | route_index | pass | /tools/audit-scope-builder/ index flag is true |
+| route_shape | pass | /tools/launch-blueprint-fit-checker/ has canonical slash shape |
+| route_index | pass | /tools/launch-blueprint-fit-checker/ index flag is true |
 | route_shape | pass | /templates/starter-pack/ has canonical slash shape |
 | route_index | pass | /templates/starter-pack/ index flag is true |
 | route_shape | pass | /templates/seo-repo-skeleton/ has canonical slash shape |
@@ -99,6 +101,7 @@
 | app_page | pass | /examples/agentsiteops-self-audit/ app page exists |
 | app_page | pass | /services/ai-website-opportunity-audit/ app page exists |
 | app_page | pass | /tools/audit-scope-builder/ app page exists |
+| app_page | pass | /tools/launch-blueprint-fit-checker/ app page exists |
 | app_page | pass | /templates/starter-pack/ app page exists |
 | app_page | pass | /templates/seo-repo-skeleton/ app page exists |
 | app_page | pass | /checklists/ai-content-quality-gate/ app page exists |
@@ -137,6 +140,7 @@
 | analytics_allowlist | pass | sample_audit_view is registered |
 | analytics_allowlist | pass | audit_intent_page_view is registered |
 | analytics_allowlist | pass | audit_scope_builder_view is registered |
+| analytics_allowlist | pass | launch_blueprint_fit_checker_view is registered |
 | analytics_allowlist | pass | starter_pack_view is registered |
 | analytics_allowlist | pass | repo_skeleton_matrix_view is registered |
 | analytics_allowlist | pass | ci_gate_matrix_view is registered |
@@ -178,6 +182,7 @@
 | route_view_event | pass | /examples/agentsiteops-self-audit/ has view event |
 | route_view_event | pass | /services/ai-website-opportunity-audit/ has view event |
 | route_view_event | pass | /tools/audit-scope-builder/ has view event |
+| route_view_event | pass | /tools/launch-blueprint-fit-checker/ has view event |
 | route_view_event | pass | /templates/starter-pack/ has view event |
 | route_view_event | pass | /templates/seo-repo-skeleton/ has view event |
 | route_view_event | pass | /checklists/ai-content-quality-gate/ has view event |
@@ -209,7 +214,7 @@
 | route_view_event | pass | /refund-policy/ has view event |
 | route_view_event | pass | /disclaimer/ has view event |
 | route_view_event | pass | /contact/ has view event |
-| growth_snapshot | pass | 38 routes aligned |
+| growth_snapshot | pass | 39 routes aligned |
 
 ## Blocking Issues
 

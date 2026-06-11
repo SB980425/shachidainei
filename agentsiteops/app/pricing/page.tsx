@@ -47,6 +47,13 @@ const jsonLd = {
   }
 };
 
+const launchDeliverableCards = [
+  { title: "Primary offer", body: launchDeliverables[0] },
+  { title: "Target buyer", body: launchDeliverables[1] },
+  { title: "Landing page structure", body: launchDeliverables[2] },
+  { title: "Pricing boundary", body: launchDeliverables[3] }
+];
+
 export default function Page() {
   return (
     <main className="pricing-page">
@@ -72,6 +79,10 @@ export default function Page() {
           </div>
           <h2>{primaryOffer.name}</h2>
           <p>{primaryOffer.delivery}</p>
+          <Link className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
+            <CheckCircle2 aria-hidden="true" size={17} />
+            Check fit first
+          </Link>
           <a
             className="primary-action"
             data-analytics-event="payment_cta_click"
@@ -98,13 +109,13 @@ export default function Page() {
           </p>
         </div>
         <div className="pricing-grid">
-          {launchDeliverables.slice(0, 4).map((item) => (
-            <article key={item}>
+          {launchDeliverableCards.map((item) => (
+            <article key={item.title}>
               <span aria-hidden="true">
                 <CheckCircle2 size={18} />
               </span>
-              <h3>{item.split(" and ")[0]}</h3>
-              <p>{item}</p>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
             </article>
           ))}
         </div>
@@ -170,7 +181,8 @@ export default function Page() {
         <div>
           <h2>Payment path</h2>
           <ul className="compact-list">
-            <li>Use the PayPal button for the Launch Blueprint.</li>
+            <li>Use the Launch Blueprint Fit Checker before opening PayPal.</li>
+            <li>Use the PayPal button only if the result is strong fit or possible fit.</li>
             <li>After payment, open the intake page and send project details to the support email.</li>
             <li>PayPal handles payment data; this static site does not collect card details.</li>
             <li>Full PayPal Checkout API is deferred until automated order handling is required.</li>
@@ -185,17 +197,17 @@ export default function Page() {
             <li>Login, dashboard, and subscription features are intentionally deferred.</li>
           </ul>
           <div className="hero-actions">
-          <Link className="secondary-action" href="/sample/">
-            <FileText aria-hidden="true" size={17} />
-            View sample
-          </Link>
-          <Link className="secondary-action" href="/compare/">
-            <ArrowRight aria-hidden="true" size={17} />
-            Compare options
-          </Link>
-          <Link className="secondary-action" href="/refund-policy/">
-            <ShieldCheck aria-hidden="true" size={17} />
-            Refund policy
+            <Link className="secondary-action" href="/sample/">
+              <FileText aria-hidden="true" size={17} />
+              View sample
+            </Link>
+            <Link className="secondary-action" href="/compare/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Compare options
+            </Link>
+            <Link className="secondary-action" href="/refund-policy/">
+              <ShieldCheck aria-hidden="true" size={17} />
+              Refund policy
             </Link>
           </div>
         </div>
@@ -213,6 +225,10 @@ export default function Page() {
         <div>
           <h2>Ready path</h2>
           <div className="hero-actions">
+            <Link className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
+              <CheckCircle2 aria-hidden="true" size={17} />
+              Check fit
+            </Link>
             <a
               className="primary-action"
               data-analytics-event="payment_cta_click"

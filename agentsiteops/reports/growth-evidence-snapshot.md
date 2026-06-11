@@ -1,17 +1,17 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-11T07:44:33.357Z
+- Generated: 2026-06-11T08:27:23.258Z
 - Status: baseline_ready
-- Routes: 38
-- Technical SEO pass routes: 38
+- Routes: 39
+- Technical SEO pass routes: 39
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
-- GSC status: pending export for 38 routes
-- Bing status: pending export for 38 routes
+- GSC status: pending export for 39 routes
+- Bing status: pending export for 39 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 38 routes
+- Onsite event status: local buffer only for 39 routes
 
 ## Route Evidence Table
 
@@ -24,6 +24,7 @@
 | /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
 | /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Launch Blueprint pricing, sample, buy, and intake path |
 | /tools/audit-scope-builder/ | tool | commercial_validation | pass | site_pass | keep | Measure audit_scope_builder_view, tool_completed, and tool_result_export before adding forms or payment |
+| /tools/launch-blueprint-fit-checker/ | tool | launch_blueprint | pass | site_pass | keep | Measure checker starts, copies, pricing exits, and PayPal clicks before increasing paid traffic |
 | /templates/starter-pack/ | template | starter_pack | pass | site_pass | keep | Measure starter pack downloads and query exposure after analytics endpoint |
 | /templates/seo-repo-skeleton/ | template | seo_repo_skeleton | pass | site_pass | keep | Measure template_copy_click after real endpoint |
 | /checklists/ai-content-quality-gate/ | checklist | ai_content_quality_gate | pass | site_pass | keep | Measure checklist_copy_click after real endpoint |

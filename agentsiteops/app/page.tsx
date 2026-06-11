@@ -63,9 +63,13 @@ export default function HomePage() {
             7-day outreach path.
           </p>
           <div className="hero-actions">
-            <Link className="primary-action" href="/buy/">
+            <Link className="primary-action" href="/tools/launch-blueprint-fit-checker/">
+              <CheckCircle2 aria-hidden="true" size={17} />
+              Check fit before payment
+            </Link>
+            <Link className="secondary-action" href="/buy/">
               <BadgeDollarSign aria-hidden="true" size={17} />
-              Buy the USD {primaryOffer.price} Blueprint
+              Buy USD {primaryOffer.price}
             </Link>
             <Link className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
@@ -214,9 +218,9 @@ export default function HomePage() {
             </li>
           </ul>
           <div className="hero-actions">
-            <Link className="primary-action" href="/buy/">
+            <Link className="primary-action" href="/tools/launch-blueprint-fit-checker/">
               <Rocket aria-hidden="true" size={17} />
-              Start the launch path
+              Check launch fit
             </Link>
             <Link className="secondary-action" href="/disclaimer/">
               <ArrowRight aria-hidden="true" size={17} />

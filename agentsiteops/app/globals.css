@@ -1493,6 +1493,28 @@ textarea {
   color: var(--muted);
 }
 
+.fit-score-fit {
+  background: var(--green-soft);
+}
+
+.fit-score-possible {
+  background: #fff7df;
+}
+
+.fit-score-not_ready,
+.fit-score-blocked {
+  background: #fff1ed;
+}
+
+.fit-score-possible span {
+  color: #8a5b00;
+}
+
+.fit-score-not_ready span,
+.fit-score-blocked span {
+  color: var(--coral);
+}
+
 .scope-check-grid {
   display: grid;
   gap: 10px;

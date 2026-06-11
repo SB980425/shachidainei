@@ -12,6 +12,53 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-04 Pre-purchase fit checker",
+    status: "completed",
+    keyPoints: [
+      "Added a local-only Launch Blueprint Fit Checker so buyers can decide whether the USD 99 manual blueprint fits before opening PayPal.",
+      "Moved the public purchase path toward fit checking, sample review, and comparison before payment while keeping the live PayPal route available for qualified buyers.",
+      "Added purchase blockers for guarantee expectations, regulated topics, software-monitoring needs, and buyers who cannot publish or execute outreach."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect the pre-purchase qualification logic instead of treating the offer as an unconditional payment page.",
+    files: [
+      "components/LaunchBlueprintFitChecker.tsx",
+      "app/tools/launch-blueprint-fit-checker/page.tsx",
+      "app/page.tsx",
+      "app/buy/page.tsx",
+      "app/pricing/page.tsx",
+      "app/compare/page.tsx",
+      "app/layout.tsx",
+      "app/globals.css",
+      "components/SiteAnalytics.tsx",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "analytics endpoint gate pass",
+      "commercial validation gate pass",
+      "route consistency gate pass",
+      "production build pass",
+      "technical SEO CI pass",
+      "crawler access audit pass",
+      "growth snapshot generated 39 route rows",
+      "production deploy pass on Cloudflare Pages master branch",
+      "production health monitor pass",
+      "IndexNow submit pass with 39 URLs"
+    ],
+    next:
+      "Measure whether the fit checker produces copy events and whether qualified visitors proceed to sample, comparison, pricing, buy, and intake pages."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-03 Launch comparison and sample depth",
     status: "completed",
     keyPoints: [

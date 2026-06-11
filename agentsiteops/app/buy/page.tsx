@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CreditCard, FileText, Mail, ShieldCheck } from "lucide-react";
+import { CheckCircle2, CreditCard, FileText, Mail, ShieldCheck } from "lucide-react";
 import { launchDeliverables, launchProduct } from "@/lib/launch";
 import { primaryOffer } from "@/lib/payments";
 import { siteUrl } from "@/lib/site";
@@ -73,6 +73,10 @@ export default function Page() {
             Pay with PayPal
           </a>
           <small>{launchProduct.timeline}</small>
+          <Link className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
+            <CheckCircle2 aria-hidden="true" size={17} />
+            Check fit first
+          </Link>
         </aside>
       </section>
 
@@ -104,13 +108,13 @@ export default function Page() {
         <div className="workflow-grid">
           <article className="workflow-card">
             <span>1</span>
-            <h3>Pay</h3>
-            <p>Open PayPal from this page and complete the USD {primaryOffer.price} payment.</p>
+            <h3>Check fit</h3>
+            <p>Use the fit checker first and do not buy if the result blocks the purchase.</p>
           </article>
           <article className="workflow-card">
             <span>2</span>
-            <h3>Send intake</h3>
-            <p>Open the intake page and send the requested project details by email or approved form.</p>
+            <h3>Pay and send intake</h3>
+            <p>Open PayPal, complete the USD {primaryOffer.price} payment, then send the requested project details.</p>
           </article>
           <article className="workflow-card">
             <span>3</span>

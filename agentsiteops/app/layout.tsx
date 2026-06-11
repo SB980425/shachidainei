@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   BadgeDollarSign,
   Bot,
+  CheckCircle2,
   FileCheck2,
   Gauge,
   GitBranch,
@@ -37,6 +38,7 @@ const navItems = [
   { href: "/ai-website-operating-system/", label: "System", Icon: GitBranch },
   { href: "/tools/website-opportunity-scorer/", label: "Scorer", Icon: Gauge },
   { href: "/tools/ai-crawler-readiness/", label: "Crawler", Icon: Bot },
+  { href: "/tools/launch-blueprint-fit-checker/", label: "Fit", Icon: CheckCircle2 },
   { href: "/sample/", label: "Sample", Icon: FileCheck2 },
   { href: "/compare/", label: "Compare", Icon: GitCompareArrows },
   { href: "/buy/", label: "Buy", Icon: BadgeDollarSign },
@@ -82,6 +84,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/refund-policy/">Refunds</Link>
             <Link href="/contact/">Contact</Link>
             <Link href="/tools/ai-crawler-readiness/">Crawler</Link>
+            <Link href="/tools/launch-blueprint-fit-checker/">Fit Checker</Link>
             <Link href="/templates/starter-pack/">Starter Pack</Link>
             <Link href="/reports/route-evidence-dashboard/">Evidence</Link>
             <Link href="/authors/">Authors</Link>

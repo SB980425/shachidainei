@@ -70,9 +70,13 @@ export default function Page() {
             choosing the first sellable offer, page structure, and outreach path.
           </p>
           <div className="hero-actions">
-            <Link className="primary-action" href="/sample/">
+            <Link className="primary-action" href="/tools/launch-blueprint-fit-checker/">
+              <CheckCircle2 aria-hidden="true" size={17} />
+              Check fit before payment
+            </Link>
+            <Link className="secondary-action" href="/sample/">
               <GitCompareArrows aria-hidden="true" size={17} />
-              View sample blueprint
+              View sample
             </Link>
             <Link className="secondary-action" href="/pricing/">
               <ArrowRight aria-hidden="true" size={17} />

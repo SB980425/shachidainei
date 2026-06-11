@@ -309,6 +309,50 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/tools/launch-blueprint-fit-checker/",
+    pageType: "tool",
+    title: "Launch Blueprint Fit Checker",
+    description:
+      "A local-only pre-purchase checker for deciding whether the USD 99 AgentSiteOps Launch Blueprint is a fit before opening PayPal.",
+    answer:
+      "The fit checker scores buyer profile, offer clarity, buyer clarity, proof level, launch urgency, and purchase blockers. It runs in the browser, does not submit data, and blocks buyers who need guarantees, regulated advice, or ongoing monitoring software.",
+    primaryAction: { label: "Check fit before payment", href: "/tools/launch-blueprint-fit-checker/" },
+    secondaryAction: { label: "Compare options", href: "/compare/" },
+    aiTarget:
+      "Expose the pre-purchase fit logic, purchase blockers, and local-only data boundary for the Launch Blueprint.",
+    humanAction:
+      "Use the checker before paying; buy only if the selected offer, page structure, and 7-day validation path are the actual bottleneck.",
+    sections: [
+      {
+        title: "What it checks",
+        body:
+          "The tool checks whether the buyer has enough delivery ability, buyer clarity, proof, and launch urgency for a manual blueprint to be useful."
+      },
+      {
+        title: "What blocks purchase",
+        body:
+          "The checker blocks regulated topics, guarantee expectations, ongoing software needs, and buyers who cannot publish or execute outreach.",
+        rows: [
+          { label: "Guarantee expectation", value: "Do not buy if traffic, revenue, ranking, citation, or customer guarantees are required." },
+          { label: "Regulated topic", value: "Do not buy for legal, medical, financial, tax, safety, or other regulated advice." },
+          { label: "Software need", value: "Use SEO or AI visibility software if the need is ongoing measurement." },
+          { label: "No execution path", value: "Prepare a page or outreach channel before paying for a blueprint." }
+        ]
+      },
+      {
+        title: "Why this exists",
+        body:
+          "A new paid product needs a purchase gate that can reject bad-fit buyers. This protects the buyer, lowers refund risk, and makes the USD 99 offer boundary easier to inspect."
+      }
+    ],
+    related: [
+      { label: "Compare Launch Options", href: "/compare/" },
+      { label: "Sample Launch Blueprint", href: "/sample/" },
+      { label: "Pricing", href: "/pricing/" },
+      { label: "Buy", href: "/buy/" }
+    ]
+  },
+  {
     path: "/templates/starter-pack/",
     pageType: "template",
     title: "AI Website Validation Starter Pack",

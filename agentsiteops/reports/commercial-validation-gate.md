@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T07:33:43.038Z
+- Generated: 2026-06-11T08:21:07.729Z
 - Status: pass
-- Checks: 52
+- Checks: 58
 - Blockers: 0
 
 ## Summary
@@ -17,6 +17,8 @@
 | app | pass | /services/ai-website-opportunity-audit/ has app page |
 | routes | pass | /tools/audit-scope-builder/ registered in docs/routes.json |
 | app | pass | /tools/audit-scope-builder/ has app page |
+| routes | pass | /tools/launch-blueprint-fit-checker/ registered in docs/routes.json |
+| app | pass | /tools/launch-blueprint-fit-checker/ has app page |
 | routes | pass | /pricing/ registered in docs/routes.json |
 | app | pass | /pricing/ has app page |
 | routes | pass | /compare/ registered in docs/routes.json |
@@ -55,6 +57,10 @@
 | audit_scope_builder | pass | scope builder blocks request-submission claim |
 | audit_scope_builder | pass | scope page states no payment or account step |
 | audit_scope_builder | pass | scope builder has no network submit or payment integration |
+| launch_fit_checker | pass | fit checker can block bad-fit buyers |
+| launch_fit_checker | pass | fit checker blocks guarantee expectations |
+| launch_fit_checker | pass | fit checker page states local-only boundary |
+| launch_fit_checker | pass | fit checker has no network submit or third-party payment integration |
 | mojibake | pass | components/CopyAction.tsx has no visible mojibake marker |
 | mojibake | pass | components/AICrawlerReadinessTool.tsx has no visible mojibake marker |
 | mojibake | pass | components/AuditScopeBuilder.tsx has no visible mojibake marker |

@@ -46,6 +46,7 @@ Minimum v1 allowlist:
 - `sample_audit_view`
 - `audit_intent_page_view`
 - `audit_scope_builder_view`
+- `launch_blueprint_fit_checker_view`
 - `starter_pack_view`
 - `search_console_launch_checklist_view`
 - `ai_citation_readiness_view`
