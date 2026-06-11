@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T23:38:54.829Z
+- Generated: 2026-06-11T23:47:04.160Z
 - Status: pass
-- Checks: 157
+- Checks: 161
 - Blockers: 0
 
 ## Summary
@@ -141,6 +141,10 @@
 | exposure_sprint | pass | exposure targets include Product Hunt prep |
 | exposure_sprint | pass | exposure targets include Show HN prep |
 | exposure_sprint | pass | exposure targets block automated direct messages |
+| exposure_sprint | pass | exposure evidence template separates confirmed payments |
+| exposure_sprint | pass | exposure evidence template separates usable intake |
+| exposure_sprint | pass | exposure copy pack blocks inflated claims |
+| exposure_sprint | pass | exposure copy pack tests implementation-pivot risk |
 | service_boundary | pass | launch copy avoids guarantee claims |
 | readiness_tool | pass | readiness tool has 13 weighted checks; found 13 |
 | readiness_tool | pass | readiness tool weights total 100 |

@@ -1,0 +1,8 @@
+"window","channel","referral_visit_count","source_link_click_count","sample_view_count","paypal_click_count","qualified_reply_count","confirmed_payment_count","usable_intake_count","objection_count","top_objection_theme","decision"
+"0-4h","Search discovery","0","0","0","0","0","0","0","0","pending","pending"
+"4-8h","GitHub artifact trail","0","0","0","0","0","0","0","0","pending","pending"
+"8-16h","Launch draft prep","0","0","0","0","0","0","0","0","pending","pending"
+"16-24h","Answer participation","0","0","0","0","0","0","0","0","pending","pending"
+"24-36h","Manual founder outreach","0","0","0","0","0","0","0","0","pending","pending"
+"36-44h","Peer critique","0","0","0","0","0","0","0","0","pending","pending"
+"44-48h","Validation decision","0","0","0","0","0","0","0","0","pending","continue|rewrite|narrow|pivot_to_implementation|stop"

@@ -30,6 +30,8 @@ AgentSiteOps is a small manual decision system for AI-capable solo builders who 
 - Commercial validation, route consistency, crawler access, and production health reports.
 - Delivery templates and manual fulfillment boundaries.
 - Exposure sprint data and no-spam channel constraints.
+- Exposure copy pack: `agentsiteops/docs/exposure-copy-pack.md`.
+- 48-hour aggregate evidence template: `agentsiteops/data/48-hour-exposure-evidence-template.csv`.
 
 ## Exposure Sprint
 

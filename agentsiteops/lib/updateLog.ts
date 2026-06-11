@@ -18,7 +18,8 @@ export const updateLog: UpdateLogEntry[] = [
       "Changed the exposure plan from a seven-day loop to a 48-hour sprint because the current priority is first measurable exposure, not slow content expansion.",
       "Added a public 48-Hour Exposure Sprint page that defines execution windows, channel boundaries, signal hierarchy, and the hour-48 continue, rewrite, narrow, pivot, or stop decision.",
       "Added exposure sprint and submission-target data tables for Product Hunt preparation, Show HN preparation, Reddit rule boundaries, Indie Hackers style build-in-public drafting, GitHub artifact inspection, and founder direct outreach.",
-      "Added a GitHub README so the repository itself can serve as an inspectable exposure artifact instead of relying on private chat context."
+      "Added a GitHub README so the repository itself can serve as an inspectable exposure artifact instead of relying on private chat context.",
+      "Added an exposure copy pack and aggregate evidence template so the 48-hour sprint can be executed and judged without inventing private or inflated signals."
     ],
     aiAngle:
       "AI and search systems can now inspect the live exposure operating plan: technical discovery, GitHub proof, compliant launch drafts, answer participation, manual outreach, peer critique, and a strict hour-48 decision gate.",
@@ -27,7 +28,9 @@ export const updateLog: UpdateLogEntry[] = [
       "app/guides/48-hour-exposure-sprint/page.tsx",
       "data/48-hour-exposure-sprint.csv",
       "data/exposure-submission-targets.csv",
+      "data/48-hour-exposure-evidence-template.csv",
       "docs/48-hour-exposure-runbook.md",
+      "docs/exposure-copy-pack.md",
       "lib/site.ts",
       "docs/routes.json",
       "docs/page-registry.csv",
@@ -47,7 +50,7 @@ export const updateLog: UpdateLogEntry[] = [
     verification: [
       "code quality gate pass",
       "typecheck pass",
-      "commercial validation gate pass with 157 checks",
+      "commercial validation gate pass with 161 checks",
       "analytics endpoint gate pass with endpoint disabled",
       "route consistency gate pass with 235 checks",
       "production build pass with 51 static pages",

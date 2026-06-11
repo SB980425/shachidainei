@@ -94,6 +94,8 @@ function checkCommercialBoundary() {
   const trafficChannels = read("data/first-traffic-channel-plan.csv");
   const exposureSprint = read("data/48-hour-exposure-sprint.csv");
   const exposureTargets = read("data/exposure-submission-targets.csv");
+  const exposureEvidence = read("data/48-hour-exposure-evidence-template.csv");
+  const exposureCopy = read("docs/exposure-copy-pack.md");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -189,6 +191,10 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureTargets, "Product Hunt", "exposure targets include Product Hunt prep");
   requireText("exposure_sprint", exposureTargets, "Show HN", "exposure targets include Show HN prep");
   requireText("exposure_sprint", exposureTargets, "Do not automate DMs", "exposure targets block automated direct messages");
+  requireText("exposure_sprint", exposureEvidence, "confirmed_payment_count", "exposure evidence template separates confirmed payments");
+  requireText("exposure_sprint", exposureEvidence, "usable_intake_count", "exposure evidence template separates usable intake");
+  requireText("exposure_sprint", exposureCopy, "Do not claim revenue, traffic, ranking, or AI-citation proof", "exposure copy pack blocks inflated claims");
+  requireText("exposure_sprint", exposureCopy, "Would this need to pivot toward implementation", "exposure copy pack tests implementation-pivot risk");
 
   addCheck("service_boundary", !/guaranteed rankings|guaranteed revenue|guaranteed customers/i.test(launch) ? "pass" : "fail", "launch copy avoids guarantee claims");
 }
