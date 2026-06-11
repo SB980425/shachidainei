@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T11:28:22.912Z
+- Generated: 2026-06-11T11:40:04.938Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 117
+- Checks: 118
 - Blockers: 0
 - Warnings: 0
 
@@ -116,6 +116,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-13 Search evidence import guardrail | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-12 Manual outreach evidence loop | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-11 Delivery artifact templates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-10 Fit Review sample artifact | [link](https://agentsiteops.com/updates/) |

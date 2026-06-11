@@ -73,6 +73,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Added `data/search-evidence-import-templates/import-manifest-template.csv` for date-window notes without storing private account identifiers.
 - Updated `docs/search-evidence-imports.md` to reject screenshot rewrites, third-party estimates, missing dimensions, and missing core metrics.
 - Extended `scripts/code-quality-gate.mjs` so the search evidence contract checks the new malformed-import guard and manifest template.
+- Deployed the M4-13 update to Cloudflare Pages and submitted 41 URLs through IndexNow.
 
 ## Verification Snapshot
 
@@ -90,6 +91,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Temporary malformed `gsc-pages.csv` test: blocked as expected, then removed and restored to waiting_for_exports.
 - `npm run production:health`: pass, 116 checks.
 - `npm run production:health`: pass, 117 checks after M4-12 deployment.
+- `npm run production:health`: pass, 118 checks after M4-13 deployment.
 - `npm run indexnow:submit`: pass, 41 URLs, HTTP 200.
 - Playwright static build checks passed for `/examples/fit-review-sample/`, `/starter-review/`, and `/pricing/` on desktop and mobile without horizontal overflow.
 - Final production read-only checks passed for `/examples/fit-review-sample/`, `/starter-review/`, `/pricing/`, `/evidence/`, `/updates/`, `/intake/`, `/buy/`, and `/sitemap.xml`.
@@ -99,7 +101,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Production domain: `https://agentsiteops.com`
 - Sitemap route count: 41.
 - Current branch: `codex/launch-blueprint-reset`.
-- Latest pushed commit at this log point before M4-12 evidence commit: `b234ba1 Add manual outreach evidence loop`.
+- Latest pushed commit at this log point before M4-13 evidence commit: `6f968fd Add search evidence import guardrail`.
 
 ## Current Risk Register
 
