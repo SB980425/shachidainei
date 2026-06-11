@@ -264,7 +264,7 @@ async function main() {
   await checkBrandIcon();
   await checkPage("/", [
     "Turn scattered AI skills into one sellable offer",
-    "Buy the USD",
+    "Check fit before payment",
     "Launch Readiness"
   ]);
   await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "USD", "Pay with PayPal"]);

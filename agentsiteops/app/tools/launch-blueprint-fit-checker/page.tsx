@@ -41,6 +41,7 @@ export default function Page() {
             <li>The checker runs locally in the browser.</li>
             <li>No request, account, payment, or personal data is submitted.</li>
             <li>A high score is not a traffic, revenue, ranking, or customer guarantee.</li>
+            <li>Do not buy if you need guaranteed traffic, regulated advice, or ongoing monitoring software.</li>
           </ul>
           <h2>Purchase Path</h2>
           <ul>
