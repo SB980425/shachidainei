@@ -11,6 +11,7 @@ const requiredRoutes = [
   "/services/ai-website-opportunity-audit/",
   "/tools/audit-scope-builder/",
   "/pricing/",
+  "/compare/",
   "/buy/",
   "/intake/",
   "/terms/",

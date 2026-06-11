@@ -269,6 +269,7 @@ async function main() {
   ]);
   await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "USD", "Pay with PayPal"]);
   await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "Buy the Blueprint"]);
+  await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
   await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "USD"]);
   await checkPage("/intake/", ["Launch Blueprint Intake", "Email intake", "Required fields"]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Pending evidence", "Claims not made"]);
@@ -277,8 +278,9 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-03 Launch comparison and sample depth",
     "M4-01 Launch Blueprint reset and payment flow",
-    "IndexNow submit pass with 37 URLs"
+    "IndexNow submit pass"
   ]);
 
   const report = renderReport(generatedAt);

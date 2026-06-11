@@ -72,6 +72,7 @@ Minimum v1 allowlist:
 - `opportunity_scoring_template_view`
 - `scoring_methodology_view`
 - `scoring_model_limit_view`
+- `launch_blueprint_compare_view`
 - `trust_policy_view`
 
 ## Validation Rules

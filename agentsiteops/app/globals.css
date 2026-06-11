@@ -3732,6 +3732,44 @@ textarea {
   color: var(--muted);
 }
 
+.comparison-table-wide > div {
+  grid-template-columns: 0.7fr 1.15fr 1.15fr 1.2fr;
+}
+
+.comparison-table-wide > div:not(:first-child) {
+  border-top: 1px solid var(--line);
+  background: #ffffff;
+}
+
+.source-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.source-grid a {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #11170f;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.source-grid a:hover {
+  border-color: rgba(48, 105, 152, 0.35);
+  background: #f7fbff;
+}
+
+.source-grid span {
+  font-weight: 800;
+}
+
 .update-entry {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
@@ -3861,6 +3899,7 @@ textarea {
   .loop-grid,
   .offer-grid,
   .pricing-grid,
+  .source-grid,
   .update-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -3995,7 +4034,12 @@ textarea {
   .loop-grid,
   .offer-grid,
   .pricing-grid,
+  .source-grid,
   .update-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-table-wide > div {
     grid-template-columns: 1fr;
   }
 

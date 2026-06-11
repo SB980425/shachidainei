@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BadgeDollarSign, CheckCircle2, FileText } from "lucide-react";
+import { ArrowRight, BadgeDollarSign, CheckCircle2, FileText, GitCompareArrows } from "lucide-react";
 import { sampleReportSections } from "@/lib/launch";
 import { siteUrl } from "@/lib/site";
 
@@ -54,6 +54,10 @@ export default function Page() {
             <Link className="secondary-action" href="/intake/">
               <ArrowRight aria-hidden="true" size={17} />
               View intake fields
+            </Link>
+            <Link className="secondary-action" href="/compare/">
+              <GitCompareArrows aria-hidden="true" size={17} />
+              Compare options
             </Link>
           </div>
         </div>
@@ -115,4 +119,3 @@ export default function Page() {
     </main>
   );
 }
-

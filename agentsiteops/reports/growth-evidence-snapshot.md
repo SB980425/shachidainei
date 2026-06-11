@@ -1,17 +1,17 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-11T07:02:15.402Z
+- Generated: 2026-06-11T07:36:06.466Z
 - Status: baseline_ready
-- Routes: 37
-- Technical SEO pass routes: 37
+- Routes: 38
+- Technical SEO pass routes: 38
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
-- GSC status: pending export for 37 routes
-- Bing status: pending export for 37 routes
+- GSC status: pending export for 38 routes
+- Bing status: pending export for 38 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 37 routes
+- Onsite event status: local buffer only for 38 routes
 
 ## Route Evidence Table
 
@@ -48,6 +48,7 @@
 | /website-opportunity-audit/ | service | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /pricing/ | pricing | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /sample/ | example | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /compare/ | comparison | launch_blueprint | pass | site_pass | keep | Measure comparison page exits to sample pricing buy and source links |
 | /buy/ | commerce | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /intake/ | intake | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /terms/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |

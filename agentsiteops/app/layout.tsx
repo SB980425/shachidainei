@@ -6,6 +6,7 @@ import {
   FileCheck2,
   Gauge,
   GitBranch,
+  GitCompareArrows,
   Mail,
   Newspaper,
   ShieldCheck
@@ -37,6 +38,7 @@ const navItems = [
   { href: "/tools/website-opportunity-scorer/", label: "Scorer", Icon: Gauge },
   { href: "/tools/ai-crawler-readiness/", label: "Crawler", Icon: Bot },
   { href: "/sample/", label: "Sample", Icon: FileCheck2 },
+  { href: "/compare/", label: "Compare", Icon: GitCompareArrows },
   { href: "/buy/", label: "Buy", Icon: BadgeDollarSign },
   { href: "/intake/", label: "Intake", Icon: Mail },
   { href: "/updates/", label: "Updates", Icon: Newspaper },
@@ -75,6 +77,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/updates/">Updates</Link>
             <Link href="/pricing/">Pricing</Link>
             <Link href="/sample/">Sample</Link>
+            <Link href="/compare/">Compare</Link>
             <Link href="/terms/">Terms</Link>
             <Link href="/refund-policy/">Refunds</Link>
             <Link href="/contact/">Contact</Link>

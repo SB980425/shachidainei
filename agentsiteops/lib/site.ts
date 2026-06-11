@@ -1248,6 +1248,7 @@ export const routeMap = new Map(routePages.map((page) => [page.path, page]));
 
 export const customRoutes = [
   "/sample/",
+  "/compare/",
   "/buy/",
   "/intake/",
   "/terms/",

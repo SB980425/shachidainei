@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T07:00:36.538Z
+- Generated: 2026-06-11T07:33:43.038Z
 - Status: pass
-- Checks: 50
+- Checks: 52
 - Blockers: 0
 
 ## Summary
@@ -19,6 +19,8 @@
 | app | pass | /tools/audit-scope-builder/ has app page |
 | routes | pass | /pricing/ registered in docs/routes.json |
 | app | pass | /pricing/ has app page |
+| routes | pass | /compare/ registered in docs/routes.json |
+| app | pass | /compare/ has app page |
 | routes | pass | /buy/ registered in docs/routes.json |
 | app | pass | /buy/ has app page |
 | routes | pass | /intake/ registered in docs/routes.json |

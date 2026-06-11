@@ -53,6 +53,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `launch_blueprint_legacy_view` | `/website-opportunity-audit/` load | `path` |
 | `launch_blueprint_pricing_view` | `/pricing/` load | `path` |
 | `launch_blueprint_sample_view` | `/sample/` load | `path` |
+| `launch_blueprint_compare_view` | `/compare/` load | `path` |
 | `launch_blueprint_buy_view` | `/buy/` load | `path` |
 | `launch_blueprint_intake_view` | `/intake/` load | `path` |
 | `launch_blueprint_thank_you_view` | `/thank-you/` load | `path` |

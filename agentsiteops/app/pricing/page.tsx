@@ -185,13 +185,17 @@ export default function Page() {
             <li>Login, dashboard, and subscription features are intentionally deferred.</li>
           </ul>
           <div className="hero-actions">
-            <Link className="secondary-action" href="/sample/">
-              <FileText aria-hidden="true" size={17} />
-              View sample
-            </Link>
-            <Link className="secondary-action" href="/refund-policy/">
-              <ShieldCheck aria-hidden="true" size={17} />
-              Refund policy
+          <Link className="secondary-action" href="/sample/">
+            <FileText aria-hidden="true" size={17} />
+            View sample
+          </Link>
+          <Link className="secondary-action" href="/compare/">
+            <ArrowRight aria-hidden="true" size={17} />
+            Compare options
+          </Link>
+          <Link className="secondary-action" href="/refund-policy/">
+            <ShieldCheck aria-hidden="true" size={17} />
+            Refund policy
             </Link>
           </div>
         </div>

@@ -12,6 +12,51 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-03 Launch comparison and sample depth",
+    status: "completed",
+    keyPoints: [
+      "Added a public comparison page that explains when AgentSiteOps is useful versus generic AI chat, SEO software, AI visibility monitoring, and consultants.",
+      "Expanded the sample Launch Blueprint from a short format preview into a deeper sample with intake snapshot, rejected paths, selected offer, confidence boundary, outreach angle, validation sequence, and stop rule.",
+      "Connected the comparison route to navigation, analytics, commercial validation, route consistency, production health, sitemap, and route review records."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect the buyer-fit boundary and product-category comparison instead of inferring the USD 99 value from a pricing page alone.",
+    files: [
+      "app/compare/page.tsx",
+      "app/sample/page.tsx",
+      "app/pricing/page.tsx",
+      "app/layout.tsx",
+      "app/globals.css",
+      "components/SiteAnalytics.tsx",
+      "lib/launch.ts",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "analytics endpoint gate pass",
+      "commercial validation gate pass",
+      "route consistency gate pass",
+      "production build pass",
+      "technical SEO CI pass",
+      "crawler access audit pass",
+      "growth snapshot generated 38 route rows",
+      "production deploy pass on Cloudflare Pages master branch",
+      "production health monitor pass",
+      "IndexNow submit pass with 38 URLs"
+    ],
+    next:
+      "Use the comparison page and sample page as the commercial proof layer; keep the score in pilot until GSC, Bing, qualified inquiry, payment, or delivery evidence exists."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-02 Brand icon and pricing evidence boundary",
     status: "completed",
     keyPoints: [

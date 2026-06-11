@@ -285,6 +285,15 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/compare/",
+      "pageType": "comparison",
+      "template": "comparison",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.74,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/buy/",
       "pageType": "commerce",
       "template": "payment_link",

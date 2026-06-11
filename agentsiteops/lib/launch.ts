@@ -113,21 +113,104 @@ export const pricingBenchmarks = [
   }
 ];
 
+export const launchComparisons = [
+  {
+    option: "Generic AI chat",
+    betterFor:
+      "Fast brainstorming, drafting, and rewriting when the operator already knows the buyer, offer, proof, and next action.",
+    weakerFor:
+      "Forcing a decision from messy evidence. It usually needs the user to supply the scoring model, stop rules, and final delivery format.",
+    agentSiteOpsFit:
+      "Useful when the buyer needs one selected route, one page structure, one outreach path, and a written not-doing list."
+  },
+  {
+    option: "SEO software",
+    betterFor:
+      "Keyword research, backlink analysis, rank tracking, technical crawls, and ongoing search visibility monitoring.",
+    weakerFor:
+      "Packaging an AI-capable builder's first sellable service and deciding what not to build in the next 7 days.",
+    agentSiteOpsFit:
+      "Useful when the buyer needs a launch artifact before paying for a monthly SEO data platform."
+  },
+  {
+    option: "AI visibility monitoring",
+    betterFor:
+      "Tracking brand presence, AI answers, citation surfaces, prompt sets, and visibility changes over time.",
+    weakerFor:
+      "Creating the first offer, landing page, pricing boundary, and manual outreach sequence before the brand has signals.",
+    agentSiteOpsFit:
+      "Useful before monitoring makes sense, especially when there is no proven offer or enough search data yet."
+  },
+  {
+    option: "Human consultant or agency",
+    betterFor:
+      "Bespoke implementation, channel strategy, account management, design, campaigns, and ongoing execution.",
+    weakerFor:
+      "Low-budget first validation when the buyer only needs a bounded launch route and can execute manually.",
+    agentSiteOpsFit:
+      "Useful when the buyer needs a compact plan and cannot justify a broader consulting or agency engagement."
+  }
+];
+
+export const purchaseFitRules = {
+  buyIf: [
+    "You can build or deliver, but you cannot decide which offer should be tested first.",
+    "You need a narrow landing page structure and outreach sequence within one validation cycle.",
+    "You accept that missing evidence lowers confidence and that the blueprint may recommend not launching the original idea.",
+    "A 24-72 hour manual decision artifact is more useful than another software subscription."
+  ],
+  doNotBuyIf: [
+    "You need guaranteed traffic, ranking, AI citation, leads, revenue, or payback.",
+    "You need ongoing SEO software, AI visibility monitoring, dashboards, or rank tracking.",
+    "You need legal, medical, financial, tax, immigration, safety, or other regulated advice.",
+    "You are unwilling to execute manual outreach, publish a landing page, or collect validation evidence."
+  ]
+};
+
+export const comparisonSources = [
+  {
+    label: "Ahrefs pricing",
+    href: "https://ahrefs.com/pricing"
+  },
+  {
+    label: "Semrush pricing",
+    href: "https://www.semrush.com/pricing/"
+  },
+  {
+    label: "Semrush AI visibility toolkit",
+    href: "https://www.semrush.com/features/ai/"
+  },
+  {
+    label: "Otterly.AI pricing",
+    href: "https://otterly.ai/pricing/"
+  }
+];
+
 export const sampleReportSections = [
   {
-    title: "Current capability",
+    title: "Intake snapshot",
     body:
-      "The customer can build automations and simple AI workflows, but the public offer is still too broad. The first launch should not sell 'AI automation' in general; it should sell one constrained workflow outcome."
+      "The buyer can build simple automations, connect AI tools, and publish a basic page. The weak point is not production skill; it is packaging one paid outcome that a specific buyer understands."
   },
   {
-    title: "Recommended first offer",
+    title: "Rejected paths",
     body:
-      "Offer: 72-hour AI intake and follow-up workflow setup for solo consultants. This is narrow enough to explain, deliver, and test with direct outreach."
+      "Rejected: broad AI automation agency, generic prompt pack, SEO blog, and AI tools directory. Each path either needs too much trust, too much content scale, unclear proof, or a buyer who cannot see the first outcome."
   },
   {
-    title: "Target buyer",
+    title: "Selected first offer",
+    body:
+      "Offer: 72-hour AI intake and follow-up workflow setup for solo consultants. It is narrow enough to explain, deliver, price, and test with manual outreach."
+  },
+  {
+    title: "Target buyer and trigger",
     body:
       "Independent consultants who receive repeated inbound questions but still manage qualification and follow-up manually. They already feel the pain and can understand a workflow service without needing a technical demo first."
+  },
+  {
+    title: "Evidence confidence",
+    body:
+      "Confidence is medium, not high. The route uses visible workflow pain and feasible delivery ability, but it still lacks search demand exports, live customer proof, and payment evidence. The report must show these gaps instead of hiding them."
   },
   {
     title: "Landing page structure",
@@ -135,9 +218,19 @@ export const sampleReportSections = [
       "Hero: turn missed inquiries into a simple AI-assisted intake flow. Sections: problem, what is included, what is not included, 72-hour delivery, sample workflow, FAQ, PayPal or invoice CTA."
   },
   {
+    title: "First outreach angle",
+    body:
+      "Message a small set of consultants with a concrete before-and-after workflow. Do not pitch AI transformation. Pitch a specific intake and follow-up cleanup that removes repeated manual replies."
+  },
+  {
     title: "7-day validation sequence",
     body:
       "Day 1 publish the page and send 10 warm messages. Day 2 send 20 targeted messages and record objections. Day 3 follow up. Days 4-7 refine the offer only if replies show confusion, price friction, or implementation demand."
+  },
+  {
+    title: "Stop or pivot rule",
+    body:
+      "Stop this route if 30 targeted messages produce no qualified reply, if buyers cannot describe the pain, or if delivery depends on regulated advice or private account access. Pivot to a narrower workflow or a lower-friction template only after recording the rejection reason."
   }
 ];
 
