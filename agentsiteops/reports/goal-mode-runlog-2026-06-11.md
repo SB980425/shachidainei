@@ -57,12 +57,21 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Extended `docs/manual-fulfillment-runbook.md` and `scripts/commercial-validation-gate.mjs` so the delivery templates are part of the operational gate.
 - Deployed production update log and submitted 41 URLs through IndexNow.
 
+### M4-12 Manual Outreach Evidence Loop
+
+- Replaced the remaining mixed-language outreach copy with English-first Fit Review and Launch Blueprint validation messages.
+- Added `docs/manual-outreach-runbook.md` with allowed manual channels, small-batch limits, message boundaries, stop rules, and review actions.
+- Added `data/outreach-tracker-template.csv` for aggregate-only outreach tracking.
+- Extended `scripts/commercial-validation-gate.mjs` so outreach cannot pass the commercial gate if it promises traffic, rankings, AI citations, revenue, automated DMs, or public storage of private lead data.
+- Updated the public update log and production health monitor so `/updates/` must show the M4-12 entry after deployment.
+
 ## Verification Snapshot
 
 - `npm run lint`: pass.
 - `npm run typecheck`: pass.
 - `npm run analytics:gate`: pass.
 - `npm run commercial:gate`: pass, 83 checks.
+- `npm run commercial:gate`: pass, 95 checks after adding outreach validation.
 - `npm run routes:gate`: pass, 215 checks.
 - `npm run build`: pass, 46 generated static pages.
 - `npm run seo:ci`: pass, 41 routes, 0 blockers, 0 warnings.

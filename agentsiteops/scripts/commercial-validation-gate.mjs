@@ -77,6 +77,9 @@ function checkCommercialBoundary() {
   const fitReviewDeliveryTemplate = read("docs/delivery-fit-review-template.md");
   const launchBlueprintDeliveryTemplate = read("docs/delivery-launch-blueprint-template.md");
   const deliveryQualityChecklist = read("data/delivery-quality-checklist.csv");
+  const outreachTemplates = read("data/outreach-templates.json");
+  const outreachRunbook = read("docs/manual-outreach-runbook.md");
+  const outreachTracker = read("data/outreach-tracker-template.csv");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -113,6 +116,15 @@ function checkCommercialBoundary() {
   requireText("manual_fulfillment", launchBlueprintDeliveryTemplate, "Missing Evidence Ledger", "Launch Blueprint delivery template includes evidence ledger");
   requireText("manual_fulfillment", deliveryQualityChecklist, "No card data passwords API keys bank details or private customer lists are stored", "delivery checklist blocks sensitive data storage");
   requireText("manual_fulfillment", deliveryQualityChecklist, "No guaranteed traffic ranking AI citation revenue or customer response is claimed", "delivery checklist blocks guarantee claims");
+  requireText("manual_outreach", outreachTemplates, "Do not promise traffic, rankings, AI citations, revenue", "outreach templates block inflated claims");
+  requireText("manual_outreach", outreachTemplates, "Keep names, emails, handles, and private replies outside public files", "outreach templates keep private replies out of the repo");
+  requireText("manual_outreach", outreachRunbook, "Do not use automated DMs", "outreach runbook blocks automated direct messages");
+  requireText("manual_outreach", outreachRunbook, "Do not promise traffic, rankings, AI citations, revenue", "outreach runbook blocks guarantee claims");
+  requireText("manual_outreach", outreachRunbook, "Do not store names emails handles private replies or payment identifiers", "outreach runbook blocks public storage of private lead data");
+  requireText("manual_outreach", outreachRunbook, "20 manual prospects", "outreach runbook sets a small-batch validation limit");
+  requireText("manual_outreach", outreachTracker, "confirmed_payment_count", "outreach tracker separates confirmed payments");
+  requireText("manual_outreach", outreachTracker, "usable_intake_count", "outreach tracker separates usable intake");
+  requireText("manual_outreach", outreachTracker, "Aggregate only", "outreach tracker stores only aggregate records");
 
   addCheck("service_boundary", !/guaranteed rankings|guaranteed revenue|guaranteed customers/i.test(launch) ? "pass" : "fail", "launch copy avoids guarantee claims");
 }
@@ -172,7 +184,10 @@ function checkMojibake() {
     "components/CopyAction.tsx",
     "components/AICrawlerReadinessTool.tsx",
     "components/AuditScopeBuilder.tsx",
+    "data/outreach-templates.json",
+    "docs/manual-outreach-runbook.md",
     "lib/site.ts",
+    "lib/launch.ts",
     "docs/site-brief.md",
     "checklists/monetization-compliance.md"
   ];

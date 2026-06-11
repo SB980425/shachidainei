@@ -281,6 +281,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-12 Manual outreach evidence loop",
     "M4-11 Delivery artifact templates",
     "M4-10 Fit Review sample artifact",
     "M4-09 Fit Review entry offer",

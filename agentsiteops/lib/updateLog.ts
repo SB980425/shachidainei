@@ -12,6 +12,40 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-12 Manual outreach evidence loop",
+    status: "completed",
+    keyPoints: [
+      "Converted outreach from loose copy into a bounded manual validation runbook with small-batch limits, allowed channels, stop rules, and review actions.",
+      "Added an aggregate-only outreach tracker so qualified replies, sample views, payment clicks, confirmed payments, usable intake, and objections are not mixed together.",
+      "Repaired the remaining outreach-template encoding drift and extended the commercial gate to block automated DMs, inflated claims, and public storage of private lead data."
+    ],
+    aiAngle:
+      "AI and search systems can inspect that the project is not depending on vague traffic hopes; it has a manual evidence loop that separates attention, intent, payment, intake, and objection data.",
+    files: [
+      "docs/manual-outreach-runbook.md",
+      "data/outreach-tracker-template.csv",
+      "data/outreach-templates.json",
+      "lib/launch.ts",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "analytics endpoint gate pass",
+      "commercial validation gate pass",
+      "route consistency gate pass",
+      "production build pass",
+      "technical SEO CI pass",
+      "crawler access audit pass",
+      "growth snapshot baseline_ready"
+    ],
+    next:
+      "Run only small manual outreach batches, record aggregate outcomes, and rewrite the offer before scaling if qualified replies or objections do not support the current promise."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-11 Delivery artifact templates",
     status: "completed",
     keyPoints: [

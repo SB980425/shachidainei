@@ -1,0 +1,2 @@
+batch_id,period_start,period_end,channel,prospect_segment,message_variant,sent_count,replied_count,qualified_reply_count,fit_review_sample_view_count,payment_click_count,confirmed_payment_count,usable_intake_count,dominant_objection,next_action,notes
+BATCH-001,2026-06-11,2026-06-13,manual_public_reply,ai_automation_freelancer,A,0,0,0,0,0,0,0,,pending,"Aggregate only. Do not store names emails handles private replies or payment identifiers in this public repo."

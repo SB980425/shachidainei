@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T11:10:20.678Z
+- Generated: 2026-06-11T11:25:53.875Z
 - Status: pass
-- Checks: 83
+- Checks: 95
 - Blockers: 0
 
 ## Summary
@@ -74,6 +74,15 @@
 | manual_fulfillment | pass | Launch Blueprint delivery template includes evidence ledger |
 | manual_fulfillment | pass | delivery checklist blocks sensitive data storage |
 | manual_fulfillment | pass | delivery checklist blocks guarantee claims |
+| manual_outreach | pass | outreach templates block inflated claims |
+| manual_outreach | pass | outreach templates keep private replies out of the repo |
+| manual_outreach | pass | outreach runbook blocks automated direct messages |
+| manual_outreach | pass | outreach runbook blocks guarantee claims |
+| manual_outreach | pass | outreach runbook blocks public storage of private lead data |
+| manual_outreach | pass | outreach runbook sets a small-batch validation limit |
+| manual_outreach | pass | outreach tracker separates confirmed payments |
+| manual_outreach | pass | outreach tracker separates usable intake |
+| manual_outreach | pass | outreach tracker stores only aggregate records |
 | service_boundary | pass | launch copy avoids guarantee claims |
 | readiness_tool | pass | readiness tool has 13 weighted checks; found 13 |
 | readiness_tool | pass | readiness tool weights total 100 |
@@ -89,7 +98,10 @@
 | mojibake | pass | components/CopyAction.tsx has no visible mojibake marker |
 | mojibake | pass | components/AICrawlerReadinessTool.tsx has no visible mojibake marker |
 | mojibake | pass | components/AuditScopeBuilder.tsx has no visible mojibake marker |
+| mojibake | pass | data/outreach-templates.json has no visible mojibake marker |
+| mojibake | pass | docs/manual-outreach-runbook.md has no visible mojibake marker |
 | mojibake | pass | lib/site.ts has no visible mojibake marker |
+| mojibake | pass | lib/launch.ts has no visible mojibake marker |
 | mojibake | pass | docs/site-brief.md has no visible mojibake marker |
 | mojibake | pass | checklists/monetization-compliance.md has no visible mojibake marker |
 
