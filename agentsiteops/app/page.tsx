@@ -1,12 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  ArrowRight,
+  BadgeDollarSign,
+  CheckCircle2,
+  FileText,
+  Gauge,
+  Mail,
+  MousePointer2,
+  Rocket,
+  SearchCheck,
+  ShieldCheck
+} from "lucide-react";
 import { ScorerPanel } from "@/components/ScorerPanel";
-import { allRoutes, routePages, siteUrl, workflow } from "@/lib/site";
+import { launchDeliverables, launchProduct, marketSignals } from "@/lib/launch";
+import { primaryOffer } from "@/lib/payments";
+import { allRoutes, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "AgentSiteOps",
   description:
-    "An AI website operating system for scoring opportunities, structuring SEO sites, running content gates, and reviewing launch signals."
+    "AgentSiteOps turns scattered AI capability into one sellable offer, one landing page structure, and one 7-day validation path."
 };
 
 export default function HomePage() {
@@ -15,41 +29,15 @@ export default function HomePage() {
     "@type": "WebSite",
     name: "AgentSiteOps",
     description:
-      "An AI website operating system for scoring opportunities, structuring SEO sites, running content gates, and reviewing launch signals.",
+      "A launch blueprint service for AI-capable solo builders who need one sellable offer, one page structure, and one first outreach path.",
     inLanguage: "en",
     url: siteUrl,
     potentialAction: {
       "@type": "ViewAction",
-      target: `${siteUrl}/tools/website-opportunity-scorer/`,
-      name: "Use the website opportunity scorer"
+      target: `${siteUrl}/buy/`,
+      name: "Buy the AgentSiteOps Launch Blueprint"
     }
   };
-
-  const routeCards = routePages.filter((page) =>
-    [
-      "/tools/website-opportunity-scorer/",
-      "/tools/ai-crawler-readiness/",
-      "/examples/agentsiteops-self-audit/",
-      "/services/ai-website-opportunity-audit/",
-      "/tools/audit-scope-builder/",
-      "/templates/starter-pack/",
-      "/templates/seo-repo-skeleton/",
-      "/checklists/ai-content-quality-gate/",
-      "/checklists/programmatic-seo-gate/",
-      "/checklists/gsc-bing-indexnow-launch/",
-      "/checklists/ai-citation-readiness/",
-      "/guides/ai-search-friendly-robots-txt/",
-      "/guides/indexnow-cloudflare-pages/",
-      "/guides/gsc-bing-sitemap-verification/",
-      "/guides/small-website-ai-visibility-metrics/",
-      "/guides/ai-citation-grounding-metrics/",
-      "/evidence/",
-      "/reports/route-evidence-dashboard/",
-      "/templates/evidence-ledger-template/",
-      "/templates/website-opportunity-scoring-template/",
-      "/methodology/website-opportunity-scoring/"
-    ].includes(page.path)
-  );
 
   return (
     <main className="page-main">
@@ -59,31 +47,46 @@ export default function HomePage() {
       />
       <section className="hero">
         <div className="hero-copy">
-          <h1>AI Website Operating System</h1>
+          <p className="hero-kicker">AI solo business launch system</p>
+          <h1>Turn scattered AI skills into one sellable offer.</h1>
           <p className="hero-lede">
-            AgentSiteOps turns website ideas into scored opportunities, structured routes, content gates,
-            technical SEO checks, and 30-day review loops before a site is expanded.
+            AgentSiteOps sells a manual Launch Blueprint for AI-capable solo builders:
+            one buyer, one offer, one landing page structure, one pricing angle, and one
+            7-day outreach path.
           </p>
           <div className="hero-actions">
-            <Link className="primary-action" href="/tools/website-opportunity-scorer/">
-              Score a site idea
+            <Link className="primary-action" href="/buy/">
+              <BadgeDollarSign aria-hidden="true" size={17} />
+              Buy the USD {primaryOffer.price} Blueprint
             </Link>
-            <Link className="secondary-action" href="/tools/ai-crawler-readiness/">
-              Check crawler readiness
+            <Link className="secondary-action" href="/sample/">
+              <FileText aria-hidden="true" size={17} />
+              View sample
+            </Link>
+            <Link className="secondary-action" href="/tools/website-opportunity-scorer/">
+              <Gauge aria-hidden="true" size={17} />
+              Try free scorer
             </Link>
           </div>
-          <div className="proof-grid" aria-label="System summary">
+          <div className="system-strip" aria-label="AgentSiteOps launch loop">
+            <span>Offer</span>
+            <span>Buyer</span>
+            <span>Page</span>
+            <span>Outreach</span>
+            <span>Validate</span>
+          </div>
+          <div className="proof-grid" aria-label="Launch summary">
+            <div className="proof-item">
+              <strong>USD {launchProduct.price}</strong>
+              <span>single validation-stage offer, no tier confusion</span>
+            </div>
+            <div className="proof-item">
+              <strong>24-72h</strong>
+              <span>manual delivery after payment and intake details</span>
+            </div>
             <div className="proof-item">
               <strong>{allRoutes.length}</strong>
-              <span>indexable routes in the first release set</span>
-            </div>
-            <div className="proof-item">
-              <strong>5</strong>
-              <span>gates and review loops before expansion</span>
-            </div>
-            <div className="proof-item">
-              <strong>30</strong>
-              <span>day validation cycle for early site signals</span>
+              <span>indexable routes kept behind one buy path</span>
             </div>
           </div>
         </div>
@@ -92,15 +95,18 @@ export default function HomePage() {
 
       <section className="workflow-section">
         <div className="section-head">
-          <h2>From idea to review</h2>
-          <p>Each step creates a file, page, gate, or report so the site can be audited and improved without relying on chat history.</p>
+          <h2>What the buyer receives</h2>
+          <p>
+            The first product is not a dashboard or generic audit. It is a compressed
+            execution artifact for a founder who needs to stop circling ideas and test one offer.
+          </p>
         </div>
         <div className="workflow-grid">
-          {workflow.map((step, index) => (
-            <div className="workflow-card" key={step.title}>
-              <span>{index + 1}</span>
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
+          {launchDeliverables.slice(0, 5).map((item, index) => (
+            <div className="workflow-card" key={item}>
+              <span aria-hidden="true">{index + 1}</span>
+              <h3>{["Offer", "Buyer", "Page", "Price", "Outreach"][index]}</h3>
+              <p>{item}</p>
             </div>
           ))}
         </div>
@@ -108,17 +114,64 @@ export default function HomePage() {
 
       <section className="route-section">
         <div className="section-head">
-          <h2>First release pages</h2>
-          <p>The initial set focuses on free diagnostics, sample proof, repo structure, publishing gates, and metrics before checkout or large content expansion.</p>
+          <h2>Market signals shaping the product</h2>
+          <p>
+            Semrush's current AI Search and SEO coverage reinforces a practical boundary:
+            visibility matters, but the three-day validation metric remains payment.
+          </p>
         </div>
         <div className="route-grid">
-          {routeCards.map((page) => (
-            <Link className="route-card" href={page.path} key={page.path}>
-              <small>{page.pageType}</small>
-              <h3>{page.title}</h3>
-              <p>{page.description}</p>
-            </Link>
+          {marketSignals.map((signal) => (
+            <a className="route-card" href={signal.href} key={signal.href} rel="noreferrer" target="_blank">
+              <span className="route-icon" aria-hidden="true">
+                <SearchCheck size={20} strokeWidth={2.2} />
+              </span>
+              <small>Semrush signal</small>
+              <h3>{signal.title}</h3>
+              <p>{signal.summary}</p>
+            </a>
           ))}
+        </div>
+      </section>
+
+      <section className="pricing-grid-section split-section gate-split">
+        <div>
+          <h2>Best fit</h2>
+          <ul className="compact-list">
+            <li>
+              <CheckCircle2 aria-hidden="true" size={16} /> You can build AI or automation workflows but cannot package the first offer.
+            </li>
+            <li>
+              <CheckCircle2 aria-hidden="true" size={16} /> You need a clear page structure and first outreach path more than another tool.
+            </li>
+            <li>
+              <CheckCircle2 aria-hidden="true" size={16} /> You accept that this is a validation plan, not a revenue guarantee.
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>Not a fit</h2>
+          <ul className="compact-list">
+            <li>
+              <ShieldCheck aria-hidden="true" size={16} /> You want guaranteed traffic, rankings, AI citations, or revenue.
+            </li>
+            <li>
+              <MousePointer2 aria-hidden="true" size={16} /> You need someone to run automated DMs, comments, or platform growth scripts.
+            </li>
+            <li>
+              <Mail aria-hidden="true" size={16} /> You want a full SaaS account, dashboard, or subscription workspace today.
+            </li>
+          </ul>
+          <div className="hero-actions">
+            <Link className="primary-action" href="/buy/">
+              <Rocket aria-hidden="true" size={17} />
+              Start the launch path
+            </Link>
+            <Link className="secondary-action" href="/disclaimer/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Read limits
+            </Link>
+          </div>
         </div>
       </section>
     </main>

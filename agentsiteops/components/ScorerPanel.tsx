@@ -1,18 +1,21 @@
 import Link from "next/link";
 
 const scoreRows = [
-  { label: "Search demand", value: 62 },
-  { label: "AI citation fit", value: 84 },
-  { label: "Original value", value: 88 },
-  { label: "Compliance safety", value: 76 },
-  { label: "90-day validation", value: 80 }
+  { label: "Offer clarity", value: 82 },
+  { label: "Buyer trigger", value: 74 },
+  { label: "Page readiness", value: 78 },
+  { label: "Outreach path", value: 69 },
+  { label: "Risk boundary", value: 86 }
 ];
 
 export function ScorerPanel() {
   return (
-    <aside className="score-panel" aria-label="Website opportunity scorer preview">
+    <aside className="score-panel" aria-label="Launch readiness preview">
       <div className="panel-header">
-        <p className="panel-title">Website Opportunity Scorer</p>
+        <div>
+          <p className="panel-title">Launch Readiness</p>
+          <p className="panel-subtitle">A quick signal map before buying a Blueprint</p>
+        </div>
         <span className="status-dot">Ready</span>
       </div>
       <div className="score-rows">
@@ -27,8 +30,8 @@ export function ScorerPanel() {
       </div>
       <div className="panel-footer">
         <div className="score-result">
-          <strong>85</strong>
-          <span>proceed</span>
+          <strong>78</strong>
+          <span>package</span>
         </div>
         <Link
           className="copy-button"
@@ -37,7 +40,7 @@ export function ScorerPanel() {
           data-analytics-target="/tools/website-opportunity-scorer/"
           href="/tools/website-opportunity-scorer/"
         >
-          Open scorer
+          Open free scorer
         </Link>
       </div>
     </aside>

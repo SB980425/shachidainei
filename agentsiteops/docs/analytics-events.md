@@ -50,7 +50,14 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `opportunity_scoring_template_view` | `/templates/website-opportunity-scoring-template/` load | `path` |
 | `scoring_methodology_view` | `/methodology/website-opportunity-scoring/` load | `path` |
 | `scoring_model_limit_view` | `/methodology/website-opportunity-scoring/` load | `path` |
-| `trust_policy_view` | `/authors/`, `/editorial-policy/`, `/privacy/`, or `/disclosure/` load | `path` |
+| `launch_blueprint_legacy_view` | `/website-opportunity-audit/` load | `path` |
+| `launch_blueprint_pricing_view` | `/pricing/` load | `path` |
+| `launch_blueprint_sample_view` | `/sample/` load | `path` |
+| `launch_blueprint_buy_view` | `/buy/` load | `path` |
+| `launch_blueprint_intake_view` | `/intake/` load | `path` |
+| `launch_blueprint_thank_you_view` | `/thank-you/` load | `path` |
+| `contact_page_view` | `/contact/` load | `path` |
+| `trust_policy_view` | `/authors/`, `/editorial-policy/`, `/privacy/`, `/disclosure/`, `/terms/`, `/refund-policy/`, or `/disclaimer/` load | `path` |
 | `tool_started` | First tool input, slider, evidence, or hard-blocker change | `tool`, `trigger`, `score`, `decision` |
 | `tool_completed` | User copies or exports a tool result | `tool`, `export_method`, `score`, `decision` |
 | `tool_result_export` | User copies or downloads a tool result | `tool`, `export_method`, `score`, `decision` |

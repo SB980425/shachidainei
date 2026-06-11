@@ -120,8 +120,13 @@ function pathToAppPage(routePath) {
 
 function parseSitePaths() {
   const site = read("lib/site.ts");
-  const paths = [...site.matchAll(/path:\s*"([^"]+)"/g)].map((match) => match[1]);
-  return ["/", ...paths, "/updates/"];
+  const routePagePaths = [...site.matchAll(/path:\s*"([^"]+)"/g)].map((match) => match[1]);
+  const customRoutesBlock = site.match(/export const customRoutes\s*=\s*\[([\s\S]*?)\];/);
+  const customRoutePaths = customRoutesBlock
+    ? [...customRoutesBlock[1].matchAll(/"([^"]+)"/g)].map((match) => match[1])
+    : [];
+
+  return [...new Set(["/", ...routePagePaths, ...customRoutePaths, "/updates/"])];
 }
 
 function parsePathViewEvents() {

@@ -1,17 +1,17 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-08T07:16:34.222Z
+- Generated: 2026-06-11T05:10:34.606Z
 - Status: baseline_ready
-- Routes: 28
-- Technical SEO pass routes: 28
+- Routes: 37
+- Technical SEO pass routes: 37
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
-- GSC status: pending export for 28 routes
-- Bing status: pending export for 28 routes
+- GSC status: pending export for 37 routes
+- Bing status: pending export for 37 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 28 routes
+- Onsite event status: local buffer only for 37 routes
 
 ## Route Evidence Table
 
@@ -45,6 +45,15 @@
 | /privacy/ | trust_page | trust_and_policy | pass | site_pass | keep | Update before external endpoint or cookies |
 | /disclosure/ | trust_page | trust_and_policy | pass | site_pass | keep | Update before ads, affiliate, sponsor, or paid recommendations |
 | /updates/ | log | trust_and_policy | pass | site_pass | keep | Append every major execution step |
+| /website-opportunity-audit/ | service | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /pricing/ | pricing | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /sample/ | example | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /buy/ | commerce | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /intake/ | intake | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /terms/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
+| /refund-policy/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
+| /disclaimer/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
+| /contact/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
 
 ## Evidence Rules
 

@@ -1,12 +1,12 @@
 # Weekly Growth Review
 
-- Date: 2026-06-08
+- Date: 2026-06-11
 - Review type: production baseline evidence review
 - Decision: continue evidence collection; do not scale content clusters yet
 
 ## Conclusion
 
-- The production site has 28 indexable routes with technical SEO passing.
+- The production site has 37 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; checkout and subscription remain blocked until real demand and payment readiness exist.
 - GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.
@@ -16,12 +16,12 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 28 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 28/28 routes pass |
+| Route registry | docs/routes.json | 37 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 37/37 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
-| IndexNow | latest command output | 28 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 37 URLs submitted successfully in current deployment cycle |
 | Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
 
 ## Unverified
@@ -66,6 +66,15 @@
 | /privacy/ | trust_page | trust_and_policy | pass | site_pass | keep | Update before external endpoint or cookies |
 | /disclosure/ | trust_page | trust_and_policy | pass | site_pass | keep | Update before ads, affiliate, sponsor, or paid recommendations |
 | /updates/ | log | trust_and_policy | pass | site_pass | keep | Append every major execution step |
+| /website-opportunity-audit/ | service | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /pricing/ | pricing | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /sample/ | example | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /buy/ | commerce | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /intake/ | intake | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /terms/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
+| /refund-policy/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
+| /disclaimer/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
+| /contact/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
 
 ## 30 / 60 / 90 Status
 

@@ -1,5 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  BadgeDollarSign,
+  Bot,
+  FileCheck2,
+  Gauge,
+  GitBranch,
+  Mail,
+  Newspaper,
+  ShieldCheck
+} from "lucide-react";
+import { BrandLogo } from "@/components/BrandLogo";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
 import "./globals.css";
 
@@ -10,21 +21,24 @@ export const metadata: Metadata = {
     template: "%s | AgentSiteOps"
   },
   description:
-    "Score, structure, launch, and review AI-assisted websites with technical SEO gates, content quality checks, repo templates, and 30-day validation loops.",
+    "Turn scattered AI capability into one sellable offer, one landing page structure, and one 7-day validation path.",
+  icons: {
+    icon: "/icon.svg"
+  },
   alternates: {
     canonical: "/"
   }
 };
 
 const navItems = [
-  { href: "/ai-website-operating-system/", label: "System" },
-  { href: "/tools/website-opportunity-scorer/", label: "Scorer" },
-  { href: "/tools/ai-crawler-readiness/", label: "Crawler" },
-  { href: "/templates/starter-pack/", label: "Pack" },
-  { href: "/templates/seo-repo-skeleton/", label: "Templates" },
-  { href: "/checklists/ai-content-quality-gate/", label: "Gates" },
-  { href: "/guides/ai-citation-grounding-metrics/", label: "Metrics" },
-  { href: "/updates/", label: "Updates" }
+  { href: "/ai-website-operating-system/", label: "System", Icon: GitBranch },
+  { href: "/tools/website-opportunity-scorer/", label: "Scorer", Icon: Gauge },
+  { href: "/tools/ai-crawler-readiness/", label: "Crawler", Icon: Bot },
+  { href: "/sample/", label: "Sample", Icon: FileCheck2 },
+  { href: "/buy/", label: "Buy", Icon: BadgeDollarSign },
+  { href: "/intake/", label: "Intake", Icon: Mail },
+  { href: "/updates/", label: "Updates", Icon: Newspaper },
+  { href: "/disclaimer/", label: "Limits", Icon: ShieldCheck }
 ];
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -34,28 +48,37 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteAnalytics />
         <header className="site-header">
           <Link className="brand" href="/" aria-label="AgentSiteOps home">
-            <span className="brand-mark">AS</span>
-            <span>AgentSiteOps</span>
+            <BrandLogo />
           </Link>
           <nav className="nav" aria-label="Primary navigation">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
+                <item.Icon aria-hidden="true" size={15} strokeWidth={2.2} />
                 {item.label}
               </Link>
             ))}
           </nav>
-          <Link className="header-action" href="/tools/website-opportunity-scorer/">
-            Score an idea
+          <Link className="header-action" href="/pricing/">
+            <BadgeDollarSign aria-hidden="true" size={16} />
+            Pricing
           </Link>
         </header>
         {children}
         <footer className="site-footer">
           <div>
-            <strong>AgentSiteOps</strong>
-            <p>Opportunity scoring, site blueprints, content gates, technical SEO, and review loops for AI-assisted websites.</p>
+            <BrandLogo compact />
+            <p>Launch blueprint service for AI-capable solo builders who need one sellable offer and first validation path.</p>
           </div>
           <div className="footer-links">
             <Link href="/updates/">Updates</Link>
+            <Link href="/pricing/">Pricing</Link>
+            <Link href="/sample/">Sample</Link>
+            <Link href="/terms/">Terms</Link>
+            <Link href="/refund-policy/">Refunds</Link>
+            <Link href="/contact/">Contact</Link>
+            <Link href="/tools/ai-crawler-readiness/">Crawler</Link>
+            <Link href="/templates/starter-pack/">Starter Pack</Link>
+            <Link href="/reports/route-evidence-dashboard/">Evidence</Link>
             <Link href="/authors/">Authors</Link>
             <Link href="/editorial-policy/">Editorial</Link>
             <Link href="/privacy/">Privacy</Link>

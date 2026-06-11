@@ -1,0 +1,5 @@
+date,channel,persona,objection,classification,response,next_action,status
+2026-06-11,manual,ai_freelancer,"I can ask ChatGPT for this.",value_clarity,"The paid value is compression into one offer, one page structure, and one outreach path using your actual constraints, not generic advice.",send_sample,open
+2026-06-11,manual,technical_solo_builder,"I need someone to build it, not just advise.",implementation_demand,"If this repeats, pivot to done-for-you AI Offer Page + Intake Funnel Setup.",track_frequency,open
+2026-06-11,manual,no_code_builder,"I do not understand what I receive.",copy_clarity,"Show sample report before payment and rewrite the buy page if this repeats.",rewrite_offer_copy,open
+2026-06-11,manual,small_operator,"I do not trust PayPal links from a new site.",trust,"Use same-domain pages, sample deliverable, support email, refund boundary, and visible terms.",strengthen_trust_pages,open

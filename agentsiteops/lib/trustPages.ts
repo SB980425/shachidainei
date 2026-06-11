@@ -121,24 +121,24 @@ export const trustPages: Record<string, TrustPage> = {
     path: "/privacy/",
     title: "Privacy Policy",
     description:
-      "The current data collection boundary and update requirements before analytics, email, ads, forms, or payments are added.",
+      "The current data collection boundary for local tools, PayPal payment links, manual intake, email, analytics, ads, and forms.",
     eyebrow: "Privacy boundary",
     h1: "Privacy Policy",
     summary:
-      "The current site has no account system, payment form, advertising script, or email capture. The scorer runs in the browser, and production hosting may include Cloudflare-managed analytics or edge logs.",
+      "The current site has no account system, embedded payment form, advertising script, newsletter capture, or third-party analytics script. PayPal payment links open PayPal-hosted pages, and intake is handled manually by email.",
     decision:
-      "Current status: no sensitive personal data collection and no first-party analytics endpoint. Cloudflare-managed hosting analytics must remain disclosed and reviewed before any additional analytics, email, ads, forms, or payments are enabled.",
+      "Current status: no account database and no external analytics reporting. PayPal handles payment data for payment-link transactions; buyers should send only the project details needed for manual delivery.",
     jsonLdType: "WebPage",
     sections: [
       {
         title: "Current collection",
         body:
-          "The current pages do not ask visitors for name, email, phone number, account credentials, or payment information."
+          "The current pages do not ask visitors for account credentials, card numbers, bank details, passwords, private API keys, or recovery information."
       },
       {
         title: "Local tool data",
         body:
-          "The website opportunity scorer, AI crawler readiness tool, and audit scope builder use form inputs in the browser for immediate calculation or copy-ready output. The current version does not send those inputs to an external database."
+          "The website opportunity scorer uses form inputs in the browser for immediate calculation. The current version does not send those inputs to an external database."
       },
       {
         title: "Local event buffer",
@@ -146,14 +146,14 @@ export const trustPages: Record<string, TrustPage> = {
           "The local event layer may store recent page, tool, export, and source-click events in browser memory and sessionStorage for debugging when no reporting endpoint is configured."
       },
       {
-        title: "Analytics endpoint gate",
+        title: "Payments",
         body:
-          "A real first-party analytics endpoint is not enabled. Before activation, the endpoint must reject unknown events, sensitive payloads, stale timestamps, future timestamps, external page URLs, nested payload objects, and oversized bodies."
+          "Launch Blueprint payment links open PayPal-hosted pages. PayPal processes the transaction data under its own account and payment terms; this website does not embed a checkout form or store card data."
       },
       {
-        title: "Cloudflare hosting analytics",
+        title: "Manual intake",
         body:
-          "Production pages may include Cloudflare-managed scripts, edge logs, or web analytics from the hosting layer. Those records are separate from the site event endpoint and should be reviewed in Cloudflare account settings."
+          "The intake page lists the project details needed for manual delivery and uses email as the first handoff path. Buyers should not send confidential credentials, regulated personal data, client secrets, payment details, or private customer lists."
       },
       {
         title: "Hosting logs",
@@ -163,14 +163,15 @@ export const trustPages: Record<string, TrustPage> = {
       {
         title: "Future changes",
         body:
-          "Email, analytics, advertising, affiliate links, forms, and payment features require a privacy update before they are used."
+          "Newsletter signup, external analytics, advertising, affiliate links, hosted forms, embedded checkout, databases, login, dashboards, and automated order handling require a privacy update before they are used."
       }
     ],
     rules: [
       "Do not add data collection scripts without updating this page.",
-      "Email capture must state purpose, frequency, and unsubscribe path.",
-      "Forms must state purpose, sharing, retention, and follow-up boundaries.",
-      "Analytics endpoints, cookies, host-managed analytics, or third-party scripts require review before release.",
+      "Email capture for newsletters must state purpose, frequency, and unsubscribe path.",
+      "Hosted forms must state purpose, sharing, retention, and follow-up boundaries.",
+      "Embedded checkout or automated order handling must be reviewed before release.",
+      "Analytics endpoints, cookies, or third-party scripts require review before release.",
       "The privacy statement must match the actual code and service providers."
     ],
     sources: [
@@ -186,19 +187,19 @@ export const trustPages: Record<string, TrustPage> = {
     path: "/disclosure/",
     title: "Disclosure",
     description:
-      "The current commercial relationship, affiliate, advertising, sponsorship, paid-review, and AI assistance disclosure policy.",
+      "The current paid service, affiliate, advertising, sponsorship, paid-review, and AI assistance disclosure policy.",
     eyebrow: "Disclosure",
     h1: "Disclosure",
     summary:
-      "The current version has no affiliate links, ads, sponsored content, paid rankings, paid reviews, or product sales. Future material connections must be disclosed near the relevant recommendation.",
+      "The current version offers the paid AgentSiteOps Launch Blueprint through PayPal. It has no affiliate links, ads, sponsored content, paid rankings, or paid reviews.",
     decision:
-      "Current status: no commercial relationship is active. Ads, sponsorships, affiliate links, paid reviews, or paid recommendations are blocked unless disclosed.",
+      "Current status: paid Launch Blueprint CTA is active. Ads, sponsorships, affiliate links, paid reviews, or paid recommendations remain blocked unless disclosed.",
     jsonLdType: "WebPage",
     sections: [
       {
         title: "Current commercial status",
         body:
-          "Current pages do not include affiliate links, ads, sponsored placements, paid reviews, paid rankings, or product sales."
+          "Current pages include a paid AgentSiteOps Launch Blueprint offer. They do not include affiliate links, ads, sponsored placements, paid reviews, or paid rankings."
       },
       {
         title: "Near-page disclosure",

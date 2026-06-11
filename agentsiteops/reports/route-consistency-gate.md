@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-08T07:12:08.396Z
+- Generated: 2026-06-11T05:11:04.018Z
 - Status: pass
-- Checks: 149
+- Checks: 195
 - Blockers: 0
 - Warnings: 0
 
@@ -13,9 +13,9 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 28 routes aligned |
-| page_registry | pass | 28 routes aligned |
-| page_review_actions | pass | 28 routes aligned |
+| site_routes | pass | 37 routes aligned |
+| page_registry | pass | 37 routes aligned |
+| page_review_actions | pass | 37 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /ai-website-operating-system/ has canonical slash shape |
@@ -72,6 +72,24 @@
 | route_index | pass | /disclosure/ index flag is true |
 | route_shape | pass | /updates/ has canonical slash shape |
 | route_index | pass | /updates/ index flag is true |
+| route_shape | pass | /website-opportunity-audit/ has canonical slash shape |
+| route_index | pass | /website-opportunity-audit/ index flag is true |
+| route_shape | pass | /pricing/ has canonical slash shape |
+| route_index | pass | /pricing/ index flag is true |
+| route_shape | pass | /sample/ has canonical slash shape |
+| route_index | pass | /sample/ index flag is true |
+| route_shape | pass | /buy/ has canonical slash shape |
+| route_index | pass | /buy/ index flag is true |
+| route_shape | pass | /intake/ has canonical slash shape |
+| route_index | pass | /intake/ index flag is true |
+| route_shape | pass | /terms/ has canonical slash shape |
+| route_index | pass | /terms/ index flag is true |
+| route_shape | pass | /refund-policy/ has canonical slash shape |
+| route_index | pass | /refund-policy/ index flag is true |
+| route_shape | pass | /disclaimer/ has canonical slash shape |
+| route_index | pass | /disclaimer/ index flag is true |
+| route_shape | pass | /contact/ has canonical slash shape |
+| route_index | pass | /contact/ index flag is true |
 | app_page | pass | / app page exists |
 | app_page | pass | /ai-website-operating-system/ app page exists |
 | app_page | pass | /tools/website-opportunity-scorer/ app page exists |
@@ -100,6 +118,15 @@
 | app_page | pass | /privacy/ app page exists |
 | app_page | pass | /disclosure/ app page exists |
 | app_page | pass | /updates/ app page exists |
+| app_page | pass | /website-opportunity-audit/ app page exists |
+| app_page | pass | /pricing/ app page exists |
+| app_page | pass | /sample/ app page exists |
+| app_page | pass | /buy/ app page exists |
+| app_page | pass | /intake/ app page exists |
+| app_page | pass | /terms/ app page exists |
+| app_page | pass | /refund-policy/ app page exists |
+| app_page | pass | /disclaimer/ app page exists |
+| app_page | pass | /contact/ app page exists |
 | analytics_allowlist | pass | update_log_view is registered |
 | analytics_allowlist | pass | operating_system_view is registered |
 | analytics_allowlist | pass | tool_page_view is registered |
@@ -127,6 +154,16 @@
 | analytics_allowlist | pass | opportunity_scoring_template_view is registered |
 | analytics_allowlist | pass | scoring_methodology_view is registered |
 | analytics_allowlist | pass | scoring_model_limit_view is registered |
+| analytics_allowlist | pass | launch_blueprint_legacy_view is registered |
+| analytics_allowlist | pass | launch_blueprint_pricing_view is registered |
+| analytics_allowlist | pass | launch_blueprint_sample_view is registered |
+| analytics_allowlist | pass | launch_blueprint_buy_view is registered |
+| analytics_allowlist | pass | launch_blueprint_intake_view is registered |
+| analytics_allowlist | pass | launch_blueprint_thank_you_view is registered |
+| analytics_allowlist | pass | trust_policy_view is registered |
+| analytics_allowlist | pass | trust_policy_view is registered |
+| analytics_allowlist | pass | trust_policy_view is registered |
+| analytics_allowlist | pass | contact_page_view is registered |
 | analytics_allowlist | pass | trust_policy_view is registered |
 | analytics_allowlist | pass | trust_policy_view is registered |
 | analytics_allowlist | pass | trust_policy_view is registered |
@@ -158,7 +195,16 @@
 | route_view_event | pass | /privacy/ has view event |
 | route_view_event | pass | /disclosure/ has view event |
 | route_view_event | pass | /updates/ has view event |
-| growth_snapshot | pass | 28 routes aligned |
+| route_view_event | pass | /website-opportunity-audit/ has view event |
+| route_view_event | pass | /pricing/ has view event |
+| route_view_event | pass | /sample/ has view event |
+| route_view_event | pass | /buy/ has view event |
+| route_view_event | pass | /intake/ has view event |
+| route_view_event | pass | /terms/ has view event |
+| route_view_event | pass | /refund-policy/ has view event |
+| route_view_event | pass | /disclaimer/ has view event |
+| route_view_event | pass | /contact/ has view event |
+| growth_snapshot | pass | 37 routes aligned |
 
 ## Blocking Issues
 

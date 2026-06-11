@@ -11,7 +11,7 @@
       "template": "home",
       "cluster": "ai_website_operating_system",
       "index": true,
-      "priority": 1.0,
+      "priority": 1,
       "changefreq": "weekly"
     },
     {
@@ -256,6 +256,87 @@
       "index": true,
       "priority": 0.7,
       "changefreq": "weekly"
+    },
+    {
+      "path": "/website-opportunity-audit/",
+      "pageType": "service",
+      "template": "service",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.82,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/pricing/",
+      "pageType": "pricing",
+      "template": "pricing",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.78,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/sample/",
+      "pageType": "example",
+      "template": "sample_blueprint",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.74,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/buy/",
+      "pageType": "commerce",
+      "template": "payment_link",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.76,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/intake/",
+      "pageType": "intake",
+      "template": "manual_intake",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.62,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/terms/",
+      "pageType": "trust_page",
+      "template": "policy",
+      "cluster": "trust",
+      "index": true,
+      "priority": 0.42,
+      "changefreq": "yearly"
+    },
+    {
+      "path": "/refund-policy/",
+      "pageType": "trust_page",
+      "template": "policy",
+      "cluster": "trust",
+      "index": true,
+      "priority": 0.42,
+      "changefreq": "yearly"
+    },
+    {
+      "path": "/disclaimer/",
+      "pageType": "trust_page",
+      "template": "policy",
+      "cluster": "trust",
+      "index": true,
+      "priority": 0.42,
+      "changefreq": "yearly"
+    },
+    {
+      "path": "/contact/",
+      "pageType": "trust_page",
+      "template": "contact",
+      "cluster": "trust",
+      "index": true,
+      "priority": 0.46,
+      "changefreq": "yearly"
     }
   ]
 }

@@ -1156,9 +1156,104 @@ export const routePages: RoutePage[] = [
       { label: "Privacy Policy", href: "/privacy/" },
       { label: "Editorial Policy", href: "/editorial-policy/" }
     ]
-  }
+  },
+  {
+    path: "/website-opportunity-audit/",
+    pageType: "service",
+    title: "AgentSiteOps Launch Blueprint",
+    description:
+      "A productized manual blueprint for turning scattered AI capability into one sellable offer, one landing page structure, and one first outreach path.",
+    answer:
+      "The Launch Blueprint is not another generic score. It turns an AI-capable solo builder's skills into one offer, one buyer, one page structure, one pricing angle, and one 7-day validation path.",
+    primaryAction: { label: "Buy the Blueprint", href: "/buy/" },
+    secondaryAction: { label: "View sample", href: "/sample/" },
+    aiTarget:
+      "Explain the paid blueprint deliverables, buyer fit, payment path, and limits without overstating traffic, ranking, AI citation, or revenue outcomes.",
+    humanAction:
+      "Buy only when a clear offer, page structure, and first outreach path are more valuable than another list of possible ideas.",
+    sections: [
+      {
+        title: "Who it is for",
+        body:
+          "The Blueprint fits AI automation freelancers, technical solo founders, no-code builders, and small operators who can build but cannot package the first offer clearly enough to test payment."
+      },
+      {
+        title: "What the buyer receives",
+        body:
+          "The deliverable covers the first sellable offer, target buyer, purchase trigger, one-page landing structure, pricing angle, outreach scripts, 7-day validation sequence, and not-doing list.",
+        rows: [
+          { label: "Offer", value: "The one outcome to sell first and why it was selected." },
+          { label: "Buyer", value: "The first target user and the trigger that makes the offer urgent." },
+          { label: "Page", value: "Hero, scope, proof, objections, FAQ, and CTA structure." },
+          { label: "Outreach", value: "Manual messages and a 7-day validation sequence." }
+        ]
+      },
+      {
+        title: "Why it can be worth paying for",
+        body:
+          "A builder with too many possible services can waste weeks on tools, pages, and content before making a clear offer. The paid value is compressed judgment and a short execution path."
+      },
+      {
+        title: "What it does not promise",
+        body:
+          "The Blueprint does not guarantee traffic, ranking, AI citation, revenue, customer response, advertising approval, payment processor approval, or platform account safety."
+      }
+    ],
+    related: [
+      { label: "Buy", href: "/buy/" },
+      { label: "Sample", href: "/sample/" },
+      { label: "Disclaimer", href: "/disclaimer/" }
+    ]
+  },
+  {
+    path: "/pricing/",
+    pageType: "pricing",
+    title: "Pricing",
+    description:
+      "AgentSiteOps pricing for the USD 99 Launch Blueprint manual service.",
+    answer:
+      "Pricing is intentionally reduced to one validation-stage offer: USD 99 for a manual Launch Blueprint delivered after payment confirmation and intake details.",
+    primaryAction: { label: "Pay with PayPal", href: "https://paypal.me/agentsiteops/99USD" },
+    secondaryAction: { label: "View sample", href: "/sample/" },
+    aiTarget:
+      "State the current offer, price, delivery boundary, refund caveat, and future monetization path clearly.",
+    humanAction:
+      "Use PayPal to pay only after confirming the Blueprint scope fits the current launch problem.",
+    sections: [
+      {
+        title: "Current offer",
+        body:
+          "AgentSiteOps Launch Blueprint is USD 99 during the first validation phase. The old multi-tier ladder is intentionally removed."
+      },
+      {
+        title: "Delivery boundary",
+        body:
+          "Payment does not create an automated account. Delivery is manual in 24-72 hours after payment confirmation and usable intake details."
+      },
+      {
+        title: "Future products",
+        body:
+          "Templates, dashboards, subscriptions, and implementation services are deferred until the single offer proves payment demand."
+      }
+    ],
+    related: [
+      { label: "Buy", href: "/buy/" },
+      { label: "Sample", href: "/sample/" },
+      { label: "Refund Policy", href: "/refund-policy/" }
+    ]
+  },
 ];
 
 export const routeMap = new Map(routePages.map((page) => [page.path, page]));
 
-export const allRoutes = ["/", ...routePages.map((page) => page.path), "/updates/"];
+export const customRoutes = [
+  "/sample/",
+  "/buy/",
+  "/intake/",
+  "/terms/",
+  "/refund-policy/",
+  "/disclaimer/",
+  "/contact/"
+];
+
+export const allRoutes = ["/", ...routePages.map((page) => page.path), ...customRoutes, "/updates/"];

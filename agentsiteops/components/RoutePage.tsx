@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowRight, Bot, Goal, Link2, MousePointer2, Sparkles } from "lucide-react";
 import { routeMap, siteUrl, type RoutePage as RoutePageData } from "@/lib/site";
 
 type Props = {
@@ -68,12 +69,49 @@ export function StaticRoutePage({ path }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <section className="page-hero">
-        <h1>{page.title}</h1>
-        <p>{page.description}</p>
+        <div>
+          <p className="eyebrow">{page.pageType}</p>
+          <h1>{page.title}</h1>
+          <p>{page.description}</p>
+          <div className="hero-actions">
+            <Link className="primary-action" href={page.primaryAction.href}>
+              <ArrowRight aria-hidden="true" size={17} />
+              {page.primaryAction.label}
+            </Link>
+            {page.secondaryAction ? (
+              <Link className="secondary-action" href={page.secondaryAction.href}>
+                <Sparkles aria-hidden="true" size={17} />
+                {page.secondaryAction.label}
+              </Link>
+            ) : null}
+          </div>
+        </div>
+        <aside className="route-brief">
+          <strong>Route brief</strong>
+          <dl>
+            <div>
+              <dt>
+                <Bot aria-hidden="true" size={15} />
+                AI target
+              </dt>
+              <dd>{page.aiTarget}</dd>
+            </div>
+            <div>
+              <dt>
+                <MousePointer2 aria-hidden="true" size={15} />
+                Human action
+              </dt>
+              <dd>{page.humanAction}</dd>
+            </div>
+          </dl>
+        </aside>
       </section>
       <section className="page-grid">
         <article className="main-panel">
-          <div className="answer-block">{page.answer}</div>
+          <div className="answer-block">
+            <Goal aria-hidden="true" size={18} />
+            <span>{page.answer}</span>
+          </div>
           {page.sections.map((section) => (
             <section key={section.title}>
               <h2>{section.title}</h2>
@@ -83,26 +121,14 @@ export function StaticRoutePage({ path }: Props) {
           ))}
         </article>
         <aside className="side-panel">
-          <h2>Page Goal</h2>
-          <ul>
-            <li>AI citation goal: {page.aiTarget}</li>
-            <li>Human continuation: {page.humanAction}</li>
-          </ul>
-          <div className="hero-actions">
-            <Link className="primary-action" href={page.primaryAction.href}>
-              {page.primaryAction.label}
-            </Link>
-            {page.secondaryAction ? (
-              <Link className="secondary-action" href={page.secondaryAction.href}>
-                {page.secondaryAction.label}
-              </Link>
-            ) : null}
-          </div>
           <h2>Related Pages</h2>
           <ul>
             {page.related.map((link) => (
               <li key={link.href}>
-                <Link href={link.href}>{link.label}</Link>
+                <Link href={link.href}>
+                  <Link2 aria-hidden="true" size={14} />
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
