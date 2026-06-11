@@ -39,7 +39,10 @@ export const updateLog: UpdateLogEntry[] = [
       "production build pass",
       "technical SEO CI pass",
       "crawler access audit pass",
-      "growth snapshot baseline_ready"
+      "growth snapshot baseline_ready",
+      "production deploy pass on Cloudflare Pages master branch",
+      "production health monitor pass with 99 checks",
+      "IndexNow submit pass with 39 URLs"
     ],
     next:
       "Do not change pricing from page views alone; wait for aggregate fit, sample, payment-intent, intake, confirmed-payment, and qualified-order evidence."

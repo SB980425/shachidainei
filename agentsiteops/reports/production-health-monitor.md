@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T10:04:47.109Z
+- Generated: 2026-06-11T10:16:38.435Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 98
+- Checks: 99
 - Blockers: 0
 - Warnings: 0
 
@@ -72,7 +72,7 @@
 | /evidence/ | pass | canonical points to production URL | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Evidence Ledger | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Verified evidence | [link](https://agentsiteops.com/evidence/) |
-| /evidence/ | pass | Pending evidence | [link](https://agentsiteops.com/evidence/) |
+| /evidence/ | pass | Funnel template | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Claims not made | [link](https://agentsiteops.com/evidence/) |
 | /tools/audit-scope-builder/ | pass | HTTP 200 | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
 | /tools/audit-scope-builder/ | pass | HTML title exists | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
@@ -102,6 +102,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-08 Launch funnel evidence boundary | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-07 Intake and manual fulfillment path | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-06 Purchase acceptance and encoding gate | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-05 Quality gate and evidence-ready sample | [link](https://agentsiteops.com/updates/) |
