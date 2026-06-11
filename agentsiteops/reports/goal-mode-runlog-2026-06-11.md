@@ -91,6 +91,14 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Registered the page across route registry, page registry, page review actions, analytics events, commercial validation, production health monitoring, growth snapshot, sitemap, and update log.
 - Deployed the M4-15 update to Cloudflare Pages and submitted 42 URLs through IndexNow.
 
+### M4-16 Objective Self-Score Calibration
+
+- Added `data/agentsiteops-self-score-2026-06-11.csv` with weighted scores for technical foundation, search evidence, AI visibility readiness, product clarity, commercial validation, and delivery readiness.
+- Updated `/examples/agentsiteops-self-audit/` to state the current 52/100 score: technically launchable, commercially unvalidated.
+- Updated `/evidence/` with the same score so technical readiness cannot be confused with search demand, AI referral proof, payment proof, or delivery proof.
+- Extended commercial validation and production health monitoring so the self-score, missing confirmed payment plus usable intake, and no-scaling decision remain visible.
+- Deployed the M4-16 update to Cloudflare Pages and submitted 42 URLs through IndexNow.
+
 ## Verification Snapshot
 
 - `npm run lint`: pass.
@@ -101,6 +109,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run commercial:gate`: pass, 95 checks after adding outreach validation.
 - `npm run commercial:gate`: pass, 101 checks after adding objection response validation.
 - `npm run commercial:gate`: pass, 112 checks after adding the validation decision gate.
+- `npm run commercial:gate`: pass, 118 checks after adding the objective self-score.
 - `npm run routes:gate`: pass, 220 checks.
 - `npm run build`: pass, 47 generated static pages.
 - `npm run seo:ci`: pass, 42 routes, 0 blockers, 0 warnings.
@@ -112,6 +121,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run production:health`: pass, 118 checks after M4-13 deployment.
 - `npm run production:health`: pass, 130 checks after M4-14 deployment.
 - `npm run production:health`: pass, 139 checks after M4-15 deployment.
+- `npm run production:health`: pass, 147 checks after M4-16 deployment.
 - `npm run indexnow:submit`: pass, 42 URLs, HTTP 200.
 - Playwright static build checks passed for `/examples/fit-review-sample/`, `/starter-review/`, and `/pricing/` on desktop and mobile without horizontal overflow.
 - Final production read-only checks passed for `/examples/fit-review-sample/`, `/starter-review/`, `/pricing/`, `/evidence/`, `/updates/`, `/intake/`, `/buy/`, and `/sitemap.xml`.
@@ -121,7 +131,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Production domain: `https://agentsiteops.com`
 - Sitemap route count: 42.
 - Current branch: `codex/launch-blueprint-reset`.
-- Latest pushed commit at this log point before M4-15 evidence commit: `56d2149 Add launch validation decision gate`.
+- Latest pushed commit at this log point before M4-16 evidence commit: `849796b Add objective AgentSiteOps self score`.
 
 ## Current Risk Register
 
@@ -131,6 +141,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Public pages are stronger, but both paid offers still need confirmed payment plus usable intake before subscriptions or higher pricing can be justified.
 - Delivery templates now exist, but no real buyer artifact has been delivered yet.
 - The validation decision gate is now public, but its strongest thresholds remain unmet until confirmed payment plus usable intake or qualified reply patterns exist.
+- The public self-score is 52/100. It should not increase until first-party search, AI referral, payment, intake, buyer feedback, or delivery evidence changes.
 
 ## Next Execution Queue
 

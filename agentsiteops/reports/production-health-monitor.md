@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T12:47:24.182Z
+- Generated: 2026-06-11T12:59:41.940Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 139
+- Checks: 147
 - Blockers: 0
 - Warnings: 0
 
@@ -70,6 +70,12 @@
 | /compare/ | pass | canonical points to production URL | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | Common objections before payment | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | I need someone to build it, not just advise. | [link](https://agentsiteops.com/compare/) |
+| /examples/agentsiteops-self-audit/ | pass | HTTP 200 | [link](https://agentsiteops.com/examples/agentsiteops-self-audit/) |
+| /examples/agentsiteops-self-audit/ | pass | HTML title exists | [link](https://agentsiteops.com/examples/agentsiteops-self-audit/) |
+| /examples/agentsiteops-self-audit/ | pass | canonical points to production URL | [link](https://agentsiteops.com/examples/agentsiteops-self-audit/) |
+| /examples/agentsiteops-self-audit/ | pass | AgentSiteOps Self-Audit Sample | [link](https://agentsiteops.com/examples/agentsiteops-self-audit/) |
+| /examples/agentsiteops-self-audit/ | pass | 52/100 | [link](https://agentsiteops.com/examples/agentsiteops-self-audit/) |
+| /examples/agentsiteops-self-audit/ | pass | commercially unvalidated | [link](https://agentsiteops.com/examples/agentsiteops-self-audit/) |
 | /starter-review/ | pass | HTTP 200 | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | HTML title exists | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | canonical points to production URL | [link](https://agentsiteops.com/starter-review/) |
@@ -97,7 +103,8 @@
 | /evidence/ | pass | canonical points to production URL | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Evidence Ledger | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Verified evidence | [link](https://agentsiteops.com/evidence/) |
-| /evidence/ | pass | Funnel template | [link](https://agentsiteops.com/evidence/) |
+| /evidence/ | pass | Current objective self-score | [link](https://agentsiteops.com/evidence/) |
+| /evidence/ | pass | 52/100 | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Claims not made | [link](https://agentsiteops.com/evidence/) |
 | /tools/audit-scope-builder/ | pass | HTTP 200 | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
 | /tools/audit-scope-builder/ | pass | HTML title exists | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
@@ -135,6 +142,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-16 Objective self-score calibration | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-15 Launch validation decision gate | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-14 Objection response conversion layer | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-13 Search evidence import guardrail | [link](https://agentsiteops.com/updates/) |

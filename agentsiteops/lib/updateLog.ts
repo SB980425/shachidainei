@@ -38,7 +38,9 @@ export const updateLog: UpdateLogEntry[] = [
       "technical SEO CI pass",
       "crawler access audit pass",
       "search evidence import waiting_for_exports",
-      "growth snapshot baseline_ready"
+      "growth snapshot baseline_ready",
+      "production health pass",
+      "IndexNow submit pass for 42 URLs"
     ],
     next:
       "Move the self-score only when first-party evidence changes; keep the paid path in bounded validation until confirmed payment plus usable intake or qualified objection patterns exist."
