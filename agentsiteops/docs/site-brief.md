@@ -67,6 +67,7 @@ AI Website Operating System.
 | `/guides/ai-citation-grounding-metrics/` | Guide | Explain AI citation, grounding, GSC, Bing, and onsite signals. |
 | `/guides/small-website-ai-visibility-metrics/` | Guide | Connect crawl, sitemap, console, citation readiness, and continuation evidence. |
 | `/guides/first-traffic-system/` | Guide | Define the first-visitor loop across technical discovery, public artifacts, answers, manual outreach, review, and launch listings. |
+| `/guides/48-hour-exposure-sprint/` | Guide | Publish the active two-day exposure sprint, signal hierarchy, channels, and hour-48 decision rule. |
 | `/evidence/` | Evidence | Separate verified launch evidence from pending search, referral, usage, and revenue proof. |
 | `/reports/route-evidence-dashboard/` | Report | Show route-level technical, crawler, search, event, action, and next-evidence status. |
 | `/methodology/website-opportunity-scoring/` | Methodology | Publish the scoring fields, weights, thresholds, blockers, and limitations. |

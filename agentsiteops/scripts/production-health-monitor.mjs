@@ -326,14 +326,22 @@ async function main() {
   await checkPage("/guides/first-traffic-system/", [
     "First Traffic System",
     "The first traffic plan does not wait for Google alone",
-    "Seven-day exposure loop",
+    "48-hour exposure loop",
     "Manual outreach",
     "Signals that count"
+  ]);
+  await checkPage("/guides/48-hour-exposure-sprint/", [
+    "48-Hour Exposure Sprint",
+    "The 48-hour sprint treats exposure as a validation system",
+    "Execution windows",
+    "Decision at hour 48",
+    "pivot_to_implementation"
   ]);
   await checkPage("/reports/route-evidence-dashboard/", ["Route Evidence Dashboard", "Route evidence table", "GSC pending"]);
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-22 48-hour exposure sprint",
     "M4-21 Route basis and first traffic foundation",
     "M4-20 Evidence-led value layer",
     "evidence-bounded route-selection service",

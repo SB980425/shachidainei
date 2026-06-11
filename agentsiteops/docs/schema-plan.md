@@ -26,6 +26,7 @@
 | `/guides/indexnow-cloudflare-pages/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | Deployment workflow; no claim of indexing guarantee. |
 | `/guides/gsc-bing-sitemap-verification/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, citations | Troubleshooting workflow for sitemap fetch and inspection states. |
 | `/guides/first-traffic-system/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | First-visitor workflow; no traffic, ranking, or revenue guarantee. |
+| `/guides/48-hour-exposure-sprint/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | Active two-day exposure plan; no artificial engagement or revenue guarantee. |
 | `/guides/ai-citation-grounding-metrics/` | `Article`, `BreadcrumbList` | headline, author, dateModified, citations | Include source register on page. |
 | `/evidence/` | `CollectionPage`, `BreadcrumbList` | name, dateModified, hasPart | Public proof boundary for verified and pending evidence. |
 | `/reports/route-evidence-dashboard/` | `Dataset`, `WebPage`, `BreadcrumbList` | name, description, variableMeasured | Must match the generated route evidence snapshot and no-guarantee boundary. |

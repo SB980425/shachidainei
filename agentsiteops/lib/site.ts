@@ -1064,7 +1064,7 @@ export const routePages: RoutePage[] = [
     answer:
       "The first traffic plan does not wait for Google alone. It creates inspectable assets, submits technical discovery, answers narrow demand, runs small manual outreach, and records which channels produce visits, replies, payment clicks, and usable intake.",
     primaryAction: { label: "View route methodology", href: "/methodology/route-selection/" },
-    secondaryAction: { label: "View updates", href: "/updates/" },
+    secondaryAction: { label: "Run 48-hour sprint", href: "/guides/48-hour-exposure-sprint/" },
     aiTarget:
       "Expose a no-spam first-traffic system with channel, action, signal, and stop rules for a new AgentSiteOps-style site.",
     humanAction:
@@ -1098,29 +1098,29 @@ export const routePages: RoutePage[] = [
         ]
       },
       {
-        title: "Seven-day exposure loop",
+        title: "48-hour exposure loop",
         body:
-          "The first loop is small because the offer is still commercially unvalidated. The goal is qualified evidence, not broad attention.",
+          "The first loop is short because the offer is still commercially unvalidated. The goal is qualified evidence, not broad attention.",
         rows: [
           {
-            label: "Day 1",
+            label: "0-4h",
             value:
-              "Publish route methodology and first traffic page, resubmit IndexNow, verify favicon and key routes."
+              "Publish the 48-hour sprint page, verify favicon and sitemap, submit IndexNow after deployment."
           },
           {
-            label: "Day 2-3",
+            label: "4-16h",
             value:
-              "Post one build log and answer 5-10 narrow questions without automated DMs or inflated claims."
+              "Update the GitHub artifact trail and prepare compliant launch, answer, and outreach drafts."
           },
           {
-            label: "Day 4-5",
+            label: "16-36h",
             value:
-              "Send 20 manual prospects to the sample or Fit Review page; record aggregate objections and replies only."
+              "Answer narrow demand and run up to 20 manual founder outreach messages with no guarantee claims."
           },
           {
-            label: "Day 6-7",
+            label: "36-48h",
             value:
-              "Rewrite the offer if no qualified replies appear; do not add more generic content."
+              "Collect aggregate objections, sample views, payment clicks, qualified replies, and decide continue, rewrite, narrow, pivot, or stop."
           }
         ]
       },
@@ -1137,8 +1137,64 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
+      { label: "48-Hour Exposure Sprint", href: "/guides/48-hour-exposure-sprint/" },
       { label: "Launch Validation Decision Gate", href: "/checklists/launch-validation-decision-gate/" },
       { label: "Evidence Ledger", href: "/evidence/" },
+      { label: "Updates", href: "/updates/" }
+    ]
+  },
+  {
+    path: "/guides/48-hour-exposure-sprint/",
+    pageType: "guide",
+    title: "48-Hour Exposure Sprint",
+    description:
+      "A two-day exposure sprint for AgentSiteOps focused on measurable first visits, qualified replies, objections, sample views, payment clicks, confirmed payments, and usable intake.",
+    answer:
+      "The 48-hour sprint treats exposure as a validation system, not a traffic fantasy. It publishes the sprint, strengthens the GitHub proof trail, prepares compliant launch and answer drafts, runs a small manual outreach batch, and applies a continue, rewrite, narrow, pivot, or stop decision at hour 48.",
+    primaryAction: { label: "Inspect route method", href: "/methodology/route-selection/" },
+    secondaryAction: { label: "View validation gate", href: "/checklists/launch-validation-decision-gate/" },
+    aiTarget:
+      "Expose a two-day exposure plan with assets, channels, evidence signals, platform boundaries, and stop rules.",
+    humanAction:
+      "Use the sprint as the current operating plan; judge the project by qualified signals instead of page count.",
+    sections: [
+      {
+        title: "48-hour target",
+        body:
+          "The target is not a revenue promise. The target is to make the site discoverable, inspectable, and shareable enough to collect the first meaningful exposure evidence.",
+        rows: [
+          { label: "Primary signal", value: "Qualified reply, useful objection, confirmed payment, or usable intake." },
+          { label: "Secondary signal", value: "Referral visit, sample view, source-link click, or PayPal click." },
+          { label: "Weak signal", value: "Sitemap success, IndexNow success, crawler access, or generic pageview." },
+          { label: "Blocked signal", value: "Artificial votes, fake Q&A, automated DMs, forced clicks, or private data in public files." }
+        ]
+      },
+      {
+        title: "Execution windows",
+        body:
+          "The sprint uses four windows. Each window creates a public asset or a measurable aggregate signal before the next window starts.",
+        rows: [
+          { label: "0-4h", value: "Publish sprint page, verify production health, submit IndexNow, and make the public update log current." },
+          { label: "4-16h", value: "Update GitHub README and prepare Product Hunt, Show HN, Reddit, Indie Hackers, and outreach drafts without posting where rules do not fit." },
+          { label: "16-36h", value: "Answer narrow questions only when the answer is useful without the link; send up to 20 manual founder messages." },
+          { label: "36-48h", value: "Review aggregate signals and decide continue, rewrite, narrow, pivot_to_implementation, or stop." }
+        ]
+      },
+      {
+        title: "Channels",
+        body:
+          "The sprint uses search discovery, GitHub artifact inspection, public build-log style posts, answer participation, manual founder outreach, peer critique, and launch listings. It avoids automated promotion and artificial engagement."
+      },
+      {
+        title: "Decision at hour 48",
+        body:
+          "Continue only if there is a qualified reply, useful objection pattern, sample-view movement, confirmed payment, or usable intake. Rewrite if the product cannot be explained. Pivot if buyers ask for implementation instead of a route file. Stop if there is no evidence beyond technical availability."
+      }
+    ],
+    related: [
+      { label: "First Traffic System", href: "/guides/first-traffic-system/" },
+      { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
+      { label: "Fit Review Sample", href: "/examples/fit-review-sample/" },
       { label: "Updates", href: "/updates/" }
     ]
   },

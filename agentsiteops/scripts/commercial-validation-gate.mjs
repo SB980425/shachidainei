@@ -15,6 +15,7 @@ const requiredRoutes = [
   "/checklists/launch-validation-decision-gate/",
   "/methodology/route-selection/",
   "/guides/first-traffic-system/",
+  "/guides/48-hour-exposure-sprint/",
   "/pricing/",
   "/compare/",
   "/starter-review/",
@@ -91,6 +92,8 @@ function checkCommercialBoundary() {
   const selfScoreChangeLog = read("data/self-score-change-log-template.csv");
   const routePatterns = read("data/route-pattern-library.csv");
   const trafficChannels = read("data/first-traffic-channel-plan.csv");
+  const exposureSprint = read("data/48-hour-exposure-sprint.csv");
+  const exposureTargets = read("data/exposure-submission-targets.csv");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -175,10 +178,17 @@ function checkCommercialBoundary() {
   requireText("route_selection", routePatterns, "Programmatic directory", "route-pattern library includes data route");
   requireText("route_selection", routePatterns, "common_stop_rule", "route-pattern library records stop rules");
   requireText("first_traffic", site, "The first traffic plan does not wait for Google alone", "first traffic guide states multi-channel exposure");
-  requireText("first_traffic", site, "Seven-day exposure loop", "first traffic guide includes seven-day loop");
+  requireText("first_traffic", site, "48-hour exposure loop", "first traffic guide includes 48-hour loop");
   requireText("first_traffic", trafficChannels, "Manual founder outreach", "first traffic channel plan includes manual outreach");
   requireText("first_traffic", trafficChannels, "Directory and launch listing", "first traffic channel plan includes launch listing channel");
   requireText("first_traffic", trafficChannels, "stop_or_rewrite_rule", "first traffic channel plan records stop rules");
+  requireText("exposure_sprint", site, "The 48-hour sprint treats exposure as a validation system", "48-hour sprint page states exposure validation boundary");
+  requireText("exposure_sprint", site, "continue, rewrite, narrow, pivot_to_implementation, or stop", "48-hour sprint page names decision outcomes");
+  requireText("exposure_sprint", exposureSprint, "0-4h", "48-hour sprint table includes first execution window");
+  requireText("exposure_sprint", exposureSprint, "confirmed payments", "48-hour sprint table tracks confirmed payment separately");
+  requireText("exposure_sprint", exposureTargets, "Product Hunt", "exposure targets include Product Hunt prep");
+  requireText("exposure_sprint", exposureTargets, "Show HN", "exposure targets include Show HN prep");
+  requireText("exposure_sprint", exposureTargets, "Do not automate DMs", "exposure targets block automated direct messages");
 
   addCheck("service_boundary", !/guaranteed rankings|guaranteed revenue|guaranteed customers/i.test(launch) ? "pass" : "fail", "launch copy avoids guarantee claims");
 }

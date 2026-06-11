@@ -12,6 +12,59 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-22 48-hour exposure sprint",
+    status: "completed",
+    keyPoints: [
+      "Changed the exposure plan from a seven-day loop to a 48-hour sprint because the current priority is first measurable exposure, not slow content expansion.",
+      "Added a public 48-Hour Exposure Sprint page that defines execution windows, channel boundaries, signal hierarchy, and the hour-48 continue, rewrite, narrow, pivot, or stop decision.",
+      "Added exposure sprint and submission-target data tables for Product Hunt preparation, Show HN preparation, Reddit rule boundaries, Indie Hackers style build-in-public drafting, GitHub artifact inspection, and founder direct outreach.",
+      "Added a GitHub README so the repository itself can serve as an inspectable exposure artifact instead of relying on private chat context."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect the live exposure operating plan: technical discovery, GitHub proof, compliant launch drafts, answer participation, manual outreach, peer critique, and a strict hour-48 decision gate.",
+    files: [
+      "README.md",
+      "app/guides/48-hour-exposure-sprint/page.tsx",
+      "data/48-hour-exposure-sprint.csv",
+      "data/exposure-submission-targets.csv",
+      "docs/48-hour-exposure-runbook.md",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "components/SiteAnalytics.tsx",
+      "docs/analytics-events.md",
+      "docs/analytics-plan.md",
+      "docs/site-brief.md",
+      "docs/schema-plan.md",
+      "docs/internal-linking.md",
+      "app/layout.tsx",
+      "app/page.tsx",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "commercial validation gate pass with 157 checks",
+      "analytics endpoint gate pass with endpoint disabled",
+      "route consistency gate pass with 235 checks",
+      "production build pass with 51 static pages",
+      "technical SEO CI pass for 45 routes",
+      "crawler access audit pass",
+      "growth snapshot baseline_ready with 45 routes",
+      "local Playwright render checks pass for home, 48-hour sprint, and first traffic pages on desktop and mobile",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 187 checks",
+      "production text checks pass for 48-hour sprint, first traffic system, and updates",
+      "IndexNow submit pass for 45 URLs"
+    ],
+    next:
+      "Deploy the 48-hour sprint, submit updated URLs, then use aggregate exposure signals to decide continue, rewrite, narrow, pivot_to_implementation, or stop."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-21 Route basis and first traffic foundation",
     status: "completed",
     keyPoints: [

@@ -258,6 +258,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/guides/48-hour-exposure-sprint/",
+      "pageType": "guide",
+      "template": "guide",
+      "cluster": "growth_validation",
+      "index": true,
+      "priority": 0.82,
+      "changefreq": "daily"
+    },
+    {
       "path": "/authors/",
       "pageType": "trust_page",
       "template": "author_index",

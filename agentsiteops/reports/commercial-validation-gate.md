@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T23:21:09.851Z
+- Generated: 2026-06-11T23:38:54.829Z
 - Status: pass
-- Checks: 148
+- Checks: 157
 - Blockers: 0
 
 ## Summary
@@ -27,6 +27,8 @@
 | app | pass | /methodology/route-selection/ has app page |
 | routes | pass | /guides/first-traffic-system/ registered in docs/routes.json |
 | app | pass | /guides/first-traffic-system/ has app page |
+| routes | pass | /guides/48-hour-exposure-sprint/ registered in docs/routes.json |
+| app | pass | /guides/48-hour-exposure-sprint/ has app page |
 | routes | pass | /pricing/ registered in docs/routes.json |
 | app | pass | /pricing/ has app page |
 | routes | pass | /compare/ registered in docs/routes.json |
@@ -128,10 +130,17 @@
 | route_selection | pass | route-pattern library includes data route |
 | route_selection | pass | route-pattern library records stop rules |
 | first_traffic | pass | first traffic guide states multi-channel exposure |
-| first_traffic | pass | first traffic guide includes seven-day loop |
+| first_traffic | pass | first traffic guide includes 48-hour loop |
 | first_traffic | pass | first traffic channel plan includes manual outreach |
 | first_traffic | pass | first traffic channel plan includes launch listing channel |
 | first_traffic | pass | first traffic channel plan records stop rules |
+| exposure_sprint | pass | 48-hour sprint page states exposure validation boundary |
+| exposure_sprint | pass | 48-hour sprint page names decision outcomes |
+| exposure_sprint | pass | 48-hour sprint table includes first execution window |
+| exposure_sprint | pass | 48-hour sprint table tracks confirmed payment separately |
+| exposure_sprint | pass | exposure targets include Product Hunt prep |
+| exposure_sprint | pass | exposure targets include Show HN prep |
+| exposure_sprint | pass | exposure targets block automated direct messages |
 | service_boundary | pass | launch copy avoids guarantee claims |
 | readiness_tool | pass | readiness tool has 13 weighted checks; found 13 |
 | readiness_tool | pass | readiness tool weights total 100 |

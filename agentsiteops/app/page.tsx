@@ -204,6 +204,10 @@ export default function HomePage() {
               <ArrowRight aria-hidden="true" size={17} />
               Inspect first traffic system
             </Link>
+            <Link className="secondary-action" href="/guides/48-hour-exposure-sprint/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Run 48-hour sprint
+            </Link>
           </div>
         </div>
 
@@ -366,6 +370,10 @@ export default function HomePage() {
           <Link className="secondary-action" href="/guides/first-traffic-system/">
             <ArrowRight aria-hidden="true" size={17} />
             View first visitor loop
+          </Link>
+          <Link className="secondary-action" href="/guides/48-hour-exposure-sprint/">
+            <ArrowRight aria-hidden="true" size={17} />
+            View 48-hour sprint
           </Link>
         </div>
       </section>

@@ -108,6 +108,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/templates/starter-pack/">Starter Pack</Link>
             <Link href="/reports/route-evidence-dashboard/">Evidence</Link>
             <Link href="/methodology/route-selection/">Route Method</Link>
+            <Link href="/guides/48-hour-exposure-sprint/">48h Sprint</Link>
             <Link href="/guides/first-traffic-system/">Traffic System</Link>
             <Link href="/authors/">Authors</Link>
             <Link href="/editorial-policy/">Editorial</Link>

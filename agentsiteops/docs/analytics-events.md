@@ -55,6 +55,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `scoring_model_limit_view` | `/methodology/website-opportunity-scoring/` load | `path` |
 | `route_selection_methodology_view` | `/methodology/route-selection/` load | `path` |
 | `first_traffic_system_view` | `/guides/first-traffic-system/` load | `path` |
+| `exposure_sprint_48h_view` | `/guides/48-hour-exposure-sprint/` load | `path` |
 | `launch_blueprint_legacy_view` | `/website-opportunity-audit/` load | `path` |
 | `launch_blueprint_pricing_view` | `/pricing/` load | `path` |
 | `launch_blueprint_sample_view` | `/sample/` load | `path` |

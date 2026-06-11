@@ -4,6 +4,14 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 
 ## Completed Batches
 
+### M4-22 48-Hour Exposure Sprint
+
+- Replaced the seven-day exposure loop with a 48-hour sprint focused on first measurable exposure.
+- Added `/guides/48-hour-exposure-sprint/` as the active public operating plan.
+- Added `data/48-hour-exposure-sprint.csv` and `data/exposure-submission-targets.csv` for execution windows, platform boundaries, and signal tracking.
+- Added `docs/48-hour-exposure-runbook.md` and root `README.md` so the GitHub repo can function as a public artifact trail.
+- Updated route registry, page registry, review actions, analytics events, site brief, schema plan, internal linking, homepage links, footer links, commercial gate, production health, and update log.
+
 ### M4-21 Route Basis And First Traffic Foundation
 
 - Added `/favicon.ico`, `/icon-32.png`, `/icon-192.png`, and `/apple-touch-icon.png` so browser tabs and platform previews do not depend only on SVG icon support.
