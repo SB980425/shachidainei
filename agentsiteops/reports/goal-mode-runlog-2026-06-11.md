@@ -81,6 +81,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Displayed the objection responses on `/pricing/` and `/compare/`.
 - Added visible pricing-page copy that tells unclear buyers not to pay yet and explains PayPal-hosted payment instead of direct card collection.
 - Extended commercial validation and production health checks so the objection layer remains visible.
+- Deployed the M4-14 update to Cloudflare Pages and submitted 41 URLs through IndexNow.
 
 ## Verification Snapshot
 
@@ -100,6 +101,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run production:health`: pass, 116 checks.
 - `npm run production:health`: pass, 117 checks after M4-12 deployment.
 - `npm run production:health`: pass, 118 checks after M4-13 deployment.
+- `npm run production:health`: pass, 130 checks after M4-14 deployment.
 - `npm run indexnow:submit`: pass, 41 URLs, HTTP 200.
 - Playwright static build checks passed for `/examples/fit-review-sample/`, `/starter-review/`, and `/pricing/` on desktop and mobile without horizontal overflow.
 - Final production read-only checks passed for `/examples/fit-review-sample/`, `/starter-review/`, `/pricing/`, `/evidence/`, `/updates/`, `/intake/`, `/buy/`, and `/sitemap.xml`.
@@ -109,7 +111,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Production domain: `https://agentsiteops.com`
 - Sitemap route count: 41.
 - Current branch: `codex/launch-blueprint-reset`.
-- Latest pushed commit at this log point before M4-13 evidence commit: `6f968fd Add search evidence import guardrail`.
+- Latest pushed commit at this log point before M4-14 evidence commit: `ddccc7d Add objection response conversion layer`.
 
 ## Current Risk Register
 

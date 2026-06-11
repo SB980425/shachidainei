@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T11:40:04.938Z
+- Generated: 2026-06-11T11:50:47.832Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 118
+- Checks: 130
 - Blockers: 0
 - Warnings: 0
 
@@ -40,6 +40,12 @@
 | /pricing/ | pass | USD | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | PayPal | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | canonical points to production URL | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | Objections that should block or redirect payment | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | I can ask ChatGPT for this. | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/pricing/) |
 | /examples/fit-review-sample/ | pass | HTTP 200 | [link](https://agentsiteops.com/examples/fit-review-sample/) |
 | /examples/fit-review-sample/ | pass | HTML title exists | [link](https://agentsiteops.com/examples/fit-review-sample/) |
 | /examples/fit-review-sample/ | pass | canonical points to production URL | [link](https://agentsiteops.com/examples/fit-review-sample/) |
@@ -59,6 +65,11 @@
 | /compare/ | pass | Compare AgentSiteOps before buying | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | Generic AI chat | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | Do not buy for these jobs | [link](https://agentsiteops.com/compare/) |
+| /compare/ | pass | HTTP 200 | [link](https://agentsiteops.com/compare/) |
+| /compare/ | pass | HTML title exists | [link](https://agentsiteops.com/compare/) |
+| /compare/ | pass | canonical points to production URL | [link](https://agentsiteops.com/compare/) |
+| /compare/ | pass | Common objections before payment | [link](https://agentsiteops.com/compare/) |
+| /compare/ | pass | I need someone to build it, not just advise. | [link](https://agentsiteops.com/compare/) |
 | /starter-review/ | pass | HTTP 200 | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | HTML title exists | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | canonical points to production URL | [link](https://agentsiteops.com/starter-review/) |
@@ -116,6 +127,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-14 Objection response conversion layer | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-13 Search evidence import guardrail | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-12 Manual outreach evidence loop | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-11 Delivery artifact templates | [link](https://agentsiteops.com/updates/) |
