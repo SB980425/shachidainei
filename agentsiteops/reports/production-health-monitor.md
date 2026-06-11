@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T14:46:40.141Z
+- Generated: 2026-06-11T15:04:38.838Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 150
+- Checks: 151
 - Blockers: 0
 - Warnings: 0
 
@@ -36,6 +36,7 @@
 | /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | canonical points to production URL | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | Choose the smallest purchase that can answer the decision | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | AgentSiteOps Launch Blueprint | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | Fit Review | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | USD | [link](https://agentsiteops.com/pricing/) |
@@ -80,9 +81,9 @@
 | /starter-review/ | pass | HTTP 200 | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | HTML title exists | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | canonical points to production URL | [link](https://agentsiteops.com/starter-review/) |
-| /starter-review/ | pass | Pay for a fit verdict | [link](https://agentsiteops.com/starter-review/) |
-| /starter-review/ | pass | USD 29 | [link](https://agentsiteops.com/starter-review/) |
-| /starter-review/ | pass | It can reject the sale | [link](https://agentsiteops.com/starter-review/) |
+| /starter-review/ | pass | Get a go, narrow, or stop verdict | [link](https://agentsiteops.com/starter-review/) |
+| /starter-review/ | pass | USD | [link](https://agentsiteops.com/starter-review/) |
+| /starter-review/ | pass | reject the larger sale | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/starter-review/) |
 | /buy/ | pass | HTTP 200 | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | HTML title exists | [link](https://agentsiteops.com/buy/) |

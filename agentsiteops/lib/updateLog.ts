@@ -13,7 +13,7 @@ export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
     step: "M4-19 Fit Review and pricing conversion simplification",
-    status: "in_progress",
+    status: "completed",
     keyPoints: [
       "Rebuilt the Fit Review page around a short go, narrow, or stop purchase verdict instead of a long explanation of the full launch system.",
       "Rebuilt the pricing page around a decision ladder: inspect for free, validate with USD 29, then buy the USD 99 blueprint only when evidence supports it.",
@@ -39,7 +39,9 @@ export const updateLog: UpdateLogEntry[] = [
       "crawler access audit pass",
       "growth snapshot baseline_ready",
       "local desktop and mobile UI checks pass for pricing and starter-review",
-      "pending production health"
+      "manual Cloudflare Pages deploy pass through Wrangler",
+      "production health pass",
+      "IndexNow submit pass for 42 URLs"
     ],
     next:
       "Verify the redesigned paid pages locally, deploy, then measure movement from homepage to Fit Review, sample, pricing, payment click, and usable intake."

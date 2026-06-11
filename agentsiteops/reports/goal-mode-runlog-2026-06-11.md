@@ -116,6 +116,15 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Verified local desktop and mobile screenshots with no horizontal overflow, visible primary CTA, visible validation panel, and readable dark-panel branding.
 - Pushed to `codex/launch-blueprint-reset`, fast-forwarded `master`, manually deployed Cloudflare Pages with Wrangler, ran production health, and submitted 42 URLs through IndexNow.
 
+### M4-19 Fit Review And Pricing Conversion Simplification
+
+- Rebuilt `/starter-review/` around the short paid decision: go, narrow, or stop before buying the full blueprint.
+- Rebuilt `/pricing/` around a decision ladder: inspect for free, validate with USD 29, then use USD 99 only when evidence supports it.
+- Reduced repeated explanatory sections and moved objection handling into compact payment-blocking cards.
+- Added shared conversion-page UI styles for decision heroes, dark decision tickets, offer cards, objection cards, and mobile-safe ladders.
+- Verified `/starter-review/` and `/pricing/` on desktop and mobile with no horizontal overflow, visible primary CTA, visible decision hero, and shorter body text.
+- Deployed the conversion-page update to Cloudflare Pages, verified production text, ran production health, and submitted 42 URLs through IndexNow.
+
 ## Verification Snapshot
 
 - `npm run lint`: pass.
@@ -128,6 +137,7 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run commercial:gate`: pass, 112 checks after adding the validation decision gate.
 - `npm run commercial:gate`: pass, 118 checks after adding the objective self-score.
 - `npm run commercial:gate`: pass, 127 checks after adding the self-score maintenance protocol.
+- `npm run commercial:gate`: pass, 127 checks after M4-19 conversion-page simplification.
 - `npm run routes:gate`: pass, 220 checks.
 - `npm run build`: pass, 47 generated static pages.
 - `npm run seo:ci`: pass, 42 routes, 0 blockers, 0 warnings.
@@ -142,10 +152,13 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run production:health`: pass, 147 checks after M4-16 deployment.
 - `npm run production:health`: pass, 149 checks after M4-17 deployment.
 - `npm run production:health`: pass, 150 checks after M4-18 deployment.
+- `npm run production:health`: pass, 151 checks after M4-19 deployment.
 - `npm run indexnow:submit`: pass, 42 URLs, HTTP 200.
 - `npm run indexnow:submit`: pass, 42 URLs, HTTP 200 after M4-18 deployment.
+- `npm run indexnow:submit`: pass, 42 URLs, HTTP 200 after M4-19 deployment.
 - Playwright static build checks passed for `/examples/fit-review-sample/`, `/starter-review/`, and `/pricing/` on desktop and mobile without horizontal overflow.
 - Playwright static build checks passed for `/` on desktop and mobile after M4-18 with visible primary CTA, visible validation panel, no horizontal overflow, and readable dark-panel branding.
+- Playwright static build checks passed for `/starter-review/` and `/pricing/` after M4-19 with visible primary CTA, visible decision hero, no horizontal overflow, and readable conversion cards.
 - Final production read-only checks passed for `/examples/fit-review-sample/`, `/starter-review/`, `/pricing/`, `/evidence/`, `/updates/`, `/intake/`, `/buy/`, and `/sitemap.xml`.
 
 ## Production State
