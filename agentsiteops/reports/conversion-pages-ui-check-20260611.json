@@ -1,0 +1,49 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "path": "/starter-review/",
+      "viewport": "desktop",
+      "screenshotStatus": "generated_and_inspected_locally_not_tracked",
+      "title": "Get a go, narrow, or stop verdict before you buy the full blueprint.",
+      "titleMatches": true,
+      "primaryCta": "Pay USD 29 for the verdict",
+      "heroVisible": true,
+      "horizontalOverflow": 0,
+      "bodyTextLength": 2317
+    },
+    {
+      "path": "/starter-review/",
+      "viewport": "mobile",
+      "screenshotStatus": "generated_and_inspected_locally_not_tracked",
+      "title": "Get a go, narrow, or stop verdict before you buy the full blueprint.",
+      "titleMatches": true,
+      "primaryCta": "Pay USD 29 for the verdict",
+      "heroVisible": true,
+      "horizontalOverflow": 0,
+      "bodyTextLength": 2258
+    },
+    {
+      "path": "/pricing/",
+      "viewport": "desktop",
+      "screenshotStatus": "generated_and_inspected_locally_not_tracked",
+      "title": "Choose the smallest purchase that can answer the decision.",
+      "titleMatches": true,
+      "primaryCta": "Pay USD 29",
+      "heroVisible": true,
+      "horizontalOverflow": 0,
+      "bodyTextLength": 5270
+    },
+    {
+      "path": "/pricing/",
+      "viewport": "mobile",
+      "screenshotStatus": "generated_and_inspected_locally_not_tracked",
+      "title": "Choose the smallest purchase that can answer the decision.",
+      "titleMatches": true,
+      "primaryCta": "Pay USD 29",
+      "heroVisible": true,
+      "horizontalOverflow": 0,
+      "bodyTextLength": 5211
+    }
+  ]
+}

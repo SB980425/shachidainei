@@ -4644,3 +4644,399 @@ textarea {
   }
 }
 
+.conversion-page {
+  background:
+    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.decision-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 420px);
+  gap: 28px;
+  align-items: stretch;
+  width: min(1180px, calc(100% - 40px));
+  margin: 24px auto 0;
+  padding: 40px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 26px;
+  background:
+    linear-gradient(90deg, rgba(3, 105, 161, 0.06) 1px, transparent 1px),
+    linear-gradient(rgba(13, 148, 136, 0.06) 1px, transparent 1px),
+    #ffffff;
+  background-size: 30px 30px;
+  box-shadow: 0 22px 70px rgba(15, 23, 42, 0.09);
+}
+
+.decision-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 0%, rgba(245, 158, 11, 0.11) 42%, transparent 58%);
+  transform: translateX(-80%);
+  animation: aso-scan 9s ease-in-out infinite;
+}
+
+.decision-hero-copy,
+.decision-ticket {
+  position: relative;
+  z-index: 1;
+}
+
+.decision-hero-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 430px;
+}
+
+.decision-hero h1 {
+  max-width: 820px;
+  margin: 0;
+  color: #07111f;
+  font-size: 56px;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.decision-hero-copy > p:not(.eyebrow) {
+  max-width: 720px;
+  margin: 20px 0 0;
+  color: #334155;
+  font-size: 19px;
+  line-height: 1.58;
+}
+
+.decision-ticket {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 430px;
+  padding: 24px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 22px;
+  background: #0f172a;
+  color: #e2e8f0;
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.18);
+}
+
+.pricing-ticket {
+  background:
+    linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(145deg, #0f172a 0%, #102337 54%, #17302d 100%);
+  background-size: 28px 28px, 28px 28px, auto;
+}
+
+.decision-ticket .receipt-topline {
+  margin-bottom: 2px;
+}
+
+.decision-ticket .receipt-topline span {
+  color: #93c5fd;
+}
+
+.decision-ticket .receipt-topline strong {
+  color: #f8fafc;
+}
+
+.decision-ticket h2 {
+  margin: 0;
+  color: #f8fafc;
+  font-size: 28px;
+  line-height: 1.08;
+}
+
+.decision-ticket p,
+.decision-ticket small {
+  color: #cbd5e1;
+  line-height: 1.58;
+}
+
+.decision-ticket .primary-action {
+  width: 100%;
+  margin-top: auto;
+}
+
+.verdict-stack-light span {
+  border-color: rgba(226, 232, 240, 0.22);
+  background: rgba(15, 23, 42, 0.28);
+}
+
+.decision-facts {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.decision-facts div {
+  padding: 12px;
+  border: 1px solid rgba(226, 232, 240, 0.16);
+  border-radius: 14px;
+  background: rgba(15, 23, 42, 0.28);
+}
+
+.decision-facts dt {
+  margin-bottom: 5px;
+  color: #93c5fd;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.decision-facts dd {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.decision-card-grid,
+.offer-choice-grid,
+.objection-grid {
+  display: grid;
+  gap: 14px;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.decision-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.decision-card-grid article,
+.objection-grid article {
+  min-height: 210px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 14px 44px rgba(15, 23, 42, 0.06);
+}
+
+.decision-card-grid article > svg,
+.objection-grid article > svg,
+.offer-choice-card > svg {
+  color: #0369a1;
+}
+
+.decision-card-grid h3,
+.objection-grid h3 {
+  margin: 14px 0 8px;
+  color: #0f172a;
+  font-size: 20px;
+  line-height: 1.16;
+}
+
+.decision-card-grid p,
+.objection-grid p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.56;
+}
+
+.objection-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.objection-grid small {
+  display: block;
+  margin-top: 14px;
+  color: #92400e;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.decision-ladder {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.07);
+}
+
+.decision-ladder article {
+  display: flex;
+  min-height: 190px;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  border-right: 1px solid var(--line);
+}
+
+.decision-ladder article:last-child {
+  border-right: 0;
+}
+
+.decision-ladder span {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-weight: 900;
+}
+
+.decision-ladder strong {
+  color: #0f172a;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.decision-ladder h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+}
+
+.decision-ladder p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.55;
+}
+
+.decision-ladder .primary-action,
+.decision-ladder .secondary-action {
+  margin-top: auto;
+  width: 100%;
+}
+
+.offer-choice-grid {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+}
+
+.offer-choice-card {
+  display: flex;
+  min-height: 560px;
+  flex-direction: column;
+  gap: 14px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 16px 50px rgba(15, 23, 42, 0.07);
+}
+
+.offer-choice-card-primary {
+  border-color: rgba(3, 105, 161, 0.36);
+  background:
+    linear-gradient(90deg, rgba(3, 105, 161, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(13, 148, 136, 0.06) 1px, transparent 1px),
+    #ffffff;
+  background-size: 28px 28px;
+}
+
+.offer-choice-card h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 26px;
+  line-height: 1.08;
+}
+
+.offer-choice-card strong {
+  color: #0f172a;
+  font-size: 38px;
+  line-height: 1;
+}
+
+.offer-choice-card p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.offer-choice-card .primary-action,
+.offer-choice-card .secondary-action {
+  width: 100%;
+  margin-top: auto;
+}
+
+@media (max-width: 980px) {
+  .decision-hero,
+  .pricing-decision-hero {
+    grid-template-columns: 1fr;
+    width: min(100% - 28px, 720px);
+    padding: 28px;
+  }
+
+  .decision-hero-copy,
+  .decision-ticket {
+    min-height: auto;
+  }
+
+  .decision-hero h1 {
+    font-size: 44px;
+    line-height: 1;
+  }
+
+  .decision-card-grid,
+  .objection-grid,
+  .decision-ladder,
+  .offer-choice-grid {
+    grid-template-columns: 1fr;
+    width: min(100% - 28px, 720px);
+  }
+
+  .decision-ladder article {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .decision-ladder article:last-child {
+    border-bottom: 0;
+  }
+
+  .offer-choice-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .decision-hero {
+    width: min(100% - 20px, 430px);
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .decision-hero h1 {
+    font-size: 36px;
+  }
+
+  .decision-hero-copy > p:not(.eyebrow) {
+    font-size: 17px;
+  }
+
+  .decision-card-grid,
+  .objection-grid,
+  .decision-ladder,
+  .offer-choice-grid {
+    width: min(100% - 20px, 430px);
+  }
+
+  .decision-ticket,
+  .offer-choice-card,
+  .decision-card-grid article,
+  .objection-grid article {
+    border-radius: 18px;
+    padding: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .decision-hero::before {
+    animation: none;
+  }
+}
+

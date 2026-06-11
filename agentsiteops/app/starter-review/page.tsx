@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle2, CreditCard, FileText, ShieldAlert, ShieldCheck } from "lucide-react";
+import { ArrowRight, BadgeDollarSign, CheckCircle2, CreditCard, FileText, ShieldAlert, TimerReset } from "lucide-react";
 import {
   starterReviewAcceptanceCriteria,
   starterReviewDeliverables,
@@ -10,7 +10,6 @@ import { primaryOffer, starterOffer } from "@/lib/payments";
 import { siteUrl } from "@/lib/site";
 
 const path = "/starter-review/";
-const deliverableTitles = ["Verdict", "Blocker", "Missing evidence", "Fit note", "Recommendation"];
 
 export const metadata: Metadata = {
   title: "Fit Review",
@@ -27,6 +26,27 @@ export const metadata: Metadata = {
     type: "website"
   }
 };
+
+const decisionCards = [
+  {
+    title: "One verdict",
+    body: starterReviewDeliverables[0]
+  },
+  {
+    title: "One blocker",
+    body: starterReviewDeliverables[1]
+  },
+  {
+    title: "One next step",
+    body: starterReviewDeliverables[4]
+  }
+];
+
+const processSteps = [
+  "Pay with PayPal and send the intake facts.",
+  "The review checks buyer fit, proof, risk, and route clarity.",
+  "You receive a short verdict that can approve, narrow, or reject the larger sale."
+];
 
 export default function Page() {
   const jsonLd = {
@@ -46,22 +66,21 @@ export default function Page() {
   };
 
   return (
-    <main className="pricing-page">
+    <main className="pricing-page conversion-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="pricing-hero">
-        <div>
-          <p className="eyebrow">Lower-friction purchase test</p>
-          <h1>Pay for a fit verdict before buying the full blueprint.</h1>
+      <section className="decision-hero">
+        <div className="decision-hero-copy">
+          <p className="eyebrow">USD {starterOffer.price} fit verdict</p>
+          <h1>Get a go, narrow, or stop verdict before you buy the full blueprint.</h1>
           <p>
-            The Fit Review is a USD {starterOffer.price} manual check for buyers who are
-            unsure whether the USD {primaryOffer.price} Launch Blueprint is worth buying.
-            It returns a go, narrow, or stop decision instead of a full launch artifact.
+            The Fit Review is the smallest paid step. It exists to reject the larger sale
+            when your offer, buyer, evidence, or execution route is not ready.
           </p>
-          <div className="hero-actions">
+          <div className="hero-actions hero-actions-tight">
             <a
               className="primary-action"
               data-analytics-event="payment_cta_click"
@@ -72,68 +91,68 @@ export default function Page() {
               target="_blank"
             >
               <CreditCard aria-hidden="true" size={17} />
-              Pay USD {starterOffer.price}
+              Pay USD {starterOffer.price} for the verdict
             </a>
-            <Link className="secondary-action" href="/intake/">
-              <FileText aria-hidden="true" size={17} />
-              View intake fields
-            </Link>
             <Link className="secondary-action" href="/examples/fit-review-sample/">
               <FileText aria-hidden="true" size={17} />
-              View sample review
+              See sample
             </Link>
-            <Link className="secondary-action" href="/pricing/">
-              <CheckCircle2 aria-hidden="true" size={17} />
-              Compare offers
+            <Link className="secondary-action" href="/intake/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Intake fields
             </Link>
           </div>
         </div>
-        <aside className="pricing-receipt" aria-label="Fit Review offer">
+
+        <aside className="decision-ticket" aria-label="Fit Review decision card">
           <div className="receipt-topline">
             <span>Manual review</span>
             <strong>USD {starterOffer.price}</strong>
           </div>
           <h2>{starterOffer.name}</h2>
-          <p>{starterReviewProduct.timeline}</p>
-          <small>{starterReviewProduct.nonPromise}</small>
+          <div className="verdict-stack verdict-stack-light">
+            <span>
+              <CheckCircle2 aria-hidden="true" size={14} />
+              Go
+            </span>
+            <span className="is-active">
+              <TimerReset aria-hidden="true" size={14} />
+              Narrow
+            </span>
+            <span>
+              <ShieldAlert aria-hidden="true" size={14} />
+              Stop
+            </span>
+          </div>
+          <dl className="decision-facts">
+            <div>
+              <dt>Delivery</dt>
+              <dd>{starterReviewProduct.timeline}</dd>
+            </div>
+            <div>
+              <dt>Scope</dt>
+              <dd>Short verdict, not a full launch artifact.</dd>
+            </div>
+            <div>
+              <dt>Boundary</dt>
+              <dd>Can reject the larger sale before the USD {primaryOffer.price} blueprint.</dd>
+            </div>
+          </dl>
         </aside>
       </section>
 
-      <section className="pricing-grid-section">
+      <section className="pricing-grid-section compact-home-section">
         <div className="section-head">
-          <h2>What the review returns</h2>
+          <h2>What you receive</h2>
           <p>
-            This is not a cheaper version of the full blueprint. It is a purchase filter
-            that can reject the larger sale when the evidence is not ready.
+            The output is intentionally narrow. It answers the payment decision before
+            more site, UI, content, or automation work begins.
           </p>
         </div>
-        <div className="pricing-grid">
-          {starterReviewDeliverables.map((item, index) => (
-            <article key={item}>
-              <span aria-hidden="true">
-                <CheckCircle2 size={18} />
-              </span>
-              <h3>{deliverableTitles[index]}</h3>
-              <p>{item}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="pricing-grid-section">
-        <div className="section-head">
-          <h2>Acceptance criteria</h2>
-          <p>
-            A useful review is allowed to say no. If it only pushes every buyer toward
-            the USD {primaryOffer.price} blueprint, the review has failed its own purpose.
-          </p>
-        </div>
-        <div className="pricing-grid">
-          {starterReviewAcceptanceCriteria.map((item) => (
+        <div className="decision-card-grid">
+          {decisionCards.map((item) => (
             <article key={item.title}>
-              <span aria-hidden="true">
-                <ShieldCheck size={18} />
-              </span>
+              <BadgeDollarSign aria-hidden="true" size={18} />
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
@@ -141,52 +160,64 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="pricing-grid-section split-section gate-split">
+      <section className="pricing-grid-section split-section gate-split compact-home-section">
         <div>
-          <h2>Buy the Fit Review when</h2>
+          <h2>Buy when</h2>
           <ul className="compact-list">
-            <li>You can build or deliver, but the offer and buyer are still unclear.</li>
-            <li>You want a smaller paid check before the full Launch Blueprint.</li>
-            <li>You accept a short verdict instead of a complete landing page and outreach artifact.</li>
-            <li>You can send enough evidence for a reviewer to judge fit within 24 hours.</li>
+            <li>You can build or deliver, but the buyer and offer are still unclear.</li>
+            <li>You need a paid decision before buying the full USD {primaryOffer.price} blueprint.</li>
+            <li>You can send enough evidence for a 24-hour manual review.</li>
           </ul>
         </div>
         <div>
-          <h2>Do not buy it when</h2>
+          <h2>Do not buy when</h2>
           <ul className="compact-list">
             <li>You need guaranteed traffic, rankings, citations, revenue, or customers.</li>
             <li>You need legal, financial, medical, tax, safety, or other regulated advice.</li>
-            <li>You already know the buyer and only need the full blueprint deliverable.</li>
-            <li>You expect a dashboard, account portal, or automated checkout workflow.</li>
+            <li>You expect a dashboard, login, subscription, or automated fulfillment.</li>
           </ul>
         </div>
       </section>
 
-      <section className="pricing-grid-section split-section gate-split">
-        <div>
-          <h2>If the verdict is go</h2>
+      <section className="pricing-grid-section compact-home-section">
+        <div className="section-head">
+          <h2>How the review works</h2>
           <p>
-            The review can recommend the full Launch Blueprint only when the intake shows
-            a plausible buyer, deliverable, proof path, and seven-day execution route.
+            Payment alone is not enough. A usable intake is required before the verdict
+            can be delivered.
           </p>
-          <Link className="secondary-action" href="/buy/">
-            <CreditCard aria-hidden="true" size={17} />
-            View full blueprint
-          </Link>
-          <Link className="secondary-action" href="/examples/fit-review-sample/">
-            <FileText aria-hidden="true" size={17} />
-            View sample
-          </Link>
         </div>
-        <div>
-          <h2>If the verdict is stop</h2>
-          <p>
-            The review should name the missing evidence or blocked route. That result is
-            still useful because it prevents paying for a larger artifact too early.
-          </p>
-          <Link className="secondary-action" href="/refund-policy/">
-            <ShieldAlert aria-hidden="true" size={17} />
-            Read refund boundary
+        <div className="decision-ladder">
+          {processSteps.map((step, index) => (
+            <article key={step}>
+              <span>{index + 1}</span>
+              <p>{step}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="pricing-grid-section compact-home-section evidence-disclosure">
+        <div className="section-head">
+          <h2>Acceptance rule</h2>
+          <p>{starterReviewAcceptanceCriteria[0].body}</p>
+        </div>
+        <div className="hero-actions">
+          <a
+            className="primary-action"
+            data-analytics-event="payment_cta_click"
+            data-analytics-label="starter_review_bottom_paypal"
+            data-analytics-type="starter_review"
+            href={starterOffer.href}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <CreditCard aria-hidden="true" size={17} />
+            Pay USD {starterOffer.price}
+          </a>
+          <Link className="secondary-action" href="/pricing/">
+            <ArrowRight aria-hidden="true" size={17} />
+            Compare offers
           </Link>
         </div>
       </section>

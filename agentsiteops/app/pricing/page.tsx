@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, CreditCard, DatabaseZap, FileText, Mail, ShieldCheck } from "lucide-react";
+import { ArrowRight, BadgeDollarSign, CheckCircle2, CreditCard, FileText, Mail, ShieldCheck } from "lucide-react";
 import {
   authorityBoundaries,
   blueprintEvidenceInputs,
@@ -8,7 +8,6 @@ import {
   launchProduct,
   pricingBenchmarks,
   purchaseObjectionResponses,
-  starterReviewAcceptanceCriteria,
   starterReviewDeliverables,
   starterReviewProduct
 } from "@/lib/launch";
@@ -51,83 +50,139 @@ const jsonLd = {
   }
 };
 
-const launchDeliverableCards = [
-  { title: "Primary offer", body: launchDeliverables[0] },
-  { title: "Target buyer", body: launchDeliverables[1] },
-  { title: "Landing page structure", body: launchDeliverables[2] },
-  { title: "Pricing boundary", body: launchDeliverables[3] }
+const ladder = [
+  {
+    title: "Inspect",
+    price: "Free",
+    body: "Read the sample and fit checker before opening a payment link.",
+    href: "/examples/fit-review-sample/",
+    action: "View sample"
+  },
+  {
+    title: "Validate",
+    price: `USD ${starterOffer.price}`,
+    body: starterOffer.fit,
+    href: "/starter-review/",
+    action: "Choose Fit Review"
+  },
+  {
+    title: "Build route",
+    price: `USD ${primaryOffer.price}`,
+    body: primaryOffer.fit,
+    href: "/buy/",
+    action: "View blueprint"
+  }
 ];
+
+const compactEvidence = blueprintEvidenceInputs.slice(0, 3);
+const compactObjections = purchaseObjectionResponses.slice(0, 3);
 
 export default function Page() {
   return (
-    <main className="pricing-page">
+    <main className="pricing-page conversion-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="pricing-hero">
-        <div>
-          <p className="eyebrow">Validation-stage pricing</p>
-          <h1>Start with a fit review or buy the full Launch Blueprint.</h1>
+      <section className="decision-hero pricing-decision-hero">
+        <div className="decision-hero-copy">
+          <p className="eyebrow">Transparent manual pricing</p>
+          <h1>Choose the smallest purchase that can answer the decision.</h1>
           <p>
-            The site now has two bounded manual offers. Use the USD {starterOffer.price} fit
-            review if the purchase decision is uncertain. Use the USD {primaryOffer.price}
-            Launch Blueprint only when one sellable offer, page structure, and outreach path
-            are the real bottleneck.
+            AgentSiteOps has two paid paths: a USD {starterOffer.price} Fit Review and a
+            USD {primaryOffer.price} AgentSiteOps Launch Blueprint. Start small when the
+            route is uncertain.
           </p>
+          <div className="hero-actions hero-actions-tight">
+            <a
+              className="primary-action"
+              data-analytics-event="payment_cta_click"
+              data-analytics-label="pricing_hero_paypal_fit_review"
+              data-analytics-type="starter_review"
+              href={starterOffer.href}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <CreditCard aria-hidden="true" size={17} />
+              Pay USD {starterOffer.price}
+            </a>
+            <Link className="secondary-action" href="/starter-review/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Fit Review details
+            </Link>
+            <Link className="secondary-action" href="/sample/">
+              <FileText aria-hidden="true" size={17} />
+              Blueprint sample
+            </Link>
+          </div>
         </div>
-        <aside className="pricing-receipt" aria-label="Current paid offer">
+
+        <aside className="decision-ticket pricing-ticket" aria-label="Pricing summary">
           <div className="receipt-topline">
             <span>Lowest entry</span>
             <strong>USD {starterOffer.price}</strong>
           </div>
           <h2>{starterOffer.name}</h2>
           <p>{starterOffer.delivery}</p>
-          <Link className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
-            <CheckCircle2 aria-hidden="true" size={17} />
-            Check fit first
-          </Link>
+          <small>
+            Payment opens PayPal. PayPal-hosted payment instead of collecting card data directly.
+          </small>
           <a
             className="primary-action"
             data-analytics-event="payment_cta_click"
-            data-analytics-label="pricing_paypal_fit_review"
+            data-analytics-label="pricing_ticket_paypal_fit_review"
             data-analytics-type="starter_review"
             href={starterOffer.href}
             rel="noreferrer"
             target="_blank"
           >
             <CreditCard aria-hidden="true" size={17} />
-            Pay USD {starterOffer.price}
+            Pay with PayPal
           </a>
-          <Link className="secondary-action" href="/starter-review/">
-            <ArrowRight aria-hidden="true" size={17} />
-            View fit review
-          </Link>
-          <small>
-            Payment opens PayPal. The review can recommend not buying the full blueprint.
-          </small>
         </aside>
       </section>
 
-      <section className="pricing-grid-section">
+      <section className="pricing-grid-section compact-home-section">
         <div className="section-head">
-          <h2>Choose the smallest useful purchase</h2>
+          <h2>Decision ladder</h2>
           <p>
-            The lower-priced review exists because a new product should not force every
-            uncertain buyer into a USD {primaryOffer.price} decision before fit is proven.
+            The full blueprint should not be the first click for every visitor. Move only
+            as far as the evidence supports.
           </p>
         </div>
-        <div className="pricing-grid pricing-grid-two">
-          <article className="offer-card-primary">
-            <span aria-hidden="true">
-              <CheckCircle2 size={18} />
-            </span>
+        <div className="decision-ladder decision-ladder-pricing">
+          {ladder.map((item, index) => (
+            <article key={item.title}>
+              <span>{index + 1}</span>
+              <strong>{item.price}</strong>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+              <Link className={index === 1 ? "primary-action" : "secondary-action"} href={item.href}>
+                <ArrowRight aria-hidden="true" size={17} />
+                {item.action}
+              </Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="pricing-grid-section compact-home-section">
+        <div className="section-head">
+          <h2>Offer comparison</h2>
+          <p>
+            Use the Fit Review to answer whether the larger Launch Blueprint should exist
+            for your current evidence.
+          </p>
+        </div>
+        <div className="offer-choice-grid">
+          <article className="offer-choice-card offer-choice-card-primary">
+            <BadgeDollarSign aria-hidden="true" size={20} />
             <h3>{starterOffer.name}</h3>
             <strong>USD {starterOffer.price}</strong>
-            <p>{starterOffer.delivery}</p>
+            <p>{starterReviewProduct.promise}</p>
             <ul className="compact-list">
-              {starterReviewDeliverables.slice(0, 4).map((item) => (
+              {starterReviewDeliverables.slice(0, 3).map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
@@ -143,15 +198,10 @@ export default function Page() {
               <CreditCard aria-hidden="true" size={17} />
               Pay USD {starterOffer.price}
             </a>
-            <Link className="secondary-action" href="/examples/fit-review-sample/">
-              <FileText aria-hidden="true" size={17} />
-              View sample review
-            </Link>
           </article>
-          <article>
-            <span aria-hidden="true">
-              <FileText size={18} />
-            </span>
+
+          <article className="offer-choice-card">
+            <FileText aria-hidden="true" size={20} />
             <h3>{primaryOffer.name}</h3>
             <strong>USD {primaryOffer.price}</strong>
             <p>{primaryOffer.delivery}</p>
@@ -176,20 +226,15 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="pricing-grid-section">
+      <section className="pricing-grid-section compact-home-section">
         <div className="section-head">
-          <h2>What USD {primaryOffer.price} buys</h2>
-          <p>
-            The value is not another score. It is compressed judgment and launch material
-            that can be used immediately in the first validation cycle.
-          </p>
+          <h2>Why the route can be trusted only so far</h2>
+          <p>{authorityBoundaries[0]}</p>
         </div>
-        <div className="pricing-grid">
-          {launchDeliverableCards.map((item) => (
+        <div className="decision-card-grid">
+          {compactEvidence.map((item) => (
             <article key={item.title}>
-              <span aria-hidden="true">
-                <CheckCircle2 size={18} />
-              </span>
+              <CheckCircle2 aria-hidden="true" size={18} />
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
@@ -197,179 +242,53 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="pricing-grid-section">
-        <div className="section-head">
-          <h2>What USD {starterReviewProduct.price} buys</h2>
-          <p>
-            The fit review is intentionally smaller. Its job is to prevent a weak or
-            wrong-fit buyer from purchasing the full blueprint too early.
-          </p>
-        </div>
-        <div className="pricing-grid">
-          {starterReviewAcceptanceCriteria.map((item) => (
-            <article key={item.title}>
-              <span aria-hidden="true">
-                <ShieldCheck size={18} />
-              </span>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="pricing-grid-section">
-        <div className="section-head">
-          <h2>Data source and accuracy boundary</h2>
-          <p>
-            The route is not generated from confidence alone. It is assembled from declared
-            inputs, visible evidence, and explicit stop conditions.
-          </p>
-        </div>
-        <div className="pricing-grid">
-          {blueprintEvidenceInputs.map((item) => (
-            <article key={item.title}>
-              <span aria-hidden="true">
-                <DatabaseZap size={18} />
-              </span>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-        <div className="authority-note">
-          {authorityBoundaries.map((item) => (
-            <p key={item}>{item}</p>
-          ))}
-        </div>
-      </section>
-
-      <section className="pricing-grid-section">
-        <div className="section-head">
-          <h2>Pricing position</h2>
-          <p>
-            USD {primaryOffer.price} is not priced as ongoing SEO or AI-monitoring software.
-            It is priced as a single manual decision artifact for the first validation cycle.
-          </p>
-        </div>
-        <div className="comparison-table" role="table" aria-label="Pricing comparison">
-          <div role="row">
-            <strong role="columnheader">Option</strong>
-            <strong role="columnheader">Price shape</strong>
-            <strong role="columnheader">What it is better for</strong>
-          </div>
-          {pricingBenchmarks.map((item) => (
-            <a
-              href={item.href}
-              key={item.name}
-              rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-              role="row"
-              target={item.href.startsWith("http") ? "_blank" : undefined}
-            >
-              <span role="cell">{item.name}</span>
-              <span role="cell">{item.price}</span>
-              <span role="cell">{item.position}</span>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section className="pricing-grid-section">
+      <section className="pricing-grid-section compact-home-section">
         <div className="section-head">
           <h2>Objections that should block or redirect payment</h2>
           <p>
-            Payment should happen only when the buyer understands why this is different
-            from generic AI chat, software, consulting, and implementation services.
-            If the sample deliverables and fit checker do not make the value clear, do not pay yet.
-            For trust, this site uses PayPal-hosted payment instead of collecting card data directly.
+            If these answers do not make the value clear, do not pay. The current product
+            is manual judgment, not software, traffic, or implementation.
           </p>
         </div>
-        <div className="pricing-grid">
-          {purchaseObjectionResponses.map((item) => (
+        <div className="objection-grid">
+          {compactObjections.map((item) => (
             <article key={item.objection}>
-              <span aria-hidden="true">
-                <ShieldCheck size={18} />
-              </span>
+              <ShieldCheck aria-hidden="true" size={18} />
               <h3>{item.objection}</h3>
               <p>{item.response}</p>
-              <p>{item.proofPath}</p>
               <small>{item.nextAction}</small>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="pricing-grid-section split-section gate-split">
+      <section className="pricing-grid-section split-section gate-split compact-home-section">
         <div>
-          <h2>Payment path</h2>
+          <h2>Pricing position</h2>
           <ul className="compact-list">
-            <li>Use the Launch Blueprint Fit Checker before opening PayPal.</li>
-            <li>Use the PayPal button only if the result is strong fit or possible fit.</li>
-            <li>After payment, open the intake page and send project details to the support email.</li>
-            <li>PayPal handles payment data; this static site does not collect card details.</li>
-            <li>Full PayPal Checkout API is deferred until automated order handling is required.</li>
+            {pricingBenchmarks.slice(0, 3).map((item) => (
+              <li key={item.name}>
+                {item.name}: {item.price}. {item.position}
+              </li>
+            ))}
           </ul>
         </div>
         <div>
           <h2>Service limits</h2>
           <ul className="compact-list">
             <li>{launchProduct.nonPromise}</li>
-            <li>Automated platform DMs, comments, or spam workflows are not included.</li>
-            <li>Refund boundaries and delivery limits are written before payment.</li>
-            <li>Login, dashboard, and subscription features are intentionally deferred.</li>
+            <li>No login account, dashboard, or subscription workspace.</li>
+            <li>No automated DMs, comments, scraping, or platform growth scripts.</li>
+            <li>Manual delivery starts after payment confirmation and usable intake.</li>
           </ul>
           <div className="hero-actions">
-            <Link className="secondary-action" href="/sample/">
-              <FileText aria-hidden="true" size={17} />
-              View sample
-            </Link>
-            <Link className="secondary-action" href="/compare/">
-              <ArrowRight aria-hidden="true" size={17} />
-              Compare options
-            </Link>
             <Link className="secondary-action" href="/refund-policy/">
               <ShieldCheck aria-hidden="true" size={17} />
               Refund policy
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="pricing-grid-section split-section gate-split">
-        <div>
-          <h2>After payment</h2>
-          <p>
-            Send the intake details from the intake page to{" "}
-            <a href={`mailto:${launchProduct.supportEmail}`}>{launchProduct.supportEmail}</a>.
-            The blueprint is delivered manually by email or document link.
-          </p>
-        </div>
-        <div>
-          <h2>Ready path</h2>
-          <div className="hero-actions">
-            <Link className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
-              <CheckCircle2 aria-hidden="true" size={17} />
-              Check fit
-            </Link>
-            <a
-              className="primary-action"
-              data-analytics-event="payment_cta_click"
-              data-analytics-label="pricing_bottom_paypal_launch_blueprint"
-              data-analytics-type="launch_blueprint"
-              href={primaryOffer.href}
-              rel="noreferrer"
-              target="_blank"
-            >
-              <CreditCard aria-hidden="true" size={17} />
-              Pay with PayPal
-            </a>
             <Link className="secondary-action" href="/intake/">
               <Mail aria-hidden="true" size={17} />
-              View intake
-            </Link>
-            <Link className="secondary-action" href="/buy/">
-              <ArrowRight aria-hidden="true" size={17} />
-              Buy page
+              Intake
             </Link>
           </div>
         </div>

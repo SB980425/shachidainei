@@ -268,14 +268,14 @@ async function main() {
     "Fit Review",
     "52/100"
   ]);
-  await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "Fit Review", "USD", "PayPal"]);
+  await checkPage("/pricing/", ["Choose the smallest purchase that can answer the decision", "AgentSiteOps Launch Blueprint", "Fit Review", "USD", "PayPal"]);
   await checkPage("/pricing/", ["Objections that should block or redirect payment", "I can ask ChatGPT for this."]);
   await checkPage("/examples/fit-review-sample/", ["A smaller paid verdict", "Do not buy the USD 99 blueprint yet", "It does not prove traffic"]);
   await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "What the paid file must contain", "Check fit first"]);
   await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
   await checkPage("/compare/", ["Common objections before payment", "I need someone to build it, not just advise."]);
   await checkPage("/examples/agentsiteops-self-audit/", ["AgentSiteOps Self-Audit Sample", "52/100", "commercially unvalidated"]);
-  await checkPage("/starter-review/", ["Pay for a fit verdict", "USD 29", "It can reject the sale"]);
+  await checkPage("/starter-review/", ["Get a go, narrow, or stop verdict", "USD", "reject the larger sale"]);
   await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "Acceptance criteria", "If the route is not ready"]);
   await checkPage("/intake/", ["Order Intake", "Email intake", "Payment confirmation", "Manual delivery process"]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Current objective self-score", "Score update rules", "52/100", "Claims not made"]);
