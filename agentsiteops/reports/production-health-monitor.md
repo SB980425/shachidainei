@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T12:59:41.940Z
+- Generated: 2026-06-11T13:08:47.823Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 147
+- Checks: 149
 - Blockers: 0
 - Warnings: 0
 
@@ -104,6 +104,7 @@
 | /evidence/ | pass | Evidence Ledger | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Verified evidence | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Current objective self-score | [link](https://agentsiteops.com/evidence/) |
+| /evidence/ | pass | Score update rules | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | 52/100 | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Claims not made | [link](https://agentsiteops.com/evidence/) |
 | /tools/audit-scope-builder/ | pass | HTTP 200 | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
@@ -142,6 +143,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-17 Self-score maintenance protocol | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-16 Objective self-score calibration | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-15 Launch validation decision gate | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-14 Objection response conversion layer | [link](https://agentsiteops.com/updates/) |

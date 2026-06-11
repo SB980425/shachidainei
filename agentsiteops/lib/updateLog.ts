@@ -40,7 +40,8 @@ export const updateLog: UpdateLogEntry[] = [
       "crawler access audit pass",
       "search evidence import waiting_for_exports",
       "growth snapshot baseline_ready",
-      "production health pending after deployment"
+      "production health pass",
+      "IndexNow submit pass for 42 URLs"
     ],
     next:
       "Use the protocol before changing the public self-score, commercial claims, pricing confidence, subscription status, or scaling decision."
