@@ -4,6 +4,15 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 
 ## Completed Batches
 
+### M4-21 Route Basis And First Traffic Foundation
+
+- Added `/favicon.ico`, `/icon-32.png`, `/icon-192.png`, and `/apple-touch-icon.png` so browser tabs and platform previews do not depend only on SVG icon support.
+- Added `data/route-pattern-library.csv` with 12 route archetypes, minimum evidence, page assets, paid offer shape, and stop rules.
+- Added `data/first-traffic-channel-plan.csv` for technical discovery, public build logs, GitHub artifacts, answer participation, manual outreach, peer review, and launch listings.
+- Added `/methodology/route-selection/` to explain that the numeric score is a gate, while route selection depends on evidence hierarchy and archetype fit.
+- Added `/guides/first-traffic-system/` to separate first-visitor work from passive indexing and broad content scale.
+- Extended route registry, page registry, review actions, commercial validation, production health checks, homepage links, footer links, and public update log.
+
 ### M4-05 Quality Gate And Evidence-Ready Sample
 
 - Replaced the removed `next lint` command with `scripts/code-quality-gate.mjs`.

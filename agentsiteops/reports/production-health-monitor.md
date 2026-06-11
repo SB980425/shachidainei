@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T22:53:51.776Z
+- Generated: 2026-06-11T23:27:39.894Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 158
+- Checks: 178
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 42 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 44 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -23,9 +23,12 @@
 | robots | pass | sitemap pointer visible | [link](https://agentsiteops.com/robots.txt) |
 | indexnow_key | pass | HTTP 200 | [link](https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt) |
 | indexnow_key | pass | key file content matches public key | [link](https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt) |
+| brand_favicon | pass | HTTP 200 | [link](https://agentsiteops.com/favicon.ico) |
+| brand_favicon | pass | favicon content-type image/vnd.microsoft.icon | [link](https://agentsiteops.com/favicon.ico) |
 | brand_icon | pass | HTTP 200 | [link](https://agentsiteops.com/icon.svg) |
 | brand_icon | pass | SVG icon exists | [link](https://agentsiteops.com/icon.svg) |
 | brand_icon | pass | icon has accessible brand label | [link](https://agentsiteops.com/icon.svg) |
+| brand_icon_png | pass | HTTP 200 | [link](https://agentsiteops.com/icon-32.png) |
 | / | pass | HTTP 200 | [link](https://agentsiteops.com/) |
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
@@ -134,6 +137,22 @@
 | /checklists/launch-validation-decision-gate/ | pass | PayPal clicks without confirmed payment are not revenue | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
 | /checklists/launch-validation-decision-gate/ | pass | IndexNow success is not demand | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
 | /checklists/launch-validation-decision-gate/ | pass | pivot_to_implementation | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
+| /methodology/route-selection/ | pass | HTTP 200 | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /methodology/route-selection/ | pass | HTML title exists | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /methodology/route-selection/ | pass | canonical points to production URL | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /methodology/route-selection/ | pass | Route Selection Methodology | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /methodology/route-selection/ | pass | The score is a gate; the route is selected | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /methodology/route-selection/ | pass | Evidence hierarchy | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /methodology/route-selection/ | pass | Route archetype library | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /methodology/route-selection/ | pass | When the answer must be stop | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /guides/first-traffic-system/ | pass | HTTP 200 | [link](https://agentsiteops.com/guides/first-traffic-system/) |
+| /guides/first-traffic-system/ | pass | HTML title exists | [link](https://agentsiteops.com/guides/first-traffic-system/) |
+| /guides/first-traffic-system/ | pass | canonical points to production URL | [link](https://agentsiteops.com/guides/first-traffic-system/) |
+| /guides/first-traffic-system/ | pass | First Traffic System | [link](https://agentsiteops.com/guides/first-traffic-system/) |
+| /guides/first-traffic-system/ | pass | The first traffic plan does not wait for Google alone | [link](https://agentsiteops.com/guides/first-traffic-system/) |
+| /guides/first-traffic-system/ | pass | Seven-day exposure loop | [link](https://agentsiteops.com/guides/first-traffic-system/) |
+| /guides/first-traffic-system/ | pass | Manual outreach | [link](https://agentsiteops.com/guides/first-traffic-system/) |
+| /guides/first-traffic-system/ | pass | Signals that count | [link](https://agentsiteops.com/guides/first-traffic-system/) |
 | /reports/route-evidence-dashboard/ | pass | HTTP 200 | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
 | /reports/route-evidence-dashboard/ | pass | HTML title exists | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
 | /reports/route-evidence-dashboard/ | pass | canonical points to production URL | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
@@ -150,6 +169,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-21 Route basis and first traffic foundation | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-20 Evidence-led value layer | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | evidence-bounded route-selection service | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-17 Self-score maintenance protocol | [link](https://agentsiteops.com/updates/) |

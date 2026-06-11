@@ -195,6 +195,16 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+          <div className="hero-actions">
+            <Link className="secondary-action" href="/methodology/route-selection/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Audit route logic
+            </Link>
+            <Link className="secondary-action" href="/guides/first-traffic-system/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Inspect first traffic system
+            </Link>
+          </div>
         </div>
 
         <aside className="artifact-preview-card" aria-label="Launch Blueprint artifact preview">
@@ -347,6 +357,16 @@ export default function HomePage() {
               <span>{item.summary}</span>
             </a>
           ))}
+        </div>
+        <div className="hero-actions">
+          <Link className="secondary-action" href="/methodology/route-selection/">
+            <ArrowRight aria-hidden="true" size={17} />
+            View route evidence hierarchy
+          </Link>
+          <Link className="secondary-action" href="/guides/first-traffic-system/">
+            <ArrowRight aria-hidden="true" size={17} />
+            View first visitor loop
+          </Link>
         </div>
       </section>
     </main>

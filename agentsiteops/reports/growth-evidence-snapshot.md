@@ -1,18 +1,18 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-11T22:42:45.520Z
+- Generated: 2026-06-11T23:28:03.267Z
 - Status: baseline_ready
-- Routes: 42
-- Technical SEO pass routes: 42
+- Routes: 44
+- Technical SEO pass routes: 44
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 42 routes
-- Bing status: pending export for 42 routes
+- GSC status: pending export for 44 routes
+- Bing status: pending export for 44 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 42 routes
+- Onsite event status: local buffer only for 44 routes
 
 ## Route Evidence Table
 
@@ -44,6 +44,8 @@
 | /templates/evidence-ledger-template/ | template | trust_and_policy | pass | site_pass | keep | Measure template copy or source-link clicks before creating more evidence templates |
 | /templates/website-opportunity-scoring-template/ | template | website_opportunity_scoring | pass | site_pass | keep | Measure scorer usage and template copy before expanding scoring variants |
 | /methodology/website-opportunity-scoring/ | methodology | website_opportunity_scoring | pass | site_pass | keep | Update model only when evidence changes |
+| /methodology/route-selection/ | methodology | launch_blueprint | pass | site_pass | keep | Measure route methodology views, sample exits, pricing exits, and repeated questions about route selection |
+| /guides/first-traffic-system/ | guide | growth_validation | pass | site_pass | keep | Record indexed URLs, referrals, sample views, PayPal clicks, qualified replies, and objections by channel |
 | /authors/ | trust_page | trust_and_policy | pass | site_pass | keep | Replace placeholder owner info before launch |
 | /editorial-policy/ | trust_page | trust_and_policy | pass | site_pass | keep | Recheck before content expansion |
 | /privacy/ | trust_page | trust_and_policy | pass | site_pass | keep | Update before external endpoint or cookies |

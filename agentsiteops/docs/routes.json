@@ -240,6 +240,24 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/methodology/route-selection/",
+      "pageType": "methodology",
+      "template": "methodology",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.78,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/guides/first-traffic-system/",
+      "pageType": "guide",
+      "template": "guide",
+      "cluster": "growth_validation",
+      "index": true,
+      "priority": 0.78,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/authors/",
       "pageType": "trust_page",
       "template": "author_index",

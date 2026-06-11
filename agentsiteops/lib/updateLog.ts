@@ -12,6 +12,57 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-21 Route basis and first traffic foundation",
+    status: "completed",
+    keyPoints: [
+      "Added browser-ready favicon and PNG icon assets so the brand signal does not depend only on SVG support in the tab bar.",
+      "Added a route-pattern library with 12 archetypes so route recommendations are tied to operating patterns, evidence requirements, page assets, paid offer shapes, and stop rules.",
+      "Added a first-traffic channel plan so exposure work is split across technical discovery, public build logs, GitHub artifacts, answer participation, manual outreach, peer review, and launch listings.",
+      "Published Route Selection Methodology and First Traffic System pages so visitors can inspect how routes are selected and how first visitors will be pursued before buying."
+    ],
+    aiAngle:
+      "AI and search systems can inspect that route selection is based on evidence hierarchy and route archetypes rather than random scoring; first exposure starts from technical discovery plus bounded no-spam channels, not from passive hope or broad content scale.",
+    files: [
+      "app/layout.tsx",
+      "app/page.tsx",
+      "app/methodology/route-selection/page.tsx",
+      "app/guides/first-traffic-system/page.tsx",
+      "data/route-pattern-library.csv",
+      "data/first-traffic-channel-plan.csv",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "public/favicon.ico",
+      "public/icon-32.png",
+      "public/icon-192.png",
+      "public/apple-touch-icon.png",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/site.ts",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "commercial validation gate pass with 148 checks",
+      "analytics endpoint gate pass with endpoint disabled",
+      "route consistency gate pass with 230 checks",
+      "production build pass with 50 static pages",
+      "technical SEO CI pass for 44 routes",
+      "crawler access audit pass",
+      "growth snapshot baseline_ready with 44 routes",
+      "local Playwright render checks pass for home, sample, route methodology, and first traffic pages on desktop and mobile",
+      "local favicon and PNG icon checks pass",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production favicon, icon-32, route methodology, first traffic, and updates checks pass",
+      "production health pass with 178 checks",
+      "IndexNow submit pass for 44 URLs"
+    ],
+    next:
+      "Run the first exposure loop only after production checks pass; record indexed URLs, referrals, sample views, PayPal clicks, qualified replies, confirmed payments, usable intake, and objections separately."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-20 Evidence-led value layer",
     status: "completed",
     keyPoints: [

@@ -963,6 +963,186 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/methodology/route-selection/",
+    pageType: "methodology",
+    title: "Route Selection Methodology",
+    description:
+      "How AgentSiteOps maps messy AI-capable project inputs to a route archetype, evidence threshold, page asset, paid offer shape, and stop rule.",
+    answer:
+      "AgentSiteOps does not pick routes from a random 0-100 score. The score is a gate; the route is selected by matching the buyer's skills, proof, audience, delivery capacity, risk, and evidence level against a route-pattern library.",
+    primaryAction: { label: "View route patterns", href: "/sample/" },
+    secondaryAction: { label: "View first traffic system", href: "/guides/first-traffic-system/" },
+    aiTarget:
+      "Expose the evidence hierarchy, route archetypes, selection logic, and stop rules behind AgentSiteOps route recommendations.",
+    humanAction:
+      "Classify a project into a route archetype before paying, building a site, or scaling content.",
+    sections: [
+      {
+        title: "Evidence hierarchy",
+        body:
+          "Route quality depends on evidence quality. A route based only on assumptions stays weak even when the numeric score looks high.",
+        rows: [
+          {
+            label: "Level 1",
+            value:
+              "Confirmed payment, usable intake, buyer replies, first-party search exports, analytics events, delivered artifact feedback."
+          },
+          {
+            label: "Level 2",
+            value:
+              "Public demo, portfolio, repo, workflow screenshot, sample result, and manually verifiable delivery ability."
+          },
+          {
+            label: "Level 3",
+            value:
+              "Public market signals, competitor pages, community questions, source-backed search research, and AI-visibility research."
+          },
+          {
+            label: "Level 4",
+            value:
+              "Assumptions from the buyer or model. These lower confidence and cannot justify scaling alone."
+          }
+        ]
+      },
+      {
+        title: "Route archetype library",
+        body:
+          "The current public library starts with 12 operating archetypes in data/route-pattern-library.csv. They are reusable route patterns, not proof that AgentSiteOps already has customer case studies.",
+        rows: [
+          {
+            label: "Service route",
+            value:
+              "AI workflow setup, automation audit, DFY landing page setup, or manual launch blueprint when delivery ability is the core asset."
+          },
+          {
+            label: "Tool route",
+            value:
+              "Micro SaaS utility, browser extension, or dashboard when the buyer has a repeatable workflow problem and can maintain software."
+          },
+          {
+            label: "Content route",
+            value:
+              "SEO and AI-visibility guide cluster, comparison system, course, or playbook when source-backed education is the strongest asset."
+          },
+          {
+            label: "Data route",
+            value:
+              "Programmatic directory, marketplace, matching service, or report when the data source and freshness model are defensible."
+          }
+        ]
+      },
+      {
+        title: "Selection logic",
+        body:
+          "The score gates build/no-build. The route is chosen by the best matching archetype and the weakest blocker. If no archetype fits, the output should narrow, pause, or stop instead of forcing a polished plan.",
+        rows: [
+          { label: "Fit", value: "Does the buyer's ability and proof match the route?" },
+          { label: "Buyer trigger", value: "Can the buyer describe an urgent problem and a reachable first segment?" },
+          { label: "Asset", value: "Can a page, tool, sample, repo, or workflow prove the outcome before scale?" },
+          { label: "Risk", value: "Does YMYL, data, privacy, platform, account, or payment risk block the route?" }
+        ]
+      },
+      {
+        title: "When the answer must be stop",
+        body:
+          "Stop when the only evidence is assumption, when delivery needs prohibited access, when the buyer expects guaranteed rankings or revenue, or when generic AI can produce the same useful output without a paid route file."
+      }
+    ],
+    related: [
+      { label: "Website Opportunity Scorer", href: "/tools/website-opportunity-scorer/" },
+      { label: "Scoring Methodology", href: "/methodology/website-opportunity-scoring/" },
+      { label: "First Traffic System", href: "/guides/first-traffic-system/" },
+      { label: "Fit Review Sample", href: "/examples/fit-review-sample/" }
+    ]
+  },
+  {
+    path: "/guides/first-traffic-system/",
+    pageType: "guide",
+    title: "First Traffic System",
+    description:
+      "A practical first-visitor system for AgentSiteOps: search discovery, public build logs, GitHub artifacts, answer participation, small manual outreach, peer review, and launch listings.",
+    answer:
+      "The first traffic plan does not wait for Google alone. It creates inspectable assets, submits technical discovery, answers narrow demand, runs small manual outreach, and records which channels produce visits, replies, payment clicks, and usable intake.",
+    primaryAction: { label: "View route methodology", href: "/methodology/route-selection/" },
+    secondaryAction: { label: "View updates", href: "/updates/" },
+    aiTarget:
+      "Expose a no-spam first-traffic system with channel, action, signal, and stop rules for a new AgentSiteOps-style site.",
+    humanAction:
+      "Run one channel batch, record aggregate outcomes, and rewrite the offer before scaling.",
+    sections: [
+      {
+        title: "First traffic is not one channel",
+        body:
+          "A new site cannot rely on passive indexing alone. The first exposure loop combines technical discovery, public work artifacts, demand-led answers, and small manual outreach.",
+        rows: [
+          {
+            label: "Technical discovery",
+            value:
+              "Sitemap, robots, canonical, favicon, GSC, Bing, IndexNow, crawler health, and route availability."
+          },
+          {
+            label: "Visible work",
+            value:
+              "Public update log, GitHub artifact trail, sample pages, methodology pages, and evidence ledger."
+          },
+          {
+            label: "Demand-led answers",
+            value:
+              "Answer narrow questions where route selection, scoring, evidence, or launch validation solves a specific decision."
+          },
+          {
+            label: "Manual outreach",
+            value:
+              "Small no-spam batch to AI-capable builders; measure replies and objections, not vanity views."
+          }
+        ]
+      },
+      {
+        title: "Seven-day exposure loop",
+        body:
+          "The first loop is small because the offer is still commercially unvalidated. The goal is qualified evidence, not broad attention.",
+        rows: [
+          {
+            label: "Day 1",
+            value:
+              "Publish route methodology and first traffic page, resubmit IndexNow, verify favicon and key routes."
+          },
+          {
+            label: "Day 2-3",
+            value:
+              "Post one build log and answer 5-10 narrow questions without automated DMs or inflated claims."
+          },
+          {
+            label: "Day 4-5",
+            value:
+              "Send 20 manual prospects to the sample or Fit Review page; record aggregate objections and replies only."
+          },
+          {
+            label: "Day 6-7",
+            value:
+              "Rewrite the offer if no qualified replies appear; do not add more generic content."
+          }
+        ]
+      },
+      {
+        title: "Signals that count",
+        body:
+          "Count indexed URLs, impressions, referral visits, source-link clicks, sample views, PayPal clicks, confirmed payments, usable intake, and qualified objections separately."
+      },
+      {
+        title: "Stop rules",
+        body:
+          "Stop a channel when it produces attention but no sample views, views but no objections, or replies that show the paid product is unclear or priced above perceived value."
+      }
+    ],
+    related: [
+      { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
+      { label: "Launch Validation Decision Gate", href: "/checklists/launch-validation-decision-gate/" },
+      { label: "Evidence Ledger", href: "/evidence/" },
+      { label: "Updates", href: "/updates/" }
+    ]
+  },
+  {
     path: "/guides/ai-search-friendly-robots-txt/",
     pageType: "guide",
     title: "AI Search Friendly Robots.txt",

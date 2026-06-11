@@ -55,6 +55,8 @@ const pathViewEvents: Record<string, string[]> = {
     "scoring_methodology_view",
     "scoring_model_limit_view"
   ],
+  "/methodology/route-selection/": ["route_selection_methodology_view"],
+  "/guides/first-traffic-system/": ["first_traffic_system_view"],
   "/website-opportunity-audit/": ["launch_blueprint_legacy_view"],
   "/pricing/": ["launch_blueprint_pricing_view"],
   "/sample/": ["launch_blueprint_sample_view"],

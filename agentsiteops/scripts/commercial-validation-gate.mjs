@@ -13,6 +13,8 @@ const requiredRoutes = [
   "/tools/audit-scope-builder/",
   "/tools/launch-blueprint-fit-checker/",
   "/checklists/launch-validation-decision-gate/",
+  "/methodology/route-selection/",
+  "/guides/first-traffic-system/",
   "/pricing/",
   "/compare/",
   "/starter-review/",
@@ -87,6 +89,8 @@ function checkCommercialBoundary() {
   const selfScore = read("data/agentsiteops-self-score-2026-06-11.csv");
   const selfScoreProtocol = read("docs/self-score-maintenance-protocol.md");
   const selfScoreChangeLog = read("data/self-score-change-log-template.csv");
+  const routePatterns = read("data/route-pattern-library.csv");
+  const trafficChannels = read("data/first-traffic-channel-plan.csv");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -163,6 +167,18 @@ function checkCommercialBoundary() {
   requireText("self_score", selfScoreProtocol, "Decrease a score immediately when a gate fails", "self-score protocol allows immediate score decreases");
   requireText("self_score", selfScoreChangeLog, "confirmed_payment_plus_usable_intake", "self-score change log template records commercial threshold");
   requireText("self_score", selfScoreChangeLog, "Aggregate only; do not store names emails payment identifiers", "self-score change log template blocks private data storage");
+  requireText("route_selection", site, "The score is a gate; the route is selected", "route methodology states score is not the route itself");
+  requireText("route_selection", site, "12 operating archetypes", "route methodology names the route-pattern library");
+  requireText("route_selection", site, "When the answer must be stop", "route methodology includes stop conditions");
+  requireText("route_selection", routePatterns, "AI workflow setup service", "route-pattern library includes AI workflow setup service");
+  requireText("route_selection", routePatterns, "Marketplace or matching service", "route-pattern library includes marketplace or matching route");
+  requireText("route_selection", routePatterns, "Programmatic directory", "route-pattern library includes data route");
+  requireText("route_selection", routePatterns, "common_stop_rule", "route-pattern library records stop rules");
+  requireText("first_traffic", site, "The first traffic plan does not wait for Google alone", "first traffic guide states multi-channel exposure");
+  requireText("first_traffic", site, "Seven-day exposure loop", "first traffic guide includes seven-day loop");
+  requireText("first_traffic", trafficChannels, "Manual founder outreach", "first traffic channel plan includes manual outreach");
+  requireText("first_traffic", trafficChannels, "Directory and launch listing", "first traffic channel plan includes launch listing channel");
+  requireText("first_traffic", trafficChannels, "stop_or_rewrite_rule", "first traffic channel plan records stop rules");
 
   addCheck("service_boundary", !/guaranteed rankings|guaranteed revenue|guaranteed customers/i.test(launch) ? "pass" : "fail", "launch copy avoids guarantee claims");
 }

@@ -22,7 +22,7 @@ Internal links must help search crawlers, AI retrieval systems, and human reader
 | AI citation readiness | AI search friendly robots.txt, crawler access audit, small-site metrics, and evidence ledger | Separate crawl eligibility from guaranteed citation claims. |
 | Search verification guides | Launch checklist, IndexNow guide, sitemap verification guide, metrics, and evidence ledger | Keep submit, fetch, inspect, and evidence capture as separate steps. |
 | Metrics guides | Evidence ledger, weekly review, scorer, launch checklist, and sitemap verification | Connect measurement language to route decisions. |
-| Methodology | Tool, pillar, and evidence ledger | Explain score inputs and validation limits. |
+| Methodology | Tool, pillar, route selection, first traffic system, and evidence ledger | Explain score inputs, route selection, validation limits, and first exposure actions. |
 | Evidence ledger | Route evidence dashboard, evidence template, updates, metrics guide, launch checklist, and citation readiness | Show verified and pending evidence with next review paths. |
 | Evidence template | Evidence ledger, sample audit, updates, and metrics guide | Convert proof boundaries into a reusable worksheet. |
 | Scoring template | Scorer, methodology, pillar, and evidence template | Convert candidate selection into a reusable worksheet. |
@@ -72,6 +72,8 @@ Every first-cluster page must include:
 | Wants route-level evidence status | `/reports/route-evidence-dashboard/` |
 | Wants a proof ledger worksheet | `/templates/evidence-ledger-template/` |
 | Wants a candidate scoring worksheet | `/templates/website-opportunity-scoring-template/` |
+| Wants to understand how a score becomes a route | `/methodology/route-selection/` |
+| Wants to know how the site gets first visitors | `/guides/first-traffic-system/` |
 
 ## Noindex Link Policy
 

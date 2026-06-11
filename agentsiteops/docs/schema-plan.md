@@ -25,12 +25,14 @@
 | `/guides/ai-search-friendly-robots-txt/` | `Article`, `BreadcrumbList` | headline, author, dateModified, citations | Crawler policy guide; no claim of guaranteed citation. |
 | `/guides/indexnow-cloudflare-pages/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | Deployment workflow; no claim of indexing guarantee. |
 | `/guides/gsc-bing-sitemap-verification/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, citations | Troubleshooting workflow for sitemap fetch and inspection states. |
+| `/guides/first-traffic-system/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | First-visitor workflow; no traffic, ranking, or revenue guarantee. |
 | `/guides/ai-citation-grounding-metrics/` | `Article`, `BreadcrumbList` | headline, author, dateModified, citations | Include source register on page. |
 | `/evidence/` | `CollectionPage`, `BreadcrumbList` | name, dateModified, hasPart | Public proof boundary for verified and pending evidence. |
 | `/reports/route-evidence-dashboard/` | `Dataset`, `WebPage`, `BreadcrumbList` | name, description, variableMeasured | Must match the generated route evidence snapshot and no-guarantee boundary. |
 | `/templates/evidence-ledger-template/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | Copy-ready proof worksheet; no fake downloads or claims. |
 | `/templates/website-opportunity-scoring-template/` | `TechArticle`, `BreadcrumbList` | headline, dateModified, dependencies | Copy-ready scoring worksheet tied to scorer and methodology. |
 | `/methodology/website-opportunity-scoring/` | `TechArticle`, `BreadcrumbList` | headline, author, dateModified | Explain scoring model and limitations. |
+| `/methodology/route-selection/` | `TechArticle`, `BreadcrumbList` | headline, author, dateModified, dependencies | Explain evidence hierarchy, route archetypes, and stop rules behind route selection. |
 | `/authors/` | `ProfilePage`, `Person`, `BreadcrumbList` | name, url, sameAs if available | Keep only true credentials. |
 | `/editorial-policy/` | `WebPage`, `BreadcrumbList` | name, dateModified | Explain AI content, fact-check, correction process. |
 | `/privacy/` | `WebPage`, `BreadcrumbList` | name, dateModified | Must match actual data collection. |

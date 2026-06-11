@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T22:49:33.056Z
+- Generated: 2026-06-11T23:21:09.851Z
 - Status: pass
-- Checks: 132
+- Checks: 148
 - Blockers: 0
 
 ## Summary
@@ -23,6 +23,10 @@
 | app | pass | /tools/launch-blueprint-fit-checker/ has app page |
 | routes | pass | /checklists/launch-validation-decision-gate/ registered in docs/routes.json |
 | app | pass | /checklists/launch-validation-decision-gate/ has app page |
+| routes | pass | /methodology/route-selection/ registered in docs/routes.json |
+| app | pass | /methodology/route-selection/ has app page |
+| routes | pass | /guides/first-traffic-system/ registered in docs/routes.json |
+| app | pass | /guides/first-traffic-system/ has app page |
 | routes | pass | /pricing/ registered in docs/routes.json |
 | app | pass | /pricing/ has app page |
 | routes | pass | /compare/ registered in docs/routes.json |
@@ -116,6 +120,18 @@
 | self_score | pass | self-score protocol allows immediate score decreases |
 | self_score | pass | self-score change log template records commercial threshold |
 | self_score | pass | self-score change log template blocks private data storage |
+| route_selection | pass | route methodology states score is not the route itself |
+| route_selection | pass | route methodology names the route-pattern library |
+| route_selection | pass | route methodology includes stop conditions |
+| route_selection | pass | route-pattern library includes AI workflow setup service |
+| route_selection | pass | route-pattern library includes marketplace or matching route |
+| route_selection | pass | route-pattern library includes data route |
+| route_selection | pass | route-pattern library records stop rules |
+| first_traffic | pass | first traffic guide states multi-channel exposure |
+| first_traffic | pass | first traffic guide includes seven-day loop |
+| first_traffic | pass | first traffic channel plan includes manual outreach |
+| first_traffic | pass | first traffic channel plan includes launch listing channel |
+| first_traffic | pass | first traffic channel plan records stop rules |
 | service_boundary | pass | launch copy avoids guarantee claims |
 | readiness_tool | pass | readiness tool has 13 weighted checks; found 13 |
 | readiness_tool | pass | readiness tool weights total 100 |

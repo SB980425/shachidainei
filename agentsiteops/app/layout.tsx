@@ -40,9 +40,14 @@ export const metadata: Metadata = {
       "Validate one AI service offer before building the site, automation demo, or content system."
   },
   icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }]
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" }
+    ],
+    shortcut: [{ url: "/favicon.ico" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }]
   },
   alternates: {
     canonical: "/"
@@ -102,6 +107,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/tools/launch-blueprint-fit-checker/">Fit Checker</Link>
             <Link href="/templates/starter-pack/">Starter Pack</Link>
             <Link href="/reports/route-evidence-dashboard/">Evidence</Link>
+            <Link href="/methodology/route-selection/">Route Method</Link>
+            <Link href="/guides/first-traffic-system/">Traffic System</Link>
             <Link href="/authors/">Authors</Link>
             <Link href="/editorial-policy/">Editorial</Link>
             <Link href="/privacy/">Privacy</Link>

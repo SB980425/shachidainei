@@ -173,6 +173,19 @@ async function checkIndexNowKey() {
 }
 
 async function checkBrandIcon() {
+  const faviconUrl = `${siteUrl}/favicon.ico`;
+  const favicon = await fetchText(faviconUrl);
+  addCheck("brand_favicon", favicon.ok ? "pass" : "fail", `HTTP ${favicon.status}`, faviconUrl);
+
+  if (favicon.ok) {
+    const contentType = favicon.headers.get("content-type") ?? "";
+    if (/image\/x-icon|image\/vnd\.microsoft\.icon|application\/octet-stream/i.test(contentType)) {
+      addCheck("brand_favicon", "pass", `favicon content-type ${contentType}`, faviconUrl);
+    } else {
+      addCheck("brand_favicon", "warn", `Unexpected favicon content-type ${contentType}`, faviconUrl);
+    }
+  }
+
   const url = `${siteUrl}/icon.svg`;
   const response = await fetchText(url);
   addCheck("brand_icon", response.ok ? "pass" : "fail", `HTTP ${response.status}`, url);
@@ -183,6 +196,10 @@ async function checkBrandIcon() {
 
   requireText("brand_icon", response.text, "<svg", "SVG icon exists", url);
   requireText("brand_icon", response.text, "AgentSiteOps", "icon has accessible brand label", url);
+
+  const pngUrl = `${siteUrl}/icon-32.png`;
+  const png = await fetchText(pngUrl);
+  addCheck("brand_icon_png", png.ok ? "pass" : "fail", `HTTP ${png.status}`, pngUrl);
 }
 
 function renderReport(generatedAt) {
@@ -299,10 +316,25 @@ async function main() {
     "IndexNow success is not demand",
     "pivot_to_implementation"
   ]);
+  await checkPage("/methodology/route-selection/", [
+    "Route Selection Methodology",
+    "The score is a gate; the route is selected",
+    "Evidence hierarchy",
+    "Route archetype library",
+    "When the answer must be stop"
+  ]);
+  await checkPage("/guides/first-traffic-system/", [
+    "First Traffic System",
+    "The first traffic plan does not wait for Google alone",
+    "Seven-day exposure loop",
+    "Manual outreach",
+    "Signals that count"
+  ]);
   await checkPage("/reports/route-evidence-dashboard/", ["Route Evidence Dashboard", "Route evidence table", "GSC pending"]);
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-21 Route basis and first traffic foundation",
     "M4-20 Evidence-led value layer",
     "evidence-bounded route-selection service",
     "M4-17 Self-score maintenance protocol",

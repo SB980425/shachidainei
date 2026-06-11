@@ -69,6 +69,8 @@ Current implementation:
 | `opportunity_scoring_template_view` | User views candidate scorecard template | `/templates/website-opportunity-scoring-template/` |
 | `scoring_methodology_view` | User views scoring fields and thresholds | `/methodology/website-opportunity-scoring/` |
 | `scoring_model_limit_view` | User views model limits and update rules | `/methodology/website-opportunity-scoring/` |
+| `route_selection_methodology_view` | User views route archetypes and evidence hierarchy | `/methodology/route-selection/` |
+| `first_traffic_system_view` | User views the first-visitor exposure loop | `/guides/first-traffic-system/` |
 | `trust_policy_view` | User views author/editorial/privacy/disclosure policy | Trust pages |
 | `disclosure_source_click` | User opens FTC or disclosure source link | `/disclosure/` |
 
