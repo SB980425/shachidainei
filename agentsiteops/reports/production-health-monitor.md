@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T08:38:12.559Z
+- Generated: 2026-06-11T09:27:21.903Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 92
+- Checks: 94
 - Blockers: 0
 - Warnings: 0
 
@@ -44,7 +44,8 @@
 | /sample/ | pass | canonical points to production URL | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | What a Launch Blueprint looks like | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | Sample | [link](https://agentsiteops.com/sample/) |
-| /sample/ | pass | Buy the Blueprint | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | What the paid file must contain | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Check fit first | [link](https://agentsiteops.com/sample/) |
 | /compare/ | pass | HTTP 200 | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | HTML title exists | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | canonical points to production URL | [link](https://agentsiteops.com/compare/) |
@@ -99,6 +100,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-05 Quality gate and evidence-ready sample | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-04 Pre-purchase fit checker | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-03 Launch comparison and sample depth | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-01 Launch Blueprint reset and payment flow | [link](https://agentsiteops.com/updates/) |
