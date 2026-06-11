@@ -266,9 +266,20 @@ async function main() {
     "Validate your first AI service offer before building the site",
     "Start with USD",
     "Fit Review",
-    "52/100"
+    "52/100",
+    "Evidence used, not guessed",
+    "What the buyer receives is a route file, not a score",
+    "Market signals are context, not proof"
   ]);
-  await checkPage("/pricing/", ["Choose the smallest purchase that can answer the decision", "AgentSiteOps Launch Blueprint", "Fit Review", "USD", "PayPal"]);
+  await checkPage("/pricing/", [
+    "Choose the smallest purchase that can answer the decision",
+    "AgentSiteOps Launch Blueprint",
+    "Fit Review",
+    "USD",
+    "PayPal",
+    "Why pay for a manual route",
+    "What USD 99 must produce"
+  ]);
   await checkPage("/pricing/", ["Objections that should block or redirect payment", "I can ask ChatGPT for this."]);
   await checkPage("/examples/fit-review-sample/", ["A smaller paid verdict", "Do not buy the USD 99 blueprint yet", "It does not prove traffic"]);
   await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "What the paid file must contain", "Check fit first"]);
@@ -292,6 +303,8 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-20 Evidence-led value layer",
+    "evidence-bounded route-selection service",
     "M4-17 Self-score maintenance protocol",
     "M4-16 Objective self-score calibration",
     "M4-15 Launch validation decision gate",

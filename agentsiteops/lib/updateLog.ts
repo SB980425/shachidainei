@@ -11,6 +11,48 @@ export type UpdateLogEntry = {
 
 export const updateLog: UpdateLogEntry[] = [
   {
+    date: "2026-06-12",
+    step: "M4-20 Evidence-led value layer",
+    status: "completed",
+    keyPoints: [
+      "Added a homepage proof console that explains the input evidence, scoring pass, selected route output, and validation limits before the buyer reaches long-form sections.",
+      "Added a paid artifact preview to show that the buyer receives a route file, not only a score or generic AI answer.",
+      "Expanded the pricing page with a manual-route value comparison and a USD 99 delivery standard so visitors can judge whether the price is justified before using PayPal.",
+      "Added Next app icon files and global Open Graph/Twitter metadata so the brand signal is visible beyond the navigation bar."
+    ],
+    aiAngle:
+      "AI and search systems should now see the paid offer as an evidence-bounded route-selection service: market research is context, first-party proof is validation, and payment is justified only by a concrete deliverable standard.",
+    files: [
+      "app/page.tsx",
+      "app/pricing/page.tsx",
+      "app/layout.tsx",
+      "app/icon.svg",
+      "app/apple-icon.svg",
+      "app/globals.css",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "commercial validation gate pass with 132 checks",
+      "analytics endpoint gate pass",
+      "route consistency gate pass",
+      "production build pass with 48 static routes",
+      "technical SEO CI pass for 42 routes",
+      "crawler access audit pass",
+      "growth snapshot baseline_ready",
+      "Playwright desktop and mobile checks pass for home, pricing, and starter review",
+      "manual Cloudflare Pages deploy pass through Wrangler",
+      "production text checks pass",
+      "production health pass with 158 checks",
+      "IndexNow submit pass for 42 URLs"
+    ],
+    next:
+      "Verify locally, deploy, then watch whether visitors move from the homepage proof console to sample, pricing, starter review, payment click, and usable intake."
+  },
+  {
     date: "2026-06-11",
     step: "M4-19 Fit Review and pricing conversion simplification",
     status: "completed",

@@ -24,6 +24,21 @@ export const metadata: Metadata = {
   },
   description:
     "Turn scattered AI capability into one sellable offer, one landing page structure, and one 7-day validation path.",
+  openGraph: {
+    title: "AgentSiteOps",
+    description:
+      "A manual Fit Review and Launch Blueprint for AI-capable solo builders who need one offer, one page, and one first validation path.",
+    url: "https://agentsiteops.com/",
+    siteName: "AgentSiteOps",
+    locale: "en_US",
+    type: "website"
+  },
+  twitter: {
+    card: "summary",
+    title: "AgentSiteOps",
+    description:
+      "Validate one AI service offer before building the site, automation demo, or content system."
+  },
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     shortcut: [{ url: "/icon.svg", type: "image/svg+xml" }],

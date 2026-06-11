@@ -17,6 +17,8 @@ import {
   authorityBoundaries,
   blueprintEvidenceInputs,
   launchProduct,
+  marketSignals,
+  samplePaidArtifactChecklist,
   starterReviewAcceptanceCriteria,
   starterReviewDeliverables,
   starterReviewProduct
@@ -59,6 +61,25 @@ const blockers = [
   "No guaranteed traffic, ranking, AI citation, customer, or revenue claim.",
   "No subscription pitch until repeat usage is proven.",
   "No full blueprint sale when the intake is too weak."
+];
+
+const proofConsoleItems = [
+  {
+    title: "Inputs",
+    body: "Skills, assets, buyer idea, public proof, time limit, price range, and risk boundaries."
+  },
+  {
+    title: "Scoring",
+    body: "Offer clarity, buyer trigger, proof depth, delivery ability, search evidence, and hard blockers."
+  },
+  {
+    title: "Output",
+    body: "One selected route, rejected alternatives, page structure, outreach path, and a stop rule."
+  },
+  {
+    title: "Limits",
+    body: "Missing search, payment, intake, or buyer evidence is marked as missing instead of inferred."
+  }
 ];
 
 export default function HomePage() {
@@ -151,6 +172,46 @@ export default function HomePage() {
             The product starts as a small paid decision, not a promise that the full
             blueprint is always worth buying.
           </p>
+        </aside>
+      </section>
+
+      <section className="proof-console-section compact-home-section">
+        <div className="proof-console">
+          <div className="proof-console-brand">
+            <BrandLogo compact />
+            <span>evidence before roadmap</span>
+          </div>
+          <h2>Evidence used, not guessed.</h2>
+          <p>
+            The paid work is not a prettier AI answer. It is a constrained decision
+            pass that turns messy inputs into one route and records which claims remain
+            unproven.
+          </p>
+          <div className="proof-console-grid">
+            {proofConsoleItems.map((item) => (
+              <article key={item.title}>
+                <strong>{item.title}</strong>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <aside className="artifact-preview-card" aria-label="Launch Blueprint artifact preview">
+          <span>Paid artifact preview</span>
+          <h3>What the buyer receives is a route file, not a score.</h3>
+          <ul>
+            {samplePaidArtifactChecklist.slice(0, 4).map((item) => (
+              <li key={item.title}>
+                <CheckCircle2 aria-hidden="true" size={16} />
+                {item.title}: {item.body}
+              </li>
+            ))}
+          </ul>
+          <Link className="secondary-action" href="/sample/">
+            <FileText aria-hidden="true" size={17} />
+            Inspect full sample
+          </Link>
         </aside>
       </section>
 
@@ -267,6 +328,24 @@ export default function HomePage() {
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="market-signal-section compact-home-section">
+        <div className="section-head">
+          <h2>Market signals are context, not proof.</h2>
+          <p>
+            Public AI-search and SEO research shapes the checklist, but only first-party
+            payment, intake, search, reply, and delivery evidence can validate this offer.
+          </p>
+        </div>
+        <div className="market-signal-grid">
+          {marketSignals.slice(0, 3).map((item) => (
+            <a href={item.href} key={item.title} rel="noreferrer" target="_blank">
+              <strong>{item.title}</strong>
+              <span>{item.summary}</span>
+            </a>
           ))}
         </div>
       </section>

@@ -4,10 +4,12 @@ import { ArrowRight, BadgeDollarSign, CheckCircle2, CreditCard, FileText, Mail, 
 import {
   authorityBoundaries,
   blueprintEvidenceInputs,
+  launchComparisons,
   launchDeliverables,
   launchProduct,
   pricingBenchmarks,
   purchaseObjectionResponses,
+  samplePaidArtifactChecklist,
   starterReviewDeliverables,
   starterReviewProduct
 } from "@/lib/launch";
@@ -76,6 +78,7 @@ const ladder = [
 
 const compactEvidence = blueprintEvidenceInputs.slice(0, 3);
 const compactObjections = purchaseObjectionResponses.slice(0, 3);
+const compactComparisons = launchComparisons.slice(0, 4);
 
 export default function Page() {
   return (
@@ -169,6 +172,27 @@ export default function Page() {
 
       <section className="pricing-grid-section compact-home-section">
         <div className="section-head">
+          <h2>Why pay for a manual route</h2>
+          <p>
+            The paid value is the forced selection: one offer, one buyer, one page
+            structure, one outreach path, and one stop rule. It is not a keyword tool,
+            dashboard, or generic chat session.
+          </p>
+        </div>
+        <div className="value-proof-grid">
+          {compactComparisons.map((item) => (
+            <article key={item.option}>
+              <span>{item.option}</span>
+              <h3>Use when the gap is route selection.</h3>
+              <p>{item.agentSiteOpsFit}</p>
+              <small>Better alternative: {item.betterFor}</small>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="pricing-grid-section compact-home-section">
+        <div className="section-head">
           <h2>Offer comparison</h2>
           <p>
             Use the Fit Review to answer whether the larger Launch Blueprint should exist
@@ -223,6 +247,25 @@ export default function Page() {
               Pay USD {primaryOffer.price}
             </a>
           </article>
+        </div>
+      </section>
+
+      <section className="pricing-grid-section compact-home-section">
+        <div className="section-head">
+          <h2>What USD 99 must produce</h2>
+          <p>
+            If a paid report does not contain these parts, the price is not justified.
+            This list is the delivery standard, not a marketing promise.
+          </p>
+        </div>
+        <div className="artifact-standard-grid">
+          {samplePaidArtifactChecklist.map((item, index) => (
+            <article key={item.title}>
+              <span>{index + 1}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 

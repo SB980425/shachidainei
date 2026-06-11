@@ -125,6 +125,16 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Verified `/starter-review/` and `/pricing/` on desktop and mobile with no horizontal overflow, visible primary CTA, visible decision hero, and shorter body text.
 - Deployed the conversion-page update to Cloudflare Pages, verified production text, ran production health, and submitted 42 URLs through IndexNow.
 
+### M4-20 Evidence-Led Value Layer
+
+- Added a homepage proof console that shows inputs, scoring, route output, and limits before the visitor reaches the older explanatory sections.
+- Added a paid artifact preview to clarify that the deliverable is a route file with selected offer, target buyer, page outline, outreach messages, validation plan, and evidence ledger.
+- Added a pricing-page value comparison against generic AI chat, SEO software, AI visibility monitoring, and consultants so the USD 29 and USD 99 offers are positioned by use case instead of price alone.
+- Added a USD 99 delivery-standard grid so the price is tied to required deliverables, not broad planning language.
+- Added app-level icon files and global Open Graph/Twitter metadata to strengthen brand visibility in browser and preview surfaces.
+- Extended commercial validation and production health checks so the new evidence and value layers are treated as release requirements.
+- Verified desktop and mobile rendering for `/`, `/pricing/`, and `/starter-review/`; then deployed to Cloudflare Pages, verified production text, ran production health, and submitted 42 URLs through IndexNow.
+
 ## Verification Snapshot
 
 - `npm run lint`: pass.
@@ -138,8 +148,9 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run commercial:gate`: pass, 118 checks after adding the objective self-score.
 - `npm run commercial:gate`: pass, 127 checks after adding the self-score maintenance protocol.
 - `npm run commercial:gate`: pass, 127 checks after M4-19 conversion-page simplification.
+- `npm run commercial:gate`: pass, 132 checks after M4-20 evidence-led value layer.
 - `npm run routes:gate`: pass, 220 checks.
-- `npm run build`: pass, 47 generated static pages.
+- `npm run build`: pass, 48 generated static pages after M4-20 app icon route.
 - `npm run seo:ci`: pass, 42 routes, 0 blockers, 0 warnings.
 - `npm run crawler:audit`: pass.
 - `npm run search:evidence`: pass, waiting_for_exports, 0 imported rows.
@@ -153,13 +164,17 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run production:health`: pass, 149 checks after M4-17 deployment.
 - `npm run production:health`: pass, 150 checks after M4-18 deployment.
 - `npm run production:health`: pass, 151 checks after M4-19 deployment.
+- `npm run production:health`: pass, 158 checks after M4-20 deployment.
 - `npm run indexnow:submit`: pass, 42 URLs, HTTP 200.
 - `npm run indexnow:submit`: pass, 42 URLs, HTTP 200 after M4-18 deployment.
 - `npm run indexnow:submit`: pass, 42 URLs, HTTP 200 after M4-19 deployment.
+- `npm run indexnow:submit`: pass, 42 URLs, HTTP 200 after M4-20 deployment.
 - Playwright static build checks passed for `/examples/fit-review-sample/`, `/starter-review/`, and `/pricing/` on desktop and mobile without horizontal overflow.
 - Playwright static build checks passed for `/` on desktop and mobile after M4-18 with visible primary CTA, visible validation panel, no horizontal overflow, and readable dark-panel branding.
 - Playwright static build checks passed for `/starter-review/` and `/pricing/` after M4-19 with visible primary CTA, visible decision hero, no horizontal overflow, and readable conversion cards.
+- Playwright static build checks passed for `/`, `/pricing/`, and `/starter-review/` after M4-20 with no horizontal overflow, visible icon links, visible evidence/value sections, and visible mobile brand header.
 - Final production read-only checks passed for `/examples/fit-review-sample/`, `/starter-review/`, `/pricing/`, `/evidence/`, `/updates/`, `/intake/`, `/buy/`, and `/sitemap.xml`.
+- Final production read-only checks passed for the M4-20 homepage proof console, pricing value layer, and `/icon.svg`.
 
 ## Production State
 

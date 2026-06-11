@@ -65,6 +65,7 @@ function checkCommercialBoundary() {
   const launch = read("lib/launch.ts");
   const site = read("lib/site.ts");
   const pricingPage = read("app/pricing/page.tsx");
+  const homePage = read("app/page.tsx");
   const starterReviewPage = read("app/starter-review/page.tsx");
   const fitReviewSamplePage = read("app/examples/fit-review-sample/page.tsx");
   const buyPage = read("app/buy/page.tsx");
@@ -103,6 +104,11 @@ function checkCommercialBoundary() {
   requireText("service_boundary", pricingPage, "Objections that should block or redirect payment", "pricing page shows objection-based payment redirects");
   requireText("service_boundary", pricingPage, "do not pay", "pricing page can tell unclear buyers not to pay");
   requireText("service_boundary", pricingPage, "PayPal-hosted payment instead of collecting card data directly", "pricing page addresses new-site PayPal trust objection");
+  requireText("service_boundary", homePage, "Evidence used, not guessed", "homepage shows evidence-before-roadmap proof layer");
+  requireText("service_boundary", homePage, "What the buyer receives is a route file, not a score", "homepage shows paid artifact boundary");
+  requireText("service_boundary", homePage, "Market signals are context, not proof", "homepage separates market research from validation proof");
+  requireText("service_boundary", pricingPage, "Why pay for a manual route", "pricing page explains paid route-selection value");
+  requireText("service_boundary", pricingPage, "What USD 99 must produce", "pricing page shows delivery standard for USD 99 offer");
   requireText("service_boundary", buyPage, "No login account, dashboard, or subscription workspace", "buy page blocks software expectation");
   requireText("service_boundary", disclaimer, "No guaranteed traffic", "disclaimer blocks guarantee claims");
   requireText("trust_pages", terms, "PayPal", "terms page covers PayPal payment path");

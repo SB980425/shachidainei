@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T15:09:41.087Z
+- Generated: 2026-06-11T22:53:51.776Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 151
+- Checks: 158
 - Blockers: 0
 - Warnings: 0
 
@@ -33,6 +33,9 @@
 | / | pass | Start with USD | [link](https://agentsiteops.com/) |
 | / | pass | Fit Review | [link](https://agentsiteops.com/) |
 | / | pass | 52/100 | [link](https://agentsiteops.com/) |
+| / | pass | Evidence used, not guessed | [link](https://agentsiteops.com/) |
+| / | pass | What the buyer receives is a route file, not a score | [link](https://agentsiteops.com/) |
+| / | pass | Market signals are context, not proof | [link](https://agentsiteops.com/) |
 | /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | canonical points to production URL | [link](https://agentsiteops.com/pricing/) |
@@ -41,6 +44,8 @@
 | /pricing/ | pass | Fit Review | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | USD | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | PayPal | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | Why pay for a manual route | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | What USD 99 must produce | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
@@ -145,6 +150,8 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-20 Evidence-led value layer | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | evidence-bounded route-selection service | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-17 Self-score maintenance protocol | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-16 Objective self-score calibration | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-15 Launch validation decision gate | [link](https://agentsiteops.com/updates/) |

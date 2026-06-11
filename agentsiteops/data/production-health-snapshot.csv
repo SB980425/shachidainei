@@ -1,152 +1,159 @@
 generated_at,scope,status,detail,url
-2026-06-11T15:09:41.087Z,www_redirect,pass,HTTP 301 to https://agentsiteops.com/,https://www.agentsiteops.com/
-2026-06-11T15:09:41.087Z,sitemap,pass,HTTP 200,https://agentsiteops.com/sitemap.xml
-2026-06-11T15:09:41.087Z,sitemap,pass,42 URLs match route registry,https://agentsiteops.com/sitemap.xml
-2026-06-11T15:09:41.087Z,robots,pass,HTTP 200,https://agentsiteops.com/robots.txt
-2026-06-11T15:09:41.087Z,robots,pass,OAI-SearchBot policy visible,https://agentsiteops.com/robots.txt
-2026-06-11T15:09:41.087Z,robots,pass,ChatGPT-User policy visible,https://agentsiteops.com/robots.txt
-2026-06-11T15:09:41.087Z,robots,pass,PerplexityBot policy visible,https://agentsiteops.com/robots.txt
-2026-06-11T15:09:41.087Z,robots,pass,GPTBot policy visible,https://agentsiteops.com/robots.txt
-2026-06-11T15:09:41.087Z,robots,pass,training crawler disallow visible,https://agentsiteops.com/robots.txt
-2026-06-11T15:09:41.087Z,robots,pass,sitemap pointer visible,https://agentsiteops.com/robots.txt
-2026-06-11T15:09:41.087Z,indexnow_key,pass,HTTP 200,https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt
-2026-06-11T15:09:41.087Z,indexnow_key,pass,key file content matches public key,https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt
-2026-06-11T15:09:41.087Z,brand_icon,pass,HTTP 200,https://agentsiteops.com/icon.svg
-2026-06-11T15:09:41.087Z,brand_icon,pass,SVG icon exists,https://agentsiteops.com/icon.svg
-2026-06-11T15:09:41.087Z,brand_icon,pass,icon has accessible brand label,https://agentsiteops.com/icon.svg
-2026-06-11T15:09:41.087Z,/,pass,HTTP 200,https://agentsiteops.com/
-2026-06-11T15:09:41.087Z,/,pass,HTML title exists,https://agentsiteops.com/
-2026-06-11T15:09:41.087Z,/,pass,canonical points to production URL,https://agentsiteops.com/
-2026-06-11T15:09:41.087Z,/,pass,Validate your first AI service offer before building the site,https://agentsiteops.com/
-2026-06-11T15:09:41.087Z,/,pass,Start with USD,https://agentsiteops.com/
-2026-06-11T15:09:41.087Z,/,pass,Fit Review,https://agentsiteops.com/
-2026-06-11T15:09:41.087Z,/,pass,52/100,https://agentsiteops.com/
-2026-06-11T15:09:41.087Z,/pricing/,pass,HTTP 200,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,HTML title exists,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,canonical points to production URL,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,Choose the smallest purchase that can answer the decision,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,AgentSiteOps Launch Blueprint,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,Fit Review,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,USD,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,PayPal,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,retired payment test copy and link are absent,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,HTTP 200,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,HTML title exists,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,canonical points to production URL,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,Objections that should block or redirect payment,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,I can ask ChatGPT for this.,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/pricing/,pass,retired payment test copy and link are absent,https://agentsiteops.com/pricing/
-2026-06-11T15:09:41.087Z,/examples/fit-review-sample/,pass,HTTP 200,https://agentsiteops.com/examples/fit-review-sample/
-2026-06-11T15:09:41.087Z,/examples/fit-review-sample/,pass,HTML title exists,https://agentsiteops.com/examples/fit-review-sample/
-2026-06-11T15:09:41.087Z,/examples/fit-review-sample/,pass,canonical points to production URL,https://agentsiteops.com/examples/fit-review-sample/
-2026-06-11T15:09:41.087Z,/examples/fit-review-sample/,pass,A smaller paid verdict,https://agentsiteops.com/examples/fit-review-sample/
-2026-06-11T15:09:41.087Z,/examples/fit-review-sample/,pass,Do not buy the USD 99 blueprint yet,https://agentsiteops.com/examples/fit-review-sample/
-2026-06-11T15:09:41.087Z,/examples/fit-review-sample/,pass,It does not prove traffic,https://agentsiteops.com/examples/fit-review-sample/
-2026-06-11T15:09:41.087Z,/sample/,pass,HTTP 200,https://agentsiteops.com/sample/
-2026-06-11T15:09:41.087Z,/sample/,pass,HTML title exists,https://agentsiteops.com/sample/
-2026-06-11T15:09:41.087Z,/sample/,pass,canonical points to production URL,https://agentsiteops.com/sample/
-2026-06-11T15:09:41.087Z,/sample/,pass,What a Launch Blueprint looks like,https://agentsiteops.com/sample/
-2026-06-11T15:09:41.087Z,/sample/,pass,Sample,https://agentsiteops.com/sample/
-2026-06-11T15:09:41.087Z,/sample/,pass,What the paid file must contain,https://agentsiteops.com/sample/
-2026-06-11T15:09:41.087Z,/sample/,pass,Check fit first,https://agentsiteops.com/sample/
-2026-06-11T15:09:41.087Z,/compare/,pass,HTTP 200,https://agentsiteops.com/compare/
-2026-06-11T15:09:41.087Z,/compare/,pass,HTML title exists,https://agentsiteops.com/compare/
-2026-06-11T15:09:41.087Z,/compare/,pass,canonical points to production URL,https://agentsiteops.com/compare/
-2026-06-11T15:09:41.087Z,/compare/,pass,Compare AgentSiteOps before buying,https://agentsiteops.com/compare/
-2026-06-11T15:09:41.087Z,/compare/,pass,Generic AI chat,https://agentsiteops.com/compare/
-2026-06-11T15:09:41.087Z,/compare/,pass,Do not buy for these jobs,https://agentsiteops.com/compare/
-2026-06-11T15:09:41.087Z,/compare/,pass,HTTP 200,https://agentsiteops.com/compare/
-2026-06-11T15:09:41.087Z,/compare/,pass,HTML title exists,https://agentsiteops.com/compare/
-2026-06-11T15:09:41.087Z,/compare/,pass,canonical points to production URL,https://agentsiteops.com/compare/
-2026-06-11T15:09:41.087Z,/compare/,pass,Common objections before payment,https://agentsiteops.com/compare/
-2026-06-11T15:09:41.087Z,/compare/,pass,"I need someone to build it, not just advise.",https://agentsiteops.com/compare/
-2026-06-11T15:09:41.087Z,/examples/agentsiteops-self-audit/,pass,HTTP 200,https://agentsiteops.com/examples/agentsiteops-self-audit/
-2026-06-11T15:09:41.087Z,/examples/agentsiteops-self-audit/,pass,HTML title exists,https://agentsiteops.com/examples/agentsiteops-self-audit/
-2026-06-11T15:09:41.087Z,/examples/agentsiteops-self-audit/,pass,canonical points to production URL,https://agentsiteops.com/examples/agentsiteops-self-audit/
-2026-06-11T15:09:41.087Z,/examples/agentsiteops-self-audit/,pass,AgentSiteOps Self-Audit Sample,https://agentsiteops.com/examples/agentsiteops-self-audit/
-2026-06-11T15:09:41.087Z,/examples/agentsiteops-self-audit/,pass,52/100,https://agentsiteops.com/examples/agentsiteops-self-audit/
-2026-06-11T15:09:41.087Z,/examples/agentsiteops-self-audit/,pass,commercially unvalidated,https://agentsiteops.com/examples/agentsiteops-self-audit/
-2026-06-11T15:09:41.087Z,/starter-review/,pass,HTTP 200,https://agentsiteops.com/starter-review/
-2026-06-11T15:09:41.087Z,/starter-review/,pass,HTML title exists,https://agentsiteops.com/starter-review/
-2026-06-11T15:09:41.087Z,/starter-review/,pass,canonical points to production URL,https://agentsiteops.com/starter-review/
-2026-06-11T15:09:41.087Z,/starter-review/,pass,"Get a go, narrow, or stop verdict",https://agentsiteops.com/starter-review/
-2026-06-11T15:09:41.087Z,/starter-review/,pass,USD,https://agentsiteops.com/starter-review/
-2026-06-11T15:09:41.087Z,/starter-review/,pass,reject the larger sale,https://agentsiteops.com/starter-review/
-2026-06-11T15:09:41.087Z,/starter-review/,pass,retired payment test copy and link are absent,https://agentsiteops.com/starter-review/
-2026-06-11T15:09:41.087Z,/buy/,pass,HTTP 200,https://agentsiteops.com/buy/
-2026-06-11T15:09:41.087Z,/buy/,pass,HTML title exists,https://agentsiteops.com/buy/
-2026-06-11T15:09:41.087Z,/buy/,pass,canonical points to production URL,https://agentsiteops.com/buy/
-2026-06-11T15:09:41.087Z,/buy/,pass,Get one sellable offer,https://agentsiteops.com/buy/
-2026-06-11T15:09:41.087Z,/buy/,pass,Pay with PayPal,https://agentsiteops.com/buy/
-2026-06-11T15:09:41.087Z,/buy/,pass,Acceptance criteria,https://agentsiteops.com/buy/
-2026-06-11T15:09:41.087Z,/buy/,pass,If the route is not ready,https://agentsiteops.com/buy/
-2026-06-11T15:09:41.087Z,/buy/,pass,retired payment test copy and link are absent,https://agentsiteops.com/buy/
-2026-06-11T15:09:41.087Z,/intake/,pass,HTTP 200,https://agentsiteops.com/intake/
-2026-06-11T15:09:41.087Z,/intake/,pass,HTML title exists,https://agentsiteops.com/intake/
-2026-06-11T15:09:41.087Z,/intake/,pass,canonical points to production URL,https://agentsiteops.com/intake/
-2026-06-11T15:09:41.087Z,/intake/,pass,Order Intake,https://agentsiteops.com/intake/
-2026-06-11T15:09:41.087Z,/intake/,pass,Email intake,https://agentsiteops.com/intake/
-2026-06-11T15:09:41.087Z,/intake/,pass,Payment confirmation,https://agentsiteops.com/intake/
-2026-06-11T15:09:41.087Z,/intake/,pass,Manual delivery process,https://agentsiteops.com/intake/
-2026-06-11T15:09:41.087Z,/evidence/,pass,HTTP 200,https://agentsiteops.com/evidence/
-2026-06-11T15:09:41.087Z,/evidence/,pass,HTML title exists,https://agentsiteops.com/evidence/
-2026-06-11T15:09:41.087Z,/evidence/,pass,canonical points to production URL,https://agentsiteops.com/evidence/
-2026-06-11T15:09:41.087Z,/evidence/,pass,Evidence Ledger,https://agentsiteops.com/evidence/
-2026-06-11T15:09:41.087Z,/evidence/,pass,Verified evidence,https://agentsiteops.com/evidence/
-2026-06-11T15:09:41.087Z,/evidence/,pass,Current objective self-score,https://agentsiteops.com/evidence/
-2026-06-11T15:09:41.087Z,/evidence/,pass,Score update rules,https://agentsiteops.com/evidence/
-2026-06-11T15:09:41.087Z,/evidence/,pass,52/100,https://agentsiteops.com/evidence/
-2026-06-11T15:09:41.087Z,/evidence/,pass,Claims not made,https://agentsiteops.com/evidence/
-2026-06-11T15:09:41.087Z,/tools/audit-scope-builder/,pass,HTTP 200,https://agentsiteops.com/tools/audit-scope-builder/
-2026-06-11T15:09:41.087Z,/tools/audit-scope-builder/,pass,HTML title exists,https://agentsiteops.com/tools/audit-scope-builder/
-2026-06-11T15:09:41.087Z,/tools/audit-scope-builder/,pass,canonical points to production URL,https://agentsiteops.com/tools/audit-scope-builder/
-2026-06-11T15:09:41.087Z,/tools/audit-scope-builder/,pass,Audit Scope Builder,https://agentsiteops.com/tools/audit-scope-builder/
-2026-06-11T15:09:41.087Z,/tools/audit-scope-builder/,pass,local-only,https://agentsiteops.com/tools/audit-scope-builder/
-2026-06-11T15:09:41.087Z,/tools/audit-scope-builder/,pass,"No payment, account, identity",https://agentsiteops.com/tools/audit-scope-builder/
-2026-06-11T15:09:41.087Z,/tools/launch-blueprint-fit-checker/,pass,HTTP 200,https://agentsiteops.com/tools/launch-blueprint-fit-checker/
-2026-06-11T15:09:41.087Z,/tools/launch-blueprint-fit-checker/,pass,HTML title exists,https://agentsiteops.com/tools/launch-blueprint-fit-checker/
-2026-06-11T15:09:41.087Z,/tools/launch-blueprint-fit-checker/,pass,canonical points to production URL,https://agentsiteops.com/tools/launch-blueprint-fit-checker/
-2026-06-11T15:09:41.087Z,/tools/launch-blueprint-fit-checker/,pass,Launch Blueprint Fit Checker,https://agentsiteops.com/tools/launch-blueprint-fit-checker/
-2026-06-11T15:09:41.087Z,/tools/launch-blueprint-fit-checker/,pass,Do not buy,https://agentsiteops.com/tools/launch-blueprint-fit-checker/
-2026-06-11T15:09:41.087Z,/tools/launch-blueprint-fit-checker/,pass,"No request, account, payment",https://agentsiteops.com/tools/launch-blueprint-fit-checker/
-2026-06-11T15:09:41.087Z,/checklists/launch-validation-decision-gate/,pass,HTTP 200,https://agentsiteops.com/checklists/launch-validation-decision-gate/
-2026-06-11T15:09:41.087Z,/checklists/launch-validation-decision-gate/,pass,HTML title exists,https://agentsiteops.com/checklists/launch-validation-decision-gate/
-2026-06-11T15:09:41.087Z,/checklists/launch-validation-decision-gate/,pass,canonical points to production URL,https://agentsiteops.com/checklists/launch-validation-decision-gate/
-2026-06-11T15:09:41.087Z,/checklists/launch-validation-decision-gate/,pass,Launch Validation Decision Gate,https://agentsiteops.com/checklists/launch-validation-decision-gate/
-2026-06-11T15:09:41.087Z,/checklists/launch-validation-decision-gate/,pass,"Stop, rewrite, or pivot before scaling",https://agentsiteops.com/checklists/launch-validation-decision-gate/
-2026-06-11T15:09:41.087Z,/checklists/launch-validation-decision-gate/,pass,PayPal clicks without confirmed payment are not revenue,https://agentsiteops.com/checklists/launch-validation-decision-gate/
-2026-06-11T15:09:41.087Z,/checklists/launch-validation-decision-gate/,pass,IndexNow success is not demand,https://agentsiteops.com/checklists/launch-validation-decision-gate/
-2026-06-11T15:09:41.087Z,/checklists/launch-validation-decision-gate/,pass,pivot_to_implementation,https://agentsiteops.com/checklists/launch-validation-decision-gate/
-2026-06-11T15:09:41.087Z,/reports/route-evidence-dashboard/,pass,HTTP 200,https://agentsiteops.com/reports/route-evidence-dashboard/
-2026-06-11T15:09:41.087Z,/reports/route-evidence-dashboard/,pass,HTML title exists,https://agentsiteops.com/reports/route-evidence-dashboard/
-2026-06-11T15:09:41.087Z,/reports/route-evidence-dashboard/,pass,canonical points to production URL,https://agentsiteops.com/reports/route-evidence-dashboard/
-2026-06-11T15:09:41.087Z,/reports/route-evidence-dashboard/,pass,Route Evidence Dashboard,https://agentsiteops.com/reports/route-evidence-dashboard/
-2026-06-11T15:09:41.087Z,/reports/route-evidence-dashboard/,pass,Route evidence table,https://agentsiteops.com/reports/route-evidence-dashboard/
-2026-06-11T15:09:41.087Z,/reports/route-evidence-dashboard/,pass,GSC pending,https://agentsiteops.com/reports/route-evidence-dashboard/
-2026-06-11T15:09:41.087Z,/privacy/,pass,HTTP 200,https://agentsiteops.com/privacy/
-2026-06-11T15:09:41.087Z,/privacy/,pass,HTML title exists,https://agentsiteops.com/privacy/
-2026-06-11T15:09:41.087Z,/privacy/,pass,canonical points to production URL,https://agentsiteops.com/privacy/
-2026-06-11T15:09:41.087Z,/privacy/,pass,PayPal,https://agentsiteops.com/privacy/
-2026-06-11T15:09:41.087Z,/privacy/,pass,manual,https://agentsiteops.com/privacy/
-2026-06-11T15:09:41.087Z,/privacy/,pass,no account,https://agentsiteops.com/privacy/
-2026-06-11T15:09:41.087Z,/updates/,pass,HTTP 200,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,HTML title exists,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,canonical points to production URL,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,Updates,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-17 Self-score maintenance protocol,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-16 Objective self-score calibration,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-15 Launch validation decision gate,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-14 Objection response conversion layer,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-13 Search evidence import guardrail,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-12 Manual outreach evidence loop,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-11 Delivery artifact templates,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-10 Fit Review sample artifact,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-09 Fit Review entry offer,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-08 Launch funnel evidence boundary,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-07 Intake and manual fulfillment path,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-06 Purchase acceptance and encoding gate,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-05 Quality gate and evidence-ready sample,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-04 Pre-purchase fit checker,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-03 Launch comparison and sample depth,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,M4-01 Launch Blueprint reset and payment flow,https://agentsiteops.com/updates/
-2026-06-11T15:09:41.087Z,/updates/,pass,IndexNow submit pass,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,www_redirect,pass,HTTP 301 to https://agentsiteops.com/,https://www.agentsiteops.com/
+2026-06-11T22:53:51.776Z,sitemap,pass,HTTP 200,https://agentsiteops.com/sitemap.xml
+2026-06-11T22:53:51.776Z,sitemap,pass,42 URLs match route registry,https://agentsiteops.com/sitemap.xml
+2026-06-11T22:53:51.776Z,robots,pass,HTTP 200,https://agentsiteops.com/robots.txt
+2026-06-11T22:53:51.776Z,robots,pass,OAI-SearchBot policy visible,https://agentsiteops.com/robots.txt
+2026-06-11T22:53:51.776Z,robots,pass,ChatGPT-User policy visible,https://agentsiteops.com/robots.txt
+2026-06-11T22:53:51.776Z,robots,pass,PerplexityBot policy visible,https://agentsiteops.com/robots.txt
+2026-06-11T22:53:51.776Z,robots,pass,GPTBot policy visible,https://agentsiteops.com/robots.txt
+2026-06-11T22:53:51.776Z,robots,pass,training crawler disallow visible,https://agentsiteops.com/robots.txt
+2026-06-11T22:53:51.776Z,robots,pass,sitemap pointer visible,https://agentsiteops.com/robots.txt
+2026-06-11T22:53:51.776Z,indexnow_key,pass,HTTP 200,https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt
+2026-06-11T22:53:51.776Z,indexnow_key,pass,key file content matches public key,https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt
+2026-06-11T22:53:51.776Z,brand_icon,pass,HTTP 200,https://agentsiteops.com/icon.svg
+2026-06-11T22:53:51.776Z,brand_icon,pass,SVG icon exists,https://agentsiteops.com/icon.svg
+2026-06-11T22:53:51.776Z,brand_icon,pass,icon has accessible brand label,https://agentsiteops.com/icon.svg
+2026-06-11T22:53:51.776Z,/,pass,HTTP 200,https://agentsiteops.com/
+2026-06-11T22:53:51.776Z,/,pass,HTML title exists,https://agentsiteops.com/
+2026-06-11T22:53:51.776Z,/,pass,canonical points to production URL,https://agentsiteops.com/
+2026-06-11T22:53:51.776Z,/,pass,Validate your first AI service offer before building the site,https://agentsiteops.com/
+2026-06-11T22:53:51.776Z,/,pass,Start with USD,https://agentsiteops.com/
+2026-06-11T22:53:51.776Z,/,pass,Fit Review,https://agentsiteops.com/
+2026-06-11T22:53:51.776Z,/,pass,52/100,https://agentsiteops.com/
+2026-06-11T22:53:51.776Z,/,pass,"Evidence used, not guessed",https://agentsiteops.com/
+2026-06-11T22:53:51.776Z,/,pass,"What the buyer receives is a route file, not a score",https://agentsiteops.com/
+2026-06-11T22:53:51.776Z,/,pass,"Market signals are context, not proof",https://agentsiteops.com/
+2026-06-11T22:53:51.776Z,/pricing/,pass,HTTP 200,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,HTML title exists,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,canonical points to production URL,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,Choose the smallest purchase that can answer the decision,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,AgentSiteOps Launch Blueprint,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,Fit Review,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,USD,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,PayPal,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,Why pay for a manual route,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,What USD 99 must produce,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,retired payment test copy and link are absent,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,HTTP 200,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,HTML title exists,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,canonical points to production URL,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,Objections that should block or redirect payment,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,I can ask ChatGPT for this.,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/pricing/,pass,retired payment test copy and link are absent,https://agentsiteops.com/pricing/
+2026-06-11T22:53:51.776Z,/examples/fit-review-sample/,pass,HTTP 200,https://agentsiteops.com/examples/fit-review-sample/
+2026-06-11T22:53:51.776Z,/examples/fit-review-sample/,pass,HTML title exists,https://agentsiteops.com/examples/fit-review-sample/
+2026-06-11T22:53:51.776Z,/examples/fit-review-sample/,pass,canonical points to production URL,https://agentsiteops.com/examples/fit-review-sample/
+2026-06-11T22:53:51.776Z,/examples/fit-review-sample/,pass,A smaller paid verdict,https://agentsiteops.com/examples/fit-review-sample/
+2026-06-11T22:53:51.776Z,/examples/fit-review-sample/,pass,Do not buy the USD 99 blueprint yet,https://agentsiteops.com/examples/fit-review-sample/
+2026-06-11T22:53:51.776Z,/examples/fit-review-sample/,pass,It does not prove traffic,https://agentsiteops.com/examples/fit-review-sample/
+2026-06-11T22:53:51.776Z,/sample/,pass,HTTP 200,https://agentsiteops.com/sample/
+2026-06-11T22:53:51.776Z,/sample/,pass,HTML title exists,https://agentsiteops.com/sample/
+2026-06-11T22:53:51.776Z,/sample/,pass,canonical points to production URL,https://agentsiteops.com/sample/
+2026-06-11T22:53:51.776Z,/sample/,pass,What a Launch Blueprint looks like,https://agentsiteops.com/sample/
+2026-06-11T22:53:51.776Z,/sample/,pass,Sample,https://agentsiteops.com/sample/
+2026-06-11T22:53:51.776Z,/sample/,pass,What the paid file must contain,https://agentsiteops.com/sample/
+2026-06-11T22:53:51.776Z,/sample/,pass,Check fit first,https://agentsiteops.com/sample/
+2026-06-11T22:53:51.776Z,/compare/,pass,HTTP 200,https://agentsiteops.com/compare/
+2026-06-11T22:53:51.776Z,/compare/,pass,HTML title exists,https://agentsiteops.com/compare/
+2026-06-11T22:53:51.776Z,/compare/,pass,canonical points to production URL,https://agentsiteops.com/compare/
+2026-06-11T22:53:51.776Z,/compare/,pass,Compare AgentSiteOps before buying,https://agentsiteops.com/compare/
+2026-06-11T22:53:51.776Z,/compare/,pass,Generic AI chat,https://agentsiteops.com/compare/
+2026-06-11T22:53:51.776Z,/compare/,pass,Do not buy for these jobs,https://agentsiteops.com/compare/
+2026-06-11T22:53:51.776Z,/compare/,pass,HTTP 200,https://agentsiteops.com/compare/
+2026-06-11T22:53:51.776Z,/compare/,pass,HTML title exists,https://agentsiteops.com/compare/
+2026-06-11T22:53:51.776Z,/compare/,pass,canonical points to production URL,https://agentsiteops.com/compare/
+2026-06-11T22:53:51.776Z,/compare/,pass,Common objections before payment,https://agentsiteops.com/compare/
+2026-06-11T22:53:51.776Z,/compare/,pass,"I need someone to build it, not just advise.",https://agentsiteops.com/compare/
+2026-06-11T22:53:51.776Z,/examples/agentsiteops-self-audit/,pass,HTTP 200,https://agentsiteops.com/examples/agentsiteops-self-audit/
+2026-06-11T22:53:51.776Z,/examples/agentsiteops-self-audit/,pass,HTML title exists,https://agentsiteops.com/examples/agentsiteops-self-audit/
+2026-06-11T22:53:51.776Z,/examples/agentsiteops-self-audit/,pass,canonical points to production URL,https://agentsiteops.com/examples/agentsiteops-self-audit/
+2026-06-11T22:53:51.776Z,/examples/agentsiteops-self-audit/,pass,AgentSiteOps Self-Audit Sample,https://agentsiteops.com/examples/agentsiteops-self-audit/
+2026-06-11T22:53:51.776Z,/examples/agentsiteops-self-audit/,pass,52/100,https://agentsiteops.com/examples/agentsiteops-self-audit/
+2026-06-11T22:53:51.776Z,/examples/agentsiteops-self-audit/,pass,commercially unvalidated,https://agentsiteops.com/examples/agentsiteops-self-audit/
+2026-06-11T22:53:51.776Z,/starter-review/,pass,HTTP 200,https://agentsiteops.com/starter-review/
+2026-06-11T22:53:51.776Z,/starter-review/,pass,HTML title exists,https://agentsiteops.com/starter-review/
+2026-06-11T22:53:51.776Z,/starter-review/,pass,canonical points to production URL,https://agentsiteops.com/starter-review/
+2026-06-11T22:53:51.776Z,/starter-review/,pass,"Get a go, narrow, or stop verdict",https://agentsiteops.com/starter-review/
+2026-06-11T22:53:51.776Z,/starter-review/,pass,USD,https://agentsiteops.com/starter-review/
+2026-06-11T22:53:51.776Z,/starter-review/,pass,reject the larger sale,https://agentsiteops.com/starter-review/
+2026-06-11T22:53:51.776Z,/starter-review/,pass,retired payment test copy and link are absent,https://agentsiteops.com/starter-review/
+2026-06-11T22:53:51.776Z,/buy/,pass,HTTP 200,https://agentsiteops.com/buy/
+2026-06-11T22:53:51.776Z,/buy/,pass,HTML title exists,https://agentsiteops.com/buy/
+2026-06-11T22:53:51.776Z,/buy/,pass,canonical points to production URL,https://agentsiteops.com/buy/
+2026-06-11T22:53:51.776Z,/buy/,pass,Get one sellable offer,https://agentsiteops.com/buy/
+2026-06-11T22:53:51.776Z,/buy/,pass,Pay with PayPal,https://agentsiteops.com/buy/
+2026-06-11T22:53:51.776Z,/buy/,pass,Acceptance criteria,https://agentsiteops.com/buy/
+2026-06-11T22:53:51.776Z,/buy/,pass,If the route is not ready,https://agentsiteops.com/buy/
+2026-06-11T22:53:51.776Z,/buy/,pass,retired payment test copy and link are absent,https://agentsiteops.com/buy/
+2026-06-11T22:53:51.776Z,/intake/,pass,HTTP 200,https://agentsiteops.com/intake/
+2026-06-11T22:53:51.776Z,/intake/,pass,HTML title exists,https://agentsiteops.com/intake/
+2026-06-11T22:53:51.776Z,/intake/,pass,canonical points to production URL,https://agentsiteops.com/intake/
+2026-06-11T22:53:51.776Z,/intake/,pass,Order Intake,https://agentsiteops.com/intake/
+2026-06-11T22:53:51.776Z,/intake/,pass,Email intake,https://agentsiteops.com/intake/
+2026-06-11T22:53:51.776Z,/intake/,pass,Payment confirmation,https://agentsiteops.com/intake/
+2026-06-11T22:53:51.776Z,/intake/,pass,Manual delivery process,https://agentsiteops.com/intake/
+2026-06-11T22:53:51.776Z,/evidence/,pass,HTTP 200,https://agentsiteops.com/evidence/
+2026-06-11T22:53:51.776Z,/evidence/,pass,HTML title exists,https://agentsiteops.com/evidence/
+2026-06-11T22:53:51.776Z,/evidence/,pass,canonical points to production URL,https://agentsiteops.com/evidence/
+2026-06-11T22:53:51.776Z,/evidence/,pass,Evidence Ledger,https://agentsiteops.com/evidence/
+2026-06-11T22:53:51.776Z,/evidence/,pass,Verified evidence,https://agentsiteops.com/evidence/
+2026-06-11T22:53:51.776Z,/evidence/,pass,Current objective self-score,https://agentsiteops.com/evidence/
+2026-06-11T22:53:51.776Z,/evidence/,pass,Score update rules,https://agentsiteops.com/evidence/
+2026-06-11T22:53:51.776Z,/evidence/,pass,52/100,https://agentsiteops.com/evidence/
+2026-06-11T22:53:51.776Z,/evidence/,pass,Claims not made,https://agentsiteops.com/evidence/
+2026-06-11T22:53:51.776Z,/tools/audit-scope-builder/,pass,HTTP 200,https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-11T22:53:51.776Z,/tools/audit-scope-builder/,pass,HTML title exists,https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-11T22:53:51.776Z,/tools/audit-scope-builder/,pass,canonical points to production URL,https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-11T22:53:51.776Z,/tools/audit-scope-builder/,pass,Audit Scope Builder,https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-11T22:53:51.776Z,/tools/audit-scope-builder/,pass,local-only,https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-11T22:53:51.776Z,/tools/audit-scope-builder/,pass,"No payment, account, identity",https://agentsiteops.com/tools/audit-scope-builder/
+2026-06-11T22:53:51.776Z,/tools/launch-blueprint-fit-checker/,pass,HTTP 200,https://agentsiteops.com/tools/launch-blueprint-fit-checker/
+2026-06-11T22:53:51.776Z,/tools/launch-blueprint-fit-checker/,pass,HTML title exists,https://agentsiteops.com/tools/launch-blueprint-fit-checker/
+2026-06-11T22:53:51.776Z,/tools/launch-blueprint-fit-checker/,pass,canonical points to production URL,https://agentsiteops.com/tools/launch-blueprint-fit-checker/
+2026-06-11T22:53:51.776Z,/tools/launch-blueprint-fit-checker/,pass,Launch Blueprint Fit Checker,https://agentsiteops.com/tools/launch-blueprint-fit-checker/
+2026-06-11T22:53:51.776Z,/tools/launch-blueprint-fit-checker/,pass,Do not buy,https://agentsiteops.com/tools/launch-blueprint-fit-checker/
+2026-06-11T22:53:51.776Z,/tools/launch-blueprint-fit-checker/,pass,"No request, account, payment",https://agentsiteops.com/tools/launch-blueprint-fit-checker/
+2026-06-11T22:53:51.776Z,/checklists/launch-validation-decision-gate/,pass,HTTP 200,https://agentsiteops.com/checklists/launch-validation-decision-gate/
+2026-06-11T22:53:51.776Z,/checklists/launch-validation-decision-gate/,pass,HTML title exists,https://agentsiteops.com/checklists/launch-validation-decision-gate/
+2026-06-11T22:53:51.776Z,/checklists/launch-validation-decision-gate/,pass,canonical points to production URL,https://agentsiteops.com/checklists/launch-validation-decision-gate/
+2026-06-11T22:53:51.776Z,/checklists/launch-validation-decision-gate/,pass,Launch Validation Decision Gate,https://agentsiteops.com/checklists/launch-validation-decision-gate/
+2026-06-11T22:53:51.776Z,/checklists/launch-validation-decision-gate/,pass,"Stop, rewrite, or pivot before scaling",https://agentsiteops.com/checklists/launch-validation-decision-gate/
+2026-06-11T22:53:51.776Z,/checklists/launch-validation-decision-gate/,pass,PayPal clicks without confirmed payment are not revenue,https://agentsiteops.com/checklists/launch-validation-decision-gate/
+2026-06-11T22:53:51.776Z,/checklists/launch-validation-decision-gate/,pass,IndexNow success is not demand,https://agentsiteops.com/checklists/launch-validation-decision-gate/
+2026-06-11T22:53:51.776Z,/checklists/launch-validation-decision-gate/,pass,pivot_to_implementation,https://agentsiteops.com/checklists/launch-validation-decision-gate/
+2026-06-11T22:53:51.776Z,/reports/route-evidence-dashboard/,pass,HTTP 200,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-11T22:53:51.776Z,/reports/route-evidence-dashboard/,pass,HTML title exists,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-11T22:53:51.776Z,/reports/route-evidence-dashboard/,pass,canonical points to production URL,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-11T22:53:51.776Z,/reports/route-evidence-dashboard/,pass,Route Evidence Dashboard,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-11T22:53:51.776Z,/reports/route-evidence-dashboard/,pass,Route evidence table,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-11T22:53:51.776Z,/reports/route-evidence-dashboard/,pass,GSC pending,https://agentsiteops.com/reports/route-evidence-dashboard/
+2026-06-11T22:53:51.776Z,/privacy/,pass,HTTP 200,https://agentsiteops.com/privacy/
+2026-06-11T22:53:51.776Z,/privacy/,pass,HTML title exists,https://agentsiteops.com/privacy/
+2026-06-11T22:53:51.776Z,/privacy/,pass,canonical points to production URL,https://agentsiteops.com/privacy/
+2026-06-11T22:53:51.776Z,/privacy/,pass,PayPal,https://agentsiteops.com/privacy/
+2026-06-11T22:53:51.776Z,/privacy/,pass,manual,https://agentsiteops.com/privacy/
+2026-06-11T22:53:51.776Z,/privacy/,pass,no account,https://agentsiteops.com/privacy/
+2026-06-11T22:53:51.776Z,/updates/,pass,HTTP 200,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,HTML title exists,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,canonical points to production URL,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,Updates,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-20 Evidence-led value layer,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,evidence-bounded route-selection service,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-17 Self-score maintenance protocol,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-16 Objective self-score calibration,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-15 Launch validation decision gate,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-14 Objection response conversion layer,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-13 Search evidence import guardrail,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-12 Manual outreach evidence loop,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-11 Delivery artifact templates,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-10 Fit Review sample artifact,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-09 Fit Review entry offer,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-08 Launch funnel evidence boundary,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-07 Intake and manual fulfillment path,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-06 Purchase acceptance and encoding gate,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-05 Quality gate and evidence-ready sample,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-04 Pre-purchase fit checker,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-03 Launch comparison and sample depth,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,M4-01 Launch Blueprint reset and payment flow,https://agentsiteops.com/updates/
+2026-06-11T22:53:51.776Z,/updates/,pass,IndexNow submit pass,https://agentsiteops.com/updates/

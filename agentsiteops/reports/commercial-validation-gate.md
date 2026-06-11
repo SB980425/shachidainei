@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T14:57:22.858Z
+- Generated: 2026-06-11T22:49:33.056Z
 - Status: pass
-- Checks: 127
+- Checks: 132
 - Blockers: 0
 
 ## Summary
@@ -57,6 +57,11 @@
 | service_boundary | pass | pricing page shows objection-based payment redirects |
 | service_boundary | pass | pricing page can tell unclear buyers not to pay |
 | service_boundary | pass | pricing page addresses new-site PayPal trust objection |
+| service_boundary | pass | homepage shows evidence-before-roadmap proof layer |
+| service_boundary | pass | homepage shows paid artifact boundary |
+| service_boundary | pass | homepage separates market research from validation proof |
+| service_boundary | pass | pricing page explains paid route-selection value |
+| service_boundary | pass | pricing page shows delivery standard for USD 99 offer |
 | service_boundary | pass | buy page blocks software expectation |
 | service_boundary | pass | disclaimer blocks guarantee claims |
 | trust_pages | pass | terms page covers PayPal payment path |
