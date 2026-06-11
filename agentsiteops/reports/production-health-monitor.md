@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T10:52:09.404Z
+- Generated: 2026-06-11T11:04:15.718Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 108
+- Checks: 115
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 40 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 41 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -40,6 +40,12 @@
 | /pricing/ | pass | USD | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | PayPal | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/pricing/) |
+| /examples/fit-review-sample/ | pass | HTTP 200 | [link](https://agentsiteops.com/examples/fit-review-sample/) |
+| /examples/fit-review-sample/ | pass | HTML title exists | [link](https://agentsiteops.com/examples/fit-review-sample/) |
+| /examples/fit-review-sample/ | pass | canonical points to production URL | [link](https://agentsiteops.com/examples/fit-review-sample/) |
+| /examples/fit-review-sample/ | pass | A smaller paid verdict | [link](https://agentsiteops.com/examples/fit-review-sample/) |
+| /examples/fit-review-sample/ | pass | Do not buy the USD 99 blueprint yet | [link](https://agentsiteops.com/examples/fit-review-sample/) |
+| /examples/fit-review-sample/ | pass | It does not prove traffic | [link](https://agentsiteops.com/examples/fit-review-sample/) |
 | /sample/ | pass | HTTP 200 | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | HTML title exists | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | canonical points to production URL | [link](https://agentsiteops.com/sample/) |
@@ -110,6 +116,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-10 Fit Review sample artifact | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-09 Fit Review entry offer | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-08 Launch funnel evidence boundary | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-07 Intake and manual fulfillment path | [link](https://agentsiteops.com/updates/) |
