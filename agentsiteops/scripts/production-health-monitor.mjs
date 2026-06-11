@@ -100,7 +100,7 @@ async function checkPage(path, requiredText) {
     requireText(path, response.text, item, item, url);
   }
 
-  if (path === "/buy/" || path === "/pricing/") {
+  if (path === "/buy/" || path === "/pricing/" || path === "/starter-review/") {
     requireAbsentText(path, response.text, /Test PayPal|Test USD|1USD|test_payment/i, "retired payment test copy and link are absent", url);
   }
 }
@@ -267,9 +267,10 @@ async function main() {
     "Check fit before payment",
     "Launch Readiness"
   ]);
-  await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "USD", "Pay with PayPal"]);
+  await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "Fit Review", "USD", "PayPal"]);
   await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "What the paid file must contain", "Check fit first"]);
   await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
+  await checkPage("/starter-review/", ["Pay for a fit verdict", "USD 29", "It can reject the sale"]);
   await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "Acceptance criteria", "If the route is not ready"]);
   await checkPage("/intake/", ["Launch Blueprint Intake", "Email intake", "Payment confirmation", "Manual delivery process"]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Funnel template", "Claims not made"]);
@@ -279,6 +280,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-09 Fit Review entry offer",
     "M4-08 Launch funnel evidence boundary",
     "M4-07 Intake and manual fulfillment path",
     "M4-06 Purchase acceptance and encoding gate",

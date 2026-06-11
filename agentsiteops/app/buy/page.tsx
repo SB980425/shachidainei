@@ -7,7 +7,7 @@ import {
   launchFailureHandling,
   launchProduct
 } from "@/lib/launch";
-import { primaryOffer } from "@/lib/payments";
+import { primaryOffer, starterOffer } from "@/lib/payments";
 import { siteUrl } from "@/lib/site";
 
 const path = "/buy/";
@@ -57,6 +57,7 @@ export default function Page() {
           <p>
             The Launch Blueprint is a manual service for AI-capable solo builders who need a concrete
             first offer, page structure, pricing angle, and outreach sequence.
+            If that purchase decision is still unclear, use the USD {starterOffer.price} Fit Review first.
           </p>
         </div>
         <aside className="pricing-receipt" aria-label="Buy Launch Blueprint">
@@ -81,6 +82,10 @@ export default function Page() {
           <Link className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
             <CheckCircle2 aria-hidden="true" size={17} />
             Check fit first
+          </Link>
+          <Link className="secondary-action" href="/starter-review/">
+            <ShieldCheck aria-hidden="true" size={17} />
+            Start with USD {starterOffer.price} review
           </Link>
         </aside>
       </section>
@@ -114,7 +119,7 @@ export default function Page() {
           <article className="workflow-card">
             <span>1</span>
             <h3>Check fit</h3>
-            <p>Use the fit checker first and do not buy if the result blocks the purchase.</p>
+            <p>Use the fit checker first. If the decision is unclear, buy the smaller Fit Review instead.</p>
           </article>
           <article className="workflow-card">
             <span>2</span>
@@ -131,6 +136,10 @@ export default function Page() {
           <Link className="secondary-action" href="/sample/">
             <FileText aria-hidden="true" size={17} />
             View sample
+          </Link>
+          <Link className="secondary-action" href="/starter-review/">
+            <ShieldCheck aria-hidden="true" size={17} />
+            Fit Review
           </Link>
           <Link className="secondary-action" href="/intake/">
             <Mail aria-hidden="true" size={17} />

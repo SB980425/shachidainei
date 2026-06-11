@@ -303,6 +303,15 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/starter-review/",
+      "pageType": "commerce",
+      "template": "starter_review",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.76,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/buy/",
       "pageType": "commerce",
       "template": "payment_link",

@@ -12,6 +12,58 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-09 Fit Review entry offer",
+    status: "completed",
+    keyPoints: [
+      "Added a USD 29 AgentSiteOps Fit Review as a lower-friction paid entry before the USD 99 Launch Blueprint.",
+      "The Fit Review can return go, narrow, or stop, and is explicitly allowed to reject the full blueprint purchase when evidence is weak.",
+      "Registered the new route across sitemap, page registry, review actions, analytics events, revenue experiments, commercial validation, and production health monitoring."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect a smaller purchase path that reduces first-payment friction without treating page views, PayPal clicks, or weak intake as proven revenue.",
+    files: [
+      "app/starter-review/page.tsx",
+      "app/pricing/page.tsx",
+      "app/buy/page.tsx",
+      "app/compare/page.tsx",
+      "app/intake/page.tsx",
+      "app/page.tsx",
+      "lib/payments.ts",
+      "lib/launch.ts",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "data/revenue-experiments.csv",
+      "data/manual-fulfillment-log-template.csv",
+      "docs/manual-fulfillment-runbook.md",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "components/SiteAnalytics.tsx",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "analytics endpoint gate pass",
+      "commercial validation gate pass",
+      "route consistency gate pass",
+      "production build pass",
+      "technical SEO CI pass",
+      "crawler access audit pass",
+      "search evidence import waiting_for_exports state verified",
+      "growth snapshot baseline_ready",
+      "production deploy pass on Cloudflare Pages master branch",
+      "production health monitor pass",
+      "IndexNow submit pass"
+    ],
+    next:
+      "Judge the Fit Review only by confirmed payment plus usable intake or qualified payment-intent evidence; do not use it to justify subscriptions until repeat demand exists."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-08 Launch funnel evidence boundary",
     status: "completed",
     keyPoints: [

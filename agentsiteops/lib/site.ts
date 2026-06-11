@@ -738,7 +738,7 @@ export const routePages: RoutePage[] = [
           { label: "GitHub CI", value: "The agentsiteops-ci workflow is treated as a release target, while local release gates currently verify typecheck, build, code quality, SEO CI, crawler audit, commercial validation, search evidence import, and growth snapshot." },
           { label: "Production health", value: "The production health monitor checks apex/www behavior, sitemap, robots, IndexNow key, updates, evidence, and privacy boundary pages." },
           { label: "Commercial gate", value: "The commercial validation gate checks the manual PayPal path, refund boundary, terms, disclaimer, and no-guarantee claims." },
-          { label: "Manual fulfillment", value: "The intake page, fulfillment log template, and runbook define how payment evidence, project details, delivery pauses, and completion are handled without storing sensitive payment data." },
+          { label: "Manual fulfillment", value: "The intake page, fulfillment log template, and runbook define how Fit Review and Launch Blueprint payment evidence, project details, delivery pauses, and completion are handled without storing sensitive payment data." },
           { label: "Sample blueprint", value: "A public sample now shows input facts, selected offer, rejected paths, landing page outline, outreach angle, seven-day validation, and missing-evidence boundaries before payment." },
           { label: "IndexNow", value: "The current production route list is submitted after deployment, with the response recorded in the update log." }
         ]
@@ -752,8 +752,8 @@ export const routePages: RoutePage[] = [
           { label: "Bing", value: "Bing Webmaster Tools search, sitemap, URL, and AI Performance data is pending export." },
           { label: "AI referrals", value: "ChatGPT, Claude, Perplexity, and other AI-search referral examples are pending analytics or log evidence." },
           { label: "Audit intent", value: "Audit request clicks or GitHub issues are pending; the service page is an intent path only." },
-          { label: "Funnel movement", value: "Fit checker completion, sample inspection, comparison views, PayPal clicks, intake emails, and qualified orders are pending aggregate evidence." },
-          { label: "Revenue", value: "PayPal clicks are not revenue. Confirmed payments and qualified orders are pending PayPal and intake evidence outside the public repo." }
+          { label: "Funnel movement", value: "Fit checker completion, sample inspection, comparison views, Fit Review views, PayPal clicks, intake emails, and qualified orders are pending aggregate evidence." },
+          { label: "Revenue", value: "PayPal clicks and Fit Review page views are not revenue. Confirmed payments and qualified orders are pending PayPal and intake evidence outside the public repo." }
         ]
       },
       {
@@ -1259,10 +1259,10 @@ export const routePages: RoutePage[] = [
     pageType: "pricing",
     title: "Pricing",
     description:
-      "AgentSiteOps pricing for the USD 99 Launch Blueprint manual service.",
+      "AgentSiteOps pricing for the USD 29 Fit Review and USD 99 Launch Blueprint manual services.",
     answer:
-      "Pricing is intentionally reduced to one validation-stage offer: USD 99 for a manual Launch Blueprint delivered after payment confirmation and intake details.",
-    primaryAction: { label: "Pay with PayPal", href: "https://paypal.me/agentsiteops/99USD" },
+      "Pricing now separates the lower-friction USD 29 Fit Review from the full USD 99 Launch Blueprint so uncertain buyers can buy a smaller verdict first.",
+    primaryAction: { label: "Start with Fit Review", href: "/starter-review/" },
     secondaryAction: { label: "View sample", href: "/sample/" },
     aiTarget:
       "State the current offer, price, delivery boundary, refund caveat, and future monetization path clearly.",
@@ -1272,7 +1272,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Current offer",
         body:
-          "AgentSiteOps Launch Blueprint is USD 99 during the first validation phase. The old multi-tier ladder is intentionally removed."
+          "AgentSiteOps Fit Review is USD 29 and Launch Blueprint is USD 99 during the first validation phase. Subscriptions remain blocked until repeat demand is proven."
       },
       {
         title: "Delivery boundary",
@@ -1298,6 +1298,7 @@ export const routeMap = new Map(routePages.map((page) => [page.path, page]));
 export const customRoutes = [
   "/sample/",
   "/compare/",
+  "/starter-review/",
   "/buy/",
   "/intake/",
   "/terms/",

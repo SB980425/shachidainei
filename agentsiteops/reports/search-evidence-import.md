@@ -1,6 +1,6 @@
 # Search Evidence Import
 
-- Generated: 2026-06-11T10:01:48.066Z
+- Generated: 2026-06-11T10:40:45.232Z
 - Status: waiting_for_exports
 - Import files found: 0
 - Normalized rows: 0
@@ -53,6 +53,7 @@
 | /pricing/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /sample/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /compare/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /starter-review/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /buy/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /intake/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /terms/ | 0 | 0 | 0 | 0 | 0 | 0 |

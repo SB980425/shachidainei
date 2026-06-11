@@ -78,6 +78,7 @@ Minimum v1 allowlist:
 - `launch_blueprint_sample_view`
 - `launch_blueprint_buy_view`
 - `launch_blueprint_intake_view`
+- `starter_review_view`
 - `intake_email_click`
 - `contact_email_click`
 - `trust_policy_view`

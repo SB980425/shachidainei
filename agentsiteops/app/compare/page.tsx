@@ -15,7 +15,7 @@ import {
   launchProduct,
   purchaseFitRules
 } from "@/lib/launch";
-import { primaryOffer } from "@/lib/payments";
+import { primaryOffer, starterOffer } from "@/lib/payments";
 import { siteUrl } from "@/lib/site";
 
 const path = "/compare/";
@@ -78,6 +78,10 @@ export default function Page() {
               <GitCompareArrows aria-hidden="true" size={17} />
               View sample
             </Link>
+            <Link className="secondary-action" href="/starter-review/">
+              <ShieldAlert aria-hidden="true" size={17} />
+              Start with USD {starterOffer.price} review
+            </Link>
             <Link className="secondary-action" href="/pricing/">
               <ArrowRight aria-hidden="true" size={17} />
               View pricing
@@ -103,6 +107,10 @@ export default function Page() {
             Pay USD {primaryOffer.price}
           </a>
           <small>{launchProduct.nonPromise}</small>
+          <Link className="secondary-action" href="/starter-review/">
+            <ShieldAlert aria-hidden="true" size={17} />
+            Unsure? Use Fit Review
+          </Link>
         </aside>
       </section>
 
@@ -194,6 +202,16 @@ export default function Page() {
             <p>
               A useful report ends with one landing page structure, one outreach sequence,
               and a 7-day decision rule rather than a large list of possible ideas.
+            </p>
+          </article>
+          <article>
+            <span aria-hidden="true">
+              <ShieldAlert size={18} />
+            </span>
+            <h3>Lower-risk entry</h3>
+            <p>
+              The USD {starterOffer.price} Fit Review is a smaller purchase for uncertain
+              buyers. It can recommend collecting more proof before paying USD {primaryOffer.price}.
             </p>
           </article>
         </div>

@@ -4,20 +4,21 @@ import {
   deliveryProcessSteps,
   intakeFields,
   launchProduct,
-  paymentConfirmationFields
+  paymentConfirmationFields,
+  starterReviewProduct
 } from "@/lib/launch";
 import { siteUrl } from "@/lib/site";
 
 const path = "/intake/";
 
 export const metadata: Metadata = {
-  title: "Launch Blueprint Intake",
+  title: "Order Intake",
   description:
-    "Project details needed after buying the AgentSiteOps Launch Blueprint.",
+    "Project details needed after buying the AgentSiteOps Fit Review or Launch Blueprint.",
   alternates: { canonical: path },
   openGraph: {
-    title: "Launch Blueprint Intake",
-    description: "Send these details after payment so the manual blueprint can be delivered.",
+    title: "Order Intake",
+    description: "Send these details after payment so the manual review or blueprint can be delivered.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -29,12 +30,12 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Launch Blueprint Intake",
-    description: "Project details needed after buying the AgentSiteOps Launch Blueprint.",
+    name: "Order Intake",
+    description: "Project details needed after buying the AgentSiteOps Fit Review or Launch Blueprint.",
     url: `${siteUrl}${path}`,
     inLanguage: "en"
   };
-  const mailSubject = encodeURIComponent("AgentSiteOps Launch Blueprint intake");
+  const mailSubject = encodeURIComponent("AgentSiteOps order intake");
   const mailBody = encodeURIComponent(
     [
       "Payment confirmation",
@@ -54,10 +55,10 @@ export default function Page() {
       <section className="gate-hero">
         <div>
           <p className="eyebrow">Post-payment intake</p>
-          <h1>Send the details needed for the Blueprint.</h1>
+          <h1>Send the details needed for manual delivery.</h1>
           <p>
-            The site does not use a login system yet. After payment, send the details below
-            to the support email so the manual blueprint can be prepared.
+            The site does not use a login system yet. After payment for the Fit Review or
+            Launch Blueprint, send the details below so the manual deliverable can be prepared.
           </p>
           <div className="hero-actions">
             <a
@@ -73,6 +74,7 @@ export default function Page() {
         </div>
         <aside className="decision-card">
           <strong>Delivery clock</strong>
+          <p>{starterReviewProduct.timeline}</p>
           <p>{launchProduct.timeline}</p>
         </aside>
       </section>

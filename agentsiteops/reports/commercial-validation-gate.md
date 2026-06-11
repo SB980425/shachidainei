@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T10:12:51.359Z
+- Generated: 2026-06-11T10:41:30.937Z
 - Status: pass
-- Checks: 63
+- Checks: 71
 - Blockers: 0
 
 ## Summary
@@ -23,6 +23,8 @@
 | app | pass | /pricing/ has app page |
 | routes | pass | /compare/ registered in docs/routes.json |
 | app | pass | /compare/ has app page |
+| routes | pass | /starter-review/ registered in docs/routes.json |
+| app | pass | /starter-review/ has app page |
 | routes | pass | /buy/ registered in docs/routes.json |
 | app | pass | /buy/ has app page |
 | routes | pass | /intake/ registered in docs/routes.json |
@@ -36,14 +38,19 @@
 | routes | pass | /contact/ registered in docs/routes.json |
 | app | pass | /contact/ has app page |
 | payment_path | pass | live USD 99 PayPal link is configured |
+| payment_path | pass | live USD 29 PayPal link is configured |
 | payment_path | pass | payment config contains only current paid offer paths |
 | payment_path | pass | pricing page contains only current paid offer CTA |
+| payment_path | pass | starter review page contains only current paid offer CTA |
 | payment_path | pass | buy page contains only current paid offer CTA |
+| payment_path | pass | starter review page has paid CTA |
+| service_boundary | pass | starter review can reject the full blueprint sale |
 | service_boundary | pass | launch product blocks guarantee claims |
 | service_boundary | pass | disclaimer blocks guarantee claims |
 | trust_pages | pass | terms page covers PayPal payment path |
 | trust_pages | pass | refund page exists and states refund boundary |
 | revenue_experiments | pass | Launch Blueprint is recorded as live validation |
+| revenue_experiments | pass | Fit Review is recorded as live validation |
 | revenue_experiments | pass | revenue experiment table contains only active or planned commercial hypotheses |
 | revenue_experiments | pass | subscription remains blocked |
 | compliance | pass | current payment path has compliance boundary |
@@ -52,6 +59,7 @@
 | manual_fulfillment | pass | intake page requests payment confirmation |
 | manual_fulfillment | pass | intake page explains manual delivery process |
 | manual_fulfillment | pass | manual fulfillment template records payment reference |
+| manual_fulfillment | pass | manual fulfillment template records purchased product |
 | manual_fulfillment | pass | manual fulfillment template blocks sensitive payment data storage |
 | manual_fulfillment | pass | manual fulfillment runbook states data boundary |
 | service_boundary | pass | launch copy avoids guarantee claims |

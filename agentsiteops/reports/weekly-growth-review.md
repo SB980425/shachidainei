@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-- The production site has 39 indexable routes with technical SEO passing.
+- The production site has 40 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.
@@ -16,13 +16,13 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 39 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 39/39 routes pass |
+| Route registry | docs/routes.json | 40 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 39/40 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
-| IndexNow | latest command output | 39 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 40 URLs submitted successfully in current deployment cycle |
 | Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
 
 ## Unverified
@@ -72,6 +72,7 @@
 | /pricing/ | pricing | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /sample/ | example | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /compare/ | comparison | launch_blueprint | pass | site_pass | keep | Measure comparison page exits to sample pricing buy and source links |
+| /starter-review/ | commerce | launch_blueprint | not_checked | site_pass | keep | Measure Fit Review PayPal clicks, confirmed payments, usable intake, verdict outcomes, and upsell or stop decisions |
 | /buy/ | commerce | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /intake/ | intake | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /terms/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |

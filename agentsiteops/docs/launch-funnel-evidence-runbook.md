@@ -1,6 +1,6 @@
 # Launch Funnel Evidence Runbook
 
-This runbook defines how AgentSiteOps should judge the USD 99 Launch Blueprint offer without pretending that page views equal demand.
+This runbook defines how AgentSiteOps should judge the USD 29 Fit Review and USD 99 Launch Blueprint offers without pretending that page views equal demand.
 
 ## Current State
 
@@ -8,6 +8,7 @@ This runbook defines how AgentSiteOps should judge the USD 99 Launch Blueprint o
 - No real analytics endpoint is enabled.
 - PayPal clicks are not the same as confirmed payments.
 - Intake emails are not the same as qualified buyers.
+- Fit Review payments are not proof that the full Launch Blueprint should be expanded.
 - GSC and Bing exports are still pending.
 
 ## Template
@@ -31,16 +32,19 @@ Do not store:
 | Fit checker completion | `tool_completed` on `/tools/launch-blueprint-fit-checker/` | The visitor can produce a fit result. |
 | Sample inspection | `/sample/` view or session export | The visitor inspected what the artifact looks like. |
 | Alternative comparison | `/compare/` view | The visitor saw when not to buy. |
-| Payment intent | `payment_cta_click` | The visitor opened PayPal, but payment is unconfirmed. |
+| Fit Review view | `/starter-review/` view | The visitor inspected the lower-friction paid filter. |
+| Payment intent | `payment_cta_click` | The visitor opened PayPal, but payment is unconfirmed. Keep Fit Review and full Blueprint labels separate. |
 | Intake intent | `intake_email_click` or manual email | The visitor tried to send details. |
 | Confirmed payment | PayPal record outside repo | The only direct revenue evidence. |
 | Qualified order | Payment plus usable intake | The first evidence that fulfillment can start. |
+| Review verdict | Manual go, narrow, or stop count | Shows whether Fit Review buyers are actually ready for the full Blueprint. |
 
 ## Decision Rules
 
 - Keep price and copy only if confirmed payments or qualified order evidence exists.
 - Rewrite the offer if fit checker completion happens but sample, compare, pricing, or buy movement is weak.
-- Lower the first price or add a smaller starter product if PayPal clicks occur but no confirmed payment follows.
+- Keep the Fit Review only if it produces confirmed payments plus usable intake or clear stop/narrow verdicts that prevent larger wrong-fit orders.
+- Keep the full Blueprint at USD 99 only if Fit Review verdicts, direct payments, or qualified intake show enough readiness for full delivery.
 - Stop or pivot if manual outreach produces no qualified replies after a defined outreach batch.
 - Do not add subscriptions until repeat demand, delivery capacity, and support load are proven.
 

@@ -22,7 +22,7 @@ import {
   launchProduct,
   marketSignals
 } from "@/lib/launch";
-import { primaryOffer } from "@/lib/payments";
+import { primaryOffer, starterOffer } from "@/lib/payments";
 import { allRoutes, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -67,9 +67,13 @@ export default function HomePage() {
               <CheckCircle2 aria-hidden="true" size={17} />
               Check fit before payment
             </Link>
+            <Link className="secondary-action" href="/starter-review/">
+              <BadgeDollarSign aria-hidden="true" size={17} />
+              Start USD {starterOffer.price}
+            </Link>
             <Link className="secondary-action" href="/buy/">
               <BadgeDollarSign aria-hidden="true" size={17} />
-              Buy USD {primaryOffer.price}
+              Full blueprint USD {primaryOffer.price}
             </Link>
             <Link className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
@@ -89,8 +93,12 @@ export default function HomePage() {
           </div>
           <div className="proof-grid" aria-label="Launch summary">
             <div className="proof-item">
+              <strong>USD {starterOffer.price}</strong>
+              <span>fit review can reject a weak full-blueprint purchase</span>
+            </div>
+            <div className="proof-item">
               <strong>USD {launchProduct.price}</strong>
-              <span>single validation-stage offer, no tier confusion</span>
+              <span>complete blueprint, used only when fit is clear</span>
             </div>
             <div className="proof-item">
               <strong>24-72h</strong>

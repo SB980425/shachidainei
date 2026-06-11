@@ -3620,6 +3620,39 @@ textarea {
   padding: 18px;
 }
 
+.pricing-grid-two {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: stretch;
+}
+
+.pricing-grid-two article {
+  display: flex;
+  min-height: 520px;
+  flex-direction: column;
+}
+
+.pricing-grid-two article > strong {
+  display: block;
+  margin: 4px 0 12px;
+  color: #101820;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.pricing-grid-two .primary-action,
+.pricing-grid-two .secondary-action {
+  width: 100%;
+  margin-top: auto;
+}
+
+.offer-card-primary {
+  border-color: rgba(32, 166, 106, 0.55) !important;
+  background:
+    linear-gradient(135deg, rgba(32, 166, 106, 0.1), transparent 36%),
+    rgba(255, 255, 255, 0.97) !important;
+  box-shadow: var(--shadow-soft);
+}
+
 .pricing-grid span {
   display: inline-grid;
   width: 32px;
@@ -3937,12 +3970,17 @@ textarea {
   }
 
   .nav {
+    min-width: 0;
+    max-width: 100%;
     flex-wrap: wrap;
     gap: 4px;
     overflow-x: visible;
   }
 
   .nav a {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
     padding: 8px 10px;
     font-size: 13px;
   }

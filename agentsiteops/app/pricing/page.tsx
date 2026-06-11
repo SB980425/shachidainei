@@ -6,9 +6,12 @@ import {
   blueprintEvidenceInputs,
   launchDeliverables,
   launchProduct,
-  pricingBenchmarks
+  pricingBenchmarks,
+  starterReviewAcceptanceCriteria,
+  starterReviewDeliverables,
+  starterReviewProduct
 } from "@/lib/launch";
-import { paypal, primaryOffer } from "@/lib/payments";
+import { paypal, primaryOffer, starterOffer } from "@/lib/payments";
 import { siteUrl } from "@/lib/site";
 
 const path = "/pricing/";
@@ -17,13 +20,13 @@ const pageUrl = `${siteUrl}${path}`;
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "AgentSiteOps Launch Blueprint pricing: USD 99 for a manual 24-72 hour offer, landing page, and outreach path.",
+    "AgentSiteOps pricing: USD 29 for a manual fit review or USD 99 for a complete Launch Blueprint.",
   alternates: {
     canonical: path
   },
   openGraph: {
     title: "Pricing",
-    description: "Buy the AgentSiteOps Launch Blueprint through PayPal.",
+    description: "Choose the USD 29 fit review or the USD 99 Launch Blueprint through PayPal.",
     url: pageUrl,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -64,21 +67,22 @@ export default function Page() {
 
       <section className="pricing-hero">
         <div>
-          <p className="eyebrow">Single validation offer</p>
-          <h1>One Launch Blueprint. One price. No tier confusion.</h1>
+          <p className="eyebrow">Validation-stage pricing</p>
+          <h1>Start with a fit review or buy the full Launch Blueprint.</h1>
           <p>
-            The first product is USD {primaryOffer.price}. It is a manual 24-72 hour
-            blueprint for AI-capable solo builders who need one sellable offer, one
-            landing page structure, and one first outreach path.
+            The site now has two bounded manual offers. Use the USD {starterOffer.price} fit
+            review if the purchase decision is uncertain. Use the USD {primaryOffer.price}
+            Launch Blueprint only when one sellable offer, page structure, and outreach path
+            are the real bottleneck.
           </p>
         </div>
         <aside className="pricing-receipt" aria-label="Current paid offer">
           <div className="receipt-topline">
-            <span>Current offer</span>
-            <strong>USD {primaryOffer.price}</strong>
+            <span>Lowest entry</span>
+            <strong>USD {starterOffer.price}</strong>
           </div>
-          <h2>{primaryOffer.name}</h2>
-          <p>{primaryOffer.delivery}</p>
+          <h2>{starterOffer.name}</h2>
+          <p>{starterOffer.delivery}</p>
           <Link className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
             <CheckCircle2 aria-hidden="true" size={17} />
             Check fit first
@@ -86,18 +90,85 @@ export default function Page() {
           <a
             className="primary-action"
             data-analytics-event="payment_cta_click"
-            data-analytics-label="pricing_paypal_launch_blueprint"
-            href={primaryOffer.href}
+            data-analytics-label="pricing_paypal_fit_review"
+            data-analytics-type="starter_review"
+            href={starterOffer.href}
             rel="noreferrer"
             target="_blank"
           >
             <CreditCard aria-hidden="true" size={17} />
-            Pay USD {primaryOffer.price}
+            Pay USD {starterOffer.price}
           </a>
+          <Link className="secondary-action" href="/starter-review/">
+            <ArrowRight aria-hidden="true" size={17} />
+            View fit review
+          </Link>
           <small>
-            Payment opens PayPal. Delivery remains manual after confirmation and intake details.
+            Payment opens PayPal. The review can recommend not buying the full blueprint.
           </small>
         </aside>
+      </section>
+
+      <section className="pricing-grid-section">
+        <div className="section-head">
+          <h2>Choose the smallest useful purchase</h2>
+          <p>
+            The lower-priced review exists because a new product should not force every
+            uncertain buyer into a USD {primaryOffer.price} decision before fit is proven.
+          </p>
+        </div>
+        <div className="pricing-grid pricing-grid-two">
+          <article className="offer-card-primary">
+            <span aria-hidden="true">
+              <CheckCircle2 size={18} />
+            </span>
+            <h3>{starterOffer.name}</h3>
+            <strong>USD {starterOffer.price}</strong>
+            <p>{starterOffer.delivery}</p>
+            <ul className="compact-list">
+              {starterReviewDeliverables.slice(0, 4).map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <a
+              className="primary-action"
+              data-analytics-event="payment_cta_click"
+              data-analytics-label="pricing_card_paypal_fit_review"
+              data-analytics-type="starter_review"
+              href={starterOffer.href}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <CreditCard aria-hidden="true" size={17} />
+              Pay USD {starterOffer.price}
+            </a>
+          </article>
+          <article>
+            <span aria-hidden="true">
+              <FileText size={18} />
+            </span>
+            <h3>{primaryOffer.name}</h3>
+            <strong>USD {primaryOffer.price}</strong>
+            <p>{primaryOffer.delivery}</p>
+            <ul className="compact-list">
+              {launchDeliverables.slice(0, 4).map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <a
+              className="secondary-action"
+              data-analytics-event="payment_cta_click"
+              data-analytics-label="pricing_card_paypal_launch_blueprint"
+              data-analytics-type="launch_blueprint"
+              href={primaryOffer.href}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <CreditCard aria-hidden="true" size={17} />
+              Pay USD {primaryOffer.price}
+            </a>
+          </article>
+        </div>
       </section>
 
       <section className="pricing-grid-section">
@@ -113,6 +184,27 @@ export default function Page() {
             <article key={item.title}>
               <span aria-hidden="true">
                 <CheckCircle2 size={18} />
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="pricing-grid-section">
+        <div className="section-head">
+          <h2>What USD {starterReviewProduct.price} buys</h2>
+          <p>
+            The fit review is intentionally smaller. Its job is to prevent a weak or
+            wrong-fit buyer from purchasing the full blueprint too early.
+          </p>
+        </div>
+        <div className="pricing-grid">
+          {starterReviewAcceptanceCriteria.map((item) => (
+            <article key={item.title}>
+              <span aria-hidden="true">
+                <ShieldCheck size={18} />
               </span>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
@@ -233,6 +325,7 @@ export default function Page() {
               className="primary-action"
               data-analytics-event="payment_cta_click"
               data-analytics-label="pricing_bottom_paypal_launch_blueprint"
+              data-analytics-type="launch_blueprint"
               href={primaryOffer.href}
               rel="noreferrer"
               target="_blank"

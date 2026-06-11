@@ -57,6 +57,50 @@ export const launchFailureHandling = [
   "If no credible outreach path exists, the report must recommend a smaller proof asset or a different buyer before payment should be repeated."
 ];
 
+export const starterReviewProduct = {
+  name: "AgentSiteOps Fit Review",
+  price: 29,
+  currency: "USD",
+  timeline: "Manual delivery within 24 hours after payment confirmation and usable intake details.",
+  audience:
+    "AI-capable solo builders who are unsure whether the full Launch Blueprint is worth buying yet.",
+  promise:
+    "One short go, narrow, or stop verdict, the strongest purchase blocker, the minimum missing evidence, and the next step.",
+  nonPromise:
+    "No complete landing page structure, outreach sequence, search forecast, revenue forecast, or full Launch Blueprint."
+};
+
+export const starterReviewDeliverables = [
+  "A go, narrow, or stop verdict for the full Launch Blueprint purchase.",
+  "The one strongest blocker that could make the USD 99 blueprint wasteful.",
+  "The minimum evidence or asset needed before a full launch route can be selected.",
+  "A short buyer and offer fit note based only on the provided facts.",
+  "A clear recommendation: buy the full blueprint, collect more proof first, narrow the offer, or stop."
+];
+
+export const starterReviewAcceptanceCriteria = [
+  {
+    title: "It can reject the sale",
+    body:
+      "The review is valid only if it can tell the buyer not to buy the full blueprint when the intake is too weak, too regulated, or missing an execution path."
+  },
+  {
+    title: "It names one blocker",
+    body:
+      "The output must identify the biggest blocker first instead of returning a generic list of possible improvements."
+  },
+  {
+    title: "It preserves scope",
+    body:
+      "The review must not pretend to include the full offer, page, pricing, outreach, and seven-day validation artifact."
+  },
+  {
+    title: "It creates evidence",
+    body:
+      "Each paid review should be counted as a qualified purchase-intent signal only when payment and usable intake both exist."
+  }
+];
+
 export const intakeFields = [
   "Your current skill stack and tools you can actually use.",
   "One or two previous projects, demos, profiles, GitHub links, or public examples.",
@@ -69,6 +113,7 @@ export const intakeFields = [
 ];
 
 export const paymentConfirmationFields = [
+  "Product purchased: Fit Review or Launch Blueprint.",
   "PayPal payment name or payer email.",
   "PayPal transaction ID or payment receipt reference.",
   "Payment date and amount.",
@@ -156,6 +201,13 @@ export const authorityBoundaries = [
 ];
 
 export const pricingBenchmarks = [
+  {
+    name: "AgentSiteOps Fit Review",
+    price: "USD 29 one time",
+    position:
+      "Manual pre-purchase verdict. Better for reducing risk before buying the full blueprint; not a full launch route.",
+    href: "/starter-review/"
+  },
   {
     name: "AgentSiteOps Launch Blueprint",
     price: "USD 99 one time",

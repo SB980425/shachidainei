@@ -2,6 +2,10 @@ period_start,period_end,source,page_path,event_name,count,qualified_count,notes
 YYYY-MM-DD,YYYY-MM-DD,session_export|analytics_endpoint|manual_email|paypal_record,/tools/launch-blueprint-fit-checker/,tool_completed,0,0,Record only aggregate counts. Do not store emails phone numbers payment details IPs cookies or raw messages.
 YYYY-MM-DD,YYYY-MM-DD,session_export|analytics_endpoint|manual_email|paypal_record,/sample/,launch_blueprint_sample_view,0,0,Use this to compare sample inspection before payment clicks.
 YYYY-MM-DD,YYYY-MM-DD,session_export|analytics_endpoint|manual_email|paypal_record,/compare/,launch_blueprint_compare_view,0,0,Use this to check whether visitors inspect alternatives before purchase.
+YYYY-MM-DD,YYYY-MM-DD,session_export|analytics_endpoint|manual_email|paypal_record,/starter-review/,starter_review_view,0,0,Count Fit Review page views separately from full blueprint purchase views.
+YYYY-MM-DD,YYYY-MM-DD,session_export|analytics_endpoint|manual_email|paypal_record,/starter-review/,payment_cta_click,0,0,Count Fit Review PayPal clicks separately from full blueprint payment clicks.
 YYYY-MM-DD,YYYY-MM-DD,session_export|analytics_endpoint|manual_email|paypal_record,/pricing/,payment_cta_click,0,0,Count PayPal clicks separately from confirmed payments.
 YYYY-MM-DD,YYYY-MM-DD,manual_email|paypal_record,/intake/,intake_email_click,0,0,Count only usable intake emails as qualified.
+YYYY-MM-DD,YYYY-MM-DD,paypal_record,/starter-review/,confirmed_payment,0,0,Record aggregate Fit Review payment counts outside the public repo.
+YYYY-MM-DD,YYYY-MM-DD,manual_review,/starter-review/,review_verdict,0,0,Aggregate go narrow stop verdict counts only; do not store customer details.
 YYYY-MM-DD,YYYY-MM-DD,paypal_record,/buy/,confirmed_payment,0,0,Record aggregate confirmed payment counts outside the public repo.

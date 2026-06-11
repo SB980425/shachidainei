@@ -13,6 +13,7 @@ const requiredRoutes = [
   "/tools/launch-blueprint-fit-checker/",
   "/pricing/",
   "/compare/",
+  "/starter-review/",
   "/buy/",
   "/intake/",
   "/terms/",
@@ -61,6 +62,7 @@ function checkCommercialBoundary() {
   const payments = read("lib/payments.ts");
   const launch = read("lib/launch.ts");
   const pricingPage = read("app/pricing/page.tsx");
+  const starterReviewPage = read("app/starter-review/page.tsx");
   const buyPage = read("app/buy/page.tsx");
   const intakePage = read("app/intake/page.tsx");
   const revenue = read("data/revenue-experiments.csv");
@@ -72,14 +74,19 @@ function checkCommercialBoundary() {
   const fulfillmentRunbook = read("docs/manual-fulfillment-runbook.md");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
+  requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
   addCheck("payment_path", !/testPayment|test_payment|temporary_payment/i.test(payments) ? "pass" : "fail", "payment config contains only current paid offer paths");
   addCheck("payment_path", !/testPayment|test_payment|Test PayPal|Test USD/i.test(pricingPage) ? "pass" : "fail", "pricing page contains only current paid offer CTA");
+  addCheck("payment_path", !/testPayment|test_payment|Test PayPal|Test USD/i.test(starterReviewPage) ? "pass" : "fail", "starter review page contains only current paid offer CTA");
   addCheck("payment_path", !/testPayment|test_payment|Test PayPal|Test USD/i.test(buyPage) ? "pass" : "fail", "buy page contains only current paid offer CTA");
+  requireText("payment_path", starterReviewPage, "Pay USD {starterOffer.price}", "starter review page has paid CTA");
+  requireText("service_boundary", starterReviewPage, "reject the larger sale", "starter review can reject the full blueprint sale");
   requireText("service_boundary", launch, "No guaranteed traffic, rankings, revenue, customers, AI citations", "launch product blocks guarantee claims");
   requireText("service_boundary", disclaimer, "No guaranteed traffic", "disclaimer blocks guarantee claims");
   requireText("trust_pages", terms, "PayPal", "terms page covers PayPal payment path");
   requireText("trust_pages", refund, "refund", "refund page exists and states refund boundary");
   requireText("revenue_experiments", revenue, '"R006","2026-06-11","AgentSiteOps Launch Blueprint","99","live_validation"', "Launch Blueprint is recorded as live validation");
+  requireText("revenue_experiments", revenue, '"R007","2026-06-11","AgentSiteOps Fit Review","29","live_validation"', "Fit Review is recorded as live validation");
   addCheck("revenue_experiments", !/temporary_payment|payment path test/i.test(revenue) ? "pass" : "fail", "revenue experiment table contains only active or planned commercial hypotheses");
   requireText("revenue_experiments", revenue, '"R005","2026-06-07","SaaS subscription","TBD","blocked"', "subscription remains blocked");
   requireText("compliance", compliance, "| Launch Blueprint payment path | `pass_with_boundary` |", "current payment path has compliance boundary");
@@ -88,6 +95,7 @@ function checkCommercialBoundary() {
   requireText("manual_fulfillment", intakePage, "Payment confirmation", "intake page requests payment confirmation");
   requireText("manual_fulfillment", intakePage, "Manual delivery process", "intake page explains manual delivery process");
   requireText("manual_fulfillment", fulfillmentTemplate, "paypal_reference", "manual fulfillment template records payment reference");
+  requireText("manual_fulfillment", fulfillmentTemplate, "fit_review|launch_blueprint", "manual fulfillment template records purchased product");
   requireText("manual_fulfillment", fulfillmentTemplate, "Do not store card data", "manual fulfillment template blocks sensitive payment data storage");
   requireText("manual_fulfillment", fulfillmentRunbook, "Do not store", "manual fulfillment runbook states data boundary");
 

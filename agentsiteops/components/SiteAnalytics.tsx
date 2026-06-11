@@ -57,6 +57,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/pricing/": ["launch_blueprint_pricing_view"],
   "/sample/": ["launch_blueprint_sample_view"],
   "/compare/": ["launch_blueprint_compare_view"],
+  "/starter-review/": ["starter_review_view"],
   "/buy/": ["launch_blueprint_buy_view"],
   "/intake/": ["launch_blueprint_intake_view"],
   "/thank-you/": ["launch_blueprint_thank_you_view"],

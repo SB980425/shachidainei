@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-11T10:12:51.743Z
+- Generated: 2026-06-11T10:41:48.206Z
 - Status: pass
-- Checks: 205
+- Checks: 210
 - Blockers: 0
 - Warnings: 0
 
@@ -13,9 +13,9 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 39 routes aligned |
-| page_registry | pass | 39 routes aligned |
-| page_review_actions | pass | 39 routes aligned |
+| site_routes | pass | 40 routes aligned |
+| page_registry | pass | 40 routes aligned |
+| page_review_actions | pass | 40 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /ai-website-operating-system/ has canonical slash shape |
@@ -82,6 +82,8 @@
 | route_index | pass | /sample/ index flag is true |
 | route_shape | pass | /compare/ has canonical slash shape |
 | route_index | pass | /compare/ index flag is true |
+| route_shape | pass | /starter-review/ has canonical slash shape |
+| route_index | pass | /starter-review/ index flag is true |
 | route_shape | pass | /buy/ has canonical slash shape |
 | route_index | pass | /buy/ index flag is true |
 | route_shape | pass | /intake/ has canonical slash shape |
@@ -127,6 +129,7 @@
 | app_page | pass | /pricing/ app page exists |
 | app_page | pass | /sample/ app page exists |
 | app_page | pass | /compare/ app page exists |
+| app_page | pass | /starter-review/ app page exists |
 | app_page | pass | /buy/ app page exists |
 | app_page | pass | /intake/ app page exists |
 | app_page | pass | /terms/ app page exists |
@@ -165,6 +168,7 @@
 | analytics_allowlist | pass | launch_blueprint_pricing_view is registered |
 | analytics_allowlist | pass | launch_blueprint_sample_view is registered |
 | analytics_allowlist | pass | launch_blueprint_compare_view is registered |
+| analytics_allowlist | pass | starter_review_view is registered |
 | analytics_allowlist | pass | launch_blueprint_buy_view is registered |
 | analytics_allowlist | pass | launch_blueprint_intake_view is registered |
 | analytics_allowlist | pass | launch_blueprint_thank_you_view is registered |
@@ -208,13 +212,14 @@
 | route_view_event | pass | /pricing/ has view event |
 | route_view_event | pass | /sample/ has view event |
 | route_view_event | pass | /compare/ has view event |
+| route_view_event | pass | /starter-review/ has view event |
 | route_view_event | pass | /buy/ has view event |
 | route_view_event | pass | /intake/ has view event |
 | route_view_event | pass | /terms/ has view event |
 | route_view_event | pass | /refund-policy/ has view event |
 | route_view_event | pass | /disclaimer/ has view event |
 | route_view_event | pass | /contact/ has view event |
-| growth_snapshot | pass | 39 routes aligned |
+| growth_snapshot | pass | 40 routes aligned |
 
 ## Blocking Issues
 
