@@ -12,6 +12,41 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-06 Purchase acceptance and encoding gate",
+    status: "completed",
+    keyPoints: [
+      "Added explicit acceptance criteria to the buy page so a paid Launch Blueprint is judged by executable output, not by the presence of a score alone.",
+      "Added failure-handling rules for weak intake evidence, regulated or account-safety topics, unverified search demand, and missing outreach paths.",
+      "Repaired unreadable outreach templates and extended the code-quality gate to catch repeated question-mark placeholder corruption."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect the purchase boundary, completion criteria, failure handling, and encoding gate instead of seeing the product as an unconditional USD 99 payment request.",
+    files: [
+      "app/buy/page.tsx",
+      "lib/launch.ts",
+      "data/outreach-templates.json",
+      "scripts/code-quality-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "analytics endpoint gate pass",
+      "commercial validation gate pass",
+      "route consistency gate pass",
+      "production build pass",
+      "technical SEO CI pass",
+      "crawler access audit pass",
+      "search evidence import waiting_for_exports state verified",
+      "growth snapshot baseline_ready",
+      "production health monitor pending until deploy"
+    ],
+    next:
+      "Keep payment available only after fit checking and sample review; use delivery and inquiry evidence to decide whether the USD 99 offer should remain, narrow, or pivot."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-05 Quality gate and evidence-ready sample",
     status: "completed",
     keyPoints: [

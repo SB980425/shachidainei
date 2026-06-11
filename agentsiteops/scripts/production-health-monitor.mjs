@@ -270,7 +270,7 @@ async function main() {
   await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "USD", "Pay with PayPal"]);
   await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "What the paid file must contain", "Check fit first"]);
   await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
-  await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "USD"]);
+  await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "Acceptance criteria", "If the route is not ready"]);
   await checkPage("/intake/", ["Launch Blueprint Intake", "Email intake", "Required fields"]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Pending evidence", "Claims not made"]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);
@@ -279,6 +279,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-06 Purchase acceptance and encoding gate",
     "M4-05 Quality gate and evidence-ready sample",
     "M4-04 Pre-purchase fit checker",
     "M4-03 Launch comparison and sample depth",

@@ -22,6 +22,41 @@ export const launchDeliverables = [
   "A not-doing list that protects the launch from scope creep."
 ];
 
+export const launchAcceptanceCriteria = [
+  {
+    title: "Decision is singular",
+    body:
+      "The artifact must choose one first offer and explain why the rejected routes are weaker for the current validation window."
+  },
+  {
+    title: "Claims are bounded",
+    body:
+      "Every recommendation must separate confirmed inputs, assumptions, missing evidence, and claims that cannot be made yet."
+  },
+  {
+    title: "Page can be built",
+    body:
+      "The landing page outline must be specific enough to turn into a one-page site without another strategy session."
+  },
+  {
+    title: "Outreach can be executed",
+    body:
+      "Messages must name the buyer, the trigger, the first outcome, and a next step that does not require spam automation."
+  },
+  {
+    title: "Seven-day verdict exists",
+    body:
+      "The plan must define what evidence would mean keep, repackage, or stop, so the buyer is not left with an open-ended idea list."
+  }
+];
+
+export const launchFailureHandling = [
+  "If intake evidence is too weak to choose a paid route, the deliverable must say do not launch yet and list the missing proof to collect first.",
+  "If the buyer's topic enters regulated or account-safety territory, the route must narrow the scope or reject that direction.",
+  "If the selected route depends on search demand that has not been exported, the report must mark search demand as unverified.",
+  "If no credible outreach path exists, the report must recommend a smaller proof asset or a different buyer before payment should be repeated."
+];
+
 export const intakeFields = [
   "Your current skill stack and tools you can actually use.",
   "One or two previous projects, demos, profiles, GitHub links, or public examples.",
@@ -340,8 +375,8 @@ export const outreachTemplates = {
     "I am not selling traffic or AI magic. I am selling a tighter launch: positioning, page structure, pricing angle, and outreach copy. Founding validation price is $99 while I test it."
   ],
   chinese: [
-    "?????? 48 ?????????????? AI ????????????????????????????????????????? 99 ??????????",
-    "??????????????????????????????????? Launch Blueprint ??????????????????????????",
-    "AgentSiteOps ????????? AI ????????????????????????????????????????"
+    "我在测试一个 48 小时 Launch Blueprint，帮助会用 AI 的个人开发者把零散技能压缩成一个可销售服务、一个页面结构和一条首批外联路径。当前验证价 99 美元。",
+    "如果你的问题不是不会用工具，而是不知道先卖什么、卖给谁、怎么在一页里讲清楚，我可以先看你现有网站或作品，再判断是否适合 Launch Blueprint。",
+    "AgentSiteOps 不承诺流量、排名或收入。它交付的是更窄的启动决策：定位、页面结构、价格边界、外联文案和 7 天验证规则。"
   ]
 };

@@ -55,7 +55,8 @@ function collectFiles(directory) {
 }
 
 function hasMojibake(text) {
-  return /[锟閻犻柡闁绘稉]/.test(text) || text.includes("\uFFFD");
+  const mojibakeMarkers = ["\u951f", "\u95ff", "\u95c2", "\u67e3", "\u9418", "\u7ecb", "\u5862"];
+  return mojibakeMarkers.some((marker) => text.includes(marker)) || text.includes("\uFFFD") || /\?{3,}/.test(text);
 }
 
 function checkPackageScript() {

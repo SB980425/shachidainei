@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, CreditCard, FileText, Mail, ShieldCheck } from "lucide-react";
-import { launchDeliverables, launchProduct } from "@/lib/launch";
+import {
+  launchAcceptanceCriteria,
+  launchDeliverables,
+  launchFailureHandling,
+  launchProduct
+} from "@/lib/launch";
 import { primaryOffer } from "@/lib/payments";
 import { siteUrl } from "@/lib/site";
 
@@ -135,6 +140,47 @@ export default function Page() {
             <ShieldCheck aria-hidden="true" size={17} />
             Refund policy
           </Link>
+        </div>
+      </section>
+
+      <section className="pricing-grid-section">
+        <div className="section-head">
+          <h2>Acceptance criteria</h2>
+          <p>
+            A paid blueprint is complete only when it can be executed and judged in the
+            next validation cycle. These criteria define what the buyer should expect.
+          </p>
+        </div>
+        <div className="pricing-grid">
+          {launchAcceptanceCriteria.map((item) => (
+            <article key={item.title}>
+              <span aria-hidden="true">
+                <CheckCircle2 size={18} />
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="pricing-grid-section split-section gate-split">
+        <div>
+          <h2>If the route is not ready</h2>
+          <ul className="compact-list">
+            {launchFailureHandling.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2>Buyer responsibility</h2>
+          <ul className="compact-list">
+            <li>Provide honest evidence during intake.</li>
+            <li>Do not treat a blueprint as market proof by itself.</li>
+            <li>Execute the outreach and page test before buying another planning artifact.</li>
+            <li>Use search, payment, reply, or usage data to judge the next cycle.</li>
+          </ul>
         </div>
       </section>
     </main>
