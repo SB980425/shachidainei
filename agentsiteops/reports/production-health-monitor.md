@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T06:34:05.404Z
+- Generated: 2026-06-11T07:01:45.107Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 77
+- Checks: 78
 - Blockers: 0
 - Warnings: 0
 
@@ -38,6 +38,7 @@
 | /pricing/ | pass | AgentSiteOps Launch Blueprint | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | USD | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | Pay with PayPal | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/pricing/) |
 | /sample/ | pass | HTTP 200 | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | HTML title exists | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | canonical points to production URL | [link](https://agentsiteops.com/sample/) |
@@ -49,8 +50,8 @@
 | /buy/ | pass | canonical points to production URL | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | Get one sellable offer | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | Pay with PayPal | [link](https://agentsiteops.com/buy/) |
-| /buy/ | pass | Test PayPal with USD | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | USD | [link](https://agentsiteops.com/buy/) |
+| /buy/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/buy/) |
 | /intake/ | pass | HTTP 200 | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | HTML title exists | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | canonical points to production URL | [link](https://agentsiteops.com/intake/) |

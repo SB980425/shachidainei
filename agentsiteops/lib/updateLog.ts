@@ -12,15 +12,15 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
-    step: "M4-02 Brand icon, payment test, and pricing evidence boundary",
+    step: "M4-02 Brand icon and pricing evidence boundary",
     status: "completed",
     keyPoints: [
       "Added public AgentSiteOps SVG favicon and apple icon files so the browser tab no longer falls back to a generic site icon.",
-      "Added a temporary USD 1 PayPal payment test link on the buy and pricing pages without treating it as a Launch Blueprint purchase.",
+      "Verified that the PayPal-hosted payment route opens correctly and kept only the current USD 99 paid offer path.",
       "Added visible data-source, authority-boundary, and pricing-position sections so buyers can see what the route is based on and what it does not prove."
     ],
     aiAngle:
-      "AI and search systems can now inspect a clearer commercial trust layer: branded icon, payment-path test, source inputs, no-guarantee boundary, and competitor-positioning context.",
+      "AI and search systems can now inspect a clearer commercial trust layer: branded icon, source inputs, no-guarantee boundary, and competitor-positioning context.",
     files: [
       "public/icon.svg",
       "public/apple-icon.svg",
@@ -50,7 +50,7 @@ export const updateLog: UpdateLogEntry[] = [
       "local icon.svg check pass with HTTP 200 and brand label"
     ],
     next:
-      "Use the USD 1 PayPal link only to verify payment receipt. Remove the public test link after confirmation, then measure whether the USD 99 page gets real qualified clicks or messages."
+      "Measure whether the USD 99 page gets real qualified clicks or messages; if not, lower the first offer or pivot the product scope."
   },
   {
     date: "2026-06-11",

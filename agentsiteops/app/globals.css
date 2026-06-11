@@ -3620,16 +3620,6 @@ textarea {
   line-height: 1.6;
 }
 
-.pricing-receipt .secondary-action {
-  width: 100%;
-}
-
-.test-payment-action {
-  border-style: dashed;
-  background: #fffdf6;
-  color: #5f3d00;
-}
-
 .hero-side {
   display: grid;
   gap: 16px;

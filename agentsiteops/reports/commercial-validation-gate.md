@@ -1,6 +1,6 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T06:29:55.032Z
+- Generated: 2026-06-11T07:00:36.538Z
 - Status: pass
 - Checks: 50
 - Blockers: 0
@@ -32,15 +32,15 @@
 | routes | pass | /contact/ registered in docs/routes.json |
 | app | pass | /contact/ has app page |
 | payment_path | pass | live USD 99 PayPal link is configured |
-| payment_path | pass | temporary USD 1 PayPal test link is configured |
-| payment_path | pass | pricing page exposes payment test boundary |
-| payment_path | pass | buy page exposes payment test boundary |
+| payment_path | pass | payment config contains only current paid offer paths |
+| payment_path | pass | pricing page contains only current paid offer CTA |
+| payment_path | pass | buy page contains only current paid offer CTA |
 | service_boundary | pass | launch product blocks guarantee claims |
 | service_boundary | pass | disclaimer blocks guarantee claims |
 | trust_pages | pass | terms page covers PayPal payment path |
 | trust_pages | pass | refund page exists and states refund boundary |
 | revenue_experiments | pass | Launch Blueprint is recorded as live validation |
-| revenue_experiments | pass | USD 1 test is recorded as temporary payment test |
+| revenue_experiments | pass | revenue experiment table contains only active or planned commercial hypotheses |
 | revenue_experiments | pass | subscription remains blocked |
 | compliance | pass | current payment path has compliance boundary |
 | compliance | pass | manual PayPal path is disclosed |
@@ -68,4 +68,4 @@
 
 - This gate checks whether the live manual PayPal path has visible scope, limits, refund, contact, and evidence boundaries.
 - It does not prove buyer demand, paid conversion, revenue, or product-market fit.
-- The USD 1 payment link is temporary verification only and should be removed after payment-path confirmation.
+- Payment validation now relies on the current paid offer path and production evidence checks.

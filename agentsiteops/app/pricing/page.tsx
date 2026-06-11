@@ -8,7 +8,7 @@ import {
   launchProduct,
   pricingBenchmarks
 } from "@/lib/launch";
-import { paypal, primaryOffer, testPaymentOffer } from "@/lib/payments";
+import { paypal, primaryOffer } from "@/lib/payments";
 import { siteUrl } from "@/lib/site";
 
 const path = "/pricing/";
@@ -83,21 +83,9 @@ export default function Page() {
             <CreditCard aria-hidden="true" size={17} />
             Pay USD {primaryOffer.price}
           </a>
-          <a
-            className="secondary-action test-payment-action"
-            data-analytics-event="test_payment_cta_click"
-            data-analytics-label="pricing_paypal_test_usd_1"
-            href={testPaymentOffer.href}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <CreditCard aria-hidden="true" size={17} />
-            Test USD {testPaymentOffer.price}
-          </a>
           <small>
             Payment opens PayPal. Delivery remains manual after confirmation and intake details.
           </small>
-          <small>{testPaymentOffer.purpose}</small>
         </aside>
       </section>
 

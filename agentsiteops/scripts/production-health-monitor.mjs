@@ -71,6 +71,15 @@ function requireText(scope, text, pattern, detail, url) {
   addCheck(scope, "fail", `Missing expected text: ${detail}`, url);
 }
 
+function requireAbsentText(scope, text, pattern, detail, url) {
+  if (typeof pattern === "string" ? !text.includes(pattern) : !pattern.test(text)) {
+    addCheck(scope, "pass", detail, url);
+    return;
+  }
+
+  addCheck(scope, "fail", `Unexpected text present: ${detail}`, url);
+}
+
 function countSitemapLocs(xml) {
   return [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
 }
@@ -89,6 +98,10 @@ async function checkPage(path, requiredText) {
 
   for (const item of requiredText) {
     requireText(path, response.text, item, item, url);
+  }
+
+  if (path === "/buy/" || path === "/pricing/") {
+    requireAbsentText(path, response.text, /Test PayPal|Test USD|1USD|test_payment/i, "retired payment test copy and link are absent", url);
   }
 }
 
@@ -256,7 +269,7 @@ async function main() {
   ]);
   await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "USD", "Pay with PayPal"]);
   await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "Buy the Blueprint"]);
-  await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "Test PayPal with USD", "USD"]);
+  await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "USD"]);
   await checkPage("/intake/", ["Launch Blueprint Intake", "Email intake", "Required fields"]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Pending evidence", "Claims not made"]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);

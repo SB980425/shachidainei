@@ -70,5 +70,5 @@ Status: active gate.
 - Analytics destination or first-party proxy.
 - Retention period and deletion path.
 - Whether email, affiliate, ads, sponsorship, paid templates, forms, or accounts will be used.
-- Whether the USD 1 payment test should remain public after PayPal path verification.
+- Whether the direct PayPal.me path is sufficient or a formal PayPal Checkout integration is required after real paid demand appears.
 - Legal review for jurisdiction-specific privacy, cookie, tax, professional advice, or advertising obligations.

@@ -67,15 +67,15 @@ function checkCommercialBoundary() {
   const disclaimer = read("app/disclaimer/page.tsx");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
-  requireText("payment_path", payments, "https://paypal.me/agentsiteops/1USD", "temporary USD 1 PayPal test link is configured");
-  requireText("payment_path", pricingPage, "Test USD", "pricing page exposes payment test boundary");
-  requireText("payment_path", buyPage, "Test PayPal with USD", "buy page exposes payment test boundary");
+  addCheck("payment_path", !/testPayment|test_payment|temporary_payment/i.test(payments) ? "pass" : "fail", "payment config contains only current paid offer paths");
+  addCheck("payment_path", !/testPayment|test_payment|Test PayPal|Test USD/i.test(pricingPage) ? "pass" : "fail", "pricing page contains only current paid offer CTA");
+  addCheck("payment_path", !/testPayment|test_payment|Test PayPal|Test USD/i.test(buyPage) ? "pass" : "fail", "buy page contains only current paid offer CTA");
   requireText("service_boundary", launch, "No guaranteed traffic, rankings, revenue, customers, AI citations", "launch product blocks guarantee claims");
   requireText("service_boundary", disclaimer, "No guaranteed traffic", "disclaimer blocks guarantee claims");
   requireText("trust_pages", terms, "PayPal", "terms page covers PayPal payment path");
   requireText("trust_pages", refund, "refund", "refund page exists and states refund boundary");
   requireText("revenue_experiments", revenue, '"R006","2026-06-11","AgentSiteOps Launch Blueprint","99","live_validation"', "Launch Blueprint is recorded as live validation");
-  requireText("revenue_experiments", revenue, '"R007","2026-06-11","PayPal payment path test","1","temporary_payment_test"', "USD 1 test is recorded as temporary payment test");
+  addCheck("revenue_experiments", !/temporary_payment|payment path test/i.test(revenue) ? "pass" : "fail", "revenue experiment table contains only active or planned commercial hypotheses");
   requireText("revenue_experiments", revenue, '"R005","2026-06-07","SaaS subscription","TBD","blocked"', "subscription remains blocked");
   requireText("compliance", compliance, "| Launch Blueprint payment path | `pass_with_boundary` |", "current payment path has compliance boundary");
   requireText("compliance", compliance, "| Manual PayPal payment path disclosed | `pass` |", "manual PayPal path is disclosed");
@@ -156,7 +156,7 @@ function renderReport(generatedAt) {
     "",
     "- This gate checks whether the live manual PayPal path has visible scope, limits, refund, contact, and evidence boundaries.",
     "- It does not prove buyer demand, paid conversion, revenue, or product-market fit.",
-    "- The USD 1 payment link is temporary verification only and should be removed after payment-path confirmation."
+    "- Payment validation now relies on the current paid offer path and production evidence checks."
   ];
 
   mkdirSync(dirname(reportPath), { recursive: true });

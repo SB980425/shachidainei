@@ -1,7 +1,6 @@
 export const paypal = {
   profileUrl: "https://paypal.me/agentsiteops",
   launchBlueprintUrl: "https://paypal.me/agentsiteops/99USD",
-  testPaymentUrl: "https://paypal.me/agentsiteops/1USD",
   businessName: "AgentSiteOps",
   supportEmail: "sun19980425s@gmail.com"
 };
@@ -19,12 +18,3 @@ export const primaryOffer = {
 };
 
 export const paidOffers = [primaryOffer];
-
-export const testPaymentOffer = {
-  name: "AgentSiteOps PayPal Test",
-  price: 1,
-  currency: "USD",
-  href: paypal.testPaymentUrl,
-  purpose:
-    "Temporary payment-path verification only. This is not the Launch Blueprint and does not start paid delivery."
-};
