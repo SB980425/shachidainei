@@ -21,6 +21,7 @@
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
+| Code quality | reports/code-quality-gate.md | pass |
 | IndexNow | latest command output | 39 URLs submitted successfully in current deployment cycle |
 | Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
 

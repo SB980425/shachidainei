@@ -12,6 +12,48 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-05 Quality gate and evidence-ready sample",
+    status: "completed",
+    keyPoints: [
+      "Replaced the removed Next lint command with a local code-quality gate that checks retired payment-test patterns, encoding corruption, production monitor drift, and search evidence contract drift.",
+      "Expanded the public sample into a more concrete Launch Blueprint artifact with input facts, selected offer, rejected paths, landing page outline, validation plan, and paid-file checklist.",
+      "Added tracked GSC and Bing CSV templates so future search evidence can be imported reproducibly without committing raw platform exports."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect a stronger proof chain: working quality gate, richer sample artifact, explicit search-export contract, and updated evidence ledger boundaries.",
+    files: [
+      "scripts/code-quality-gate.mjs",
+      "package.json",
+      "app/sample/page.tsx",
+      "lib/launch.ts",
+      "lib/site.ts",
+      "scripts/import-search-evidence.mjs",
+      "scripts/growth-evidence-snapshot.mjs",
+      "scripts/production-health-monitor.mjs",
+      "data/search-evidence-import-templates/gsc-pages-template.csv",
+      "data/search-evidence-import-templates/gsc-queries-template.csv",
+      "data/search-evidence-import-templates/bing-pages-template.csv",
+      "data/search-evidence-import-templates/bing-queries-template.csv",
+      "docs/search-evidence-imports.md",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "lint code quality gate pass",
+      "typecheck pass",
+      "search evidence import waiting_for_exports state verified",
+      "growth snapshot includes codeQualityStatus pass",
+      "production build planned",
+      "technical SEO CI planned",
+      "route consistency gate planned",
+      "commercial validation gate planned",
+      "production health monitor planned",
+      "IndexNow submit planned"
+    ],
+    next:
+      "Use the new import templates when GSC or Bing exports become available; keep paid conversion and search demand marked unverified until first-party evidence exists."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-04 Pre-purchase fit checker",
     status: "completed",
     keyPoints: [

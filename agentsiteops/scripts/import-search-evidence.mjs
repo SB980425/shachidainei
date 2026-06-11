@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const routesPath = resolve(rootDir, "docs", "routes.json");
 const importDir = resolve(rootDir, "data", "search-evidence-imports");
+const templateDir = resolve(rootDir, "data", "search-evidence-import-templates");
 const outputPath = resolve(rootDir, "data", "search-evidence-normalized.csv");
 const reportPath = resolve(rootDir, "reports", "search-evidence-import.md");
 
@@ -241,6 +242,8 @@ const report = [
   `- Status: ${status}`,
   `- Import files found: ${importedFileCount}`,
   `- Normalized rows: ${normalizedRows.length}`,
+  `- Import directory: ${importDir}`,
+  `- Template directory: ${templateDir}`,
   "",
   "## File Status",
   "",

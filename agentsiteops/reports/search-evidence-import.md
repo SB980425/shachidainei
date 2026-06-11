@@ -1,9 +1,11 @@
 # Search Evidence Import
 
-- Generated: 2026-06-08T06:30:11.963Z
+- Generated: 2026-06-11T09:19:57.554Z
 - Status: waiting_for_exports
 - Import files found: 0
 - Normalized rows: 0
+- Import directory: C:\Users\98043\AppData\Local\Temp\codex-shachidainei-3cb8642f75f440c28c27c5ff6bffe097\agentsiteops\data\search-evidence-imports
+- Template directory: C:\Users\98043\AppData\Local\Temp\codex-shachidainei-3cb8642f75f440c28c27c5ff6bffe097\agentsiteops\data\search-evidence-import-templates
 
 ## File Status
 
@@ -25,6 +27,7 @@
 | /examples/agentsiteops-self-audit/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /services/ai-website-opportunity-audit/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /tools/audit-scope-builder/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /tools/launch-blueprint-fit-checker/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/starter-pack/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/seo-repo-skeleton/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /checklists/ai-content-quality-gate/ | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -46,6 +49,16 @@
 | /privacy/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /disclosure/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /updates/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /website-opportunity-audit/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /pricing/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /sample/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /compare/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /buy/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /intake/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /terms/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /refund-policy/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /disclaimer/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /contact/ | 0 | 0 | 0 | 0 | 0 | 0 |
 
 ## Interpretation
 

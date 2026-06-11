@@ -268,7 +268,7 @@ async function main() {
     "Launch Readiness"
   ]);
   await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "USD", "Pay with PayPal"]);
-  await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "Buy the Blueprint"]);
+  await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "What the paid file must contain", "Check fit first"]);
   await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
   await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "USD"]);
   await checkPage("/intake/", ["Launch Blueprint Intake", "Email intake", "Required fields"]);
@@ -279,6 +279,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-05 Quality gate and evidence-ready sample",
     "M4-04 Pre-purchase fit checker",
     "M4-03 Launch comparison and sample depth",
     "M4-01 Launch Blueprint reset and payment flow",

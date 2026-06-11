@@ -732,12 +732,13 @@ export const routePages: RoutePage[] = [
         body:
           "These signals have been checked through local scripts, production requests, GitHub Actions, or production deployment output.",
         rows: [
-          { label: "Technical SEO", value: "The current release checks 26 sitemap routes with no blocking issues after the M3-24 search-entry expansion." },
+          { label: "Technical SEO", value: "The current release checks 39 sitemap routes with no blocking issues." },
+          { label: "Code quality", value: "The project lint command runs a local code-quality gate that checks retired payment-test patterns, encoding corruption, production monitor drift, and search evidence contract drift." },
           { label: "Crawler access", value: "Production crawler audit allows intended search and user-retrieval crawlers while keeping training crawler policy explicit." },
-          { label: "GitHub CI", value: "The agentsiteops-ci workflow runs syntax checks, typecheck, dependency audit, production build, technical SEO CI, crawler audit, search evidence import, and growth snapshot." },
+          { label: "GitHub CI", value: "The agentsiteops-ci workflow is treated as a release target, while local release gates currently verify typecheck, build, code quality, SEO CI, crawler audit, commercial validation, search evidence import, and growth snapshot." },
           { label: "Production health", value: "The production health monitor checks apex/www behavior, sitemap, robots, IndexNow key, updates, evidence, and privacy boundary pages." },
-          { label: "Commercial gate", value: "The commercial validation gate checks that the service page remains intent-only, checkout is disabled, and subscription is still blocked." },
-          { label: "Sample audit", value: "A public self-audit sample now shows the current format, weaknesses, and no-checkout boundary before paid requests." },
+          { label: "Commercial gate", value: "The commercial validation gate checks the manual PayPal path, refund boundary, terms, disclaimer, and no-guarantee claims." },
+          { label: "Sample blueprint", value: "A public sample now shows input facts, selected offer, rejected paths, landing page outline, outreach angle, seven-day validation, and missing-evidence boundaries before payment." },
           { label: "IndexNow", value: "The current production route list is submitted after deployment, with the response recorded in the update log." }
         ]
       },
@@ -759,6 +760,7 @@ export const routePages: RoutePage[] = [
           "When GSC or Bing exports exist, raw CSV files are placed in a local ignored import directory, normalized into a stable CSV, then merged into the growth evidence snapshot.",
         rows: [
           { label: "Raw files", value: "gsc-pages.csv, gsc-queries.csv, bing-pages.csv, and bing-queries.csv." },
+          { label: "Templates", value: "Tracked example files live in data/search-evidence-import-templates/ so future exports use reproducible columns." },
           { label: "Normalizer", value: "npm run search:evidence writes data/search-evidence-normalized.csv and reports/search-evidence-import.md." },
           { label: "Snapshot", value: "npm run growth:snapshot updates route-level GSC and Bing status." }
         ]
@@ -1209,7 +1211,7 @@ export const routePages: RoutePage[] = [
       "A productized manual blueprint for turning scattered AI capability into one sellable offer, one landing page structure, and one first outreach path.",
     answer:
       "The Launch Blueprint is not another generic score. It turns an AI-capable solo builder's skills into one offer, one buyer, one page structure, one pricing angle, and one 7-day validation path.",
-    primaryAction: { label: "Buy the Blueprint", href: "/buy/" },
+    primaryAction: { label: "Check fit before payment", href: "/tools/launch-blueprint-fit-checker/" },
     secondaryAction: { label: "View sample", href: "/sample/" },
     aiTarget:
       "Explain the paid blueprint deliverables, buyer fit, payment path, and limits without overstating traffic, ranking, AI citation, or revenue outcomes.",

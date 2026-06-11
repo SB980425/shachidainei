@@ -234,6 +234,105 @@ export const sampleReportSections = [
   }
 ];
 
+export const sampleBlueprintInputs = [
+  {
+    label: "Builder ability",
+    value: "Can create forms, simple automations, AI prompts, and a basic landing page."
+  },
+  {
+    label: "Available proof",
+    value: "Two private demos and one public workflow screenshot. No paid customer evidence yet."
+  },
+  {
+    label: "Time window",
+    value: "Seven days, five to eight hours available, no budget for paid ads."
+  },
+  {
+    label: "Constraint",
+    value: "No regulated advice, no account access, no platform spam, and no revenue guarantee."
+  }
+];
+
+export const sampleBlueprintDecision = {
+  selectedOffer: "72-hour AI intake and follow-up workflow setup for solo consultants.",
+  targetBuyer:
+    "Independent consultants who repeatedly answer the same qualification questions before calls.",
+  firstPrice:
+    "USD 149-299 pilot price, quoted manually after the buyer confirms the workflow scope.",
+  confidence:
+    "Medium. Delivery ability is credible, but search demand and payment evidence are still unverified."
+};
+
+export const sampleBlueprintRejectedPaths = [
+  {
+    path: "Broad AI automation agency",
+    reason: "Too broad for first trust. It asks the buyer to believe in general capability before seeing one concrete outcome."
+  },
+  {
+    path: "Prompt pack",
+    reason: "Low differentiation and weak proof. The buyer cannot see why this exact pack is worth paying for."
+  },
+  {
+    path: "SEO content site",
+    reason: "Too slow for seven-day validation. It needs search data, content volume, and more patience than the launch window allows."
+  }
+];
+
+export const sampleLandingPageBlocks = [
+  "Hero: turn repeated client questions into a simple AI-assisted intake flow.",
+  "Problem: missed context, repeated replies, and slow follow-up before calls.",
+  "Scope: intake form, AI summary, follow-up email draft, and handoff notes.",
+  "Proof: show one anonymized before/after workflow screenshot or walkthrough.",
+  "Limits: no CRM migration, no legal/medical/financial advice, no account takeover.",
+  "CTA: request a 72-hour workflow setup review by email or PayPal-backed invoice."
+];
+
+export const sampleValidationPlan = [
+  {
+    day: "Day 1",
+    action: "Publish the single landing page and send 10 warm messages to consultants already posting service offers."
+  },
+  {
+    day: "Day 2",
+    action: "Send 20 targeted messages. Track reply reason, price objection, workflow confusion, and proof requests."
+  },
+  {
+    day: "Day 3",
+    action: "Follow up with a before/after workflow explanation. Do not add new features unless replies show repeated demand."
+  },
+  {
+    day: "Days 4-7",
+    action: "Keep, repackage, or stop based on qualified replies, not page visits alone."
+  }
+];
+
+export const samplePaidArtifactChecklist = [
+  {
+    title: "Selected offer",
+    body: "One selected offer with rejected alternatives and reasons."
+  },
+  {
+    title: "Target buyer",
+    body: "One target buyer with the purchase trigger and non-buyer boundary."
+  },
+  {
+    title: "Page outline",
+    body: "One landing page section outline with claims, proof, objections, FAQ, and CTA."
+  },
+  {
+    title: "Outreach messages",
+    body: "Five outreach messages for the first manual validation cycle."
+  },
+  {
+    title: "Validation plan",
+    body: "Seven-day validation plan with stop, repackage, or pivot rules."
+  },
+  {
+    title: "Evidence ledger",
+    body: "Missing-evidence ledger showing which claims remain unverified."
+  }
+];
+
 export const outreachTemplates = {
   english: [
     "I help AI-capable solo builders turn scattered skills into one sellable offer, one landing page structure, and one 7-day outreach plan. I am testing a 48-hour Launch Blueprint at $99. If you send your current site or profile, I will tell you honestly if it fits.",
@@ -241,8 +340,8 @@ export const outreachTemplates = {
     "I am not selling traffic or AI magic. I am selling a tighter launch: positioning, page structure, pricing angle, and outreach copy. Founding validation price is $99 while I test it."
   ],
   chinese: [
-    "我在测试一个 48 小时交付的小产品，帮会一点 AI/自动化的人把能力压缩成一个可卖服务、一个落地页结构和第一轮外联动作。现在验证价 99 美元，可以先看样本。",
-    "如果你现在卡在会做但不知道先卖什么、页面怎么写、怎么发第一批消息，这个 Launch Blueprint 就是解决这件事。它不承诺流量或收入，只交付启动路径。",
-    "AgentSiteOps 现在从网站评分改成 AI 一人公司启动蓝图。交付具体到卖点、页面、价格和首轮外联文案。需要的话可以先看样本。"
+    "?????? 48 ?????????????? AI ????????????????????????????????????????? 99 ??????????",
+    "??????????????????????????????????? Launch Blueprint ??????????????????????????",
+    "AgentSiteOps ????????? AI ????????????????????????????????????????"
   ]
 };

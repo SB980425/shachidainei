@@ -15,7 +15,7 @@
     "production:health": "node scripts/production-health-monitor.mjs",
     "search:evidence": "node scripts/import-search-evidence.mjs",
     "indexnow:submit": "node scripts/submit-indexnow.mjs",
-    "lint": "next lint",
+    "lint": "node scripts/code-quality-gate.mjs",
     "seo:ci": "node scripts/technical-seo-ci.mjs",
     "typecheck": "tsc --noEmit"
   },

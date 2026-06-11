@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BadgeDollarSign, CheckCircle2, FileText, GitCompareArrows } from "lucide-react";
-import { sampleReportSections } from "@/lib/launch";
+import { ArrowRight, CheckCircle2, FileText, GitCompareArrows } from "lucide-react";
+import {
+  sampleBlueprintDecision,
+  sampleBlueprintInputs,
+  sampleBlueprintRejectedPaths,
+  sampleLandingPageBlocks,
+  samplePaidArtifactChecklist,
+  sampleReportSections,
+  sampleValidationPlan
+} from "@/lib/launch";
 import { siteUrl } from "@/lib/site";
 
 const path = "/sample/";
@@ -47,9 +55,9 @@ export default function Page() {
             from the buyer's skills, assets, target market, constraints, and launch window.
           </p>
           <div className="hero-actions">
-            <Link className="primary-action" href="/buy/">
-              <BadgeDollarSign aria-hidden="true" size={17} />
-              Buy the Blueprint
+            <Link className="primary-action" href="/tools/launch-blueprint-fit-checker/">
+              <CheckCircle2 aria-hidden="true" size={17} />
+              Check fit first
             </Link>
             <Link className="secondary-action" href="/intake/">
               <ArrowRight aria-hidden="true" size={17} />
@@ -71,6 +79,58 @@ export default function Page() {
 
       <section className="gate-section">
         <div className="section-head">
+          <h2>Sample input snapshot</h2>
+          <p>
+            A paid blueprint is only useful if it starts from actual operating facts. The
+            example below shows the minimum evidence used before selecting a route.
+          </p>
+        </div>
+        <div className="comparison-table comparison-table-wide" role="table" aria-label="Sample input snapshot">
+          <div role="row">
+            <strong role="columnheader">Input</strong>
+            <strong role="columnheader">Sample value</strong>
+          </div>
+          {sampleBlueprintInputs.map((item) => (
+            <div key={item.label} role="row">
+              <span role="cell">{item.label}</span>
+              <span role="cell">{item.value}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="gate-section split-section gate-split">
+        <div>
+          <h2>Decision output</h2>
+          <ul className="compact-list">
+            <li>
+              <strong>Selected offer:</strong> {sampleBlueprintDecision.selectedOffer}
+            </li>
+            <li>
+              <strong>Target buyer:</strong> {sampleBlueprintDecision.targetBuyer}
+            </li>
+            <li>
+              <strong>First price:</strong> {sampleBlueprintDecision.firstPrice}
+            </li>
+            <li>
+              <strong>Confidence:</strong> {sampleBlueprintDecision.confidence}
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2>Rejected paths</h2>
+          <ul className="compact-list">
+            {sampleBlueprintRejectedPaths.map((item) => (
+              <li key={item.path}>
+                <strong>{item.path}:</strong> {item.reason}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
           <h2>Sample report sections</h2>
           <p>
             A useful blueprint should make one path easier to execute, not add more options.
@@ -82,6 +142,47 @@ export default function Page() {
               <span>{index + 1}</span>
               <h3>{section.title}</h3>
               <p>{section.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="gate-section split-section gate-split">
+        <div>
+          <h2>Landing page outline</h2>
+          <ul className="compact-list">
+            {sampleLandingPageBlocks.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2>7-day validation plan</h2>
+          <div className="timeline-grid">
+            {sampleValidationPlan.map((item) => (
+              <article key={item.day}>
+                <small>{item.day}</small>
+                <p>{item.action}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>What the paid file must contain</h2>
+          <p>
+            The USD 99 price is not for a score. It is for a compact decision artifact
+            that can be executed in the next validation cycle.
+          </p>
+        </div>
+        <div className="loop-grid">
+          {samplePaidArtifactChecklist.map((item, index) => (
+            <article key={item.title}>
+              <span>{index + 1}</span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
             </article>
           ))}
         </div>
@@ -109,6 +210,10 @@ export default function Page() {
             path. The final artifact is delivered manually after payment confirmation and intake.
           </p>
           <div className="hero-actions">
+            <Link className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
+              <CheckCircle2 aria-hidden="true" size={17} />
+              Check fit first
+            </Link>
             <Link className="secondary-action" href="/buy/">
               <FileText aria-hidden="true" size={17} />
               View buy page

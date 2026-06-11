@@ -1,10 +1,10 @@
 # Crawler Access Audit
 
-- Generated: 2026-06-11T08:23:06.597Z
+- Generated: 2026-06-11T09:21:43.854Z
 - Status: PASS
 - Site: https://agentsiteops.com
 - Target: https://agentsiteops.com/checklists/ai-citation-readiness/
-- Sitemap URLs: 38
+- Sitemap URLs: 39
 - Cloudflare managed robots detected: no
 
 ## Summary

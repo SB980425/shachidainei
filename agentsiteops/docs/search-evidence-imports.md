@@ -16,6 +16,16 @@ data/search-evidence-imports/
 
 The directory is ignored by Git so raw exports are not committed by default.
 
+Tracked column templates are stored in:
+
+```text
+data/search-evidence-import-templates/
+```
+
+Use those files only as shape examples. Copy the matching template, replace the
+sample rows with exported data, then save it under `data/search-evidence-imports/`
+with the exact accepted filename.
+
 ## Accepted Files
 
 | File | Source | Grain | Required useful columns |
@@ -26,6 +36,13 @@ The directory is ignored by Git so raw exports are not committed by default.
 | `bing-queries.csv` | Bing Webmaster Tools | query | query, clicks, impressions, CTR, position |
 
 The importer accepts common column names such as `Page`, `Top pages`, `URL`, `Query`, `Top queries`, `Clicks`, `Impressions`, `CTR`, `Position`, and `Avg Position`.
+
+## Export Handling Rules
+
+- Use page exports for route coverage; query exports alone cannot prove which site route earned the signal unless the export also includes a page or URL column.
+- Keep the export date range in the filename notes or in the report that accompanies the import.
+- Do not paste screenshots into the evidence workflow. Use CSV rows so route evidence can be reproduced.
+- If a platform export has different column names, keep the original file and update `scripts/import-search-evidence.mjs` only after confirming the column meaning.
 
 ## Commands
 
