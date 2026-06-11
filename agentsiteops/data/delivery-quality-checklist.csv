@@ -1,0 +1,15 @@
+check_id,product,check,status_options,blocking_if_missing
+DQ001,fit_review,Confirmed payment is matched to usable intake,pass|fail,true
+DQ002,fit_review,One verdict is selected: go narrow or stop,pass|fail,true
+DQ003,fit_review,Strongest blocker is named,pass|fail,true
+DQ004,fit_review,Minimum missing evidence is concrete,pass|fail,true
+DQ005,fit_review,Recommendation does not force an upsell,pass|fail,true
+DQ006,launch_blueprint,Confirmed payment is matched to usable intake,pass|fail,true
+DQ007,launch_blueprint,One first offer is selected,pass|fail,true
+DQ008,launch_blueprint,Rejected routes are explained,pass|fail,true
+DQ009,launch_blueprint,Landing page structure can be built,pass|fail,true
+DQ010,launch_blueprint,Manual outreach sequence is executable,pass|fail,true
+DQ011,launch_blueprint,Seven-day stop repackage or proceed rules exist,pass|fail,true
+DQ012,both,No card data passwords API keys bank details or private customer lists are stored,pass|fail,true
+DQ013,both,No guaranteed traffic ranking AI citation revenue or customer response is claimed,pass|fail,true
+DQ014,both,Regulated advice and unsafe automation are blocked or narrowed,pass|fail,true

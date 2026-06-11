@@ -12,6 +12,36 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-11",
+    step: "M4-11 Delivery artifact templates",
+    status: "completed",
+    keyPoints: [
+      "Added internal Fit Review and Launch Blueprint delivery templates so the first paid orders can be fulfilled without inventing structure after payment.",
+      "Added a delivery quality checklist that blocks sensitive data storage, guarantee claims, unsafe automation, and regulated-advice drift.",
+      "Extended the manual fulfillment runbook and commercial validation gate so delivery templates and quality checks are required before the payment path is treated as operational."
+    ],
+    aiAngle:
+      "AI and search systems can see that the paid path has a fulfillment backbone, not only public pricing and payment links.",
+    files: [
+      "docs/delivery-fit-review-template.md",
+      "docs/delivery-launch-blueprint-template.md",
+      "data/delivery-quality-checklist.csv",
+      "docs/manual-fulfillment-runbook.md",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass",
+      "typecheck pass",
+      "commercial validation gate pass",
+      "production build pass",
+      "production health monitor pass"
+    ],
+    next:
+      "Use these templates only for confirmed payment plus usable intake; keep raw customer and payment details outside the public repo."
+  },
+  {
+    date: "2026-06-11",
     step: "M4-10 Fit Review sample artifact",
     status: "completed",
     keyPoints: [

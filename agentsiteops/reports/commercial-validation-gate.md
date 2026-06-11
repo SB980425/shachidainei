@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T11:00:48.322Z
+- Generated: 2026-06-11T11:10:20.678Z
 - Status: pass
-- Checks: 75
+- Checks: 83
 - Blockers: 0
 
 ## Summary
@@ -66,6 +66,14 @@
 | manual_fulfillment | pass | manual fulfillment template records purchased product |
 | manual_fulfillment | pass | manual fulfillment template blocks sensitive payment data storage |
 | manual_fulfillment | pass | manual fulfillment runbook states data boundary |
+| manual_fulfillment | pass | manual fulfillment runbook links Fit Review delivery template |
+| manual_fulfillment | pass | manual fulfillment runbook links Launch Blueprint delivery template |
+| manual_fulfillment | pass | Fit Review delivery template has verdict boundary |
+| manual_fulfillment | pass | Fit Review delivery template blocks guarantee claims |
+| manual_fulfillment | pass | Launch Blueprint delivery template selects one offer |
+| manual_fulfillment | pass | Launch Blueprint delivery template includes evidence ledger |
+| manual_fulfillment | pass | delivery checklist blocks sensitive data storage |
+| manual_fulfillment | pass | delivery checklist blocks guarantee claims |
 | service_boundary | pass | launch copy avoids guarantee claims |
 | readiness_tool | pass | readiness tool has 13 weighted checks; found 13 |
 | readiness_tool | pass | readiness tool weights total 100 |

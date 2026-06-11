@@ -8,6 +8,9 @@ This runbook keeps the first manual offers operable before there is an account s
 - Public buy page: `/buy/`
 - Public fit review page: `/starter-review/`
 - Local template: `data/manual-fulfillment-log-template.csv`
+- Fit Review delivery template: `docs/delivery-fit-review-template.md`
+- Launch Blueprint delivery template: `docs/delivery-launch-blueprint-template.md`
+- Delivery quality checklist: `data/delivery-quality-checklist.csv`
 - Support email: `sun19980425s@gmail.com`
 
 ## Order Intake Rule
@@ -54,6 +57,7 @@ Mark `delivered` for `fit_review` only when the buyer has received a short verdi
 - Minimum missing evidence or asset.
 - Buyer and offer fit note.
 - Recommendation to buy the full blueprint, collect proof first, narrow the offer, or stop.
+- Delivery quality checklist rows for `fit_review` and `both` pass.
 
 ## Launch Blueprint Completion Rule
 
@@ -67,3 +71,4 @@ Mark `delivered` for `launch_blueprint` only when the buyer has received a docum
 - Outreach messages.
 - Seven-day keep, repackage, or stop rule.
 - Missing evidence ledger.
+- Delivery quality checklist rows for `launch_blueprint` and `both` pass.

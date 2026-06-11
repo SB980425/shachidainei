@@ -74,6 +74,9 @@ function checkCommercialBoundary() {
   const disclaimer = read("app/disclaimer/page.tsx");
   const fulfillmentTemplate = read("data/manual-fulfillment-log-template.csv");
   const fulfillmentRunbook = read("docs/manual-fulfillment-runbook.md");
+  const fitReviewDeliveryTemplate = read("docs/delivery-fit-review-template.md");
+  const launchBlueprintDeliveryTemplate = read("docs/delivery-launch-blueprint-template.md");
+  const deliveryQualityChecklist = read("data/delivery-quality-checklist.csv");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -102,6 +105,14 @@ function checkCommercialBoundary() {
   requireText("manual_fulfillment", fulfillmentTemplate, "fit_review|launch_blueprint", "manual fulfillment template records purchased product");
   requireText("manual_fulfillment", fulfillmentTemplate, "Do not store card data", "manual fulfillment template blocks sensitive payment data storage");
   requireText("manual_fulfillment", fulfillmentRunbook, "Do not store", "manual fulfillment runbook states data boundary");
+  requireText("manual_fulfillment", fulfillmentRunbook, "docs/delivery-fit-review-template.md", "manual fulfillment runbook links Fit Review delivery template");
+  requireText("manual_fulfillment", fulfillmentRunbook, "docs/delivery-launch-blueprint-template.md", "manual fulfillment runbook links Launch Blueprint delivery template");
+  requireText("manual_fulfillment", fitReviewDeliveryTemplate, "Verdict: go | narrow | stop", "Fit Review delivery template has verdict boundary");
+  requireText("manual_fulfillment", fitReviewDeliveryTemplate, "Do not claim", "Fit Review delivery template blocks guarantee claims");
+  requireText("manual_fulfillment", launchBlueprintDeliveryTemplate, "Selected First Offer", "Launch Blueprint delivery template selects one offer");
+  requireText("manual_fulfillment", launchBlueprintDeliveryTemplate, "Missing Evidence Ledger", "Launch Blueprint delivery template includes evidence ledger");
+  requireText("manual_fulfillment", deliveryQualityChecklist, "No card data passwords API keys bank details or private customer lists are stored", "delivery checklist blocks sensitive data storage");
+  requireText("manual_fulfillment", deliveryQualityChecklist, "No guaranteed traffic ranking AI citation revenue or customer response is claimed", "delivery checklist blocks guarantee claims");
 
   addCheck("service_boundary", !/guaranteed rankings|guaranteed revenue|guaranteed customers/i.test(launch) ? "pass" : "fail", "launch copy avoids guarantee claims");
 }
