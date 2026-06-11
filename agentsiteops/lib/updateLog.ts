@@ -40,7 +40,10 @@ export const updateLog: UpdateLogEntry[] = [
       "technical SEO CI pass with self-starting static server",
       "crawler access audit pass",
       "search evidence import waiting_for_exports state verified",
-      "growth snapshot baseline_ready"
+      "growth snapshot baseline_ready",
+      "production deploy pass on Cloudflare Pages master branch",
+      "production health monitor pass with 98 checks",
+      "IndexNow submit pass with 39 URLs"
     ],
     next:
       "Use the fulfillment template only for real payment or serious intake evidence; keep raw payment and customer-sensitive data out of the repo."

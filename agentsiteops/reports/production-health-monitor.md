@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T09:54:32.107Z
+- Generated: 2026-06-11T10:04:47.109Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 96
+- Checks: 98
 - Blockers: 0
 - Warnings: 0
 
@@ -65,7 +65,8 @@
 | /intake/ | pass | canonical points to production URL | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Launch Blueprint Intake | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Email intake | [link](https://agentsiteops.com/intake/) |
-| /intake/ | pass | Required fields | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Payment confirmation | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Manual delivery process | [link](https://agentsiteops.com/intake/) |
 | /evidence/ | pass | HTTP 200 | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | HTML title exists | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | canonical points to production URL | [link](https://agentsiteops.com/evidence/) |
@@ -101,6 +102,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-07 Intake and manual fulfillment path | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-06 Purchase acceptance and encoding gate | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-05 Quality gate and evidence-ready sample | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-04 Pre-purchase fit checker | [link](https://agentsiteops.com/updates/) |
