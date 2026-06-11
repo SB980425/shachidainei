@@ -27,6 +27,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `tool_page_view` | `/tools/website-opportunity-scorer/` load | `path` |
 | `ai_crawler_readiness_view` | `/tools/ai-crawler-readiness/` load | `path` |
 | `sample_audit_view` | `/examples/agentsiteops-self-audit/` load | `path` |
+| `fit_review_sample_view` | `/examples/fit-review-sample/` load | `path` |
 | `audit_intent_page_view` | `/services/ai-website-opportunity-audit/` load | `path` |
 | `audit_scope_builder_view` | `/tools/audit-scope-builder/` load | `path` |
 | `launch_blueprint_fit_checker_view` | `/tools/launch-blueprint-fit-checker/` load | `path` |

@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-11T10:49:06.951Z
+- Generated: 2026-06-11T11:02:10.153Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 40
+- Sitemap routes: 41
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 40 |
+| Routes passed | 41 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -36,7 +36,7 @@
 | /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 23 | pass | - |
 | /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 25 | pass | - |
 | /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 25 | pass | - |
-| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 40 | pass | - |
+| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 41 | pass | - |
 | /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 23 | pass | - |
 | /guides/ai-search-friendly-robots-txt/ | pass | 200 | AI Search Friendly Robots.txt \| AgentSiteOps | https://agentsiteops.com/guides/ai-search-friendly-robots-txt/ | 1 | 24 | pass | - |
 | /guides/indexnow-cloudflare-pages/ | pass | 200 | IndexNow on Cloudflare Pages \| AgentSiteOps | https://agentsiteops.com/guides/indexnow-cloudflare-pages/ | 1 | 24 | pass | - |
@@ -48,10 +48,11 @@
 | /privacy/ | pass | 200 | Privacy Policy \| AgentSiteOps | https://agentsiteops.com/privacy/ | 1 | 22 | pass | - |
 | /disclosure/ | pass | 200 | Disclosure \| AgentSiteOps | https://agentsiteops.com/disclosure/ | 1 | 22 | pass | - |
 | /website-opportunity-audit/ | pass | 200 | AgentSiteOps Launch Blueprint \| AgentSiteOps | https://agentsiteops.com/website-opportunity-audit/ | 1 | 21 | pass | - |
-| /pricing/ | pass | 200 | Pricing \| AgentSiteOps | https://agentsiteops.com/pricing/ | 1 | 22 | pass | - |
+| /pricing/ | pass | 200 | Pricing \| AgentSiteOps | https://agentsiteops.com/pricing/ | 1 | 23 | pass | - |
+| /examples/fit-review-sample/ | pass | 200 | Fit Review Sample \| AgentSiteOps | https://agentsiteops.com/examples/fit-review-sample/ | 1 | 22 | pass | - |
 | /sample/ | pass | 200 | Sample Launch Blueprint \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 21 | pass | - |
 | /compare/ | pass | 200 | Compare Launch Options \| AgentSiteOps | https://agentsiteops.com/compare/ | 1 | 22 | pass | - |
-| /starter-review/ | pass | 200 | Fit Review \| AgentSiteOps | https://agentsiteops.com/starter-review/ | 1 | 21 | pass | - |
+| /starter-review/ | pass | 200 | Fit Review \| AgentSiteOps | https://agentsiteops.com/starter-review/ | 1 | 22 | pass | - |
 | /buy/ | pass | 200 | Buy Launch Blueprint \| AgentSiteOps | https://agentsiteops.com/buy/ | 1 | 22 | pass | - |
 | /intake/ | pass | 200 | Order Intake \| AgentSiteOps | https://agentsiteops.com/intake/ | 1 | 21 | pass | - |
 | /terms/ | pass | 200 | Service Terms \| AgentSiteOps | https://agentsiteops.com/terms/ | 1 | 21 | pass | - |

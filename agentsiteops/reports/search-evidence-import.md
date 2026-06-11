@@ -1,6 +1,6 @@
 # Search Evidence Import
 
-- Generated: 2026-06-11T10:40:45.232Z
+- Generated: 2026-06-11T11:01:03.304Z
 - Status: waiting_for_exports
 - Import files found: 0
 - Normalized rows: 0
@@ -25,6 +25,7 @@
 | /tools/website-opportunity-scorer/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /tools/ai-crawler-readiness/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /examples/agentsiteops-self-audit/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /examples/fit-review-sample/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /services/ai-website-opportunity-audit/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /tools/audit-scope-builder/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /tools/launch-blueprint-fit-checker/ | 0 | 0 | 0 | 0 | 0 | 0 |

@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T10:41:30.937Z
+- Generated: 2026-06-11T11:00:48.322Z
 - Status: pass
-- Checks: 71
+- Checks: 75
 - Blockers: 0
 
 ## Summary
@@ -13,6 +13,8 @@
 | app | pass | /tools/ai-crawler-readiness/ has app page |
 | routes | pass | /examples/agentsiteops-self-audit/ registered in docs/routes.json |
 | app | pass | /examples/agentsiteops-self-audit/ has app page |
+| routes | pass | /examples/fit-review-sample/ registered in docs/routes.json |
+| app | pass | /examples/fit-review-sample/ has app page |
 | routes | pass | /services/ai-website-opportunity-audit/ registered in docs/routes.json |
 | app | pass | /services/ai-website-opportunity-audit/ has app page |
 | routes | pass | /tools/audit-scope-builder/ registered in docs/routes.json |
@@ -45,6 +47,8 @@
 | payment_path | pass | buy page contains only current paid offer CTA |
 | payment_path | pass | starter review page has paid CTA |
 | service_boundary | pass | starter review can reject the full blueprint sale |
+| service_boundary | pass | fit review sample can recommend not buying the full blueprint |
+| service_boundary | pass | fit review sample states proof boundary |
 | service_boundary | pass | launch product blocks guarantee claims |
 | service_boundary | pass | disclaimer blocks guarantee claims |
 | trust_pages | pass | terms page covers PayPal payment path |

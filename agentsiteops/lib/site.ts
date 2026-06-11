@@ -739,7 +739,7 @@ export const routePages: RoutePage[] = [
           { label: "Production health", value: "The production health monitor checks apex/www behavior, sitemap, robots, IndexNow key, updates, evidence, and privacy boundary pages." },
           { label: "Commercial gate", value: "The commercial validation gate checks the manual PayPal path, refund boundary, terms, disclaimer, and no-guarantee claims." },
           { label: "Manual fulfillment", value: "The intake page, fulfillment log template, and runbook define how Fit Review and Launch Blueprint payment evidence, project details, delivery pauses, and completion are handled without storing sensitive payment data." },
-          { label: "Sample blueprint", value: "A public sample now shows input facts, selected offer, rejected paths, landing page outline, outreach angle, seven-day validation, and missing-evidence boundaries before payment." },
+          { label: "Sample artifacts", value: "Public samples now show both the USD 29 Fit Review verdict format and the USD 99 Launch Blueprint structure before payment." },
           { label: "IndexNow", value: "The current production route list is submitted after deployment, with the response recorded in the update log." }
         ]
       },
@@ -752,7 +752,7 @@ export const routePages: RoutePage[] = [
           { label: "Bing", value: "Bing Webmaster Tools search, sitemap, URL, and AI Performance data is pending export." },
           { label: "AI referrals", value: "ChatGPT, Claude, Perplexity, and other AI-search referral examples are pending analytics or log evidence." },
           { label: "Audit intent", value: "Audit request clicks or GitHub issues are pending; the service page is an intent path only." },
-          { label: "Funnel movement", value: "Fit checker completion, sample inspection, comparison views, Fit Review views, PayPal clicks, intake emails, and qualified orders are pending aggregate evidence." },
+          { label: "Funnel movement", value: "Fit checker completion, sample inspection, Fit Review sample inspection, comparison views, Fit Review views, PayPal clicks, intake emails, and qualified orders are pending aggregate evidence." },
           { label: "Revenue", value: "PayPal clicks and Fit Review page views are not revenue. Confirmed payments and qualified orders are pending PayPal and intake evidence outside the public repo." }
         ]
       },
@@ -1296,6 +1296,7 @@ export const routePages: RoutePage[] = [
 export const routeMap = new Map(routePages.map((page) => [page.path, page]));
 
 export const customRoutes = [
+  "/examples/fit-review-sample/",
   "/sample/",
   "/compare/",
   "/starter-review/",

@@ -268,6 +268,7 @@ async function main() {
     "Launch Readiness"
   ]);
   await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "Fit Review", "USD", "PayPal"]);
+  await checkPage("/examples/fit-review-sample/", ["A smaller paid verdict", "Do not buy the USD 99 blueprint yet", "It does not prove traffic"]);
   await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "What the paid file must contain", "Check fit first"]);
   await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
   await checkPage("/starter-review/", ["Pay for a fit verdict", "USD 29", "It can reject the sale"]);
@@ -280,6 +281,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-10 Fit Review sample artifact",
     "M4-09 Fit Review entry offer",
     "M4-08 Launch funnel evidence boundary",
     "M4-07 Intake and manual fulfillment path",

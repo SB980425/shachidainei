@@ -1,18 +1,18 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-11T10:52:32.612Z
+- Generated: 2026-06-11T11:02:36.459Z
 - Status: baseline_ready
-- Routes: 40
-- Technical SEO pass routes: 40
+- Routes: 41
+- Technical SEO pass routes: 41
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 40 routes
-- Bing status: pending export for 40 routes
+- GSC status: pending export for 41 routes
+- Bing status: pending export for 41 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 40 routes
+- Onsite event status: local buffer only for 41 routes
 
 ## Route Evidence Table
 
@@ -23,6 +23,7 @@
 | /tools/website-opportunity-scorer/ | tool | website_opportunity_scoring | pass | site_pass | keep | Measure tool_completed and tool_result_export after real endpoint |
 | /tools/ai-crawler-readiness/ | tool | ai_crawler_readiness | pass | site_pass | keep | Measure readiness report copies and sample audit clicks before paid audit expansion |
 | /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
+| /examples/fit-review-sample/ | example | launch_blueprint | pass | site_pass | keep | Measure movement from sample review to Fit Review pricing intake and full blueprint pages |
 | /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Launch Blueprint pricing, sample, buy, and intake path |
 | /tools/audit-scope-builder/ | tool | commercial_validation | pass | site_pass | keep | Measure audit_scope_builder_view, tool_completed, and tool_result_export before adding forms or payment |
 | /tools/launch-blueprint-fit-checker/ | tool | launch_blueprint | pass | site_pass | keep | Measure checker starts, copies, pricing exits, and PayPal clicks before increasing paid traffic |

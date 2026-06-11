@@ -51,6 +51,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/examples/fit-review-sample/",
+      "pageType": "example",
+      "template": "fit_review_sample",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.78,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/services/ai-website-opportunity-audit/",
       "pageType": "service",
       "template": "service",

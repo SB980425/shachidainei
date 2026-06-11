@@ -8,6 +8,7 @@ const reportPath = resolve(rootDir, "reports", "commercial-validation-gate.md");
 const requiredRoutes = [
   "/tools/ai-crawler-readiness/",
   "/examples/agentsiteops-self-audit/",
+  "/examples/fit-review-sample/",
   "/services/ai-website-opportunity-audit/",
   "/tools/audit-scope-builder/",
   "/tools/launch-blueprint-fit-checker/",
@@ -63,6 +64,7 @@ function checkCommercialBoundary() {
   const launch = read("lib/launch.ts");
   const pricingPage = read("app/pricing/page.tsx");
   const starterReviewPage = read("app/starter-review/page.tsx");
+  const fitReviewSamplePage = read("app/examples/fit-review-sample/page.tsx");
   const buyPage = read("app/buy/page.tsx");
   const intakePage = read("app/intake/page.tsx");
   const revenue = read("data/revenue-experiments.csv");
@@ -81,6 +83,8 @@ function checkCommercialBoundary() {
   addCheck("payment_path", !/testPayment|test_payment|Test PayPal|Test USD/i.test(buyPage) ? "pass" : "fail", "buy page contains only current paid offer CTA");
   requireText("payment_path", starterReviewPage, "Pay USD {starterOffer.price}", "starter review page has paid CTA");
   requireText("service_boundary", starterReviewPage, "reject the larger sale", "starter review can reject the full blueprint sale");
+  requireText("service_boundary", fitReviewSamplePage, "Do not buy the USD 99 blueprint yet", "fit review sample can recommend not buying the full blueprint");
+  requireText("service_boundary", fitReviewSamplePage, "It does not prove traffic, revenue, citations, or demand.", "fit review sample states proof boundary");
   requireText("service_boundary", launch, "No guaranteed traffic, rankings, revenue, customers, AI citations", "launch product blocks guarantee claims");
   requireText("service_boundary", disclaimer, "No guaranteed traffic", "disclaimer blocks guarantee claims");
   requireText("trust_pages", terms, "PayPal", "terms page covers PayPal payment path");

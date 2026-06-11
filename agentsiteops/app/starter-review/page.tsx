@@ -78,6 +78,10 @@ export default function Page() {
               <FileText aria-hidden="true" size={17} />
               View intake fields
             </Link>
+            <Link className="secondary-action" href="/examples/fit-review-sample/">
+              <FileText aria-hidden="true" size={17} />
+              View sample review
+            </Link>
             <Link className="secondary-action" href="/pricing/">
               <CheckCircle2 aria-hidden="true" size={17} />
               Compare offers
@@ -168,6 +172,10 @@ export default function Page() {
           <Link className="secondary-action" href="/buy/">
             <CreditCard aria-hidden="true" size={17} />
             View full blueprint
+          </Link>
+          <Link className="secondary-action" href="/examples/fit-review-sample/">
+            <FileText aria-hidden="true" size={17} />
+            View sample
           </Link>
         </div>
         <div>

@@ -31,6 +31,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/tools/website-opportunity-scorer/": ["tool_page_view"],
   "/tools/ai-crawler-readiness/": ["ai_crawler_readiness_view"],
   "/examples/agentsiteops-self-audit/": ["sample_audit_view"],
+  "/examples/fit-review-sample/": ["fit_review_sample_view"],
   "/services/ai-website-opportunity-audit/": ["audit_intent_page_view"],
   "/tools/audit-scope-builder/": ["audit_scope_builder_view"],
   "/tools/launch-blueprint-fit-checker/": ["launch_blueprint_fit_checker_view"],

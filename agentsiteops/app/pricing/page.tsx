@@ -142,6 +142,10 @@ export default function Page() {
               <CreditCard aria-hidden="true" size={17} />
               Pay USD {starterOffer.price}
             </a>
+            <Link className="secondary-action" href="/examples/fit-review-sample/">
+              <FileText aria-hidden="true" size={17} />
+              View sample review
+            </Link>
           </article>
           <article>
             <span aria-hidden="true">
