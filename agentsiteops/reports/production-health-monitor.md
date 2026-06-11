@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-11T13:08:47.823Z
+- Generated: 2026-06-11T14:43:06.343Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 149
+- Checks: 150
 - Blockers: 0
 - Warnings: 0
 
@@ -29,9 +29,10 @@
 | / | pass | HTTP 200 | [link](https://agentsiteops.com/) |
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
-| / | pass | Turn scattered AI skills into one sellable offer | [link](https://agentsiteops.com/) |
-| / | pass | Check fit before payment | [link](https://agentsiteops.com/) |
-| / | pass | Launch Readiness | [link](https://agentsiteops.com/) |
+| / | pass | Validate your first AI service offer before building the site | [link](https://agentsiteops.com/) |
+| / | pass | Start with USD | [link](https://agentsiteops.com/) |
+| / | pass | Fit Review | [link](https://agentsiteops.com/) |
+| / | pass | 52/100 | [link](https://agentsiteops.com/) |
 | /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | canonical points to production URL | [link](https://agentsiteops.com/pricing/) |

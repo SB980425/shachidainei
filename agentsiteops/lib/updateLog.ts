@@ -38,10 +38,13 @@ export const updateLog: UpdateLogEntry[] = [
       "technical SEO CI pass for 42 routes",
       "crawler access audit pass",
       "growth snapshot baseline_ready",
-      "local desktop and mobile UI screenshot checks pass"
+      "local desktop and mobile UI screenshot checks pass",
+      "manual Cloudflare Pages deploy pass through Wrangler",
+      "production health pass",
+      "IndexNow submit pass for 42 URLs"
     ],
     next:
-      "Deploy the simplified homepage, then run production health and IndexNow submission against the updated commercial path."
+      "Measure whether the simplified homepage moves visitors from home to Fit Review sample, starter review, pricing, payment click, and usable intake."
   },
   {
     date: "2026-06-11",

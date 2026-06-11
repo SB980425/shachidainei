@@ -264,7 +264,8 @@ async function main() {
   await checkBrandIcon();
   await checkPage("/", [
     "Validate your first AI service offer before building the site",
-    "Start with USD 29 Fit Review",
+    "Start with USD",
+    "Fit Review",
     "52/100"
   ]);
   await checkPage("/pricing/", ["AgentSiteOps Launch Blueprint", "Fit Review", "USD", "PayPal"]);

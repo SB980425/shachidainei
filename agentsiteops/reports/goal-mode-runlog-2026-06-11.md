@@ -107,6 +107,15 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - Extended commercial validation and production health monitoring so score governance remains public.
 - Deployed the M4-17 update to Cloudflare Pages and submitted 42 URLs through IndexNow.
 
+### M4-18 Homepage Offer Simplification And Visual Motion
+
+- Rebuilt `/` around one primary commercial action: `Start with USD 29 Fit Review`.
+- Removed the previous five-button hero competition and made the first viewport explain one decision: go, narrow, or stop before building.
+- Added a dynamic validation panel with the public 52/100 self-score, proof/buyer/offer/route nodes, and go/narrow/stop states.
+- Shortened homepage sections into a three-step path, three USD 29 deliverables, visible payment blockers, and one authority boundary.
+- Verified local desktop and mobile screenshots with no horizontal overflow, visible primary CTA, visible validation panel, and readable dark-panel branding.
+- Pushed to `codex/launch-blueprint-reset`, fast-forwarded `master`, manually deployed Cloudflare Pages with Wrangler, ran production health, and submitted 42 URLs through IndexNow.
+
 ## Verification Snapshot
 
 - `npm run lint`: pass.
@@ -132,8 +141,11 @@ Objective: continue AgentSiteOps post-launch foundation work for an estimated fo
 - `npm run production:health`: pass, 139 checks after M4-15 deployment.
 - `npm run production:health`: pass, 147 checks after M4-16 deployment.
 - `npm run production:health`: pass, 149 checks after M4-17 deployment.
+- `npm run production:health`: pass, 150 checks after M4-18 deployment.
 - `npm run indexnow:submit`: pass, 42 URLs, HTTP 200.
+- `npm run indexnow:submit`: pass, 42 URLs, HTTP 200 after M4-18 deployment.
 - Playwright static build checks passed for `/examples/fit-review-sample/`, `/starter-review/`, and `/pricing/` on desktop and mobile without horizontal overflow.
+- Playwright static build checks passed for `/` on desktop and mobile after M4-18 with visible primary CTA, visible validation panel, no horizontal overflow, and readable dark-panel branding.
 - Final production read-only checks passed for `/examples/fit-review-sample/`, `/starter-review/`, `/pricing/`, `/evidence/`, `/updates/`, `/intake/`, `/buy/`, and `/sitemap.xml`.
 
 ## Production State
