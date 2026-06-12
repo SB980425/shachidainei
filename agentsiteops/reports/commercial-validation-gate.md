@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T01:35:03.425Z
+- Generated: 2026-06-12T01:51:50.079Z
 - Status: pass
-- Checks: 219
+- Checks: 228
 - Blockers: 0
 
 ## Summary
@@ -170,6 +170,7 @@
 | exposure_sprint | pass | exposure action ledger records public feedback checkpoint comment |
 | exposure_sprint | pass | exposure action ledger records GitHub feedback snapshot import |
 | exposure_sprint | pass | exposure action ledger records external search discoverability snapshot |
+| exposure_sprint | pass | exposure action ledger records Launch Kit visibility reinforcement |
 | exposure_sprint | pass | exposure action ledger marks GitHub traffic as aggregate evidence |
 | exposure_sprint | pass | exposure action ledger separates public actions from threshold evidence |
 | exposure_sprint | pass | exposure action ledger blocks public-action-as-demand logic |
@@ -177,6 +178,7 @@
 | exposure_sprint | pass | exposure action ledger blocks maintainer-comment-as-reply logic |
 | exposure_sprint | pass | exposure action ledger records aggregate-only feedback snapshot |
 | exposure_sprint | pass | exposure action ledger blocks search-result-as-demand logic |
+| exposure_sprint | pass | exposure action ledger blocks internal-link-as-demand logic |
 | github_traffic | pass | GitHub traffic script imports aggregate repo views |
 | github_traffic | pass | GitHub traffic script imports aggregate repo clones |
 | github_traffic | pass | GitHub traffic script imports aggregate referrers |
@@ -193,6 +195,13 @@
 | external_search_discoverability | pass | external search discoverability snapshot carries threshold boundary column |
 | external_search_discoverability | pass | external search discoverability report blocks search-result-as-GSC logic |
 | external_search_discoverability | pass | external search discoverability report records missing launch kit visibility |
+| launch_kit_visibility | pass | Launch Kit visibility snapshot records global footer link |
+| launch_kit_visibility | pass | Launch Kit visibility snapshot records self-audit related link |
+| launch_kit_visibility | pass | Launch Kit visibility snapshot records evidence dashboard related link |
+| launch_kit_visibility | pass | Launch Kit visibility report blocks internal-link-as-demand logic |
+| launch_kit_visibility | pass | global footer links to Launch Kit |
+| launch_kit_visibility | pass | homepage links to Launch Kit |
+| launch_kit_visibility | pass | route related links include Launch Kit |
 | launch_kit | pass | launch kit page is wired to static route data |
 | launch_kit | pass | launch kit route data exists |
 | launch_kit | pass | launch kit states current validation status |

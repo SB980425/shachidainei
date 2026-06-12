@@ -96,6 +96,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <p>Launch blueprint service for AI-capable solo builders who need one sellable offer and first validation path.</p>
           </div>
           <div className="footer-links">
+            <Link href="/launch-kit/">Launch Kit</Link>
             <Link href="/updates/">Updates</Link>
             <Link href="/pricing/">Pricing</Link>
             <Link href="/sample/">Sample</Link>

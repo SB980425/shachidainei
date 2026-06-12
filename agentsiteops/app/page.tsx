@@ -124,6 +124,10 @@ export default function HomePage() {
               <FileText aria-hidden="true" size={17} />
               See sample verdict
             </Link>
+            <Link className="secondary-action" href="/launch-kit/">
+              <FileText aria-hidden="true" size={17} />
+              Inspect launch kit
+            </Link>
           </div>
 
           <div className="validation-proof-strip" aria-label="AgentSiteOps launch summary">
@@ -207,6 +211,10 @@ export default function HomePage() {
             <Link className="secondary-action" href="/guides/48-hour-exposure-sprint/">
               <ArrowRight aria-hidden="true" size={17} />
               Run 48-hour sprint
+            </Link>
+            <Link className="secondary-action" href="/launch-kit/">
+              <ArrowRight aria-hidden="true" size={17} />
+              View launch kit
             </Link>
           </div>
         </div>

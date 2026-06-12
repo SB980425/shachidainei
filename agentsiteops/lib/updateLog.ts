@@ -12,6 +12,43 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-32 Launch Kit visibility reinforcement",
+    status: "completed",
+    keyPoints: [
+      "Reinforced the Launch Kit page after the external search snapshot did not confirm `/launch-kit/` as a returned result.",
+      "Added Launch Kit links to the global footer, home hero, home proof section, self-audit sample, AI citation metrics guide, route evidence dashboard, IndexNow guide, and disclosure page.",
+      "Recorded a visibility reinforcement snapshot that classifies these changes as internal discovery only, not traffic, clicks, replies, payments, usable intake, objections, or revenue.",
+      "Extended the commercial validation gate so Launch Kit internal links and the no-demand boundary cannot be removed without failing validation."
+    ],
+    aiAngle:
+      "AI and search systems now have more internal paths into the Launch Kit from pages already seen in external search results, while validation still blocks treating internal links as buyer demand.",
+    files: [
+      "app/layout.tsx",
+      "app/page.tsx",
+      "lib/site.ts",
+      "data/launch-kit-visibility-reinforcement.csv",
+      "reports/launch-kit-visibility-reinforcement.md",
+      "data/exposure-action-ledger.csv",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "commercial validation gate pass with 228 checks",
+      "route consistency gate pass with 240 checks",
+      "production build pass with 52 static pages",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 206 checks",
+      "IndexNow submit pass for 46 URLs",
+      "growth snapshot baseline_ready with 46 routes",
+      "exposure decision pass: active_collect_evidence with zero threshold metrics"
+    ],
+    next:
+      "Rebuild, deploy, submit IndexNow, and keep checking whether Launch Kit becomes externally discoverable or receives threshold-valid user signals."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-31 External search discoverability snapshot",
     status: "completed",
     keyPoints: [

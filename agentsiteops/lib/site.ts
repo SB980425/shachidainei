@@ -210,6 +210,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Launch Kit", href: "/launch-kit/" },
       { label: "AI Crawler Readiness Tool", href: "/tools/ai-crawler-readiness/" },
       { label: "Evidence Ledger", href: "/evidence/" },
       { label: "AI Website Opportunity Audit", href: "/services/ai-website-opportunity-audit/" }
@@ -731,6 +732,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Launch Kit", href: "/launch-kit/" },
       { label: "Scoring Methodology", href: "/methodology/website-opportunity-scoring/" },
       { label: "AI Website Operating System", href: "/ai-website-operating-system/" },
       { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" }
@@ -914,6 +916,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Launch Kit", href: "/launch-kit/" },
       { label: "Evidence Ledger", href: "/evidence/" },
       { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
       { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
@@ -1389,6 +1392,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Launch Kit", href: "/launch-kit/" },
       { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
       { label: "GSC and Bing Sitemap Verification", href: "/guides/gsc-bing-sitemap-verification/" },
       { label: "Evidence Ledger", href: "/evidence/" },
@@ -1636,6 +1640,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Launch Kit", href: "/launch-kit/" },
       { label: "Privacy Policy", href: "/privacy/" },
       { label: "Editorial Policy", href: "/editorial-policy/" }
     ]

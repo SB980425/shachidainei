@@ -1,6 +1,6 @@
 # 48-Hour Exposure Decision
 
-- Generated: 2026-06-12T01:41:36.707Z
+- Generated: 2026-06-12T01:57:10.242Z
 - Project: AgentSiteOps
 - Sprint status: active
 - Decision: active_collect_evidence
@@ -8,7 +8,7 @@
 - Started UTC: 2026-06-12T00:08:46.618Z
 - Deadline UTC: 2026-06-14T00:08:46.618Z
 - Deadline passed: no
-- Seconds until deadline: 167229
+- Seconds until deadline: 166296
 
 ## Totals
 
