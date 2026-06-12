@@ -17,6 +17,7 @@ AgentSiteOps is a small manual decision system for AI-capable solo builders who 
 - Launch kit: https://agentsiteops.com/launch-kit/
 - AI-readable summary: https://agentsiteops.com/llms.txt
 - 48-hour GitHub release: https://github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12
+- Public feedback thread: https://github.com/SB980425/shachidainei/issues/2
 - Route selection method: https://agentsiteops.com/methodology/route-selection/
 - 48-hour exposure sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 - First traffic system: https://agentsiteops.com/guides/first-traffic-system/

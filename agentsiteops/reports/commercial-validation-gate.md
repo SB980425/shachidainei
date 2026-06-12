@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T00:43:17.072Z
+- Generated: 2026-06-12T00:51:57.378Z
 - Status: pass
-- Checks: 187
+- Checks: 189
 - Blockers: 0
 
 ## Summary
@@ -159,8 +159,10 @@
 | exposure_sprint | pass | exposure copy pack tests implementation-pivot risk |
 | exposure_sprint | pass | exposure action ledger records GitHub metadata update |
 | exposure_sprint | pass | exposure action ledger records GitHub prerelease creation |
+| exposure_sprint | pass | exposure action ledger records GitHub feedback issue creation |
 | exposure_sprint | pass | exposure action ledger separates public actions from threshold evidence |
 | exposure_sprint | pass | exposure action ledger blocks public-action-as-demand logic |
+| exposure_sprint | pass | exposure action ledger blocks issue-creation-as-reply logic |
 | launch_kit | pass | launch kit page is wired to static route data |
 | launch_kit | pass | launch kit route data exists |
 | launch_kit | pass | launch kit states current validation status |

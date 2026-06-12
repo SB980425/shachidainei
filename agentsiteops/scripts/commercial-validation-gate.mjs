@@ -215,8 +215,10 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureCopy, "Would this need to pivot toward implementation", "exposure copy pack tests implementation-pivot risk");
   requireText("exposure_sprint", exposureActionLedger, "repo_metadata_updated", "exposure action ledger records GitHub metadata update");
   requireText("exposure_sprint", exposureActionLedger, "prerelease_created", "exposure action ledger records GitHub prerelease creation");
+  requireText("exposure_sprint", exposureActionLedger, "feedback_issue_created", "exposure action ledger records GitHub feedback issue creation");
   requireText("exposure_sprint", exposureActionLedger, "counts_toward_threshold", "exposure action ledger separates public actions from threshold evidence");
   requireText("exposure_sprint", exposureActionLedger, "This improves public discoverability but is not demand proof.", "exposure action ledger blocks public-action-as-demand logic");
+  requireText("exposure_sprint", exposureActionLedger, "Creation itself is not a qualified reply", "exposure action ledger blocks issue-creation-as-reply logic");
   requireText("launch_kit", launchKitPage, 'path = "/launch-kit/"', "launch kit page is wired to static route data");
   requireText("launch_kit", site, "AgentSiteOps Launch Kit", "launch kit route data exists");
   requireText("launch_kit", site, "technically launchable, commercially unvalidated", "launch kit states current validation status");

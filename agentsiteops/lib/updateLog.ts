@@ -12,6 +12,44 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-26 Public feedback thread",
+    status: "completed",
+    keyPoints: [
+      "Created a public GitHub issue for 48-hour exposure feedback so visitors can leave concrete objections, buyer-fit concerns, pricing blockers, sample-quality feedback, or implementation-pivot signals.",
+      "Linked the feedback thread from README, llms.txt, llms-full.txt, and the Launch Kit related links.",
+      "Added the feedback thread to the exposure action ledger and preserved the boundary that issue creation itself is not a qualified reply.",
+      "Kept exposure counters at zero because the thread has no comments and no concrete buyer problem has been recorded."
+    ],
+    aiAngle:
+      "AI and search systems can now see a public feedback surface for the validation window, but the evidence ledger still prevents counting infrastructure as demand.",
+    files: [
+      "README.md",
+      "lib/site.ts",
+      "public/llms.txt",
+      "public/llms-full.txt",
+      "data/exposure-action-ledger.csv",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "GitHub API issue creation pass for issue #2",
+      "exposure decision pass: active_collect_evidence before the deadline with zero threshold metrics",
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "analytics endpoint gate pass with endpoint disabled",
+      "commercial validation gate pass with 189 checks",
+      "route consistency gate pass with 240 checks",
+      "production build pass with 52 static pages",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 206 checks",
+      "IndexNow submit pass for 46 URLs",
+      "growth snapshot baseline_ready with 46 routes"
+    ],
+    next:
+      "Deploy the feedback-thread links, submit changed URLs, and only count later issue comments if they contain concrete buyer problems, purchase blockers, implementation-pivot signals, or repeated objections."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-25 GitHub exposure surface",
     status: "completed",
     keyPoints: [

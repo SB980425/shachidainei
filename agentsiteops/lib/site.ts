@@ -1257,6 +1257,10 @@ export const routePages: RoutePage[] = [
       { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
       { label: "Evidence Ledger", href: "/evidence/" },
       { label: "Launch Validation Gate", href: "/checklists/launch-validation-decision-gate/" },
+      {
+        label: "Public Feedback Thread",
+        href: "https://github.com/SB980425/shachidainei/issues/2"
+      },
       { label: "Updates", href: "/updates/" }
     ]
   },

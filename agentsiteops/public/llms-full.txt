@@ -32,6 +32,7 @@ AgentSiteOps is a small public operating system for deciding whether an AI-capab
 - Intake: https://agentsiteops.com/intake/
 - Updates: https://agentsiteops.com/updates/
 - GitHub release: https://github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12
+- Public feedback thread: https://github.com/SB980425/shachidainei/issues/2
 
 ## Selection Logic
 
@@ -59,6 +60,7 @@ Weak or non-proof signals:
 - IndexNow success,
 - GitHub metadata updates,
 - GitHub release creation without downstream visits or replies,
+- GitHub issue creation without comments or concrete objections,
 - crawler access,
 - pageviews without source or action,
 - PayPal clicks without confirmed payment,
