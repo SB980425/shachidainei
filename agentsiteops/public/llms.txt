@@ -26,6 +26,7 @@ Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?t
 - Scores whether a first AI-service offer is ready for a short validation path.
 - Selects one route archetype instead of producing a generic idea list.
 - Uses confidence bands and a project-route fit matrix before selling a roadmap.
+- Exposes the route source map, confidence bands, and project route fit matrix directly on the route selection method page.
 - Publishes a route basis report so route patterns, source maps, confidence bands, downgrade rules, and rejection logic are inspectable.
 - Produces a route file with buyer, trigger, page structure, objections, outreach, and stop rules.
 - Uses evidence boundaries before payment, content expansion, higher pricing, or subscription claims.

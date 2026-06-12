@@ -60,7 +60,7 @@ The route recommendation is not generated from a standalone 0-100 number. The pu
 - `data/project-route-fit-matrix.csv`: project-type mapping for automation services, content sites, micro tools, template packs, directories, marketplaces, and implementation routes.
 - `docs/route-selection-decision-engine.md`: operating rules that prevent score-only routing, assumption-only confidence, subscription-before-validation, and advice-only output when the buyer needs implementation.
 
-The public route basis report at https://agentsiteops.com/reports/route-basis/ summarizes those files for visitors and AI systems that need a direct on-site answer.
+The route selection method page at https://agentsiteops.com/methodology/route-selection/ now exposes the route source map, confidence bands, and project route fit matrix directly as on-page tables. The public route basis report at https://agentsiteops.com/reports/route-basis/ summarizes the same basis for visitors and AI systems that need a direct on-site answer.
 
 The decision engine must lower confidence when evidence is only assumption, generic model output, vanity traffic, or third-party estimates without first-party validation. It must stop or reject when data rights are unclear, regulated advice is required, private account takeover is needed, no reachable buyer segment exists, or generic AI can produce the same useful result without manual evidence review.
 
