@@ -12,6 +12,7 @@
     "exposure:decision": "node scripts/48-hour-exposure-decision.mjs",
     "github:traffic": "node scripts/github-traffic-snapshot.mjs",
     "github:feedback": "node scripts/github-feedback-snapshot.mjs",
+    "github:feedback-label": "node scripts/ensure-github-feedback-label.mjs",
     "analytics:gate": "node scripts/analytics-endpoint-gate.mjs",
     "commercial:gate": "node scripts/commercial-validation-gate.mjs",
     "routes:gate": "node scripts/route-consistency-gate.mjs",

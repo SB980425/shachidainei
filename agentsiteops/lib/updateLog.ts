@@ -12,6 +12,59 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-36 Social preview and structured feedback intake",
+    status: "completed",
+    keyPoints: [
+      "Added a 1200x630 Open Graph image and matching Twitter image so external link cards no longer depend on a generic preview.",
+      "Connected the images through site metadata, README, exposure copy, and AI-readable summaries.",
+      "Added a GitHub issue form for public route feedback covering clarity, price, implementation need, trust, proof, and objections.",
+      "Created the `agentsiteops-feedback` GitHub label and extended the feedback snapshot script to count structured feedback issues as candidate external signals only after manual review."
+    ],
+    aiAngle:
+      "AI and external platforms now have clearer link preview assets and a structured public feedback path, while validation still blocks preview assets and template availability from being counted as demand.",
+    files: [
+      "public/og-image.png",
+      "public/twitter-image.png",
+      "data/social-preview-assets.csv",
+      "reports/social-preview-assets.md",
+      "public/reports/social-preview-assets.md",
+      ".github/ISSUE_TEMPLATE/agentsiteops-route-feedback.yml",
+      ".github/ISSUE_TEMPLATE/config.yml",
+      "scripts/ensure-github-feedback-label.mjs",
+      "scripts/github-feedback-snapshot.mjs",
+      "data/github-feedback-label.csv",
+      "reports/github-feedback-label.md",
+      "README.md",
+      "docs/exposure-copy-pack.md",
+      "public/llms.txt",
+      "public/llms-full.txt",
+      "data/exposure-action-ledger.csv",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "Open Graph image visual inspection pass: no text clipping or blank render",
+      "Open Graph image dimensions pass: 1200x630",
+      "GitHub feedback label ready: agentsiteops-feedback action created",
+      "GitHub feedback snapshot pass: maintainer comments 1, structured feedback issues 0, candidate external replies 0, qualified replies 0",
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "commercial validation gate pass with 278 checks",
+      "route consistency gate pass with 240 checks",
+      "production build pass with 52 static pages",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 206 checks",
+      "IndexNow submit pass for 46 URLs",
+      "production og-image, twitter-image, social preview report, and llms.txt return 200",
+      "growth snapshot baseline_ready with 46 routes",
+      "GitHub traffic snapshot pass: 8 views, 3 unique viewers, 405 clones, 95 unique cloners",
+      "exposure decision pass: active_collect_evidence with zero threshold metrics"
+    ],
+    next:
+      "Build, deploy, verify public image URLs and GitHub template URL, submit IndexNow, then continue refreshing threshold evidence."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-35 Route confidence system",
     status: "completed",
     keyPoints: [

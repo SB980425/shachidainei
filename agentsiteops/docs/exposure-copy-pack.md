@@ -12,6 +12,8 @@ Status: prepared for the 48-hour exposure sprint. Use only where platform rules 
 - Launch Blueprint sample: https://agentsiteops.com/sample/
 - Pricing: https://agentsiteops.com/pricing/
 - GitHub repo: https://github.com/SB980425/shachidainei
+- Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml
+- Social preview image: https://agentsiteops.com/og-image.png
 
 ## Product Hunt Draft
 
@@ -63,6 +65,7 @@ AgentSiteOps had a common early-site problem: technical SEO was working, but tha
 The current change is a 48-hour exposure sprint:
 - make the route method public
 - make the GitHub repo explainable
+- use a clear link preview image instead of a blank or generic browser card
 - prepare compliant Product Hunt and Show HN drafts
 - answer only narrow questions where the answer is useful without the link
 - run a small manual founder outreach batch

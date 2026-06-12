@@ -9,6 +9,7 @@ Launch kit: https://agentsiteops.com/launch-kit/
 48-hour exposure sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 Route selection method: https://agentsiteops.com/methodology/route-selection/
 Route confidence system: https://agentsiteops.com/reports/route-confidence-system.md
+Social preview image: https://agentsiteops.com/og-image.png
 Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/
 Launch Blueprint sample: https://agentsiteops.com/sample/
 Pricing: https://agentsiteops.com/pricing/
@@ -16,6 +17,7 @@ Evidence ledger: https://agentsiteops.com/evidence/
 Updates: https://agentsiteops.com/updates/
 GitHub release: https://github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12
 Public feedback thread: https://github.com/SB980425/shachidainei/issues/2
+Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml
 
 ## What AgentSiteOps Does
 

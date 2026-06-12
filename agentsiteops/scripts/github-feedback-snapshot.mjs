@@ -10,9 +10,10 @@ const csvPath = resolve(rootDir, "data", "github-feedback-summary.csv");
 const reportPath = resolve(rootDir, "reports", "github-feedback-snapshot.md");
 
 const issueNumber = 2;
+const feedbackLabel = "agentsiteops-feedback";
 const internalAssociations = new Set(["OWNER", "MEMBER", "COLLABORATOR"]);
 const boundary =
-  "Maintainer comments and issue creation do not count as qualified external replies. External comments are candidates only until manually reviewed for a concrete buyer problem, objection, pricing blocker, sample critique, or implementation-pivot signal.";
+  "Maintainer comments, issue creation, and feedback template availability do not count as qualified external replies. External comments and structured feedback issues are candidates only until manually reviewed for a concrete buyer problem, objection, pricing blocker, sample critique, or implementation-pivot signal.";
 
 function runGit(args, options = {}) {
   const result = spawnSync("git", args, {
@@ -105,6 +106,11 @@ const [issue, comments] = await Promise.all([
   githubGet(`issues/${issueNumber}/comments?per_page=100`, token)
 ]);
 
+const feedbackIssues = (await githubGet(
+  `issues?state=open&labels=${encodeURIComponent(feedbackLabel)}&per_page=100`,
+  token
+)).filter((item) => !item.pull_request);
+
 const commentsByAssociation = comments.reduce((counts, comment) => {
   const association = comment.author_association || "UNKNOWN";
   counts[association] = (counts[association] ?? 0) + 1;
@@ -115,7 +121,16 @@ const maintainerCommentCount = comments.filter((comment) =>
   internalAssociations.has(comment.author_association)
 ).length;
 const externalCommentCount = comments.length - maintainerCommentCount;
-const candidateExternalReplyCount = externalCommentCount;
+const feedbackIssuesByAssociation = feedbackIssues.reduce((counts, issueItem) => {
+  const association = issueItem.author_association || "UNKNOWN";
+  counts[association] = (counts[association] ?? 0) + 1;
+  return counts;
+}, {});
+const maintainerFeedbackIssueCount = feedbackIssues.filter((issueItem) =>
+  internalAssociations.has(issueItem.author_association)
+).length;
+const externalFeedbackIssueCount = feedbackIssues.length - maintainerFeedbackIssueCount;
+const candidateExternalReplyCount = externalCommentCount + externalFeedbackIssueCount;
 const qualifiedReplyCount = 0;
 const manualReviewRequired = candidateExternalReplyCount > 0;
 
@@ -132,6 +147,13 @@ const snapshot = {
     fetchedCommentCount: comments.length,
     latestCommentAt: latestTimestamp(comments)
   },
+  structuredFeedback: {
+    label: feedbackLabel,
+    newIssueUrl: `${repoUrl}/issues/new?template=agentsiteops-route-feedback.yml`,
+    issueCount: feedbackIssues.length,
+    maintainerFeedbackIssueCount,
+    externalFeedbackIssueCount
+  },
   countsToward48HourThreshold: false,
   boundary,
   classification: {
@@ -140,7 +162,8 @@ const snapshot = {
     candidateExternalReplyCount,
     qualifiedReplyCount,
     manualReviewRequired,
-    commentsByAssociation
+    commentsByAssociation,
+    feedbackIssuesByAssociation
   },
   privacy: {
     storesUsernames: false,
@@ -166,7 +189,19 @@ const csvRows = [
     metric: "candidate_external_reply_count",
     value: candidateExternalReplyCount,
     counts_toward_48h_threshold: "no",
-    note: "External comments require manual review before any threshold update."
+    note: "External comments and structured feedback issues require manual review before any threshold update."
+  },
+  {
+    metric: "structured_feedback_issue_count",
+    value: feedbackIssues.length,
+    counts_toward_48h_threshold: "no",
+    note: "Total open issues carrying the agentsiteops-feedback label."
+  },
+  {
+    metric: "candidate_external_feedback_issue_count",
+    value: externalFeedbackIssueCount,
+    counts_toward_48h_threshold: "no",
+    note: "External structured feedback issues require manual review before any threshold update."
   },
   {
     metric: "qualified_reply_count",
@@ -201,6 +236,11 @@ const associationRows = Object.entries(commentsByAssociation).length
       ([association, count]) => `| ${mdEscape(association)} | ${count} |`
     )
   : ["| None | 0 |"];
+const feedbackAssociationRows = Object.entries(feedbackIssuesByAssociation).length
+  ? Object.entries(feedbackIssuesByAssociation).map(
+      ([association, count]) => `| ${mdEscape(association)} | ${count} |`
+    )
+  : ["| None | 0 |"];
 
 const report = [
   "# GitHub Feedback Snapshot",
@@ -208,6 +248,7 @@ const report = [
   `- Generated: ${generatedAt}`,
   `- Repository: ${repoUrl}`,
   `- Issue: ${issueUrl}`,
+  `- Structured feedback template: ${repoUrl}/issues/new?template=agentsiteops-route-feedback.yml`,
   `- Issue state: ${issue.state}`,
   `- Public comment count: ${snapshot.issue.publicCommentCount}`,
   `- Fetched comments: ${comments.length}`,
@@ -219,6 +260,8 @@ const report = [
   "| Metric | Count |",
   "|---|---:|",
   `| Maintainer comments | ${maintainerCommentCount} |`,
+  `| Structured feedback issues | ${feedbackIssues.length} |`,
+  `| External structured feedback issues | ${externalFeedbackIssueCount} |`,
   `| Candidate external replies | ${candidateExternalReplyCount} |`,
   `| Qualified replies counted | ${qualifiedReplyCount} |`,
   `| Manual review required | ${manualReviewRequired ? 1 : 0} |`,
@@ -229,11 +272,17 @@ const report = [
   "|---|---:|",
   ...associationRows,
   "",
+  "## Structured Feedback Issue Associations",
+  "",
+  "| Association | Count |",
+  "|---|---:|",
+  ...feedbackAssociationRows,
+  "",
   "## Privacy Boundary",
   "",
   "- This snapshot stores aggregate counts only.",
   "- It does not store usernames, handles, emails, comment bodies, payment identifiers, or private replies.",
-  "- If candidate external replies appear, review the public thread manually and update the exposure evidence template only when the reply contains a concrete buyer problem, objection, pricing blocker, sample critique, or implementation-pivot signal."
+  "- If candidate external replies or structured feedback issues appear, review the public thread or issue manually and update the exposure evidence template only when the reply contains a concrete buyer problem, objection, pricing blocker, sample critique, or implementation-pivot signal."
 ];
 
 mkdirSync(dirname(snapshotPath), { recursive: true });

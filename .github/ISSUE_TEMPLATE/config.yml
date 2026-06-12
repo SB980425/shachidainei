@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: AgentSiteOps live site
+    url: https://agentsiteops.com
+    about: Inspect the live site, samples, route method, and pricing before opening public feedback.
+  - name: Public feedback thread
+    url: https://github.com/SB980425/shachidainei/issues/2
+    about: Use the existing public thread for short route objections or comments.

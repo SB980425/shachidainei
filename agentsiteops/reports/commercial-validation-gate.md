@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T02:23:30.507Z
+- Generated: 2026-06-12T02:48:29.294Z
 - Status: pass
-- Checks: 252
+- Checks: 278
 - Blockers: 0
 
 ## Summary
@@ -182,6 +182,7 @@
 | exposure_sprint | pass | exposure action ledger records Launch Kit visibility reinforcement |
 | exposure_sprint | pass | exposure action ledger records Launch Kit external search recheck |
 | exposure_sprint | pass | exposure action ledger records hourly execution cadence update |
+| exposure_sprint | pass | exposure action ledger records social preview asset addition |
 | exposure_sprint | pass | exposure action ledger marks GitHub traffic as aggregate evidence |
 | exposure_sprint | pass | exposure action ledger separates public actions from threshold evidence |
 | exposure_sprint | pass | exposure action ledger blocks public-action-as-demand logic |
@@ -192,6 +193,14 @@
 | exposure_sprint | pass | exposure action ledger blocks internal-link-as-demand logic |
 | exposure_sprint | pass | exposure action ledger blocks adjacent-search-results-as-launch-kit-proof logic |
 | exposure_sprint | pass | exposure action ledger blocks cadence-as-demand logic |
+| exposure_sprint | pass | exposure action ledger blocks social-preview-as-demand logic |
+| social_preview | pass | Open Graph preview image exists |
+| social_preview | pass | Twitter preview image exists |
+| social_preview | pass | Open Graph metadata points to preview image |
+| social_preview | pass | Twitter card uses large image format |
+| social_preview | pass | Twitter metadata points to preview image |
+| social_preview | pass | social preview asset CSV records OG image URL |
+| social_preview | pass | social preview report preserves no-demand boundary |
 | github_traffic | pass | GitHub traffic script imports aggregate repo views |
 | github_traffic | pass | GitHub traffic script imports aggregate repo clones |
 | github_traffic | pass | GitHub traffic script imports aggregate referrers |
@@ -201,8 +210,18 @@
 | github_feedback | pass | GitHub feedback script imports public issue comments |
 | github_feedback | pass | GitHub feedback script avoids storing usernames |
 | github_feedback | pass | GitHub feedback script avoids storing comment bodies |
+| github_feedback | pass | GitHub feedback script tracks structured feedback label |
 | github_feedback | pass | GitHub feedback snapshot does not auto-count qualified replies |
+| github_feedback | pass | GitHub feedback snapshot records structured feedback issue associations |
 | github_feedback | pass | GitHub feedback report preserves manual qualification boundary |
+| github_feedback | pass | GitHub feedback report links structured issue template |
+| github_feedback_label | pass | GitHub label script uses credential store without writing tokens |
+| github_feedback_label | pass | GitHub feedback label snapshot records label |
+| github_feedback_label | pass | GitHub feedback label report blocks label-as-demand logic |
+| github_feedback_template | pass | GitHub issue template blocks sensitive public data |
+| github_feedback_template | pass | GitHub issue template captures implementation-pivot signal |
+| github_feedback_template | pass | GitHub issue template captures proof and objection signals |
+| github_feedback_template | pass | GitHub issue template config disables blank public issues |
 | external_search_discoverability | pass | external search discoverability snapshot includes the home page |
 | external_search_discoverability | pass | external search discoverability snapshot includes evidence dashboard |
 | external_search_discoverability | pass | external search discoverability snapshot carries threshold boundary column |
@@ -253,10 +272,17 @@
 | mojibake | pass | data/self-score-change-log-template.csv has no visible mojibake marker |
 | mojibake | pass | data/route-confidence-rubric.csv has no visible mojibake marker |
 | mojibake | pass | data/project-route-fit-matrix.csv has no visible mojibake marker |
+| mojibake | pass | data/social-preview-assets.csv has no visible mojibake marker |
+| mojibake | pass | data/github-feedback-label.csv has no visible mojibake marker |
 | mojibake | pass | docs/self-score-maintenance-protocol.md has no visible mojibake marker |
 | mojibake | pass | docs/manual-outreach-runbook.md has no visible mojibake marker |
 | mojibake | pass | docs/route-selection-decision-engine.md has no visible mojibake marker |
 | mojibake | pass | reports/route-confidence-system.md has no visible mojibake marker |
+| mojibake | pass | reports/social-preview-assets.md has no visible mojibake marker |
+| mojibake | pass | reports/github-feedback-label.md has no visible mojibake marker |
+| mojibake | pass | scripts/ensure-github-feedback-label.mjs has no visible mojibake marker |
+| mojibake | pass | ../.github/ISSUE_TEMPLATE/agentsiteops-route-feedback.yml has no visible mojibake marker |
+| mojibake | pass | ../.github/ISSUE_TEMPLATE/config.yml has no visible mojibake marker |
 | mojibake | pass | lib/site.ts has no visible mojibake marker |
 | mojibake | pass | lib/launch.ts has no visible mojibake marker |
 | mojibake | pass | docs/site-brief.md has no visible mojibake marker |

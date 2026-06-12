@@ -31,13 +31,22 @@ export const metadata: Metadata = {
     url: "https://agentsiteops.com/",
     siteName: "AgentSiteOps",
     locale: "en_US",
-    type: "website"
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "AgentSiteOps route selection preview"
+      }
+    ]
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "AgentSiteOps",
     description:
-      "Validate one AI service offer before building the site, automation demo, or content system."
+      "Validate one AI service offer before building the site, automation demo, or content system.",
+    images: ["/twitter-image.png"]
   },
   icons: {
     icon: [

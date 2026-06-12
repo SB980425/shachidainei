@@ -1,0 +1,48 @@
+name: AgentSiteOps Route Feedback
+description: Public feedback for the AgentSiteOps route file, fit review, or implementation pivot.
+title: "AgentSiteOps feedback: "
+labels:
+  - agentsiteops-feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this only for public, non-sensitive feedback.
+
+        Do not include private customer data, payment identifiers, passwords, API keys, bank details, private email threads, or account screenshots.
+  - type: dropdown
+    id: feedback_type
+    attributes:
+      label: Feedback type
+      options:
+        - Route file clarity
+        - Fit Review price or scope
+        - Launch Blueprint price or scope
+        - Need implementation instead of advice
+        - Trust, proof, or objection
+        - Other public feedback
+    validations:
+      required: true
+  - type: textarea
+    id: public_context
+    attributes:
+      label: Public context
+      description: Describe the public project type, buyer problem, or route-selection question without sensitive details.
+      placeholder: "Example: AI automation service with demos but no clear first paid offer."
+    validations:
+      required: true
+  - type: textarea
+    id: concrete_signal
+    attributes:
+      label: Concrete signal
+      description: What should change, continue, narrow, pivot, or stop?
+      placeholder: "Example: I would need implementation, not a route file, because..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Public data boundary
+      options:
+        - label: This issue contains no private customer data, payment identifiers, passwords, API keys, bank details, or private account screenshots.
+          required: true

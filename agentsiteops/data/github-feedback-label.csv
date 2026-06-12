@@ -1,0 +1,2 @@
+generated_at,repo_url,label,action,label_url,issue_template_url,counts_toward_48h_threshold,note
+2026-06-12T02:43:55.906Z,https://github.com/SB980425/shachidainei,agentsiteops-feedback,created,https://api.github.com/repos/SB980425/shachidainei/labels/agentsiteops-feedback,https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml,no,Label availability supports structured feedback intake only; it does not prove external replies or demand.

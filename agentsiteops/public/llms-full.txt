@@ -22,6 +22,7 @@ AgentSiteOps is a small public operating system for deciding whether an AI-capab
 - First traffic system: https://agentsiteops.com/guides/first-traffic-system/
 - Route selection method: https://agentsiteops.com/methodology/route-selection/
 - Route confidence system: https://agentsiteops.com/reports/route-confidence-system.md
+- Social preview image: https://agentsiteops.com/og-image.png
 - Website opportunity scoring method: https://agentsiteops.com/methodology/website-opportunity-scoring/
 - Launch validation gate: https://agentsiteops.com/checklists/launch-validation-decision-gate/
 - Evidence ledger: https://agentsiteops.com/evidence/
@@ -34,6 +35,7 @@ AgentSiteOps is a small public operating system for deciding whether an AI-capab
 - Updates: https://agentsiteops.com/updates/
 - GitHub release: https://github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12
 - Public feedback thread: https://github.com/SB980425/shachidainei/issues/2
+- Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml
 
 ## Selection Logic
 

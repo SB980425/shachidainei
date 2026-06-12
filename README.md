@@ -18,6 +18,8 @@ AgentSiteOps is a small manual decision system for AI-capable solo builders who 
 - AI-readable summary: https://agentsiteops.com/llms.txt
 - 48-hour GitHub release: https://github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12
 - Public feedback thread: https://github.com/SB980425/shachidainei/issues/2
+- Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml
+- Social preview image: https://agentsiteops.com/og-image.png
 - Route selection method: https://agentsiteops.com/methodology/route-selection/
 - 48-hour exposure sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 - First traffic system: https://agentsiteops.com/guides/first-traffic-system/
@@ -34,6 +36,7 @@ AgentSiteOps is a small manual decision system for AI-capable solo builders who 
 - Commercial validation, route consistency, crawler access, and production health reports.
 - Delivery templates and manual fulfillment boundaries.
 - Exposure sprint data and no-spam channel constraints.
+- Structured public feedback issue template for route clarity, pricing, implementation-pivot, trust, proof, and objection signals.
 - Exposure copy pack: `agentsiteops/docs/exposure-copy-pack.md`.
 - 48-hour aggregate evidence template: `agentsiteops/data/48-hour-exposure-evidence-template.csv`.
 - AI-readable launch summaries: `agentsiteops/public/llms.txt` and `agentsiteops/public/llms-full.txt`.

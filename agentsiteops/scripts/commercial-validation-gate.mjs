@@ -116,6 +116,11 @@ function checkCommercialBoundary() {
   const githubFeedbackScript = read("scripts/github-feedback-snapshot.mjs");
   const githubFeedbackSnapshot = read("data/github-feedback-snapshot.json");
   const githubFeedbackReport = read("reports/github-feedback-snapshot.md");
+  const githubFeedbackLabelScript = read("scripts/ensure-github-feedback-label.mjs");
+  const githubFeedbackLabel = read("data/github-feedback-label.csv");
+  const githubFeedbackLabelReport = read("reports/github-feedback-label.md");
+  const githubIssueTemplate = read("../.github/ISSUE_TEMPLATE/agentsiteops-route-feedback.yml");
+  const githubIssueTemplateConfig = read("../.github/ISSUE_TEMPLATE/config.yml");
   const externalSearchDiscoverability = read("data/external-search-discoverability-snapshot.csv");
   const externalSearchDiscoverabilityReport = read("reports/external-search-discoverability-snapshot.md");
   const launchKitVisibility = read("data/launch-kit-visibility-reinforcement.csv");
@@ -124,6 +129,8 @@ function checkCommercialBoundary() {
   const launchKitExternalSearchRecheckReport = read("reports/launch-kit-external-search-recheck.md");
   const exposureAutomationCadence = read("data/exposure-automation-cadence.csv");
   const exposureAutomationCadenceReport = read("reports/exposure-automation-cadence.md");
+  const socialPreviewAssets = read("data/social-preview-assets.csv");
+  const socialPreviewAssetsReport = read("reports/social-preview-assets.md");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -258,6 +265,7 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureActionLedger, "launch_kit_visibility_reinforcement", "exposure action ledger records Launch Kit visibility reinforcement");
   requireText("exposure_sprint", exposureActionLedger, "launch_kit_external_search_recheck", "exposure action ledger records Launch Kit external search recheck");
   requireText("exposure_sprint", exposureActionLedger, "hourly_execution_cadence_updated", "exposure action ledger records hourly execution cadence update");
+  requireText("exposure_sprint", exposureActionLedger, "social_preview_assets_added", "exposure action ledger records social preview asset addition");
   requireText("exposure_sprint", exposureActionLedger, "verified_aggregate", "exposure action ledger marks GitHub traffic as aggregate evidence");
   requireText("exposure_sprint", exposureActionLedger, "counts_toward_threshold", "exposure action ledger separates public actions from threshold evidence");
   requireText("exposure_sprint", exposureActionLedger, "This improves public discoverability but is not demand proof.", "exposure action ledger blocks public-action-as-demand logic");
@@ -268,6 +276,14 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureActionLedger, "internal discovery only and does not prove impressions, clicks, visits, replies, payments, usable intake, or objections", "exposure action ledger blocks internal-link-as-demand logic");
   requireText("exposure_sprint", exposureActionLedger, "not Launch Kit indexing or demand proof", "exposure action ledger blocks adjacent-search-results-as-launch-kit-proof logic");
   requireText("exposure_sprint", exposureActionLedger, "does not prove traffic, replies, payments, usable intake, or objections", "exposure action ledger blocks cadence-as-demand logic");
+  requireText("exposure_sprint", exposureActionLedger, "does not prove impressions, clicks, visits, replies, payments, usable intake, objections, or revenue", "exposure action ledger blocks social-preview-as-demand logic");
+  addCheck("social_preview", existsSync(resolve(rootDir, "public", "og-image.png")) ? "pass" : "fail", "Open Graph preview image exists");
+  addCheck("social_preview", existsSync(resolve(rootDir, "public", "twitter-image.png")) ? "pass" : "fail", "Twitter preview image exists");
+  requireText("social_preview", layout, 'url: "/og-image.png"', "Open Graph metadata points to preview image");
+  requireText("social_preview", layout, 'card: "summary_large_image"', "Twitter card uses large image format");
+  requireText("social_preview", layout, 'images: ["/twitter-image.png"]', "Twitter metadata points to preview image");
+  requireText("social_preview", socialPreviewAssets, "https://agentsiteops.com/og-image.png", "social preview asset CSV records OG image URL");
+  requireText("social_preview", socialPreviewAssetsReport, "They do not prove impressions, clicks, visits", "social preview report preserves no-demand boundary");
   requireText("github_traffic", githubTrafficScript, "traffic/views", "GitHub traffic script imports aggregate repo views");
   requireText("github_traffic", githubTrafficScript, "traffic/clones", "GitHub traffic script imports aggregate repo clones");
   requireText("github_traffic", githubTrafficScript, "traffic/popular/referrers", "GitHub traffic script imports aggregate referrers");
@@ -277,8 +293,18 @@ function checkCommercialBoundary() {
   requireText("github_feedback", githubFeedbackScript, "issues/${issueNumber}/comments?per_page=100", "GitHub feedback script imports public issue comments");
   requireText("github_feedback", githubFeedbackScript, "storesUsernames: false", "GitHub feedback script avoids storing usernames");
   requireText("github_feedback", githubFeedbackScript, "storesCommentBodies: false", "GitHub feedback script avoids storing comment bodies");
+  requireText("github_feedback", githubFeedbackScript, "agentsiteops-feedback", "GitHub feedback script tracks structured feedback label");
   requireText("github_feedback", githubFeedbackSnapshot, '"qualifiedReplyCount": 0', "GitHub feedback snapshot does not auto-count qualified replies");
-  requireText("github_feedback", githubFeedbackReport, "External comments are candidates only until manually reviewed", "GitHub feedback report preserves manual qualification boundary");
+  requireText("github_feedback", githubFeedbackSnapshot, '"feedbackIssuesByAssociation"', "GitHub feedback snapshot records structured feedback issue associations");
+  requireText("github_feedback", githubFeedbackReport, "External comments and structured feedback issues are candidates only until manually reviewed", "GitHub feedback report preserves manual qualification boundary");
+  requireText("github_feedback", githubFeedbackReport, "Structured feedback template", "GitHub feedback report links structured issue template");
+  requireText("github_feedback_label", githubFeedbackLabelScript, "GitHub credential token is unavailable", "GitHub label script uses credential store without writing tokens");
+  requireText("github_feedback_label", githubFeedbackLabel, "agentsiteops-feedback", "GitHub feedback label snapshot records label");
+  requireText("github_feedback_label", githubFeedbackLabelReport, "They do not prove replies, demand, visits", "GitHub feedback label report blocks label-as-demand logic");
+  requireText("github_feedback_template", githubIssueTemplate, "Do not include private customer data", "GitHub issue template blocks sensitive public data");
+  requireText("github_feedback_template", githubIssueTemplate, "Need implementation instead of advice", "GitHub issue template captures implementation-pivot signal");
+  requireText("github_feedback_template", githubIssueTemplate, "Trust, proof, or objection", "GitHub issue template captures proof and objection signals");
+  requireText("github_feedback_template", githubIssueTemplateConfig, "blank_issues_enabled: false", "GitHub issue template config disables blank public issues");
   requireText("external_search_discoverability", externalSearchDiscoverability, "https://agentsiteops.com/", "external search discoverability snapshot includes the home page");
   requireText("external_search_discoverability", externalSearchDiscoverability, "https://agentsiteops.com/reports/route-evidence-dashboard/", "external search discoverability snapshot includes evidence dashboard");
   requireText("external_search_discoverability", externalSearchDiscoverability, "counts_toward_48h_threshold", "external search discoverability snapshot carries threshold boundary column");
@@ -373,10 +399,17 @@ function checkMojibake() {
     "data/self-score-change-log-template.csv",
     "data/route-confidence-rubric.csv",
     "data/project-route-fit-matrix.csv",
+    "data/social-preview-assets.csv",
+    "data/github-feedback-label.csv",
     "docs/self-score-maintenance-protocol.md",
     "docs/manual-outreach-runbook.md",
     "docs/route-selection-decision-engine.md",
     "reports/route-confidence-system.md",
+    "reports/social-preview-assets.md",
+    "reports/github-feedback-label.md",
+    "scripts/ensure-github-feedback-label.mjs",
+    "../.github/ISSUE_TEMPLATE/agentsiteops-route-feedback.yml",
+    "../.github/ISSUE_TEMPLATE/config.yml",
     "lib/site.ts",
     "lib/launch.ts",
     "docs/site-brief.md",
