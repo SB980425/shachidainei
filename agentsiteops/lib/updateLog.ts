@@ -12,6 +12,38 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-45 Brand icon and manifest hardening",
+    status: "completed",
+    keyPoints: [
+      "Added a web app manifest so browsers and crawlers have a stable brand-icon entry point beyond favicon.ico.",
+      "Declared application name, manifest URL, theme color, and color scheme in the app metadata.",
+      "Verified production `/manifest.webmanifest`, `/favicon.ico`, `/icon-32.png`, and `/apple-touch-icon.png` return HTTP 200.",
+      "Verified the production homepage head includes manifest, theme-color, and 32px icon links.",
+      "Kept the fix scoped to brand trust; it does not count as exposure, demand, or revenue evidence."
+    ],
+    aiAngle:
+      "AI and search readers now see a more complete brand resource set, while human visitors get a stronger tab and install-surface signal when browser cache allows the updated favicon to refresh.",
+    files: [
+      "app/layout.tsx",
+      "public/manifest.webmanifest",
+      "reports/production-health-monitor.md",
+      "reports/code-quality-gate.md",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "code-quality gate pass",
+      "build pass with 56 static pages",
+      "production manifest returns HTTP 200",
+      "production favicon and PNG icons return HTTP 200",
+      "production homepage head includes manifest, theme-color, and icon-32.png",
+      "production health pass: 220 checks, 0 blockers"
+    ],
+    next:
+      "Continue exposure validation with threshold-valid signals only; favicon or manifest availability cannot raise the commercial score."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-44 Controlled answer-entry exposure batch",
     status: "completed",
     keyPoints: [

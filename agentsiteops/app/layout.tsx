@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import {
   BadgeDollarSign,
@@ -18,6 +18,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://agentsiteops.com"),
+  applicationName: "AgentSiteOps",
+  manifest: "/manifest.webmanifest",
   title: {
     default: "AgentSiteOps",
     template: "%s | AgentSiteOps"
@@ -61,6 +63,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/"
   }
+};
+
+export const viewport: Viewport = {
+  themeColor: "#11170f",
+  colorScheme: "light"
 };
 
 const navItems = [

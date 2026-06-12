@@ -1,0 +1,27 @@
+{
+  "name": "AgentSiteOps",
+  "short_name": "AgentSiteOps",
+  "description": "Route selection for AI-capable solo builders.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f8f2",
+  "theme_color": "#11170f",
+  "icons": [
+    {
+      "src": "/icon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
