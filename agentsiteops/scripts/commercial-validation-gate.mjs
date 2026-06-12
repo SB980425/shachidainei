@@ -228,10 +228,12 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureActionLedger, "prerelease_created", "exposure action ledger records GitHub prerelease creation");
   requireText("exposure_sprint", exposureActionLedger, "feedback_issue_created", "exposure action ledger records GitHub feedback issue creation");
   requireText("exposure_sprint", exposureActionLedger, "github_traffic_snapshot_imported", "exposure action ledger records GitHub traffic snapshot import");
+  requireText("exposure_sprint", exposureActionLedger, "feedback_checkpoint_comment", "exposure action ledger records public feedback checkpoint comment");
   requireText("exposure_sprint", exposureActionLedger, "verified_aggregate", "exposure action ledger marks GitHub traffic as aggregate evidence");
   requireText("exposure_sprint", exposureActionLedger, "counts_toward_threshold", "exposure action ledger separates public actions from threshold evidence");
   requireText("exposure_sprint", exposureActionLedger, "This improves public discoverability but is not demand proof.", "exposure action ledger blocks public-action-as-demand logic");
   requireText("exposure_sprint", exposureActionLedger, "Creation itself is not a qualified reply", "exposure action ledger blocks issue-creation-as-reply logic");
+  requireText("exposure_sprint", exposureActionLedger, "This maintainer comment does not count as a qualified external reply.", "exposure action ledger blocks maintainer-comment-as-reply logic");
   requireText("github_traffic", githubTrafficScript, "traffic/views", "GitHub traffic script imports aggregate repo views");
   requireText("github_traffic", githubTrafficScript, "traffic/clones", "GitHub traffic script imports aggregate repo clones");
   requireText("github_traffic", githubTrafficScript, "traffic/popular/referrers", "GitHub traffic script imports aggregate referrers");

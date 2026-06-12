@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T01:11:03.518Z
+- Generated: 2026-06-12T01:14:43.215Z
 - Status: pass
-- Checks: 203
+- Checks: 205
 - Blockers: 0
 
 ## Summary
@@ -167,10 +167,12 @@
 | exposure_sprint | pass | exposure action ledger records GitHub prerelease creation |
 | exposure_sprint | pass | exposure action ledger records GitHub feedback issue creation |
 | exposure_sprint | pass | exposure action ledger records GitHub traffic snapshot import |
+| exposure_sprint | pass | exposure action ledger records public feedback checkpoint comment |
 | exposure_sprint | pass | exposure action ledger marks GitHub traffic as aggregate evidence |
 | exposure_sprint | pass | exposure action ledger separates public actions from threshold evidence |
 | exposure_sprint | pass | exposure action ledger blocks public-action-as-demand logic |
 | exposure_sprint | pass | exposure action ledger blocks issue-creation-as-reply logic |
+| exposure_sprint | pass | exposure action ledger blocks maintainer-comment-as-reply logic |
 | github_traffic | pass | GitHub traffic script imports aggregate repo views |
 | github_traffic | pass | GitHub traffic script imports aggregate repo clones |
 | github_traffic | pass | GitHub traffic script imports aggregate referrers |

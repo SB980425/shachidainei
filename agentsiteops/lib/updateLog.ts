@@ -12,6 +12,30 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-29 Public feedback checkpoint",
+    status: "completed",
+    keyPoints: [
+      "Posted a public checkpoint comment in the GitHub feedback thread with the launch kit, route method, decision-engine source, source map, and four concrete feedback questions.",
+      "Asked reviewers to challenge credibility, first-offer pricing, implementation-vs-route-file fit, and immediate payment rejection reasons.",
+      "Recorded the checkpoint comment in the exposure action ledger as verified public activity that does not count toward qualified replies.",
+      "Kept the threshold rule intact: maintainer comments, GitHub traffic, issue creation, and release creation are public artifacts, not buyer demand."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect a public critique surface tied to the route decision basis, while the validation logic still prevents self-generated activity from inflating demand evidence.",
+    files: [
+      "data/exposure-action-ledger.csv",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "GitHub API feedback checkpoint comment pass: issue comment 4686458225",
+      "comment classification: maintainer-generated, not qualified external reply"
+    ],
+    next:
+      "Only later external comments with concrete objections, buyer-fit concerns, pricing blockers, sample-quality feedback, or implementation-pivot signals can count toward the 48-hour evidence threshold."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-28 Route decision evidence basis",
     status: "completed",
     keyPoints: [
