@@ -1,0 +1,33 @@
+{
+  "generatedAt": "2026-06-12T01:20:24.451Z",
+  "repo": {
+    "owner": "SB980425",
+    "repo": "shachidainei"
+  },
+  "repoUrl": "https://github.com/SB980425/shachidainei",
+  "issue": {
+    "number": 2,
+    "url": "https://github.com/SB980425/shachidainei/issues/2",
+    "state": "open",
+    "publicCommentCount": 1,
+    "fetchedCommentCount": 1,
+    "latestCommentAt": "2026-06-12T01:14:00Z"
+  },
+  "countsToward48HourThreshold": false,
+  "boundary": "Maintainer comments and issue creation do not count as qualified external replies. External comments are candidates only until manually reviewed for a concrete buyer problem, objection, pricing blocker, sample critique, or implementation-pivot signal.",
+  "classification": {
+    "maintainerCommentCount": 1,
+    "externalCommentCount": 0,
+    "candidateExternalReplyCount": 0,
+    "qualifiedReplyCount": 0,
+    "manualReviewRequired": false,
+    "commentsByAssociation": {
+      "OWNER": 1
+    }
+  },
+  "privacy": {
+    "storesUsernames": false,
+    "storesCommentBodies": false,
+    "storesPrivateReplies": false
+  }
+}

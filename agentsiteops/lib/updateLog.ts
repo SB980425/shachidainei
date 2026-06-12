@@ -12,6 +12,45 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-30 GitHub feedback evidence snapshot",
+    status: "completed",
+    keyPoints: [
+      "Added a GitHub feedback snapshot script that reads the public issue thread and stores only aggregate counts.",
+      "Classified maintainer comments separately from candidate external replies so public self-generated activity cannot inflate validation evidence.",
+      "Generated JSON, CSV, and Markdown feedback reports showing one maintainer comment, zero external comments, zero candidate external replies, and zero qualified replies.",
+      "Extended the commercial validation gate so the snapshot must preserve privacy boundaries and manual qualification before any threshold update."
+    ],
+    aiAngle:
+      "AI and search systems can inspect the public feedback evidence state without seeing private identities or treating maintainer activity as buyer demand.",
+    files: [
+      "package.json",
+      "scripts/github-feedback-snapshot.mjs",
+      "data/github-feedback-snapshot.json",
+      "data/github-feedback-summary.csv",
+      "reports/github-feedback-snapshot.md",
+      "data/exposure-action-ledger.csv",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "GitHub feedback snapshot pass: maintainer comments 1, external comments 0, candidate external replies 0, qualified replies 0",
+      "No usernames, comment bodies, private replies, payment identifiers, or private handles are stored in the snapshot",
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "commercial validation gate pass with 212 checks",
+      "route consistency gate pass with 240 checks",
+      "production build pass with 52 static pages",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 206 checks",
+      "IndexNow submit pass for 46 URLs",
+      "growth snapshot baseline_ready with 46 routes",
+      "exposure decision pass: active_collect_evidence with zero threshold metrics"
+    ],
+    next:
+      "Keep polling the public feedback thread; only external comments with concrete buyer problems, objections, pricing blockers, sample critique, or implementation-pivot signals can be reviewed for threshold evidence."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-29 Public feedback checkpoint",
     status: "completed",
     keyPoints: [
