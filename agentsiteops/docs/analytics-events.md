@@ -59,6 +59,9 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `first_traffic_system_view` | `/guides/first-traffic-system/` load | `path` |
 | `exposure_sprint_48h_view` | `/guides/48-hour-exposure-sprint/` load | `path` |
 | `launch_kit_view` | `/launch-kit/` load | `path` |
+| `answer_offer_validation_view` | `/answers/validate-ai-service-offer-before-building/` load | `path` |
+| `answer_route_vs_chatgpt_view` | `/answers/ai-service-route-vs-generic-chatgpt/` load | `path` |
+| `answer_stop_rule_view` | `/answers/when-to-stop-an-ai-website-idea/` load | `path` |
 | `launch_blueprint_legacy_view` | `/website-opportunity-audit/` load | `path` |
 | `launch_blueprint_pricing_view` | `/pricing/` load | `path` |
 | `launch_blueprint_sample_view` | `/sample/` load | `path` |

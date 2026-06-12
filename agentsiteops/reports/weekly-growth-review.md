@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-- The production site has 47 indexable routes with technical SEO passing.
+- The production site has 50 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, AI referrals, and revenue evidence are still pending exports or records; the first-party aggregate endpoint is active but currently waiting for events.
@@ -16,13 +16,13 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 47 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 47/47 routes pass |
+| Route registry | docs/routes.json | 50 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 50/50 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
-| IndexNow | latest command output | 47 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 50 URLs submitted successfully in current deployment cycle |
 | Event layer | /api/events/summary | First-party aggregate endpoint active; sample views 0, source-link clicks 0, PayPal CTA clicks 0 |
 
 ## Unverified
@@ -70,6 +70,9 @@
 | /guides/first-traffic-system/ | guide | growth_validation | pass | site_pass | keep | Record indexed URLs, referrals, sample views, PayPal clicks, qualified replies, and objections by channel |
 | /guides/48-hour-exposure-sprint/ | guide | growth_validation | pass | site_pass | keep | Record referral visits, source clicks, sample views, PayPal clicks, qualified replies, confirmed payments, usable intake, and objections within 48 hours |
 | /launch-kit/ | launch | growth_validation | pass | site_pass | keep | Measure launch kit views, sample exits, fit-checker exits, source-link clicks, PayPal clicks, qualified replies, and objections within the 48-hour window |
+| /answers/validate-ai-service-offer-before-building/ | answer | launch_blueprint | pass | site_pass | keep | Measure answer views, fit-checker exits, sample exits, pricing exits, qualified replies, and objections about pre-build validation |
+| /answers/ai-service-route-vs-generic-chatgpt/ | answer | launch_blueprint | pass | site_pass | keep | Measure answer views, route-basis exits, sample exits, comparison exits, and objections about why the route is better than generic AI advice |
+| /answers/when-to-stop-an-ai-website-idea/ | answer | growth_validation | pass | site_pass | keep | Measure answer views, validation-gate exits, sprint exits, evidence-ledger exits, and repeated stop or pivot objections |
 | /authors/ | trust_page | trust_and_policy | pass | site_pass | keep | Replace placeholder owner info before launch |
 | /editorial-policy/ | trust_page | trust_and_policy | pass | site_pass | keep | Recheck before content expansion |
 | /privacy/ | trust_page | trust_and_policy | pass | site_pass | keep | Update before external endpoint or cookies |

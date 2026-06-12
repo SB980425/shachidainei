@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-12T06:05:43.882Z
+- Generated: 2026-06-12T06:45:02.075Z
 - Status: pass
-- Checks: 245
+- Checks: 260
 - Blockers: 0
 - Warnings: 0
 
@@ -13,9 +13,9 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 47 routes aligned |
-| page_registry | pass | 47 routes aligned |
-| page_review_actions | pass | 47 routes aligned |
+| site_routes | pass | 50 routes aligned |
+| page_registry | pass | 50 routes aligned |
+| page_review_actions | pass | 50 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /ai-website-operating-system/ has canonical slash shape |
@@ -78,6 +78,12 @@
 | route_index | pass | /guides/48-hour-exposure-sprint/ index flag is true |
 | route_shape | pass | /launch-kit/ has canonical slash shape |
 | route_index | pass | /launch-kit/ index flag is true |
+| route_shape | pass | /answers/validate-ai-service-offer-before-building/ has canonical slash shape |
+| route_index | pass | /answers/validate-ai-service-offer-before-building/ index flag is true |
+| route_shape | pass | /answers/ai-service-route-vs-generic-chatgpt/ has canonical slash shape |
+| route_index | pass | /answers/ai-service-route-vs-generic-chatgpt/ index flag is true |
+| route_shape | pass | /answers/when-to-stop-an-ai-website-idea/ has canonical slash shape |
+| route_index | pass | /answers/when-to-stop-an-ai-website-idea/ index flag is true |
 | route_shape | pass | /authors/ has canonical slash shape |
 | route_index | pass | /authors/ index flag is true |
 | route_shape | pass | /editorial-policy/ has canonical slash shape |
@@ -141,6 +147,9 @@
 | app_page | pass | /guides/first-traffic-system/ app page exists |
 | app_page | pass | /guides/48-hour-exposure-sprint/ app page exists |
 | app_page | pass | /launch-kit/ app page exists |
+| app_page | pass | /answers/validate-ai-service-offer-before-building/ app page exists |
+| app_page | pass | /answers/ai-service-route-vs-generic-chatgpt/ app page exists |
+| app_page | pass | /answers/when-to-stop-an-ai-website-idea/ app page exists |
 | app_page | pass | /authors/ app page exists |
 | app_page | pass | /editorial-policy/ app page exists |
 | app_page | pass | /privacy/ app page exists |
@@ -192,6 +201,9 @@
 | analytics_allowlist | pass | first_traffic_system_view is registered |
 | analytics_allowlist | pass | exposure_sprint_48h_view is registered |
 | analytics_allowlist | pass | launch_kit_view is registered |
+| analytics_allowlist | pass | answer_offer_validation_view is registered |
+| analytics_allowlist | pass | answer_route_vs_chatgpt_view is registered |
+| analytics_allowlist | pass | answer_stop_rule_view is registered |
 | analytics_allowlist | pass | launch_blueprint_legacy_view is registered |
 | analytics_allowlist | pass | launch_blueprint_pricing_view is registered |
 | analytics_allowlist | pass | launch_blueprint_sample_view is registered |
@@ -238,6 +250,9 @@
 | route_view_event | pass | /guides/first-traffic-system/ has view event |
 | route_view_event | pass | /guides/48-hour-exposure-sprint/ has view event |
 | route_view_event | pass | /launch-kit/ has view event |
+| route_view_event | pass | /answers/validate-ai-service-offer-before-building/ has view event |
+| route_view_event | pass | /answers/ai-service-route-vs-generic-chatgpt/ has view event |
+| route_view_event | pass | /answers/when-to-stop-an-ai-website-idea/ has view event |
 | route_view_event | pass | /authors/ has view event |
 | route_view_event | pass | /editorial-policy/ has view event |
 | route_view_event | pass | /privacy/ has view event |
@@ -254,7 +269,7 @@
 | route_view_event | pass | /refund-policy/ has view event |
 | route_view_event | pass | /disclaimer/ has view event |
 | route_view_event | pass | /contact/ has view event |
-| growth_snapshot | pass | 47 routes aligned |
+| growth_snapshot | pass | 50 routes aligned |
 
 ## Blocking Issues
 

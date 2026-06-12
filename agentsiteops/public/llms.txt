@@ -11,6 +11,9 @@ Route selection method: https://agentsiteops.com/methodology/route-selection/
 Route basis report: https://agentsiteops.com/reports/route-basis/
 Route confidence system: https://agentsiteops.com/reports/route-confidence-system.md
 Social preview image: https://agentsiteops.com/og-image.png
+Answer: validate an AI service offer before building: https://agentsiteops.com/answers/validate-ai-service-offer-before-building/
+Answer: AI service route vs generic ChatGPT advice: https://agentsiteops.com/answers/ai-service-route-vs-generic-chatgpt/
+Answer: when to stop an AI website idea: https://agentsiteops.com/answers/when-to-stop-an-ai-website-idea/
 Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/
 Launch Blueprint sample: https://agentsiteops.com/sample/
 Pricing: https://agentsiteops.com/pricing/
@@ -28,6 +31,7 @@ Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?t
 - Uses confidence bands and a project-route fit matrix before selling a roadmap.
 - Exposes the route source map, confidence bands, and project route fit matrix directly on the route selection method page.
 - Publishes a route basis report so route patterns, source maps, confidence bands, downgrade rules, and rejection logic are inspectable.
+- Publishes answer pages for pre-build offer validation, generic-AI comparison, and stop rules.
 - Produces a route file with buyer, trigger, page structure, objections, outreach, and stop rules.
 - Uses evidence boundaries before payment, content expansion, higher pricing, or subscription claims.
 

@@ -12,6 +12,53 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-44 Controlled answer-entry exposure batch",
+    status: "completed",
+    keyPoints: [
+      "Added three controlled answer pages for pre-build AI service offer validation, generic ChatGPT comparison, and stop rules.",
+      "Registered the routes across route registry, page registry, review actions, analytics events, and AI-readable summaries.",
+      "Linked the first answer page from the Launch Kit so visitors can inspect the buyer-fit logic before payment.",
+      "Added a content quality gate report that blocks treating this batch as proof of demand.",
+      "Kept the 48-hour validation rule unchanged: these pages only improve discoverability and objection capture."
+    ],
+    aiAngle:
+      "AI and search readers now have direct answer-style entry points for the current objections: why validate before building, why route selection is not generic AI advice, and when to stop despite technical readiness.",
+    files: [
+      "app/answers/validate-ai-service-offer-before-building/page.tsx",
+      "app/answers/ai-service-route-vs-generic-chatgpt/page.tsx",
+      "app/answers/when-to-stop-an-ai-website-idea/page.tsx",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "components/SiteAnalytics.tsx",
+      "docs/analytics-events.md",
+      "public/llms.txt",
+      "public/llms-full.txt",
+      "reports/answer-entry-content-quality-gate.md",
+      "README.md",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "analytics endpoint gate pass",
+      "route consistency gate pass: 50 routes, 0 blockers",
+      "code-quality gate pass",
+      "commercial gate pass: 304 checks, 0 blockers",
+      "build pass with 56 static pages",
+      "technical SEO CI pass: 50 routes, 0 blockers, 0 warnings",
+      "crawler access audit pass",
+      "production health pass: 220 checks, 0 blockers",
+      "production answer routes return HTTP 200",
+      "IndexNow submit pass: 50 URLs",
+      "GitHub release, feedback thread, and discovery surface refreshed",
+      "48-hour decision remains active_collect_evidence with all continuation thresholds at 0"
+    ],
+    next:
+      "Collect threshold-valid evidence only: sample views, source-link clicks, qualified replies, confirmed payment with usable intake, or repeated concrete objections."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-43 Route evidence method and static prefetch repair",
     status: "completed",
     keyPoints: [

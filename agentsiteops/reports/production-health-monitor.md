@@ -1,6 +1,6 @@
 # Production Health Monitor
 
-- Generated: 2026-06-12T06:18:06.239Z
+- Generated: 2026-06-12T06:44:17.873Z
 - Status: pass
 - Site: https://agentsiteops.com
 - Checks: 220
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 47 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 50 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |

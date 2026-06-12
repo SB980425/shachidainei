@@ -1,33 +1,33 @@
 {
-  "generated_at": "2026-06-12T06:15:47.756Z",
+  "generated_at": "2026-06-12T06:45:01.557Z",
   "status": "events_seen_no_threshold",
   "source_url": "https://agentsiteops.com/api/events/summary?days=2",
   "summary": {
-    "generated_at": "2026-06-12T06:15:48.077Z",
+    "generated_at": "2026-06-12T06:45:01.915Z",
     "days": 2,
     "privacy_boundary": "Aggregate event counters only. No IP address, user agent, cookie id, account id, email, phone, raw form text, full external URL, or payment data is returned.",
     "counts_by_event": {
-      "launch_blueprint_pricing_view": 2,
-      "page_view": 12,
-      "route_basis_report_view": 5,
+      "launch_blueprint_pricing_view": 3,
+      "page_view": 16,
+      "route_basis_report_view": 6,
       "route_selection_methodology_view": 3
     },
     "counts_by_path": {
-      "/": 3,
+      "/": 5,
       "/methodology/route-selection/": 3,
-      "/pricing/": 2,
-      "/reports/route-basis/": 5
+      "/pricing/": 3,
+      "/reports/route-basis/": 6
     },
     "counts_by_day": {
-      "2026-06-12": 12
+      "2026-06-12": 16
     },
     "counts_by_event_path": {
-      "launch_blueprint_pricing_view:/pricing/": 2,
-      "page_view:/": 3,
+      "launch_blueprint_pricing_view:/pricing/": 3,
+      "page_view:/": 5,
       "page_view:/methodology/route-selection/": 3,
-      "page_view:/pricing/": 2,
-      "page_view:/reports/route-basis/": 5,
-      "route_basis_report_view:/reports/route-basis/": 5,
+      "page_view:/pricing/": 3,
+      "page_view:/reports/route-basis/": 6,
+      "route_basis_report_view:/reports/route-basis/": 6,
       "route_selection_methodology_view:/methodology/route-selection/": 3
     },
     "threshold_snapshot": {

@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-12T06:06:16.914Z
+- Generated: 2026-06-12T06:37:51.753Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 47
+- Sitemap routes: 50
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 47 |
+| Routes passed | 50 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -37,13 +37,16 @@
 | /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 27 | pass | - |
 | /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 29 | pass | - |
 | /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 30 | pass | - |
-| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 47 | pass | - |
+| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 50 | pass | - |
 | /reports/route-basis/ | pass | 200 | Route Basis Report \| AgentSiteOps | https://agentsiteops.com/reports/route-basis/ | 1 | 26 | pass | - |
 | /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 27 | pass | - |
 | /methodology/route-selection/ | pass | 200 | Route Selection Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/route-selection/ | 1 | 27 | pass | - |
 | /guides/first-traffic-system/ | pass | 200 | First Traffic System \| AgentSiteOps | https://agentsiteops.com/guides/first-traffic-system/ | 1 | 27 | pass | - |
 | /guides/48-hour-exposure-sprint/ | pass | 200 | 48-Hour Exposure Sprint \| AgentSiteOps | https://agentsiteops.com/guides/48-hour-exposure-sprint/ | 1 | 27 | pass | - |
-| /launch-kit/ | pass | 200 | AgentSiteOps Launch Kit \| AgentSiteOps | https://agentsiteops.com/launch-kit/ | 1 | 30 | pass | - |
+| /launch-kit/ | pass | 200 | AgentSiteOps Launch Kit \| AgentSiteOps | https://agentsiteops.com/launch-kit/ | 1 | 31 | pass | - |
+| /answers/validate-ai-service-offer-before-building/ | pass | 200 | Validate an AI Service Offer Before Building \| AgentSiteOps | https://agentsiteops.com/answers/validate-ai-service-offer-before-building/ | 1 | 26 | pass | - |
+| /answers/ai-service-route-vs-generic-chatgpt/ | pass | 200 | AI Service Route vs Generic ChatGPT Advice \| AgentSiteOps | https://agentsiteops.com/answers/ai-service-route-vs-generic-chatgpt/ | 1 | 26 | pass | - |
+| /answers/when-to-stop-an-ai-website-idea/ | pass | 200 | When to Stop an AI Website Idea \| AgentSiteOps | https://agentsiteops.com/answers/when-to-stop-an-ai-website-idea/ | 1 | 27 | pass | - |
 | /guides/ai-search-friendly-robots-txt/ | pass | 200 | AI Search Friendly Robots.txt \| AgentSiteOps | https://agentsiteops.com/guides/ai-search-friendly-robots-txt/ | 1 | 28 | pass | - |
 | /guides/indexnow-cloudflare-pages/ | pass | 200 | IndexNow on Cloudflare Pages \| AgentSiteOps | https://agentsiteops.com/guides/indexnow-cloudflare-pages/ | 1 | 28 | pass | - |
 | /guides/gsc-bing-sitemap-verification/ | pass | 200 | GSC and Bing Sitemap Verification \| AgentSiteOps | https://agentsiteops.com/guides/gsc-bing-sitemap-verification/ | 1 | 29 | pass | - |

@@ -285,6 +285,33 @@
       "changefreq": "daily"
     },
     {
+      "path": "/answers/validate-ai-service-offer-before-building/",
+      "pageType": "answer",
+      "template": "answer",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.74,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/answers/ai-service-route-vs-generic-chatgpt/",
+      "pageType": "answer",
+      "template": "answer",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.72,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/answers/when-to-stop-an-ai-website-idea/",
+      "pageType": "answer",
+      "template": "answer",
+      "cluster": "growth_validation",
+      "index": true,
+      "priority": 0.74,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/authors/",
       "pageType": "trust_page",
       "template": "author_index",

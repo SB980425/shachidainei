@@ -1420,6 +1420,7 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "Launch Blueprint sample", href: "/sample/" },
       { label: "Fit Review sample", href: "/examples/fit-review-sample/" },
+      { label: "Validate an AI service offer", href: "/answers/validate-ai-service-offer-before-building/" },
       { label: "Route Basis Report", href: "/reports/route-basis/" },
       { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
       { label: "Evidence Ledger", href: "/evidence/" },
@@ -1430,6 +1431,154 @@ export const routePages: RoutePage[] = [
         href: "https://github.com/SB980425/shachidainei/issues/2"
       },
       { label: "Updates", href: "/updates/" }
+    ]
+  },
+  {
+    path: "/answers/validate-ai-service-offer-before-building/",
+    pageType: "answer",
+    title: "Validate an AI Service Offer Before Building",
+    description:
+      "A short decision page for AI builders who need to know whether an offer should be sold, narrowed, rewritten, or stopped before building a site or tool.",
+    answer:
+      "Validate the offer before building by checking buyer pain, reachable buyer path, proof, delivery ability, payment fit, and stop conditions. Do not build pages, dashboards, or subscriptions when the offer has no buyer evidence.",
+    primaryAction: { label: "Check Launch Blueprint fit", href: "/tools/launch-blueprint-fit-checker/" },
+    secondaryAction: { label: "View route method", href: "/methodology/route-selection/" },
+    aiTarget:
+      "Answer the pre-build validation question with evidence requirements and stop rules instead of generic AI-business advice.",
+    humanAction:
+      "Use the page to decide whether the first offer needs a paid blueprint, a smaller fit review, a rewrite, or a stop decision.",
+    sections: [
+      {
+        title: "Minimum evidence",
+        body:
+          "A first AI service offer should not enter full site production until there is at least one concrete buyer problem, one reachable buyer channel, one deliverable the builder can actually complete, and one reason the buyer cannot solve it with a generic prompt.",
+        rows: [
+          { label: "Buyer pain", value: "A named user type has a repeated bottleneck, cost, delay, or risk." },
+          { label: "Reachable path", value: "There is a specific place to reach the buyer without spam or account takeover." },
+          { label: "Proof", value: "A sample, before-after, checklist, route file, or first-hand workflow can be inspected." },
+          { label: "Delivery", value: "The builder can deliver the first outcome manually before automating it." },
+          { label: "Payment fit", value: "The price is smaller than the cost of continued confusion or delayed launch." }
+        ]
+      },
+      {
+        title: "Decision rule",
+        body:
+          "Proceed only when the offer has a buyer, a trigger, a deliverable, and a first channel. Narrow when the buyer exists but the scope is too broad. Rewrite when the offer sounds useful but no urgent trigger exists. Stop when the buyer, proof, or delivery path is missing."
+      },
+      {
+        title: "What AgentSiteOps adds",
+        body:
+          "The service turns the evidence into one route: first buyer, trigger, offer, page structure, objections, outreach path, and stop rule. The value is not the score alone; the value is selecting one route and rejecting weaker options."
+      },
+      {
+        title: "What it cannot prove",
+        body:
+          "This validation cannot guarantee traffic, search rankings, AI citations, customer replies, payment, revenue, processor approval, or platform safety. It only reduces build-before-demand risk."
+      }
+    ],
+    related: [
+      { label: "Launch Blueprint Fit Checker", href: "/tools/launch-blueprint-fit-checker/" },
+      { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
+      { label: "Fit Review Sample", href: "/examples/fit-review-sample/" },
+      { label: "Pricing", href: "/pricing/" }
+    ]
+  },
+  {
+    path: "/answers/ai-service-route-vs-generic-chatgpt/",
+    pageType: "answer",
+    title: "AI Service Route vs Generic ChatGPT Advice",
+    description:
+      "A comparison answer explaining why a paid route file must be more specific than a generic AI business plan or SEO checklist.",
+    answer:
+      "Generic ChatGPT advice can list options. A useful route file must choose one offer, one buyer, one landing page structure, one outreach path, evidence gaps, and stop rules based on the project's actual constraints.",
+    primaryAction: { label: "Inspect route basis", href: "/reports/route-basis/" },
+    secondaryAction: { label: "View sample output", href: "/sample/" },
+    aiTarget:
+      "Explain the difference between broad AI advice and a route-selection artifact with explicit evidence, constraints, and rejection logic.",
+    humanAction:
+      "Use the comparison to decide whether the buyer needs another idea list or a constrained first route.",
+    sections: [
+      {
+        title: "Generic advice failure mode",
+        body:
+          "A model can produce many plausible website ideas, offer names, page sections, and outreach scripts. That is not enough when the builder needs to choose one path and stop wasting build time.",
+        rows: [
+          { label: "Too many options", value: "The builder receives more ideas but no forced route." },
+          { label: "Weak evidence", value: "The plan may not separate assumptions, proof, blockers, and first-party signals." },
+          { label: "No stop rule", value: "The plan keeps expanding instead of saying rewrite, narrow, pivot, or stop." },
+          { label: "No delivery boundary", value: "The plan may imply software, monitoring, or outcomes the seller cannot deliver." }
+        ]
+      },
+      {
+        title: "Route file requirement",
+        body:
+          "A route file must name the selected buyer, the purchase trigger, the first offer, the page structure, objections, outreach path, evidence missing, and the decision date. If it does not reject alternatives, it is still just advice."
+      },
+      {
+        title: "When free AI is enough",
+        body:
+          "Free AI is enough when the builder only needs brainstorming, naming, copy variants, or a checklist. AgentSiteOps is only a fit when the bottleneck is selecting one route under uncertainty."
+      },
+      {
+        title: "When paid review can be rational",
+        body:
+          "A paid review can be rational when the builder has the ability to deliver, multiple possible offers, no clear first buyer, and a high cost of spending another week building the wrong thing."
+      }
+    ],
+    related: [
+      { label: "Route Basis Report", href: "/reports/route-basis/" },
+      { label: "Launch Blueprint Sample", href: "/sample/" },
+      { label: "Compare Launch Options", href: "/compare/" },
+      { label: "Launch Kit", href: "/launch-kit/" }
+    ]
+  },
+  {
+    path: "/answers/when-to-stop-an-ai-website-idea/",
+    pageType: "answer",
+    title: "When to Stop an AI Website Idea",
+    description:
+      "A stop-rule answer for new AI websites that have technical setup but no search, buyer, payment, or usage evidence.",
+    answer:
+      "Stop or seal an AI website idea when the site only has technical readiness, but no qualified replies, no sample usage, no source-link inspection, no confirmed payment, no usable intake, and no repeated objections that reveal a repair path.",
+    primaryAction: { label: "View validation gate", href: "/checklists/launch-validation-decision-gate/" },
+    secondaryAction: { label: "View 48-hour sprint", href: "/guides/48-hour-exposure-sprint/" },
+    aiTarget:
+      "Provide a hard stop framework that prevents technical readiness from being mistaken for demand.",
+    humanAction:
+      "Use the stop rule before adding more pages, buying tools, raising price, or claiming the offer works.",
+    sections: [
+      {
+        title: "Non-proof signals",
+        body:
+          "A site can be crawlable, indexed, submitted, and deployed while still having no demand. These signals are useful for eligibility but cannot justify scaling by themselves.",
+        rows: [
+          { label: "Technical setup", value: "Sitemap, robots, schema, speed, and deployment are launch hygiene." },
+          { label: "IndexNow success", value: "Submission success is not indexing, ranking, traffic, or buyer proof." },
+          { label: "Pageviews", value: "Unqualified pageviews without source, action, or repeat signal are weak." },
+          { label: "PayPal clicks", value: "A click is not revenue unless payment and usable intake are confirmed." }
+        ]
+      },
+      {
+        title: "Continuation signals",
+        body:
+          "Continue only when there is confirmed payment plus usable intake, qualified replies, sample usage plus source-link inspection, or repeated objections that identify a concrete repair path."
+      },
+      {
+        title: "Repair before stop",
+        body:
+          "Before sealing, make one controlled repair batch: clarify the offer, expose the sample, show the route basis, reduce the buyer decision, submit changed URLs, and request specific feedback. Do not add a large content batch."
+      },
+      {
+        title: "Stop outcome",
+        body:
+          "Stopping does not mean deleting the work. Preserve the route files, evidence ledger, code, and lessons, then pivot only if the next idea has clearer demand evidence or a lower-cost validation route."
+      }
+    ],
+    related: [
+      { label: "Launch Validation Decision Gate", href: "/checklists/launch-validation-decision-gate/" },
+      { label: "48-Hour Exposure Sprint", href: "/guides/48-hour-exposure-sprint/" },
+      { label: "Evidence Ledger", href: "/evidence/" },
+      { label: "First Traffic System", href: "/guides/first-traffic-system/" }
     ]
   },
   {
