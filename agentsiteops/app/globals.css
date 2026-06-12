@@ -5372,10 +5372,24 @@ textarea {
 }
 
 .route-home {
+  --route-bg: #07111f;
+  --route-panel: rgba(9, 19, 33, 0.82);
+  --route-panel-strong: rgba(12, 24, 41, 0.94);
+  --route-line: rgba(148, 163, 184, 0.24);
+  --route-line-strong: rgba(148, 163, 184, 0.38);
+  --route-text: #f8fafc;
+  --route-muted: #a8b3c3;
+  --route-soft: rgba(226, 232, 240, 0.08);
+  --route-accent: #67e8f9;
+  --route-accent-2: #fbbf24;
+  --route-good: #4ade80;
+  --route-warn: #f59e0b;
+  --route-danger: #fb7185;
   background:
     radial-gradient(circle at 15% 2%, rgba(49, 130, 206, 0.22), transparent 28%),
     radial-gradient(circle at 82% 8%, rgba(20, 184, 166, 0.14), transparent 26%),
     #07111f;
+  color: var(--route-text);
 }
 
 .route-command-shell {
@@ -6131,6 +6145,16 @@ textarea {
 .route-final-cta {
   width: min(1220px, calc(100% - 40px));
   margin: 34px auto 0;
+  color: var(--route-text);
+}
+
+.route-foundation-grid article,
+.route-boundary-grid article,
+.route-preserved-section,
+.route-final-cta {
+  background: rgba(9, 19, 33, 0.94);
+  border-color: rgba(226, 232, 240, 0.22);
+  backdrop-filter: none;
 }
 
 .route-section-heading {
@@ -6167,12 +6191,12 @@ textarea {
 
 .route-boundary-grid article {
   min-height: 190px;
-  border: 1px solid rgba(226, 232, 240, 0.16);
+  border: 1px solid rgba(226, 232, 240, 0.22);
   border-radius: 20px;
-  background: var(--route-panel);
+  background: rgba(9, 19, 33, 0.94);
   padding: 22px;
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.12);
-  backdrop-filter: blur(18px);
+  backdrop-filter: none;
 }
 
 .route-foundation-grid svg {
