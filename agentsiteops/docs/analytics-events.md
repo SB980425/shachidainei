@@ -53,6 +53,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `route_basis_report_view` | `/reports/route-basis/` load | `path` |
 | `route_evidence_filter_used` | User filters the route evidence dashboard | `filter_type`, `filter_value`, `has_query`, `visible_count` |
 | `evidence_ledger_template_view` | `/templates/evidence-ledger-template/` load | `path` |
+| `route_research_prompt_pack_view` | `/templates/route-research-prompt-pack/` load | `path` |
 | `opportunity_scoring_template_view` | `/templates/website-opportunity-scoring-template/` load | `path` |
 | `scoring_methodology_view` | `/methodology/website-opportunity-scoring/` load | `path` |
 | `scoring_model_limit_view` | `/methodology/website-opportunity-scoring/` load | `path` |

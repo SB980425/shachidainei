@@ -69,6 +69,7 @@ Current implementation:
 | `route_evidence_dashboard_view` | User views route-level evidence status | `/reports/route-evidence-dashboard/` |
 | `route_evidence_filter_used` | User filters route-level evidence locally | `/reports/route-evidence-dashboard/` |
 | `opportunity_scoring_template_view` | User views candidate scorecard template | `/templates/website-opportunity-scoring-template/` |
+| `route_research_prompt_pack_view` | User views route research prompt modules | `/templates/route-research-prompt-pack/` |
 | `scoring_methodology_view` | User views scoring fields and thresholds | `/methodology/website-opportunity-scoring/` |
 | `scoring_model_limit_view` | User views model limits and update rules | `/methodology/website-opportunity-scoring/` |
 | `route_selection_methodology_view` | User views route archetypes and evidence hierarchy | `/methodology/route-selection/` |

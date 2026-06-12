@@ -126,6 +126,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link prefetch={false} href="/templates/starter-pack/">Starter Pack</Link>
             <Link prefetch={false} href="/reports/route-evidence-dashboard/">Evidence</Link>
             <Link prefetch={false} href="/methodology/route-selection/">Route Method</Link>
+            <Link prefetch={false} href="/templates/route-research-prompt-pack/">Research Prompts</Link>
             <Link prefetch={false} href="/guides/48-hour-exposure-sprint/">48h Sprint</Link>
             <Link prefetch={false} href="/guides/first-traffic-system/">Traffic System</Link>
             <Link prefetch={false} href="/authors/">Authors</Link>

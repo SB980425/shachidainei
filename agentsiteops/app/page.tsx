@@ -49,6 +49,7 @@ const preservedLinks = [
   { href: "/tools/launch-blueprint-fit-checker/", label: "Launch blueprint fit checker" },
   { href: "/reports/route-basis/", label: "Route basis report" },
   { href: "/methodology/route-selection/", label: "Route selection methodology" },
+  { href: "/templates/route-research-prompt-pack/", label: "Route research prompt pack" },
   { href: "/sample/", label: "Sample route file" }
 ];
 

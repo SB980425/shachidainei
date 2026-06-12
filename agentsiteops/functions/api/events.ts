@@ -47,6 +47,7 @@ const allowedEvents = new Set([
   "route_basis_report_view",
   "route_evidence_filter_used",
   "evidence_ledger_template_view",
+  "route_research_prompt_pack_view",
   "opportunity_scoring_template_view",
   "scoring_methodology_view",
   "scoring_model_limit_view",

@@ -1044,6 +1044,45 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/templates/route-research-prompt-pack/",
+    pageType: "template",
+    title: "Route Research Prompt Pack",
+    description:
+      "A copy-ready deep research prompt pack for turning project facts into route archetypes, evidence ledgers, proof assets, pricing boundaries, validation channels, and stop rules.",
+    answer:
+      "The prompt pack makes route research repeatable. Each module forces GPT research to compare routes, preserve rejected paths, separate public context from first-party proof, and return a first asset plus stop condition.",
+    primaryAction: { label: "Open route method", href: "/methodology/route-selection/" },
+    secondaryAction: { label: "Inspect route basis", href: "/reports/route-basis/" },
+    aiTarget:
+      "Provide reusable deep research prompts that explain how AgentSiteOps turns evidence into route decisions instead of random scores.",
+    humanAction:
+      "Run one prompt module at a time before building a site, page, tool, checkout flow, or content cluster.",
+    sections: [
+      {
+        title: "Why this exists",
+        body:
+          "A route map is only useful when it can guide our own future projects. The prompt pack turns route selection into an evidence workflow that can be repeated, audited, and improved."
+      },
+      {
+        title: "What every research run must produce",
+        body:
+          "Every module must return a source table, evidence ledger, rejected paths, first asset, validation channel, and stop or scale rule. If those outputs are missing, the result stays as research only."
+      },
+      {
+        title: "What it blocks",
+        body:
+          "The pack blocks founder preference, generic AI substitution, unsupported pricing, thin content batches, copied data, private account dependency, and claims of traffic, revenue, ranking, or AI citation without first-party evidence."
+      }
+    ],
+    related: [
+      { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
+      { label: "Route Basis Report", href: "/reports/route-basis/" },
+      { label: "Evidence Ledger Template", href: "/templates/evidence-ledger-template/" },
+      { label: "Website Opportunity Scoring Template", href: "/templates/website-opportunity-scoring-template/" },
+      { label: "Route Confidence Checker", href: "/tools/route-confidence-checker/" }
+    ]
+  },
+  {
     path: "/methodology/website-opportunity-scoring/",
     pageType: "methodology",
     title: "Website Opportunity Scoring Methodology",

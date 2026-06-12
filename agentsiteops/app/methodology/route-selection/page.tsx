@@ -180,6 +180,10 @@ export default function Page() {
               <ArrowRight aria-hidden="true" size={17} />
               View route basis
             </Link>
+            <Link prefetch={false} className="secondary-action" href="/templates/route-research-prompt-pack/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Research prompts
+            </Link>
           </div>
         </div>
         <aside className="decision-card">

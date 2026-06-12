@@ -50,3 +50,4 @@
 /refund-policy/,trust_page,trust,keep_trust_boundary,review_policy_accuracy,keep_if_current,keep,trust_boundary_ready,"Review after payment, privacy, or service scope changes"
 /disclaimer/,trust_page,trust,keep_trust_boundary,review_policy_accuracy,keep_if_current,keep,trust_boundary_ready,"Review after payment, privacy, or service scope changes"
 /contact/,trust_page,trust,keep_trust_boundary,review_policy_accuracy,keep_if_current,keep,trust_boundary_ready,"Review after payment, privacy, or service scope changes"
+/templates/route-research-prompt-pack/,template,launch_blueprint,measure_prompt_pack_use,rewrite_or_expand_if_research_outputs_improve_routes,keep_if_used_for_internal_projects,keep,new_route;research_foundation,"Measure prompt pack views, source-link exits, copied prompt usage, and whether completed research changes the route library"
