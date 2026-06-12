@@ -1,0 +1,2 @@
+"generated_at_utc","automation_id","cadence","status","counts_toward_48h_threshold","purpose","notes"
+"2026-06-12T02:09:00Z","agentsiteops-48h-exposure-loop","FREQ=HOURLY;INTERVAL=1","ACTIVE","no","execution_cadence","Heartbeat automation updated from short interval execution to one-hour execution blocks. This changes operating cadence only; it does not prove traffic, replies, payments, usable intake, or objections."

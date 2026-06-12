@@ -1068,6 +1068,60 @@ export const routePages: RoutePage[] = [
         ]
       },
       {
+        title: "Confidence rubric",
+        body:
+          "The public confidence rubric in data/route-confidence-rubric.csv prevents the route from being promoted when the evidence only supports a pilot, diagnostic, rejection, refund, or implementation pivot.",
+        rows: [
+          {
+            label: "High",
+            value:
+              "Confirmed payment plus usable intake, qualified replies, first-party evidence, and a matching proof asset can support a narrow paid route."
+          },
+          {
+            label: "Medium",
+            value:
+              "A public demo, repo, sample artifact, workflow screenshot, or source-backed comparison can support a bounded pilot, not authority claims."
+          },
+          {
+            label: "Low",
+            value:
+              "Competitor pages, community questions, third-party estimates, or AI-visibility research are useful context only and need first-party proof."
+          },
+          {
+            label: "Reject",
+            value:
+              "Founder assumptions, unclear data rights, unsafe regulated advice, private account dependency, or generic-AI-equivalent output must stop or redirect the route."
+          }
+        ]
+      },
+      {
+        title: "Project fit matrix",
+        body:
+          "The project-route fit matrix in data/project-route-fit-matrix.csv maps project types to the strongest route, weak-route warning, first asset, and evidence needed before payment. This is how different customer project types avoid being forced into the same roadmap.",
+        rows: [
+          {
+            label: "Automation service",
+            value:
+              "Needs a named manual workflow, safe access boundary, and before-after proof before selling setup or review."
+          },
+          {
+            label: "Content site",
+            value:
+              "Needs source-backed search intent, original tools or templates, and a maintainable update owner before scaling pages."
+          },
+          {
+            label: "Micro tool",
+            value:
+              "Needs repeated user action, manual proof, data rights, and support capacity before building software."
+          },
+          {
+            label: "Implementation",
+            value:
+              "If the buyer already knows the offer and needs setup work, the route should pivot away from advice-only delivery."
+          }
+        ]
+      },
+      {
         title: "Delivery standard",
         body:
           "A paid route file must select one route, reject the alternatives, name the first offer, define the page asset, choose the first channel, expose missing evidence, and provide stop rules. Without those fields, the output is not worth selling.",

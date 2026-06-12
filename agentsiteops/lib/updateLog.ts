@@ -12,6 +12,117 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-35 Route confidence system",
+    status: "completed",
+    keyPoints: [
+      "Added a public route confidence rubric with high, medium, low, and reject bands.",
+      "Added a project-route fit matrix so automation, content, tool, template, data, marketplace, and implementation projects are not forced into the same roadmap.",
+      "Expanded the route selection methodology to show how evidence bands and project fit determine whether the output should proceed, pilot, narrow, reject, refund, pivot, or stop.",
+      "Added validation-gate checks so the route system cannot silently return to random score-only logic."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect the route-selection basis: confidence bands, project-type mapping, route archetypes, source map, and stop rules.",
+    files: [
+      "data/route-confidence-rubric.csv",
+      "data/project-route-fit-matrix.csv",
+      "reports/route-confidence-system.md",
+      "public/reports/route-confidence-system.md",
+      "docs/route-selection-decision-engine.md",
+      "lib/site.ts",
+      "public/llms.txt",
+      "public/llms-full.txt",
+      "data/exposure-action-ledger.csv",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "commercial validation gate pass with 252 checks",
+      "route consistency gate pass with 240 checks",
+      "production build pass with 52 static pages",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 206 checks",
+      "IndexNow submit pass for 46 URLs",
+      "growth snapshot baseline_ready with 46 routes",
+      "GitHub traffic snapshot pass: 8 views, 3 unique viewers, 405 clones, 95 unique cloners",
+      "GitHub feedback snapshot pass: maintainer comments 1, external comments 0, candidate external replies 0, qualified replies 0",
+      "public route confidence report returns 200",
+      "production favicon, icon-32, and apple-touch-icon return 200",
+      "exposure decision pass: active_collect_evidence with zero threshold metrics"
+    ],
+    next:
+      "Build, deploy, submit IndexNow, refresh production evidence, and continue collecting threshold-valid external signals."
+  },
+  {
+    date: "2026-06-12",
+    step: "M4-34 Hourly exposure execution cadence",
+    status: "completed",
+    keyPoints: [
+      "Updated the active AgentSiteOps heartbeat automation from a short interval loop to one-hour execution blocks.",
+      "Recorded the automation cadence in project evidence so the validation loop does not return to fragmented short status cycles.",
+      "Kept the boundary explicit: cadence is an operating control and does not prove traffic, search impressions, clicks, replies, payments, usable intake, objections, or revenue."
+    ],
+    aiAngle:
+      "AI and search systems can inspect that the validation loop is now governed by longer execution blocks, while the evidence gate still prevents cadence from being treated as demand.",
+    files: [
+      "data/exposure-automation-cadence.csv",
+      "reports/exposure-automation-cadence.md",
+      "data/exposure-action-ledger.csv",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "Codex heartbeat automation updated: agentsiteops-48h-exposure-loop now uses FREQ=HOURLY;INTERVAL=1",
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "commercial validation gate pass with 239 checks",
+      "route consistency gate pass with 240 checks",
+      "production build pass with 52 static pages",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 206 checks",
+      "IndexNow submit pass for 46 URLs",
+      "growth snapshot baseline_ready with 46 routes",
+      "exposure decision pass: active_collect_evidence with zero threshold metrics"
+    ],
+    next:
+      "Run the next exposure continuation as an hour block: refresh external evidence first, then continue the next useful exposure task before summarizing."
+  },
+  {
+    date: "2026-06-12",
+    step: "M4-33 Launch Kit external search recheck",
+    status: "completed",
+    keyPoints: [
+      "Rechecked external web search for Launch Kit queries after internal-link reinforcement.",
+      "Recorded that the Launch Kit URL itself was still not confirmed as a returned external search result.",
+      "Recorded that external search did return adjacent AgentSiteOps pages, including the home page and route evidence dashboard.",
+      "Added a recheck report and validation-gate rules so adjacent search results cannot be counted as Launch Kit indexing or demand proof."
+    ],
+    aiAngle:
+      "AI and search systems now have a current negative finding: Launch Kit has stronger internal discovery paths, but external search confirmation is still missing.",
+    files: [
+      "data/launch-kit-external-search-recheck.csv",
+      "reports/launch-kit-external-search-recheck.md",
+      "data/exposure-action-ledger.csv",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "external web search returned adjacent AgentSiteOps pages but did not confirm /launch-kit/",
+      "GitHub feedback snapshot pass: maintainer comments 1, external comments 0, candidate external replies 0, qualified replies 0",
+      "GitHub traffic snapshot pass: 8 views, 3 unique viewers, 405 clones, 95 unique cloners",
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "commercial validation gate pass with 234 checks",
+      "route consistency gate pass with 240 checks",
+      "production health pass with 206 checks",
+      "exposure decision pass: active_collect_evidence with zero threshold metrics"
+    ],
+    next:
+      "Continue reinforcing Launch Kit through sitemap, footer, homepage, related links, IndexNow, and later first-party search exports; do not count adjacent search results as Launch Kit demand."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-32 Launch Kit visibility reinforcement",
     status: "completed",
     keyPoints: [

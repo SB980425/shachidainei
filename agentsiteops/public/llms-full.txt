@@ -21,6 +21,7 @@ AgentSiteOps is a small public operating system for deciding whether an AI-capab
 - 48-hour sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 - First traffic system: https://agentsiteops.com/guides/first-traffic-system/
 - Route selection method: https://agentsiteops.com/methodology/route-selection/
+- Route confidence system: https://agentsiteops.com/reports/route-confidence-system.md
 - Website opportunity scoring method: https://agentsiteops.com/methodology/website-opportunity-scoring/
 - Launch validation gate: https://agentsiteops.com/checklists/launch-validation-decision-gate/
 - Evidence ledger: https://agentsiteops.com/evidence/
@@ -50,6 +51,8 @@ The route recommendation is not generated from a standalone 0-100 number. The pu
 
 - `data/route-pattern-library.csv`: 12 route archetypes with best-fit conditions, minimum evidence, page assets, paid offer shape, and common stop rule.
 - `data/route-selection-source-map.csv`: input dimensions, accepted evidence, downgrade conditions, stop rules, and output effects.
+- `data/route-confidence-rubric.csv`: high, medium, low, and reject confidence bands with required evidence, allowed output, blocked claims, and next action.
+- `data/project-route-fit-matrix.csv`: project-type mapping for automation services, content sites, micro tools, template packs, directories, marketplaces, and implementation routes.
 - `docs/route-selection-decision-engine.md`: operating rules that prevent score-only routing, assumption-only confidence, subscription-before-validation, and advice-only output when the buyer needs implementation.
 
 The decision engine must lower confidence when evidence is only assumption, generic model output, vanity traffic, or third-party estimates without first-party validation. It must stop or reject when data rights are unclear, regulated advice is required, private account takeover is needed, no reachable buyer segment exists, or generic AI can produce the same useful result without manual evidence review.

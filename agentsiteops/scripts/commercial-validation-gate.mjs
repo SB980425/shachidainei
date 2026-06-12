@@ -94,7 +94,10 @@ function checkCommercialBoundary() {
   const selfScoreChangeLog = read("data/self-score-change-log-template.csv");
   const routePatterns = read("data/route-pattern-library.csv");
   const routeSourceMap = read("data/route-selection-source-map.csv");
+  const routeConfidenceRubric = read("data/route-confidence-rubric.csv");
+  const projectRouteFitMatrix = read("data/project-route-fit-matrix.csv");
   const routeDecisionEngine = read("docs/route-selection-decision-engine.md");
+  const routeConfidenceReport = read("reports/route-confidence-system.md");
   const trafficChannels = read("data/first-traffic-channel-plan.csv");
   const exposureSprint = read("data/48-hour-exposure-sprint.csv");
   const exposureTargets = read("data/exposure-submission-targets.csv");
@@ -117,6 +120,10 @@ function checkCommercialBoundary() {
   const externalSearchDiscoverabilityReport = read("reports/external-search-discoverability-snapshot.md");
   const launchKitVisibility = read("data/launch-kit-visibility-reinforcement.csv");
   const launchKitVisibilityReport = read("reports/launch-kit-visibility-reinforcement.md");
+  const launchKitExternalSearchRecheck = read("data/launch-kit-external-search-recheck.csv");
+  const launchKitExternalSearchRecheckReport = read("reports/launch-kit-external-search-recheck.md");
+  const exposureAutomationCadence = read("data/exposure-automation-cadence.csv");
+  const exposureAutomationCadenceReport = read("reports/exposure-automation-cadence.md");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -195,6 +202,8 @@ function checkCommercialBoundary() {
   requireText("self_score", selfScoreChangeLog, "Aggregate only; do not store names emails payment identifiers", "self-score change log template blocks private data storage");
   requireText("route_selection", site, "The score is a gate; the route is selected", "route methodology states score is not the route itself");
   requireText("route_selection", site, "12 operating archetypes", "route methodology names the route-pattern library");
+  requireText("route_selection", site, "Confidence rubric", "route methodology exposes confidence bands");
+  requireText("route_selection", site, "Project fit matrix", "route methodology exposes project-to-route fit");
   requireText("route_selection", site, "When the answer must be stop", "route methodology includes stop conditions");
   requireText("route_selection", routePatterns, "AI workflow setup service", "route-pattern library includes AI workflow setup service");
   requireText("route_selection", routePatterns, "Marketplace or matching service", "route-pattern library includes marketplace or matching route");
@@ -203,7 +212,14 @@ function checkCommercialBoundary() {
   requireText("route_selection", routeSourceMap, "generic_ai_substitute", "route source map includes generic AI substitute risk");
   requireText("route_selection", routeSourceMap, "Confirmed payment, payment click plus usable intake", "route source map ties monetization fit to confirmed payment and usable intake");
   requireText("route_selection", routeSourceMap, "Do not scale content cluster when first-party search data is missing", "route source map blocks search scaling without first-party data");
+  requireText("route_selection", routeConfidenceRubric, '"high","Confirmed payment plus usable intake', "confidence rubric requires payment plus usable intake for high confidence");
+  requireText("route_selection", routeConfidenceRubric, '"reject","Founder assumptions', "confidence rubric can reject assumption-led routes");
+  requireText("route_selection", projectRouteFitMatrix, '"Content or SEO site"', "project fit matrix includes content or SEO site route");
+  requireText("route_selection", projectRouteFitMatrix, '"Done-for-you implementation"', "project fit matrix includes implementation route");
+  requireText("route_selection", routeConfidenceReport, "This does not prove search demand", "route confidence report preserves no-demand boundary");
   requireText("route_selection", routeDecisionEngine, "Never raise route confidence from assumptions alone.", "route decision engine blocks assumption-only confidence");
+  requireText("route_selection", routeDecisionEngine, "Never sell high-confidence route selection", "route decision engine blocks unsupported high-confidence selling");
+  requireText("route_selection", routeDecisionEngine, "Fit Matrix Use", "route decision engine explains fit matrix use");
   requireText("route_selection", routeDecisionEngine, "Never keep a route when the buyer needs implementation and the product only delivers advice.", "route decision engine blocks advice-only mismatch");
   requireText("route_selection", routeDecisionEngine, "One selected route", "route decision engine requires one selected route");
   requireText("first_traffic", site, "The first traffic plan does not wait for Google alone", "first traffic guide states multi-channel exposure");
@@ -240,6 +256,8 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureActionLedger, "github_feedback_snapshot_imported", "exposure action ledger records GitHub feedback snapshot import");
   requireText("exposure_sprint", exposureActionLedger, "external_search_discoverability_snapshot", "exposure action ledger records external search discoverability snapshot");
   requireText("exposure_sprint", exposureActionLedger, "launch_kit_visibility_reinforcement", "exposure action ledger records Launch Kit visibility reinforcement");
+  requireText("exposure_sprint", exposureActionLedger, "launch_kit_external_search_recheck", "exposure action ledger records Launch Kit external search recheck");
+  requireText("exposure_sprint", exposureActionLedger, "hourly_execution_cadence_updated", "exposure action ledger records hourly execution cadence update");
   requireText("exposure_sprint", exposureActionLedger, "verified_aggregate", "exposure action ledger marks GitHub traffic as aggregate evidence");
   requireText("exposure_sprint", exposureActionLedger, "counts_toward_threshold", "exposure action ledger separates public actions from threshold evidence");
   requireText("exposure_sprint", exposureActionLedger, "This improves public discoverability but is not demand proof.", "exposure action ledger blocks public-action-as-demand logic");
@@ -248,6 +266,8 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureActionLedger, "aggregate public comment counts only", "exposure action ledger records aggregate-only feedback snapshot");
   requireText("exposure_sprint", exposureActionLedger, "discoverability only, not impressions, clicks, visits, replies, payments, usable intake, or objections", "exposure action ledger blocks search-result-as-demand logic");
   requireText("exposure_sprint", exposureActionLedger, "internal discovery only and does not prove impressions, clicks, visits, replies, payments, usable intake, or objections", "exposure action ledger blocks internal-link-as-demand logic");
+  requireText("exposure_sprint", exposureActionLedger, "not Launch Kit indexing or demand proof", "exposure action ledger blocks adjacent-search-results-as-launch-kit-proof logic");
+  requireText("exposure_sprint", exposureActionLedger, "does not prove traffic, replies, payments, usable intake, or objections", "exposure action ledger blocks cadence-as-demand logic");
   requireText("github_traffic", githubTrafficScript, "traffic/views", "GitHub traffic script imports aggregate repo views");
   requireText("github_traffic", githubTrafficScript, "traffic/clones", "GitHub traffic script imports aggregate repo clones");
   requireText("github_traffic", githubTrafficScript, "traffic/popular/referrers", "GitHub traffic script imports aggregate referrers");
@@ -271,6 +291,13 @@ function checkCommercialBoundary() {
   requireText("launch_kit_visibility", layout, '<Link href="/launch-kit/">Launch Kit</Link>', "global footer links to Launch Kit");
   requireText("launch_kit_visibility", homePage, 'href="/launch-kit/"', "homepage links to Launch Kit");
   requireText("launch_kit_visibility", site, '{ label: "Launch Kit", href: "/launch-kit/" }', "route related links include Launch Kit");
+  requireText("launch_kit_external_search", launchKitExternalSearchRecheck, '"confirmed_launch_kit_result"', "Launch Kit external search recheck records direct confirmation field");
+  requireText("launch_kit_external_search", launchKitExternalSearchRecheck, '"no","https://agentsiteops.com/"', "Launch Kit external search recheck records home page fallback result");
+  requireText("launch_kit_external_search", launchKitExternalSearchRecheckReport, "The Launch Kit page itself is not yet confirmed", "Launch Kit external search recheck preserves missing visibility finding");
+  requireText("launch_kit_external_search", launchKitExternalSearchRecheckReport, "not proof of search visibility", "Launch Kit external search recheck blocks internal-link-as-search-proof logic");
+  requireText("exposure_cadence", exposureAutomationCadence, "FREQ=HOURLY;INTERVAL=1", "exposure automation cadence is hourly");
+  requireText("exposure_cadence", exposureAutomationCadence, "one-hour execution blocks", "exposure automation cadence records one-hour execution block purpose");
+  requireText("exposure_cadence", exposureAutomationCadenceReport, "does not prove traffic, search impressions, clicks", "exposure automation cadence report blocks cadence-as-demand logic");
   requireText("launch_kit", launchKitPage, 'path = "/launch-kit/"', "launch kit page is wired to static route data");
   requireText("launch_kit", site, "AgentSiteOps Launch Kit", "launch kit route data exists");
   requireText("launch_kit", site, "technically launchable, commercially unvalidated", "launch kit states current validation status");
@@ -344,8 +371,12 @@ function checkMojibake() {
     "data/launch-validation-decision-gate.csv",
     "data/agentsiteops-self-score-2026-06-11.csv",
     "data/self-score-change-log-template.csv",
+    "data/route-confidence-rubric.csv",
+    "data/project-route-fit-matrix.csv",
     "docs/self-score-maintenance-protocol.md",
     "docs/manual-outreach-runbook.md",
+    "docs/route-selection-decision-engine.md",
+    "reports/route-confidence-system.md",
     "lib/site.ts",
     "lib/launch.ts",
     "docs/site-brief.md",

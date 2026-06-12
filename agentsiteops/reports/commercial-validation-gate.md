@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T01:51:50.079Z
+- Generated: 2026-06-12T02:23:30.507Z
 - Status: pass
-- Checks: 228
+- Checks: 252
 - Blockers: 0
 
 ## Summary
@@ -126,6 +126,8 @@
 | self_score | pass | self-score change log template blocks private data storage |
 | route_selection | pass | route methodology states score is not the route itself |
 | route_selection | pass | route methodology names the route-pattern library |
+| route_selection | pass | route methodology exposes confidence bands |
+| route_selection | pass | route methodology exposes project-to-route fit |
 | route_selection | pass | route methodology includes stop conditions |
 | route_selection | pass | route-pattern library includes AI workflow setup service |
 | route_selection | pass | route-pattern library includes marketplace or matching route |
@@ -134,7 +136,14 @@
 | route_selection | pass | route source map includes generic AI substitute risk |
 | route_selection | pass | route source map ties monetization fit to confirmed payment and usable intake |
 | route_selection | pass | route source map blocks search scaling without first-party data |
+| route_selection | pass | confidence rubric requires payment plus usable intake for high confidence |
+| route_selection | pass | confidence rubric can reject assumption-led routes |
+| route_selection | pass | project fit matrix includes content or SEO site route |
+| route_selection | pass | project fit matrix includes implementation route |
+| route_selection | pass | route confidence report preserves no-demand boundary |
 | route_selection | pass | route decision engine blocks assumption-only confidence |
+| route_selection | pass | route decision engine blocks unsupported high-confidence selling |
+| route_selection | pass | route decision engine explains fit matrix use |
 | route_selection | pass | route decision engine blocks advice-only mismatch |
 | route_selection | pass | route decision engine requires one selected route |
 | first_traffic | pass | first traffic guide states multi-channel exposure |
@@ -171,6 +180,8 @@
 | exposure_sprint | pass | exposure action ledger records GitHub feedback snapshot import |
 | exposure_sprint | pass | exposure action ledger records external search discoverability snapshot |
 | exposure_sprint | pass | exposure action ledger records Launch Kit visibility reinforcement |
+| exposure_sprint | pass | exposure action ledger records Launch Kit external search recheck |
+| exposure_sprint | pass | exposure action ledger records hourly execution cadence update |
 | exposure_sprint | pass | exposure action ledger marks GitHub traffic as aggregate evidence |
 | exposure_sprint | pass | exposure action ledger separates public actions from threshold evidence |
 | exposure_sprint | pass | exposure action ledger blocks public-action-as-demand logic |
@@ -179,6 +190,8 @@
 | exposure_sprint | pass | exposure action ledger records aggregate-only feedback snapshot |
 | exposure_sprint | pass | exposure action ledger blocks search-result-as-demand logic |
 | exposure_sprint | pass | exposure action ledger blocks internal-link-as-demand logic |
+| exposure_sprint | pass | exposure action ledger blocks adjacent-search-results-as-launch-kit-proof logic |
+| exposure_sprint | pass | exposure action ledger blocks cadence-as-demand logic |
 | github_traffic | pass | GitHub traffic script imports aggregate repo views |
 | github_traffic | pass | GitHub traffic script imports aggregate repo clones |
 | github_traffic | pass | GitHub traffic script imports aggregate referrers |
@@ -202,6 +215,13 @@
 | launch_kit_visibility | pass | global footer links to Launch Kit |
 | launch_kit_visibility | pass | homepage links to Launch Kit |
 | launch_kit_visibility | pass | route related links include Launch Kit |
+| launch_kit_external_search | pass | Launch Kit external search recheck records direct confirmation field |
+| launch_kit_external_search | pass | Launch Kit external search recheck records home page fallback result |
+| launch_kit_external_search | pass | Launch Kit external search recheck preserves missing visibility finding |
+| launch_kit_external_search | pass | Launch Kit external search recheck blocks internal-link-as-search-proof logic |
+| exposure_cadence | pass | exposure automation cadence is hourly |
+| exposure_cadence | pass | exposure automation cadence records one-hour execution block purpose |
+| exposure_cadence | pass | exposure automation cadence report blocks cadence-as-demand logic |
 | launch_kit | pass | launch kit page is wired to static route data |
 | launch_kit | pass | launch kit route data exists |
 | launch_kit | pass | launch kit states current validation status |
@@ -231,8 +251,12 @@
 | mojibake | pass | data/launch-validation-decision-gate.csv has no visible mojibake marker |
 | mojibake | pass | data/agentsiteops-self-score-2026-06-11.csv has no visible mojibake marker |
 | mojibake | pass | data/self-score-change-log-template.csv has no visible mojibake marker |
+| mojibake | pass | data/route-confidence-rubric.csv has no visible mojibake marker |
+| mojibake | pass | data/project-route-fit-matrix.csv has no visible mojibake marker |
 | mojibake | pass | docs/self-score-maintenance-protocol.md has no visible mojibake marker |
 | mojibake | pass | docs/manual-outreach-runbook.md has no visible mojibake marker |
+| mojibake | pass | docs/route-selection-decision-engine.md has no visible mojibake marker |
+| mojibake | pass | reports/route-confidence-system.md has no visible mojibake marker |
 | mojibake | pass | lib/site.ts has no visible mojibake marker |
 | mojibake | pass | lib/launch.ts has no visible mojibake marker |
 | mojibake | pass | docs/site-brief.md has no visible mojibake marker |

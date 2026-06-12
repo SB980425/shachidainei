@@ -38,9 +38,11 @@ Every paid or sample route decision should inspect these inputs:
 2. Reject hard blockers before choosing a route.
 3. Match the remaining project to a route archetype in `data/route-pattern-library.csv`.
 4. Use `data/route-selection-source-map.csv` to decide which evidence raises confidence, which evidence lowers confidence, and which condition forces stop.
-5. Select one first route only.
-6. List rejected routes and the reason each was rejected.
-7. Produce a page asset, outreach path, and evidence ledger that can be executed within 7 days.
+5. Use `data/route-confidence-rubric.csv` to assign high, medium, low, or reject confidence before naming the paid output.
+6. Use `data/project-route-fit-matrix.csv` to map the project type to the strongest route, weak-route condition, first asset, and pre-payment evidence.
+7. Select one first route only.
+8. List rejected routes and the reason each was rejected.
+9. Produce a page asset, outreach path, and evidence ledger that can be executed within 7 days.
 
 ## Confidence Rules
 
@@ -50,6 +52,8 @@ Every paid or sample route decision should inspect these inputs:
 - Never sell a subscription or dashboard path before manual delivery proves the buyer problem and fulfillment model.
 - Never keep a route when the buyer needs implementation and the product only delivers advice.
 - Never claim authority from this site's own score; AgentSiteOps is currently technically launchable and commercially unvalidated.
+- Never sell high-confidence route selection when the rubric only supports medium, low, or reject confidence.
+- Never choose the route that is easier to sell if the project-route fit matrix shows the buyer needs implementation, data rights work, a free diagnostic, or a stop decision first.
 
 ## Required Output
 
@@ -64,3 +68,16 @@ A useful route file must contain:
 - Stop, narrow, rewrite, pivot, or continue rules.
 
 If these fields cannot be completed from evidence, the correct output is not a confident roadmap. The correct output is narrow, refund, reject, or stop.
+
+## Fit Matrix Use
+
+The fit matrix keeps route selection practical:
+
+- Service routes need a named manual workflow, reachable buyer, safe access boundary, and proof that the operator can deliver.
+- Content routes need source-backed search intent, original tools or templates, and a maintainable update owner.
+- Tool routes need repeated user action, manual proof, data rights, and support capacity.
+- Template routes need domain constraints and examples that generic AI cannot reproduce from the same prompt.
+- Directory and marketplace routes need defensible data, unique entity value, and manual seeding proof.
+- Implementation routes should replace advice products when the buyer already knows the offer and needs setup work.
+
+If a project lands in the wrong route, the route file must reject the sale or redirect the buyer before payment.
