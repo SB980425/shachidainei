@@ -1,10 +1,18 @@
 # GitHub Feedback Thread Refresh
 
-- Generated: 2026-06-12T04:31:21.857Z
+- Generated: 2026-06-12T05:21:12.570Z
 - Repository: https://github.com/SB980425/shachidainei
 - Issue: https://github.com/SB980425/shachidainei/issues/2
 - Title: AgentSiteOps 48-hour route feedback request
 - Counts toward 48-hour continuation threshold: no
+
+## Updated Links
+
+- Live site: https://agentsiteops.com
+- Analytics summary: https://agentsiteops.com/api/events/summary?days=2
+- Route basis report: https://agentsiteops.com/reports/route-basis/
+- Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/
+- Launch Blueprint sample: https://agentsiteops.com/sample/
 
 ## Feedback Questions
 

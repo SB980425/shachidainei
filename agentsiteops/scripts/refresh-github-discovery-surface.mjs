@@ -19,7 +19,8 @@ const desiredTopics = [
   "launch",
   "productized-service",
   "validation",
-  "llms"
+  "llms",
+  "analytics"
 ];
 
 function runGit(args, options = {}) {
@@ -162,6 +163,7 @@ const report = [
   "- Launch kit: https://agentsiteops.com/launch-kit/",
   "- Route basis report: https://agentsiteops.com/reports/route-basis/",
   "- Route selection method: https://agentsiteops.com/methodology/route-selection/",
+  "- Analytics summary: https://agentsiteops.com/api/events/summary?days=2",
   "- Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/",
   "- Public feedback thread: https://github.com/SB980425/shachidainei/issues/2",
   "",

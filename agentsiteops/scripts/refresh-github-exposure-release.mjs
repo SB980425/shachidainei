@@ -108,6 +108,7 @@ const body = [
   "- Launch Blueprint sample: https://agentsiteops.com/sample/",
   "- Pricing: https://agentsiteops.com/pricing/",
   "- AI-readable summary: https://agentsiteops.com/llms.txt",
+  "- Analytics summary: https://agentsiteops.com/api/events/summary?days=2",
   "- Social preview image: https://agentsiteops.com/og-image.png",
   "",
   "## Feedback requested",
@@ -125,7 +126,7 @@ const body = [
   "",
   "## Evidence boundary",
   "",
-  "This release update does not count as demand. It is a public artifact only. The 48-hour threshold can move only from confirmed payment plus usable intake, qualified external replies, sample views plus source-link clicks, or repeated objections."
+  "This release update and endpoint availability do not count as demand. They are public artifacts only. The 48-hour threshold can move only from confirmed payment plus usable intake, qualified external replies, sample views plus source-link clicks, or repeated objections."
 ].join("\n");
 
 const updatedRelease = await githubRequest(`releases/${release.id}`, token, {
@@ -170,6 +171,7 @@ const report = [
   "- Live site: https://agentsiteops.com",
   "- Route basis report: https://agentsiteops.com/reports/route-basis/",
   "- Route confidence system: https://agentsiteops.com/reports/route-confidence-system.md",
+  "- Analytics summary: https://agentsiteops.com/api/events/summary?days=2",
   "- Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml",
   "- Public feedback thread: https://github.com/SB980425/shachidainei/issues/2",
   "- Social preview image: https://agentsiteops.com/og-image.png",

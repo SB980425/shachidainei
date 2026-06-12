@@ -12,6 +12,43 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-42 GitHub analytics-summary surface refresh",
+    status: "completed",
+    keyPoints: [
+      "Updated the GitHub exposure release, feedback issue, repository discovery metadata, and public refresh reports with the aggregate analytics summary link.",
+      "Added the `analytics` GitHub topic while keeping the repository homepage pointed at the Launch Kit.",
+      "Recorded the refresh in the exposure action ledger with an explicit no-threshold boundary.",
+      "Kept the validation rule unchanged: endpoint availability and maintainer-controlled GitHub edits are not demand proof."
+    ],
+    aiAngle:
+      "External AI and GitHub readers now see the same measurement surface as the site: an aggregate-only summary with zero current threshold counts, not a hidden analytics claim.",
+    files: [
+      "scripts/refresh-github-exposure-release.mjs",
+      "scripts/refresh-github-feedback-thread.mjs",
+      "scripts/refresh-github-discovery-surface.mjs",
+      "data/github-exposure-release-refresh.csv",
+      "reports/github-exposure-release-refresh.md",
+      "public/reports/github-exposure-release-refresh.md",
+      "data/github-feedback-thread-refresh.csv",
+      "reports/github-feedback-thread-refresh.md",
+      "public/reports/github-feedback-thread-refresh.md",
+      "data/github-discovery-surface.csv",
+      "reports/github-discovery-surface.md",
+      "public/reports/github-discovery-surface.md",
+      "data/exposure-action-ledger.csv",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "GitHub exposure release refresh pass with analytics summary link",
+      "GitHub feedback thread refresh pass with analytics summary link",
+      "GitHub discovery surface refresh pass with analytics topic",
+      "all refreshed GitHub artifacts marked as counts_toward_48h_threshold=no"
+    ],
+    next:
+      "Continue measuring only downstream external replies, first-party aggregate events, confirmed payments with usable intake, or repeated objections."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-41 First-party aggregate analytics endpoint",
     status: "completed",
     keyPoints: [

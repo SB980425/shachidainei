@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-12T05:15:13.681Z",
+  "generated_at": "2026-06-12T05:24:11.928Z",
   "status": "waiting_for_events",
   "source_url": "https://agentsiteops.com/api/events/summary?days=2",
   "summary": {
-    "generated_at": "2026-06-12T05:15:13.657Z",
+    "generated_at": "2026-06-12T05:24:12.234Z",
     "days": 2,
     "privacy_boundary": "Aggregate event counters only. No IP address, user agent, cookie id, account id, email, phone, raw form text, full external URL, or payment data is returned.",
     "counts_by_event": {},
