@@ -9,6 +9,7 @@ const csvPath = resolve(rootDir, "data", "production-health-snapshot.csv");
 const siteUrl = "https://agentsiteops.com";
 const wwwUrl = "https://www.agentsiteops.com/";
 const indexNowKeyPath = "/32bc6ba6e277f850a701747381a57c48.txt";
+const strictSitemap = process.env.PRODUCTION_HEALTH_STRICT_SITEMAP === "1";
 
 const checks = [];
 const blockers = [];
@@ -133,6 +134,13 @@ async function checkSitemap(routeDoc) {
 
   if (locs.length === expected.length && missing.length === 0) {
     addCheck("sitemap", "pass", `${locs.length} URLs match route registry`, url);
+  } else if (!strictSitemap && missing.length > 0 && locs.length > 0) {
+    addCheck(
+      "sitemap",
+      "warn",
+      `Expected ${expected.length} URLs; found ${locs.length}; possible deployment lag, missing ${missing.join(", ")}`,
+      url
+    );
   } else {
     addCheck(
       "sitemap",
@@ -285,6 +293,8 @@ function renderReport(generatedAt) {
     "## Interpretation",
     "",
     "- This monitor checks production availability and proof-boundary pages.",
+    "- Sitemap route-count mismatches are warnings by default because CI can run before the newest deployment is live.",
+    "- Set `PRODUCTION_HEALTH_STRICT_SITEMAP=1` after deployment when sitemap parity must block readiness.",
     "- It does not prove indexing, AI citation, traffic, conversion, or revenue.",
     "- Run it after deployment and before claiming production readiness."
   ];

@@ -1,6 +1,6 @@
 # Search Evidence Import
 
-- Generated: 2026-06-11T13:04:03.050Z
+- Generated: 2026-06-12T10:56:40.770Z
 - Status: waiting_for_exports
 - Import files found: 0
 - Blocked files: 0
@@ -38,6 +38,7 @@
 | /services/ai-website-opportunity-audit/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /tools/audit-scope-builder/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /tools/launch-blueprint-fit-checker/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /tools/route-confidence-checker/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/starter-pack/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/seo-repo-skeleton/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /checklists/ai-content-quality-gate/ | 0 | 0 | 0 | 0 | 0 | 0 |
@@ -52,9 +53,18 @@
 | /guides/small-website-ai-visibility-metrics/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /evidence/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /reports/route-evidence-dashboard/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /reports/route-basis/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /templates/route-research-prompt-pack/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/evidence-ledger-template/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /templates/website-opportunity-scoring-template/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /methodology/website-opportunity-scoring/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /methodology/route-selection/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /guides/first-traffic-system/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /guides/48-hour-exposure-sprint/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /launch-kit/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /answers/validate-ai-service-offer-before-building/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /answers/ai-service-route-vs-generic-chatgpt/ | 0 | 0 | 0 | 0 | 0 | 0 |
+| /answers/when-to-stop-an-ai-website-idea/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /authors/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /editorial-policy/ | 0 | 0 | 0 | 0 | 0 | 0 |
 | /privacy/ | 0 | 0 | 0 | 0 | 0 | 0 |

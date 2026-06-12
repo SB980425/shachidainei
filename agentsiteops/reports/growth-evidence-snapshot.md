@@ -1,18 +1,18 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-12T07:58:05.736Z
+- Generated: 2026-06-12T11:00:47.890Z
 - Status: baseline_ready
-- Routes: 51
-- Technical SEO pass routes: 51
+- Routes: 52
+- Technical SEO pass routes: 52
 - Crawler access status: pass
-- Production health status: pass
+- Production health status: warning
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 51 routes
-- Bing status: pending export for 51 routes
+- GSC status: pending export for 52 routes
+- Bing status: pending export for 52 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: aggregate endpoint waiting for events on 44 routes
+- Onsite event status: aggregate endpoint waiting for events on 45 routes
 - Onsite routes with aggregate events: 7
 - Analytics summary status missing or blocked: 0
 - Analytics threshold snapshot: sample views 1, source-link clicks 0, PayPal CTA clicks 0
@@ -46,6 +46,7 @@
 | /evidence/ | evidence | trust_and_policy | pass | site_pass | keep | Add GSC, Bing, AI referral, onsite event, and revenue evidence only after real exports or records exist |
 | /reports/route-evidence-dashboard/ | report | trust_and_policy | pass | site_pass | keep | Regenerate growth evidence snapshot after every route batch and compare pending evidence by page type |
 | /reports/route-basis/ | report | launch_blueprint | pass | site_pass | keep | Measure source-link clicks, route method clicks, feedback thread clicks, and objections about route authority |
+| /templates/route-research-prompt-pack/ | template | launch_blueprint | pass | site_pass | keep | Measure prompt pack views, source-link exits, copied prompt usage, and whether completed research changes the route library |
 | /templates/evidence-ledger-template/ | template | trust_and_policy | pass | site_pass | keep | Measure template copy or source-link clicks before creating more evidence templates |
 | /templates/website-opportunity-scoring-template/ | template | website_opportunity_scoring | pass | site_pass | keep | Measure scorer usage and template copy before expanding scoring variants |
 | /methodology/website-opportunity-scoring/ | methodology | website_opportunity_scoring | pass | site_pass | keep | Update model only when evidence changes |

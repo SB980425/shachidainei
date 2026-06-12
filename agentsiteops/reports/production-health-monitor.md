@@ -1,11 +1,11 @@
 # Production Health Monitor
 
-- Generated: 2026-06-12T07:57:22.348Z
-- Status: pass
+- Generated: 2026-06-12T11:00:20.939Z
+- Status: warning
 - Site: https://agentsiteops.com
 - Checks: 220
 - Blockers: 0
-- Warnings: 0
+- Warnings: 1
 
 ## Summary
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 51 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | warn | Expected 52 URLs; found 51; possible deployment lag, missing https://agentsiteops.com/templates/route-research-prompt-pack/ | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -238,10 +238,12 @@
 
 ## Warnings
 
-- None
+- sitemap: Expected 52 URLs; found 51; possible deployment lag, missing https://agentsiteops.com/templates/route-research-prompt-pack/
 
 ## Interpretation
 
 - This monitor checks production availability and proof-boundary pages.
+- Sitemap route-count mismatches are warnings by default because CI can run before the newest deployment is live.
+- Set `PRODUCTION_HEALTH_STRICT_SITEMAP=1` after deployment when sitemap parity must block readiness.
 - It does not prove indexing, AI citation, traffic, conversion, or revenue.
 - Run it after deployment and before claiming production readiness.
