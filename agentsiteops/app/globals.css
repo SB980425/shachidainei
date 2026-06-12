@@ -6151,6 +6151,13 @@ textarea {
   margin-top: 22px;
 }
 
+.route-boundary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
 .route-foundation-grid article {
   min-height: 220px;
   border-color: rgba(226, 232, 240, 0.16);
@@ -6158,14 +6165,29 @@ textarea {
   padding: 22px;
 }
 
+.route-boundary-grid article {
+  min-height: 190px;
+  border: 1px solid rgba(226, 232, 240, 0.16);
+  border-radius: 20px;
+  background: var(--route-panel);
+  padding: 22px;
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(18px);
+}
+
 .route-foundation-grid svg {
   color: var(--route-accent);
 }
 
-.route-foundation-grid h3 {
+.route-foundation-grid h3,
+.route-boundary-grid h3 {
   margin: 18px 0 10px;
   color: var(--route-text);
   font-size: 20px;
+}
+
+.route-boundary-grid h3 {
+  margin-top: 0;
 }
 
 .route-preserved-section,
@@ -6282,7 +6304,8 @@ textarea {
   }
 
   .route-basis-strip,
-  .route-foundation-grid {
+  .route-foundation-grid,
+  .route-boundary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -6387,7 +6410,8 @@ textarea {
   }
 
   .route-basis-strip,
-  .route-foundation-grid {
+  .route-foundation-grid,
+  .route-boundary-grid {
     grid-template-columns: 1fr;
     padding-right: 14px;
     padding-left: 14px;

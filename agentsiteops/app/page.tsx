@@ -43,6 +43,7 @@ const foundationCards = [
 ];
 
 const preservedLinks = [
+  { href: "/launch-kit/", label: "Launch Kit" },
   { href: "/tools/website-opportunity-scorer/", label: "Website opportunity scorer" },
   { href: "/tools/route-confidence-checker/", label: "Route confidence checker" },
   { href: "/tools/launch-blueprint-fit-checker/", label: "Launch blueprint fit checker" },
@@ -110,6 +111,30 @@ export default function HomePage() {
             );
           })}
         </div>
+
+        <div className="route-boundary-grid">
+          <article>
+            <h3>Evidence used, not guessed.</h3>
+            <p>
+              A route can move forward only when project facts, proof assets, search or
+              buyer signals, and delivery capacity support the recommendation.
+            </p>
+          </article>
+          <article>
+            <h3>What the buyer receives is a route file, not a score.</h3>
+            <p>
+              Paid work must include the selected route, rejected alternatives, evidence
+              ledger, first asset, execution window, and stop rule.
+            </p>
+          </article>
+          <article>
+            <h3>Market signals are context, not proof.</h3>
+            <p>
+              Public research can shape the checklist, but it does not prove demand,
+              willingness to pay, rankings, AI citations, or revenue.
+            </p>
+          </article>
+        </div>
       </section>
 
       <section className="route-preserved-section">
@@ -161,6 +186,10 @@ export default function HomePage() {
           <Link prefetch={false} className="primary-action" href="/tools/website-opportunity-scorer/">
             <Gauge aria-hidden="true" size={17} />
             Score a direction
+          </Link>
+          <Link prefetch={false} className="secondary-action" href="/launch-kit/">
+            <FileText aria-hidden="true" size={17} />
+            Open Launch Kit
           </Link>
           <Link prefetch={false} className="secondary-action" href="/pricing/">
             <BadgeDollarSign aria-hidden="true" size={17} />
