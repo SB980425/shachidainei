@@ -172,6 +172,10 @@ export default function Page() {
               <CheckCircle2 aria-hidden="true" size={17} />
               Check fit first
             </Link>
+            <Link prefetch={false} className="secondary-action" href="/tools/route-confidence-checker/">
+              <Gauge aria-hidden="true" size={17} />
+              Run route checker
+            </Link>
             <Link prefetch={false} className="secondary-action" href="/reports/route-basis/">
               <ArrowRight aria-hidden="true" size={17} />
               View route basis
