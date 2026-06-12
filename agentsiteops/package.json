@@ -10,6 +10,7 @@
     "crawler:audit": "node scripts/crawler-access-audit.mjs",
     "growth:snapshot": "node scripts/growth-evidence-snapshot.mjs",
     "exposure:decision": "node scripts/48-hour-exposure-decision.mjs",
+    "github:traffic": "node scripts/github-traffic-snapshot.mjs",
     "analytics:gate": "node scripts/analytics-endpoint-gate.mjs",
     "commercial:gate": "node scripts/commercial-validation-gate.mjs",
     "routes:gate": "node scripts/route-consistency-gate.mjs",

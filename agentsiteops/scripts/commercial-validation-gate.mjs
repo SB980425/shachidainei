@@ -104,6 +104,9 @@ function checkCommercialBoundary() {
   const llmsText = read("public/llms.txt");
   const llmsFullText = read("public/llms-full.txt");
   const exposureCopy = read("docs/exposure-copy-pack.md");
+  const githubTrafficScript = read("scripts/github-traffic-snapshot.mjs");
+  const githubTrafficSnapshot = read("data/github-traffic-snapshot.json");
+  const githubTrafficReport = read("reports/github-traffic-snapshot.md");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -216,9 +219,17 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureActionLedger, "repo_metadata_updated", "exposure action ledger records GitHub metadata update");
   requireText("exposure_sprint", exposureActionLedger, "prerelease_created", "exposure action ledger records GitHub prerelease creation");
   requireText("exposure_sprint", exposureActionLedger, "feedback_issue_created", "exposure action ledger records GitHub feedback issue creation");
+  requireText("exposure_sprint", exposureActionLedger, "github_traffic_snapshot_imported", "exposure action ledger records GitHub traffic snapshot import");
+  requireText("exposure_sprint", exposureActionLedger, "verified_aggregate", "exposure action ledger marks GitHub traffic as aggregate evidence");
   requireText("exposure_sprint", exposureActionLedger, "counts_toward_threshold", "exposure action ledger separates public actions from threshold evidence");
   requireText("exposure_sprint", exposureActionLedger, "This improves public discoverability but is not demand proof.", "exposure action ledger blocks public-action-as-demand logic");
   requireText("exposure_sprint", exposureActionLedger, "Creation itself is not a qualified reply", "exposure action ledger blocks issue-creation-as-reply logic");
+  requireText("github_traffic", githubTrafficScript, "traffic/views", "GitHub traffic script imports aggregate repo views");
+  requireText("github_traffic", githubTrafficScript, "traffic/clones", "GitHub traffic script imports aggregate repo clones");
+  requireText("github_traffic", githubTrafficScript, "traffic/popular/referrers", "GitHub traffic script imports aggregate referrers");
+  requireText("github_traffic", githubTrafficScript, "traffic/popular/paths", "GitHub traffic script imports aggregate paths");
+  requireText("github_traffic", githubTrafficSnapshot, "GitHub traffic is aggregate repo exposure. It does not prove website visits, sample views, source-link clicks, qualified replies, payments, usable intake, or objections.", "GitHub traffic snapshot preserves no-threshold boundary");
+  requireText("github_traffic", githubTrafficReport, "Do not use GitHub traffic to increase 48-hour continuation thresholds.", "GitHub traffic report preserves threshold boundary");
   requireText("launch_kit", launchKitPage, 'path = "/launch-kit/"', "launch kit page is wired to static route data");
   requireText("launch_kit", site, "AgentSiteOps Launch Kit", "launch kit route data exists");
   requireText("launch_kit", site, "technically launchable, commercially unvalidated", "launch kit states current validation status");

@@ -12,6 +12,48 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-27 GitHub traffic evidence snapshot",
+    status: "completed",
+    keyPoints: [
+      "Pulled aggregate GitHub Traffic API data for the public repository and recorded views, clones, referrers, and popular paths.",
+      "Classified GitHub traffic as verified aggregate repo exposure rather than website visits, qualified replies, payments, usable intake, or objections.",
+      "Added a reusable github:traffic script plus JSON, CSV, and Markdown outputs so the evidence can be refreshed without exposing credentials.",
+      "Extended the commercial validation gate so future changes cannot count GitHub traffic toward the 48-hour continuation thresholds.",
+      "Kept all 48-hour demand counters at zero because no qualified reply, confirmed payment, usable intake, sample view, source-link click, or objection has been verified."
+    ],
+    aiAngle:
+      "AI and search systems now have a machine-readable repository traffic snapshot, while the validation logic still separates public surface activity from buyer demand.",
+    files: [
+      "package.json",
+      "scripts/github-traffic-snapshot.mjs",
+      "data/github-traffic-snapshot.json",
+      "data/github-traffic-summary.csv",
+      "reports/github-traffic-snapshot.md",
+      "data/exposure-action-ledger.csv",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "github traffic snapshot pass: 8 views, 3 unique viewers, 405 clones, 95 unique cloners, 1 referrer row, 5 path rows",
+      "exposure decision pass: active_collect_evidence before the deadline with zero threshold metrics",
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "analytics endpoint gate pass with endpoint disabled",
+      "commercial validation gate pass with 197 checks",
+      "route consistency gate pass with 240 checks",
+      "production build pass with 52 static pages",
+      "technical SEO CI pass for 46 routes",
+      "crawler access audit pass",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 206 checks",
+      "IndexNow submit pass for 46 URLs",
+      "growth snapshot baseline_ready with 46 routes"
+    ],
+    next:
+      "Continue collecting only threshold-valid evidence: qualified replies, sample views, source-link clicks, confirmed payments with usable intake, or repeated objections before the 48-hour deadline."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-26 Public feedback thread",
     status: "completed",
     keyPoints: [

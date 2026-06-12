@@ -1,0 +1,219 @@
+{
+  "generatedAt": "2026-06-12T00:59:58.624Z",
+  "repo": {
+    "owner": "SB980425",
+    "repo": "shachidainei"
+  },
+  "repoUrl": "https://github.com/SB980425/shachidainei",
+  "evidenceType": "verified_aggregate_repo_exposure",
+  "countsToward48HourThreshold": false,
+  "boundary": "GitHub traffic is aggregate repo exposure. It does not prove website visits, sample views, source-link clicks, qualified replies, payments, usable intake, or objections.",
+  "rule": "Do not use GitHub traffic to increase 48-hour continuation thresholds.",
+  "endpoints": [
+    "traffic/views",
+    "traffic/clones",
+    "traffic/popular/referrers",
+    "traffic/popular/paths"
+  ],
+  "totals": {
+    "views": {
+      "count": 8,
+      "uniques": 3
+    },
+    "clones": {
+      "count": 405,
+      "uniques": 95
+    },
+    "referrers": {
+      "count": 1
+    },
+    "paths": {
+      "count": 5
+    }
+  },
+  "series": {
+    "views": [
+      {
+        "timestamp": "2026-05-28T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-05-29T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-05-30T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-05-31T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-01T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-02T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-03T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-04T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-05T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-06T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-07T00:00:00Z",
+        "count": 8,
+        "uniques": 3
+      },
+      {
+        "timestamp": "2026-06-08T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-09T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-10T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      }
+    ],
+    "clones": [
+      {
+        "timestamp": "2026-05-28T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-05-29T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-05-30T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-05-31T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-01T00:00:00Z",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "timestamp": "2026-06-02T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-03T00:00:00Z",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "timestamp": "2026-06-04T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-05T00:00:00Z",
+        "count": 0,
+        "uniques": 0
+      },
+      {
+        "timestamp": "2026-06-06T00:00:00Z",
+        "count": 1,
+        "uniques": 1
+      },
+      {
+        "timestamp": "2026-06-07T00:00:00Z",
+        "count": 297,
+        "uniques": 69
+      },
+      {
+        "timestamp": "2026-06-08T00:00:00Z",
+        "count": 99,
+        "uniques": 24
+      },
+      {
+        "timestamp": "2026-06-09T00:00:00Z",
+        "count": 5,
+        "uniques": 2
+      },
+      {
+        "timestamp": "2026-06-10T00:00:00Z",
+        "count": 1,
+        "uniques": 1
+      }
+    ]
+  },
+  "referrers": [
+    {
+      "referrer": "github.com",
+      "count": 2,
+      "uniques": 2
+    }
+  ],
+  "paths": [
+    {
+      "path": "/SB980425/shachidainei/compare/codex/agentsiteops-mvp",
+      "title": "/compare/codex/agentsiteops-mvp",
+      "count": 3,
+      "uniques": 2
+    },
+    {
+      "path": "/SB980425/shachidainei",
+      "title": "Overview",
+      "count": 2,
+      "uniques": 2
+    },
+    {
+      "path": "/SB980425/shachidainei/actions/runs/27098002015",
+      "title": "/actions/runs/27098002015",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/SB980425/shachidainei/pull/1",
+      "title": "/pull/1",
+      "count": 1,
+      "uniques": 1
+    },
+    {
+      "path": "/SB980425/shachidainei/pulls",
+      "title": "/pulls",
+      "count": 1,
+      "uniques": 1
+    }
+  ]
+}

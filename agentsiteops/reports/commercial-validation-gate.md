@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T00:51:57.378Z
+- Generated: 2026-06-12T01:00:49.445Z
 - Status: pass
-- Checks: 189
+- Checks: 197
 - Blockers: 0
 
 ## Summary
@@ -160,9 +160,17 @@
 | exposure_sprint | pass | exposure action ledger records GitHub metadata update |
 | exposure_sprint | pass | exposure action ledger records GitHub prerelease creation |
 | exposure_sprint | pass | exposure action ledger records GitHub feedback issue creation |
+| exposure_sprint | pass | exposure action ledger records GitHub traffic snapshot import |
+| exposure_sprint | pass | exposure action ledger marks GitHub traffic as aggregate evidence |
 | exposure_sprint | pass | exposure action ledger separates public actions from threshold evidence |
 | exposure_sprint | pass | exposure action ledger blocks public-action-as-demand logic |
 | exposure_sprint | pass | exposure action ledger blocks issue-creation-as-reply logic |
+| github_traffic | pass | GitHub traffic script imports aggregate repo views |
+| github_traffic | pass | GitHub traffic script imports aggregate repo clones |
+| github_traffic | pass | GitHub traffic script imports aggregate referrers |
+| github_traffic | pass | GitHub traffic script imports aggregate paths |
+| github_traffic | pass | GitHub traffic snapshot preserves no-threshold boundary |
+| github_traffic | pass | GitHub traffic report preserves threshold boundary |
 | launch_kit | pass | launch kit page is wired to static route data |
 | launch_kit | pass | launch kit route data exists |
 | launch_kit | pass | launch kit states current validation status |
