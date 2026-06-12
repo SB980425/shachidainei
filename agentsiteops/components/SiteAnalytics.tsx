@@ -49,6 +49,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/guides/ai-citation-grounding-metrics/": ["ai_metric_matrix_view", "review_window_view"],
   "/evidence/": ["evidence_ledger_view"],
   "/reports/route-evidence-dashboard/": ["route_evidence_dashboard_view"],
+  "/reports/route-basis/": ["route_basis_report_view"],
   "/templates/evidence-ledger-template/": ["evidence_ledger_template_view"],
   "/templates/website-opportunity-scoring-template/": ["opportunity_scoring_template_view"],
   "/methodology/website-opportunity-scoring/": [

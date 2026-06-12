@@ -12,6 +12,49 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-38 Route basis public report",
+    status: "completed",
+    keyPoints: [
+      "Added a public Route Basis Report so visitors and AI systems can inspect how route recommendations are grounded.",
+      "Connected the report to the route-pattern library, source map, confidence rubric, project-route fit matrix, downgrade rules, and rejection logic.",
+      "Added the page to route registry, page registry, review actions, analytics events, Launch Kit, route methodology links, and AI-readable context files.",
+      "Kept the evidence boundary explicit: this improves route explainability and source-link inspection, but it does not prove buyer demand."
+    ],
+    aiAngle:
+      "AI systems now have a short on-site answer for the user's core objection: the route is not a random 0-100 score; it is selected from inspectable route basis files and must downgrade or reject weak evidence.",
+    files: [
+      "app/reports/route-basis/page.tsx",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "components/SiteAnalytics.tsx",
+      "docs/analytics-events.md",
+      "public/llms.txt",
+      "public/llms-full.txt",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "production build pass with 53 static pages",
+      "technical SEO CI pass with 47 routes",
+      "growth snapshot baseline_ready with 47 routes and 47 technical pass routes",
+      "typecheck pass",
+      "code quality gate pass with 14 checks",
+      "commercial validation gate pass with 292 checks",
+      "route consistency gate pass with 245 checks",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 215 checks",
+      "IndexNow submit pass for 47 URLs",
+      "Route Basis production URL returns 200",
+      "llms.txt and llms-full.txt production URLs return 200"
+    ],
+    next:
+      "Use the route basis page as the authority-objection target in public feedback and exposure loops; only source-link clicks, qualified replies, sample views, confirmed payments with usable intake, or repeated objections can move the 48-hour decision."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-37 GitHub exposure release refresh",
     status: "completed",
     keyPoints: [

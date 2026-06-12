@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-12T03:24:01.643Z
+- Generated: 2026-06-12T04:05:16.788Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 206
+- Checks: 215
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 46 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 47 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -186,6 +186,15 @@
 | /reports/route-evidence-dashboard/ | pass | Route Evidence Dashboard | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
 | /reports/route-evidence-dashboard/ | pass | Route evidence table | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
 | /reports/route-evidence-dashboard/ | pass | GSC pending | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
+| /reports/route-basis/ | pass | HTTP 200 | [link](https://agentsiteops.com/reports/route-basis/) |
+| /reports/route-basis/ | pass | HTML title exists | [link](https://agentsiteops.com/reports/route-basis/) |
+| /reports/route-basis/ | pass | canonical points to production URL | [link](https://agentsiteops.com/reports/route-basis/) |
+| /reports/route-basis/ | pass | Route Basis Report | [link](https://agentsiteops.com/reports/route-basis/) |
+| /reports/route-basis/ | pass | Source files | [link](https://agentsiteops.com/reports/route-basis/) |
+| /reports/route-basis/ | pass | What raises confidence | [link](https://agentsiteops.com/reports/route-basis/) |
+| /reports/route-basis/ | pass | What lowers confidence | [link](https://agentsiteops.com/reports/route-basis/) |
+| /reports/route-basis/ | pass | What forces rejection | [link](https://agentsiteops.com/reports/route-basis/) |
+| /reports/route-basis/ | pass | 52/100 | [link](https://agentsiteops.com/reports/route-basis/) |
 | /privacy/ | pass | HTTP 200 | [link](https://agentsiteops.com/privacy/) |
 | /privacy/ | pass | HTML title exists | [link](https://agentsiteops.com/privacy/) |
 | /privacy/ | pass | canonical points to production URL | [link](https://agentsiteops.com/privacy/) |

@@ -924,6 +924,77 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/reports/route-basis/",
+    pageType: "report",
+    title: "Route Basis Report",
+    description:
+      "A compact explanation of the data files, confidence rules, and rejection logic behind AgentSiteOps route recommendations.",
+    answer:
+      "AgentSiteOps route output is based on a route-pattern library, source map, confidence rubric, project-route fit matrix, and stop rules. The score opens or closes the gate; it does not randomly choose the route.",
+    primaryAction: { label: "View the route method", href: "/methodology/route-selection/" },
+    secondaryAction: { label: "View confidence report", href: "/reports/route-confidence-system.md" },
+    aiTarget:
+      "Give AI systems a citeable answer for how AgentSiteOps selects routes, lowers confidence, and rejects bad-fit projects.",
+    humanAction:
+      "Use this report to inspect whether a paid route file would be evidence-based enough before buying.",
+    sections: [
+      {
+        title: "Source files",
+        body:
+          "The current route logic is maintained as public repo data and summarized on-site so visitors can inspect the basis before paying.",
+        rows: [
+          {
+            label: "route-pattern-library.csv",
+            value:
+              "Defines 12 route archetypes, best-fit conditions, minimum evidence, page assets, paid-offer shape, and stop rules."
+          },
+          {
+            label: "route-selection-source-map.csv",
+            value:
+              "Maps input dimensions to accepted evidence, downgrade triggers, stop conditions, and output effects."
+          },
+          {
+            label: "route-confidence-rubric.csv",
+            value:
+              "Separates high, medium, low, and reject confidence so weak evidence cannot become a confident roadmap."
+          },
+          {
+            label: "project-route-fit-matrix.csv",
+            value:
+              "Maps project types such as automation service, content site, micro tool, template pack, directory, marketplace, and implementation route."
+          }
+        ]
+      },
+      {
+        title: "What raises confidence",
+        body:
+          "The strongest route evidence is first-party and buyer-specific: confirmed payment plus usable intake, qualified replies, delivered artifact feedback, first-party search exports, route-level usage, and verifiable proof assets."
+      },
+      {
+        title: "What lowers confidence",
+        body:
+          "The system must downgrade when the input is assumption-only, generic AI output, third-party estimate without first-party validation, vanity traffic, unsupported price projection, unknown delivery capacity, or unclear buyer trigger."
+      },
+      {
+        title: "What forces rejection",
+        body:
+          "The answer must reject or redirect when the project needs unsafe regulated advice, unclear data rights, private account takeover, a buyer that cannot be reached, a generic-AI-equivalent output, or implementation work that an advice-only file cannot solve."
+      },
+      {
+        title: "Current AgentSiteOps score",
+        body:
+          "AgentSiteOps remains 52/100 because technical launch evidence exists, but confirmed payment plus usable intake, qualified external replies, first-party search data, and delivered buyer outcomes are still missing."
+      }
+    ],
+    related: [
+      { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
+      { label: "Route Confidence System", href: "/reports/route-confidence-system.md" },
+      { label: "Route Evidence Dashboard", href: "/reports/route-evidence-dashboard/" },
+      { label: "Launch Validation Gate", href: "/checklists/launch-validation-decision-gate/" },
+      { label: "Public Feedback Thread", href: "https://github.com/SB980425/shachidainei/issues/2" }
+    ]
+  },
+  {
     path: "/methodology/website-opportunity-scoring/",
     pageType: "methodology",
     title: "Website Opportunity Scoring Methodology",
@@ -1140,6 +1211,7 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Website Opportunity Scorer", href: "/tools/website-opportunity-scorer/" },
+      { label: "Route Basis Report", href: "/reports/route-basis/" },
       { label: "Scoring Methodology", href: "/methodology/website-opportunity-scoring/" },
       { label: "First Traffic System", href: "/guides/first-traffic-system/" },
       { label: "Fit Review Sample", href: "/examples/fit-review-sample/" }
@@ -1322,10 +1394,11 @@ export const routePages: RoutePage[] = [
       {
         title: "Evidence to inspect first",
         body:
-          "Inspect the sample, fit checker, route-selection method, evidence ledger, validation gate, and update log before treating the offer as credible.",
+          "Inspect the sample, fit checker, route basis, route-selection method, evidence ledger, validation gate, and update log before treating the offer as credible.",
         rows: [
           { label: "Sample", value: "Shows the expected Launch Blueprint format." },
           { label: "Fit checker", value: "Blocks bad-fit buyers before opening PayPal." },
+          { label: "Route basis", value: "Shows source files, confidence rules, downgrade triggers, and rejection logic." },
           { label: "Evidence ledger", value: "Separates verified facts from pending search, revenue, and user evidence." },
           { label: "Decision gate", value: "Defines continue, rewrite, narrow, pivot_to_implementation, or stop." }
         ]
@@ -1344,6 +1417,7 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "Launch Blueprint sample", href: "/sample/" },
       { label: "Fit Review sample", href: "/examples/fit-review-sample/" },
+      { label: "Route Basis Report", href: "/reports/route-basis/" },
       { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
       { label: "Evidence Ledger", href: "/evidence/" },
       { label: "Launch Validation Gate", href: "/checklists/launch-validation-decision-gate/" },

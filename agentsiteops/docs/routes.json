@@ -213,6 +213,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/reports/route-basis/",
+      "pageType": "report",
+      "template": "route_basis",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.78,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/templates/evidence-ledger-template/",
       "pageType": "template",
       "template": "template",

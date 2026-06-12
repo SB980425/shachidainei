@@ -14,6 +14,7 @@ const requiredRoutes = [
   "/tools/launch-blueprint-fit-checker/",
   "/checklists/launch-validation-decision-gate/",
   "/methodology/route-selection/",
+  "/reports/route-basis/",
   "/guides/first-traffic-system/",
   "/guides/48-hour-exposure-sprint/",
   "/launch-kit/",
@@ -216,6 +217,9 @@ function checkCommercialBoundary() {
   requireText("route_selection", site, "Confidence rubric", "route methodology exposes confidence bands");
   requireText("route_selection", site, "Project fit matrix", "route methodology exposes project-to-route fit");
   requireText("route_selection", site, "When the answer must be stop", "route methodology includes stop conditions");
+  requireText("route_selection", site, "Route Basis Report", "route basis report is visible in site data");
+  requireText("route_selection", site, "What forces rejection", "route basis report exposes rejection logic");
+  requireText("route_selection", llmsText, "Route basis report", "AI context links the route basis report");
   requireText("route_selection", routePatterns, "AI workflow setup service", "route-pattern library includes AI workflow setup service");
   requireText("route_selection", routePatterns, "Marketplace or matching service", "route-pattern library includes marketplace or matching route");
   requireText("route_selection", routePatterns, "Programmatic directory", "route-pattern library includes data route");

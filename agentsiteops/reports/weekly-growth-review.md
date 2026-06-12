@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-- The production site has 46 indexable routes with technical SEO passing.
+- The production site has 47 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.
@@ -16,13 +16,13 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 46 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 46/46 routes pass |
+| Route registry | docs/routes.json | 47 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 47/47 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
-| IndexNow | latest command output | 46 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 47 URLs submitted successfully in current deployment cycle |
 | Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
 
 ## Unverified
@@ -62,6 +62,7 @@
 | /guides/small-website-ai-visibility-metrics/ | guide | ai_visibility_metrics | pass | site_pass | keep | Add first GSC and Bing screenshots or exported metrics after data arrives |
 | /evidence/ | evidence | trust_and_policy | pass | site_pass | keep | Add GSC, Bing, AI referral, onsite event, and revenue evidence only after real exports or records exist |
 | /reports/route-evidence-dashboard/ | report | trust_and_policy | pass | site_pass | keep | Regenerate growth evidence snapshot after every route batch and compare pending evidence by page type |
+| /reports/route-basis/ | report | launch_blueprint | pass | site_pass | keep | Measure source-link clicks, route method clicks, feedback thread clicks, and objections about route authority |
 | /templates/evidence-ledger-template/ | template | trust_and_policy | pass | site_pass | keep | Measure template copy or source-link clicks before creating more evidence templates |
 | /templates/website-opportunity-scoring-template/ | template | website_opportunity_scoring | pass | site_pass | keep | Measure scorer usage and template copy before expanding scoring variants |
 | /methodology/website-opportunity-scoring/ | methodology | website_opportunity_scoring | pass | site_pass | keep | Update model only when evidence changes |

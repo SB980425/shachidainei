@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-12T03:25:12.805Z
+- Generated: 2026-06-12T04:07:07.964Z
 - Status: pass
-- Checks: 240
+- Checks: 245
 - Blockers: 0
 - Warnings: 0
 
@@ -13,9 +13,9 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 46 routes aligned |
-| page_registry | pass | 46 routes aligned |
-| page_review_actions | pass | 46 routes aligned |
+| site_routes | pass | 47 routes aligned |
+| page_registry | pass | 47 routes aligned |
+| page_review_actions | pass | 47 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /ai-website-operating-system/ has canonical slash shape |
@@ -62,6 +62,8 @@
 | route_index | pass | /evidence/ index flag is true |
 | route_shape | pass | /reports/route-evidence-dashboard/ has canonical slash shape |
 | route_index | pass | /reports/route-evidence-dashboard/ index flag is true |
+| route_shape | pass | /reports/route-basis/ has canonical slash shape |
+| route_index | pass | /reports/route-basis/ index flag is true |
 | route_shape | pass | /templates/evidence-ledger-template/ has canonical slash shape |
 | route_index | pass | /templates/evidence-ledger-template/ index flag is true |
 | route_shape | pass | /templates/website-opportunity-scoring-template/ has canonical slash shape |
@@ -131,6 +133,7 @@
 | app_page | pass | /guides/small-website-ai-visibility-metrics/ app page exists |
 | app_page | pass | /evidence/ app page exists |
 | app_page | pass | /reports/route-evidence-dashboard/ app page exists |
+| app_page | pass | /reports/route-basis/ app page exists |
 | app_page | pass | /templates/evidence-ledger-template/ app page exists |
 | app_page | pass | /templates/website-opportunity-scoring-template/ app page exists |
 | app_page | pass | /methodology/website-opportunity-scoring/ app page exists |
@@ -180,6 +183,7 @@
 | analytics_allowlist | pass | review_window_view is registered |
 | analytics_allowlist | pass | evidence_ledger_view is registered |
 | analytics_allowlist | pass | route_evidence_dashboard_view is registered |
+| analytics_allowlist | pass | route_basis_report_view is registered |
 | analytics_allowlist | pass | evidence_ledger_template_view is registered |
 | analytics_allowlist | pass | opportunity_scoring_template_view is registered |
 | analytics_allowlist | pass | scoring_methodology_view is registered |
@@ -226,6 +230,7 @@
 | route_view_event | pass | /guides/small-website-ai-visibility-metrics/ has view event |
 | route_view_event | pass | /evidence/ has view event |
 | route_view_event | pass | /reports/route-evidence-dashboard/ has view event |
+| route_view_event | pass | /reports/route-basis/ has view event |
 | route_view_event | pass | /templates/evidence-ledger-template/ has view event |
 | route_view_event | pass | /templates/website-opportunity-scoring-template/ has view event |
 | route_view_event | pass | /methodology/website-opportunity-scoring/ has view event |
@@ -249,7 +254,7 @@
 | route_view_event | pass | /refund-policy/ has view event |
 | route_view_event | pass | /disclaimer/ has view event |
 | route_view_event | pass | /contact/ has view event |
-| growth_snapshot | pass | 46 routes aligned |
+| growth_snapshot | pass | 47 routes aligned |
 
 ## Blocking Issues
 

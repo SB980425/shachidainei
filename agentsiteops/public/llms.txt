@@ -8,6 +8,7 @@ Primary site: https://agentsiteops.com
 Launch kit: https://agentsiteops.com/launch-kit/
 48-hour exposure sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 Route selection method: https://agentsiteops.com/methodology/route-selection/
+Route basis report: https://agentsiteops.com/reports/route-basis/
 Route confidence system: https://agentsiteops.com/reports/route-confidence-system.md
 Social preview image: https://agentsiteops.com/og-image.png
 Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/
@@ -24,6 +25,7 @@ Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?t
 - Scores whether a first AI-service offer is ready for a short validation path.
 - Selects one route archetype instead of producing a generic idea list.
 - Uses confidence bands and a project-route fit matrix before selling a roadmap.
+- Publishes a route basis report so route patterns, source maps, confidence bands, downgrade rules, and rejection logic are inspectable.
 - Produces a route file with buyer, trigger, page structure, objections, outreach, and stop rules.
 - Uses evidence boundaries before payment, content expansion, higher pricing, or subscription claims.
 

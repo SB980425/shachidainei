@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T03:25:12.743Z
+- Generated: 2026-06-12T04:06:21.475Z
 - Status: pass
-- Checks: 287
+- Checks: 292
 - Blockers: 0
 
 ## Summary
@@ -25,6 +25,8 @@
 | app | pass | /checklists/launch-validation-decision-gate/ has app page |
 | routes | pass | /methodology/route-selection/ registered in docs/routes.json |
 | app | pass | /methodology/route-selection/ has app page |
+| routes | pass | /reports/route-basis/ registered in docs/routes.json |
+| app | pass | /reports/route-basis/ has app page |
 | routes | pass | /guides/first-traffic-system/ registered in docs/routes.json |
 | app | pass | /guides/first-traffic-system/ has app page |
 | routes | pass | /guides/48-hour-exposure-sprint/ registered in docs/routes.json |
@@ -129,6 +131,9 @@
 | route_selection | pass | route methodology exposes confidence bands |
 | route_selection | pass | route methodology exposes project-to-route fit |
 | route_selection | pass | route methodology includes stop conditions |
+| route_selection | pass | route basis report is visible in site data |
+| route_selection | pass | route basis report exposes rejection logic |
+| route_selection | pass | AI context links the route basis report |
 | route_selection | pass | route-pattern library includes AI workflow setup service |
 | route_selection | pass | route-pattern library includes marketplace or matching route |
 | route_selection | pass | route-pattern library includes data route |
