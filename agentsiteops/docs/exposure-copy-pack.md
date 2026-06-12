@@ -5,6 +5,7 @@ Status: prepared for the 48-hour exposure sprint. Use only where platform rules 
 ## Links
 
 - Live site: https://agentsiteops.com
+- Free Route Confidence Checker: https://agentsiteops.com/tools/route-confidence-checker/
 - 48-hour sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 - Route method: https://agentsiteops.com/methodology/route-selection/
 - First traffic system: https://agentsiteops.com/guides/first-traffic-system/
@@ -19,15 +20,15 @@ Status: prepared for the 48-hour exposure sprint. Use only where platform rules 
 
 Tagline:
 
-AgentSiteOps turns an AI builder's scattered ideas into one sellable first offer and a 48-hour validation path.
+AgentSiteOps turns an AI builder's scattered ideas into one route decision, one first offer, and a 48-hour validation path.
 
 Short description:
 
-AgentSiteOps is a manual Fit Review and Launch Blueprint for AI-capable solo builders. It does not promise traffic or revenue. It helps choose one first offer, one landing-page route, and one validation loop before building more pages, tools, or content.
+AgentSiteOps is a manual Fit Review and Launch Blueprint for AI-capable solo builders. It does not promise traffic or revenue. The free Route Confidence Checker maps project type, evidence level, proof asset, delivery boundary, and blockers into a route confidence band before someone pays for a wider plan.
 
 Maker comment:
 
-I built AgentSiteOps after seeing that a new AI-assisted site can pass technical SEO and still have no commercial evidence. The current version shows the scoring boundary, route-selection method, sample deliverables, pricing, and a 48-hour exposure sprint. The main question is whether builders find the route file useful enough before paying for broader implementation.
+I built AgentSiteOps after seeing that a new AI-assisted site can pass technical SEO and still have no commercial evidence. The current version shows the route checker, scoring boundary, route-selection method, sample deliverables, pricing, and a 48-hour exposure sprint. The main question is whether builders find the route decision useful enough before paying for broader implementation.
 
 ## Show HN Draft
 
@@ -39,9 +40,10 @@ Body:
 
 I built AgentSiteOps as a small, inspectable system for deciding whether an AI-capable solo builder should sell a first offer, rewrite it, narrow it, pivot to implementation, or stop.
 
-The site includes a route-selection methodology, a local fit checker, sample deliverables, pricing boundaries, and a 48-hour exposure sprint. The public self-score is still 52/100 because the project has technical readiness but no confirmed paid demand yet.
+The site includes a route-selection methodology, a free route confidence checker, sample deliverables, pricing boundaries, and a 48-hour exposure sprint. The public self-score is still 52/100 because the project has technical readiness but no confirmed paid demand yet.
 
 Useful links:
+- Free route checker: https://agentsiteops.com/tools/route-confidence-checker/
 - Sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 - Route method: https://agentsiteops.com/methodology/route-selection/
 - Sample deliverable: https://agentsiteops.com/examples/fit-review-sample/
@@ -49,6 +51,7 @@ Useful links:
 
 Feedback requested:
 - Is the paid route file clear enough?
+- Does the free checker make the first route decision explainable?
 - Does this solve an actual pre-build decision?
 - Would this need to pivot toward implementation instead of a manual blueprint?
 
@@ -64,6 +67,7 @@ AgentSiteOps had a common early-site problem: technical SEO was working, but tha
 
 The current change is a 48-hour exposure sprint:
 - make the route method public
+- add a free route confidence checker before payment
 - make the GitHub repo explainable
 - use a clear link preview image instead of a blank or generic browser card
 - prepare compliant Product Hunt and Show HN drafts
@@ -71,9 +75,10 @@ The current change is a 48-hour exposure sprint:
 - run a small manual founder outreach batch
 - decide continue, rewrite, narrow, pivot_to_implementation, or stop at hour 48
 
+The free checker is here: https://agentsiteops.com/tools/route-confidence-checker/
 The sprint page is here: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 
-The question: is a paid route file useful, or do buyers actually want implementation instead?
+The question: does the free checker make the route decision credible, and is a paid route file useful, or do buyers actually want implementation instead?
 
 ## Answer Participation Angles
 
@@ -98,6 +103,9 @@ I am testing AgentSiteOps, a small manual review that turns a scattered AI servi
 The public sample is here:
 https://agentsiteops.com/examples/fit-review-sample/
 
+The free route checker is here:
+https://agentsiteops.com/tools/route-confidence-checker/
+
 The method is here:
 https://agentsiteops.com/methodology/route-selection/
 
@@ -105,6 +113,7 @@ This is not a traffic or revenue guarantee. The current test is whether the rout
 
 If this problem is relevant to your work, the specific feedback needed is:
 - Is the route file clear?
+- Does the route checker make the first decision explainable?
 - Is USD 29 for a go/narrow/stop Fit Review reasonable?
 - Would you need implementation instead of a route plan?
 
