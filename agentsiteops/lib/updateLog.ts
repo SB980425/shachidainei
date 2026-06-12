@@ -16,6 +16,7 @@ export const updateLog: UpdateLogEntry[] = [
     status: "completed",
     keyPoints: [
       "Updated the GitHub exposure release, feedback issue, repository discovery metadata, and public refresh reports with the aggregate analytics summary link.",
+      "Linked the aggregate analytics summary from the Evidence Ledger and Launch Kit so site visitors do not need to inspect llms.txt or GitHub first.",
       "Added the `analytics` GitHub topic while keeping the repository homepage pointed at the Launch Kit.",
       "Recorded the refresh in the exposure action ledger with an explicit no-threshold boundary.",
       "Kept the validation rule unchanged: endpoint availability and maintainer-controlled GitHub edits are not demand proof."
@@ -36,6 +37,7 @@ export const updateLog: UpdateLogEntry[] = [
       "reports/github-discovery-surface.md",
       "public/reports/github-discovery-surface.md",
       "data/exposure-action-ledger.csv",
+      "lib/site.ts",
       "lib/updateLog.ts"
     ],
     verification: [

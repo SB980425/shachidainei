@@ -815,6 +815,7 @@ export const routePages: RoutePage[] = [
           { label: "Commercial gate", value: "The commercial validation gate checks the manual PayPal path, refund boundary, terms, disclaimer, and no-guarantee claims." },
           { label: "Manual fulfillment", value: "The intake page, fulfillment log template, and runbook define how Fit Review and Launch Blueprint payment evidence, project details, delivery pauses, and completion are handled without storing sensitive payment data." },
           { label: "Sample artifacts", value: "Public samples now show both the USD 29 Fit Review verdict format and the USD 99 Launch Blueprint structure before payment." },
+          { label: "Analytics summary", value: "The public `/api/events/summary?days=2` endpoint returns aggregate counters only. Current threshold counts are still zero and do not prove demand." },
           { label: "IndexNow", value: "The current production route list is submitted after deployment, with the response recorded in the update log." }
         ]
       },
@@ -877,6 +878,7 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Updates", href: "/updates/" },
+      { label: "Analytics Summary", href: "https://agentsiteops.com/api/events/summary?days=2" },
       { label: "Route Evidence Dashboard", href: "/reports/route-evidence-dashboard/" },
       { label: "Evidence Ledger Template", href: "/templates/evidence-ledger-template/" },
       { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
@@ -1400,6 +1402,7 @@ export const routePages: RoutePage[] = [
           { label: "Fit checker", value: "Blocks bad-fit buyers before opening PayPal." },
           { label: "Route basis", value: "Shows source files, confidence rules, downgrade triggers, and rejection logic." },
           { label: "Evidence ledger", value: "Separates verified facts from pending search, revenue, and user evidence." },
+          { label: "Analytics summary", value: "Shows aggregate event counts without raw events, identities, payment data, or full external URLs." },
           { label: "Decision gate", value: "Defines continue, rewrite, narrow, pivot_to_implementation, or stop." }
         ]
       },
@@ -1420,6 +1423,7 @@ export const routePages: RoutePage[] = [
       { label: "Route Basis Report", href: "/reports/route-basis/" },
       { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
       { label: "Evidence Ledger", href: "/evidence/" },
+      { label: "Analytics Summary", href: "https://agentsiteops.com/api/events/summary?days=2" },
       { label: "Launch Validation Gate", href: "/checklists/launch-validation-decision-gate/" },
       {
         label: "Public Feedback Thread",
