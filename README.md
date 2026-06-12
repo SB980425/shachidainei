@@ -4,6 +4,13 @@ Live site: https://agentsiteops.com
 
 AgentSiteOps is a small manual decision system for AI-capable solo builders who need to choose one sellable first offer, one landing-page route, and one short validation path before building more pages or software.
 
+## Start Here
+
+- Run the free Route Confidence Checker: https://agentsiteops.com/tools/route-confidence-checker/
+- Inspect the route selection method: https://agentsiteops.com/methodology/route-selection/
+- Compare with a finished sample: https://agentsiteops.com/sample/
+- Leave public route feedback: https://github.com/SB980425/shachidainei/issues/2
+
 ## Current Status
 
 - Public self-score: 52/100.
