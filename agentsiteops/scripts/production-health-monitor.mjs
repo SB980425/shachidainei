@@ -334,13 +334,14 @@ async function main() {
   await checkBrandIcon();
   await checkAnalyticsSummary();
   await checkPage("/", [
-    "Validate your first AI service offer before building the site",
-    "Start with USD",
+    "Command Center",
+    "How AgentSiteOps becomes our route planner.",
+    "Existing functions preserved",
     "Fit Review",
-    "52/100",
     "Evidence used, not guessed",
     "What the buyer receives is a route file, not a score",
-    "Market signals are context, not proof"
+    "Market signals are context, not proof",
+    "Every new project starts with a route map before a build."
   ]);
   await checkPage("/pricing/", [
     "Choose the smallest purchase that can answer the decision",

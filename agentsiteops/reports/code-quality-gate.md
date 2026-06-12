@@ -1,6 +1,6 @@
 # Code Quality Gate
 
-- Generated: 2026-06-12T09:50:57.111Z
+- Generated: 2026-06-12T11:23:13.609Z
 - Status: pass
 - Checks: 14
 - Blockers: 0
@@ -13,7 +13,7 @@
 | package | pass | lint script does not use removed Next lint command |
 | payment_boundary | pass | retired 1 USD payment test patterns are absent from source files |
 | encoding | pass | visible mojibake markers are absent from scanned source files |
-| production_health | pass | production monitor checks the current homepage Fit Review CTA |
+| production_health | pass | production monitor checks the current homepage command center and Fit Review path |
 | production_health | pass | production monitor does not check retired homepage payment CTA |
 | production_health | pass | production monitor checks the Launch Blueprint Fit Checker route |
 | search_evidence | pass | search importer writes normalized evidence CSV |

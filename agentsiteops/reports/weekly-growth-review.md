@@ -19,7 +19,7 @@
 | Route registry | docs/routes.json | 52 routes registered |
 | Technical SEO | reports/technical-seo-ci.md | 52/52 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
-| Production health | reports/production-health-monitor.md | warning |
+| Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
 | IndexNow | latest command output | 52 URLs submitted successfully in current deployment cycle |

@@ -1,11 +1,11 @@
 # Production Health Monitor
 
-- Generated: 2026-06-12T11:00:20.939Z
-- Status: warning
+- Generated: 2026-06-12T11:20:43.820Z
+- Status: pass
 - Site: https://agentsiteops.com
-- Checks: 220
+- Checks: 221
 - Blockers: 0
-- Warnings: 1
+- Warnings: 0
 
 ## Summary
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | warn | Expected 52 URLs; found 51; possible deployment lag, missing https://agentsiteops.com/templates/route-research-prompt-pack/ | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 52 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -46,13 +46,14 @@
 | / | pass | HTTP 200 | [link](https://agentsiteops.com/) |
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
-| / | pass | Validate your first AI service offer before building the site | [link](https://agentsiteops.com/) |
-| / | pass | Start with USD | [link](https://agentsiteops.com/) |
+| / | pass | Command Center | [link](https://agentsiteops.com/) |
+| / | pass | How AgentSiteOps becomes our route planner. | [link](https://agentsiteops.com/) |
+| / | pass | Existing functions preserved | [link](https://agentsiteops.com/) |
 | / | pass | Fit Review | [link](https://agentsiteops.com/) |
-| / | pass | 52/100 | [link](https://agentsiteops.com/) |
 | / | pass | Evidence used, not guessed | [link](https://agentsiteops.com/) |
 | / | pass | What the buyer receives is a route file, not a score | [link](https://agentsiteops.com/) |
 | / | pass | Market signals are context, not proof | [link](https://agentsiteops.com/) |
+| / | pass | Every new project starts with a route map before a build. | [link](https://agentsiteops.com/) |
 | /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | canonical points to production URL | [link](https://agentsiteops.com/pricing/) |
@@ -238,7 +239,7 @@
 
 ## Warnings
 
-- sitemap: Expected 52 URLs; found 51; possible deployment lag, missing https://agentsiteops.com/templates/route-research-prompt-pack/
+- None
 
 ## Interpretation
 
