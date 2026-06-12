@@ -1728,7 +1728,7 @@ export const routePages: RoutePage[] = [
     description:
       "The current data collection boundary for AgentSiteOps and the update requirements before analytics, email, ads, forms, or payments are added.",
     answer:
-      "The current site has no account system, payment form, advertising script, or email capture. The scorer runs in the browser and does not send form inputs to an external database.",
+      "The current site has no account system, embedded payment form, advertising script, email capture, raw event store, or third-party analytics endpoint. The scorer runs in the browser and first-party analytics store aggregate counters only.",
     primaryAction: { label: "View disclosure", href: "/disclosure/" },
     aiTarget: "State the current data collection boundary and future update requirements.",
     humanAction: "Check what data is collected before using tools, forms, subscriptions, or paid products.",
@@ -1736,12 +1736,12 @@ export const routePages: RoutePage[] = [
       {
         title: "Current version",
         body:
-          "Local tool inputs are used for immediate scoring. The current event layer stores only a short browser-local buffer unless an approved endpoint is configured. If analytics collection, email, ads, forms, or payments are added, this page must be updated before launch."
+          "Local tool inputs are used for immediate scoring. The current event layer stores a short browser-local buffer and sends allowlisted events to `/api/events`, which writes aggregate counters only. If email, ads, forms, identifiers, raw event retention, or third-party analytics are added, this page must be updated before launch."
       },
       {
-        title: "Analytics endpoint gate",
+        title: "Aggregate analytics endpoint",
         body:
-          "A real analytics endpoint is not enabled. Before activation, the endpoint must reject unknown events, sensitive payloads, stale timestamps, future timestamps, external page URLs, nested payload objects, and oversized bodies."
+          "The active endpoint rejects unknown events, sensitive payloads, stale timestamps, future timestamps, external page URLs, nested payload objects, and oversized bodies. The public summary returns aggregate counts only and does not expose IP address, user agent, cookies, account identifiers, email, phone, full external URLs, raw form text, or payment data."
       }
     ],
     related: [

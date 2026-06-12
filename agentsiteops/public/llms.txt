@@ -15,6 +15,7 @@ Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/
 Launch Blueprint sample: https://agentsiteops.com/sample/
 Pricing: https://agentsiteops.com/pricing/
 Evidence ledger: https://agentsiteops.com/evidence/
+Analytics summary: https://agentsiteops.com/api/events/summary?days=2
 Updates: https://agentsiteops.com/updates/
 GitHub release: https://github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12
 Public feedback thread: https://github.com/SB980425/shachidainei/issues/2
@@ -32,7 +33,8 @@ Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?t
 ## What It Does Not Claim
 
 - No guaranteed traffic, rankings, AI citations, revenue, customers, or payback.
-- No automated account, dashboard, subscription software, or live analytics endpoint.
+- No automated account, dashboard, subscription software, raw event store, user tracking profile, or third-party analytics endpoint.
+- First-party analytics endpoint is aggregate-only: https://agentsiteops.com/api/events/summary?days=2
 - No legal, medical, financial, tax, safety, or other regulated advice.
 - PayPal clicks, sitemap success, IndexNow success, crawler access, and page existence are not revenue or demand proof.
 

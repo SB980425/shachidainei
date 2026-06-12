@@ -10,6 +10,7 @@ AgentSiteOps is a small public operating system for deciding whether an AI-capab
 - Public self-score: 52/100.
 - Technical foundation: launchable.
 - Commercial validation: not proven.
+- First-party analytics: aggregate endpoint active; current threshold counts remain unproven until real non-self events appear.
 - Payment path: PayPal-hosted links.
 - Fulfillment: manual, after confirmed payment and usable intake.
 - Data policy: aggregate public evidence only; no private names, emails, handles, payment identifiers, bank details, or private replies in the public repo.
@@ -28,6 +29,7 @@ AgentSiteOps is a small public operating system for deciding whether an AI-capab
 - Launch validation gate: https://agentsiteops.com/checklists/launch-validation-decision-gate/
 - Evidence ledger: https://agentsiteops.com/evidence/
 - Route evidence dashboard: https://agentsiteops.com/reports/route-evidence-dashboard/
+- Analytics summary: https://agentsiteops.com/api/events/summary?days=2
 - Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/
 - Launch Blueprint sample: https://agentsiteops.com/sample/
 - Pricing: https://agentsiteops.com/pricing/
@@ -71,6 +73,7 @@ Strong evidence:
 - delivered buyer artifact and buyer response,
 - first-party GSC or Bing export,
 - verifiable route-level usage or source-link inspection.
+- first-party aggregate endpoint events when they are not known self-visits.
 
 Weak or non-proof signals:
 
@@ -81,6 +84,7 @@ Weak or non-proof signals:
 - GitHub issue creation without comments or concrete objections,
 - crawler access,
 - pageviews without source or action,
+- endpoint availability without real external events,
 - PayPal clicks without confirmed payment,
 - AI-generated confidence,
 - third-party estimates without first-party validation.
