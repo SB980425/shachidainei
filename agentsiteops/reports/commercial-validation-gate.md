@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T04:06:21.475Z
+- Generated: 2026-06-12T04:25:58.569Z
 - Status: pass
-- Checks: 292
+- Checks: 299
 - Blockers: 0
 
 ## Summary
@@ -229,9 +229,16 @@
 | github_feedback_template | pass | GitHub issue template captures proof and objection signals |
 | github_feedback_template | pass | GitHub issue template config disables blank public issues |
 | github_release_refresh | pass | GitHub release refresh script avoids making the prerelease latest |
+| github_release_refresh | pass | GitHub release refresh links route basis report |
 | github_release_refresh | pass | GitHub release refresh snapshot records release URL |
 | github_release_refresh | pass | GitHub release refresh report blocks release-as-demand logic |
+| github_release_refresh | pass | public GitHub release refresh report includes route basis link |
 | github_release_refresh | pass | public GitHub release refresh report preserves threshold boundary |
+| github_discovery_surface | pass | GitHub discovery surface script manages topics |
+| github_discovery_surface | pass | GitHub discovery surface CSV records refresh action |
+| github_discovery_surface | pass | GitHub discovery surface report blocks metadata-as-demand logic |
+| github_discovery_surface | pass | public GitHub discovery surface report preserves threshold boundary |
+| github_discovery_surface | pass | exposure action ledger records GitHub discovery surface refresh |
 | external_search_discoverability | pass | external search discoverability snapshot includes the home page |
 | external_search_discoverability | pass | external search discoverability snapshot includes evidence dashboard |
 | external_search_discoverability | pass | external search discoverability snapshot carries threshold boundary column |

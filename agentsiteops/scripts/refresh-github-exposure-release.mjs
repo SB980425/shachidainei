@@ -7,6 +7,7 @@ const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = resolve(rootDir, "..");
 const csvPath = resolve(rootDir, "data", "github-exposure-release-refresh.csv");
 const reportPath = resolve(rootDir, "reports", "github-exposure-release-refresh.md");
+const publicReportPath = resolve(rootDir, "public", "reports", "github-exposure-release-refresh.md");
 const tag = "agentsiteops-48h-exposure-2026-06-12";
 
 function runGit(args, options = {}) {
@@ -100,6 +101,7 @@ const body = [
   "## Inspect first",
   "",
   "- Launch kit: https://agentsiteops.com/launch-kit/",
+  "- Route basis report: https://agentsiteops.com/reports/route-basis/",
   "- Route method: https://agentsiteops.com/methodology/route-selection/",
   "- Route confidence system: https://agentsiteops.com/reports/route-confidence-system.md",
   "- Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/",
@@ -166,6 +168,7 @@ const report = [
   "## Updated Links",
   "",
   "- Live site: https://agentsiteops.com",
+  "- Route basis report: https://agentsiteops.com/reports/route-basis/",
   "- Route confidence system: https://agentsiteops.com/reports/route-confidence-system.md",
   "- Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml",
   "- Public feedback thread: https://github.com/SB980425/shachidainei/issues/2",
@@ -180,8 +183,11 @@ const report = [
 
 mkdirSync(dirname(csvPath), { recursive: true });
 mkdirSync(dirname(reportPath), { recursive: true });
+mkdirSync(dirname(publicReportPath), { recursive: true });
 writeFileSync(csvPath, `${csv}\n`, "utf8");
-writeFileSync(reportPath, `${report.join("\n")}\n`, "utf8");
+const reportText = `${report.join("\n")}\n`;
+writeFileSync(reportPath, reportText, "utf8");
+writeFileSync(publicReportPath, reportText, "utf8");
 
 console.log(
   JSON.stringify(
@@ -192,7 +198,8 @@ console.log(
       tag,
       countsToward48HourThreshold: false,
       csvPath,
-      reportPath
+      reportPath,
+      publicReportPath
     },
     null,
     2

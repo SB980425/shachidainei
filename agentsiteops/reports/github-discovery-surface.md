@@ -1,0 +1,23 @@
+# GitHub Discovery Surface
+
+- Generated: 2026-06-12T04:18:52.845Z
+- Repository: https://github.com/SB980425/shachidainei
+- Homepage: https://agentsiteops.com/launch-kit/
+- Description: AgentSiteOps: route-basis, samples, and 48-hour validation for one sellable AI service offer.
+- Previous topics: ai-search, cloudflare-pages, launch-validation, llms-txt, nextjs, seo, agentsiteops, website-ops, ai-agents, generative-ai, launch, llms, productized-service, validation, website
+- Current topics: ai-search, cloudflare-pages, launch-validation, llms-txt, nextjs, seo, agentsiteops, website-ops, ai-agents, generative-ai, launch, llms, productized-service, validation, website
+- Counts toward 48-hour continuation threshold: no
+
+## Public Entry Points
+
+- Launch kit: https://agentsiteops.com/launch-kit/
+- Route basis report: https://agentsiteops.com/reports/route-basis/
+- Route selection method: https://agentsiteops.com/methodology/route-selection/
+- Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/
+- Public feedback thread: https://github.com/SB980425/shachidainei/issues/2
+
+## Boundary
+
+- Repository metadata and topics are public discovery infrastructure.
+- They do not prove impressions, clicks, visits, replies, payments, usable intake, objections, or revenue.
+- Only downstream first-party or external feedback evidence can count toward the 48-hour threshold.

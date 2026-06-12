@@ -12,6 +12,58 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-39 GitHub discovery surface refresh",
+    status: "completed",
+    keyPoints: [
+      "Added a repeatable GitHub discovery-surface script that refreshes repository description, homepage, and discovery topics through the GitHub API.",
+      "Updated README and the 48-hour exposure release so Route Basis is visible from GitHub, not only from the website.",
+      "Generated internal and public GitHub discovery reports and kept them marked as non-demand evidence.",
+      "Extended the commercial gate so GitHub metadata, topics, and release updates cannot be counted as visits, replies, payments, usable intake, objections, or revenue."
+    ],
+    aiAngle:
+      "AI and GitHub discovery surfaces now point to the Launch Kit and Route Basis report, giving external readers a shorter path to inspect route authority before leaving feedback.",
+    files: [
+      "README.md",
+      "scripts/refresh-github-discovery-surface.mjs",
+      "data/github-discovery-surface.csv",
+      "reports/github-discovery-surface.md",
+      "public/reports/github-discovery-surface.md",
+      "scripts/refresh-github-exposure-release.mjs",
+      "data/github-exposure-release-refresh.csv",
+      "reports/github-exposure-release-refresh.md",
+      "public/reports/github-exposure-release-refresh.md",
+      "data/exposure-action-ledger.csv",
+      "package.json",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "GitHub discovery surface refresh pass through GitHub API",
+      "GitHub exposure release refresh pass through GitHub API",
+      "repository homepage set to Launch Kit",
+      "repository topics include ai-search, seo, ai-agents, llms, productized-service, validation, and website",
+      "public discovery report generated with threshold boundary",
+      "public release refresh report generated with Route Basis link",
+      "typecheck pass",
+      "code quality gate pass with 14 checks",
+      "commercial validation gate pass with 299 checks",
+      "route consistency gate pass with 245 checks",
+      "production build pass with 53 static pages",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 215 checks",
+      "IndexNow submit pass for 47 URLs",
+      "GitHub discovery surface report production URL returns 200",
+      "GitHub exposure release refresh report production URL returns 200",
+      "GitHub feedback snapshot pass: candidate external replies 0, qualified replies 0",
+      "GitHub traffic snapshot pass: 8 views, 3 unique viewers, 405 clones, 95 unique cloners",
+      "exposure decision pass: active_collect_evidence with zero threshold metrics",
+      "growth snapshot baseline_ready with 47 routes and 47 technical pass routes"
+    ],
+    next:
+      "Continue polling only threshold-valid signals: qualified replies, sample views, source-link clicks, confirmed payment with usable intake, or repeated concrete objections."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-38 Route basis public report",
     status: "completed",
     keyPoints: [

@@ -14,6 +14,7 @@
     "github:feedback": "node scripts/github-feedback-snapshot.mjs",
     "github:feedback-label": "node scripts/ensure-github-feedback-label.mjs",
     "github:release-refresh": "node scripts/refresh-github-exposure-release.mjs",
+    "github:discovery-surface": "node scripts/refresh-github-discovery-surface.mjs",
     "analytics:gate": "node scripts/analytics-endpoint-gate.mjs",
     "commercial:gate": "node scripts/commercial-validation-gate.mjs",
     "routes:gate": "node scripts/route-consistency-gate.mjs",

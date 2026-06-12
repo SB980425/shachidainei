@@ -124,6 +124,10 @@ function checkCommercialBoundary() {
   const githubReleaseRefresh = read("data/github-exposure-release-refresh.csv");
   const githubReleaseRefreshReport = read("reports/github-exposure-release-refresh.md");
   const publicGithubReleaseRefreshReport = read("public/reports/github-exposure-release-refresh.md");
+  const githubDiscoverySurfaceScript = read("scripts/refresh-github-discovery-surface.mjs");
+  const githubDiscoverySurface = read("data/github-discovery-surface.csv");
+  const githubDiscoverySurfaceReport = read("reports/github-discovery-surface.md");
+  const publicGithubDiscoverySurfaceReport = read("public/reports/github-discovery-surface.md");
   const githubIssueTemplate = read("../.github/ISSUE_TEMPLATE/agentsiteops-route-feedback.yml");
   const githubIssueTemplateConfig = read("../.github/ISSUE_TEMPLATE/config.yml");
   const externalSearchDiscoverability = read("data/external-search-discoverability-snapshot.csv");
@@ -315,9 +319,16 @@ function checkCommercialBoundary() {
   requireText("github_feedback_template", githubIssueTemplate, "Trust, proof, or objection", "GitHub issue template captures proof and objection signals");
   requireText("github_feedback_template", githubIssueTemplateConfig, "blank_issues_enabled: false", "GitHub issue template config disables blank public issues");
   requireText("github_release_refresh", githubReleaseRefreshScript, "make_latest", "GitHub release refresh script avoids making the prerelease latest");
+  requireText("github_release_refresh", githubReleaseRefreshScript, "Route basis report", "GitHub release refresh links route basis report");
   requireText("github_release_refresh", githubReleaseRefresh, "github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12", "GitHub release refresh snapshot records release URL");
   requireText("github_release_refresh", githubReleaseRefreshReport, "does not prove impressions, clicks, visits", "GitHub release refresh report blocks release-as-demand logic");
+  requireText("github_release_refresh", publicGithubReleaseRefreshReport, "Route basis report", "public GitHub release refresh report includes route basis link");
   requireText("github_release_refresh", publicGithubReleaseRefreshReport, "Counts toward 48-hour continuation threshold: no", "public GitHub release refresh report preserves threshold boundary");
+  requireText("github_discovery_surface", githubDiscoverySurfaceScript, "desiredTopics", "GitHub discovery surface script manages topics");
+  requireText("github_discovery_surface", githubDiscoverySurface, "github_discovery_surface_refreshed", "GitHub discovery surface CSV records refresh action");
+  requireText("github_discovery_surface", githubDiscoverySurfaceReport, "They do not prove impressions, clicks, visits", "GitHub discovery surface report blocks metadata-as-demand logic");
+  requireText("github_discovery_surface", publicGithubDiscoverySurfaceReport, "Counts toward 48-hour continuation threshold: no", "public GitHub discovery surface report preserves threshold boundary");
+  requireText("github_discovery_surface", exposureActionLedger, "github_discovery_surface_refreshed", "exposure action ledger records GitHub discovery surface refresh");
   requireText("external_search_discoverability", externalSearchDiscoverability, "https://agentsiteops.com/", "external search discoverability snapshot includes the home page");
   requireText("external_search_discoverability", externalSearchDiscoverability, "https://agentsiteops.com/reports/route-evidence-dashboard/", "external search discoverability snapshot includes evidence dashboard");
   requireText("external_search_discoverability", externalSearchDiscoverability, "counts_toward_48h_threshold", "external search discoverability snapshot carries threshold boundary column");

@@ -1,6 +1,6 @@
 # GitHub Exposure Release Refresh
 
-- Generated: 2026-06-12T03:05:37.385Z
+- Generated: 2026-06-12T04:18:59.947Z
 - Repository: https://github.com/SB980425/shachidainei
 - Release: https://github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12
 - Tag: agentsiteops-48h-exposure-2026-06-12
@@ -9,6 +9,7 @@
 ## Updated Links
 
 - Live site: https://agentsiteops.com
+- Route basis report: https://agentsiteops.com/reports/route-basis/
 - Route confidence system: https://agentsiteops.com/reports/route-confidence-system.md
 - Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml
 - Public feedback thread: https://github.com/SB980425/shachidainei/issues/2

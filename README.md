@@ -20,6 +20,7 @@ AgentSiteOps is a small manual decision system for AI-capable solo builders who 
 - Public feedback thread: https://github.com/SB980425/shachidainei/issues/2
 - Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml
 - Social preview image: https://agentsiteops.com/og-image.png
+- Route basis report: https://agentsiteops.com/reports/route-basis/
 - Route selection method: https://agentsiteops.com/methodology/route-selection/
 - 48-hour exposure sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 - First traffic system: https://agentsiteops.com/guides/first-traffic-system/
@@ -32,6 +33,7 @@ AgentSiteOps is a small manual decision system for AI-capable solo builders who 
 ## What This Repo Shows
 
 - Route registry and page registry for the public site.
+- Route basis files for pattern selection, confidence bands, downgrade triggers, and rejection logic.
 - Evidence and growth snapshot CSV files.
 - Commercial validation, route consistency, crawler access, and production health reports.
 - Delivery templates and manual fulfillment boundaries.
