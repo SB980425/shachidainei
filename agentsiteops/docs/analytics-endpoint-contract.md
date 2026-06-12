@@ -132,7 +132,7 @@ The endpoint or downstream job should produce:
 
 - `counts_by_event`
 - `counts_by_path`
-- `counts_by_day`
+- `counts_by_day` based on daily total keys only
 - `counts_by_event_path`
 - `threshold_snapshot.sample_view_count`
 - `threshold_snapshot.source_link_click_count`

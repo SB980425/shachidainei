@@ -18,6 +18,7 @@ export const updateLog: UpdateLogEntry[] = [
       "Updated the GitHub exposure release, feedback issue, repository discovery metadata, and public refresh reports with the aggregate analytics summary link.",
       "Linked the aggregate analytics summary from the Evidence Ledger and Launch Kit so site visitors do not need to inspect llms.txt or GitHub first.",
       "Added the `analytics` GitHub topic while keeping the repository homepage pointed at the Launch Kit.",
+      "Recorded a new external-search recheck showing that Launch Kit and analytics summary are still not confirmed direct search results.",
       "Recorded the refresh in the exposure action ledger with an explicit no-threshold boundary.",
       "Kept the validation rule unchanged: endpoint availability and maintainer-controlled GitHub edits are not demand proof."
     ],
@@ -37,6 +38,8 @@ export const updateLog: UpdateLogEntry[] = [
       "reports/github-discovery-surface.md",
       "public/reports/github-discovery-surface.md",
       "data/exposure-action-ledger.csv",
+      "data/external-search-discoverability-snapshot.csv",
+      "reports/external-search-discoverability-snapshot.md",
       "lib/site.ts",
       "lib/updateLog.ts"
     ],
@@ -44,6 +47,7 @@ export const updateLog: UpdateLogEntry[] = [
       "GitHub exposure release refresh pass with analytics summary link",
       "GitHub feedback thread refresh pass with analytics summary link",
       "GitHub discovery surface refresh pass with analytics topic",
+      "external search recheck recorded as adjacent discoverability only",
       "all refreshed GitHub artifacts marked as counts_toward_48h_threshold=no"
     ],
     next:

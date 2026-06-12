@@ -276,6 +276,13 @@ function runImplementationChecks() {
       detail: "/api/events/summary exposes counts only"
     },
     {
+      name: "daily summary uses total keys only",
+      passed:
+        summaryFunction.includes('if (kind === "total")') &&
+        summaryFunction.includes("addCount(countsByDay, date, count)"),
+      detail: "counts_by_day is not inflated by event, path, and event-path keys"
+    },
+    {
       name: "privacy page describes aggregate endpoint",
       passed:
         trustPages.includes("first-party analytics store aggregate counters only") &&
@@ -328,7 +335,7 @@ function renderReport(results, implementationChecks) {
     "- The local event buffer remains active for browser verification.",
     "- The production endpoint may remain active only while it stores aggregate counters and does not store raw events, visitor identifiers, account data, or payment data.",
     "- Current validation rejects unknown events, sensitive payloads, nested payload values, invalid paths, stale timestamps, future timestamps, external page URLs, and oversized bodies.",
-    "- Current implementation checks require Cloudflare KV binding, first-party endpoint default, sanitized source-link payloads, aggregate summary output, privacy copy, and no raw event retention.",
+    "- Current implementation checks require Cloudflare KV binding, first-party endpoint default, sanitized source-link payloads, aggregate summary output, daily total-key counting, privacy copy, and no raw event retention.",
     "",
     "## Implementation Checks",
     "",

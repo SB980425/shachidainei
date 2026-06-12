@@ -68,10 +68,13 @@ export async function onRequestGet(context: {
 
       const value = Number(await kv.get(key.name));
       const count = Number.isFinite(value) ? value : 0;
-      addCount(countsByDay, date, count);
 
       if (kind === "event") {
         addCount(countsByEvent, parts[5] ?? "unknown", count);
+      }
+
+      if (kind === "total") {
+        addCount(countsByDay, date, count);
       }
 
       if (kind === "path") {

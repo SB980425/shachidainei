@@ -1,1 +1,9 @@
 generated_at,grain,key,count
+2026-06-12T05:41:06.795Z,event,page_view,10
+2026-06-12T05:41:06.795Z,event,route_basis_report_view,5
+2026-06-12T05:41:06.795Z,event,launch_blueprint_pricing_view,2
+2026-06-12T05:41:06.795Z,event,route_selection_methodology_view,1
+2026-06-12T05:41:06.795Z,path,/reports/route-basis/,5
+2026-06-12T05:41:06.795Z,path,/,3
+2026-06-12T05:41:06.795Z,path,/pricing/,2
+2026-06-12T05:41:06.795Z,path,/methodology/route-selection/,1

@@ -1,6 +1,6 @@
 # Analytics Endpoint Gate
 
-- Generated: 2026-06-12T05:11:48.473Z
+- Generated: 2026-06-12T05:39:36.023Z
 - Status: gate_ready_endpoint_active
 - Endpoint enabled: yes, first-party aggregate counters only
 - Test cases: 10
@@ -11,7 +11,7 @@
 - The local event buffer remains active for browser verification.
 - The production endpoint may remain active only while it stores aggregate counters and does not store raw events, visitor identifiers, account data, or payment data.
 - Current validation rejects unknown events, sensitive payloads, nested payload values, invalid paths, stale timestamps, future timestamps, external page URLs, and oversized bodies.
-- Current implementation checks require Cloudflare KV binding, first-party endpoint default, sanitized source-link payloads, aggregate summary output, privacy copy, and no raw event retention.
+- Current implementation checks require Cloudflare KV binding, first-party endpoint default, sanitized source-link payloads, aggregate summary output, daily total-key counting, privacy copy, and no raw event retention.
 
 ## Implementation Checks
 
@@ -22,6 +22,7 @@
 | frontend avoids full external URL payloads | pass | source-link events store source host and path instead of full href |
 | write endpoint uses aggregate KV counters | pass | /api/events writes aggregate event, path, event-path, and total counters |
 | summary endpoint returns aggregate-only fields | pass | /api/events/summary exposes counts only |
+| daily summary uses total keys only | pass | counts_by_day is not inflated by event, path, and event-path keys |
 | privacy page describes aggregate endpoint | pass | /privacy/ copy matches the endpoint behavior |
 | analytics docs describe active aggregate endpoint | pass | analytics event registry matches production collection |
 | endpoint contract forbids raw event retention | pass | endpoint contract blocks raw event retention |

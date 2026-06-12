@@ -1,15 +1,35 @@
 {
-  "generated_at": "2026-06-12T05:29:35.321Z",
-  "status": "waiting_for_events",
+  "generated_at": "2026-06-12T05:41:06.795Z",
+  "status": "events_seen_no_threshold",
   "source_url": "https://agentsiteops.com/api/events/summary?days=2",
   "summary": {
-    "generated_at": "2026-06-12T05:29:35.629Z",
+    "generated_at": "2026-06-12T05:41:07.084Z",
     "days": 2,
     "privacy_boundary": "Aggregate event counters only. No IP address, user agent, cookie id, account id, email, phone, raw form text, full external URL, or payment data is returned.",
-    "counts_by_event": {},
-    "counts_by_path": {},
-    "counts_by_day": {},
-    "counts_by_event_path": {},
+    "counts_by_event": {
+      "launch_blueprint_pricing_view": 2,
+      "page_view": 10,
+      "route_basis_report_view": 5,
+      "route_selection_methodology_view": 1
+    },
+    "counts_by_path": {
+      "/": 3,
+      "/methodology/route-selection/": 1,
+      "/pricing/": 2,
+      "/reports/route-basis/": 5
+    },
+    "counts_by_day": {
+      "2026-06-12": 10
+    },
+    "counts_by_event_path": {
+      "launch_blueprint_pricing_view:/pricing/": 2,
+      "page_view:/": 3,
+      "page_view:/methodology/route-selection/": 1,
+      "page_view:/pricing/": 2,
+      "page_view:/reports/route-basis/": 5,
+      "route_basis_report_view:/reports/route-basis/": 5,
+      "route_selection_methodology_view:/methodology/route-selection/": 1
+    },
     "threshold_snapshot": {
       "paypal_click_count": 0,
       "sample_view_count": 0,

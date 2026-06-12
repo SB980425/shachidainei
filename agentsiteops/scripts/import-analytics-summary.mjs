@@ -97,6 +97,10 @@ function writeOutputs(summary, issues) {
   const generatedAt = new Date().toISOString();
   const rows = renderRows(summary);
   const threshold = summary.threshold_snapshot ?? {};
+  const totalEvents = Object.values(summary.counts_by_event ?? {}).reduce(
+    (sum, count) => sum + numeric(count),
+    0
+  );
   const totalThresholdSignals =
     numeric(threshold.sample_view_count) +
     numeric(threshold.source_link_click_count) +
@@ -105,7 +109,9 @@ function writeOutputs(summary, issues) {
     ? "blocked"
     : totalThresholdSignals > 0
       ? "imported"
-      : "waiting_for_events";
+      : totalEvents > 0
+        ? "events_seen_no_threshold"
+        : "waiting_for_events";
 
   mkdirSync(dirname(jsonPath), { recursive: true });
   mkdirSync(dirname(reportPath), { recursive: true });
@@ -142,6 +148,7 @@ function writeOutputs(summary, issues) {
     `- Sample views: ${numeric(threshold.sample_view_count)}`,
     `- Source-link clicks: ${numeric(threshold.source_link_click_count)}`,
     `- PayPal CTA clicks: ${numeric(threshold.paypal_click_count)}`,
+    `- Total event counts: ${totalEvents}`,
     "",
     "## Validation Issues",
     "",

@@ -1,6 +1,6 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-12T05:29:34.146Z
+- Generated: 2026-06-12T05:41:55.965Z
 - Status: baseline_ready
 - Routes: 47
 - Technical SEO pass routes: 47
@@ -12,8 +12,8 @@
 - Bing status: pending export for 47 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: aggregate endpoint waiting for events on 47 routes
-- Onsite routes with aggregate events: 0
+- Onsite event status: aggregate endpoint waiting for events on 43 routes
+- Onsite routes with aggregate events: 4
 - Analytics summary status missing or blocked: 0
 - Analytics threshold snapshot: sample views 0, source-link clicks 0, PayPal CTA clicks 0
 
