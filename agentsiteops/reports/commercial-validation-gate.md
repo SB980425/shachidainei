@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T00:32:38.544Z
+- Generated: 2026-06-12T00:43:17.072Z
 - Status: pass
-- Checks: 183
+- Checks: 187
 - Blockers: 0
 
 ## Summary
@@ -157,6 +157,10 @@
 | exposure_sprint | pass | 48-hour decision script fails CI when sealing is required |
 | exposure_sprint | pass | exposure copy pack blocks inflated claims |
 | exposure_sprint | pass | exposure copy pack tests implementation-pivot risk |
+| exposure_sprint | pass | exposure action ledger records GitHub metadata update |
+| exposure_sprint | pass | exposure action ledger records GitHub prerelease creation |
+| exposure_sprint | pass | exposure action ledger separates public actions from threshold evidence |
+| exposure_sprint | pass | exposure action ledger blocks public-action-as-demand logic |
 | launch_kit | pass | launch kit page is wired to static route data |
 | launch_kit | pass | launch kit route data exists |
 | launch_kit | pass | launch kit states current validation status |

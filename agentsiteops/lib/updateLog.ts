@@ -12,6 +12,46 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-25 GitHub exposure surface",
+    status: "completed",
+    keyPoints: [
+      "Updated the public GitHub repository description, homepage, and topics through the GitHub API so the repo no longer presents as an unrelated project.",
+      "Created a public prerelease for the 48-hour exposure validation window with links to the launch kit, llms.txt, llms-full.txt, sprint page, and evidence ledger.",
+      "Added an exposure action ledger to separate real public actions from demand evidence; GitHub metadata and release creation improve discoverability but do not count as visits, replies, payments, or usable intake.",
+      "Recorded that external search checks still do not prove the site is visible in search results; GSC and Bing exports remain the authority for search evidence."
+    ],
+    aiAngle:
+      "AI and search systems now have a GitHub release and repository metadata pointing at the live AgentSiteOps launch kit, while the public evidence rules still prevent treating that action as buyer demand.",
+    files: [
+      "README.md",
+      "public/llms.txt",
+      "public/llms-full.txt",
+      "data/exposure-action-ledger.csv",
+      "docs/48-hour-exposure-runbook.md",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "GitHub API repo metadata update pass",
+      "GitHub API topics update pass",
+      "GitHub API prerelease creation pass",
+      "exposure decision pass: active_collect_evidence before the deadline",
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "analytics endpoint gate pass with endpoint disabled",
+      "commercial validation gate pass with 187 checks",
+      "route consistency gate pass with 240 checks",
+      "production build pass with 52 static pages",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 206 checks",
+      "IndexNow submit pass for 46 URLs",
+      "growth snapshot baseline_ready with 46 routes"
+    ],
+    next:
+      "Run validation, deploy the updated evidence pages, submit changed URLs, and continue collecting only real aggregate exposure evidence."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-24 AI-readable exposure entry",
     status: "completed",
     keyPoints: [

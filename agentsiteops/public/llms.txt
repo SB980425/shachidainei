@@ -13,6 +13,7 @@ Launch Blueprint sample: https://agentsiteops.com/sample/
 Pricing: https://agentsiteops.com/pricing/
 Evidence ledger: https://agentsiteops.com/evidence/
 Updates: https://agentsiteops.com/updates/
+GitHub release: https://github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12
 
 ## What AgentSiteOps Does
 

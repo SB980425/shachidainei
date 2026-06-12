@@ -1,0 +1,3 @@
+"timestamp_utc","channel","action","public_url","counts_toward_threshold","evidence_status","notes"
+"2026-06-12T00:42:00Z","GitHub","repo_metadata_updated","https://github.com/SB980425/shachidainei","no","verified_public","Description homepage and topics were updated through the GitHub API. This improves public discoverability but is not demand proof."
+"2026-06-12T00:42:00Z","GitHub","prerelease_created","https://github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12","no","verified_public","48-hour exposure validation release created. This is a public artifact, not a visit, qualified reply, payment, or usable intake."

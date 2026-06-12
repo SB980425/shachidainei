@@ -53,6 +53,12 @@ Record only aggregate counts:
 | usable_intake_count | Fulfillment-ready order input. |
 | objection_count | Product clarity and pricing problems. |
 
+## Public Action Ledger
+
+Use `data/exposure-action-ledger.csv` to record real public actions that were actually created or submitted, such as GitHub release, repository metadata update, IndexNow submission, or platform launch draft publication.
+
+These actions improve discoverability, but they do not count toward the continuation threshold unless they produce aggregate demand evidence such as sample views, source-link clicks, qualified replies, confirmed payment, usable intake, or repeated objections.
+
 ## Decision Rule
 
 If there are no qualified replies, sample views, or useful objections after the first manual batch, rewrite the offer before adding content. If prospects ask for implementation instead of a route file, pivot toward an implementation offer or reject those buyers instead of selling the same blueprint.

@@ -96,6 +96,7 @@ function checkCommercialBoundary() {
   const exposureSprint = read("data/48-hour-exposure-sprint.csv");
   const exposureTargets = read("data/exposure-submission-targets.csv");
   const exposureEvidence = read("data/48-hour-exposure-evidence-template.csv");
+  const exposureActionLedger = read("data/exposure-action-ledger.csv");
   const exposureStatus = read("data/48-hour-exposure-status.json");
   const exposureThresholds = read("data/48-hour-exposure-thresholds.csv");
   const exposureDecisionScript = read("scripts/48-hour-exposure-decision.mjs");
@@ -212,6 +213,10 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureDecisionScript, "process.exitCode = 1", "48-hour decision script fails CI when sealing is required");
   requireText("exposure_sprint", exposureCopy, "Do not claim revenue, traffic, ranking, or AI-citation proof", "exposure copy pack blocks inflated claims");
   requireText("exposure_sprint", exposureCopy, "Would this need to pivot toward implementation", "exposure copy pack tests implementation-pivot risk");
+  requireText("exposure_sprint", exposureActionLedger, "repo_metadata_updated", "exposure action ledger records GitHub metadata update");
+  requireText("exposure_sprint", exposureActionLedger, "prerelease_created", "exposure action ledger records GitHub prerelease creation");
+  requireText("exposure_sprint", exposureActionLedger, "counts_toward_threshold", "exposure action ledger separates public actions from threshold evidence");
+  requireText("exposure_sprint", exposureActionLedger, "This improves public discoverability but is not demand proof.", "exposure action ledger blocks public-action-as-demand logic");
   requireText("launch_kit", launchKitPage, 'path = "/launch-kit/"', "launch kit page is wired to static route data");
   requireText("launch_kit", site, "AgentSiteOps Launch Kit", "launch kit route data exists");
   requireText("launch_kit", site, "technically launchable, commercially unvalidated", "launch kit states current validation status");
