@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-12T00:15:53.949Z
+- Generated: 2026-06-12T00:34:36.636Z
 - Status: pass
-- Checks: 235
+- Checks: 240
 - Blockers: 0
 - Warnings: 0
 
@@ -13,9 +13,9 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 45 routes aligned |
-| page_registry | pass | 45 routes aligned |
-| page_review_actions | pass | 45 routes aligned |
+| site_routes | pass | 46 routes aligned |
+| page_registry | pass | 46 routes aligned |
+| page_review_actions | pass | 46 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /ai-website-operating-system/ has canonical slash shape |
@@ -74,6 +74,8 @@
 | route_index | pass | /guides/first-traffic-system/ index flag is true |
 | route_shape | pass | /guides/48-hour-exposure-sprint/ has canonical slash shape |
 | route_index | pass | /guides/48-hour-exposure-sprint/ index flag is true |
+| route_shape | pass | /launch-kit/ has canonical slash shape |
+| route_index | pass | /launch-kit/ index flag is true |
 | route_shape | pass | /authors/ has canonical slash shape |
 | route_index | pass | /authors/ index flag is true |
 | route_shape | pass | /editorial-policy/ has canonical slash shape |
@@ -135,6 +137,7 @@
 | app_page | pass | /methodology/route-selection/ app page exists |
 | app_page | pass | /guides/first-traffic-system/ app page exists |
 | app_page | pass | /guides/48-hour-exposure-sprint/ app page exists |
+| app_page | pass | /launch-kit/ app page exists |
 | app_page | pass | /authors/ app page exists |
 | app_page | pass | /editorial-policy/ app page exists |
 | app_page | pass | /privacy/ app page exists |
@@ -184,6 +187,7 @@
 | analytics_allowlist | pass | route_selection_methodology_view is registered |
 | analytics_allowlist | pass | first_traffic_system_view is registered |
 | analytics_allowlist | pass | exposure_sprint_48h_view is registered |
+| analytics_allowlist | pass | launch_kit_view is registered |
 | analytics_allowlist | pass | launch_blueprint_legacy_view is registered |
 | analytics_allowlist | pass | launch_blueprint_pricing_view is registered |
 | analytics_allowlist | pass | launch_blueprint_sample_view is registered |
@@ -228,6 +232,7 @@
 | route_view_event | pass | /methodology/route-selection/ has view event |
 | route_view_event | pass | /guides/first-traffic-system/ has view event |
 | route_view_event | pass | /guides/48-hour-exposure-sprint/ has view event |
+| route_view_event | pass | /launch-kit/ has view event |
 | route_view_event | pass | /authors/ has view event |
 | route_view_event | pass | /editorial-policy/ has view event |
 | route_view_event | pass | /privacy/ has view event |
@@ -244,7 +249,7 @@
 | route_view_event | pass | /refund-policy/ has view event |
 | route_view_event | pass | /disclaimer/ has view event |
 | route_view_event | pass | /contact/ has view event |
-| growth_snapshot | pass | 45 routes aligned |
+| growth_snapshot | pass | 46 routes aligned |
 
 ## Blocking Issues
 

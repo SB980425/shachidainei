@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T00:18:38.268Z
+- Generated: 2026-06-12T00:32:38.544Z
 - Status: pass
-- Checks: 171
+- Checks: 183
 - Blockers: 0
 
 ## Summary
@@ -29,6 +29,8 @@
 | app | pass | /guides/first-traffic-system/ has app page |
 | routes | pass | /guides/48-hour-exposure-sprint/ registered in docs/routes.json |
 | app | pass | /guides/48-hour-exposure-sprint/ has app page |
+| routes | pass | /launch-kit/ registered in docs/routes.json |
+| app | pass | /launch-kit/ has app page |
 | routes | pass | /pricing/ registered in docs/routes.json |
 | app | pass | /pricing/ has app page |
 | routes | pass | /compare/ registered in docs/routes.json |
@@ -155,6 +157,16 @@
 | exposure_sprint | pass | 48-hour decision script fails CI when sealing is required |
 | exposure_sprint | pass | exposure copy pack blocks inflated claims |
 | exposure_sprint | pass | exposure copy pack tests implementation-pivot risk |
+| launch_kit | pass | launch kit page is wired to static route data |
+| launch_kit | pass | launch kit route data exists |
+| launch_kit | pass | launch kit states current validation status |
+| launch_kit | pass | launch kit exposes seal rule |
+| launch_kit | pass | launch kit blocks bad-fit purchase intent |
+| launch_kit | pass | llms.txt points AI readers to launch kit |
+| launch_kit | pass | llms.txt carries no-guarantee boundary |
+| launch_kit | pass | llms.txt carries seal decision rule |
+| launch_kit | pass | llms-full.txt explains evidence hierarchy |
+| launch_kit | pass | llms-full.txt explains 48-hour rule |
 | service_boundary | pass | launch copy avoids guarantee claims |
 | readiness_tool | pass | readiness tool has 13 weighted checks; found 13 |
 | readiness_tool | pass | readiness tool weights total 100 |

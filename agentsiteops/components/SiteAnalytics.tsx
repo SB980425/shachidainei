@@ -58,6 +58,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/methodology/route-selection/": ["route_selection_methodology_view"],
   "/guides/first-traffic-system/": ["first_traffic_system_view"],
   "/guides/48-hour-exposure-sprint/": ["exposure_sprint_48h_view"],
+  "/launch-kit/": ["launch_kit_view"],
   "/website-opportunity-audit/": ["launch_blueprint_legacy_view"],
   "/pricing/": ["launch_blueprint_pricing_view"],
   "/sample/": ["launch_blueprint_sample_view"],

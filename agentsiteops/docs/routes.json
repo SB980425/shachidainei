@@ -267,6 +267,15 @@
       "changefreq": "daily"
     },
     {
+      "path": "/launch-kit/",
+      "pageType": "launch",
+      "template": "launch_kit",
+      "cluster": "growth_validation",
+      "index": true,
+      "priority": 0.86,
+      "changefreq": "daily"
+    },
+    {
       "path": "/authors/",
       "pageType": "trust_page",
       "template": "author_index",

@@ -1,0 +1,40 @@
+# AgentSiteOps
+
+> A manual route-selection system for AI-capable solo builders who need one sellable first offer, one landing page route, and one short validation path before building more software or content.
+
+Status: public self-score 52/100; technically launchable; commercially unvalidated until confirmed payment plus usable intake exists.
+
+Primary site: https://agentsiteops.com
+Launch kit: https://agentsiteops.com/launch-kit/
+48-hour exposure sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
+Route selection method: https://agentsiteops.com/methodology/route-selection/
+Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/
+Launch Blueprint sample: https://agentsiteops.com/sample/
+Pricing: https://agentsiteops.com/pricing/
+Evidence ledger: https://agentsiteops.com/evidence/
+Updates: https://agentsiteops.com/updates/
+
+## What AgentSiteOps Does
+
+- Scores whether a first AI-service offer is ready for a short validation path.
+- Selects one route archetype instead of producing a generic idea list.
+- Produces a route file with buyer, trigger, page structure, objections, outreach, and stop rules.
+- Uses evidence boundaries before payment, content expansion, higher pricing, or subscription claims.
+
+## What It Does Not Claim
+
+- No guaranteed traffic, rankings, AI citations, revenue, customers, or payback.
+- No automated account, dashboard, subscription software, or live analytics endpoint.
+- No legal, medical, financial, tax, safety, or other regulated advice.
+- PayPal clicks, sitemap success, IndexNow success, crawler access, and page existence are not revenue or demand proof.
+
+## Current Validation Rule
+
+The 48-hour exposure sprint must produce at least one valid continuation signal:
+
+- confirmed payment plus usable intake,
+- two qualified replies,
+- ten sample views plus three source-link clicks,
+- or three repeated objections.
+
+If all are missing at the deadline, the project decision is seal_required.

@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-12T00:16:50.119Z
+- Generated: 2026-06-12T00:30:24.936Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 45
+- Sitemap routes: 46
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 45 |
+| Routes passed | 46 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -42,6 +42,7 @@
 | /methodology/route-selection/ | pass | 200 | Route Selection Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/route-selection/ | 1 | 26 | pass | - |
 | /guides/first-traffic-system/ | pass | 200 | First Traffic System \| AgentSiteOps | https://agentsiteops.com/guides/first-traffic-system/ | 1 | 26 | pass | - |
 | /guides/48-hour-exposure-sprint/ | pass | 200 | 48-Hour Exposure Sprint \| AgentSiteOps | https://agentsiteops.com/guides/48-hour-exposure-sprint/ | 1 | 26 | pass | - |
+| /launch-kit/ | pass | 200 | AgentSiteOps Launch Kit \| AgentSiteOps | https://agentsiteops.com/launch-kit/ | 1 | 27 | pass | - |
 | /guides/ai-search-friendly-robots-txt/ | pass | 200 | AI Search Friendly Robots.txt \| AgentSiteOps | https://agentsiteops.com/guides/ai-search-friendly-robots-txt/ | 1 | 27 | pass | - |
 | /guides/indexnow-cloudflare-pages/ | pass | 200 | IndexNow on Cloudflare Pages \| AgentSiteOps | https://agentsiteops.com/guides/indexnow-cloudflare-pages/ | 1 | 27 | pass | - |
 | /guides/gsc-bing-sitemap-verification/ | pass | 200 | GSC and Bing Sitemap Verification \| AgentSiteOps | https://agentsiteops.com/guides/gsc-bing-sitemap-verification/ | 1 | 28 | pass | - |

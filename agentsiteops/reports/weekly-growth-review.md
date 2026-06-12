@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-- The production site has 45 indexable routes with technical SEO passing.
+- The production site has 46 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.
@@ -16,13 +16,13 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 45 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 45/45 routes pass |
+| Route registry | docs/routes.json | 46 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 46/46 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
-| IndexNow | latest command output | 45 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 46 URLs submitted successfully in current deployment cycle |
 | Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
 
 ## Unverified
@@ -68,6 +68,7 @@
 | /methodology/route-selection/ | methodology | launch_blueprint | pass | site_pass | keep | Measure route methodology views, sample exits, pricing exits, and repeated questions about route selection |
 | /guides/first-traffic-system/ | guide | growth_validation | pass | site_pass | keep | Record indexed URLs, referrals, sample views, PayPal clicks, qualified replies, and objections by channel |
 | /guides/48-hour-exposure-sprint/ | guide | growth_validation | pass | site_pass | keep | Record referral visits, source clicks, sample views, PayPal clicks, qualified replies, confirmed payments, usable intake, and objections within 48 hours |
+| /launch-kit/ | launch | growth_validation | pass | site_pass | keep | Measure launch kit views, sample exits, fit-checker exits, source-link clicks, PayPal clicks, qualified replies, and objections within the 48-hour window |
 | /authors/ | trust_page | trust_and_policy | pass | site_pass | keep | Replace placeholder owner info before launch |
 | /editorial-policy/ | trust_page | trust_and_policy | pass | site_pass | keep | Recheck before content expansion |
 | /privacy/ | trust_page | trust_and_policy | pass | site_pass | keep | Update before external endpoint or cookies |

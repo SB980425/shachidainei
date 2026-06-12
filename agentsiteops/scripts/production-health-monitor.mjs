@@ -172,6 +172,33 @@ async function checkIndexNowKey() {
   requireText("indexnow_key", response.text.trim(), "32bc6ba6e277f850a701747381a57c48", "key file content matches public key", url);
 }
 
+async function checkLlmsText() {
+  const url = `${siteUrl}/llms.txt`;
+  const response = await fetchText(url);
+  addCheck("llms_txt", response.ok ? "pass" : "fail", `HTTP ${response.status}`, url);
+
+  if (!response.ok) {
+    return;
+  }
+
+  requireText("llms_txt", response.text, "# AgentSiteOps", "llms.txt identifies AgentSiteOps", url);
+  requireText("llms_txt", response.text, "Launch kit: https://agentsiteops.com/launch-kit/", "llms.txt points to launch kit", url);
+  requireText("llms_txt", response.text, "seal_required", "llms.txt exposes seal rule", url);
+  requireText("llms_txt", response.text, "No guaranteed traffic", "llms.txt exposes no-guarantee boundary", url);
+
+  const fullUrl = `${siteUrl}/llms-full.txt`;
+  const fullResponse = await fetchText(fullUrl);
+  addCheck("llms_full_txt", fullResponse.ok ? "pass" : "fail", `HTTP ${fullResponse.status}`, fullUrl);
+
+  if (!fullResponse.ok) {
+    return;
+  }
+
+  requireText("llms_full_txt", fullResponse.text, "Evidence Hierarchy", "llms-full.txt exposes evidence hierarchy", fullUrl);
+  requireText("llms_full_txt", fullResponse.text, "48-Hour Rule", "llms-full.txt exposes 48-hour rule", fullUrl);
+  requireText("llms_full_txt", fullResponse.text, "Current State", "llms-full.txt exposes current state", fullUrl);
+}
+
 async function checkBrandIcon() {
   const faviconUrl = `${siteUrl}/favicon.ico`;
   const favicon = await fetchText(faviconUrl);
@@ -278,6 +305,7 @@ async function main() {
   await checkSitemap(routeDoc);
   await checkRobots();
   await checkIndexNowKey();
+  await checkLlmsText();
   await checkBrandIcon();
   await checkPage("/", [
     "Validate your first AI service offer before building the site",
@@ -336,6 +364,15 @@ async function main() {
     "Execution windows",
     "Decision at hour 48",
     "pivot_to_implementation"
+  ]);
+  await checkPage("/launch-kit/", [
+    "AgentSiteOps Launch Kit",
+    "Current status",
+    "52/100",
+    "What the buyer receives",
+    "Evidence to inspect first",
+    "48-hour seal rule",
+    "seal_required"
   ]);
   await checkPage("/reports/route-evidence-dashboard/", ["Route Evidence Dashboard", "Route evidence table", "GSC pending"]);
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);

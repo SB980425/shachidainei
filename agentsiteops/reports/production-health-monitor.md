@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-12T00:19:34.611Z
+- Generated: 2026-06-12T00:33:57.898Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 187
+- Checks: 206
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 45 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 46 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -23,6 +23,15 @@
 | robots | pass | sitemap pointer visible | [link](https://agentsiteops.com/robots.txt) |
 | indexnow_key | pass | HTTP 200 | [link](https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt) |
 | indexnow_key | pass | key file content matches public key | [link](https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt) |
+| llms_txt | pass | HTTP 200 | [link](https://agentsiteops.com/llms.txt) |
+| llms_txt | pass | llms.txt identifies AgentSiteOps | [link](https://agentsiteops.com/llms.txt) |
+| llms_txt | pass | llms.txt points to launch kit | [link](https://agentsiteops.com/llms.txt) |
+| llms_txt | pass | llms.txt exposes seal rule | [link](https://agentsiteops.com/llms.txt) |
+| llms_txt | pass | llms.txt exposes no-guarantee boundary | [link](https://agentsiteops.com/llms.txt) |
+| llms_full_txt | pass | HTTP 200 | [link](https://agentsiteops.com/llms-full.txt) |
+| llms_full_txt | pass | llms-full.txt exposes evidence hierarchy | [link](https://agentsiteops.com/llms-full.txt) |
+| llms_full_txt | pass | llms-full.txt exposes 48-hour rule | [link](https://agentsiteops.com/llms-full.txt) |
+| llms_full_txt | pass | llms-full.txt exposes current state | [link](https://agentsiteops.com/llms-full.txt) |
 | brand_favicon | pass | HTTP 200 | [link](https://agentsiteops.com/favicon.ico) |
 | brand_favicon | pass | favicon content-type image/vnd.microsoft.icon | [link](https://agentsiteops.com/favicon.ico) |
 | brand_icon | pass | HTTP 200 | [link](https://agentsiteops.com/icon.svg) |
@@ -161,6 +170,16 @@
 | /guides/48-hour-exposure-sprint/ | pass | Execution windows | [link](https://agentsiteops.com/guides/48-hour-exposure-sprint/) |
 | /guides/48-hour-exposure-sprint/ | pass | Decision at hour 48 | [link](https://agentsiteops.com/guides/48-hour-exposure-sprint/) |
 | /guides/48-hour-exposure-sprint/ | pass | pivot_to_implementation | [link](https://agentsiteops.com/guides/48-hour-exposure-sprint/) |
+| /launch-kit/ | pass | HTTP 200 | [link](https://agentsiteops.com/launch-kit/) |
+| /launch-kit/ | pass | HTML title exists | [link](https://agentsiteops.com/launch-kit/) |
+| /launch-kit/ | pass | canonical points to production URL | [link](https://agentsiteops.com/launch-kit/) |
+| /launch-kit/ | pass | AgentSiteOps Launch Kit | [link](https://agentsiteops.com/launch-kit/) |
+| /launch-kit/ | pass | Current status | [link](https://agentsiteops.com/launch-kit/) |
+| /launch-kit/ | pass | 52/100 | [link](https://agentsiteops.com/launch-kit/) |
+| /launch-kit/ | pass | What the buyer receives | [link](https://agentsiteops.com/launch-kit/) |
+| /launch-kit/ | pass | Evidence to inspect first | [link](https://agentsiteops.com/launch-kit/) |
+| /launch-kit/ | pass | 48-hour seal rule | [link](https://agentsiteops.com/launch-kit/) |
+| /launch-kit/ | pass | seal_required | [link](https://agentsiteops.com/launch-kit/) |
 | /reports/route-evidence-dashboard/ | pass | HTTP 200 | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
 | /reports/route-evidence-dashboard/ | pass | HTML title exists | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |
 | /reports/route-evidence-dashboard/ | pass | canonical points to production URL | [link](https://agentsiteops.com/reports/route-evidence-dashboard/) |

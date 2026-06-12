@@ -14,6 +14,8 @@ AgentSiteOps is a small manual decision system for AI-capable solo builders who 
 
 ## Inspect First
 
+- Launch kit: https://agentsiteops.com/launch-kit/
+- AI-readable summary: https://agentsiteops.com/llms.txt
 - Route selection method: https://agentsiteops.com/methodology/route-selection/
 - 48-hour exposure sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 - First traffic system: https://agentsiteops.com/guides/first-traffic-system/
@@ -32,6 +34,7 @@ AgentSiteOps is a small manual decision system for AI-capable solo builders who 
 - Exposure sprint data and no-spam channel constraints.
 - Exposure copy pack: `agentsiteops/docs/exposure-copy-pack.md`.
 - 48-hour aggregate evidence template: `agentsiteops/data/48-hour-exposure-evidence-template.csv`.
+- AI-readable launch summaries: `agentsiteops/public/llms.txt` and `agentsiteops/public/llms-full.txt`.
 
 ## Exposure Sprint
 

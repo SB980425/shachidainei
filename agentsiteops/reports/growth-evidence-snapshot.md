@@ -1,18 +1,18 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-12T00:19:35.438Z
+- Generated: 2026-06-12T00:34:02.443Z
 - Status: baseline_ready
-- Routes: 45
-- Technical SEO pass routes: 45
+- Routes: 46
+- Technical SEO pass routes: 46
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 45 routes
-- Bing status: pending export for 45 routes
+- GSC status: pending export for 46 routes
+- Bing status: pending export for 46 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 45 routes
+- Onsite event status: local buffer only for 46 routes
 
 ## Route Evidence Table
 
@@ -47,6 +47,7 @@
 | /methodology/route-selection/ | methodology | launch_blueprint | pass | site_pass | keep | Measure route methodology views, sample exits, pricing exits, and repeated questions about route selection |
 | /guides/first-traffic-system/ | guide | growth_validation | pass | site_pass | keep | Record indexed URLs, referrals, sample views, PayPal clicks, qualified replies, and objections by channel |
 | /guides/48-hour-exposure-sprint/ | guide | growth_validation | pass | site_pass | keep | Record referral visits, source clicks, sample views, PayPal clicks, qualified replies, confirmed payments, usable intake, and objections within 48 hours |
+| /launch-kit/ | launch | growth_validation | pass | site_pass | keep | Measure launch kit views, sample exits, fit-checker exits, source-link clicks, PayPal clicks, qualified replies, and objections within the 48-hour window |
 | /authors/ | trust_page | trust_and_policy | pass | site_pass | keep | Replace placeholder owner info before launch |
 | /editorial-policy/ | trust_page | trust_and_policy | pass | site_pass | keep | Recheck before content expansion |
 | /privacy/ | trust_page | trust_and_policy | pass | site_pass | keep | Update before external endpoint or cookies |

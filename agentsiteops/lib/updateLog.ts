@@ -12,6 +12,52 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-24 AI-readable exposure entry",
+    status: "completed",
+    keyPoints: [
+      "Added a public Launch Kit route so visitors, reviewers, and AI systems can inspect the current status, offer, proof links, buyer fit, and 48-hour seal rule from one short page.",
+      "Added llms.txt and llms-full.txt so AI readers can extract the project identity, current validation state, core URLs, evidence hierarchy, no-guarantee boundary, and active 48-hour decision rule.",
+      "Updated sitemap lastModified dates to the current release date and registered the launch kit across route registry, page registry, page-review actions, analytics events, production health, commercial validation, README, and IndexNow submission.",
+      "Kept the exposure claim boundary unchanged: this improves inspectability and shareability, but does not count as traffic, payment, qualified reply, or product-market fit evidence."
+    ],
+    aiAngle:
+      "AI and search systems now have a compact machine-readable entry point and a human-readable launch kit; the project is easier to summarize without inflating evidence.",
+    files: [
+      "README.md",
+      "app/launch-kit/page.tsx",
+      "public/llms.txt",
+      "public/llms-full.txt",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "components/SiteAnalytics.tsx",
+      "docs/analytics-events.md",
+      "app/sitemap.ts",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "exposure decision pass: active_collect_evidence before the deadline",
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "commercial validation gate pass with 183 checks",
+      "analytics endpoint gate pass with endpoint disabled",
+      "route consistency gate pass with 240 checks",
+      "production build pass with 52 static pages",
+      "technical SEO CI pass for 46 routes",
+      "crawler access audit pass",
+      "growth snapshot baseline_ready with 46 routes",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 206 checks",
+      "IndexNow submit pass for 46 URLs"
+    ],
+    next:
+      "Deploy the launch kit and AI-readable summaries, submit the updated URL set, then continue the 48-hour exposure validation with only real aggregate evidence."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-23 48-hour seal rule",
     status: "completed",
     keyPoints: [

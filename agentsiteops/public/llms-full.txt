@@ -1,0 +1,80 @@
+# AgentSiteOps Full AI Context
+
+## Identity
+
+AgentSiteOps is a small public operating system for deciding whether an AI-capable solo builder should sell a first service offer, rewrite the offer, pivot toward implementation, or stop before building more software and content.
+
+## Current State
+
+- Domain: https://agentsiteops.com
+- Public self-score: 52/100.
+- Technical foundation: launchable.
+- Commercial validation: not proven.
+- Payment path: PayPal-hosted links.
+- Fulfillment: manual, after confirmed payment and usable intake.
+- Data policy: aggregate public evidence only; no private names, emails, handles, payment identifiers, bank details, or private replies in the public repo.
+
+## Core Pages
+
+- Home: https://agentsiteops.com/
+- Launch kit: https://agentsiteops.com/launch-kit/
+- 48-hour sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
+- First traffic system: https://agentsiteops.com/guides/first-traffic-system/
+- Route selection method: https://agentsiteops.com/methodology/route-selection/
+- Website opportunity scoring method: https://agentsiteops.com/methodology/website-opportunity-scoring/
+- Launch validation gate: https://agentsiteops.com/checklists/launch-validation-decision-gate/
+- Evidence ledger: https://agentsiteops.com/evidence/
+- Route evidence dashboard: https://agentsiteops.com/reports/route-evidence-dashboard/
+- Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/
+- Launch Blueprint sample: https://agentsiteops.com/sample/
+- Pricing: https://agentsiteops.com/pricing/
+- Buy page: https://agentsiteops.com/buy/
+- Intake: https://agentsiteops.com/intake/
+- Updates: https://agentsiteops.com/updates/
+
+## Selection Logic
+
+The system separates scoring from route selection:
+
+1. Score the current project direction against demand evidence, buyer clarity, offer clarity, execution ability, proof level, risk, and monetization fit.
+2. Reject topics that need regulated advice, copied data, unsupported claims, private customer data, or guaranteed outcomes.
+3. Match the project to a route archetype such as AI workflow setup, implementation service, diagnostic review, template pack, directory, calculator, marketplace, or content-assisted tool.
+4. Select one route and one first offer.
+5. Produce a short validation path with stop, rewrite, narrow, pivot_to_implementation, or continue outcomes.
+
+## Evidence Hierarchy
+
+Strong evidence:
+
+- confirmed payment plus usable intake,
+- qualified replies with a concrete buyer problem,
+- delivered buyer artifact and buyer response,
+- first-party GSC or Bing export,
+- verifiable route-level usage or source-link inspection.
+
+Weak or non-proof signals:
+
+- sitemap success,
+- IndexNow success,
+- crawler access,
+- pageviews without source or action,
+- PayPal clicks without confirmed payment,
+- AI-generated confidence,
+- third-party estimates without first-party validation.
+
+## 48-Hour Rule
+
+The active sprint runs from 2026-06-12 08:08:46 to 2026-06-14 08:08:46 Asia/Shanghai.
+
+Continue only if one of these appears:
+
+- confirmed_payment_count >= 1 and usable_intake_count >= 1,
+- qualified_reply_count >= 2,
+- sample_view_count >= 10 and source_link_click_count >= 3,
+- objection_count >= 3.
+
+If all are missing at the deadline, the decision is seal_required.
+
+## Boundary
+
+AgentSiteOps does not guarantee traffic, rankings, AI citations, customers, revenue, payback, processor approval, platform approval, or account safety. It is a decision and route-selection service, not an autonomous business-growth guarantee.

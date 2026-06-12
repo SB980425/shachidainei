@@ -1199,6 +1199,68 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/launch-kit/",
+    pageType: "launch",
+    title: "AgentSiteOps Launch Kit",
+    description:
+      "A compact public entry point for evaluating AgentSiteOps: status, offer, proof links, buyer fit, boundaries, and the 48-hour validation rule.",
+    answer:
+      "The launch kit exists so a visitor, reviewer, or AI system can understand AgentSiteOps without reading the whole site: it is technically live, commercially unvalidated, and governed by a 48-hour evidence gate.",
+    primaryAction: { label: "Inspect the sample", href: "/sample/" },
+    secondaryAction: { label: "View the 48-hour sprint", href: "/guides/48-hour-exposure-sprint/" },
+    aiTarget:
+      "Provide the shortest citeable context for what AgentSiteOps is, what evidence exists, what is missing, and when the current project must be sealed.",
+    humanAction:
+      "Use the launch kit to decide whether to inspect the sample, test fit, read the evidence ledger, or challenge the offer before any payment.",
+    sections: [
+      {
+        title: "Current status",
+        body:
+          "AgentSiteOps is a live manual service experiment. The site is technically launchable, but the offer is not commercially validated until real payment, usable intake, qualified replies, or repeated objections appear.",
+        rows: [
+          { label: "Public score", value: "52/100: technically launchable, commercially unvalidated." },
+          { label: "Current offer", value: "USD 29 Fit Review and USD 99 Launch Blueprint." },
+          { label: "Delivery", value: "Manual route file after confirmed payment and usable intake." },
+          { label: "Validation window", value: "48 hours from 2026-06-12 08:08:46 Asia/Shanghai." }
+        ]
+      },
+      {
+        title: "What the buyer receives",
+        body:
+          "The paid deliverable is a route file: one first offer, one target buyer, one purchase trigger, one page structure, objections, outreach path, and stop rules. It is not traffic software or an ongoing dashboard."
+      },
+      {
+        title: "Evidence to inspect first",
+        body:
+          "Inspect the sample, fit checker, route-selection method, evidence ledger, validation gate, and update log before treating the offer as credible.",
+        rows: [
+          { label: "Sample", value: "Shows the expected Launch Blueprint format." },
+          { label: "Fit checker", value: "Blocks bad-fit buyers before opening PayPal." },
+          { label: "Evidence ledger", value: "Separates verified facts from pending search, revenue, and user evidence." },
+          { label: "Decision gate", value: "Defines continue, rewrite, narrow, pivot_to_implementation, or stop." }
+        ]
+      },
+      {
+        title: "Do not buy if",
+        body:
+          "Do not buy if the real need is guaranteed traffic, rankings, AI citations, customers, revenue, implementation labor, regulated advice, ongoing monitoring software, or account/platform approval."
+      },
+      {
+        title: "48-hour seal rule",
+        body:
+          "The project continues only with confirmed payment plus usable intake, two qualified replies, ten sample views plus three source-link clicks, or three repeated objections. If all are missing at the deadline, the decision is seal_required."
+      }
+    ],
+    related: [
+      { label: "Launch Blueprint sample", href: "/sample/" },
+      { label: "Fit Review sample", href: "/examples/fit-review-sample/" },
+      { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
+      { label: "Evidence Ledger", href: "/evidence/" },
+      { label: "Launch Validation Gate", href: "/checklists/launch-validation-decision-gate/" },
+      { label: "Updates", href: "/updates/" }
+    ]
+  },
+  {
     path: "/guides/ai-search-friendly-robots-txt/",
     pageType: "guide",
     title: "AI Search Friendly Robots.txt",

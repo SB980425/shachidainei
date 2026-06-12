@@ -16,6 +16,7 @@ const requiredRoutes = [
   "/methodology/route-selection/",
   "/guides/first-traffic-system/",
   "/guides/48-hour-exposure-sprint/",
+  "/launch-kit/",
   "/pricing/",
   "/compare/",
   "/starter-review/",
@@ -98,6 +99,9 @@ function checkCommercialBoundary() {
   const exposureStatus = read("data/48-hour-exposure-status.json");
   const exposureThresholds = read("data/48-hour-exposure-thresholds.csv");
   const exposureDecisionScript = read("scripts/48-hour-exposure-decision.mjs");
+  const launchKitPage = read("app/launch-kit/page.tsx");
+  const llmsText = read("public/llms.txt");
+  const llmsFullText = read("public/llms-full.txt");
   const exposureCopy = read("docs/exposure-copy-pack.md");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
@@ -208,6 +212,16 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureDecisionScript, "process.exitCode = 1", "48-hour decision script fails CI when sealing is required");
   requireText("exposure_sprint", exposureCopy, "Do not claim revenue, traffic, ranking, or AI-citation proof", "exposure copy pack blocks inflated claims");
   requireText("exposure_sprint", exposureCopy, "Would this need to pivot toward implementation", "exposure copy pack tests implementation-pivot risk");
+  requireText("launch_kit", launchKitPage, 'path = "/launch-kit/"', "launch kit page is wired to static route data");
+  requireText("launch_kit", site, "AgentSiteOps Launch Kit", "launch kit route data exists");
+  requireText("launch_kit", site, "technically launchable, commercially unvalidated", "launch kit states current validation status");
+  requireText("launch_kit", site, "48-hour seal rule", "launch kit exposes seal rule");
+  requireText("launch_kit", site, "Do not buy if", "launch kit blocks bad-fit purchase intent");
+  requireText("launch_kit", llmsText, "Launch kit: https://agentsiteops.com/launch-kit/", "llms.txt points AI readers to launch kit");
+  requireText("launch_kit", llmsText, "No guaranteed traffic", "llms.txt carries no-guarantee boundary");
+  requireText("launch_kit", llmsText, "seal_required", "llms.txt carries seal decision rule");
+  requireText("launch_kit", llmsFullText, "Evidence Hierarchy", "llms-full.txt explains evidence hierarchy");
+  requireText("launch_kit", llmsFullText, "48-Hour Rule", "llms-full.txt explains 48-hour rule");
 
   addCheck("service_boundary", !/guaranteed rankings|guaranteed revenue|guaranteed customers/i.test(launch) ? "pass" : "fail", "launch copy avoids guarantee claims");
 }
