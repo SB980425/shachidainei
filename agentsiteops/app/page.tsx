@@ -116,15 +116,15 @@ export default function HomePage() {
           </p>
 
           <div className="hero-actions hero-actions-tight">
-            <Link className="primary-action" href="/starter-review/">
+            <Link prefetch={false} className="primary-action" href="/starter-review/">
               <BadgeDollarSign aria-hidden="true" size={17} />
               Start with USD {starterOffer.price} Fit Review
             </Link>
-            <Link className="secondary-action" href="/examples/fit-review-sample/">
+            <Link prefetch={false} className="secondary-action" href="/examples/fit-review-sample/">
               <FileText aria-hidden="true" size={17} />
               See sample verdict
             </Link>
-            <Link className="secondary-action" href="/launch-kit/">
+            <Link prefetch={false} className="secondary-action" href="/launch-kit/">
               <FileText aria-hidden="true" size={17} />
               Inspect launch kit
             </Link>
@@ -200,19 +200,19 @@ export default function HomePage() {
             ))}
           </div>
           <div className="hero-actions">
-            <Link className="secondary-action" href="/methodology/route-selection/">
+            <Link prefetch={false} className="secondary-action" href="/methodology/route-selection/">
               <ArrowRight aria-hidden="true" size={17} />
               Audit route logic
             </Link>
-            <Link className="secondary-action" href="/guides/first-traffic-system/">
+            <Link prefetch={false} className="secondary-action" href="/guides/first-traffic-system/">
               <ArrowRight aria-hidden="true" size={17} />
               Inspect first traffic system
             </Link>
-            <Link className="secondary-action" href="/guides/48-hour-exposure-sprint/">
+            <Link prefetch={false} className="secondary-action" href="/guides/48-hour-exposure-sprint/">
               <ArrowRight aria-hidden="true" size={17} />
               Run 48-hour sprint
             </Link>
-            <Link className="secondary-action" href="/launch-kit/">
+            <Link prefetch={false} className="secondary-action" href="/launch-kit/">
               <ArrowRight aria-hidden="true" size={17} />
               View launch kit
             </Link>
@@ -230,7 +230,7 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
-          <Link className="secondary-action" href="/sample/">
+          <Link prefetch={false} className="secondary-action" href="/sample/">
             <FileText aria-hidden="true" size={17} />
             Inspect full sample
           </Link>
@@ -305,11 +305,11 @@ export default function HomePage() {
             ))}
           </ul>
           <div className="hero-actions">
-            <Link className="primary-action" href="/starter-review/">
+            <Link prefetch={false} className="primary-action" href="/starter-review/">
               <BadgeDollarSign aria-hidden="true" size={17} />
               Start the small review
             </Link>
-            <Link className="secondary-action" href="/disclaimer/">
+            <Link prefetch={false} className="secondary-action" href="/disclaimer/">
               <ArrowRight aria-hidden="true" size={17} />
               Read limits
             </Link>
@@ -327,11 +327,11 @@ export default function HomePage() {
           </p>
         </div>
         <div className="conversion-actions">
-          <Link className="primary-action" href="/starter-review/">
+          <Link prefetch={false} className="primary-action" href="/starter-review/">
             <BadgeDollarSign aria-hidden="true" size={17} />
             Fit Review USD {starterOffer.price}
           </Link>
-          <Link className="secondary-action" href="/buy/">
+          <Link prefetch={false} className="secondary-action" href="/buy/">
             <MousePointer2 aria-hidden="true" size={17} />
             Full Blueprint USD {primaryOffer.price}
           </Link>
@@ -371,15 +371,15 @@ export default function HomePage() {
           ))}
         </div>
         <div className="hero-actions">
-          <Link className="secondary-action" href="/methodology/route-selection/">
+          <Link prefetch={false} className="secondary-action" href="/methodology/route-selection/">
             <ArrowRight aria-hidden="true" size={17} />
             View route evidence hierarchy
           </Link>
-          <Link className="secondary-action" href="/guides/first-traffic-system/">
+          <Link prefetch={false} className="secondary-action" href="/guides/first-traffic-system/">
             <ArrowRight aria-hidden="true" size={17} />
             View first visitor loop
           </Link>
-          <Link className="secondary-action" href="/guides/48-hour-exposure-sprint/">
+          <Link prefetch={false} className="secondary-action" href="/guides/48-hour-exposure-sprint/">
             <ArrowRight aria-hidden="true" size={17} />
             View 48-hour sprint
           </Link>

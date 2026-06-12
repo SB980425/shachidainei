@@ -362,10 +362,10 @@ async function main() {
   ]);
   await checkPage("/methodology/route-selection/", [
     "Route Selection Methodology",
-    "The score is a gate; the route is selected",
-    "Evidence hierarchy",
-    "Route archetype library",
-    "When the answer must be stop"
+    "The score is only a gate. The route comes from evidence.",
+    "Route source map",
+    "Confidence bands",
+    "Project route fit matrix"
   ]);
   await checkPage("/guides/first-traffic-system/", [
     "First Traffic System",

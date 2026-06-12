@@ -110,11 +110,11 @@ export default function Page() {
               <CreditCard aria-hidden="true" size={17} />
               Pay USD {starterOffer.price}
             </a>
-            <Link className="secondary-action" href="/starter-review/">
+            <Link prefetch={false} className="secondary-action" href="/starter-review/">
               <ArrowRight aria-hidden="true" size={17} />
               Fit Review details
             </Link>
-            <Link className="secondary-action" href="/sample/">
+            <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
               Blueprint sample
             </Link>
@@ -161,7 +161,7 @@ export default function Page() {
               <strong>{item.price}</strong>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
-              <Link className={index === 1 ? "primary-action" : "secondary-action"} href={item.href}>
+              <Link prefetch={false} className={index === 1 ? "primary-action" : "secondary-action"} href={item.href}>
                 <ArrowRight aria-hidden="true" size={17} />
                 {item.action}
               </Link>
@@ -325,11 +325,11 @@ export default function Page() {
             <li>Manual delivery starts after payment confirmation and usable intake.</li>
           </ul>
           <div className="hero-actions">
-            <Link className="secondary-action" href="/refund-policy/">
+            <Link prefetch={false} className="secondary-action" href="/refund-policy/">
               <ShieldCheck aria-hidden="true" size={17} />
               Refund policy
             </Link>
-            <Link className="secondary-action" href="/intake/">
+            <Link prefetch={false} className="secondary-action" href="/intake/">
               <Mail aria-hidden="true" size={17} />
               Intake
             </Link>

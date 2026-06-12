@@ -1,6 +1,6 @@
 # Production Health Monitor
 
-- Generated: 2026-06-12T05:41:21.622Z
+- Generated: 2026-06-12T06:18:06.239Z
 - Status: pass
 - Site: https://agentsiteops.com
 - Checks: 220
@@ -155,10 +155,10 @@
 | /methodology/route-selection/ | pass | HTML title exists | [link](https://agentsiteops.com/methodology/route-selection/) |
 | /methodology/route-selection/ | pass | canonical points to production URL | [link](https://agentsiteops.com/methodology/route-selection/) |
 | /methodology/route-selection/ | pass | Route Selection Methodology | [link](https://agentsiteops.com/methodology/route-selection/) |
-| /methodology/route-selection/ | pass | The score is a gate; the route is selected | [link](https://agentsiteops.com/methodology/route-selection/) |
-| /methodology/route-selection/ | pass | Evidence hierarchy | [link](https://agentsiteops.com/methodology/route-selection/) |
-| /methodology/route-selection/ | pass | Route archetype library | [link](https://agentsiteops.com/methodology/route-selection/) |
-| /methodology/route-selection/ | pass | When the answer must be stop | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /methodology/route-selection/ | pass | The score is only a gate. The route comes from evidence. | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /methodology/route-selection/ | pass | Route source map | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /methodology/route-selection/ | pass | Confidence bands | [link](https://agentsiteops.com/methodology/route-selection/) |
+| /methodology/route-selection/ | pass | Project route fit matrix | [link](https://agentsiteops.com/methodology/route-selection/) |
 | /guides/first-traffic-system/ | pass | HTTP 200 | [link](https://agentsiteops.com/guides/first-traffic-system/) |
 | /guides/first-traffic-system/ | pass | HTML title exists | [link](https://agentsiteops.com/guides/first-traffic-system/) |
 | /guides/first-traffic-system/ | pass | canonical points to production URL | [link](https://agentsiteops.com/guides/first-traffic-system/) |

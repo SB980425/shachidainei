@@ -347,7 +347,7 @@ function checkCommercialBoundary() {
   requireText("launch_kit_visibility", launchKitVisibility, '"/examples/agentsiteops-self-audit/","/launch-kit/"', "Launch Kit visibility snapshot records self-audit related link");
   requireText("launch_kit_visibility", launchKitVisibility, '"/reports/route-evidence-dashboard/","/launch-kit/"', "Launch Kit visibility snapshot records evidence dashboard related link");
   requireText("launch_kit_visibility", launchKitVisibilityReport, "does not prove search impressions, ranking, clicks", "Launch Kit visibility report blocks internal-link-as-demand logic");
-  requireText("launch_kit_visibility", layout, '<Link href="/launch-kit/">Launch Kit</Link>', "global footer links to Launch Kit");
+  requireText("launch_kit_visibility", layout, 'href="/launch-kit/">Launch Kit</Link>', "global footer links to Launch Kit");
   requireText("launch_kit_visibility", homePage, 'href="/launch-kit/"', "homepage links to Launch Kit");
   requireText("launch_kit_visibility", site, '{ label: "Launch Kit", href: "/launch-kit/" }', "route related links include Launch Kit");
   requireText("launch_kit_external_search", launchKitExternalSearchRecheck, '"confirmed_launch_kit_result"', "Launch Kit external search recheck records direct confirmation field");

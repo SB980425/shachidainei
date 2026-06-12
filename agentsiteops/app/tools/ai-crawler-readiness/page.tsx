@@ -41,10 +41,10 @@ export default function Page() {
           <p>{page.description}</p>
         </div>
         <div className="tool-hero-actions">
-          <Link className="secondary-action" href="/examples/agentsiteops-self-audit/">
+          <Link prefetch={false} className="secondary-action" href="/examples/agentsiteops-self-audit/">
             View sample audit
           </Link>
-          <Link className="secondary-action" href="/checklists/ai-citation-readiness/">
+          <Link prefetch={false} className="secondary-action" href="/checklists/ai-citation-readiness/">
             View checklist
           </Link>
         </div>

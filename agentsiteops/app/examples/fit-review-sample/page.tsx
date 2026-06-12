@@ -101,15 +101,15 @@ export default function Page() {
             It is not the USD {primaryOffer.price} Launch Blueprint.
           </p>
           <div className="hero-actions">
-            <Link className="primary-action" href="/starter-review/">
+            <Link prefetch={false} className="primary-action" href="/starter-review/">
               <CreditCard aria-hidden="true" size={17} />
               View Fit Review
             </Link>
-            <Link className="secondary-action" href="/sample/">
+            <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
               Compare full blueprint sample
             </Link>
-            <Link className="secondary-action" href="/pricing/">
+            <Link prefetch={false} className="secondary-action" href="/pricing/">
               <ArrowRight aria-hidden="true" size={17} />
               Compare prices
             </Link>
@@ -206,7 +206,7 @@ export default function Page() {
             Move to the full Launch Blueprint only when the buyer trigger, proof asset,
             and manual outreach path are specific enough to build a one-page offer.
           </p>
-          <Link className="secondary-action" href="/buy/">
+          <Link prefetch={false} className="secondary-action" href="/buy/">
             <ArrowRight aria-hidden="true" size={17} />
             View full blueprint
           </Link>

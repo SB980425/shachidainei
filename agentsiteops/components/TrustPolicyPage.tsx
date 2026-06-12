@@ -30,10 +30,10 @@ export function TrustPolicyPage({ page }: Props) {
           <h1>{page.h1}</h1>
           <p>{page.summary}</p>
           <div className="hero-actions">
-            <Link className="primary-action" href="/checklists/ai-content-quality-gate/">
+            <Link prefetch={false} className="primary-action" href="/checklists/ai-content-quality-gate/">
               View content gate
             </Link>
-            <Link className="secondary-action" href="/updates/">
+            <Link prefetch={false} className="secondary-action" href="/updates/">
               View updates
             </Link>
           </div>

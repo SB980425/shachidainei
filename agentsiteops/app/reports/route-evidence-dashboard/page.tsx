@@ -130,7 +130,7 @@ export default function Page() {
             This dashboard reads first-party release reports and route records. It does not prove
             indexing, AI citation, traffic, conversion, or revenue.
           </p>
-          <Link className="secondary-action" href="/evidence/">
+          <Link prefetch={false} className="secondary-action" href="/evidence/">
             View Evidence Ledger
           </Link>
         </aside>

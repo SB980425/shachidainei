@@ -709,6 +709,7 @@ async function main() {
   try {
     const routes = await loadRoutesFromSitemap();
     const knownRoutes = new Set(routes);
+    knownRoutes.add("/api/events/summary/");
     console.log(`routes discovered: ${routes.length}`);
 
     for (const route of routes) {

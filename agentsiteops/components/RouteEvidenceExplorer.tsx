@@ -210,7 +210,7 @@ export function RouteEvidenceExplorer({ rows }: { rows: RouteEvidenceRow[] }) {
             {filteredRows.map((row) => (
               <tr key={row.url}>
                 <th scope="row">
-                  <Link href={row.url}>{row.url}</Link>
+                  <Link prefetch={false} href={row.url}>{row.url}</Link>
                 </th>
                 <td>{row.page_type}</td>
                 <td>{row.technical_seo_status}</td>

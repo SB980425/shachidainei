@@ -66,8 +66,8 @@ export default function Page() {
             <li>Because the blueprint does not create traffic, ranking, revenue, customers, or approvals.</li>
           </ul>
           <div className="hero-actions">
-            <Link className="secondary-action" href="/terms/">Service terms</Link>
-            <Link className="secondary-action" href="/contact/">Contact</Link>
+            <Link prefetch={false} className="secondary-action" href="/terms/">Service terms</Link>
+            <Link prefetch={false} className="secondary-action" href="/contact/">Contact</Link>
           </div>
         </div>
       </section>

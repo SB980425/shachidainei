@@ -1648,6 +1648,13 @@ textarea {
   background: #ffffff;
 }
 
+.evidence-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
 .route-evidence-table {
   min-width: 1040px;
   border-collapse: collapse;

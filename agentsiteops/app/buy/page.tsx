@@ -79,11 +79,11 @@ export default function Page() {
             Pay with PayPal
           </a>
           <small>{launchProduct.timeline}</small>
-          <Link className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
+          <Link prefetch={false} className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
             <CheckCircle2 aria-hidden="true" size={17} />
             Check fit first
           </Link>
-          <Link className="secondary-action" href="/starter-review/">
+          <Link prefetch={false} className="secondary-action" href="/starter-review/">
             <ShieldCheck aria-hidden="true" size={17} />
             Start with USD {starterOffer.price} review
           </Link>
@@ -133,19 +133,19 @@ export default function Page() {
           </article>
         </div>
         <div className="hero-actions">
-          <Link className="secondary-action" href="/sample/">
+          <Link prefetch={false} className="secondary-action" href="/sample/">
             <FileText aria-hidden="true" size={17} />
             View sample
           </Link>
-          <Link className="secondary-action" href="/starter-review/">
+          <Link prefetch={false} className="secondary-action" href="/starter-review/">
             <ShieldCheck aria-hidden="true" size={17} />
             Fit Review
           </Link>
-          <Link className="secondary-action" href="/intake/">
+          <Link prefetch={false} className="secondary-action" href="/intake/">
             <Mail aria-hidden="true" size={17} />
             View intake
           </Link>
-          <Link className="secondary-action" href="/refund-policy/">
+          <Link prefetch={false} className="secondary-action" href="/refund-policy/">
             <ShieldCheck aria-hidden="true" size={17} />
             Refund policy
           </Link>

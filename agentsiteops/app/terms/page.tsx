@@ -69,8 +69,8 @@ export default function Page() {
             <li>The buyer remains responsible for platform compliance, client claims, legal review, tax treatment, and final business decisions.</li>
           </ul>
           <div className="hero-actions">
-            <Link className="secondary-action" href="/refund-policy/">Refund policy</Link>
-            <Link className="secondary-action" href="/disclaimer/">Disclaimer</Link>
+            <Link prefetch={false} className="secondary-action" href="/refund-policy/">Refund policy</Link>
+            <Link prefetch={false} className="secondary-action" href="/disclaimer/">Disclaimer</Link>
           </div>
         </div>
       </section>

@@ -74,12 +74,12 @@ export function StaticRoutePage({ path }: Props) {
           <h1>{page.title}</h1>
           <p>{page.description}</p>
           <div className="hero-actions">
-            <Link className="primary-action" href={page.primaryAction.href}>
+            <Link prefetch={false} className="primary-action" href={page.primaryAction.href}>
               <ArrowRight aria-hidden="true" size={17} />
               {page.primaryAction.label}
             </Link>
             {page.secondaryAction ? (
-              <Link className="secondary-action" href={page.secondaryAction.href}>
+              <Link prefetch={false} className="secondary-action" href={page.secondaryAction.href}>
                 <Sparkles aria-hidden="true" size={17} />
                 {page.secondaryAction.label}
               </Link>
@@ -125,7 +125,7 @@ export function StaticRoutePage({ path }: Props) {
           <ul>
             {page.related.map((link) => (
               <li key={link.href}>
-                <Link href={link.href}>
+                <Link prefetch={false} href={link.href}>
                   <Link2 aria-hidden="true" size={14} />
                   {link.label}
                 </Link>

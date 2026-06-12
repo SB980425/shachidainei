@@ -72,7 +72,7 @@ export default function Page() {
         <aside className="decision-card">
           <strong>Log rule</strong>
           <p>Each public entry must include the decision, changed files, verification scope, residual risk, and next action.</p>
-          <Link className="secondary-action" href="/checklists/ai-content-quality-gate/">
+          <Link prefetch={false} className="secondary-action" href="/checklists/ai-content-quality-gate/">
             View content gate
           </Link>
         </aside>

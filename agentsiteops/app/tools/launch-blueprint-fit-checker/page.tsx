@@ -46,13 +46,13 @@ export default function Page() {
           <h2>Purchase Path</h2>
           <ul>
             <li>
-              <Link href="/sample/">Inspect the sample blueprint first.</Link>
+              <Link prefetch={false} href="/sample/">Inspect the sample blueprint first.</Link>
             </li>
             <li>
-              <Link href="/compare/">Compare alternatives before payment.</Link>
+              <Link prefetch={false} href="/compare/">Compare alternatives before payment.</Link>
             </li>
             <li>
-              <Link href="/pricing/">Use pricing only after the fit is clear.</Link>
+              <Link prefetch={false} href="/pricing/">Use pricing only after the fit is clear.</Link>
             </li>
           </ul>
           <h2>Related Pages</h2>

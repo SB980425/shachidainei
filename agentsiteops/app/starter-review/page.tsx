@@ -93,11 +93,11 @@ export default function Page() {
               <CreditCard aria-hidden="true" size={17} />
               Pay USD {starterOffer.price} for the verdict
             </a>
-            <Link className="secondary-action" href="/examples/fit-review-sample/">
+            <Link prefetch={false} className="secondary-action" href="/examples/fit-review-sample/">
               <FileText aria-hidden="true" size={17} />
               See sample
             </Link>
-            <Link className="secondary-action" href="/intake/">
+            <Link prefetch={false} className="secondary-action" href="/intake/">
               <ArrowRight aria-hidden="true" size={17} />
               Intake fields
             </Link>
@@ -215,7 +215,7 @@ export default function Page() {
             <CreditCard aria-hidden="true" size={17} />
             Pay USD {starterOffer.price}
           </a>
-          <Link className="secondary-action" href="/pricing/">
+          <Link prefetch={false} className="secondary-action" href="/pricing/">
             <ArrowRight aria-hidden="true" size={17} />
             Compare offers
           </Link>

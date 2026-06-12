@@ -55,15 +55,15 @@ export default function Page() {
             from the buyer's skills, assets, target market, constraints, and launch window.
           </p>
           <div className="hero-actions">
-            <Link className="primary-action" href="/tools/launch-blueprint-fit-checker/">
+            <Link prefetch={false} className="primary-action" href="/tools/launch-blueprint-fit-checker/">
               <CheckCircle2 aria-hidden="true" size={17} />
               Check fit first
             </Link>
-            <Link className="secondary-action" href="/intake/">
+            <Link prefetch={false} className="secondary-action" href="/intake/">
               <ArrowRight aria-hidden="true" size={17} />
               View intake fields
             </Link>
-            <Link className="secondary-action" href="/compare/">
+            <Link prefetch={false} className="secondary-action" href="/compare/">
               <GitCompareArrows aria-hidden="true" size={17} />
               Compare options
             </Link>
@@ -210,11 +210,11 @@ export default function Page() {
             path. The final artifact is delivered manually after payment confirmation and intake.
           </p>
           <div className="hero-actions">
-            <Link className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
+            <Link prefetch={false} className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
               <CheckCircle2 aria-hidden="true" size={17} />
               Check fit first
             </Link>
-            <Link className="secondary-action" href="/buy/">
+            <Link prefetch={false} className="secondary-action" href="/buy/">
               <FileText aria-hidden="true" size={17} />
               View buy page
             </Link>

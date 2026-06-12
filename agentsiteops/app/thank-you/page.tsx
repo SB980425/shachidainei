@@ -33,11 +33,11 @@ export default function Page() {
             so the offer, page structure, and outreach plan can be built from your actual constraints.
           </p>
           <div className="hero-actions">
-            <Link className="primary-action" href="/intake/">
+            <Link prefetch={false} className="primary-action" href="/intake/">
               <Mail aria-hidden="true" size={17} />
               Open intake
             </Link>
-            <Link className="secondary-action" href="/refund-policy/">
+            <Link prefetch={false} className="secondary-action" href="/refund-policy/">
               <ShieldCheck aria-hidden="true" size={17} />
               Refund policy
             </Link>

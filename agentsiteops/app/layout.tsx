@@ -82,18 +82,18 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <SiteAnalytics />
         <header className="site-header">
-          <Link className="brand" href="/" aria-label="AgentSiteOps home">
+          <Link prefetch={false} className="brand" href="/" aria-label="AgentSiteOps home">
             <BrandLogo />
           </Link>
           <nav className="nav" aria-label="Primary navigation">
             {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
+              <Link prefetch={false} key={item.href} href={item.href}>
                 <item.Icon aria-hidden="true" size={15} strokeWidth={2.2} />
                 {item.label}
               </Link>
             ))}
           </nav>
-          <Link className="header-action" href="/pricing/">
+          <Link prefetch={false} className="header-action" href="/pricing/">
             <BadgeDollarSign aria-hidden="true" size={16} />
             Pricing
           </Link>
@@ -105,25 +105,25 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <p>Launch blueprint service for AI-capable solo builders who need one sellable offer and first validation path.</p>
           </div>
           <div className="footer-links">
-            <Link href="/launch-kit/">Launch Kit</Link>
-            <Link href="/updates/">Updates</Link>
-            <Link href="/pricing/">Pricing</Link>
-            <Link href="/sample/">Sample</Link>
-            <Link href="/compare/">Compare</Link>
-            <Link href="/terms/">Terms</Link>
-            <Link href="/refund-policy/">Refunds</Link>
-            <Link href="/contact/">Contact</Link>
-            <Link href="/tools/ai-crawler-readiness/">Crawler</Link>
-            <Link href="/tools/launch-blueprint-fit-checker/">Fit Checker</Link>
-            <Link href="/templates/starter-pack/">Starter Pack</Link>
-            <Link href="/reports/route-evidence-dashboard/">Evidence</Link>
-            <Link href="/methodology/route-selection/">Route Method</Link>
-            <Link href="/guides/48-hour-exposure-sprint/">48h Sprint</Link>
-            <Link href="/guides/first-traffic-system/">Traffic System</Link>
-            <Link href="/authors/">Authors</Link>
-            <Link href="/editorial-policy/">Editorial</Link>
-            <Link href="/privacy/">Privacy</Link>
-            <Link href="/disclosure/">Disclosure</Link>
+            <Link prefetch={false} href="/launch-kit/">Launch Kit</Link>
+            <Link prefetch={false} href="/updates/">Updates</Link>
+            <Link prefetch={false} href="/pricing/">Pricing</Link>
+            <Link prefetch={false} href="/sample/">Sample</Link>
+            <Link prefetch={false} href="/compare/">Compare</Link>
+            <Link prefetch={false} href="/terms/">Terms</Link>
+            <Link prefetch={false} href="/refund-policy/">Refunds</Link>
+            <Link prefetch={false} href="/contact/">Contact</Link>
+            <Link prefetch={false} href="/tools/ai-crawler-readiness/">Crawler</Link>
+            <Link prefetch={false} href="/tools/launch-blueprint-fit-checker/">Fit Checker</Link>
+            <Link prefetch={false} href="/templates/starter-pack/">Starter Pack</Link>
+            <Link prefetch={false} href="/reports/route-evidence-dashboard/">Evidence</Link>
+            <Link prefetch={false} href="/methodology/route-selection/">Route Method</Link>
+            <Link prefetch={false} href="/guides/48-hour-exposure-sprint/">48h Sprint</Link>
+            <Link prefetch={false} href="/guides/first-traffic-system/">Traffic System</Link>
+            <Link prefetch={false} href="/authors/">Authors</Link>
+            <Link prefetch={false} href="/editorial-policy/">Editorial</Link>
+            <Link prefetch={false} href="/privacy/">Privacy</Link>
+            <Link prefetch={false} href="/disclosure/">Disclosure</Link>
           </div>
         </footer>
       </body>

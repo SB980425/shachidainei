@@ -41,10 +41,10 @@ export default function Page() {
           <p>{page.description}</p>
         </div>
         <div className="tool-hero-actions">
-          <Link className="secondary-action" href="/methodology/website-opportunity-scoring/">
+          <Link prefetch={false} className="secondary-action" href="/methodology/website-opportunity-scoring/">
             View methodology
           </Link>
-          <Link className="secondary-action" href="/ai-website-operating-system/">
+          <Link prefetch={false} className="secondary-action" href="/ai-website-operating-system/">
             Return to system
           </Link>
         </div>

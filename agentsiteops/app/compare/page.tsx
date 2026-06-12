@@ -71,19 +71,19 @@ export default function Page() {
             choosing the first sellable offer, page structure, and outreach path.
           </p>
           <div className="hero-actions">
-            <Link className="primary-action" href="/tools/launch-blueprint-fit-checker/">
+            <Link prefetch={false} className="primary-action" href="/tools/launch-blueprint-fit-checker/">
               <CheckCircle2 aria-hidden="true" size={17} />
               Check fit before payment
             </Link>
-            <Link className="secondary-action" href="/sample/">
+            <Link prefetch={false} className="secondary-action" href="/sample/">
               <GitCompareArrows aria-hidden="true" size={17} />
               View sample
             </Link>
-            <Link className="secondary-action" href="/starter-review/">
+            <Link prefetch={false} className="secondary-action" href="/starter-review/">
               <ShieldAlert aria-hidden="true" size={17} />
               Start with USD {starterOffer.price} review
             </Link>
-            <Link className="secondary-action" href="/pricing/">
+            <Link prefetch={false} className="secondary-action" href="/pricing/">
               <ArrowRight aria-hidden="true" size={17} />
               View pricing
             </Link>
@@ -108,7 +108,7 @@ export default function Page() {
             Pay USD {primaryOffer.price}
           </a>
           <small>{launchProduct.nonPromise}</small>
-          <Link className="secondary-action" href="/starter-review/">
+          <Link prefetch={false} className="secondary-action" href="/starter-review/">
             <ShieldAlert aria-hidden="true" size={17} />
             Unsure? Use Fit Review
           </Link>

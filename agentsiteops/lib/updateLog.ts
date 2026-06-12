@@ -12,6 +12,48 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-43 Route evidence method and static prefetch repair",
+    status: "completed",
+    keyPoints: [
+      "Rebuilt the Route Selection Methodology page as a dedicated evidence page instead of a generic route template.",
+      "Published the route source map, confidence bands, and project route fit matrix directly on the page so route recommendations can be inspected before payment.",
+      "Disabled Next Link prefetch across app links to prevent static-export RSC prefetch 404s from appearing in production.",
+      "Updated production, commercial, and technical SEO gates so they check the new method page and the production analytics endpoint boundary correctly.",
+      "Kept the commercial decision unchanged: visible methodology improves trust and crawlability, but it is not buyer demand."
+    ],
+    aiAngle:
+      "AI and search readers now receive a concrete route-selection basis: inputs, downgrade rules, hard stops, confidence bands, and project-type fit rather than a standalone score claim.",
+    files: [
+      "app/methodology/route-selection/page.tsx",
+      "lib/routeEvidence.ts",
+      "app/globals.css",
+      "app/layout.tsx",
+      "components/RoutePage.tsx",
+      "scripts/technical-seo-ci.mjs",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "reports/technical-seo-ci.md",
+      "reports/commercial-validation-gate.md",
+      "reports/production-health-monitor.md",
+      "data/48-hour-exposure-decision.json",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "code-quality gate pass",
+      "build pass with 53 static pages",
+      "production route-method page returns new H1 with 3 evidence tables and 22 rows",
+      "production route-method page has no 404 responses after prefetch repair",
+      "technical SEO CI pass: 47 routes, 0 blockers",
+      "commercial gate pass: 304 checks, 0 blockers",
+      "production health pass: 220 checks, 0 blockers",
+      "IndexNow submit pass: 47 URLs"
+    ],
+    next:
+      "Continue collecting threshold-valid evidence only: source-link clicks, sample views, PayPal clicks, qualified replies, confirmed payments with usable intake, or repeated concrete objections."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-42 GitHub analytics-summary surface refresh",
     status: "completed",
     keyPoints: [

@@ -33,8 +33,7 @@ export function ScorerPanel() {
           <strong>78</strong>
           <span>package</span>
         </div>
-        <Link
-          className="copy-button"
+        <Link prefetch={false} className="copy-button"
           data-analytics-event="cta_click"
           data-analytics-label="homepage_scorer_preview"
           data-analytics-target="/tools/website-opportunity-scorer/"
