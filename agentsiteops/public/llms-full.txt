@@ -44,6 +44,16 @@ The system separates scoring from route selection:
 4. Select one route and one first offer.
 5. Produce a short validation path with stop, rewrite, narrow, pivot_to_implementation, or continue outcomes.
 
+## Decision Engine Basis
+
+The route recommendation is not generated from a standalone 0-100 number. The public basis is:
+
+- `data/route-pattern-library.csv`: 12 route archetypes with best-fit conditions, minimum evidence, page assets, paid offer shape, and common stop rule.
+- `data/route-selection-source-map.csv`: input dimensions, accepted evidence, downgrade conditions, stop rules, and output effects.
+- `docs/route-selection-decision-engine.md`: operating rules that prevent score-only routing, assumption-only confidence, subscription-before-validation, and advice-only output when the buyer needs implementation.
+
+The decision engine must lower confidence when evidence is only assumption, generic model output, vanity traffic, or third-party estimates without first-party validation. It must stop or reject when data rights are unclear, regulated advice is required, private account takeover is needed, no reachable buyer segment exists, or generic AI can produce the same useful result without manual evidence review.
+
 ## Evidence Hierarchy
 
 Strong evidence:

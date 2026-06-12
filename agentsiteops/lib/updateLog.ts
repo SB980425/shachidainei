@@ -12,6 +12,36 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-28 Route decision evidence basis",
+    status: "completed",
+    keyPoints: [
+      "Added a public route-selection source map so route recommendations are tied to explicit input dimensions, accepted evidence, downgrade conditions, stop rules, and output effects.",
+      "Added a route-selection decision engine document that separates score gating from route selection and blocks assumption-only confidence.",
+      "Expanded the route methodology page with source-map rules, confidence-raising evidence, confidence-lowering evidence, forced-stop conditions, and delivery standards.",
+      "Updated the AI-readable full context so external AI systems can see the route engine basis instead of treating the service as a random 0-100 score generator.",
+      "Extended the commercial validation gate so generic-AI substitution risk, implementation-vs-advice mismatch, missing first-party search data, and one-route delivery standards remain enforced."
+    ],
+    aiAngle:
+      "AI and search systems now have a clearer basis for how AgentSiteOps chooses a route, rejects alternatives, and refuses to sell advice when implementation or stop is the more accurate answer.",
+    files: [
+      "data/route-selection-source-map.csv",
+      "docs/route-selection-decision-engine.md",
+      "lib/site.ts",
+      "public/llms-full.txt",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "commercial validation gate pass with 203 checks",
+      "route consistency gate pass with 240 checks"
+    ],
+    next:
+      "Use the source map during any paid or sample route decision; if buyer evidence is missing, the output must narrow, reject, refund, pivot to implementation, or stop instead of producing a confident roadmap."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-27 GitHub traffic evidence snapshot",
     status: "completed",
     keyPoints: [

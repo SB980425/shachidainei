@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T01:00:49.445Z
+- Generated: 2026-06-12T01:11:03.518Z
 - Status: pass
-- Checks: 197
+- Checks: 203
 - Blockers: 0
 
 ## Summary
@@ -131,6 +131,12 @@
 | route_selection | pass | route-pattern library includes marketplace or matching route |
 | route_selection | pass | route-pattern library includes data route |
 | route_selection | pass | route-pattern library records stop rules |
+| route_selection | pass | route source map includes generic AI substitute risk |
+| route_selection | pass | route source map ties monetization fit to confirmed payment and usable intake |
+| route_selection | pass | route source map blocks search scaling without first-party data |
+| route_selection | pass | route decision engine blocks assumption-only confidence |
+| route_selection | pass | route decision engine blocks advice-only mismatch |
+| route_selection | pass | route decision engine requires one selected route |
 | first_traffic | pass | first traffic guide states multi-channel exposure |
 | first_traffic | pass | first traffic guide includes 48-hour loop |
 | first_traffic | pass | first traffic channel plan includes manual outreach |

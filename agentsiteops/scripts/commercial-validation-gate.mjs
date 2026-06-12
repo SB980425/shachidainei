@@ -92,6 +92,8 @@ function checkCommercialBoundary() {
   const selfScoreProtocol = read("docs/self-score-maintenance-protocol.md");
   const selfScoreChangeLog = read("data/self-score-change-log-template.csv");
   const routePatterns = read("data/route-pattern-library.csv");
+  const routeSourceMap = read("data/route-selection-source-map.csv");
+  const routeDecisionEngine = read("docs/route-selection-decision-engine.md");
   const trafficChannels = read("data/first-traffic-channel-plan.csv");
   const exposureSprint = read("data/48-hour-exposure-sprint.csv");
   const exposureTargets = read("data/exposure-submission-targets.csv");
@@ -190,6 +192,12 @@ function checkCommercialBoundary() {
   requireText("route_selection", routePatterns, "Marketplace or matching service", "route-pattern library includes marketplace or matching route");
   requireText("route_selection", routePatterns, "Programmatic directory", "route-pattern library includes data route");
   requireText("route_selection", routePatterns, "common_stop_rule", "route-pattern library records stop rules");
+  requireText("route_selection", routeSourceMap, "generic_ai_substitute", "route source map includes generic AI substitute risk");
+  requireText("route_selection", routeSourceMap, "Confirmed payment, payment click plus usable intake", "route source map ties monetization fit to confirmed payment and usable intake");
+  requireText("route_selection", routeSourceMap, "Do not scale content cluster when first-party search data is missing", "route source map blocks search scaling without first-party data");
+  requireText("route_selection", routeDecisionEngine, "Never raise route confidence from assumptions alone.", "route decision engine blocks assumption-only confidence");
+  requireText("route_selection", routeDecisionEngine, "Never keep a route when the buyer needs implementation and the product only delivers advice.", "route decision engine blocks advice-only mismatch");
+  requireText("route_selection", routeDecisionEngine, "One selected route", "route decision engine requires one selected route");
   requireText("first_traffic", site, "The first traffic plan does not wait for Google alone", "first traffic guide states multi-channel exposure");
   requireText("first_traffic", site, "48-hour exposure loop", "first traffic guide includes 48-hour loop");
   requireText("first_traffic", trafficChannels, "Manual founder outreach", "first traffic channel plan includes manual outreach");

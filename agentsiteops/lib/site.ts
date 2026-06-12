@@ -1005,6 +1005,28 @@ export const routePages: RoutePage[] = [
         ]
       },
       {
+        title: "Source map",
+        body:
+          "The public source map in data/route-selection-source-map.csv defines which inputs can raise confidence, which inputs lower confidence, and which conditions force a stop. It covers builder ability, buyer problem, proof asset, target segment, delivery capacity, data rights, risk boundary, monetization fit, search evidence, AI visibility evidence, implementation need, and generic-AI substitution risk.",
+        rows: [
+          {
+            label: "Raise confidence",
+            value:
+              "Payment plus usable intake, qualified replies, first-party exports, delivered artifact feedback, public demos, source-backed comparisons, and verifiable delivery proof."
+          },
+          {
+            label: "Lower confidence",
+            value:
+              "Assumptions, generic model output, vanity traffic, unsupported price projections, unknown capacity, and third-party estimates without first-party validation."
+          },
+          {
+            label: "Force stop",
+            value:
+              "Unsafe regulated advice, unclear data rights, private account takeover, no reachable buyer segment, generic-AI-equivalent output, or implementation demand that a route file cannot solve."
+          }
+        ]
+      },
+      {
         title: "Route archetype library",
         body:
           "The current public library starts with 12 operating archetypes in data/route-pattern-library.csv. They are reusable route patterns, not proof that AgentSiteOps already has customer case studies.",
@@ -1040,6 +1062,17 @@ export const routePages: RoutePage[] = [
           { label: "Buyer trigger", value: "Can the buyer describe an urgent problem and a reachable first segment?" },
           { label: "Asset", value: "Can a page, tool, sample, repo, or workflow prove the outcome before scale?" },
           { label: "Risk", value: "Does YMYL, data, privacy, platform, account, or payment risk block the route?" }
+        ]
+      },
+      {
+        title: "Delivery standard",
+        body:
+          "A paid route file must select one route, reject the alternatives, name the first offer, define the page asset, choose the first channel, expose missing evidence, and provide stop rules. Without those fields, the output is not worth selling.",
+        rows: [
+          { label: "Selected route", value: "One route only, with the reason it fits current evidence." },
+          { label: "Rejected routes", value: "Alternatives rejected because of risk, weak proof, poor fit, or wrong buyer need." },
+          { label: "Evidence ledger", value: "Confirmed, inferred, and missing evidence are separated instead of hidden." },
+          { label: "Stop rule", value: "The buyer can see when to continue, narrow, rewrite, pivot to implementation, refund, or stop." }
         ]
       },
       {
