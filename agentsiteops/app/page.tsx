@@ -1,387 +1,170 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Activity,
   ArrowRight,
   BadgeDollarSign,
   CheckCircle2,
   FileText,
   Gauge,
-  Mail,
-  MousePointer2,
-  ShieldCheck,
-  TimerReset
+  GitBranch,
+  ShieldCheck
 } from "lucide-react";
-import { BrandLogo } from "@/components/BrandLogo";
-import {
-  authorityBoundaries,
-  blueprintEvidenceInputs,
-  launchProduct,
-  marketSignals,
-  samplePaidArtifactChecklist,
-  starterReviewAcceptanceCriteria,
-  starterReviewDeliverables,
-  starterReviewProduct
-} from "@/lib/launch";
+import { RouteCommandCenter } from "@/components/RouteCommandCenter";
 import { primaryOffer, starterOffer } from "@/lib/payments";
 import { allRoutes, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "AgentSiteOps",
   description:
-    "AgentSiteOps validates whether an AI-capable solo builder has a sellable first offer before they build a site, dashboard, or content system."
+    "AgentSiteOps turns project facts, evidence, risk boundaries, and delivery capacity into one route map, one rejected-path record, and one 7-day execution plan."
 };
 
-const decisionSteps = [
+const foundationCards = [
   {
-    title: "Send the raw facts",
-    body: "Skill stack, proof assets, buyer idea, time limit, price range, and any regulated or platform-risk boundary.",
-    icon: FileText
+    title: "Not a random score",
+    body: "Scores come from evidence maturity, proof assets, delivery boundary, data rights, hard blockers, and route fit.",
+    Icon: Gauge
   },
   {
-    title: "Get one verdict",
-    body: "Go, narrow, or stop. The answer names the biggest blocker before it recommends more work.",
-    icon: Gauge
+    title: "Rejected paths stay visible",
+    body: "The interface shows why weak routes are pruned before a build, paid offer, or content cluster starts.",
+    Icon: GitBranch
   },
   {
-    title: "Only then scale",
-    body: "Move to the USD 99 blueprint only when the small review finds enough evidence for a route.",
-    icon: TimerReset
+    title: "Reusable for our own projects",
+    body: "Each future site starts with the same route brief, evidence ledger, first asset, and failure gate.",
+    Icon: FileText
+  },
+  {
+    title: "Claims are bounded",
+    body: "The system blocks guaranteed traffic, ranking, AI citation, revenue, and unsupported regulated advice.",
+    Icon: ShieldCheck
   }
 ];
 
-const shortProof = [
-  ["USD 29", "manual pre-purchase verdict"],
-  ["24h", starterReviewProduct.timeline.replace("Manual delivery within ", "").replace(" after payment confirmation and usable intake details.", "")],
-  ["52/100", "current public self-score"],
-  [String(allRoutes.length), "indexable support routes"]
-];
-
-const blockers = [
-  "No guaranteed traffic, ranking, AI citation, customer, or revenue claim.",
-  "No subscription pitch until repeat usage is proven.",
-  "No full blueprint sale when the intake is too weak."
-];
-
-const proofConsoleItems = [
-  {
-    title: "Inputs",
-    body: "Skills, assets, buyer idea, public proof, time limit, price range, and risk boundaries."
-  },
-  {
-    title: "Scoring",
-    body: "Offer clarity, buyer trigger, proof depth, delivery ability, search evidence, and hard blockers."
-  },
-  {
-    title: "Output",
-    body: "One selected route, rejected alternatives, page structure, outreach path, and a stop rule."
-  },
-  {
-    title: "Limits",
-    body: "Missing search, payment, intake, or buyer evidence is marked as missing instead of inferred."
-  }
+const preservedLinks = [
+  { href: "/tools/website-opportunity-scorer/", label: "Website opportunity scorer" },
+  { href: "/tools/route-confidence-checker/", label: "Route confidence checker" },
+  { href: "/tools/launch-blueprint-fit-checker/", label: "Launch blueprint fit checker" },
+  { href: "/reports/route-basis/", label: "Route basis report" },
+  { href: "/methodology/route-selection/", label: "Route selection methodology" },
+  { href: "/sample/", label: "Sample route file" }
 ];
 
 export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@type": "WebApplication",
     name: "AgentSiteOps",
     description:
-      "A fit review and launch blueprint service for AI-capable solo builders who need one sellable offer, one page structure, and one first outreach path.",
+      "A route selection and launch blueprint system for choosing one project path before building websites, tools, or content systems.",
     inLanguage: "en",
     url: siteUrl,
-    potentialAction: {
-      "@type": "ViewAction",
-      target: `${siteUrl}/starter-review/`,
-      name: "Start the AgentSiteOps Fit Review"
-    }
+    applicationCategory: "BusinessApplication",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Fit Review",
+        price: starterOffer.price,
+        priceCurrency: "USD"
+      },
+      {
+        "@type": "Offer",
+        name: "Launch Blueprint",
+        price: primaryOffer.price,
+        priceCurrency: "USD"
+      }
+    ]
   };
 
   return (
-    <main className="page-main">
+    <main className="page-main route-home">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="validation-hero">
-        <div className="validation-hero-copy">
-          <p className="hero-kicker">AI service offer validation</p>
-          <h1>Validate your first AI service offer before building the site.</h1>
-          <p className="hero-lede">
-            A USD {starterOffer.price} manual Fit Review gives one verdict: go, narrow,
-            or stop. Use it before spending days on a landing page, automation demo, or
-            broad content plan.
+      <RouteCommandCenter />
+
+      <section className="route-foundation-section">
+        <div className="route-section-heading">
+          <span>System foundation</span>
+          <h2>How AgentSiteOps becomes our route planner.</h2>
+          <p>
+            The product is useful only if it can guide our own projects first. The
+            homepage now exposes the same route logic we will use before creating a new
+            site, tool, content cluster, or paid offer.
           </p>
-
-          <div className="hero-actions hero-actions-tight">
-            <Link prefetch={false} className="primary-action" href="/starter-review/">
-              <BadgeDollarSign aria-hidden="true" size={17} />
-              Start with USD {starterOffer.price} Fit Review
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/examples/fit-review-sample/">
-              <FileText aria-hidden="true" size={17} />
-              See sample verdict
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/launch-kit/">
-              <FileText aria-hidden="true" size={17} />
-              Inspect launch kit
-            </Link>
-          </div>
-
-          <div className="validation-proof-strip" aria-label="AgentSiteOps launch summary">
-            {shortProof.map(([value, label]) => (
-              <div key={value}>
-                <strong>{value}</strong>
-                <span>{label}</span>
-              </div>
-            ))}
-          </div>
         </div>
 
-        <aside className="validation-panel" aria-label="AgentSiteOps validation model">
-          <div className="validation-panel-head">
-            <BrandLogo />
-            <span>commercially unvalidated by default</span>
-          </div>
-
-          <div className="validation-stage" aria-hidden="true">
-            <div className="validation-track validation-track-a" />
-            <div className="validation-track validation-track-b" />
-            <div className="validation-core">
-              <strong>52</strong>
-              <span>/100</span>
-              <small>current score</small>
-            </div>
-            <span className="validation-node node-offer">Offer</span>
-            <span className="validation-node node-proof">Proof</span>
-            <span className="validation-node node-buyer">Buyer</span>
-            <span className="validation-node node-route">Route</span>
-          </div>
-
-          <div className="verdict-stack">
-            {["Go", "Narrow", "Stop"].map((item, index) => (
-              <span className={index === 1 ? "is-active" : ""} key={item}>
-                <Activity aria-hidden="true" size={14} />
-                {item}
-              </span>
-            ))}
-          </div>
-
-          <div className="validation-meter" aria-label="Validation score meter">
-            <span />
-          </div>
-          <p>
-            The product starts as a small paid decision, not a promise that the full
-            blueprint is always worth buying.
-          </p>
-        </aside>
-      </section>
-
-      <section className="proof-console-section compact-home-section">
-        <div className="proof-console">
-          <div className="proof-console-brand">
-            <BrandLogo compact />
-            <span>evidence before roadmap</span>
-          </div>
-          <h2>Evidence used, not guessed.</h2>
-          <p>
-            The paid work is not a prettier AI answer. It is a constrained decision
-            pass that turns messy inputs into one route and records which claims remain
-            unproven.
-          </p>
-          <div className="proof-console-grid">
-            {proofConsoleItems.map((item) => (
-              <article key={item.title}>
-                <strong>{item.title}</strong>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
-          <div className="hero-actions">
-            <Link prefetch={false} className="secondary-action" href="/methodology/route-selection/">
-              <ArrowRight aria-hidden="true" size={17} />
-              Audit route logic
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/guides/first-traffic-system/">
-              <ArrowRight aria-hidden="true" size={17} />
-              Inspect first traffic system
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/guides/48-hour-exposure-sprint/">
-              <ArrowRight aria-hidden="true" size={17} />
-              Run 48-hour sprint
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/launch-kit/">
-              <ArrowRight aria-hidden="true" size={17} />
-              View launch kit
-            </Link>
-          </div>
-        </div>
-
-        <aside className="artifact-preview-card" aria-label="Launch Blueprint artifact preview">
-          <span>Paid artifact preview</span>
-          <h3>What the buyer receives is a route file, not a score.</h3>
-          <ul>
-            {samplePaidArtifactChecklist.slice(0, 4).map((item) => (
-              <li key={item.title}>
-                <CheckCircle2 aria-hidden="true" size={16} />
-                {item.title}: {item.body}
-              </li>
-            ))}
-          </ul>
-          <Link prefetch={false} className="secondary-action" href="/sample/">
-            <FileText aria-hidden="true" size={17} />
-            Inspect full sample
-          </Link>
-        </aside>
-      </section>
-
-      <section className="workflow-section compact-home-section">
-        <div className="section-head">
-          <h2>Three-minute decision path</h2>
-          <p>
-            The page now keeps the buyer on one route: check whether a first offer deserves
-            a real build plan.
-          </p>
-        </div>
-        <div className="workflow-grid">
-          {decisionSteps.map((item, index) => {
-            const Icon = item.icon;
+        <div className="route-foundation-grid">
+          {foundationCards.map((item) => {
+            const Icon = item.Icon;
 
             return (
-              <div className="workflow-card" key={item.title}>
-                <span aria-hidden="true">{index + 1}</span>
-                <Icon aria-hidden="true" size={20} />
+              <article key={item.title}>
+                <Icon aria-hidden="true" size={22} />
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
-              </div>
+              </article>
             );
           })}
         </div>
       </section>
 
-      <section className="pricing-grid-section compact-home-section">
-        <div className="section-head">
-          <h2>What the USD {starterOffer.price} review includes</h2>
+      <section className="route-preserved-section">
+        <div>
+          <span>Existing functions preserved</span>
+          <h2>The redesign keeps the current tool surface alive.</h2>
           <p>
-            The first sale is deliberately small. It should answer whether the full USD{" "}
-            {primaryOffer.price} blueprint is useful or wasteful.
+            The new command center is a front door. The existing scorer, checker, sample,
+            methodology pages, payment path, sitemap, and report routes remain available
+            and indexable.
           </p>
+          <dl>
+            <div>
+              <dt>Indexed support routes</dt>
+              <dd>{allRoutes.length}</dd>
+            </div>
+            <div>
+              <dt>Starter review</dt>
+              <dd>USD {starterOffer.price}</dd>
+            </div>
+            <div>
+              <dt>Blueprint path</dt>
+              <dd>USD {primaryOffer.price}</dd>
+            </div>
+          </dl>
         </div>
-        <div className="pricing-grid">
-          {starterReviewDeliverables.slice(0, 3).map((item) => (
-            <article key={item}>
-              <span aria-hidden="true">
-                <CheckCircle2 size={18} />
-              </span>
-              <h3>{item.split(".")[0]}</h3>
-              <p>{item}</p>
-            </article>
+
+        <div className="route-link-board">
+          {preservedLinks.map((item) => (
+            <Link prefetch={false} href={item.href} key={item.href}>
+              <CheckCircle2 aria-hidden="true" size={16} />
+              {item.label}
+              <ArrowRight aria-hidden="true" size={15} />
+            </Link>
           ))}
         </div>
       </section>
 
-      <section className="pricing-grid-section split-section gate-split compact-home-section">
+      <section className="route-final-cta">
         <div>
-          <h2>Why this is not generic AI advice</h2>
-          <ul className="compact-list">
-            {blueprintEvidenceInputs.slice(0, 3).map((item) => (
-              <li key={item.title}>
-                <CheckCircle2 aria-hidden="true" size={16} />
-                {item.title}: {item.body}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2>Payment blockers stay visible</h2>
-          <ul className="compact-list">
-            {blockers.map((item) => (
-              <li key={item}>
-                <ShieldCheck aria-hidden="true" size={16} />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/starter-review/">
-              <BadgeDollarSign aria-hidden="true" size={17} />
-              Start the small review
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/disclaimer/">
-              <ArrowRight aria-hidden="true" size={17} />
-              Read limits
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="conversion-band">
-        <div>
-          <p className="hero-kicker">Full blueprint is gated</p>
-          <h2>Buy the full route only after the fit verdict supports it.</h2>
+          <span>Next operating rule</span>
+          <h2>Every new project starts with a route map before a build.</h2>
           <p>
-            {launchProduct.promise} The review can still say stop when the evidence is too
-            weak.
+            If the selected route cannot name evidence, first asset, rejected alternatives,
+            and a stop rule, the project stays in research instead of entering production.
           </p>
         </div>
-        <div className="conversion-actions">
-          <Link prefetch={false} className="primary-action" href="/starter-review/">
+        <div className="route-final-actions">
+          <Link prefetch={false} className="primary-action" href="/tools/website-opportunity-scorer/">
+            <Gauge aria-hidden="true" size={17} />
+            Score a direction
+          </Link>
+          <Link prefetch={false} className="secondary-action" href="/pricing/">
             <BadgeDollarSign aria-hidden="true" size={17} />
-            Fit Review USD {starterOffer.price}
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/buy/">
-            <MousePointer2 aria-hidden="true" size={17} />
-            Full Blueprint USD {primaryOffer.price}
-          </Link>
-        </div>
-      </section>
-
-      <section className="pricing-grid-section compact-home-section evidence-disclosure">
-        <div className="section-head">
-          <h2>Authority boundary</h2>
-          <p>{authorityBoundaries[0]}</p>
-        </div>
-        <div className="acceptance-row">
-          {starterReviewAcceptanceCriteria.slice(0, 3).map((item) => (
-            <article key={item.title}>
-              <Mail aria-hidden="true" size={17} />
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="market-signal-section compact-home-section">
-        <div className="section-head">
-          <h2>Market signals are context, not proof.</h2>
-          <p>
-            Public AI-search and SEO research shapes the checklist, but only first-party
-            payment, intake, search, reply, and delivery evidence can validate this offer.
-          </p>
-        </div>
-        <div className="market-signal-grid">
-          {marketSignals.slice(0, 3).map((item) => (
-            <a href={item.href} key={item.title} rel="noreferrer" target="_blank">
-              <strong>{item.title}</strong>
-              <span>{item.summary}</span>
-            </a>
-          ))}
-        </div>
-        <div className="hero-actions">
-          <Link prefetch={false} className="secondary-action" href="/methodology/route-selection/">
-            <ArrowRight aria-hidden="true" size={17} />
-            View route evidence hierarchy
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/guides/first-traffic-system/">
-            <ArrowRight aria-hidden="true" size={17} />
-            View first visitor loop
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/guides/48-hour-exposure-sprint/">
-            <ArrowRight aria-hidden="true" size={17} />
-            View 48-hour sprint
+            View pricing
           </Link>
         </div>
       </section>
