@@ -4,7 +4,7 @@
 - Status: discoverability_seen
 - Counts toward 48-hour continuation threshold: no
 - Source: external web search result inspection
-- Latest recheck: 2026-06-12T05:29:00Z
+- Latest recheck: 2026-06-12T07:45:00Z
 
 ## Summary
 
@@ -25,11 +25,20 @@ This does not prove Google Search Console impressions, Bing Webmaster impression
 | site:agentsiteops.com AgentSiteOps Launch Kit | https://agentsiteops.com/ | AgentSiteOps | home_page |
 | site:agentsiteops.com AgentSiteOps Launch Kit | https://agentsiteops.com/reports/route-evidence-dashboard/ | Route Evidence Dashboard \| AgentSiteOps | evidence_page |
 | site:agentsiteops.com "Analytics summary" "AgentSiteOps" | https://agentsiteops.com/ | AgentSiteOps | home_page |
+| agentsiteops.com | https://agentsiteops.com/ | AgentSiteOps | home_page |
+| agentsiteops.com | https://agentsiteops.com/disclosure/ | Disclosure - AgentSiteOps | trust_page |
+| AgentSiteOps | https://agentsiteops.com/examples/agentsiteops-self-audit/ | AgentSiteOps Self-Audit Sample \| AgentSiteOps | sample_page |
+| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | AI Citation and Grounding Metrics - AgentSiteOps | guide_page |
+| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | Route Evidence Dashboard \| AgentSiteOps | evidence_page |
+| agentsiteops.com | https://agentsiteops.com/guides/indexnow-cloudflare-pages/ | IndexNow on Cloudflare Pages \| AgentSiteOps | guide_page |
+| agentsiteops.com | https://agentsiteops.com/templates/evidence-ledger-template/ | Evidence Ledger Template \| AgentSiteOps | template_page |
+| "AgentSiteOps" "Route Confidence Checker" | not confirmed | not confirmed | tool_page |
 
 ## Interpretation
 
 - The branded home page can be externally found.
 - At least one public sample, one trust page, one evidence page, and two guide pages can be externally found.
 - The Launch Kit page was not confirmed in this snapshot and should remain a target for future indexing and internal-link reinforcement.
-- The analytics summary endpoint was not confirmed as a search result in the latest recheck; it should be treated as a linked inspection endpoint, not an indexed acquisition page.
+- The analytics summary endpoint was not confirmed as a search result in the previous recheck; it should be treated as a linked inspection endpoint, not an indexed acquisition page.
+- The Route Confidence Checker was not directly confirmed in the latest external search recheck, so it should remain an IndexNow and internal-link target.
 - This evidence should not increase any 48-hour threshold metric unless a separate first-party or external analytics source proves visits, clicks, replies, payments, usable intake, or objections.

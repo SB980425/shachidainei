@@ -1,7 +1,7 @@
 generated_at,issue_url,metric,value,counts_toward_48h_threshold,note
-2026-06-12T07:43:59.330Z,https://github.com/SB980425/shachidainei/issues/2,issue_public_comment_count,1,no,Total public GitHub issue comment count; includes maintainer comments.
-2026-06-12T07:43:59.330Z,https://github.com/SB980425/shachidainei/issues/2,maintainer_comment_count,1,no,Maintainer comments do not count as qualified external replies.
-2026-06-12T07:43:59.330Z,https://github.com/SB980425/shachidainei/issues/2,candidate_external_reply_count,0,no,External comments and structured feedback issues require manual review before any threshold update.
-2026-06-12T07:43:59.330Z,https://github.com/SB980425/shachidainei/issues/2,structured_feedback_issue_count,1,no,Total open issues carrying the agentsiteops-feedback label.
-2026-06-12T07:43:59.330Z,https://github.com/SB980425/shachidainei/issues/2,candidate_external_feedback_issue_count,0,no,External structured feedback issues require manual review before any threshold update.
-2026-06-12T07:43:59.330Z,https://github.com/SB980425/shachidainei/issues/2,qualified_reply_count,0,no,No GitHub comment has been manually qualified in this snapshot.
+2026-06-12T07:52:01.930Z,https://github.com/SB980425/shachidainei/issues/2,issue_public_comment_count,1,no,Total public GitHub issue comment count; includes maintainer comments.
+2026-06-12T07:52:01.930Z,https://github.com/SB980425/shachidainei/issues/2,maintainer_comment_count,1,no,Maintainer comments do not count as qualified external replies.
+2026-06-12T07:52:01.930Z,https://github.com/SB980425/shachidainei/issues/2,candidate_external_reply_count,0,no,External comments and structured feedback issues require manual review before any threshold update.
+2026-06-12T07:52:01.930Z,https://github.com/SB980425/shachidainei/issues/2,structured_feedback_issue_count,1,no,Total open issues carrying the agentsiteops-feedback label.
+2026-06-12T07:52:01.930Z,https://github.com/SB980425/shachidainei/issues/2,candidate_external_feedback_issue_count,0,no,External structured feedback issues require manual review before any threshold update.
+2026-06-12T07:52:01.930Z,https://github.com/SB980425/shachidainei/issues/2,qualified_reply_count,0,no,No GitHub comment has been manually qualified in this snapshot.

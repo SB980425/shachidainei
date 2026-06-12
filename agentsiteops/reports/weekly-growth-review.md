@@ -23,7 +23,7 @@
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
 | IndexNow | latest command output | 51 URLs submitted successfully in current deployment cycle |
-| Event layer | /api/events/summary | First-party aggregate endpoint active; sample views 0, source-link clicks 0, PayPal CTA clicks 0 |
+| Event layer | /api/events/summary | First-party aggregate endpoint active; sample views 1, source-link clicks 0, PayPal CTA clicks 0 |
 
 ## Unverified
 

@@ -1,14 +1,16 @@
 {
-  "generated_at": "2026-06-12T07:28:13.526Z",
-  "status": "events_seen_no_threshold",
+  "generated_at": "2026-06-12T07:58:02.728Z",
+  "status": "imported",
   "source_url": "https://agentsiteops.com/api/events/summary?days=2",
   "summary": {
-    "generated_at": "2026-06-12T07:28:13.913Z",
+    "generated_at": "2026-06-12T07:58:03.162Z",
     "days": 2,
     "privacy_boundary": "Aggregate event counters only. No IP address, user agent, cookie id, account id, email, phone, raw form text, full external URL, or payment data is returned.",
     "counts_by_event": {
+      "evidence_ledger_view": 1,
       "launch_blueprint_pricing_view": 3,
-      "page_view": 23,
+      "launch_blueprint_sample_view": 1,
+      "page_view": 26,
       "route_basis_report_view": 6,
       "route_selection_methodology_view": 3,
       "tool_completed": 3,
@@ -17,21 +19,27 @@
     },
     "counts_by_path": {
       "/": 5,
+      "/evidence/": 1,
       "/methodology/route-selection/": 3,
       "/pricing/": 3,
       "/reports/route-basis/": 6,
-      "/tools/route-confidence-checker/": 12
+      "/sample/": 1,
+      "/tools/route-confidence-checker/": 13
     },
     "counts_by_day": {
-      "2026-06-12": 28
+      "2026-06-12": 31
     },
     "counts_by_event_path": {
+      "evidence_ledger_view:/evidence/": 1,
       "launch_blueprint_pricing_view:/pricing/": 3,
+      "launch_blueprint_sample_view:/sample/": 1,
       "page_view:/": 5,
+      "page_view:/evidence/": 1,
       "page_view:/methodology/route-selection/": 3,
       "page_view:/pricing/": 3,
       "page_view:/reports/route-basis/": 6,
-      "page_view:/tools/route-confidence-checker/": 7,
+      "page_view:/sample/": 1,
+      "page_view:/tools/route-confidence-checker/": 8,
       "route_basis_report_view:/reports/route-basis/": 6,
       "route_selection_methodology_view:/methodology/route-selection/": 3,
       "tool_completed:/tools/route-confidence-checker/": 3,
@@ -40,7 +48,7 @@
     },
     "threshold_snapshot": {
       "paypal_click_count": 0,
-      "sample_view_count": 0,
+      "sample_view_count": 1,
       "source_link_click_count": 0
     }
   }

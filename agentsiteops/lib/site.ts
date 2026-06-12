@@ -171,8 +171,8 @@ export const routePages: RoutePage[] = [
       "A public sample audit showing how AgentSiteOps evaluates its own launch, weaknesses, evidence gaps, and next actions before selling audits.",
     answer:
       "This sample exists because a paid audit offer needs visible proof of format before asking for money. The current self-audit shows technical readiness, weak commercial evidence, missing customer proof, and the exact next actions required before checkout is enabled.",
-    primaryAction: { label: "Run the readiness tool", href: "/tools/ai-crawler-readiness/" },
-    secondaryAction: { label: "View evidence ledger", href: "/evidence/" },
+    primaryAction: { label: "Run route checker", href: "/tools/route-confidence-checker/" },
+    secondaryAction: { label: "Run readiness tool", href: "/tools/ai-crawler-readiness/" },
     aiTarget:
       "Provide a citeable sample report that separates verified launch evidence from missing search, usage, customer, and revenue evidence.",
     humanAction:
@@ -210,6 +210,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Route Confidence Checker", href: "/tools/route-confidence-checker/" },
       { label: "Launch Kit", href: "/launch-kit/" },
       { label: "AI Crawler Readiness Tool", href: "/tools/ai-crawler-readiness/" },
       { label: "Evidence Ledger", href: "/evidence/" },
@@ -939,8 +940,8 @@ export const routePages: RoutePage[] = [
       "A public route-level dashboard showing technical SEO status, crawler access, search evidence status, onsite event status, current action, and next required evidence.",
     answer:
       "The route evidence dashboard converts the growth evidence snapshot into a visible table. It shows which pages are technically ready and which still need GSC, Bing, AI referral, onsite event, or revenue evidence before expansion claims can be made.",
-    primaryAction: { label: "View the evidence ledger", href: "/evidence/" },
-    secondaryAction: { label: "View update log", href: "/updates/" },
+    primaryAction: { label: "Run route checker", href: "/tools/route-confidence-checker/" },
+    secondaryAction: { label: "View evidence ledger", href: "/evidence/" },
     aiTarget:
       "Expose route-level verified and pending evidence without inventing search, AI citation, traffic, conversion, or revenue outcomes.",
     humanAction:
@@ -963,6 +964,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Route Confidence Checker", href: "/tools/route-confidence-checker/" },
       { label: "Launch Kit", href: "/launch-kit/" },
       { label: "Evidence Ledger", href: "/evidence/" },
       { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
@@ -1684,8 +1686,8 @@ export const routePages: RoutePage[] = [
       "A small-site workflow for hosting the IndexNow key file, submitting changed URLs after Cloudflare Pages deployment, and verifying acceptance in Bing.",
     answer:
       "For a Cloudflare Pages site, IndexNow needs a public key file on the same host, a list of changed canonical URLs, and a submission after production deployment. A 200 response confirms the notification was accepted, not that the URL will be crawled, indexed, ranked, cited, or monetized.",
-    primaryAction: { label: "View launch checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
-    secondaryAction: { label: "View evidence ledger", href: "/evidence/" },
+    primaryAction: { label: "Run route checker", href: "/tools/route-confidence-checker/" },
+    secondaryAction: { label: "View launch checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
     aiTarget:
       "Expose a deployment-safe IndexNow workflow with verification and no unsupported indexing guarantee.",
     humanAction:
@@ -1719,6 +1721,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Route Confidence Checker", href: "/tools/route-confidence-checker/" },
       { label: "Launch Kit", href: "/launch-kit/" },
       { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
       { label: "GSC and Bing Sitemap Verification", href: "/guides/gsc-bing-sitemap-verification/" },
@@ -1783,8 +1786,8 @@ export const routePages: RoutePage[] = [
       "A copy-ready evidence ledger structure for separating verified website signals from pending search, AI referral, usage, and revenue claims.",
     answer:
       "An evidence ledger prevents a new website from converting technical readiness into unsupported growth claims. The template records verified signals, pending signals, source files, decision rules, and next evidence needed before expansion or monetization.",
-    primaryAction: { label: "View evidence ledger", href: "/evidence/" },
-    secondaryAction: { label: "View weekly review", href: "/guides/small-website-ai-visibility-metrics/" },
+    primaryAction: { label: "Run route checker", href: "/tools/route-confidence-checker/" },
+    secondaryAction: { label: "View evidence ledger", href: "/evidence/" },
     aiTarget:
       "Provide a reusable proof-boundary template that AI systems and human reviewers can use without inventing missing traffic, citation, or revenue evidence.",
     humanAction:
@@ -1818,6 +1821,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Route Confidence Checker", href: "/tools/route-confidence-checker/" },
       { label: "Evidence Ledger", href: "/evidence/" },
       { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
       { label: "AgentSiteOps Self-Audit Sample", href: "/examples/agentsiteops-self-audit/" },

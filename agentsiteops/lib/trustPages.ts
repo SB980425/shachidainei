@@ -232,6 +232,11 @@ export const trustPages: Record<string, TrustPage> = {
     sources: [
       ...sharedSources,
       {
+        label: "Route Confidence Checker",
+        href: "/tools/route-confidence-checker/",
+        note: "A local-only route diagnostic that shows how evidence, proof assets, delivery boundaries, and blockers affect the first route decision."
+      },
+      {
         label: "FTC Disclosures 101",
         href: "https://www.ftc.gov/business-guidance/resources/disclosures-101-social-media-influencers",
         note: "The FTC expects material connections to be clear to readers."
