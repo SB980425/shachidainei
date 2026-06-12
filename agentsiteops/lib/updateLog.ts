@@ -12,6 +12,50 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-37 GitHub exposure release refresh",
+    status: "completed",
+    keyPoints: [
+      "Refreshed the public GitHub 48-hour exposure release with current site, route method, route confidence system, samples, social preview, and structured feedback links.",
+      "Added a release-refresh script so the release page can be updated repeatably without storing GitHub tokens in project files.",
+      "Recorded release refresh evidence in CSV and Markdown reports, including a public report path.",
+      "Kept the boundary explicit: release refresh is public context, not demand, reply, payment, usable intake, objection, or revenue proof."
+    ],
+    aiAngle:
+      "AI and GitHub visitors now have a single external release page that routes them to the live site, samples, route confidence system, and structured feedback path.",
+    files: [
+      "scripts/refresh-github-exposure-release.mjs",
+      "data/github-exposure-release-refresh.csv",
+      "reports/github-exposure-release-refresh.md",
+      "public/reports/github-exposure-release-refresh.md",
+      "data/exposure-action-ledger.csv",
+      "package.json",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "GitHub exposure release refresh pass: public release URL returned by GitHub API",
+      "GitHub exposure release page returns 200",
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "commercial validation gate pass with 287 checks",
+      "route consistency gate pass with 240 checks",
+      "production build pass with 52 static pages",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 206 checks",
+      "IndexNow submit pass for 46 URLs",
+      "public GitHub release refresh report returns 200",
+      "production updates page returns 200",
+      "GitHub exposure release page returns 200",
+      "growth snapshot baseline_ready with 46 routes",
+      "GitHub traffic snapshot pass: 8 views, 3 unique viewers, 405 clones, 95 unique cloners",
+      "GitHub feedback snapshot pass: maintainer comments 1, structured feedback issues 0, candidate external replies 0, qualified replies 0",
+      "exposure decision pass: active_collect_evidence with zero threshold metrics"
+    ],
+    next:
+      "Continue collecting threshold-valid external signals: qualified replies, source-link clicks, sample views, confirmed payments with usable intake, or repeated concrete objections."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-36 Social preview and structured feedback intake",
     status: "completed",
     keyPoints: [

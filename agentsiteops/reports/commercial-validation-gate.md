@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T02:48:29.294Z
+- Generated: 2026-06-12T03:25:12.743Z
 - Status: pass
-- Checks: 278
+- Checks: 287
 - Blockers: 0
 
 ## Summary
@@ -183,6 +183,7 @@
 | exposure_sprint | pass | exposure action ledger records Launch Kit external search recheck |
 | exposure_sprint | pass | exposure action ledger records hourly execution cadence update |
 | exposure_sprint | pass | exposure action ledger records social preview asset addition |
+| exposure_sprint | pass | exposure action ledger records GitHub release refresh |
 | exposure_sprint | pass | exposure action ledger marks GitHub traffic as aggregate evidence |
 | exposure_sprint | pass | exposure action ledger separates public actions from threshold evidence |
 | exposure_sprint | pass | exposure action ledger blocks public-action-as-demand logic |
@@ -222,6 +223,10 @@
 | github_feedback_template | pass | GitHub issue template captures implementation-pivot signal |
 | github_feedback_template | pass | GitHub issue template captures proof and objection signals |
 | github_feedback_template | pass | GitHub issue template config disables blank public issues |
+| github_release_refresh | pass | GitHub release refresh script avoids making the prerelease latest |
+| github_release_refresh | pass | GitHub release refresh snapshot records release URL |
+| github_release_refresh | pass | GitHub release refresh report blocks release-as-demand logic |
+| github_release_refresh | pass | public GitHub release refresh report preserves threshold boundary |
 | external_search_discoverability | pass | external search discoverability snapshot includes the home page |
 | external_search_discoverability | pass | external search discoverability snapshot includes evidence dashboard |
 | external_search_discoverability | pass | external search discoverability snapshot carries threshold boundary column |
@@ -274,13 +279,17 @@
 | mojibake | pass | data/project-route-fit-matrix.csv has no visible mojibake marker |
 | mojibake | pass | data/social-preview-assets.csv has no visible mojibake marker |
 | mojibake | pass | data/github-feedback-label.csv has no visible mojibake marker |
+| mojibake | pass | data/github-exposure-release-refresh.csv has no visible mojibake marker |
 | mojibake | pass | docs/self-score-maintenance-protocol.md has no visible mojibake marker |
 | mojibake | pass | docs/manual-outreach-runbook.md has no visible mojibake marker |
 | mojibake | pass | docs/route-selection-decision-engine.md has no visible mojibake marker |
 | mojibake | pass | reports/route-confidence-system.md has no visible mojibake marker |
 | mojibake | pass | reports/social-preview-assets.md has no visible mojibake marker |
 | mojibake | pass | reports/github-feedback-label.md has no visible mojibake marker |
+| mojibake | pass | reports/github-exposure-release-refresh.md has no visible mojibake marker |
+| mojibake | pass | public/reports/github-exposure-release-refresh.md has no visible mojibake marker |
 | mojibake | pass | scripts/ensure-github-feedback-label.mjs has no visible mojibake marker |
+| mojibake | pass | scripts/refresh-github-exposure-release.mjs has no visible mojibake marker |
 | mojibake | pass | ../.github/ISSUE_TEMPLATE/agentsiteops-route-feedback.yml has no visible mojibake marker |
 | mojibake | pass | ../.github/ISSUE_TEMPLATE/config.yml has no visible mojibake marker |
 | mojibake | pass | lib/site.ts has no visible mojibake marker |

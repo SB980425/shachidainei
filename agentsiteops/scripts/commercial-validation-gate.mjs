@@ -119,6 +119,10 @@ function checkCommercialBoundary() {
   const githubFeedbackLabelScript = read("scripts/ensure-github-feedback-label.mjs");
   const githubFeedbackLabel = read("data/github-feedback-label.csv");
   const githubFeedbackLabelReport = read("reports/github-feedback-label.md");
+  const githubReleaseRefreshScript = read("scripts/refresh-github-exposure-release.mjs");
+  const githubReleaseRefresh = read("data/github-exposure-release-refresh.csv");
+  const githubReleaseRefreshReport = read("reports/github-exposure-release-refresh.md");
+  const publicGithubReleaseRefreshReport = read("public/reports/github-exposure-release-refresh.md");
   const githubIssueTemplate = read("../.github/ISSUE_TEMPLATE/agentsiteops-route-feedback.yml");
   const githubIssueTemplateConfig = read("../.github/ISSUE_TEMPLATE/config.yml");
   const externalSearchDiscoverability = read("data/external-search-discoverability-snapshot.csv");
@@ -266,6 +270,7 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureActionLedger, "launch_kit_external_search_recheck", "exposure action ledger records Launch Kit external search recheck");
   requireText("exposure_sprint", exposureActionLedger, "hourly_execution_cadence_updated", "exposure action ledger records hourly execution cadence update");
   requireText("exposure_sprint", exposureActionLedger, "social_preview_assets_added", "exposure action ledger records social preview asset addition");
+  requireText("exposure_sprint", exposureActionLedger, "exposure_release_refreshed", "exposure action ledger records GitHub release refresh");
   requireText("exposure_sprint", exposureActionLedger, "verified_aggregate", "exposure action ledger marks GitHub traffic as aggregate evidence");
   requireText("exposure_sprint", exposureActionLedger, "counts_toward_threshold", "exposure action ledger separates public actions from threshold evidence");
   requireText("exposure_sprint", exposureActionLedger, "This improves public discoverability but is not demand proof.", "exposure action ledger blocks public-action-as-demand logic");
@@ -305,6 +310,10 @@ function checkCommercialBoundary() {
   requireText("github_feedback_template", githubIssueTemplate, "Need implementation instead of advice", "GitHub issue template captures implementation-pivot signal");
   requireText("github_feedback_template", githubIssueTemplate, "Trust, proof, or objection", "GitHub issue template captures proof and objection signals");
   requireText("github_feedback_template", githubIssueTemplateConfig, "blank_issues_enabled: false", "GitHub issue template config disables blank public issues");
+  requireText("github_release_refresh", githubReleaseRefreshScript, "make_latest", "GitHub release refresh script avoids making the prerelease latest");
+  requireText("github_release_refresh", githubReleaseRefresh, "github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12", "GitHub release refresh snapshot records release URL");
+  requireText("github_release_refresh", githubReleaseRefreshReport, "does not prove impressions, clicks, visits", "GitHub release refresh report blocks release-as-demand logic");
+  requireText("github_release_refresh", publicGithubReleaseRefreshReport, "Counts toward 48-hour continuation threshold: no", "public GitHub release refresh report preserves threshold boundary");
   requireText("external_search_discoverability", externalSearchDiscoverability, "https://agentsiteops.com/", "external search discoverability snapshot includes the home page");
   requireText("external_search_discoverability", externalSearchDiscoverability, "https://agentsiteops.com/reports/route-evidence-dashboard/", "external search discoverability snapshot includes evidence dashboard");
   requireText("external_search_discoverability", externalSearchDiscoverability, "counts_toward_48h_threshold", "external search discoverability snapshot carries threshold boundary column");
@@ -401,13 +410,17 @@ function checkMojibake() {
     "data/project-route-fit-matrix.csv",
     "data/social-preview-assets.csv",
     "data/github-feedback-label.csv",
+    "data/github-exposure-release-refresh.csv",
     "docs/self-score-maintenance-protocol.md",
     "docs/manual-outreach-runbook.md",
     "docs/route-selection-decision-engine.md",
     "reports/route-confidence-system.md",
     "reports/social-preview-assets.md",
     "reports/github-feedback-label.md",
+    "reports/github-exposure-release-refresh.md",
+    "public/reports/github-exposure-release-refresh.md",
     "scripts/ensure-github-feedback-label.mjs",
+    "scripts/refresh-github-exposure-release.mjs",
     "../.github/ISSUE_TEMPLATE/agentsiteops-route-feedback.yml",
     "../.github/ISSUE_TEMPLATE/config.yml",
     "lib/site.ts",
