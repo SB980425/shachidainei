@@ -12,6 +12,43 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-31 External search discoverability snapshot",
+    status: "completed",
+    keyPoints: [
+      "Recorded an external web search discoverability snapshot showing that the AgentSiteOps home page, self-audit sample, disclosure page, route evidence dashboard, IndexNow guide, and AI citation metrics guide can be returned by external search results.",
+      "Classified the result as discoverability evidence only; it does not prove GSC impressions, Bing impressions, ranking stability, clicks, visits, replies, payments, usable intake, objections, or revenue.",
+      "Recorded that the Launch Kit page was not confirmed in this snapshot, so it remains a target for future indexing, internal-link reinforcement, and search evidence review.",
+      "Added the snapshot to the exposure action ledger and commercial validation gate so future reports cannot count external search visibility as buyer demand."
+    ],
+    aiAngle:
+      "AI and search systems now have a public record that some pages are externally discoverable, while the validation logic still separates discoverability from demand.",
+    files: [
+      "data/external-search-discoverability-snapshot.csv",
+      "reports/external-search-discoverability-snapshot.md",
+      "data/exposure-action-ledger.csv",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "external web search returned the AgentSiteOps home page and multiple public internal pages",
+      "GitHub feedback snapshot pass: maintainer comments 1, external comments 0, candidate external replies 0, qualified replies 0",
+      "GitHub traffic snapshot pass: 8 views, 3 unique viewers, 405 clones, 95 unique cloners",
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "commercial validation gate pass with 219 checks",
+      "route consistency gate pass with 240 checks",
+      "production build pass with 52 static pages",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 206 checks",
+      "IndexNow submit pass for 46 URLs",
+      "growth snapshot baseline_ready with 46 routes",
+      "exposure decision pass: active_collect_evidence with zero threshold metrics"
+    ],
+    next:
+      "Reinforce Launch Kit visibility and continue collecting only threshold-valid signals: external replies, source-link clicks, sample views, confirmed payments with usable intake, or repeated objections."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-30 GitHub feedback evidence snapshot",
     status: "completed",
     keyPoints: [

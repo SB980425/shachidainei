@@ -112,6 +112,8 @@ function checkCommercialBoundary() {
   const githubFeedbackScript = read("scripts/github-feedback-snapshot.mjs");
   const githubFeedbackSnapshot = read("data/github-feedback-snapshot.json");
   const githubFeedbackReport = read("reports/github-feedback-snapshot.md");
+  const externalSearchDiscoverability = read("data/external-search-discoverability-snapshot.csv");
+  const externalSearchDiscoverabilityReport = read("reports/external-search-discoverability-snapshot.md");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/29USD", "live USD 29 PayPal link is configured");
@@ -233,12 +235,14 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureActionLedger, "github_traffic_snapshot_imported", "exposure action ledger records GitHub traffic snapshot import");
   requireText("exposure_sprint", exposureActionLedger, "feedback_checkpoint_comment", "exposure action ledger records public feedback checkpoint comment");
   requireText("exposure_sprint", exposureActionLedger, "github_feedback_snapshot_imported", "exposure action ledger records GitHub feedback snapshot import");
+  requireText("exposure_sprint", exposureActionLedger, "external_search_discoverability_snapshot", "exposure action ledger records external search discoverability snapshot");
   requireText("exposure_sprint", exposureActionLedger, "verified_aggregate", "exposure action ledger marks GitHub traffic as aggregate evidence");
   requireText("exposure_sprint", exposureActionLedger, "counts_toward_threshold", "exposure action ledger separates public actions from threshold evidence");
   requireText("exposure_sprint", exposureActionLedger, "This improves public discoverability but is not demand proof.", "exposure action ledger blocks public-action-as-demand logic");
   requireText("exposure_sprint", exposureActionLedger, "Creation itself is not a qualified reply", "exposure action ledger blocks issue-creation-as-reply logic");
   requireText("exposure_sprint", exposureActionLedger, "This maintainer comment does not count as a qualified external reply.", "exposure action ledger blocks maintainer-comment-as-reply logic");
   requireText("exposure_sprint", exposureActionLedger, "aggregate public comment counts only", "exposure action ledger records aggregate-only feedback snapshot");
+  requireText("exposure_sprint", exposureActionLedger, "discoverability only, not impressions, clicks, visits, replies, payments, usable intake, or objections", "exposure action ledger blocks search-result-as-demand logic");
   requireText("github_traffic", githubTrafficScript, "traffic/views", "GitHub traffic script imports aggregate repo views");
   requireText("github_traffic", githubTrafficScript, "traffic/clones", "GitHub traffic script imports aggregate repo clones");
   requireText("github_traffic", githubTrafficScript, "traffic/popular/referrers", "GitHub traffic script imports aggregate referrers");
@@ -250,6 +254,11 @@ function checkCommercialBoundary() {
   requireText("github_feedback", githubFeedbackScript, "storesCommentBodies: false", "GitHub feedback script avoids storing comment bodies");
   requireText("github_feedback", githubFeedbackSnapshot, '"qualifiedReplyCount": 0', "GitHub feedback snapshot does not auto-count qualified replies");
   requireText("github_feedback", githubFeedbackReport, "External comments are candidates only until manually reviewed", "GitHub feedback report preserves manual qualification boundary");
+  requireText("external_search_discoverability", externalSearchDiscoverability, "https://agentsiteops.com/", "external search discoverability snapshot includes the home page");
+  requireText("external_search_discoverability", externalSearchDiscoverability, "https://agentsiteops.com/reports/route-evidence-dashboard/", "external search discoverability snapshot includes evidence dashboard");
+  requireText("external_search_discoverability", externalSearchDiscoverability, "counts_toward_48h_threshold", "external search discoverability snapshot carries threshold boundary column");
+  requireText("external_search_discoverability", externalSearchDiscoverabilityReport, "This does not prove Google Search Console impressions", "external search discoverability report blocks search-result-as-GSC logic");
+  requireText("external_search_discoverability", externalSearchDiscoverabilityReport, "The Launch Kit page was not confirmed in this snapshot", "external search discoverability report records missing launch kit visibility");
   requireText("launch_kit", launchKitPage, 'path = "/launch-kit/"', "launch kit page is wired to static route data");
   requireText("launch_kit", site, "AgentSiteOps Launch Kit", "launch kit route data exists");
   requireText("launch_kit", site, "technically launchable, commercially unvalidated", "launch kit states current validation status");

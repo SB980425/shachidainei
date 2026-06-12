@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T01:21:46.106Z
+- Generated: 2026-06-12T01:35:03.425Z
 - Status: pass
-- Checks: 212
+- Checks: 219
 - Blockers: 0
 
 ## Summary
@@ -169,12 +169,14 @@
 | exposure_sprint | pass | exposure action ledger records GitHub traffic snapshot import |
 | exposure_sprint | pass | exposure action ledger records public feedback checkpoint comment |
 | exposure_sprint | pass | exposure action ledger records GitHub feedback snapshot import |
+| exposure_sprint | pass | exposure action ledger records external search discoverability snapshot |
 | exposure_sprint | pass | exposure action ledger marks GitHub traffic as aggregate evidence |
 | exposure_sprint | pass | exposure action ledger separates public actions from threshold evidence |
 | exposure_sprint | pass | exposure action ledger blocks public-action-as-demand logic |
 | exposure_sprint | pass | exposure action ledger blocks issue-creation-as-reply logic |
 | exposure_sprint | pass | exposure action ledger blocks maintainer-comment-as-reply logic |
 | exposure_sprint | pass | exposure action ledger records aggregate-only feedback snapshot |
+| exposure_sprint | pass | exposure action ledger blocks search-result-as-demand logic |
 | github_traffic | pass | GitHub traffic script imports aggregate repo views |
 | github_traffic | pass | GitHub traffic script imports aggregate repo clones |
 | github_traffic | pass | GitHub traffic script imports aggregate referrers |
@@ -186,6 +188,11 @@
 | github_feedback | pass | GitHub feedback script avoids storing comment bodies |
 | github_feedback | pass | GitHub feedback snapshot does not auto-count qualified replies |
 | github_feedback | pass | GitHub feedback report preserves manual qualification boundary |
+| external_search_discoverability | pass | external search discoverability snapshot includes the home page |
+| external_search_discoverability | pass | external search discoverability snapshot includes evidence dashboard |
+| external_search_discoverability | pass | external search discoverability snapshot carries threshold boundary column |
+| external_search_discoverability | pass | external search discoverability report blocks search-result-as-GSC logic |
+| external_search_discoverability | pass | external search discoverability report records missing launch kit visibility |
 | launch_kit | pass | launch kit page is wired to static route data |
 | launch_kit | pass | launch kit route data exists |
 | launch_kit | pass | launch kit states current validation status |
