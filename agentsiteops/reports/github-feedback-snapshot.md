@@ -1,6 +1,6 @@
 # GitHub Feedback Snapshot
 
-- Generated: 2026-06-12T04:27:01.875Z
+- Generated: 2026-06-12T04:33:16.577Z
 - Repository: https://github.com/SB980425/shachidainei
 - Issue: https://github.com/SB980425/shachidainei/issues/2
 - Structured feedback template: https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml
@@ -15,7 +15,7 @@
 | Metric | Count |
 |---|---:|
 | Maintainer comments | 1 |
-| Structured feedback issues | 0 |
+| Structured feedback issues | 1 |
 | External structured feedback issues | 0 |
 | Candidate external replies | 0 |
 | Qualified replies counted | 0 |
@@ -31,7 +31,7 @@
 
 | Association | Count |
 |---|---:|
-| None | 0 |
+| OWNER | 1 |
 
 ## Privacy Boundary
 

@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T04:25:58.569Z
+- Generated: 2026-06-12T04:33:12.974Z
 - Status: pass
-- Checks: 299
+- Checks: 304
 - Blockers: 0
 
 ## Summary
@@ -228,6 +228,11 @@
 | github_feedback_template | pass | GitHub issue template captures implementation-pivot signal |
 | github_feedback_template | pass | GitHub issue template captures proof and objection signals |
 | github_feedback_template | pass | GitHub issue template config disables blank public issues |
+| github_feedback_thread | pass | GitHub feedback thread script preserves maintainer boundary |
+| github_feedback_thread | pass | GitHub feedback thread CSV records refresh action |
+| github_feedback_thread | pass | GitHub feedback thread report blocks maintainer-edit-as-demand logic |
+| github_feedback_thread | pass | public GitHub feedback thread report preserves threshold boundary |
+| github_feedback_thread | pass | exposure action ledger records GitHub feedback thread refresh |
 | github_release_refresh | pass | GitHub release refresh script avoids making the prerelease latest |
 | github_release_refresh | pass | GitHub release refresh links route basis report |
 | github_release_refresh | pass | GitHub release refresh snapshot records release URL |

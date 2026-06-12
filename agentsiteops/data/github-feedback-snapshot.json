@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T04:27:01.875Z",
+  "generatedAt": "2026-06-12T04:33:16.577Z",
   "repo": {
     "owner": "SB980425",
     "repo": "shachidainei"
@@ -16,8 +16,8 @@
   "structuredFeedback": {
     "label": "agentsiteops-feedback",
     "newIssueUrl": "https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml",
-    "issueCount": 0,
-    "maintainerFeedbackIssueCount": 0,
+    "issueCount": 1,
+    "maintainerFeedbackIssueCount": 1,
     "externalFeedbackIssueCount": 0
   },
   "countsToward48HourThreshold": false,
@@ -31,7 +31,9 @@
     "commentsByAssociation": {
       "OWNER": 1
     },
-    "feedbackIssuesByAssociation": {}
+    "feedbackIssuesByAssociation": {
+      "OWNER": 1
+    }
   },
   "privacy": {
     "storesUsernames": false,

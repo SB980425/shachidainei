@@ -120,6 +120,10 @@ function checkCommercialBoundary() {
   const githubFeedbackLabelScript = read("scripts/ensure-github-feedback-label.mjs");
   const githubFeedbackLabel = read("data/github-feedback-label.csv");
   const githubFeedbackLabelReport = read("reports/github-feedback-label.md");
+  const githubFeedbackThreadScript = read("scripts/refresh-github-feedback-thread.mjs");
+  const githubFeedbackThread = read("data/github-feedback-thread-refresh.csv");
+  const githubFeedbackThreadReport = read("reports/github-feedback-thread-refresh.md");
+  const publicGithubFeedbackThreadReport = read("public/reports/github-feedback-thread-refresh.md");
   const githubReleaseRefreshScript = read("scripts/refresh-github-exposure-release.mjs");
   const githubReleaseRefresh = read("data/github-exposure-release-refresh.csv");
   const githubReleaseRefreshReport = read("reports/github-exposure-release-refresh.md");
@@ -318,6 +322,11 @@ function checkCommercialBoundary() {
   requireText("github_feedback_template", githubIssueTemplate, "Need implementation instead of advice", "GitHub issue template captures implementation-pivot signal");
   requireText("github_feedback_template", githubIssueTemplate, "Trust, proof, or objection", "GitHub issue template captures proof and objection signals");
   requireText("github_feedback_template", githubIssueTemplateConfig, "blank_issues_enabled: false", "GitHub issue template config disables blank public issues");
+  requireText("github_feedback_thread", githubFeedbackThreadScript, "Maintainer edits and comments do not count", "GitHub feedback thread script preserves maintainer boundary");
+  requireText("github_feedback_thread", githubFeedbackThread, "github_feedback_thread_refreshed", "GitHub feedback thread CSV records refresh action");
+  requireText("github_feedback_thread", githubFeedbackThreadReport, "Only downstream external feedback can become candidate threshold evidence", "GitHub feedback thread report blocks maintainer-edit-as-demand logic");
+  requireText("github_feedback_thread", publicGithubFeedbackThreadReport, "Counts toward 48-hour continuation threshold: no", "public GitHub feedback thread report preserves threshold boundary");
+  requireText("github_feedback_thread", exposureActionLedger, "github_feedback_thread_refreshed", "exposure action ledger records GitHub feedback thread refresh");
   requireText("github_release_refresh", githubReleaseRefreshScript, "make_latest", "GitHub release refresh script avoids making the prerelease latest");
   requireText("github_release_refresh", githubReleaseRefreshScript, "Route basis report", "GitHub release refresh links route basis report");
   requireText("github_release_refresh", githubReleaseRefresh, "github.com/SB980425/shachidainei/releases/tag/agentsiteops-48h-exposure-2026-06-12", "GitHub release refresh snapshot records release URL");

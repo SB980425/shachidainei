@@ -13,6 +13,7 @@
     "github:traffic": "node scripts/github-traffic-snapshot.mjs",
     "github:feedback": "node scripts/github-feedback-snapshot.mjs",
     "github:feedback-label": "node scripts/ensure-github-feedback-label.mjs",
+    "github:feedback-thread": "node scripts/refresh-github-feedback-thread.mjs",
     "github:release-refresh": "node scripts/refresh-github-exposure-release.mjs",
     "github:discovery-surface": "node scripts/refresh-github-discovery-surface.mjs",
     "analytics:gate": "node scripts/analytics-endpoint-gate.mjs",

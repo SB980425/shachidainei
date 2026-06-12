@@ -12,6 +12,50 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-40 GitHub feedback thread refresh",
+    status: "completed",
+    keyPoints: [
+      "Added a repeatable GitHub feedback-thread refresh script for issue #2.",
+      "Updated the public feedback issue with Route Basis, sample, price, implementation-pivot, trust, proof, and payment-blocker questions.",
+      "Generated internal and public feedback-thread refresh reports with explicit non-demand boundaries.",
+      "Extended the commercial gate and exposure ledger so maintainer-controlled issue edits cannot be counted as external replies or demand."
+    ],
+    aiAngle:
+      "External reviewers now have one public issue that asks the exact objections needed for validation instead of receiving a vague request for feedback.",
+    files: [
+      "scripts/refresh-github-feedback-thread.mjs",
+      "data/github-feedback-thread-refresh.csv",
+      "reports/github-feedback-thread-refresh.md",
+      "public/reports/github-feedback-thread-refresh.md",
+      "data/exposure-action-ledger.csv",
+      "package.json",
+      "scripts/commercial-validation-gate.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "GitHub feedback thread refresh pass through GitHub API",
+      "public issue #2 updated with Route Basis and validation questions",
+      "feedback-thread refresh CSV generated",
+      "public feedback-thread refresh report generated with threshold boundary",
+      "GitHub feedback snapshot pass: feedback issues by association records OWNER only; external replies 0; qualified replies 0",
+      "typecheck pass",
+      "code quality gate pass with 14 checks",
+      "commercial validation gate pass with 304 checks",
+      "route consistency gate pass with 245 checks",
+      "production build pass with 53 static pages",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 215 checks",
+      "IndexNow submit pass for 47 URLs",
+      "public feedback-thread refresh report returns 200",
+      "GitHub issue #2 returns 200",
+      "exposure decision pass: active_collect_evidence with zero threshold metrics",
+      "growth snapshot baseline_ready with 47 routes and 47 technical pass routes"
+    ],
+    next:
+      "Continue collecting only external comments with concrete buyer problems, objections, pricing blockers, sample critique, or implementation-pivot signals."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-39 GitHub discovery surface refresh",
     status: "completed",
     keyPoints: [
