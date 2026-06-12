@@ -22,7 +22,7 @@ declare global {
   }
 }
 
-const endpoint = process.env.NEXT_PUBLIC_ANALYTICS_ENDPOINT;
+const endpoint = process.env.NEXT_PUBLIC_ANALYTICS_ENDPOINT ?? "/api/events";
 const sessionKey = "codex-seo-events";
 
 const pathViewEvents: Record<string, string[]> = {
@@ -190,11 +190,11 @@ export function SiteAnalytics() {
         return;
       }
 
-      const href = link.getAttribute("href") ?? "";
-
       if (link.origin !== window.location.origin) {
+        const targetUrl = new URL(link.href);
         track("source_link_click", {
-          href,
+          source_host: targetUrl.hostname.slice(0, 80),
+          source_path: targetUrl.pathname.slice(0, 120),
           label: link.textContent?.replace(/\s+/g, " ").trim().slice(0, 120) ?? ""
         });
       }

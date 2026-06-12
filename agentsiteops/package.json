@@ -17,6 +17,7 @@
     "github:release-refresh": "node scripts/refresh-github-exposure-release.mjs",
     "github:discovery-surface": "node scripts/refresh-github-discovery-surface.mjs",
     "analytics:gate": "node scripts/analytics-endpoint-gate.mjs",
+    "analytics:summary": "node scripts/import-analytics-summary.mjs",
     "commercial:gate": "node scripts/commercial-validation-gate.mjs",
     "routes:gate": "node scripts/route-consistency-gate.mjs",
     "production:health": "node scripts/production-health-monitor.mjs",

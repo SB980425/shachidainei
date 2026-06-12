@@ -6,9 +6,10 @@ Status: active gate.
 
 | Path | Decision | Reason |
 |---|---|---|
-| Local event buffer | `pass` | Events stay in browser memory and `sessionStorage`; no external collection is enabled by default. |
-| Analytics endpoint validator | `pass` | `npm run analytics:gate` rejects unknown events, sensitive payloads, stale timestamps, future timestamps, external URLs, and oversized bodies. |
-| External analytics endpoint | `block_until_review` | Requires selected endpoint, retention period, privacy notice, deletion path, security review, and production activation decision. |
+| Local event buffer | `pass` | Events stay in browser memory and `sessionStorage` for browser verification. |
+| First-party aggregate analytics endpoint | `pass_with_boundary` | `/api/events` stores aggregate counters only through Cloudflare KV; it does not store raw events, IP address, user agent, cookies, account identifiers, email, phone, full external URLs, raw form text, or payment data. |
+| Analytics endpoint validator | `pass` | `npm run analytics:gate` rejects unknown events, sensitive payloads, stale timestamps, future timestamps, external URLs, oversized bodies, missing KV binding, raw retention drift, and privacy drift. |
+| External analytics endpoint | `block_until_review` | Third-party analytics, cookies, advertising tracking, identifiers, or raw event storage require privacy notice, retention review, deletion path, security review, and production activation decision. |
 | Cloudflare managed analytics or edge logs | `disclose_and_review` | Production hosting may include Cloudflare scripts, web analytics, or edge logs that are separate from the first-party event endpoint. |
 | Launch Blueprint payment path | `pass_with_boundary` | PayPal.me handles payment externally; the site shows price, scope, delivery timing, refund policy, limits, contact route, and manual intake before delivery. |
 | Audit intent page | `legacy_pass_with_boundary` | The older audit page remains public context, but qualified commercial intent should route to the Launch Blueprint pricing, sample, buy, and intake path. |
@@ -57,18 +58,19 @@ Status: active gate.
 | No card data collected by site | `pass` |
 | No user account system | `pass` |
 | Audit intent page routes commercial intent to current Launch Blueprint path | `pass` |
-| No external analytics endpoint enabled | `pass` |
+| No third-party analytics endpoint enabled | `pass` |
 | Cloudflare managed analytics disclosed | `pass` |
 | Local event buffer disclosed | `pass` |
+| First-party aggregate analytics endpoint reviewed | `pass` |
 | Analytics endpoint validation script | `pass` |
-| Production analytics collection reviewed | `pending` |
+| Production analytics collection reviewed | `pass_with_boundary` |
 
 ## Human Review Required
 
 - Final target region and language.
 - Real owner or organization identity.
-- Analytics destination or first-party proxy.
-- Retention period and deletion path.
+- Any future analytics destination outside the first-party aggregate endpoint.
+- Any future raw event retention, identifiers, cookies, or deletion path.
 - Whether email, affiliate, ads, sponsorship, paid templates, forms, or accounts will be used.
 - Whether the direct PayPal.me path is sufficient or a formal PayPal Checkout integration is required after real paid demand appears.
 - Legal review for jurisdiction-specific privacy, cookie, tax, professional advice, or advertising obligations.

@@ -1,16 +1,17 @@
 # Analytics Events
 
-Status: local event layer active; real endpoint disabled until privacy and storage review.
+Status: first-party aggregate endpoint active through Cloudflare Pages Functions and KV.
 
 ## Purpose
 
-The event layer records page and interaction events for release testing and future 30/60/90 day reviews. By default, events are stored only in browser memory and `sessionStorage`. Events are sent to a real endpoint only when `NEXT_PUBLIC_ANALYTICS_ENDPOINT` is configured.
+The event layer records page and interaction events for release testing, exposure validation, and future 30/60/90 day reviews. Events are stored in browser memory and `sessionStorage`, then sent to `/api/events` as a first-party aggregate endpoint unless `NEXT_PUBLIC_ANALYTICS_ENDPOINT` overrides the target.
 
 This file covers the first-party event layer only. Cloudflare-managed hosting analytics, edge logs, or injected hosting scripts are separate and must be reviewed through the privacy and compliance gate.
 
 ## Data Rules
 
-- Do not collect email, phone, account ID, payment data, IP address, cookie ID, device fingerprint, or raw user text.
+- Do not collect email, phone, account ID, payment data, IP address, user agent, cookie ID, device fingerprint, or raw user text.
+- Do not store full external URLs; source-link clicks keep only `source_host` and `source_path`.
 - Payload values may only be strings, numbers, booleans, or null.
 - Payload keys are truncated to 64 characters.
 - Payload strings are truncated to 200 characters.
@@ -77,7 +78,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `intake_email_click` | User clicks the intake email link | `label`, `target`, `type` |
 | `contact_email_click` | User clicks the contact email link | `label`, `target`, `type` |
 | `cta_click` | Click on an element with `data-analytics-event` | `label`, `target`, `type` |
-| `source_link_click` | Click on an external source link | `href`, `label` |
+| `source_link_click` | Click on an external source link | `source_host`, `source_path`, `label` |
 
 ## Storage Locations
 
@@ -85,11 +86,14 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 |---|---|
 | `window.__codexAnalyticsEvents` | Current page debugging and browser verification |
 | `sessionStorage["codex-seo-events"]` | Most recent 100 events in the current browser session |
-| `NEXT_PUBLIC_ANALYTICS_ENDPOINT` | Optional real collection endpoint; not configured by default |
+| `/api/events` | First-party Cloudflare Pages Function that writes aggregate counters only |
+| `/api/events/summary` | Public aggregate summary for exposure review; no visitor identity or raw payload data |
+| `AGENTSITEOPS_ANALYTICS` | Cloudflare KV binding that stores event, path, event-path, and total counters |
+| `NEXT_PUBLIC_ANALYTICS_ENDPOINT` | Optional override for the default `/api/events` target |
 
 ## Endpoint Gate
 
-Do not enable a real endpoint until:
+Endpoint activation requirements:
 
 - `/privacy/` describes the endpoint, payload, retention, and deletion boundary.
 - `docs/analytics-endpoint-contract.md` has been implemented and tested.

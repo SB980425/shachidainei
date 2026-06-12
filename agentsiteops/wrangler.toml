@@ -1,0 +1,7 @@
+name = "agentsiteops"
+compatibility_date = "2026-06-12"
+pages_build_output_dir = "out"
+
+[[kv_namespaces]]
+binding = "AGENTSITEOPS_ANALYTICS"
+id = "d2975d65c6ff4f6e894ca86e4438c420"

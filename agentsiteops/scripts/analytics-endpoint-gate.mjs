@@ -4,6 +4,12 @@ import { fileURLToPath } from "node:url";
 
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const eventsDocPath = resolve(rootDir, "docs", "analytics-events.md");
+const endpointContractPath = resolve(rootDir, "docs", "analytics-endpoint-contract.md");
+const siteAnalyticsPath = resolve(rootDir, "components", "SiteAnalytics.tsx");
+const endpointFunctionPath = resolve(rootDir, "functions", "api", "events.ts");
+const summaryFunctionPath = resolve(rootDir, "functions", "api", "events", "summary.ts");
+const trustPagesPath = resolve(rootDir, "lib", "trustPages.ts");
+const wranglerPath = resolve(rootDir, "wrangler.toml");
 const reportPath = resolve(rootDir, "reports", "analytics-endpoint-gate.md");
 const siteOrigin = "https://agentsiteops.com";
 const maxBodyBytes = 8 * 1024;
@@ -220,29 +226,125 @@ function runCases() {
   });
 }
 
+function runImplementationChecks() {
+  const docs = read(eventsDocPath);
+  const contract = read(endpointContractPath);
+  const siteAnalytics = read(siteAnalyticsPath);
+  const endpointFunction = read(endpointFunctionPath);
+  const summaryFunction = read(summaryFunctionPath);
+  const trustPages = read(trustPagesPath);
+  const wrangler = read(wranglerPath);
+
+  const checks = [
+    {
+      name: "Cloudflare KV binding configured",
+      passed:
+        wrangler.includes('binding = "AGENTSITEOPS_ANALYTICS"') &&
+        /id = "[a-f0-9]{32}"/.test(wrangler),
+      detail: "wrangler.toml includes the production analytics KV binding"
+    },
+    {
+      name: "frontend defaults to first-party endpoint",
+      passed: siteAnalytics.includes('?? "/api/events"'),
+      detail: "SiteAnalytics sends production events to /api/events by default"
+    },
+    {
+      name: "frontend avoids full external URL payloads",
+      passed:
+        siteAnalytics.includes("source_host") &&
+        siteAnalytics.includes("source_path") &&
+        !/\bhref\s*:/.test(siteAnalytics),
+      detail: "source-link events store source host and path instead of full href"
+    },
+    {
+      name: "write endpoint uses aggregate KV counters",
+      passed:
+        endpointFunction.includes("AGENTSITEOPS_ANALYTICS") &&
+        endpointFunction.includes("analytics:v1:daily") &&
+        endpointFunction.includes("event_path") &&
+        !endpointFunction.includes("user-agent") &&
+        !endpointFunction.includes("cf-connecting-ip"),
+      detail: "/api/events writes aggregate event, path, event-path, and total counters"
+    },
+    {
+      name: "summary endpoint returns aggregate-only fields",
+      passed:
+        summaryFunction.includes("threshold_snapshot") &&
+        summaryFunction.includes("counts_by_event") &&
+        summaryFunction.includes("No IP address") &&
+        !summaryFunction.includes("request.headers.get"),
+      detail: "/api/events/summary exposes counts only"
+    },
+    {
+      name: "privacy page describes aggregate endpoint",
+      passed:
+        trustPages.includes("first-party analytics store aggregate counters only") &&
+        trustPages.includes("without IP address, user agent, cookies") &&
+        trustPages.includes("not full URLs or query strings"),
+      detail: "/privacy/ copy matches the endpoint behavior"
+    },
+    {
+      name: "analytics docs describe active aggregate endpoint",
+      passed:
+        docs.includes("first-party aggregate endpoint active") &&
+        docs.includes("Do not store full external URLs") &&
+        docs.includes("AGENTSITEOPS_ANALYTICS"),
+      detail: "analytics event registry matches production collection"
+    },
+    {
+      name: "endpoint contract forbids raw event retention",
+      passed:
+        contract.includes("Do not store raw events in KV") &&
+        contract.includes("Full external URL storage") &&
+        !contract.includes("90 days unless"),
+      detail: "endpoint contract blocks raw event retention"
+    }
+  ];
+
+  return checks;
+}
+
 function mdEscape(value) {
   return String(value ?? "").replace(/\|/g, "\\|").replace(/\n/g, " ").trim();
 }
 
-function renderReport(results) {
+function renderReport(results, implementationChecks) {
   const generatedAt = new Date().toISOString();
   const failures = results.filter((result) => !result.passed);
-  const status = failures.length ? "blocked" : "gate_ready_endpoint_disabled";
+  const implementationFailures = implementationChecks.filter((result) => !result.passed);
+  const status = failures.length || implementationFailures.length ? "blocked" : "gate_ready_endpoint_active";
 
   const lines = [
     "# Analytics Endpoint Gate",
     "",
     `- Generated: ${generatedAt}`,
     `- Status: ${status}`,
-    "- Endpoint enabled: no",
+    "- Endpoint enabled: yes, first-party aggregate counters only",
     `- Test cases: ${results.length}`,
-    `- Failed cases: ${failures.length}`,
+    `- Failed cases: ${failures.length + implementationFailures.length}`,
     "",
     "## Decision",
     "",
-    "- The local event buffer may remain active.",
-    "- A real analytics endpoint must not be enabled until this gate passes and the privacy page is updated for the selected endpoint, retention period, and deletion path.",
+    "- The local event buffer remains active for browser verification.",
+    "- The production endpoint may remain active only while it stores aggregate counters and does not store raw events, visitor identifiers, account data, or payment data.",
     "- Current validation rejects unknown events, sensitive payloads, nested payload values, invalid paths, stale timestamps, future timestamps, external page URLs, and oversized bodies.",
+    "- Current implementation checks require Cloudflare KV binding, first-party endpoint default, sanitized source-link payloads, aggregate summary output, privacy copy, and no raw event retention.",
+    "",
+    "## Implementation Checks",
+    "",
+    "| Check | Status | Detail |",
+    "|---|---|---|",
+    ...implementationChecks.map((result) =>
+      [
+        "|",
+        mdEscape(result.name),
+        "|",
+        result.passed ? "pass" : "fail",
+        "|",
+        mdEscape(result.detail),
+        "|"
+      ].join(" ")
+    ),
     "",
     "## Test Results",
     "",
@@ -266,27 +368,28 @@ function renderReport(results) {
     "",
     "## Required Before Activation",
     "",
-    "- Select the actual endpoint or first-party proxy.",
-    "- Define raw event retention and deletion path.",
-    "- Update `/privacy/` before production collection.",
-    "- Keep IP address, user agent, cookies, raw form text, email, phone, account IDs, and payment data out of the event table.",
+    "- Keep the actual endpoint first-party unless a new privacy and compliance review passes.",
+    "- Do not add raw event retention without a new privacy review and gate update.",
+    "- Keep IP address, user agent, cookies, raw form text, full external URLs, email, phone, account IDs, and payment data out of the event table.",
     "- Run `npm run analytics:gate`, `npm run seo:ci`, `npm run crawler:audit`, and `npm run growth:snapshot` before activation."
   ];
 
   mkdirSync(dirname(reportPath), { recursive: true });
   writeFileSync(reportPath, `${lines.join("\n")}\n`);
 
-  return { status, generatedAt, failures };
+  return { status, generatedAt, failures: [...failures, ...implementationFailures] };
 }
 
 const results = runCases();
-const report = renderReport(results);
+const implementationChecks = runImplementationChecks();
+const report = renderReport(results, implementationChecks);
 
 console.log(
   JSON.stringify(
     {
       status: report.status,
       tests: results.length,
+      implementationChecks: implementationChecks.length,
       failures: report.failures.length,
       reportPath
     },

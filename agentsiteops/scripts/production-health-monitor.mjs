@@ -229,6 +229,21 @@ async function checkBrandIcon() {
   addCheck("brand_icon_png", png.ok ? "pass" : "fail", `HTTP ${png.status}`, pngUrl);
 }
 
+async function checkAnalyticsSummary() {
+  const url = `${siteUrl}/api/events/summary?days=2`;
+  const response = await fetchText(url);
+  addCheck("analytics_summary", response.ok ? "pass" : "fail", `HTTP ${response.status}`, url);
+
+  if (!response.ok) {
+    return;
+  }
+
+  requireText("analytics_summary", response.text, "counts_by_event", "aggregate event counts exist", url);
+  requireText("analytics_summary", response.text, "threshold_snapshot", "threshold snapshot exists", url);
+  requireText("analytics_summary", response.text, "No IP address", "privacy boundary is visible", url);
+  requireAbsentText("analytics_summary", response.text, /user-agent|cf-connecting-ip|set-cookie/i, "identity headers are not exposed", url);
+}
+
 function renderReport(generatedAt) {
   const status = blockers.length ? "blocked" : warnings.length ? "warning" : "pass";
   const lines = [
@@ -307,6 +322,7 @@ async function main() {
   await checkIndexNowKey();
   await checkLlmsText();
   await checkBrandIcon();
+  await checkAnalyticsSummary();
   await checkPage("/", [
     "Validate your first AI service offer before building the site",
     "Start with USD",

@@ -12,6 +12,7 @@ const productionHealthReportPath = resolve(rootDir, "reports", "production-healt
 const commercialReportPath = resolve(rootDir, "reports", "commercial-validation-gate.md");
 const codeQualityReportPath = resolve(rootDir, "reports", "code-quality-gate.md");
 const searchEvidencePath = resolve(rootDir, "data", "search-evidence-normalized.csv");
+const analyticsSummaryPath = resolve(rootDir, "data", "analytics-summary-snapshot.json");
 const snapshotCsvPath = resolve(rootDir, "data", "growth-evidence-snapshot.csv");
 const snapshotReportPath = resolve(rootDir, "reports", "growth-evidence-snapshot.md");
 const weeklyReportPath = resolve(rootDir, "reports", "weekly-growth-review.md");
@@ -120,6 +121,18 @@ function optionalCsv(path) {
   return parseCsv(read(path));
 }
 
+function optionalJson(path) {
+  if (!existsSync(path)) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(read(path));
+  } catch {
+    return null;
+  }
+}
+
 function evidenceStatusFor(path, source, searchEvidence) {
   const rows = searchEvidence.filter((row) => row.source === source && row.page_path === path);
   if (!rows.length) {
@@ -134,6 +147,21 @@ function evidenceStatusFor(path, source, searchEvidence) {
   }
 
   return "imported_no_activity";
+}
+
+function onsiteEventStatusFor(path, analyticsSummary) {
+  const summary = analyticsSummary?.summary;
+
+  if (!summary || analyticsSummary.status === "blocked") {
+    return "pending_endpoint_summary";
+  }
+
+  const pathCount = Number(summary.counts_by_path?.[path] ?? 0);
+  if (Number.isFinite(pathCount) && pathCount > 0) {
+    return "aggregate_endpoint_has_events";
+  }
+
+  return "aggregate_endpoint_waiting_for_events";
 }
 
 function localDateString(date) {
@@ -158,6 +186,7 @@ const productionHealthReport = existsSync(productionHealthReportPath)
 const commercialReport = existsSync(commercialReportPath) ? read(commercialReportPath) : "";
 const codeQualityReport = existsSync(codeQualityReportPath) ? read(codeQualityReportPath) : "";
 const searchEvidence = optionalCsv(searchEvidencePath);
+const analyticsSummary = optionalJson(analyticsSummaryPath);
 const technicalStatus = parseReportStatus(technicalReport);
 const crawlerStatus = parseReportStatus(crawlerReport);
 const productionHealthStatus = productionHealthReport
@@ -186,7 +215,7 @@ const routeRows = routeDoc.routes.map((route) => {
     gsc_status: gscStatus,
     bing_status: bingStatus,
     ai_referral_status: "pending_endpoint_or_referral",
-    onsite_event_status: "local_buffer_only",
+    onsite_event_status: onsiteEventStatusFor(route.path, analyticsSummary),
     current_action: actionRow.current_action || "keep",
     day_30_action: actionRow.day_30_action || "review",
     next_required_evidence:
@@ -229,7 +258,20 @@ const summary = {
   pendingBing: routeRows.filter((row) => row.bing_status === "pending_export").length,
   importedGsc: routeRows.filter((row) => row.gsc_status !== "pending_export").length,
   importedBing: routeRows.filter((row) => row.bing_status !== "pending_export").length,
-  localOnlyEvents: routeRows.filter((row) => row.onsite_event_status === "local_buffer_only").length
+  aggregateEndpointWaiting: routeRows.filter(
+    (row) => row.onsite_event_status === "aggregate_endpoint_waiting_for_events"
+  ).length,
+  aggregateEndpointHasEvents: routeRows.filter(
+    (row) => row.onsite_event_status === "aggregate_endpoint_has_events"
+  ).length,
+  pendingEndpointSummary: routeRows.filter(
+    (row) => row.onsite_event_status === "pending_endpoint_summary"
+  ).length,
+  analyticsThreshold: analyticsSummary?.summary?.threshold_snapshot ?? {
+    paypal_click_count: 0,
+    sample_view_count: 0,
+    source_link_click_count: 0
+  }
 };
 
 const tableHeader = "| URL | Type | Cluster | Tech SEO | Crawler | Current action | Next evidence |";
@@ -269,7 +311,10 @@ const snapshotReport = [
   `- Bing status: pending export for ${summary.pendingBing} routes`,
   `- Imported GSC route evidence: ${summary.importedGsc}`,
   `- Imported Bing route evidence: ${summary.importedBing}`,
-  `- Onsite event status: local buffer only for ${summary.localOnlyEvents} routes`,
+  `- Onsite event status: aggregate endpoint waiting for events on ${summary.aggregateEndpointWaiting} routes`,
+  `- Onsite routes with aggregate events: ${summary.aggregateEndpointHasEvents}`,
+  `- Analytics summary status missing or blocked: ${summary.pendingEndpointSummary}`,
+  `- Analytics threshold snapshot: sample views ${Number(summary.analyticsThreshold.sample_view_count ?? 0)}, source-link clicks ${Number(summary.analyticsThreshold.source_link_click_count ?? 0)}, PayPal CTA clicks ${Number(summary.analyticsThreshold.paypal_click_count ?? 0)}`,
   "",
   "## Route Evidence Table",
   "",
@@ -282,7 +327,7 @@ const snapshotReport = [
   "- Do not scale a new content cluster until GSC and Bing export data exists.",
   "- Do not buy paid AI visibility monitoring until first-party evidence creates a concrete question that free tools cannot answer.",
   "- Keep technical SEO and crawler access as release gates for every route batch.",
-  "- Treat local event buffering as implementation evidence only; it is not real user behavior until an approved endpoint is connected."
+  "- Treat endpoint availability as measurement infrastructure only; real user behavior requires aggregate events that are not known self-visits."
 ];
 
 const weeklyReport = [
@@ -297,7 +342,7 @@ const weeklyReport = [
   `- The production site has ${summary.routes} indexable routes with technical SEO passing.`,
   "- Production crawler access audit is passing for intended search and user-retrieval crawlers.",
   "- Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.",
-  "- GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.",
+  "- GSC, Bing, AI referrals, and revenue evidence are still pending exports or records; the first-party aggregate endpoint is active but currently waiting for events.",
   "- The next operating step is to collect first-party evidence, not to add a large content batch.",
   "",
   "## Confirmed",
@@ -311,7 +356,7 @@ const weeklyReport = [
   `| Commercial validation | reports/commercial-validation-gate.md | ${summary.commercialGateStatus} |`,
   `| Code quality | reports/code-quality-gate.md | ${summary.codeQualityStatus} |`,
   `| IndexNow | latest command output | ${summary.routes} URLs submitted successfully in current deployment cycle |`,
-  "| Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |",
+  `| Event layer | /api/events/summary | First-party aggregate endpoint active; sample views ${Number(summary.analyticsThreshold.sample_view_count ?? 0)}, source-link clicks ${Number(summary.analyticsThreshold.source_link_click_count ?? 0)}, PayPal CTA clicks ${Number(summary.analyticsThreshold.paypal_click_count ?? 0)} |`,
   "",
   "## Unverified",
   "",
@@ -320,7 +365,7 @@ const weeklyReport = [
   "| Google Search Console | Page and query export | Cannot evaluate impressions, clicks, CTR, or index coverage yet |",
   "| Bing Webmaster Tools | Search and AI Performance export | Cannot evaluate Bing queries, AI citations, cited URLs, or grounding phrases yet |",
   "| ChatGPT referrals | Analytics endpoint or server logs | Cannot confirm ChatGPT traffic yet |",
-  "| Onsite conversions | Approved analytics endpoint | Cannot measure real scorer completion, copy actions, or source clicks yet |",
+  "| Onsite conversions | Non-self aggregate events | Endpoint exists, but commercial interpretation still requires real visitors and qualified signals |",
   "| Revenue | PayPal transaction or qualified paid lead export | Cannot evaluate paid conversion or payback yet |",
   "",
   "## Page Action Table",
@@ -341,7 +386,7 @@ const weeklyReport = [
   "",
   "1. Export GSC sitemap, indexing, and performance data when the console has enough data.",
   "2. Export Bing Webmaster sitemap, URL, search, and AI Performance data when available.",
-  "3. Decide whether to connect a privacy-reviewed analytics endpoint.",
+  "3. Import `/api/events/summary` after each exposure cycle and separate self-visits from qualified signals before any threshold update.",
   "4. Use Semrush only for trial-window exports: prompts, keyword clusters, SERP gaps, and competitor feature claims.",
   "5. Keep all new pages behind source packs, technical SEO CI, crawler access audit, and IndexNow submission."
 ];

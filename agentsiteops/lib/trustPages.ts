@@ -125,9 +125,9 @@ export const trustPages: Record<string, TrustPage> = {
     eyebrow: "Privacy boundary",
     h1: "Privacy Policy",
     summary:
-      "The current site has no account system, embedded payment form, advertising script, newsletter capture, or third-party analytics script. PayPal payment links open PayPal-hosted pages, and intake is handled manually by email.",
+      "The current site has no account system, embedded payment form, advertising script, newsletter capture, or third-party analytics script. PayPal payment links open PayPal-hosted pages, intake is handled manually by email, and first-party analytics store aggregate counters only.",
     decision:
-      "Current status: no account database and no external analytics reporting. PayPal handles payment data for payment-link transactions; buyers should send only the project details needed for manual delivery.",
+      "Current status: no account database and no external analytics reporting. The `/api/events` endpoint stores aggregate event counters without IP address, user agent, cookies, account identifiers, email, phone, raw form text, full external URLs, or payment data. PayPal handles payment data for payment-link transactions; buyers should send only the project details needed for manual delivery.",
     jsonLdType: "WebPage",
     sections: [
       {
@@ -143,7 +143,12 @@ export const trustPages: Record<string, TrustPage> = {
       {
         title: "Local event buffer",
         body:
-          "The local event layer may store recent page, tool, export, and source-click events in browser memory and sessionStorage for debugging when no reporting endpoint is configured."
+          "The local event layer may store recent page, tool, export, and source-click events in browser memory and sessionStorage for debugging. The production endpoint receives only allowlisted events and writes aggregate counters to Cloudflare KV."
+      },
+      {
+        title: "First-party aggregate analytics",
+        body:
+          "The `/api/events` endpoint counts page views, tool actions, source-link clicks, and payment CTA clicks for exposure validation. The public `/api/events/summary` endpoint returns aggregate counts only. Source-link clicks store host and path, not full URLs or query strings."
       },
       {
         title: "Payments",
@@ -158,7 +163,7 @@ export const trustPages: Record<string, TrustPage> = {
       {
         title: "Hosting logs",
         body:
-          "A production host may create basic server or edge logs. The exact retention and processing boundaries depend on the deployment platform."
+          "Cloudflare may create hosting, edge, and security logs under its platform controls. Those logs are separate from the AgentSiteOps first-party event counters."
       },
       {
         title: "Future changes",
@@ -171,7 +176,8 @@ export const trustPages: Record<string, TrustPage> = {
       "Email capture for newsletters must state purpose, frequency, and unsubscribe path.",
       "Hosted forms must state purpose, sharing, retention, and follow-up boundaries.",
       "Embedded checkout or automated order handling must be reviewed before release.",
-      "Analytics endpoints, cookies, or third-party scripts require review before release.",
+      "Analytics endpoints must remain aggregate-only unless this page and the analytics gate are updated before release.",
+      "Cookies, identifiers, third-party scripts, or raw event storage require review before release.",
       "The privacy statement must match the actual code and service providers."
     ],
     sources: [

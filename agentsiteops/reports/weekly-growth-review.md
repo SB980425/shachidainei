@@ -9,7 +9,7 @@
 - The production site has 47 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
-- GSC, Bing, real onsite events, AI referrals, and revenue evidence are still pending exports or endpoint setup.
+- GSC, Bing, AI referrals, and revenue evidence are still pending exports or records; the first-party aggregate endpoint is active but currently waiting for events.
 - The next operating step is to collect first-party evidence, not to add a large content batch.
 
 ## Confirmed
@@ -23,7 +23,7 @@
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
 | IndexNow | latest command output | 47 URLs submitted successfully in current deployment cycle |
-| Event layer | components/SiteAnalytics.tsx | Local buffer exists; real endpoint not enabled |
+| Event layer | /api/events/summary | First-party aggregate endpoint active; sample views 0, source-link clicks 0, PayPal CTA clicks 0 |
 
 ## Unverified
 
@@ -32,7 +32,7 @@
 | Google Search Console | Page and query export | Cannot evaluate impressions, clicks, CTR, or index coverage yet |
 | Bing Webmaster Tools | Search and AI Performance export | Cannot evaluate Bing queries, AI citations, cited URLs, or grounding phrases yet |
 | ChatGPT referrals | Analytics endpoint or server logs | Cannot confirm ChatGPT traffic yet |
-| Onsite conversions | Approved analytics endpoint | Cannot measure real scorer completion, copy actions, or source clicks yet |
+| Onsite conversions | Non-self aggregate events | Endpoint exists, but commercial interpretation still requires real visitors and qualified signals |
 | Revenue | PayPal transaction or qualified paid lead export | Cannot evaluate paid conversion or payback yet |
 
 ## Page Action Table
@@ -99,6 +99,6 @@
 
 1. Export GSC sitemap, indexing, and performance data when the console has enough data.
 2. Export Bing Webmaster sitemap, URL, search, and AI Performance data when available.
-3. Decide whether to connect a privacy-reviewed analytics endpoint.
+3. Import `/api/events/summary` after each exposure cycle and separate self-visits from qualified signals before any threshold update.
 4. Use Semrush only for trial-window exports: prompts, keyword clusters, SERP gaps, and competitor feature claims.
 5. Keep all new pages behind source packs, technical SEO CI, crawler access audit, and IndexNow submission.

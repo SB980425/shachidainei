@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-12T04:37:35.539Z
+- Generated: 2026-06-12T05:06:51.099Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 215
+- Checks: 220
 - Blockers: 0
 - Warnings: 0
 
@@ -38,6 +38,11 @@
 | brand_icon | pass | SVG icon exists | [link](https://agentsiteops.com/icon.svg) |
 | brand_icon | pass | icon has accessible brand label | [link](https://agentsiteops.com/icon.svg) |
 | brand_icon_png | pass | HTTP 200 | [link](https://agentsiteops.com/icon-32.png) |
+| analytics_summary | pass | HTTP 200 | [link](https://agentsiteops.com/api/events/summary?days=2) |
+| analytics_summary | pass | aggregate event counts exist | [link](https://agentsiteops.com/api/events/summary?days=2) |
+| analytics_summary | pass | threshold snapshot exists | [link](https://agentsiteops.com/api/events/summary?days=2) |
+| analytics_summary | pass | privacy boundary is visible | [link](https://agentsiteops.com/api/events/summary?days=2) |
+| analytics_summary | pass | identity headers are not exposed | [link](https://agentsiteops.com/api/events/summary?days=2) |
 | / | pass | HTTP 200 | [link](https://agentsiteops.com/) |
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |

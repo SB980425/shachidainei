@@ -1,6 +1,6 @@
 # Analytics Endpoint Contract
 
-Purpose: define the expected contract for the optional endpoint behind `NEXT_PUBLIC_ANALYTICS_ENDPOINT`. A real endpoint is not enabled yet.
+Purpose: define the production contract for the first-party aggregate endpoint behind `/api/events`. `NEXT_PUBLIC_ANALYTICS_ENDPOINT` can override the target, but the default production path is first-party.
 
 This contract does not govern Cloudflare-managed hosting analytics, edge logs, or injected hosting scripts.
 
@@ -8,11 +8,13 @@ This contract does not govern Cloudflare-managed hosting analytics, edge logs, o
 
 | Field | Value |
 |---|---|
-| Method | `POST` |
+| Write method | `POST /api/events` |
+| Read method | `GET /api/events/summary?days=2` |
 | Content type | `application/json` |
 | Auth | Public write endpoint or first-party proxy; no user account required in v1 |
-| Response | `204 No Content` on accepted event |
-| Environment variable | `NEXT_PUBLIC_ANALYTICS_ENDPOINT` |
+| Write response | `204 No Content` on accepted event |
+| Storage binding | `AGENTSITEOPS_ANALYTICS` Cloudflare KV |
+| Environment variable | Optional `NEXT_PUBLIC_ANALYTICS_ENDPOINT` override |
 
 ## Accepted Payload
 
@@ -95,6 +97,7 @@ Minimum v1 allowlist:
 | Payload key longer than 64 chars | reject or truncate before storage |
 | Payload string longer than 200 chars | reject or truncate before storage |
 | Email, phone, account id, payment data, IP, raw user text, cookie id, or device fingerprint | reject |
+| Full external URL storage | not allowed; source clicks store host and path only |
 | Request body over 8 KB | reject |
 | Timestamp more than 24 hours old or 10 minutes in the future | reject |
 
@@ -102,8 +105,8 @@ Minimum v1 allowlist:
 
 | Item | Rule |
 |---|---|
-| Raw event retention | 90 days unless a shorter policy is selected |
-| Aggregated weekly metrics | Keep while the site exists |
+| Raw event retention | Do not store raw events in KV |
+| Aggregated counters | Keep while the site exists or until manually purged |
 | IP address | Do not store in event table |
 | User agent | Do not store in event table in v1 |
 | Session id | Do not add until privacy and consent are reviewed |
@@ -120,17 +123,31 @@ The endpoint or downstream job should produce:
 | `tool_completed` | Count of completed scorer result events |
 | `tool_completion_rate` | `tool_completed / tool_started` where denominator > 0 |
 | `tool_result_export` | Count of copy/download actions |
-| `source_link_clicks` | Count by source href and path |
+| `source_link_clicks` | Count source-link click events without storing the full source URL |
 | `cta_clicks` | Count by label and target |
+
+## Public Summary
+
+`GET /api/events/summary?days=2` returns aggregate counts only:
+
+- `counts_by_event`
+- `counts_by_path`
+- `counts_by_day`
+- `counts_by_event_path`
+- `threshold_snapshot.sample_view_count`
+- `threshold_snapshot.source_link_click_count`
+- `threshold_snapshot.paypal_click_count`
+
+The summary does not return IP address, user agent, cookie id, account id, email, phone, raw form text, full external URL, payment data, or individual events.
 
 ## Release Gate
 
-Do not enable endpoint until:
+Endpoint release gate:
 
 - `checklists/monetization-compliance.md` passes for analytics.
 - `/privacy/` describes endpoint collection.
 - `npm run seo:ci` passes.
-- A test event is accepted and visible in a non-production test table.
+- A test event is accepted and visible in aggregate summary output.
 - A malformed event is rejected.
 - A sensitive payload test is rejected.
 - `npm run analytics:gate` passes.

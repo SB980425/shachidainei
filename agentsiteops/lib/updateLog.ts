@@ -12,6 +12,56 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-41 First-party aggregate analytics endpoint",
+    status: "completed",
+    keyPoints: [
+      "Created a Cloudflare KV namespace and bound it to the Pages project as `AGENTSITEOPS_ANALYTICS`.",
+      "Added `/api/events` and `/api/events/summary` as first-party aggregate endpoints for page, tool, source-link, and payment-CTA counters.",
+      "Changed source-link event payloads so they store source host and path instead of full external URLs.",
+      "Updated privacy, analytics, launch-readiness, and monetization compliance documents so production collection is described as aggregate-only."
+    ],
+    aiAngle:
+      "Exposure validation no longer depends only on manual search checks or browser session storage. AI and human reviewers can inspect a public aggregate summary while the site keeps raw events, identities, payment data, and full external URLs out of storage.",
+    files: [
+      "wrangler.toml",
+      "functions/api/events.ts",
+      "functions/api/events/summary.ts",
+      "components/SiteAnalytics.tsx",
+      "scripts/import-analytics-summary.mjs",
+      "scripts/analytics-endpoint-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "docs/analytics-events.md",
+      "docs/analytics-endpoint-contract.md",
+      "docs/analytics-plan.md",
+      "checklists/monetization-compliance.md",
+      "checklists/launch-readiness.md",
+      "lib/trustPages.ts",
+      "data/analytics-summary-snapshot.json",
+      "data/analytics-summary-snapshot.csv",
+      "reports/analytics-summary-snapshot.md",
+      "data/exposure-action-ledger.csv",
+      "package.json",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "Cloudflare KV namespace created",
+      "analytics endpoint gate pass with 10 payload tests and 8 implementation checks",
+      "typecheck pass",
+      "code quality gate pass with 14 checks",
+      "commercial validation gate pass with 304 checks",
+      "route consistency gate pass with 245 checks",
+      "production build pass with 53 static pages",
+      "Cloudflare Pages deploy pass with Functions bundle",
+      "production health pass with 220 checks",
+      "analytics summary import pass: waiting_for_events with sample views 0, source-link clicks 0, and PayPal CTA clicks 0",
+      "growth snapshot baseline_ready with 47 routes waiting for aggregate endpoint events and 0 threshold counts",
+      "production `/api/events/summary?days=2` returns 200"
+    ],
+    next:
+      "Use the aggregate summary as a measurement surface only; do not count self-visits or endpoint availability as validation proof."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-40 GitHub feedback thread refresh",
     status: "completed",
     keyPoints: [

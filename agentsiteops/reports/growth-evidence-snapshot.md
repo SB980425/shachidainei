@@ -1,6 +1,6 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-12T04:35:15.832Z
+- Generated: 2026-06-12T05:07:51.307Z
 - Status: baseline_ready
 - Routes: 47
 - Technical SEO pass routes: 47
@@ -12,7 +12,10 @@
 - Bing status: pending export for 47 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: local buffer only for 47 routes
+- Onsite event status: aggregate endpoint waiting for events on 47 routes
+- Onsite routes with aggregate events: 0
+- Analytics summary status missing or blocked: 0
+- Analytics threshold snapshot: sample views 0, source-link clicks 0, PayPal CTA clicks 0
 
 ## Route Evidence Table
 
@@ -71,4 +74,4 @@
 - Do not scale a new content cluster until GSC and Bing export data exists.
 - Do not buy paid AI visibility monitoring until first-party evidence creates a concrete question that free tools cannot answer.
 - Keep technical SEO and crawler access as release gates for every route batch.
-- Treat local event buffering as implementation evidence only; it is not real user behavior until an approved endpoint is connected.
+- Treat endpoint availability as measurement infrastructure only; real user behavior requires aggregate events that are not known self-visits.

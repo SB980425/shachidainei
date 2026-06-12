@@ -17,8 +17,10 @@ Current implementation:
 - Launch readiness: `checklists/launch-readiness.md`.
 - Performance budget: `docs/performance-budget.md`.
 - Issue backlog: `docs/github-issues-ready.md`.
-- Default storage: browser memory and `sessionStorage`.
-- Optional endpoint: `NEXT_PUBLIC_ANALYTICS_ENDPOINT`.
+- Local storage: browser memory and `sessionStorage`.
+- Production endpoint: `/api/events` first-party aggregate counters.
+- Public summary: `/api/events/summary?days=2`.
+- Optional endpoint override: `NEXT_PUBLIC_ANALYTICS_ENDPOINT`.
 
 ## Required Dimensions
 
@@ -75,6 +77,18 @@ Current implementation:
 | `trust_policy_view` | User views author/editorial/privacy/disclosure policy | Trust pages |
 | `disclosure_source_click` | User opens FTC or disclosure source link | `/disclosure/` |
 
+## Production Collection
+
+The production endpoint stores aggregate counters only:
+
+- Event counts.
+- Path counts.
+- Event-path counts.
+- Daily totals.
+- Threshold snapshot counts for sample views, source-link clicks, and PayPal CTA clicks.
+
+The endpoint does not store raw events, IP address, user agent, cookies, account identifiers, email, phone, full external URLs, raw form text, or payment data.
+
 ## Operational Quality Events
 
 These are internal site operations, not user behavior events.
@@ -127,5 +141,6 @@ Day 90:
 ## Privacy Boundary
 
 - Do not track sensitive personal data.
+- Do not store raw events or full external URLs in the aggregate endpoint.
 - If email signup exists, privacy page must describe collection and unsubscribe path.
 - If analytics uses cookies or advertising features, consent requirements must be reviewed before release.

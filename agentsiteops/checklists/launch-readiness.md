@@ -13,7 +13,7 @@
 | Hosting provider | missing | block launch |
 | Owner identity | missing | block public trust finalization |
 | GSC/Bing | missing | block search validation |
-| Real analytics endpoint | missing | block real event measurement |
+| Real analytics endpoint | first-party aggregate endpoint configured | continue |
 | Monetization | not enabled | pass; do not add until reviewed |
 
 ## Pre-Launch Checklist
@@ -31,11 +31,11 @@
 | JSON-LD | All sitemap routes have valid JSON-LD | `pass local` |
 | Mobile | 390px mobile overflow check passes | `pass local` |
 | Trust | Author/owner identity finalized | `missing` |
-| Privacy | Data collection matches actual scripts and endpoint | `pass local; pending production` |
+| Privacy | Data collection matches actual scripts and endpoint | `pass` |
 | Disclosure | Ads, affiliate, sponsor, paid placement absent or disclosed | `pass current` |
 | GSC | Search Console property verified | `missing` |
 | Bing | Bing Webmaster Tools site verified | `missing` |
-| Analytics | Endpoint or analytics destination reviewed and enabled | `missing` |
+| Analytics | Endpoint or analytics destination reviewed and enabled | `pass first-party aggregate` |
 | Server logs | Hosting logs accessible for crawler review | `missing` |
 
 ## Launch Sequence
@@ -56,7 +56,7 @@
 ## Blockers
 
 - Do not launch while canonical uses a non-production placeholder.
-- Do not enable real event endpoint before privacy and endpoint contract pass.
+- Do not add third-party analytics, cookies, identifiers, raw event storage, or personal data collection before privacy and endpoint contract review.
 - Do not add email, ads, affiliate, sponsor, form, payment, or account features before compliance review.
 - Do not add fake GitHub repo links or fake download links.
 - Do not scale content before GSC/Bing/index/event signals exist.

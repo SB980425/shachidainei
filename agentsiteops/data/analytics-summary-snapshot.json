@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-06-12T05:06:52.521Z",
+  "status": "waiting_for_events",
+  "source_url": "https://agentsiteops.com/api/events/summary?days=2",
+  "summary": {
+    "generated_at": "2026-06-12T05:06:52.827Z",
+    "days": 2,
+    "privacy_boundary": "Aggregate event counters only. No IP address, user agent, cookie id, account id, email, phone, raw form text, full external URL, or payment data is returned.",
+    "counts_by_event": {},
+    "counts_by_path": {},
+    "counts_by_day": {},
+    "counts_by_event_path": {},
+    "threshold_snapshot": {
+      "paypal_click_count": 0,
+      "sample_view_count": 0,
+      "source_link_click_count": 0
+    }
+  }
+}
