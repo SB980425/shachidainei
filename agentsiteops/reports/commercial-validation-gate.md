@@ -1,8 +1,8 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-11T23:47:04.160Z
+- Generated: 2026-06-12T00:18:38.268Z
 - Status: pass
-- Checks: 161
+- Checks: 171
 - Blockers: 0
 
 ## Summary
@@ -143,6 +143,16 @@
 | exposure_sprint | pass | exposure targets block automated direct messages |
 | exposure_sprint | pass | exposure evidence template separates confirmed payments |
 | exposure_sprint | pass | exposure evidence template separates usable intake |
+| exposure_sprint | pass | exposure evidence template separates qualified replies |
+| exposure_sprint | pass | exposure evidence template separates sample views |
+| exposure_sprint | pass | exposure evidence template separates objections |
+| exposure_sprint | pass | 48-hour status requires sealing if metrics are absent |
+| exposure_sprint | pass | 48-hour status records the decision report path |
+| exposure_sprint | pass | 48-hour thresholds include the deadline seal rule |
+| exposure_sprint | pass | 48-hour thresholds prioritize confirmed payment plus usable intake |
+| exposure_sprint | pass | 48-hour decision script can require sealing |
+| exposure_sprint | pass | 48-hour decision script supports deterministic deadline tests |
+| exposure_sprint | pass | 48-hour decision script fails CI when sealing is required |
 | exposure_sprint | pass | exposure copy pack blocks inflated claims |
 | exposure_sprint | pass | exposure copy pack tests implementation-pivot risk |
 | service_boundary | pass | launch copy avoids guarantee claims |

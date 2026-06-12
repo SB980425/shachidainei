@@ -1,0 +1,12 @@
+{
+  "project": "AgentSiteOps",
+  "status": "active",
+  "started_at_utc": "2026-06-12T00:08:46.618Z",
+  "started_at_asia_shanghai": "2026-06-12 08:08:46",
+  "deadline_at_utc": "2026-06-14T00:08:46.618Z",
+  "deadline_at_asia_shanghai": "2026-06-14 08:08:46",
+  "objective": "Obtain first measurable exposure evidence within 48 hours.",
+  "seal_if_no_metric": true,
+  "evidence_source": "data/48-hour-exposure-evidence-template.csv",
+  "decision_report": "reports/48-hour-exposure-decision.md"
+}

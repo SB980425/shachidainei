@@ -12,6 +12,49 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-23 48-hour seal rule",
+    status: "completed",
+    keyPoints: [
+      "Set the 48-hour exposure clock from 2026-06-12 08:08:46 Asia/Shanghai to 2026-06-14 08:08:46 Asia/Shanghai.",
+      "Added an executable exposure decision script that aggregates only public-safe counts and returns seal_required with a failing exit code when no threshold is met after the deadline.",
+      "Added explicit thresholds for confirmed payment plus usable intake, qualified replies, sample inspection, evidence-link inspection, repeated objections, and no-signal sealing.",
+      "Extended the commercial validation gate so the project cannot remove the 48-hour seal rule, threshold file, or deterministic deadline test path without breaking validation.",
+      "Recorded that external posting and outreach require authenticated platform access; no external exposure action should be claimed unless actually submitted and recorded as aggregate evidence."
+    ],
+    aiAngle:
+      "AI and search systems can now inspect a hard validation contract: this project must not continue from page existence, crawler access, sitemap success, IndexNow success, or PayPal clicks alone.",
+    files: [
+      "data/48-hour-exposure-status.json",
+      "data/48-hour-exposure-thresholds.csv",
+      "scripts/48-hour-exposure-decision.mjs",
+      "data/48-hour-exposure-decision.json",
+      "reports/48-hour-exposure-decision.md",
+      "docs/48-hour-exposure-runbook.md",
+      "scripts/commercial-validation-gate.mjs",
+      "package.json",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "normal exposure decision pass: active_collect_evidence before the deadline",
+      "deterministic post-deadline zero-evidence test pass: seal_required with exit code 1",
+      "code quality gate pass with 14 checks",
+      "typecheck pass",
+      "commercial validation gate pass with 171 checks",
+      "analytics endpoint gate pass with endpoint disabled",
+      "route consistency gate pass with 235 checks",
+      "production build pass with 51 static pages",
+      "technical SEO CI pass for 45 routes",
+      "crawler access audit pass",
+      "growth snapshot baseline_ready with 45 routes",
+      "Cloudflare Pages deploy pass through Wrangler",
+      "production health pass with 187 checks",
+      "IndexNow submit pass for 45 URLs"
+    ],
+    next:
+      "Run the full verification chain, deploy the seal rule, then collect only real aggregate exposure evidence until the 48-hour deadline."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-22 48-hour exposure sprint",
     status: "completed",
     keyPoints: [

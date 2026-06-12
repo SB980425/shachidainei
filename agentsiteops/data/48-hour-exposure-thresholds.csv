@@ -1,0 +1,6 @@
+"rule","minimum","decision","reason"
+"confirmed_payment_count>=1 and usable_intake_count>=1","commercial proof","continue","Confirmed payment plus usable intake is the strongest continuation signal."
+"qualified_reply_count>=2","qualified demand","continue_or_rewrite","Two qualified replies prove that a real buyer problem exists even if payment is absent."
+"sample_view_count>=10 and source_link_click_count>=3","inspectable interest","rewrite_or_narrow","Enough visitors inspected the artifact and evidence links to judge copy and offer clarity."
+"objection_count>=3","useful objection pattern","rewrite_or_pivot","Repeated objections are valid exposure evidence even without payment."
+"all_above_missing_at_deadline","seal_required","seal","No measurable exposure signal within 48 hours."

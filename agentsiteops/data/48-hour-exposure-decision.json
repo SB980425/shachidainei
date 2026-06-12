@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-06-12T00:15:11.437Z",
+  "status": "active",
+  "decision": "active_collect_evidence",
+  "reason": "The 48-hour window is still open and no continuation threshold has been reached.",
+  "deadlinePassed": false,
+  "totals": {
+    "referral_visit_count": 0,
+    "source_link_click_count": 0,
+    "sample_view_count": 0,
+    "paypal_click_count": 0,
+    "qualified_reply_count": 0,
+    "confirmed_payment_count": 0,
+    "usable_intake_count": 0,
+    "objection_count": 0
+  },
+  "reportPath": "C:\\Users\\98043\\AppData\\Local\\Temp\\codex-shachidainei-3cb8642f75f440c28c27c5ff6bffe097\\agentsiteops\\reports\\48-hour-exposure-decision.md",
+  "jsonPath": "C:\\Users\\98043\\AppData\\Local\\Temp\\codex-shachidainei-3cb8642f75f440c28c27c5ff6bffe097\\agentsiteops\\data\\48-hour-exposure-decision.json"
+}

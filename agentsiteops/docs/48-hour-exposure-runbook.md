@@ -56,3 +56,20 @@ Record only aggregate counts:
 ## Decision Rule
 
 If there are no qualified replies, sample views, or useful objections after the first manual batch, rewrite the offer before adding content. If prospects ask for implementation instead of a route file, pivot toward an implementation offer or reject those buyers instead of selling the same blueprint.
+
+## Failure Sealing Rule
+
+At the 48-hour deadline, run `npm run exposure:decision`.
+
+The project must be sealed if all continuation signals are missing:
+
+- confirmed_payment_count is below 1 or usable_intake_count is below 1.
+- qualified_reply_count is below 2.
+- sample_view_count is below 10 or source_link_click_count is below 3.
+- objection_count is below 3.
+
+When the decision is `seal_required`, stop publishing new commercial content for this offer, freeze payment expansion, and archive the project as a failed validation until a materially different offer is selected.
+
+## Current Execution Blocker
+
+External platform posting, community replies, manual outreach, and public account submissions require authenticated platform access. Without available browser control or logged-in platform access, the executable local scope is limited to production readiness, public artifacts, copy packs, evidence templates, and decision scripts. No external exposure action should be claimed unless it was actually submitted and recorded as an aggregate count.

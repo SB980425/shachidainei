@@ -95,6 +95,9 @@ function checkCommercialBoundary() {
   const exposureSprint = read("data/48-hour-exposure-sprint.csv");
   const exposureTargets = read("data/exposure-submission-targets.csv");
   const exposureEvidence = read("data/48-hour-exposure-evidence-template.csv");
+  const exposureStatus = read("data/48-hour-exposure-status.json");
+  const exposureThresholds = read("data/48-hour-exposure-thresholds.csv");
+  const exposureDecisionScript = read("scripts/48-hour-exposure-decision.mjs");
   const exposureCopy = read("docs/exposure-copy-pack.md");
 
   requireText("payment_path", payments, "https://paypal.me/agentsiteops/99USD", "live USD 99 PayPal link is configured");
@@ -193,6 +196,16 @@ function checkCommercialBoundary() {
   requireText("exposure_sprint", exposureTargets, "Do not automate DMs", "exposure targets block automated direct messages");
   requireText("exposure_sprint", exposureEvidence, "confirmed_payment_count", "exposure evidence template separates confirmed payments");
   requireText("exposure_sprint", exposureEvidence, "usable_intake_count", "exposure evidence template separates usable intake");
+  requireText("exposure_sprint", exposureEvidence, "qualified_reply_count", "exposure evidence template separates qualified replies");
+  requireText("exposure_sprint", exposureEvidence, "sample_view_count", "exposure evidence template separates sample views");
+  requireText("exposure_sprint", exposureEvidence, "objection_count", "exposure evidence template separates objections");
+  requireText("exposure_sprint", exposureStatus, '"seal_if_no_metric": true', "48-hour status requires sealing if metrics are absent");
+  requireText("exposure_sprint", exposureStatus, '"decision_report": "reports/48-hour-exposure-decision.md"', "48-hour status records the decision report path");
+  requireText("exposure_sprint", exposureThresholds, "all_above_missing_at_deadline", "48-hour thresholds include the deadline seal rule");
+  requireText("exposure_sprint", exposureThresholds, "confirmed_payment_count>=1 and usable_intake_count>=1", "48-hour thresholds prioritize confirmed payment plus usable intake");
+  requireText("exposure_sprint", exposureDecisionScript, "seal_required", "48-hour decision script can require sealing");
+  requireText("exposure_sprint", exposureDecisionScript, "EXPOSURE_DECISION_NOW", "48-hour decision script supports deterministic deadline tests");
+  requireText("exposure_sprint", exposureDecisionScript, "process.exitCode = 1", "48-hour decision script fails CI when sealing is required");
   requireText("exposure_sprint", exposureCopy, "Do not claim revenue, traffic, ranking, or AI-citation proof", "exposure copy pack blocks inflated claims");
   requireText("exposure_sprint", exposureCopy, "Would this need to pivot toward implementation", "exposure copy pack tests implementation-pivot risk");
 
