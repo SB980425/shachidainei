@@ -32,6 +32,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `audit_intent_page_view` | `/services/ai-website-opportunity-audit/` load | `path` |
 | `audit_scope_builder_view` | `/tools/audit-scope-builder/` load | `path` |
 | `launch_blueprint_fit_checker_view` | `/tools/launch-blueprint-fit-checker/` load | `path` |
+| `route_confidence_checker_view` | `/tools/route-confidence-checker/` load | `path` |
 | `starter_pack_view` | `/templates/starter-pack/` load | `path` |
 | `repo_skeleton_matrix_view` | `/templates/seo-repo-skeleton/` load | `path` |
 | `ci_gate_matrix_view` | `/templates/seo-repo-skeleton/` load | `path` |

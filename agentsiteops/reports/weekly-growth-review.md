@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-- The production site has 50 indexable routes with technical SEO passing.
+- The production site has 51 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, AI referrals, and revenue evidence are still pending exports or records; the first-party aggregate endpoint is active but currently waiting for events.
@@ -16,13 +16,13 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 50 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 50/50 routes pass |
+| Route registry | docs/routes.json | 51 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 51/51 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
-| IndexNow | latest command output | 50 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 51 URLs submitted successfully in current deployment cycle |
 | Event layer | /api/events/summary | First-party aggregate endpoint active; sample views 0, source-link clicks 0, PayPal CTA clicks 0 |
 
 ## Unverified
@@ -48,6 +48,7 @@
 | /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Launch Blueprint pricing, sample, buy, and intake path |
 | /tools/audit-scope-builder/ | tool | commercial_validation | pass | site_pass | keep | Measure audit_scope_builder_view, tool_completed, and tool_result_export before adding forms or payment |
 | /tools/launch-blueprint-fit-checker/ | tool | launch_blueprint | pass | site_pass | keep | Measure checker starts, copies, pricing exits, and PayPal clicks before increasing paid traffic |
+| /tools/route-confidence-checker/ | tool | launch_blueprint | pass | site_pass | keep | Measure route confidence checker starts, copied verdicts, route-basis exits, fit-checker exits, and objections about route authority |
 | /templates/starter-pack/ | template | starter_pack | pass | site_pass | keep | Measure starter pack downloads and query exposure after analytics endpoint |
 | /templates/seo-repo-skeleton/ | template | seo_repo_skeleton | pass | site_pass | keep | Measure template_copy_click after real endpoint |
 | /checklists/ai-content-quality-gate/ | checklist | ai_content_quality_gate | pass | site_pass | keep | Measure checklist_copy_click after real endpoint |

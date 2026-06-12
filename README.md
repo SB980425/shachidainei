@@ -23,6 +23,7 @@ AgentSiteOps is a small manual decision system for AI-capable solo builders who 
 - Social preview image: https://agentsiteops.com/og-image.png
 - Route basis report: https://agentsiteops.com/reports/route-basis/
 - Route selection method: https://agentsiteops.com/methodology/route-selection/
+- Route confidence checker: https://agentsiteops.com/tools/route-confidence-checker/
 - Validate an AI service offer before building: https://agentsiteops.com/answers/validate-ai-service-offer-before-building/
 - AI service route vs generic ChatGPT advice: https://agentsiteops.com/answers/ai-service-route-vs-generic-chatgpt/
 - When to stop an AI website idea: https://agentsiteops.com/answers/when-to-stop-an-ai-website-idea/

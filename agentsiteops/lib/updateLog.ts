@@ -12,6 +12,49 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-12",
+    step: "M4-46 Route Confidence Checker release",
+    status: "completed",
+    keyPoints: [
+      "Added a local Route Confidence Checker so route selection is inspectable as classification, not a random score.",
+      "The tool maps project type, demand evidence, proof asset, delivery boundary, and hard blockers to high, medium, low, or reject confidence bands.",
+      "Registered the tool across route registry, page registry, page review actions, analytics events, footer links, README, llms.txt, and llms-full.txt.",
+      "Connected the tool from the Route Selection Methodology and Launch Blueprint Fit Checker related links.",
+      "Kept the output boundary strict: the tool does not submit data, store personal information, collect payment, or guarantee traffic, rankings, AI citations, customers, revenue, or payback."
+    ],
+    aiAngle:
+      "AI and search readers now have an executable route-selection diagnostic that demonstrates the evidence ladder behind AgentSiteOps instead of only reading static method copy.",
+    files: [
+      "app/tools/route-confidence-checker/page.tsx",
+      "components/RouteConfidenceChecker.tsx",
+      "lib/site.ts",
+      "app/layout.tsx",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "components/SiteAnalytics.tsx",
+      "docs/analytics-events.md",
+      "public/llms.txt",
+      "public/llms-full.txt",
+      "README.md",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "analytics endpoint gate pass",
+      "route consistency gate pass: 51 routes, 0 blockers",
+      "code-quality gate pass",
+      "commercial gate pass: 304 checks, 0 blockers",
+      "build pass with 57 static pages",
+      "technical SEO CI pass: 51 routes, 0 blockers, 0 warnings",
+      "production tool route returns HTTP 200",
+      "production health pass: 220 checks, 0 blockers",
+      "Playwright production interaction pass: medium-confidence result and copy state verified; analytics requests emitted through the site event endpoint"
+    ],
+    next:
+      "Submit the updated route set, refresh growth evidence, and measure whether visitors use the checker or still object that route authority is unclear."
+  },
+  {
+    date: "2026-06-12",
     step: "M4-45 Brand icon and manifest hardening",
     status: "completed",
     keyPoints: [

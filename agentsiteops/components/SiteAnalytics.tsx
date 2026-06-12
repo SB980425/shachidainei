@@ -35,6 +35,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/services/ai-website-opportunity-audit/": ["audit_intent_page_view"],
   "/tools/audit-scope-builder/": ["audit_scope_builder_view"],
   "/tools/launch-blueprint-fit-checker/": ["launch_blueprint_fit_checker_view"],
+  "/tools/route-confidence-checker/": ["route_confidence_checker_view"],
   "/templates/starter-pack/": ["starter_pack_view"],
   "/templates/seo-repo-skeleton/": ["repo_skeleton_matrix_view", "ci_gate_matrix_view"],
   "/checklists/ai-content-quality-gate/": ["content_quality_gate_view"],

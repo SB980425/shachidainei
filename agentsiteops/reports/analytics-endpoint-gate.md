@@ -1,6 +1,6 @@
 # Analytics Endpoint Gate
 
-- Generated: 2026-06-12T06:36:27.545Z
+- Generated: 2026-06-12T07:18:11.215Z
 - Status: gate_ready_endpoint_active
 - Endpoint enabled: yes, first-party aggregate counters only
 - Test cases: 10

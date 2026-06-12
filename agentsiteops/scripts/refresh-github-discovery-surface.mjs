@@ -109,7 +109,7 @@ const mergedTopics = [...new Set([...(beforeTopics.names ?? []), ...desiredTopic
   .slice(0, 20);
 
 const description =
-  "AgentSiteOps: route-basis, samples, and 48-hour validation for one sellable AI service offer.";
+  "AgentSiteOps: route-basis, confidence checker, samples, and 48-hour validation for one sellable AI service offer.";
 const homepage = "https://agentsiteops.com/launch-kit/";
 
 const afterRepo = await githubRequest("", token, {
@@ -163,6 +163,7 @@ const report = [
   "- Launch kit: https://agentsiteops.com/launch-kit/",
   "- Route basis report: https://agentsiteops.com/reports/route-basis/",
   "- Route selection method: https://agentsiteops.com/methodology/route-selection/",
+  "- Route Confidence Checker: https://agentsiteops.com/tools/route-confidence-checker/",
   "- Analytics summary: https://agentsiteops.com/api/events/summary?days=2",
   "- Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/",
   "- Public feedback thread: https://github.com/SB980425/shachidainei/issues/2",

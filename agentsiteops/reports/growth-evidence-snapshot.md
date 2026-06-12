@@ -1,19 +1,19 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-12T06:56:04.178Z
+- Generated: 2026-06-12T07:29:00.928Z
 - Status: baseline_ready
-- Routes: 50
-- Technical SEO pass routes: 50
+- Routes: 51
+- Technical SEO pass routes: 51
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 50 routes
-- Bing status: pending export for 50 routes
+- GSC status: pending export for 51 routes
+- Bing status: pending export for 51 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
 - Onsite event status: aggregate endpoint waiting for events on 46 routes
-- Onsite routes with aggregate events: 4
+- Onsite routes with aggregate events: 5
 - Analytics summary status missing or blocked: 0
 - Analytics threshold snapshot: sample views 0, source-link clicks 0, PayPal CTA clicks 0
 
@@ -30,6 +30,7 @@
 | /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Launch Blueprint pricing, sample, buy, and intake path |
 | /tools/audit-scope-builder/ | tool | commercial_validation | pass | site_pass | keep | Measure audit_scope_builder_view, tool_completed, and tool_result_export before adding forms or payment |
 | /tools/launch-blueprint-fit-checker/ | tool | launch_blueprint | pass | site_pass | keep | Measure checker starts, copies, pricing exits, and PayPal clicks before increasing paid traffic |
+| /tools/route-confidence-checker/ | tool | launch_blueprint | pass | site_pass | keep | Measure route confidence checker starts, copied verdicts, route-basis exits, fit-checker exits, and objections about route authority |
 | /templates/starter-pack/ | template | starter_pack | pass | site_pass | keep | Measure starter pack downloads and query exposure after analytics endpoint |
 | /templates/seo-repo-skeleton/ | template | seo_repo_skeleton | pass | site_pass | keep | Measure template_copy_click after real endpoint |
 | /checklists/ai-content-quality-gate/ | checklist | ai_content_quality_gate | pass | site_pass | keep | Measure checklist_copy_click after real endpoint |

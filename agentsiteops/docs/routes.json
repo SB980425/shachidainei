@@ -87,6 +87,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/tools/route-confidence-checker/",
+      "pageType": "tool",
+      "template": "tool",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/templates/starter-pack/",
       "pageType": "template",
       "template": "template",

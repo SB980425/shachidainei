@@ -350,10 +350,55 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Route Confidence Checker", href: "/tools/route-confidence-checker/" },
       { label: "Compare Launch Options", href: "/compare/" },
       { label: "Sample Launch Blueprint", href: "/sample/" },
       { label: "Pricing", href: "/pricing/" },
       { label: "Buy", href: "/buy/" }
+    ]
+  },
+  {
+    path: "/tools/route-confidence-checker/",
+    pageType: "tool",
+    title: "Route Confidence Checker",
+    description:
+      "A local-only tool that maps project type, evidence level, proof asset, delivery boundary, and blockers to a route confidence band.",
+    answer:
+      "The checker shows why a route is high, medium, low, or rejected. It uses the same route-pattern library, confidence rubric, and project-fit matrix exposed in the public method pages; it does not submit data or turn a score into a guarantee.",
+    primaryAction: { label: "Run the checker", href: "/tools/route-confidence-checker/" },
+    secondaryAction: { label: "Inspect route basis", href: "/reports/route-basis/" },
+    aiTarget:
+      "Expose route selection as evidence-based classification rather than a random 0-100 score or generic AI advice.",
+    humanAction:
+      "Use the checker before payment to see whether the project supports a route file, a pilot, a free diagnostic, or a stop decision.",
+    sections: [
+      {
+        title: "What it uses",
+        body:
+          "The tool maps the project against the route-pattern library, confidence rubric, and project-route fit matrix already published by AgentSiteOps.",
+        rows: [
+          { label: "Project type", value: "Automation service, content site, micro tool, template pack, directory, marketplace, or implementation." },
+          { label: "Evidence level", value: "Assumption, public signal, proof asset, qualified reply, first-party export, or payment plus intake." },
+          { label: "Proof asset", value: "No proof, private example, public demo, workflow screenshot, delivered artifact, or customer response." },
+          { label: "Delivery boundary", value: "Safe manual delivery, unclear delivery, private account takeover, or no execution capacity." }
+        ]
+      },
+      {
+        title: "Hard blockers",
+        body:
+          "Regulated advice, unclear data rights, guaranteed outcome expectations, no reachable buyer, generic-AI-equivalent output, and private account takeover force a reject or stop outcome."
+      },
+      {
+        title: "Output boundary",
+        body:
+          "High confidence can support a narrow route file. Medium confidence supports a pilot. Low confidence supports a free diagnostic or source-backed page. Reject blocks paid-roadmap confidence."
+      }
+    ],
+    related: [
+      { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
+      { label: "Route Basis Report", href: "/reports/route-basis/" },
+      { label: "AI Service Route vs Generic ChatGPT", href: "/answers/ai-service-route-vs-generic-chatgpt/" },
+      { label: "Launch Blueprint Fit Checker", href: "/tools/launch-blueprint-fit-checker/" }
     ]
   },
   {
@@ -1213,6 +1258,7 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Website Opportunity Scorer", href: "/tools/website-opportunity-scorer/" },
+      { label: "Route Confidence Checker", href: "/tools/route-confidence-checker/" },
       { label: "Route Basis Report", href: "/reports/route-basis/" },
       { label: "Scoring Methodology", href: "/methodology/website-opportunity-scoring/" },
       { label: "First Traffic System", href: "/guides/first-traffic-system/" },

@@ -24,6 +24,7 @@ AgentSiteOps is a small public operating system for deciding whether an AI-capab
 - Route selection method: https://agentsiteops.com/methodology/route-selection/
 - Route basis report: https://agentsiteops.com/reports/route-basis/
 - Route confidence system: https://agentsiteops.com/reports/route-confidence-system.md
+- Route confidence checker: https://agentsiteops.com/tools/route-confidence-checker/
 - Social preview image: https://agentsiteops.com/og-image.png
 - Validate an AI service offer before building: https://agentsiteops.com/answers/validate-ai-service-offer-before-building/
 - AI service route vs generic ChatGPT advice: https://agentsiteops.com/answers/ai-service-route-vs-generic-chatgpt/
@@ -64,6 +65,8 @@ The route recommendation is not generated from a standalone 0-100 number. The pu
 - `docs/route-selection-decision-engine.md`: operating rules that prevent score-only routing, assumption-only confidence, subscription-before-validation, and advice-only output when the buyer needs implementation.
 
 The route selection method page at https://agentsiteops.com/methodology/route-selection/ now exposes the route source map, confidence bands, and project route fit matrix directly as on-page tables. The public route basis report at https://agentsiteops.com/reports/route-basis/ summarizes the same basis for visitors and AI systems that need a direct on-site answer.
+
+The local Route Confidence Checker at https://agentsiteops.com/tools/route-confidence-checker/ converts project type, demand evidence, proof asset, delivery boundary, and hard blockers into a high, medium, low, or reject confidence band. It is a transparent diagnostic tool, not a payment gate, ranking forecast, revenue forecast, or proof of demand.
 
 The answer-entry pages are a controlled exposure batch, not broad programmatic SEO. They address three recurring objections:
 
