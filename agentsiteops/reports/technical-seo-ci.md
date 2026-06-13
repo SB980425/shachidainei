@@ -1,6 +1,6 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-13T03:29:22.511Z
+- Generated: 2026-06-13T04:07:15.820Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
@@ -40,7 +40,7 @@
 | /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 21 | pass | - |
 | /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 53 | pass | - |
 | /reports/route-basis/ | pass | 200 | Route Basis Report \| AgentSiteOps | https://agentsiteops.com/reports/route-basis/ | 1 | 18 | pass | - |
-| /reports/agentsiteops-route-run/ | pass | 200 | AgentSiteOps Route Run \| AgentSiteOps | https://agentsiteops.com/reports/agentsiteops-route-run/ | 1 | 18 | pass | - |
+| /reports/agentsiteops-route-run/ | pass | 200 | AgentSiteOps Route Run \| AgentSiteOps | https://agentsiteops.com/reports/agentsiteops-route-run/ | 1 | 16 | pass | - |
 | /templates/route-research-prompt-pack/ | pass | 200 | Route Research Prompt Pack \| AgentSiteOps | https://agentsiteops.com/templates/route-research-prompt-pack/ | 1 | 19 | pass | - |
 | /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 20 | pass | - |
 | /methodology/route-selection/ | pass | 200 | Route Selection Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/route-selection/ | 1 | 18 | pass | - |

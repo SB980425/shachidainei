@@ -361,10 +361,12 @@ async function main() {
   await checkPage("/reports/agentsiteops-route-run/", [
     "AgentSiteOps Route Run",
     "Selected route",
+    "Route decision matrix",
     "Rejected alternatives",
     "Evidence used",
     "First proof asset",
-    "Stop or pivot rule"
+    "Stop or pivot rule",
+    "Delivery acceptance checklist"
   ]);
   await checkPage("/reports/route-basis/", [
     "Route pattern library",
