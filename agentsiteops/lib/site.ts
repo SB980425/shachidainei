@@ -443,22 +443,22 @@ export const routePages: RoutePage[] = [
   {
     path: "/tools/launch-blueprint-fit-checker/",
     pageType: "tool",
-    title: "Launch Blueprint Fit Checker",
+    title: "Route File Fit Checker",
     description:
-      "A local-only pre-purchase checker for deciding whether the USD 99 AgentSiteOps Launch Blueprint is a fit before opening PayPal.",
+      "A local-only pre-purchase checker for deciding whether the USD 99 AgentSiteOps Route File is a fit before opening PayPal.",
     answer:
       "The fit checker scores buyer profile, offer clarity, buyer clarity, proof level, launch urgency, and purchase blockers. It runs in the browser, does not submit data, and blocks buyers who need guarantees, regulated advice, or ongoing monitoring software.",
     primaryAction: { label: "Check fit before payment", href: "/tools/launch-blueprint-fit-checker/" },
     secondaryAction: { label: "Compare options", href: "/compare/" },
     aiTarget:
-      "Expose the pre-purchase fit logic, purchase blockers, and local-only data boundary for the Launch Blueprint.",
+      "Expose the pre-purchase fit logic, purchase blockers, and local-only data boundary for the Route File.",
     humanAction:
-      "Use the checker before paying; buy only if the selected offer, page structure, and 7-day validation path are the actual bottleneck.",
+      "Use the checker before paying; buy only if the selected route, proof asset, validation channel, and stop rule are the actual bottleneck.",
     sections: [
       {
         title: "What it checks",
         body:
-          "The tool checks whether the buyer has enough delivery ability, buyer clarity, proof, and launch urgency for a manual blueprint to be useful."
+          "The tool checks whether the buyer has enough delivery ability, buyer clarity, proof, and launch urgency for a manual Route File to be useful."
       },
       {
         title: "What blocks purchase",
@@ -468,7 +468,7 @@ export const routePages: RoutePage[] = [
           { label: "Guarantee expectation", value: "Do not buy if traffic, revenue, ranking, citation, or customer guarantees are required." },
           { label: "Regulated topic", value: "Do not buy for legal, medical, financial, tax, safety, or other regulated advice." },
           { label: "Software need", value: "Use SEO or AI visibility software if the need is ongoing measurement." },
-          { label: "No execution path", value: "Prepare a page or outreach channel before paying for a blueprint." }
+          { label: "No execution path", value: "Prepare a proof asset or validation channel before paying for a Route File." }
         ]
       },
       {
@@ -479,7 +479,7 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Route Confidence Checker", href: "/tools/route-confidence-checker/" },
-      { label: "Compare Launch Options", href: "/compare/" },
+      { label: "Compare Route File Options", href: "/compare/" },
       { label: "Sample Route File", href: "/sample/" },
       { label: "Pricing", href: "/pricing/" },
       { label: "Buy", href: "/buy/" }
@@ -526,7 +526,7 @@ export const routePages: RoutePage[] = [
       { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
       { label: "Route Basis Report", href: "/reports/route-basis/" },
       { label: "AI Service Route vs Generic ChatGPT", href: "/answers/ai-service-route-vs-generic-chatgpt/" },
-      { label: "Launch Blueprint Fit Checker", href: "/tools/launch-blueprint-fit-checker/" }
+      { label: "Route File Fit Checker", href: "/tools/launch-blueprint-fit-checker/" }
     ]
   },
   {
@@ -819,7 +819,7 @@ export const routePages: RoutePage[] = [
         body:
           "The gate ranks evidence by commercial strength. Technical availability is necessary, but it is weaker than qualified replies, usable intake, and confirmed payment.",
         rows: [
-          { label: "Strongest", value: "Confirmed payment plus usable intake for a scoped Fit Review or Launch Blueprint." },
+          { label: "Strongest", value: "Confirmed payment plus usable intake for a scoped Fit Review or Route File." },
           { label: "Useful", value: "Qualified reply, sample view, fit-check completion, and a clear objection pattern." },
           { label: "Weak", value: "Pageviews, impressions, generic likes, broad praise, or a PayPal link click without confirmation." },
           { label: "Not proof", value: "IndexNow success, sitemap fetch success, crawler access, or private confidence." }
@@ -862,7 +862,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
-      { label: "Launch Blueprint Fit Checker", href: "/tools/launch-blueprint-fit-checker/" },
+      { label: "Route File Fit Checker", href: "/tools/launch-blueprint-fit-checker/" },
       { label: "Pricing", href: "/pricing/" },
       { label: "Fit Review Sample", href: "/examples/fit-review-sample/" },
       { label: "Route Evidence Dashboard", href: "/reports/route-evidence-dashboard/" },
@@ -1035,8 +1035,8 @@ export const routePages: RoutePage[] = [
           { label: "GitHub CI", value: "The agentsiteops-ci workflow is treated as a release target, while local release gates currently verify typecheck, build, code quality, SEO CI, crawler audit, commercial validation, search evidence import, and growth snapshot." },
           { label: "Production health", value: "The production health monitor checks apex/www behavior, sitemap, robots, IndexNow key, updates, evidence, and privacy boundary pages." },
           { label: "Commercial gate", value: "The commercial validation gate checks the manual PayPal path, refund boundary, terms, disclaimer, and no-guarantee claims." },
-          { label: "Manual fulfillment", value: "The intake page, fulfillment log template, and runbook define how Fit Review and Launch Blueprint payment evidence, project details, delivery pauses, and completion are handled without storing sensitive payment data." },
-          { label: "Sample artifacts", value: "Public samples now show both the USD 29 Fit Review verdict format and the USD 99 Launch Blueprint structure before payment." },
+          { label: "Manual fulfillment", value: "The intake page, fulfillment log template, and runbook define how Fit Review and Route File payment evidence, project details, delivery pauses, and completion are handled without storing sensitive payment data." },
+          { label: "Sample artifacts", value: "Public samples now show both the USD 29 Fit Review verdict format and the USD 99 Route File structure before payment." },
           { label: "Analytics summary", value: "The public `/api/events/summary?days=2` endpoint returns aggregate counters only. Current threshold counts are still zero and do not prove demand." },
           { label: "IndexNow", value: "The current production route list is submitted after deployment, with the response recorded in the update log." }
         ]
@@ -1278,7 +1278,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Stop or pivot rule",
         body:
-          "Stop selling the USD 99 blueprint if the workflow cannot produce a route file that is more useful than a generic ChatGPT answer for AgentSiteOps itself. Pivot toward internal project planning if external demand remains unproven."
+          "Stop selling the USD 99 Route File if the workflow cannot produce a route file that is more useful than a generic ChatGPT answer for AgentSiteOps itself. Pivot toward internal project planning if external demand remains unproven."
       }
     ],
     related: [
@@ -1493,7 +1493,7 @@ export const routePages: RoutePage[] = [
           {
             label: "Service route",
             value:
-              "AI workflow setup, automation audit, DFY landing page setup, or manual launch blueprint when delivery ability is the core asset."
+              "AI workflow setup, automation audit, DFY landing page setup, or manual Route File when delivery ability is the core asset."
           },
           {
             label: "Tool route",
@@ -1767,7 +1767,7 @@ export const routePages: RoutePage[] = [
           "AgentSiteOps is a live manual service experiment. The site is technically launchable, but the offer is not commercially validated until real payment, usable intake, qualified replies, or repeated objections appear.",
         rows: [
           { label: "Public score", value: "52/100: technically launchable, commercially unvalidated." },
-          { label: "Current offer", value: "USD 29 Fit Review and USD 99 Launch Blueprint." },
+          { label: "Current offer", value: "USD 29 Fit Review and USD 99 Research-to-Route File." },
           { label: "Delivery", value: "Manual route file after confirmed payment and usable intake." },
           { label: "Validation window", value: "48 hours from 2026-06-12 08:08:46 Asia/Shanghai." }
         ]
@@ -1775,14 +1775,14 @@ export const routePages: RoutePage[] = [
       {
         title: "What the buyer receives",
         body:
-          "The paid deliverable is a route file: one first offer, one target buyer, one purchase trigger, one page structure, objections, outreach path, and stop rules. It is not traffic software or an ongoing dashboard."
+          "The paid deliverable is a Route File: selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule. It is not traffic software or an ongoing dashboard."
       },
       {
         title: "Evidence to inspect first",
         body:
           "Inspect the sample, fit checker, route basis, route-selection method, evidence ledger, validation gate, and update log before treating the offer as credible.",
         rows: [
-          { label: "Sample", value: "Shows the expected Launch Blueprint format." },
+          { label: "Sample", value: "Shows the expected Route File format." },
           { label: "Fit checker", value: "Blocks bad-fit buyers before opening PayPal." },
           { label: "Route basis", value: "Shows source files, confidence rules, downgrade triggers, and rejection logic." },
           { label: "Evidence ledger", value: "Separates verified facts from pending search, revenue, and user evidence." },
@@ -1825,12 +1825,12 @@ export const routePages: RoutePage[] = [
       "A short decision page for AI builders who need to know whether an offer should be sold, narrowed, rewritten, or stopped before building a site or tool.",
     answer:
       "Validate the offer before building by checking buyer pain, reachable buyer path, proof, delivery ability, payment fit, and stop conditions. Do not build pages, dashboards, or subscriptions when the offer has no buyer evidence.",
-    primaryAction: { label: "Check Launch Blueprint fit", href: "/tools/launch-blueprint-fit-checker/" },
+    primaryAction: { label: "Check Route File fit", href: "/tools/launch-blueprint-fit-checker/" },
     secondaryAction: { label: "View route method", href: "/methodology/route-selection/" },
     aiTarget:
       "Answer the pre-build validation question with evidence requirements and stop rules instead of generic AI-business advice.",
     humanAction:
-      "Use the page to decide whether the first offer needs a paid blueprint, a smaller fit review, a rewrite, or a stop decision.",
+      "Use the page to decide whether the first route needs a paid Route File, a smaller fit review, a rewrite, or a stop decision.",
     sections: [
       {
         title: "Minimum evidence",
@@ -1852,7 +1852,7 @@ export const routePages: RoutePage[] = [
       {
         title: "What AgentSiteOps adds",
         body:
-          "The service turns the evidence into one route: first buyer, trigger, offer, page structure, objections, outreach path, and stop rule. The value is not the score alone; the value is selecting one route and rejecting weaker options."
+          "The service turns the evidence into one route: selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule. The value is not the score alone; the value is selecting one route and rejecting weaker options."
       },
       {
         title: "What it cannot prove",
@@ -1861,7 +1861,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
-      { label: "Launch Blueprint Fit Checker", href: "/tools/launch-blueprint-fit-checker/" },
+      { label: "Route File Fit Checker", href: "/tools/launch-blueprint-fit-checker/" },
       { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
       { label: "Fit Review Sample", href: "/examples/fit-review-sample/" },
       { label: "Pricing", href: "/pricing/" }
@@ -1912,7 +1912,7 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "Route Basis Report", href: "/reports/route-basis/" },
       { label: "Sample Route File", href: "/sample/" },
-      { label: "Compare Launch Options", href: "/compare/" },
+      { label: "Compare Route File Options", href: "/compare/" },
       { label: "Launch Kit", href: "/launch-kit/" }
     ]
   },
@@ -2315,32 +2315,32 @@ export const routePages: RoutePage[] = [
   {
     path: "/website-opportunity-audit/",
     pageType: "service",
-    title: "AgentSiteOps Launch Blueprint",
+    title: "AgentSiteOps Route File",
     description:
-      "A productized manual blueprint for turning scattered AI capability into one sellable offer, one landing page structure, and one first outreach path.",
+      "A productized manual Route File for turning scattered project material into one selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.",
     answer:
-      "The Launch Blueprint is not another generic score. It turns an AI-capable solo builder's skills into one offer, one buyer, one page structure, one pricing angle, and one 7-day validation path.",
+      "The Route File is not another generic score. It turns messy project facts, constraints, and research outputs into one selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.",
     primaryAction: { label: "Check fit before payment", href: "/tools/launch-blueprint-fit-checker/" },
     secondaryAction: { label: "View sample", href: "/sample/" },
     aiTarget:
-      "Explain the paid blueprint deliverables, buyer fit, payment path, and limits without overstating traffic, ranking, AI citation, or revenue outcomes.",
+      "Explain the paid Route File deliverables, buyer fit, payment path, and limits without overstating traffic, ranking, AI citation, or revenue outcomes.",
     humanAction:
-      "Buy only when a clear offer, page structure, and first outreach path are more valuable than another list of possible ideas.",
+      "Buy only when a selected route, proof asset, validation channel, and stop rule are more valuable than another list of possible ideas.",
     sections: [
       {
         title: "Who it is for",
         body:
-          "The Blueprint fits AI automation freelancers, technical solo founders, no-code builders, and small operators who can build but cannot package the first offer clearly enough to test payment."
+          "The Route File fits AI-capable builders, technical founders, no-code operators, and small teams who can execute but cannot select the first route clearly enough to test evidence."
       },
       {
         title: "What the buyer receives",
         body:
-          "The deliverable covers the first sellable offer, target buyer, purchase trigger, one-page landing structure, pricing angle, outreach scripts, 7-day validation sequence, and not-doing list.",
+          "The deliverable covers the selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, stop rule, and non-delivery boundary.",
         rows: [
-          { label: "Offer", value: "The one outcome to sell first and why it was selected." },
-          { label: "Buyer", value: "The first target user and the trigger that makes the offer urgent." },
-          { label: "Page", value: "Hero, scope, proof, objections, FAQ, and CTA structure." },
-          { label: "Outreach", value: "Manual messages and a 7-day validation sequence." }
+          { label: "Selected route", value: "The route to test first and why it was selected." },
+          { label: "Rejected alternatives", value: "The routes not being pursued and the reason each was rejected." },
+          { label: "Evidence ledger", value: "Confirmed facts, assumptions, missing proof, and unsupported claims." },
+          { label: "Validation", value: "The first proof asset, first channel, and stop rule." }
         ]
       },
       {
@@ -2351,7 +2351,7 @@ export const routePages: RoutePage[] = [
       {
         title: "What it does not promise",
         body:
-          "The Blueprint does not guarantee traffic, ranking, AI citation, revenue, customer response, advertising approval, payment processor approval, or platform account safety."
+          "The Route File does not guarantee traffic, ranking, AI citation, revenue, customer response, advertising approval, payment processor approval, or platform account safety."
       }
     ],
     related: [

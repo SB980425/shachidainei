@@ -22,7 +22,7 @@ Create the first measurable exposure signals within 48 hours without fake traffi
 | Route method | `/methodology/route-selection/` | Explain how route recommendations are selected. |
 | First traffic system | `/guides/first-traffic-system/` | Explain channels and signal hierarchy. |
 | Fit Review sample | `/examples/fit-review-sample/` | Show the lower-friction paid artifact before payment. |
-| Launch Blueprint sample | `/sample/` | Show the full route file format. |
+| Route File sample | `/sample/` | Show the full route file format. |
 | Validation gate | `/checklists/launch-validation-decision-gate/` | Decide continue, rewrite, narrow, pivot, or stop. |
 
 ## 48-Hour Sequence
@@ -61,7 +61,7 @@ These actions improve discoverability, but they do not count toward the continua
 
 ## Decision Rule
 
-If there are no qualified replies, sample views, or useful objections after the first manual batch, rewrite the offer before adding content. If prospects ask for implementation instead of a route file, pivot toward an implementation offer or reject those buyers instead of selling the same blueprint.
+If there are no qualified replies, sample views, or useful objections after the first manual batch, rewrite the offer before adding content. If prospects ask for implementation instead of a route file, pivot toward an implementation offer or reject those buyers instead of selling the same Route File.
 
 ## Failure Sealing Rule
 

@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-13T07:48:32.887Z
+- Generated: 2026-06-13T08:15:55.668Z
 - Status: pass
-- Checks: 301
+- Checks: 307
 - Blockers: 0
 - Warnings: 0
 
@@ -201,6 +201,7 @@
 | analytics_allowlist | pass | audit_intent_page_view is registered |
 | analytics_allowlist | pass | audit_scope_builder_view is registered |
 | analytics_allowlist | pass | launch_blueprint_fit_checker_view is registered |
+| analytics_allowlist | pass | route_file_fit_checker_view is registered |
 | analytics_allowlist | pass | route_confidence_checker_view is registered |
 | analytics_allowlist | pass | starter_pack_view is registered |
 | analytics_allowlist | pass | repo_skeleton_matrix_view is registered |
@@ -237,14 +238,19 @@
 | analytics_allowlist | pass | answer_route_vs_chatgpt_view is registered |
 | analytics_allowlist | pass | answer_stop_rule_view is registered |
 | analytics_allowlist | pass | launch_blueprint_legacy_view is registered |
+| analytics_allowlist | pass | route_file_service_view is registered |
 | analytics_allowlist | pass | launch_blueprint_pricing_view is registered |
 | analytics_allowlist | pass | route_file_pricing_view is registered |
 | analytics_allowlist | pass | sample_route_file_view is registered |
 | analytics_allowlist | pass | launch_blueprint_compare_view is registered |
+| analytics_allowlist | pass | route_file_compare_view is registered |
 | analytics_allowlist | pass | starter_review_view is registered |
 | analytics_allowlist | pass | launch_blueprint_buy_view is registered |
+| analytics_allowlist | pass | route_file_buy_view is registered |
 | analytics_allowlist | pass | launch_blueprint_intake_view is registered |
+| analytics_allowlist | pass | route_file_intake_view is registered |
 | analytics_allowlist | pass | launch_blueprint_thank_you_view is registered |
+| analytics_allowlist | pass | route_file_thank_you_view is registered |
 | analytics_allowlist | pass | trust_policy_view is registered |
 | analytics_allowlist | pass | trust_policy_view is registered |
 | analytics_allowlist | pass | trust_policy_view is registered |

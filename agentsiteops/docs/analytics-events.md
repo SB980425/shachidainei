@@ -34,6 +34,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `audit_intent_page_view` | `/services/ai-website-opportunity-audit/` load | `path` |
 | `audit_scope_builder_view` | `/tools/audit-scope-builder/` load | `path` |
 | `launch_blueprint_fit_checker_view` | `/tools/launch-blueprint-fit-checker/` load | `path` |
+| `route_file_fit_checker_view` | `/tools/launch-blueprint-fit-checker/` load | `path` |
 | `route_confidence_checker_view` | `/tools/route-confidence-checker/` load | `path` |
 | `starter_pack_view` | `/templates/starter-pack/` load | `path` |
 | `repo_skeleton_matrix_view` | `/templates/seo-repo-skeleton/` load | `path` |
@@ -71,14 +72,19 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `answer_route_vs_chatgpt_view` | `/answers/ai-service-route-vs-generic-chatgpt/` load | `path` |
 | `answer_stop_rule_view` | `/answers/when-to-stop-an-ai-website-idea/` load | `path` |
 | `launch_blueprint_legacy_view` | `/website-opportunity-audit/` load | `path` |
+| `route_file_service_view` | `/website-opportunity-audit/` load | `path` |
 | `launch_blueprint_pricing_view` | `/pricing/` load | `path` |
 | `route_file_pricing_view` | `/pricing/` load | `path` |
 | `sample_route_file_view` | `/sample/` load | `path` |
 | `launch_blueprint_compare_view` | `/compare/` load | `path` |
+| `route_file_compare_view` | `/compare/` load | `path` |
 | `starter_review_view` | `/starter-review/` load | `path` |
 | `launch_blueprint_buy_view` | `/buy/` load | `path` |
+| `route_file_buy_view` | `/buy/` load | `path` |
 | `launch_blueprint_intake_view` | `/intake/` load | `path` |
+| `route_file_intake_view` | `/intake/` load | `path` |
 | `launch_blueprint_thank_you_view` | `/thank-you/` load | `path` |
+| `route_file_thank_you_view` | `/thank-you/` load | `path` |
 | `contact_page_view` | `/contact/` load | `path` |
 | `trust_policy_view` | `/authors/`, `/editorial-policy/`, `/privacy/`, `/disclosure/`, `/terms/`, `/refund-policy/`, or `/disclaimer/` load | `path` |
 | `tool_started` | First tool input, slider, evidence, or hard-blocker change | `tool`, `trigger`, `score`, `decision` |
@@ -86,7 +92,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `tool_result_export` | User copies or downloads a tool result | `tool`, `export_method`, `score`, `decision` |
 | `template_copy_click` | User copies a template block | `label`, `length` |
 | `checklist_copy_click` | User copies checklist content | `label`, `length` |
-| `payment_cta_click` | User clicks the live PayPal Launch Blueprint payment link | `label`, `target`, `type` |
+| `payment_cta_click` | User clicks a live PayPal Fit Review or Route File payment link | `label`, `target`, `type` |
 | `intake_email_click` | User clicks the intake email link | `label`, `target`, `type` |
 | `contact_email_click` | User clicks the contact email link | `label`, `target`, `type` |
 | `cta_click` | Click on an element with `data-analytics-event` | `label`, `target`, `type` |

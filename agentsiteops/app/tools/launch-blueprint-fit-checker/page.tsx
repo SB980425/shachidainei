@@ -46,7 +46,7 @@ export default function Page() {
           <h2>Purchase Path</h2>
           <ul>
             <li>
-              <Link prefetch={false} href="/sample/">Inspect the sample blueprint first.</Link>
+              <Link prefetch={false} href="/sample/">Inspect the sample Route File first.</Link>
             </li>
             <li>
               <Link prefetch={false} href="/compare/">Compare alternatives before payment.</Link>

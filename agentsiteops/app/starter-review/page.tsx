@@ -14,12 +14,12 @@ const path = "/starter-review/";
 export const metadata: Metadata = {
   title: "Fit Review",
   description:
-    "A USD 29 manual pre-purchase review that decides whether the full AgentSiteOps Launch Blueprint is worth buying.",
+    "A USD 29 manual pre-purchase review that decides whether the full AgentSiteOps Research-to-Route File is worth buying.",
   alternates: { canonical: path },
   openGraph: {
     title: "AgentSiteOps Fit Review",
     description:
-      "Pay USD 29 for a manual go, narrow, or stop verdict before buying the full Launch Blueprint.",
+      "Pay USD 29 for a manual go, narrow, or stop verdict before buying the full Route File.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -75,7 +75,7 @@ export default function Page() {
       <section className="decision-hero">
         <div className="decision-hero-copy">
           <p className="eyebrow">USD {starterOffer.price} fit verdict</p>
-          <h1>Get a go, narrow, or stop verdict before you buy the full blueprint.</h1>
+          <h1>Get a go, narrow, or stop verdict before you buy the full Route File.</h1>
           <p>
             The Fit Review is the smallest paid step. It exists to reject the larger sale
             when your offer, buyer, evidence, or execution route is not ready.
@@ -135,7 +135,7 @@ export default function Page() {
             </div>
             <div>
               <dt>Boundary</dt>
-              <dd>Can reject the larger sale before the USD {primaryOffer.price} blueprint.</dd>
+              <dd>Can reject the larger sale before the USD {primaryOffer.price} Route File.</dd>
             </div>
           </dl>
         </aside>
@@ -165,7 +165,7 @@ export default function Page() {
           <h2>Buy when</h2>
           <ul className="compact-list">
             <li>You can build or deliver, but the buyer and offer are still unclear.</li>
-            <li>You need a paid decision before buying the full USD {primaryOffer.price} blueprint.</li>
+            <li>You need a paid decision before buying the full USD {primaryOffer.price} Route File.</li>
             <li>You can send enough evidence for a 24-hour manual review.</li>
           </ul>
         </div>

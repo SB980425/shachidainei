@@ -1897,7 +1897,7 @@ textarea {
   }
 }
 
-/* AgentSiteOps launch blueprint visual layer. Appended to preserve older tool-specific styles above. */
+/* AgentSiteOps route file visual layer. Appended to preserve older tool-specific styles above. */
 
 :root {
   --bg: #f5f7f4;

@@ -168,7 +168,7 @@ export default function HomePage() {
       },
       {
         "@type": "Offer",
-        name: "Launch Blueprint",
+        name: "Research-to-Route File",
         price: primaryOffer.price,
         priceCurrency: "USD"
       }
@@ -332,7 +332,7 @@ export default function HomePage() {
               <dd>USD {starterOffer.price}</dd>
             </div>
             <div>
-              <dt>Blueprint path</dt>
+              <dt>Route File path</dt>
               <dd>USD {primaryOffer.price}</dd>
             </div>
           </dl>

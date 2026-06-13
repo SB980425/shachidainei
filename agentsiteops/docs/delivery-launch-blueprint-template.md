@@ -1,10 +1,10 @@
-# AgentSiteOps Launch Blueprint Delivery Template
+# AgentSiteOps Route File Delivery Template
 
-Use this template only after confirmed payment and usable intake. It is a manual decision artifact, not a dashboard, account portal, search forecast, or guarantee.
+Use this template only after confirmed payment and usable intake. It is a manual Route File artifact, not a dashboard, account portal, search forecast, or guarantee.
 
 ## Order Metadata
 
-- Product: Launch Blueprint
+- Product: Research-to-Route File
 - Delivery target: 24-72 hours after confirmed payment and usable intake
 - Payment status: pending | confirmed | refunded
 - Intake status: usable | needs clarification | unsafe | blocked
@@ -22,15 +22,16 @@ Use this template only after confirmed payment and usable intake. It is a manual
 | Target first price |  | confirmed | inferred | missing |
 | Legal or platform risk |  | confirmed | inferred | missing |
 
-## Selected First Offer
+## Selected Route
 
-Write one offer only.
+Write one route only.
 
-- Offer:
-- Buyer:
-- Purchase trigger:
-- First outcome:
-- First price boundary:
+- Route:
+- Reason selected:
+- Buyer or audience:
+- First proof asset:
+- Validation channel:
+- Stop rule:
 
 ## Rejected Routes
 
@@ -40,46 +41,50 @@ Write one offer only.
 |  |  |
 |  |  |
 
-## Landing Page Structure
+## Evidence Ledger
 
-| Section | Required content | Claim boundary |
-|---|---|---|
-| Hero |  |  |
-| Problem |  |  |
-| Scope |  |  |
-| Proof |  |  |
-| Limits |  |  |
-| FAQ |  |  |
-| CTA |  |  |
+| Claim | Status | Source | Next evidence |
+|---|---|---|---|
+| Buyer pain exists | confirmed / inferred / missing |  |  |
+| Buyer can pay | confirmed / inferred / missing |  |  |
+| Delivery is feasible | confirmed / inferred / missing |  |  |
+| Search demand exists | confirmed / inferred / missing |  |  |
+| Payment demand exists | confirmed / inferred / missing |  |  |
 
-## Outreach Sequence
+## First Proof Asset
 
-Write five manual messages. Do not include spam automation, scraping, or hidden account workflows.
+Name the first inspectable asset. Do not require another strategy session before it can be created.
 
-1. Warm contact:
-2. Targeted cold message:
-3. Follow-up:
-4. Objection response:
-5. Final close or stop:
+- Asset:
+- Why this asset:
+- Required sections or fields:
+- Claim boundary:
+- Completion check:
 
-## Seven-Day Validation Plan
+## Validation Channel
 
-| Day | Action | Evidence to record | Stop rule |
+Name the first channel that can test the route without spam automation, scraping, or hidden account workflows.
+
+- Channel:
+- Audience:
+- First action:
+- Evidence to record:
+- Repair trigger:
+
+## Seven-Day Stop Rule
+
+| Day | Action | Evidence to record | Continue repair or stop rule |
 |---|---|---|---|
 | 1 |  |  |  |
 | 2 |  |  |  |
 | 3 |  |  |  |
 | 4-7 |  |  |  |
 
-## Missing Evidence Ledger
+## Non-Delivery Boundary
 
-| Claim | Status | Source | Next evidence |
-|---|---|---|---|
-| Buyer pain exists | confirmed | inferred | missing |  |
-| Buyer can pay | confirmed | inferred | missing |  |
-| Delivery is feasible | confirmed | inferred | missing |  |
-| Search demand exists | confirmed | inferred | missing |  |
-| Payment demand exists | confirmed | inferred | missing |  |
+- No traffic, ranking, AI citation, revenue, customer, approval, or payback guarantee.
+- No automatic Deep Research, API usage, account portal, dashboard, subscription, or software development.
+- No legal, tax, financial, medical, security, or regulated professional advice.
 
 ## Non-Claims
 
@@ -96,10 +101,11 @@ Do not claim:
 
 ## Completion Check
 
-- One offer is selected.
+- One route is selected.
 - Rejected routes are explained.
-- Page structure can be built without another strategy session.
-- Outreach can be executed manually.
-- Seven-day verdict rules exist.
-- Missing evidence is visible.
+- Evidence ledger is visible.
+- First proof asset can be created without another strategy session.
+- Validation channel can be executed manually.
+- Seven-day continue, repair, pivot, or stop rule exists.
+- Non-delivery boundary is explicit.
 - Sensitive data has not been copied into the repo.

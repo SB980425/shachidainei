@@ -14,7 +14,7 @@ export function ScorerPanel() {
       <div className="panel-header">
         <div>
           <p className="panel-title">Launch Readiness</p>
-          <p className="panel-subtitle">A quick signal map before buying a Blueprint</p>
+          <p className="panel-subtitle">A quick signal map before buying a Route File</p>
         </div>
         <span className="status-dot">Ready</span>
       </div>

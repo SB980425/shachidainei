@@ -1,32 +1,32 @@
 export const launchProduct = {
-  name: "AgentSiteOps Launch Blueprint",
+  name: "AgentSiteOps Research-to-Route File",
   price: 99,
   currency: "USD",
   timeline: "Manual delivery in 24-72 hours after payment confirmation and intake details.",
   audience:
-    "AI automation freelancers, technical solo founders, no-code builders, and small operators who can build but cannot package the first sellable offer.",
+    "AI-capable solo builders, technical founders, operators, and project owners who have material, constraints, and possible directions but need one checked route.",
   promise:
-    "One sellable offer, one target buyer, one landing page structure, one pricing angle, one first outreach path, and one 7-day validation sequence.",
+    "One selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.",
   nonPromise:
     "No guaranteed traffic, rankings, revenue, customers, AI citations, payment approval, or platform account safety.",
   supportEmail: "sun19980425s@gmail.com"
 };
 
 export const launchDeliverables = [
-  "A single primary offer and the reason it was selected.",
-  "The first target buyer profile and purchase trigger.",
-  "A one-page landing structure with hero, scope, proof, objections, FAQ, and CTA.",
-  "A pricing angle and first-offer boundary.",
-  "Five outreach scripts for the first manual validation cycle.",
-  "A 7-day action sequence with stop, repackage, or pivot rules.",
-  "A not-doing list that protects the launch from scope creep."
+  "Selected route: the one route worth testing first and the reason it was selected.",
+  "Rejected alternatives: the routes that are not being pursued and the evidence behind each rejection.",
+  "Evidence ledger: confirmed facts, assumptions, missing proof, and claims that cannot be made yet.",
+  "First proof asset: the page, sample, checklist, workflow, report, or demo that should be built first.",
+  "Validation channel: the first search, outreach, referral, community, or direct channel to test.",
+  "Stop rule: the 7-day evidence threshold for continue, repair, pivot, or stop.",
+  "Non-delivery boundary: what the Route File does not include and what should not be sold as proof."
 ];
 
 export const launchAcceptanceCriteria = [
   {
     title: "Decision is singular",
     body:
-      "The artifact must choose one first offer and explain why the rejected routes are weaker for the current validation window."
+      "The artifact must choose one route and explain why the rejected routes are weaker for the current validation window."
   },
   {
     title: "Claims are bounded",
@@ -34,14 +34,14 @@ export const launchAcceptanceCriteria = [
       "Every recommendation must separate confirmed inputs, assumptions, missing evidence, and claims that cannot be made yet."
   },
   {
-    title: "Page can be built",
+    title: "Proof asset can be built",
     body:
-      "The landing page outline must be specific enough to turn into a one-page site without another strategy session."
+      "The first proof asset must be specific enough to create without another strategy session."
   },
   {
-    title: "Outreach can be executed",
+    title: "Validation can be executed",
     body:
-      "Messages must name the buyer, the trigger, the first outcome, and a next step that does not require spam automation."
+      "The validation channel must name the audience, trigger, first action, and a next step that does not require spam automation."
   },
   {
     title: "Seven-day verdict exists",
@@ -54,7 +54,7 @@ export const launchFailureHandling = [
   "If intake evidence is too weak to choose a paid route, the deliverable must say do not launch yet and list the missing proof to collect first.",
   "If the buyer's topic enters regulated or account-safety territory, the route must narrow the scope or reject that direction.",
   "If the selected route depends on search demand that has not been exported, the report must mark search demand as unverified.",
-  "If no credible outreach path exists, the report must recommend a smaller proof asset or a different buyer before payment should be repeated."
+  "If no credible validation channel exists, the report must recommend a smaller proof asset or a different route before payment should be repeated."
 ];
 
 export const starterReviewProduct = {
@@ -63,26 +63,26 @@ export const starterReviewProduct = {
   currency: "USD",
   timeline: "Manual delivery within 24 hours after payment confirmation and usable intake details.",
   audience:
-    "AI-capable solo builders who are unsure whether the full Launch Blueprint is worth buying yet.",
+    "AI-capable solo builders who are unsure whether the full Route File is worth buying yet.",
   promise:
     "One short go, narrow, or stop verdict, the strongest purchase blocker, the minimum missing evidence, and the next step.",
   nonPromise:
-    "No complete landing page structure, outreach sequence, search forecast, revenue forecast, or full Launch Blueprint."
+    "No complete route file, search forecast, revenue forecast, or full delivery artifact."
 };
 
 export const starterReviewDeliverables = [
-  "A go, narrow, or stop verdict for the full Launch Blueprint purchase.",
-  "The one strongest blocker that could make the USD 99 blueprint wasteful.",
+  "A go, narrow, or stop verdict for the full Route File purchase.",
+  "The one strongest blocker that could make the USD 99 Route File wasteful.",
   "The minimum evidence or asset needed before a full launch route can be selected.",
   "A short buyer and offer fit note based only on the provided facts.",
-  "A clear recommendation: buy the full blueprint, collect more proof first, narrow the offer, or stop."
+  "A clear recommendation: buy the full Route File, collect more proof first, narrow the route, or stop."
 ];
 
 export const starterReviewAcceptanceCriteria = [
   {
     title: "It can reject the sale",
     body:
-      "The review is valid only if it can tell the buyer not to buy the full blueprint when the intake is too weak, too regulated, or missing an execution path."
+      "The review is valid only if it can tell the buyer not to buy the full Route File when the intake is too weak, too regulated, or missing an execution path."
   },
   {
     title: "It names one blocker",
@@ -113,12 +113,12 @@ export const intakeFields = [
 ];
 
 export const paymentConfirmationFields = [
-  "Product purchased: Fit Review or Launch Blueprint.",
+  "Product purchased: Fit Review or Route File.",
   "PayPal payment name or payer email.",
   "PayPal transaction ID or payment receipt reference.",
   "Payment date and amount.",
-  "Launch Blueprint Fit Checker result if you used it.",
-  "The email address where the blueprint should be delivered."
+  "Route File fit checker result if you used it.",
+  "The email address where the Route File should be delivered."
 ];
 
 export const deliveryProcessSteps = [
@@ -133,9 +133,9 @@ export const deliveryProcessSteps = [
       "Projects involving regulated advice, private account access, spam automation, or unsafe claims are narrowed, rejected, or refunded before work begins."
   },
   {
-    title: "3. Build the blueprint",
+    title: "3. Build the Route File",
     body:
-      "The deliverable chooses one route, explains rejected paths, drafts the landing page structure, and writes the first validation sequence."
+      "The deliverable chooses one route, explains rejected paths, records evidence gaps, names the first proof asset, and sets the first validation channel."
   },
   {
     title: "4. Send and close the cycle",
@@ -160,7 +160,7 @@ export const marketSignals = [
   {
     title: "Content still needs structure and intent",
     summary:
-      "Semrush's SEO writing guidance emphasizes intent alignment, subheadings, readability, and extractable structure, which maps directly to the Blueprint landing-page deliverable.",
+      "Semrush's SEO writing guidance emphasizes intent alignment, subheadings, readability, and extractable structure, which maps directly to the Route File proof-asset requirement.",
     href: "https://www.semrush.com/blog/seo-writing/"
   },
   {
@@ -175,7 +175,7 @@ export const blueprintEvidenceInputs = [
   {
     title: "User-provided operating facts",
     body:
-      "The blueprint starts from the buyer's actual skills, tools, previous work, public demos, available weekly time, target price range, and delivery limits."
+      "The Route File starts from the buyer's actual skills, tools, previous work, public demos, available weekly time, target price range, and delivery limits."
   },
   {
     title: "Public page and repo evidence",
@@ -185,7 +185,7 @@ export const blueprintEvidenceInputs = [
   {
     title: "Search and AI visibility evidence",
     body:
-      "If the buyer provides GSC, Bing, analytics, or AI referral exports, those signals override generic assumptions. Without exports, the blueprint marks search demand as unverified."
+      "If the buyer provides GSC, Bing, analytics, or AI referral exports, those signals override generic assumptions. Without exports, the Route File marks search demand as unverified."
   },
   {
     title: "AgentSiteOps gates",
@@ -195,9 +195,9 @@ export const blueprintEvidenceInputs = [
 ];
 
 export const authorityBoundaries = [
-  "AgentSiteOps is not more authoritative because it is an AI. Its advantage is a narrow workflow: source intake, route scoring, offer compression, page structure, outreach copy, and explicit stop rules.",
+  "AgentSiteOps is not more authoritative because it is an AI. Its advantage is a narrow workflow: source intake, route scoring, rejected alternatives, evidence ledgers, proof assets, validation channels, and explicit stop rules.",
   "The output is only as strong as the provided evidence. Missing search data, weak proof, unclear delivery ability, or regulated subject matter lowers confidence.",
-  "The blueprint does not guarantee a correct market, buyer, ranking, citation, customer, or revenue outcome. It reduces ambiguity for one validation cycle."
+  "The Route File does not guarantee a correct market, buyer, ranking, citation, customer, or revenue outcome. It reduces ambiguity for one validation cycle."
 ];
 
 export const pricingBenchmarks = [
@@ -205,21 +205,21 @@ export const pricingBenchmarks = [
     name: "AgentSiteOps Fit Review",
     price: "USD 29 one time",
     position:
-      "Manual pre-purchase verdict. Better for reducing risk before buying the full blueprint; not a full launch route.",
+      "Manual pre-purchase verdict. Better for reducing risk before buying the full Route File; not a full route handoff.",
     href: "/starter-review/"
   },
   {
-    name: "AgentSiteOps Launch Blueprint",
+    name: "AgentSiteOps Research-to-Route File",
     price: "USD 99 one time",
     position:
-      "Manual offer, page, pricing, outreach, and 7-day validation plan. No monitoring dashboard or guaranteed demand.",
+      "Manual selected route, rejected alternatives, evidence ledger, proof asset, validation channel, and stop rule. No monitoring dashboard or guaranteed demand.",
     href: "/pricing/"
   },
   {
     name: "Ahrefs",
     price: "Paid SEO platform plans commonly start above USD 100 per month",
     position:
-      "SEO research and monitoring software. Stronger ongoing data platform, not a manual first-offer blueprint.",
+      "SEO research and monitoring software. Stronger ongoing data platform, not a manual route-file handoff.",
     href: "https://ahrefs.com/pricing"
   },
   {
@@ -273,8 +273,8 @@ export const launchComparisons = [
 export const purchaseFitRules = {
   buyIf: [
     "You can build or deliver, but you cannot decide which offer should be tested first.",
-    "You need a narrow landing page structure and outreach sequence within one validation cycle.",
-    "You accept that missing evidence lowers confidence and that the blueprint may recommend not launching the original idea.",
+    "You need a selected route, rejected alternatives, proof asset, and validation channel within one cycle.",
+    "You accept that missing evidence lowers confidence and that the Route File may recommend not launching the original idea.",
     "A 24-72 hour manual decision artifact is more useful than another software subscription."
   ],
   doNotBuyIf: [
@@ -297,17 +297,17 @@ export const purchaseObjectionResponses = [
   {
     objection: "I need someone to build it, not just advise.",
     response:
-      "Then the current Launch Blueprint may be the wrong product. It is a route and launch artifact for buyers who can execute. If implementation demand repeats, the offer should pivot to a done-for-you AI offer page and intake funnel setup.",
+      "Then the current Route File may be the wrong product. It is a route-selection handoff for buyers who can execute. If implementation demand repeats, the offer should pivot to a done-for-you AI offer page and intake funnel setup.",
     proofPath:
       "The buy page lists no dashboard, no automation, no account takeover, and no done-for-you build scope.",
-    nextAction: "Use the Fit Review or contact first instead of buying the full blueprint."
+    nextAction: "Use the Fit Review or contact first instead of buying the full Route File."
   },
   {
     objection: "I do not understand what I receive.",
     response:
-      "The product is not a score. The full blueprint returns one selected offer, rejected routes, buyer trigger, landing page structure, pricing boundary, outreach messages, and a seven-day keep or stop rule.",
+      "The product is not a score. The full Route File returns one selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.",
     proofPath:
-      "The public Launch Blueprint sample and Fit Review sample show the artifact shape before payment.",
+      "The public Route File sample and Fit Review sample show the artifact shape before payment.",
     nextAction: "Read the sample pages; if the artifact is still unclear, do not pay."
   },
   {
@@ -316,7 +316,7 @@ export const purchaseObjectionResponses = [
       "That risk is valid. The site uses same-domain terms, refund policy, privacy page, public update log, manual intake, and PayPal-hosted payment instead of collecting card data directly.",
     proofPath:
       "Commercial gates verify PayPal disclosure, refund boundary, no card collection, no guarantee claims, and manual fulfillment templates.",
-    nextAction: "Use the USD 29 Fit Review first or send a contact email before the full blueprint."
+    nextAction: "Use the USD 29 Fit Review first or send a contact email before the full Route File."
   }
 ];
 
@@ -488,21 +488,21 @@ export const samplePaidArtifactChecklist = [
 
 export const outreachTemplates = {
   english: [
-    "I help AI-capable solo builders turn scattered skills into one sellable offer, one landing page structure, and one 7-day outreach plan. I am testing a 24-hour Fit Review at $29 and a full Launch Blueprint at $99. If you send your current site or profile, I will tell you honestly if the full blueprint is not ready yet.",
-    "You already know the tools. The hard part is packaging: what exactly to sell, who to pitch first, and how to explain it on one page. I made a small Fit Review for that decision before the full blueprint. Want to see the sample?",
+    "I help AI-capable solo builders turn scattered project material into one selected route, rejected alternatives, proof asset, validation channel, and stop rule. I am testing a 24-hour Fit Review at $29 and a full Route File at $99. If you send your current site or profile, I will tell you honestly if the full Route File is not ready yet.",
+    "You already know the tools. The hard part is deciding the first route, what not to pursue, and what proof asset should be built first. I made a small Fit Review for that decision before the full Route File. Want to see the sample?",
     "I am not selling traffic or AI magic. I am selling a tighter launch decision: fit verdict first, then positioning, page structure, pricing angle, and outreach copy only if the route is ready.",
-    "If your current problem is 'I can build things, but I do not know what to sell first,' the Fit Review can tell you whether to buy the full blueprint, narrow the offer, collect proof first, or stop.",
-    "Most AI freelancers do not need another tool first. They need one offer and one first-client path. I built a small productized review for that. Want the sample deliverable?"
+    "If your current problem is 'I can build things, but I do not know which route to test first,' the Fit Review can tell you whether to buy the full Route File, narrow the route, collect proof first, or stop.",
+    "Most AI freelancers do not need another tool first. They need one selected route and one first proof asset. I built a small productized review for that. Want the sample deliverable?"
   ],
   operatorNotes: [
     "Keep outreach in English until there is a verified target market requiring another language.",
     "Do not promise traffic, rankings, AI citations, revenue, customer response, or platform safety.",
-    "Use the Fit Review sample before asking for payment when the prospect is not ready for the full blueprint.",
+    "Use the Fit Review sample before asking for payment when the prospect is not ready for the full Route File.",
     "Record only aggregate outreach outcomes in the repo. Keep names, emails, handles, and private replies outside public files."
   ],
   publicBuildPostStructures: [
-    "Problem -> why the old scorer/audit route was too abstract -> new $29 Fit Review -> $99 Launch Blueprint only when ready -> sample deliverables -> no traffic or revenue guarantee -> CTA.",
-    "Observation -> AI-capable builders do not lack tools, they lack a sellable offer and first-client path -> what the 24-hour review includes -> when the full blueprint is not yet worth buying.",
+    "Problem -> why the old scorer/audit route was too abstract -> new $29 Fit Review -> $99 Route File only when ready -> sample deliverables -> no traffic or revenue guarantee -> CTA.",
+    "Observation -> AI-capable builders do not lack tools, they lack a selected route and first proof asset -> what the 24-hour review includes -> when the full Route File is not yet worth buying.",
     "Validation log -> what shipped today -> what objections appeared -> what changed next -> no inflated revenue claims."
   ]
 };

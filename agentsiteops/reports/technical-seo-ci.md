@@ -1,6 +1,6 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-13T07:49:12.483Z
+- Generated: 2026-06-13T08:16:36.560Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
@@ -29,7 +29,7 @@
 | /examples/agentsiteops-self-audit/ | pass | 200 | AgentSiteOps Self-Audit Sample \| AgentSiteOps | https://agentsiteops.com/examples/agentsiteops-self-audit/ | 1 | 22 | pass | - |
 | /services/ai-website-opportunity-audit/ | pass | 200 | AI Website Opportunity Audit \| AgentSiteOps | https://agentsiteops.com/services/ai-website-opportunity-audit/ | 1 | 22 | pass | - |
 | /tools/audit-scope-builder/ | pass | 200 | Audit Scope Builder \| AgentSiteOps | https://agentsiteops.com/tools/audit-scope-builder/ | 1 | 21 | pass | - |
-| /tools/launch-blueprint-fit-checker/ | pass | 200 | Launch Blueprint Fit Checker \| AgentSiteOps | https://agentsiteops.com/tools/launch-blueprint-fit-checker/ | 1 | 21 | pass | - |
+| /tools/launch-blueprint-fit-checker/ | pass | 200 | Route File Fit Checker \| AgentSiteOps | https://agentsiteops.com/tools/launch-blueprint-fit-checker/ | 1 | 21 | pass | - |
 | /tools/route-confidence-checker/ | pass | 200 | Route Confidence Checker \| AgentSiteOps | https://agentsiteops.com/tools/route-confidence-checker/ | 1 | 18 | pass | - |
 | /templates/starter-pack/ | pass | 200 | AI Website Validation Starter Pack \| AgentSiteOps | https://agentsiteops.com/templates/starter-pack/ | 1 | 21 | pass | - |
 | /templates/seo-repo-skeleton/ | pass | 200 | SEO Repo Skeleton \| AgentSiteOps | https://agentsiteops.com/templates/seo-repo-skeleton/ | 1 | 21 | pass | - |
@@ -64,13 +64,13 @@
 | /editorial-policy/ | pass | 200 | Editorial Policy \| AgentSiteOps | https://agentsiteops.com/editorial-policy/ | 1 | 19 | pass | - |
 | /privacy/ | pass | 200 | Privacy Policy \| AgentSiteOps | https://agentsiteops.com/privacy/ | 1 | 19 | pass | - |
 | /disclosure/ | pass | 200 | Disclosure \| AgentSiteOps | https://agentsiteops.com/disclosure/ | 1 | 20 | pass | - |
-| /website-opportunity-audit/ | pass | 200 | AgentSiteOps Launch Blueprint \| AgentSiteOps | https://agentsiteops.com/website-opportunity-audit/ | 1 | 21 | pass | - |
+| /website-opportunity-audit/ | pass | 200 | AgentSiteOps Route File \| AgentSiteOps | https://agentsiteops.com/website-opportunity-audit/ | 1 | 21 | pass | - |
 | /pricing/ | pass | 200 | Pricing \| AgentSiteOps | https://agentsiteops.com/pricing/ | 1 | 21 | pass | - |
 | /examples/fit-review-sample/ | pass | 200 | Fit Review Sample \| AgentSiteOps | https://agentsiteops.com/examples/fit-review-sample/ | 1 | 20 | pass | - |
 | /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 20 | pass | - |
-| /compare/ | pass | 200 | Compare Launch Options \| AgentSiteOps | https://agentsiteops.com/compare/ | 1 | 20 | pass | - |
+| /compare/ | pass | 200 | Compare Route File Options \| AgentSiteOps | https://agentsiteops.com/compare/ | 1 | 20 | pass | - |
 | /starter-review/ | pass | 200 | Fit Review \| AgentSiteOps | https://agentsiteops.com/starter-review/ | 1 | 20 | pass | - |
-| /buy/ | pass | 200 | Buy Launch Blueprint \| AgentSiteOps | https://agentsiteops.com/buy/ | 1 | 21 | pass | - |
+| /buy/ | pass | 200 | Buy Route File \| AgentSiteOps | https://agentsiteops.com/buy/ | 1 | 21 | pass | - |
 | /intake/ | pass | 200 | Order Intake \| AgentSiteOps | https://agentsiteops.com/intake/ | 1 | 18 | pass | - |
 | /terms/ | pass | 200 | Service Terms \| AgentSiteOps | https://agentsiteops.com/terms/ | 1 | 19 | pass | - |
 | /refund-policy/ | pass | 200 | Refund Policy \| AgentSiteOps | https://agentsiteops.com/refund-policy/ | 1 | 18 | pass | - |

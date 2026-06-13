@@ -9,7 +9,7 @@ This runbook keeps the first manual offers operable before there is an account s
 - Public fit review page: `/starter-review/`
 - Local template: `data/manual-fulfillment-log-template.csv`
 - Fit Review delivery template: `docs/delivery-fit-review-template.md`
-- Launch Blueprint delivery template: `docs/delivery-launch-blueprint-template.md`
+- Route File delivery template: `docs/delivery-launch-blueprint-template.md`
 - Delivery quality checklist: `data/delivery-quality-checklist.csv`
 - Support email: `sun19980425s@gmail.com`
 
@@ -27,7 +27,7 @@ Required fields:
 - `intake_status`: `missing`, `usable`, `unsafe`, or `needs_clarification`.
 - `fit_status`: `strong_fit`, `possible_fit`, `not_ready`, or `blocked`.
 - `scope_status`: `in_scope`, `narrowed`, or `out_of_scope`.
-- `delivery_due_at`: 24 hour target for Fit Review, 24-72 hour target for Launch Blueprint, after confirmed payment and usable intake.
+- `delivery_due_at`: 24 hour target for Fit Review, 24-72 hour target for Route File, after confirmed payment and usable intake.
 - `delivery_status`: `not_started`, `in_progress`, `delivered`, or `paused`.
 - `refund_status`: `not_requested`, `eligible`, `not_eligible`, or `processed`.
 
@@ -56,19 +56,18 @@ Mark `delivered` for `fit_review` only when the buyer has received a short verdi
 - The one strongest blocker.
 - Minimum missing evidence or asset.
 - Buyer and offer fit note.
-- Recommendation to buy the full blueprint, collect proof first, narrow the offer, or stop.
+- Recommendation to buy the full Route File, collect proof first, narrow the route, or stop.
 - Delivery quality checklist rows for `fit_review` and `both` pass.
 
-## Launch Blueprint Completion Rule
+## Route File Completion Rule
 
 Mark `delivered` for `launch_blueprint` only when the buyer has received a document or link containing:
 
-- One selected offer.
+- One selected route.
 - Rejected alternatives and reasons.
-- Target buyer and trigger.
-- One-page landing structure.
-- Pricing boundary.
-- Outreach messages.
-- Seven-day keep, repackage, or stop rule.
-- Missing evidence ledger.
+- Evidence ledger.
+- First proof asset.
+- Validation channel.
+- Seven-day continue, repair, pivot, or stop rule.
+- Non-delivery boundary.
 - Delivery quality checklist rows for `launch_blueprint` and `both` pass.

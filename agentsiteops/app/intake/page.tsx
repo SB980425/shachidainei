@@ -14,11 +14,11 @@ const path = "/intake/";
 export const metadata: Metadata = {
   title: "Order Intake",
   description:
-    "Project details needed after buying the AgentSiteOps Fit Review or Launch Blueprint.",
+    "Project details needed after buying the AgentSiteOps Fit Review or Route File.",
   alternates: { canonical: path },
   openGraph: {
     title: "Order Intake",
-    description: "Send these details after payment so the manual review or blueprint can be delivered.",
+    description: "Send these details after payment so the manual review or Route File can be delivered.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -31,7 +31,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Order Intake",
-    description: "Project details needed after buying the AgentSiteOps Fit Review or Launch Blueprint.",
+    description: "Project details needed after buying the AgentSiteOps Fit Review or Route File.",
     url: `${siteUrl}${path}`,
     inLanguage: "en"
   };
@@ -58,7 +58,7 @@ export default function Page() {
           <h1>Send the details needed for manual delivery.</h1>
           <p>
             The site does not use a login system yet. After payment for the Fit Review or
-            Launch Blueprint, send the details below so the manual deliverable can be prepared.
+            Route File, send the details below so the manual deliverable can be prepared.
           </p>
           <div className="hero-actions">
             <a

@@ -6,11 +6,11 @@ const path = "/refund-policy/";
 
 export const metadata: Metadata = {
   title: "Refund Policy",
-  description: "Refund boundaries for the AgentSiteOps Launch Blueprint manual service.",
+  description: "Refund boundaries for the AgentSiteOps Route File manual service.",
   alternates: { canonical: path },
   openGraph: {
     title: "Refund Policy",
-    description: "Refund boundaries for the Launch Blueprint validation-stage offer.",
+    description: "Refund boundaries for the Route File validation-stage offer.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -23,7 +23,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Refund Policy",
-    description: "Refund boundaries for the AgentSiteOps Launch Blueprint manual service.",
+    description: "Refund boundaries for the AgentSiteOps Route File manual service.",
     url: `${siteUrl}${path}`,
     inLanguage: "en"
   };
@@ -63,7 +63,7 @@ export default function Page() {
           <ul className="compact-list">
             <li>After manual work has started using submitted intake details.</li>
             <li>Because the buyer dislikes a no-build, stop, or pivot recommendation.</li>
-            <li>Because the blueprint does not create traffic, ranking, revenue, customers, or approvals.</li>
+            <li>Because the Route File does not create traffic, ranking, revenue, customers, or approvals.</li>
           </ul>
           <div className="hero-actions">
             <Link prefetch={false} className="secondary-action" href="/terms/">Service terms</Link>

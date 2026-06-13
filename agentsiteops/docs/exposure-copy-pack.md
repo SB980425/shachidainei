@@ -10,7 +10,7 @@ Status: prepared for the 48-hour exposure sprint. Use only where platform rules 
 - Route method: https://agentsiteops.com/methodology/route-selection/
 - First traffic system: https://agentsiteops.com/guides/first-traffic-system/
 - Fit Review sample: https://agentsiteops.com/examples/fit-review-sample/
-- Launch Blueprint sample: https://agentsiteops.com/sample/
+- Route File sample: https://agentsiteops.com/sample/
 - Pricing: https://agentsiteops.com/pricing/
 - GitHub repo: https://github.com/SB980425/shachidainei
 - Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?template=agentsiteops-route-feedback.yml
@@ -24,7 +24,7 @@ AgentSiteOps turns an AI builder's scattered ideas into one route decision, one 
 
 Short description:
 
-AgentSiteOps is a manual Fit Review and Launch Blueprint for AI-capable solo builders. It does not promise traffic or revenue. The free Route Confidence Checker maps project type, evidence level, proof asset, delivery boundary, and blockers into a route confidence band before someone pays for a wider plan.
+AgentSiteOps is a manual Fit Review and Research-to-Route File service for AI-capable solo builders. It does not promise traffic or revenue. The free Route Confidence Checker maps project type, evidence level, proof asset, delivery boundary, and blockers into a route confidence band before someone pays for a wider plan.
 
 Maker comment:
 
@@ -53,7 +53,7 @@ Feedback requested:
 - Is the paid route file clear enough?
 - Does the free checker make the first route decision explainable?
 - Does this solve an actual pre-build decision?
-- Would this need to pivot toward implementation instead of a manual blueprint?
+- Would this need to pivot toward implementation instead of a manual Route File?
 
 ## Indie Hackers / Build-In-Public Draft
 
@@ -98,7 +98,7 @@ Question about packaging an AI service offer
 
 Message:
 
-I am testing AgentSiteOps, a small manual review that turns a scattered AI service idea into one first offer, one landing-page route, and a 48-hour validation path.
+I am testing AgentSiteOps, a small manual review that turns a scattered AI service idea into one selected route, rejected alternatives, proof asset, validation channel, and stop rule.
 
 The public sample is here:
 https://agentsiteops.com/examples/fit-review-sample/

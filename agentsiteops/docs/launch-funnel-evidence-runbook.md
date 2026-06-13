@@ -1,6 +1,6 @@
 # Launch Funnel Evidence Runbook
 
-This runbook defines how AgentSiteOps should judge the USD 29 Fit Review and USD 99 Launch Blueprint offers without pretending that page views equal demand.
+This runbook defines how AgentSiteOps should judge the USD 29 Fit Review and USD 99 Research-to-Route File offers without pretending that page views equal demand.
 
 ## Current State
 
@@ -8,7 +8,7 @@ This runbook defines how AgentSiteOps should judge the USD 29 Fit Review and USD
 - No real analytics endpoint is enabled.
 - PayPal clicks are not the same as confirmed payments.
 - Intake emails are not the same as qualified buyers.
-- Fit Review payments are not proof that the full Launch Blueprint should be expanded.
+- Fit Review payments are not proof that the full Route File should be expanded.
 - GSC and Bing exports are still pending.
 
 ## Template

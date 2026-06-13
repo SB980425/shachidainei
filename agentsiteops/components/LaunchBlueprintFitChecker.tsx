@@ -73,7 +73,7 @@ function getFitDecision(score: number, blockers: string[]) {
   ) {
     return {
       label: "Do not buy",
-      action: "Use analytics, SEO, AI visibility, or specialist services instead of a Launch Blueprint.",
+      action: "Use analytics, SEO, AI visibility, or specialist services instead of a Route File.",
       status: "blocked"
     };
   }
@@ -81,7 +81,7 @@ function getFitDecision(score: number, blockers: string[]) {
   if (blockers.includes("I cannot execute outreach or publish a page")) {
     return {
       label: "Not ready",
-      action: "Prepare a landing page or a manual outreach channel before paying for a blueprint.",
+      action: "Prepare a proof asset or validation channel before paying for a Route File.",
       status: "not_ready"
     };
   }
@@ -89,7 +89,7 @@ function getFitDecision(score: number, blockers: string[]) {
   if (score >= 75) {
     return {
       label: "Strong fit",
-      action: "Buy only if one selected offer, page structure, and 7-day validation plan would save more than USD 99 of build time.",
+      action: "Buy only if one selected route, rejected alternatives, proof asset, validation channel, and stop rule would save more than USD 99 of build time.",
       status: "fit"
     };
   }
@@ -104,14 +104,14 @@ function getFitDecision(score: number, blockers: string[]) {
 
   return {
     label: "Use free tools first",
-    action: "Use the scorer, sample, and comparison page before paying. The current inputs are too early for a manual blueprint.",
+    action: "Use the scorer, sample, and comparison page before paying. The current inputs are too early for a manual Route File.",
     status: "not_ready"
   };
 }
 
 function buildFitText(input: FitInput, score: number, decision: ReturnType<typeof getFitDecision>) {
   return [
-    "AgentSiteOps Launch Blueprint fit check",
+    "AgentSiteOps Route File fit check",
     "",
     `Profile: ${input.profile}`,
     `Offer clarity: ${input.offerClarity}`,
@@ -179,7 +179,7 @@ export function LaunchBlueprintFitChecker() {
 
   function track(name: string, payload: Record<string, string | number | boolean> = {}) {
     window.codexAnalytics?.track(name, {
-      tool: "launch_blueprint_fit_checker",
+      tool: "route_file_fit_checker",
       score,
       decision: decision.label,
       ...payload
@@ -230,7 +230,7 @@ export function LaunchBlueprintFitChecker() {
   }
 
   return (
-    <section className="scope-builder" aria-label="Launch Blueprint fit checker">
+    <section className="scope-builder" aria-label="Route File fit checker">
       <div className="scope-form">
         <label className="field-block">
           <span>Builder profile</span>
@@ -329,7 +329,7 @@ export function LaunchBlueprintFitChecker() {
         <section>
           <h2>What the score means</h2>
           <ul className="compact-list">
-            <li>75-100: buy only if the manual blueprint saves more time than the price.</li>
+            <li>75-100: buy only if the manual Route File saves more time than the price.</li>
             <li>55-74: inspect the sample and comparison page before paying.</li>
             <li>0-54: use free tools and clarify the offer first.</li>
             <li>Any regulated topic or guarantee expectation blocks purchase.</li>

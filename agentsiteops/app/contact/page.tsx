@@ -7,7 +7,7 @@ const path = "/contact/";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact AgentSiteOps about Launch Blueprint payment, intake, and delivery details.",
+  description: "Contact AgentSiteOps about Route File payment, intake, and delivery details.",
   alternates: { canonical: path },
   openGraph: {
     title: "Contact",
@@ -24,7 +24,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: "Contact",
-    description: "Contact AgentSiteOps about Launch Blueprint payment, intake, and delivery details.",
+    description: "Contact AgentSiteOps about Route File payment, intake, and delivery details.",
     url: `${siteUrl}${path}`,
     inLanguage: "en"
   };

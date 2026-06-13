@@ -364,7 +364,7 @@ export default function Page() {
             <p>
               Different project types need different first assets and payment evidence.
               This matrix keeps AgentSiteOps from forcing every project into the same
-              paid blueprint shape.
+              paid Route File shape.
             </p>
             <RouteTable
               columns={[

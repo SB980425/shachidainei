@@ -25,7 +25,7 @@ const routeDecisionMatrix = [
   },
   {
     input: "Proof asset",
-    evidence: "Live scorer, crawler checker, route basis report, research workspace, sample blueprint, and self-audit exist.",
+    evidence: "Live scorer, crawler checker, route basis report, research workspace, sample Route File, and self-audit exist.",
     routeEffect: "Use inspectable proof and route files as the first product surface.",
     confidence: "Medium",
     gap: "One complete internal route file must prove the workflow is useful before selling harder."
@@ -130,7 +130,7 @@ export default function Page() {
     description: page?.description,
     url: `${siteUrl}${path}`,
     inLanguage: "en",
-    about: ["route selection", "evidence ledger", "AI project planning", "validation blueprint"]
+    about: ["route selection", "evidence ledger", "AI project planning", "Route File validation"]
   };
 
   return (
@@ -320,7 +320,7 @@ export default function Page() {
         <div>
           <h2>Stop or pivot rule</h2>
           <p>
-            Stop selling the USD 99 blueprint if the workflow cannot produce a route
+            Stop selling the USD 99 Route File if the workflow cannot produce a route
             file that is more useful than a generic ChatGPT answer for AgentSiteOps
             itself. Pivot toward internal project planning if external demand remains
             unproven.

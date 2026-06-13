@@ -153,7 +153,7 @@ export const trustPages: Record<string, TrustPage> = {
       {
         title: "Payments",
         body:
-          "Launch Blueprint payment links open PayPal-hosted pages. PayPal processes the transaction data under its own account and payment terms; this website does not embed a checkout form or store card data."
+          "Fit Review and Route File payment links open PayPal-hosted pages. PayPal processes the transaction data under its own account and payment terms; this website does not embed a checkout form or store card data."
       },
       {
         title: "Manual intake",
@@ -197,15 +197,15 @@ export const trustPages: Record<string, TrustPage> = {
     eyebrow: "Disclosure",
     h1: "Disclosure",
     summary:
-      "The current version offers the paid AgentSiteOps Launch Blueprint through PayPal. It has no affiliate links, ads, sponsored content, paid rankings, or paid reviews.",
+      "The current version offers the paid AgentSiteOps Fit Review and Research-to-Route File through PayPal. It has no affiliate links, ads, sponsored content, paid rankings, or paid reviews.",
     decision:
-      "Current status: paid Launch Blueprint CTA is active. Ads, sponsorships, affiliate links, paid reviews, or paid recommendations remain blocked unless disclosed.",
+      "Current status: paid Route File CTA is active. Ads, sponsorships, affiliate links, paid reviews, or paid recommendations remain blocked unless disclosed.",
     jsonLdType: "WebPage",
     sections: [
       {
         title: "Current commercial status",
         body:
-          "Current pages include a paid AgentSiteOps Launch Blueprint offer. They do not include affiliate links, ads, sponsored placements, paid reviews, or paid rankings."
+          "Current pages include paid AgentSiteOps Fit Review and Research-to-Route File offers. They do not include affiliate links, ads, sponsored placements, paid reviews, or paid rankings."
       },
       {
         title: "Near-page disclosure",

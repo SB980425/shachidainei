@@ -52,6 +52,7 @@ Minimum v1 allowlist:
 - `audit_intent_page_view`
 - `audit_scope_builder_view`
 - `launch_blueprint_fit_checker_view`
+- `route_file_fit_checker_view`
 - `route_confidence_checker_view`
 - `starter_pack_view`
 - `search_console_launch_checklist_view`
@@ -94,12 +95,17 @@ Minimum v1 allowlist:
 - `scoring_methodology_view`
 - `scoring_model_limit_view`
 - `launch_blueprint_compare_view`
+- `route_file_compare_view`
+- `route_file_service_view`
 - `launch_blueprint_pricing_view`
 - `route_file_pricing_view`
 - `launch_blueprint_sample_view`
 - `sample_route_file_view`
 - `launch_blueprint_buy_view`
+- `route_file_buy_view`
 - `launch_blueprint_intake_view`
+- `route_file_intake_view`
+- `route_file_thank_you_view`
 - `starter_review_view`
 - `intake_email_click`
 - `contact_email_click`

@@ -5,7 +5,7 @@ const path = "/disclaimer/";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
-  description: "No-guarantee and risk boundaries for AgentSiteOps Launch Blueprint content.",
+  description: "No-guarantee and risk boundaries for AgentSiteOps Route File content.",
   alternates: { canonical: path },
   openGraph: {
     title: "Disclaimer",
@@ -22,7 +22,7 @@ export default function Page() {
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: "Disclaimer",
-    description: "No-guarantee and risk boundaries for AgentSiteOps Launch Blueprint content.",
+    description: "No-guarantee and risk boundaries for AgentSiteOps Route File content.",
     url: `${siteUrl}${path}`,
     inLanguage: "en"
   };
@@ -36,7 +36,7 @@ export default function Page() {
       <section className="gate-hero">
         <div>
           <p className="eyebrow">No-guarantee boundary</p>
-          <h1>The Blueprint is a validation plan, not a guaranteed outcome.</h1>
+          <h1>The Route File is a validation plan, not a guaranteed outcome.</h1>
           <p>
             AgentSiteOps can help compress a launch decision and execution path. It cannot
             guarantee search visibility, AI citation, customer response, income, platform approval,

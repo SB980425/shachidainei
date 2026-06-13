@@ -25,13 +25,13 @@ Use this template only after confirmed payment and usable intake. Keep customer-
 
 State one verdict only.
 
-- Go: the buyer has enough evidence and execution ability to buy the full Launch Blueprint.
-- Narrow: the buyer should reduce the offer, buyer, or proof path before buying the full Launch Blueprint.
-- Stop: the buyer should not buy the full Launch Blueprint yet.
+- Go: the buyer has enough evidence and execution ability to buy the full Route File.
+- Narrow: the buyer should reduce the route, buyer, or proof path before buying the full Route File.
+- Stop: the buyer should not buy the full Route File yet.
 
 ## Strongest Blocker
 
-Name the single blocker most likely to make the full blueprint wasteful.
+Name the single blocker most likely to make the full Route File wasteful.
 
 ## Minimum Missing Evidence
 
@@ -49,7 +49,7 @@ Examples:
 
 Choose one:
 
-- Buy the full Launch Blueprint now.
+- Buy the full Route File now.
 - Collect proof first.
 - Narrow the buyer or offer.
 - Stop this direction.

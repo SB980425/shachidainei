@@ -28,7 +28,7 @@ const sampleInputs = [
 const verdictRows = [
   {
     label: "Verdict",
-    value: "Narrow before buying the full Launch Blueprint."
+    value: "Narrow before buying the full Route File."
   },
   {
     label: "Strongest blocker",
@@ -39,8 +39,8 @@ const verdictRows = [
     value: "Create one anonymized intake-and-follow-up workflow screenshot or walkthrough, then ask 10 target buyers whether it matches their current problem."
   },
   {
-    label: "Full blueprint decision",
-    value: "Do not buy the USD 99 blueprint yet. Buy it only after the workflow example gets at least two qualified replies or one clear paid pilot request."
+    label: "Full Route File decision",
+    value: "Do not buy the USD 99 Route File yet. Buy it only after the workflow example gets at least two qualified replies or one clear paid pilot request."
   }
 ];
 
@@ -55,13 +55,13 @@ const nextActions = [
   "Publish a small before/after workflow screenshot or text walkthrough.",
   "Send 10 manual messages to solo consultants with the specific workflow example.",
   "Record replies as: interested, confused, price objection, not urgent, or unsafe scope.",
-  "Return to the full Launch Blueprint only if replies show one urgent buyer trigger."
+  "Return to the full Route File only if replies show one urgent buyer trigger."
 ];
 
 export const metadata: Metadata = {
   title: "Fit Review Sample",
   description:
-    "A sample AgentSiteOps Fit Review showing the go, narrow, or stop verdict before the full Launch Blueprint purchase.",
+    "A sample AgentSiteOps Fit Review showing the go, narrow, or stop verdict before the full Route File purchase.",
   alternates: { canonical: path },
   openGraph: {
     title: "Fit Review Sample",
@@ -94,11 +94,11 @@ export default function Page() {
       <section className="gate-hero">
         <div>
           <p className="eyebrow">Sample Fit Review</p>
-          <h1>A smaller paid verdict before the full blueprint.</h1>
+          <h1>A smaller paid verdict before the full Route File.</h1>
           <p>
             This fictional sample shows what the USD {starterOffer.price} Fit Review returns:
             a go, narrow, or stop decision, one blocker, missing evidence, and the next action.
-            It is not the USD {primaryOffer.price} Launch Blueprint.
+            It is not the USD {primaryOffer.price} Route File.
           </p>
           <div className="hero-actions">
             <Link prefetch={false} className="primary-action" href="/starter-review/">
@@ -107,7 +107,7 @@ export default function Page() {
             </Link>
             <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
-              Compare full blueprint sample
+              Compare full Route File sample
             </Link>
             <Link prefetch={false} className="secondary-action" href="/pricing/">
               <ArrowRight aria-hidden="true" size={17} />
@@ -150,7 +150,7 @@ export default function Page() {
           <h2>Review verdict</h2>
           <p>
             The result is intentionally short. A good Fit Review can say not yet when
-            the full blueprint would be premature.
+            the full Route File would be premature.
           </p>
         </div>
         <div className="comparison-table comparison-table-wide" role="table" aria-label="Fit Review verdict">
@@ -201,14 +201,14 @@ export default function Page() {
           </p>
         </div>
         <div>
-          <h2>When to buy the full blueprint</h2>
+          <h2>When to buy the full Route File</h2>
           <p>
-            Move to the full Launch Blueprint only when the buyer trigger, proof asset,
+            Move to the full Route File only when the buyer trigger, proof asset,
             and manual outreach path are specific enough to build a one-page offer.
           </p>
           <Link prefetch={false} className="secondary-action" href="/buy/">
             <ArrowRight aria-hidden="true" size={17} />
-            View full blueprint
+            View full Route File
           </Link>
         </div>
       </section>

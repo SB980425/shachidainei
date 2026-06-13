@@ -4,7 +4,7 @@ This runbook turns launch validation into a bounded manual process. It is not an
 
 ## Objective
 
-Validate whether the USD 29 Fit Review can create qualified interest before pushing the USD 99 Launch Blueprint.
+Validate whether the USD 29 Fit Review can create qualified interest before pushing the USD 99 Research-to-Route File.
 
 The first evidence target is not traffic. The target is aggregate signal:
 
@@ -30,7 +30,7 @@ Do not use automated DMs, bulk comments, purchased lists, scraped emails, cold s
 
 Every outreach message must follow these limits:
 
-- State the concrete product: USD 29 Fit Review or USD 99 Launch Blueprint.
+- State the concrete product: USD 29 Fit Review or USD 99 Route File.
 - Offer the sample deliverable before payment when the prospect is not already qualified.
 - Do not promise traffic, rankings, AI citations, revenue, customer response, payment approval, platform safety, or account outcomes.
 - Do not frame search-engine or AI-crawler visibility as buyer demand.
@@ -68,7 +68,7 @@ Pause or rewrite outreach when:
 - Any recipient flags spam, policy concerns, unsafe automation, or misleading claims.
 - The strongest objection cannot be answered by the current sample page.
 
-Stop selling the USD 99 blueprint first when the recurring reply is "I need to know if this idea is worth packaging." Route those prospects to the USD 29 Fit Review.
+Stop selling the USD 99 Route File first when the recurring reply is "I need to know if this idea is worth packaging." Route those prospects to the USD 29 Fit Review.
 
 ## Tracking Rule
 
@@ -92,8 +92,8 @@ After each batch, classify the next action:
 Use public posts to make the operating boundary visible:
 
 1. Problem: AI-capable builders often have tools but no sellable offer.
-2. Change made: added USD 29 Fit Review before USD 99 Launch Blueprint.
+2. Change made: added USD 29 Fit Review before USD 99 Route File.
 3. Proof boundary: no traffic, revenue, ranking, AI citation, or response guarantee.
-4. Sample: link to the Fit Review sample and Launch Blueprint sample.
+4. Sample: link to the Fit Review sample and Route File sample.
 5. Ask: request one current site, profile, or offer page for a fit verdict.
 

@@ -60,7 +60,7 @@ export const manualResearchFields: ManualResearchField[] = [
     helper: "List the shapes that should be compared before selecting one route.",
     placeholder: "Service, micro tool, template pack, guide cluster, dashboard, implementation service...",
     defaultValue:
-      "Manual route-planning system, website opportunity scorer, AI crawler readiness checker, prompt-pack library, and fixed-scope launch blueprint service"
+      "Manual route-planning system, website opportunity scorer, AI crawler readiness checker, prompt-pack library, and fixed-scope Route File service"
   },
   {
     id: "targetUser",
@@ -82,9 +82,9 @@ export const manualResearchFields: ManualResearchField[] = [
     id: "monetization",
     label: "Monetization hypothesis",
     helper: "State the paid path, free path, and what evidence would justify charging.",
-    placeholder: "Free checker, $29 review, $99 blueprint, implementation upsell, no subscription yet...",
+    placeholder: "Free checker, $29 review, $99 Route File, implementation upsell, no subscription yet...",
     defaultValue:
-      "Free local tools and samples; low-ticket fit review; $99 manual launch blueprint only when the buyer has a concrete project and needs a route file; subscription is blocked until repeat-use evidence exists"
+      "Free local tools and samples; low-ticket fit review; $99 manual Route File only when the buyer has a concrete project and needs a route file; subscription is blocked until repeat-use evidence exists"
   },
   {
     id: "proofAssets",
@@ -173,7 +173,7 @@ export const researchCoverageChecks: ResearchCoverageCheck[] = [
     whyRequired:
       "A paid route needs a value exchange, not just a checkout link.",
     gapInstruction:
-      "Compare free diagnostic, low-ticket review, fixed-scope blueprint, implementation service, and subscription; state what evidence justifies payment."
+      "Compare free diagnostic, low-ticket review, fixed-scope Route File, implementation service, and subscription; state what evidence justifies payment."
   },
   {
     id: "validation-channel",
@@ -195,8 +195,8 @@ export const researchCoverageChecks: ResearchCoverageCheck[] = [
   },
   {
     id: "delivery-blueprint",
-    label: "Delivery blueprint",
-    keywords: ["blueprint", "7-day", "task", "owner", "deadline", "deliverable"],
+    label: "Delivery plan",
+    keywords: ["route file", "7-day", "task", "owner", "deadline", "deliverable"],
     whyRequired:
       "Research must become an execution file that can guide the next build.",
     gapInstruction:
@@ -226,7 +226,7 @@ export const manualDeepResearchSteps: ManualDeepResearchStep[] = [
     owner: "AgentSiteOps",
     costBoundary: "No OpenAI API call",
     instruction:
-      "Compare the report against the acceptance gates: route archetypes, buyer problem, proof asset, evidence weighting, data rights, pricing, traffic entry, and delivery blueprint.",
+      "Compare the report against the acceptance gates: route archetypes, buyer problem, proof asset, evidence weighting, data rights, pricing, traffic entry, and delivery plan.",
     output: "Pass, blocked, or gap brief."
   },
   {
@@ -296,7 +296,7 @@ export const researchAcceptanceGates: ResearchAcceptanceGate[] = [
   {
     title: "Prompt coverage",
     passStandard:
-      "The report answers route archetypes, buyer problem, proof asset, evidence weighting, data rights, pricing, traffic entry, and delivery blueprint.",
+      "The report answers route archetypes, buyer problem, proof asset, evidence weighting, data rights, pricing, traffic entry, and delivery plan.",
     failAction:
       "Create a gap brief naming the missing modules and run a focused second research pass."
   },
@@ -442,7 +442,7 @@ export const routeResearchPrompts: RouteResearchPrompt[] = [
     useWhen:
       "Use this before adding checkout, raising price, creating subscription claims, or treating a one-time route file as recurring value.",
     prompt:
-      "Research monetization fit for this route. Compare free diagnostic, paid template, fixed-scope review, manual blueprint, implementation service, dashboard subscription, and consulting. Use comparable offers only as price context, not proof of demand. Identify what buyer outcome would justify payment, what would make the offer not worth buying, and what evidence is needed before checkout. Route and deliverable: [paste].",
+      "Research monetization fit for this route. Compare free diagnostic, paid template, fixed-scope review, manual Route File, implementation service, dashboard subscription, and consulting. Use comparable offers only as price context, not proof of demand. Identify what buyer outcome would justify payment, what would make the offer not worth buying, and what evidence is needed before checkout. Route and deliverable: [paste].",
     requiredOutput: [
       "Offer-shape comparison table",
       "Price test range and reason",
@@ -480,13 +480,13 @@ export const routeResearchPrompts: RouteResearchPrompt[] = [
   },
   {
     id: "route-delivery-blueprint",
-    title: "Route Delivery Blueprint Research",
+    title: "Route File Delivery Research",
     objective:
       "Turn the selected route into a concrete execution file we can use internally before selling it externally.",
     useWhen:
       "Use this after a route has enough evidence to create a first asset or manual delivery package.",
     prompt:
-      "Create a delivery blueprint for this selected route. The output must include selected route, rejected alternatives, evidence ledger, proof asset, page structure, first traffic channel, 7-day task plan, delivery capacity, risks, stop rule, and what must be learned before scaling. Do not include generic advice or unsupported growth promises. Selected route and evidence: [paste].",
+      "Create a Route File delivery plan for this selected route. The output must include selected route, rejected alternatives, evidence ledger, proof asset, page structure, first traffic channel, 7-day task plan, delivery capacity, risks, stop rule, and what must be learned before scaling. Do not include generic advice or unsupported growth promises. Selected route and evidence: [paste].",
     requiredOutput: [
       "One-page route file",
       "Rejected alternatives and reasons",
@@ -533,7 +533,7 @@ RESEARCH TASK
 3. Separate public market context from first-party proof and clearly mark inference.
 4. Design the smallest inspectable proof asset needed before payment or wider promotion.
 5. Audit data rights, source freshness, citation needs, and maintenance burden.
-6. Compare monetization shapes: free diagnostic, low-ticket review, manual blueprint, implementation service, template pack, and subscription. Block subscription if repeat-use evidence is absent.
+6. Compare monetization shapes: free diagnostic, low-ticket review, manual Route File, implementation service, template pack, and subscription. Block subscription if repeat-use evidence is absent.
 7. Choose the first reachable validation channel and define what counts as real evidence.
 8. Produce a stop, pivot, pilot, proceed, or blocked decision with reasons.
 

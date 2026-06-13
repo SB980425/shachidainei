@@ -12,21 +12,21 @@ export const starterOffer = {
   currency: "USD",
   href: paypal.starterReviewUrl,
   fit:
-    "Best when the buyer is not ready to commit to the full blueprint and needs a fast go, narrow, or stop decision.",
+    "Best when the buyer is not ready to commit to the full Route File and needs a fast go, narrow, or stop decision.",
   delivery:
-    "A manual 24-hour fit review covering buyer readiness, evidence gaps, purchase blockers, and whether the full Launch Blueprint is worth buying.",
+    "A manual 24-hour fit review covering buyer readiness, evidence gaps, purchase blockers, and whether the full Route File is worth buying.",
   timeline: "Manual delivery after payment confirmation and usable intake details."
 };
 
 export const primaryOffer = {
-  name: "AgentSiteOps Launch Blueprint",
+  name: "AgentSiteOps Research-to-Route File",
   price: 99,
   currency: "USD",
   href: paypal.launchBlueprintUrl,
   fit:
-    "Best for an AI-capable solo builder who can execute but needs one clear offer, buyer, page structure, and outreach path.",
+    "Best for an AI-capable solo builder or operator who can execute but needs one checked route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.",
   delivery:
-    "A manual 24-72 hour blueprint covering the first sellable offer, target buyer, landing page structure, pricing angle, outreach scripts, and 7-day validation sequence.",
+    "A manual 24-72 hour Route File covering the selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.",
   timeline: "Manual delivery after payment confirmation and intake details."
 };
 

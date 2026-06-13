@@ -13,13 +13,13 @@ import { siteUrl } from "@/lib/site";
 const path = "/buy/";
 
 export const metadata: Metadata = {
-  title: "Buy Launch Blueprint",
+  title: "Buy Route File",
   description:
-    "Buy the AgentSiteOps Launch Blueprint for USD 99 through PayPal and receive manual delivery in 24-72 hours.",
+    "Buy the AgentSiteOps Research-to-Route File for USD 99 through PayPal and receive manual delivery in 24-72 hours.",
   alternates: { canonical: path },
   openGraph: {
-    title: "Buy Launch Blueprint",
-    description: "Pay with PayPal and send intake details for manual blueprint delivery.",
+    title: "Buy Route File",
+    description: "Pay with PayPal and send intake details for manual Route File delivery.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -52,15 +52,15 @@ export default function Page() {
       />
       <section className="pricing-hero">
         <div>
-          <p className="eyebrow">Buy the first validation artifact</p>
-          <h1>Get one sellable offer and first launch path.</h1>
+          <p className="eyebrow">Buy the checked route artifact</p>
+          <h1>Buy a Research-to-Route File handoff.</h1>
           <p>
-            The Launch Blueprint is a manual service for AI-capable solo builders who need a concrete
-            first offer, page structure, pricing angle, and outreach sequence.
-            If that purchase decision is still unclear, use the USD {starterOffer.price} Fit Review first.
+            The Route File is a manual service for messy projects that need one selected route,
+            rejected alternatives, an evidence ledger, a first proof asset, a validation channel,
+            and a stop rule. If that purchase decision is still unclear, use the USD {starterOffer.price} Fit Review first.
           </p>
         </div>
-        <aside className="pricing-receipt" aria-label="Buy Launch Blueprint">
+        <aside className="pricing-receipt" aria-label="Buy Route File">
           <div className="receipt-topline">
             <span>Manual service</span>
             <strong>USD {primaryOffer.price}</strong>
@@ -70,7 +70,7 @@ export default function Page() {
           <a
             className="primary-action"
             data-analytics-event="payment_cta_click"
-            data-analytics-label="buy_paypal_launch_blueprint"
+            data-analytics-label="buy_paypal_route_file"
             href={primaryOffer.href}
             rel="noreferrer"
             target="_blank"
@@ -81,7 +81,7 @@ export default function Page() {
           <small>{launchProduct.timeline}</small>
           <Link prefetch={false} className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
             <CheckCircle2 aria-hidden="true" size={17} />
-            Check fit first
+            Check Route File fit first
           </Link>
           <Link prefetch={false} className="secondary-action" href="/starter-review/">
             <ShieldCheck aria-hidden="true" size={17} />
@@ -128,8 +128,8 @@ export default function Page() {
           </article>
           <article className="workflow-card">
             <span>3</span>
-            <h3>Receive blueprint</h3>
-            <p>The manual document is delivered in 24-72 hours after payment and usable details are received.</p>
+            <h3>Receive Route File</h3>
+            <p>The manual Route File is delivered in 24-72 hours after payment and usable details are received.</p>
           </article>
         </div>
         <div className="hero-actions">
@@ -149,6 +149,10 @@ export default function Page() {
             <ShieldCheck aria-hidden="true" size={17} />
             Refund policy
           </Link>
+          <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
+            <CheckCircle2 aria-hidden="true" size={17} />
+            Delivery gate
+          </Link>
         </div>
       </section>
 
@@ -156,7 +160,7 @@ export default function Page() {
         <div className="section-head">
           <h2>Acceptance criteria</h2>
           <p>
-            A paid blueprint is complete only when it can be executed and judged in the
+            A paid Route File is complete only when it can be executed and judged in the
             next validation cycle. These criteria define what the buyer should expect.
           </p>
         </div>
@@ -186,7 +190,7 @@ export default function Page() {
           <h2>Buyer responsibility</h2>
           <ul className="compact-list">
             <li>Provide honest evidence during intake.</li>
-            <li>Do not treat a blueprint as market proof by itself.</li>
+            <li>Do not treat a Route File as market proof by itself.</li>
             <li>Execute the outreach and page test before buying another planning artifact.</li>
             <li>Use search, payment, reply, or usage data to judge the next cycle.</li>
           </ul>

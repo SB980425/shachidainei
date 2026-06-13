@@ -23,14 +23,14 @@ const path = "/compare/";
 const pageUrl = `${siteUrl}${path}`;
 
 export const metadata: Metadata = {
-  title: "Compare Launch Options",
+  title: "Compare Route File Options",
   description:
-    "Compare AgentSiteOps with generic AI chat, SEO software, AI visibility monitoring, and consultants before buying the USD 99 Launch Blueprint.",
+    "Compare AgentSiteOps with generic AI chat, SEO software, AI visibility monitoring, and consultants before buying the USD 99 Research-to-Route File.",
   alternates: { canonical: path },
   openGraph: {
-    title: "Compare Launch Options",
+    title: "Compare Route File Options",
     description:
-      "See when AgentSiteOps is useful, when it is the wrong tool, and how the USD 99 Launch Blueprint differs from software and consulting.",
+      "See when AgentSiteOps is useful, when it is the wrong tool, and how the USD 99 Route File differs from software and consulting.",
     url: pageUrl,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -42,9 +42,9 @@ export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Compare Launch Options",
+    name: "Compare Route File Options",
     description:
-      "A decision page comparing AgentSiteOps with generic AI chat, SEO software, AI visibility monitoring, and consulting.",
+      "A decision page comparing AgentSiteOps Route File delivery with generic AI chat, SEO software, AI visibility monitoring, and consulting.",
     url: pageUrl,
     inLanguage: "en",
     isPartOf: {
@@ -64,11 +64,11 @@ export default function Page() {
       <section className="pricing-hero">
         <div>
           <p className="eyebrow">Decision page</p>
-          <h1>Compare AgentSiteOps before buying.</h1>
+          <h1>Compare AgentSiteOps before buying a Route File.</h1>
           <p>
             AgentSiteOps is not trying to replace SEO software, AI visibility monitoring,
-            or a full consultant. It is a narrow manual blueprint for one early problem:
-            choosing the first sellable offer, page structure, and outreach path.
+            or a full consultant. It is a narrow Research-to-Route File service for one early problem:
+            choosing the first route, rejected alternatives, proof asset, validation channel, and stop rule.
           </p>
           <div className="hero-actions">
             <Link prefetch={false} className="primary-action" href="/tools/launch-blueprint-fit-checker/">
@@ -87,6 +87,10 @@ export default function Page() {
               <ArrowRight aria-hidden="true" size={17} />
               View pricing
             </Link>
+            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
+              <CheckCircle2 aria-hidden="true" size={17} />
+              Delivery gate
+            </Link>
           </div>
         </div>
         <aside className="pricing-receipt">
@@ -99,7 +103,7 @@ export default function Page() {
           <a
             className="primary-action"
             data-analytics-event="payment_cta_click"
-            data-analytics-label="compare_paypal_launch_blueprint"
+            data-analytics-label="compare_paypal_route_file"
             href={primaryOffer.href}
             rel="noreferrer"
             target="_blank"
@@ -171,7 +175,7 @@ export default function Page() {
           <h2>Why the USD 99 price is still a test</h2>
           <p>
             The price is not proven by traffic, conversion, or customer history yet. It is
-            a validation price for a manual artifact that can prevent wasted build time.
+            a validation price for a manual Route File that can prevent wasted build time.
           </p>
         </div>
         <div className="pricing-grid">
@@ -191,7 +195,7 @@ export default function Page() {
             </span>
             <h3>No authority shortcut</h3>
             <p>
-              The blueprint is not more accurate because it uses AI. It is constrained by
+              The Route File is not more accurate because it uses AI. It is constrained by
               evidence intake, rejected paths, explicit assumptions, and stop rules.
             </p>
           </article>
@@ -201,7 +205,7 @@ export default function Page() {
             </span>
             <h3>Measurable next step</h3>
             <p>
-              A useful report ends with one landing page structure, one outreach sequence,
+              A useful Route File ends with one proof asset, one validation channel,
               and a 7-day decision rule rather than a large list of possible ideas.
             </p>
           </article>

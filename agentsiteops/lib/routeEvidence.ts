@@ -3,7 +3,7 @@ export const routeSourceMap = [
     dimension: "Builder ability",
     acceptedEvidence: "Work sample, repo, portfolio, workflow screenshot, delivered artifact, or repeatable manual process",
     downgradeWhen: "Only claimed skill with no public or buyer-provided proof",
-    stopRule: "Stop paid blueprint if delivery requires abilities the buyer cannot show or safely access",
+    stopRule: "Stop paid Route File if delivery requires abilities the buyer cannot show or safely access",
     outputEffect: "Select service, tool, content, data, or implementation route based on what can actually be delivered"
   },
   {
@@ -53,7 +53,7 @@ export const routeSourceMap = [
     acceptedEvidence: "Confirmed payment, payment click plus usable intake, buyer budget signal, comparable price anchor, or low-risk manual sale",
     downgradeWhen: "Only projected revenue, pageviews, or AI confidence supports price",
     stopRule: "Stop price increase, subscription, or paid software build without payment evidence",
-    outputEffect: "Choose USD 29 review, USD 99 blueprint, free sample, or no payment"
+    outputEffect: "Choose USD 29 review, USD 99 Route File, free sample, or no payment"
   },
   {
     dimension: "Search evidence",
@@ -73,7 +73,7 @@ export const routeSourceMap = [
     dimension: "Implementation need",
     acceptedEvidence: "Buyer says they need setup/build/done-for-you, not a plan; existing offer is already clear",
     downgradeWhen: "Advice artifact would not remove the buyer's blocker",
-    stopRule: "Pivot from blueprint to implementation or reject payment if a route file is the wrong product",
+    stopRule: "Pivot from Route File to implementation or reject payment if a route file is the wrong product",
     outputEffect: "Route to setup service, build package, or refund/reject decision"
   },
   {
