@@ -540,6 +540,7 @@ RESEARCH TASK
 REQUIRED OUTPUT
 - Source table with source, date if visible, evidence type, and claim supported.
 - Route archetype comparison table.
+- Input-to-route decision matrix showing how buyer problem, proof asset, delivery capacity, data rights, monetization fit, search evidence, AI visibility evidence, implementation need, and generic-AI substitution risk changed the route.
 - Selected route and at least three rejected alternatives.
 - Buyer problem evidence and confidence level.
 - First proof asset, what it proves, and what it cannot prove.
@@ -548,6 +549,7 @@ REQUIRED OUTPUT
 - First validation channel and first asset to show.
 - 7-day execution plan with owner, task, artifact, and expected evidence.
 - Stop or pivot rule.
+- Final delivery acceptance checklist: supported claims, blocked claims, missing evidence, and the next evidence required to raise confidence.
 
 REJECT THE RECOMMENDATION IF
 - It relies on generic optimism, internal preference, or page existence.
@@ -602,6 +604,19 @@ ${status}
 ## Selected Route
 [Name the route only after the report compares alternatives.]
 
+## Route Decision Matrix
+| Input dimension | Evidence used | Route effect | Confidence effect | Missing or weak evidence |
+| --- | --- | --- | --- | --- |
+| Buyer problem | [buyer wording or source] | [effect on route] | high/medium/low/reject | [gap] |
+| Proof asset | [sample, demo, checker, report, or template] | [effect on route] | high/medium/low/reject | [gap] |
+| Delivery capacity | [hours, skill, workflow, support boundary] | [effect on route] | high/medium/low/reject | [gap] |
+| Data rights | [owned, public, permitted API, export, or blocked source] | [effect on route] | high/medium/low/reject | [gap] |
+| Monetization fit | [payment, budget signal, comparable price, or blocked claim] | [effect on route] | high/medium/low/reject | [gap] |
+| Search evidence | [GSC, Bing, query, SERP review, or pending] | [effect on route] | high/medium/low/reject | [gap] |
+| AI visibility evidence | [AI referral, crawler log, cited URL, or pending] | [effect on route] | high/medium/low/reject | [gap] |
+| Implementation need | [plan needed vs build needed] | [effect on route] | high/medium/low/reject | [gap] |
+| Generic AI substitute | [why this is or is not stronger than a generic prompt] | [effect on route] | high/medium/low/reject | [gap] |
+
 ## Rejected Alternatives
 1. [Alternative]
    - Rejection reason:
@@ -629,6 +644,7 @@ ${status}
 - Paid path:
 - What must be true before payment:
 - Refund or no-go condition:
+- Why this is not generic AI advice:
 
 ## First Validation Channel
 - Channel:
@@ -648,5 +664,14 @@ ${status}
 | 7 | [decision] | [report] | [proceed/pilot/pivot/stop] |
 
 ## Stop or Pivot Rule
-[State the exact threshold that stops the project or changes the route.]`;
+[State the exact threshold that stops the project or changes the route.]
+
+## Delivery Acceptance Checklist
+- [ ] Selected route is tied to evidence, not preference.
+- [ ] At least three alternatives were rejected with reasons.
+- [ ] Source table includes dates where visible and marks inference.
+- [ ] Claims that cannot be supported are explicitly blocked.
+- [ ] First proof asset can be built before broader content, UI, or checkout work.
+- [ ] Payment, subscription, traffic, ranking, AI citation, and revenue claims stay inside the evidence boundary.
+- [ ] The route names the next evidence required to raise confidence.`;
 }

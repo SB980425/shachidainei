@@ -31,6 +31,11 @@ export const metadata: Metadata = {
 
 const outputContract = [
   {
+    title: "Decision matrix",
+    body:
+      "The final route file must show how buyer problem, proof asset, delivery capacity, data rights, monetization, search evidence, AI visibility, implementation need, and generic-AI substitution changed the route."
+  },
+  {
     title: "Source table",
     body:
       "Every research run must list sources, dates, evidence type, and whether the source proves demand or only gives context."
