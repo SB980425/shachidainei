@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-13T04:18:48.333Z
+- Generated: 2026-06-13T04:32:01.295Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 248
+- Checks: 252
 - Blockers: 0
 - Warnings: 0
 
@@ -84,6 +84,9 @@
 | /reports/route-basis/ | pass | HTTP 200 | [link](https://agentsiteops.com/reports/route-basis/) |
 | /reports/route-basis/ | pass | HTML title exists | [link](https://agentsiteops.com/reports/route-basis/) |
 | /reports/route-basis/ | pass | canonical points to production URL | [link](https://agentsiteops.com/reports/route-basis/) |
+| /reports/route-basis/ | pass | Route selection sequence | [link](https://agentsiteops.com/reports/route-basis/) |
+| /reports/route-basis/ | pass | Invalid signals that cannot raise confidence | [link](https://agentsiteops.com/reports/route-basis/) |
+| /reports/route-basis/ | pass | Library maturity boundary | [link](https://agentsiteops.com/reports/route-basis/) |
 | /reports/route-basis/ | pass | Route pattern library | [link](https://agentsiteops.com/reports/route-basis/) |
 | /reports/route-basis/ | pass | Route selection source map | [link](https://agentsiteops.com/reports/route-basis/) |
 | /reports/route-basis/ | pass | Confidence rubric | [link](https://agentsiteops.com/reports/route-basis/) |
@@ -237,6 +240,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-48 Route basis evidence upgrade | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-47 Self route file upgrade | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-22 48-hour exposure sprint | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-21 Route basis and first traffic foundation | [link](https://agentsiteops.com/updates/) |
