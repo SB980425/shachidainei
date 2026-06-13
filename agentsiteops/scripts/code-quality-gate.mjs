@@ -100,8 +100,8 @@ function checkProductionHealthAssertions() {
   const monitor = read("scripts/production-health-monitor.mjs");
   addCheck(
     "production_health",
-    monitor.includes("Command Center") && monitor.includes("Fit Review") ? "pass" : "fail",
-    "production monitor checks the current homepage command center and Fit Review path"
+    monitor.includes("Route workspace") && monitor.includes("Research delivery loop") ? "pass" : "fail",
+    "production monitor checks the reduced homepage workspace and research workflow path"
   );
   addCheck(
     "production_health",

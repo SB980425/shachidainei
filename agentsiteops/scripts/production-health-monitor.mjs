@@ -334,7 +334,8 @@ async function main() {
   await checkBrandIcon();
   await checkAnalyticsSummary();
   await checkPage("/", [
-    "Command Center",
+    "Route workspace",
+    "Score, prune, export",
     "How AgentSiteOps becomes our route planner.",
     "Existing functions preserved",
     "Fit Review",
@@ -342,6 +343,12 @@ async function main() {
     "What the buyer receives is a route file, not a score",
     "Market signals are context, not proof",
     "Every new project starts with a route map before a build."
+  ]);
+  await checkPage("/templates/route-research-prompt-pack/", [
+    "Research delivery loop",
+    "Acceptance gate before delivery",
+    "Second research pass when needed",
+    "The final delivery is one fused route file"
   ]);
   await checkPage("/pricing/", [
     "Choose the smallest purchase that can answer the decision",

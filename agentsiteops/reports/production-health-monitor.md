@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-12T11:20:43.820Z
+- Generated: 2026-06-13T00:50:51.862Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 221
+- Checks: 229
 - Blockers: 0
 - Warnings: 0
 
@@ -46,7 +46,8 @@
 | / | pass | HTTP 200 | [link](https://agentsiteops.com/) |
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
-| / | pass | Command Center | [link](https://agentsiteops.com/) |
+| / | pass | Route workspace | [link](https://agentsiteops.com/) |
+| / | pass | Score, prune, export | [link](https://agentsiteops.com/) |
 | / | pass | How AgentSiteOps becomes our route planner. | [link](https://agentsiteops.com/) |
 | / | pass | Existing functions preserved | [link](https://agentsiteops.com/) |
 | / | pass | Fit Review | [link](https://agentsiteops.com/) |
@@ -54,6 +55,13 @@
 | / | pass | What the buyer receives is a route file, not a score | [link](https://agentsiteops.com/) |
 | / | pass | Market signals are context, not proof | [link](https://agentsiteops.com/) |
 | / | pass | Every new project starts with a route map before a build. | [link](https://agentsiteops.com/) |
+| /templates/route-research-prompt-pack/ | pass | HTTP 200 | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | HTML title exists | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | canonical points to production URL | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Research delivery loop | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Acceptance gate before delivery | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Second research pass when needed | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | The final delivery is one fused route file | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | canonical points to production URL | [link](https://agentsiteops.com/pricing/) |
