@@ -6,9 +6,9 @@ import {
   CheckCircle2,
   ClipboardList,
   FileText,
-  SearchCheck,
-  ShieldCheck
+  SearchCheck
 } from "lucide-react";
+import { ClientRouteWorkspace } from "@/components/ClientRouteWorkspace";
 import { siteUrl } from "@/lib/site";
 
 const path = "/reports/client-route-workflow/";
@@ -36,68 +36,6 @@ const intakeChecklist = [
   "Known alternatives that should be compared instead of silently ignored."
 ];
 
-const inputReadiness = [
-  {
-    label: "Project facts",
-    status: "Ready",
-    detail: "Target buyer, current asset set, delivery capacity, and decision question are present."
-  },
-  {
-    label: "Source boundary",
-    status: "Ready",
-    detail: "Usable public pages and private material limits are separated before research."
-  },
-  {
-    label: "Risk boundary",
-    status: "Ready",
-    detail: "No guaranteed traffic, revenue, ranking, AI citation, or regulated advice claims are allowed."
-  },
-  {
-    label: "Evidence quality",
-    status: "Weak",
-    detail: "Buyer proof, payment evidence, first-party search exports, and customer outcomes are still missing."
-  }
-];
-
-const progressStages = [
-  {
-    label: "Intake",
-    status: "Passed",
-    percent: "15%",
-    detail: "Project facts, source boundary, and blocked claims are recorded."
-  },
-  {
-    label: "Scope lock",
-    status: "Passed",
-    percent: "28%",
-    detail: "The first run is limited to one route decision, not a full content program."
-  },
-  {
-    label: "Research brief",
-    status: "Passed",
-    percent: "42%",
-    detail: "Copy-ready Deep Research prompts and acceptance gates are generated."
-  },
-  {
-    label: "Research run",
-    status: "Active",
-    percent: "63%",
-    detail: "The operator runs the prompt in ChatGPT Deep Research using the user's allowance."
-  },
-  {
-    label: "Coverage gate",
-    status: "Pending",
-    percent: "78%",
-    detail: "The returned report is checked locally for required route evidence."
-  },
-  {
-    label: "Route file",
-    status: "Pending",
-    percent: "100%",
-    detail: "Accepted research is fused into one selected route and rejection record."
-  }
-];
-
 const passedItems = [
   {
     title: "Boundary is visible",
@@ -122,81 +60,6 @@ const secondPassTriggers = [
   "Buyer problem, delivery capacity, or generic-AI substitution risk is vague.",
   "First proof asset, validation channel, or stop condition is missing.",
   "Research drifts into domain content that does not change the route decision."
-];
-
-const coverageGaps = [
-  {
-    title: "Buyer proof",
-    severity: "High",
-    body: "The current project can name a likely buyer, but it still needs qualified replies or paid intake before confidence can rise."
-  },
-  {
-    title: "Source table",
-    severity: "Medium",
-    body: "A report must separate dated sources, public context, first-party evidence, and unsupported assumptions."
-  },
-  {
-    title: "Rejected alternatives",
-    severity: "High",
-    body: "The selected route is not accepted unless competing paths are preserved with evidence-based rejection reasons."
-  },
-  {
-    title: "Stop condition",
-    severity: "High",
-    body: "The final file must state what evidence blocks build expansion, checkout, or content scaling."
-  }
-];
-
-const secondPassQueue = [
-  {
-    prompt: "Find buyer evidence",
-    owner: "Operator",
-    result: "A focused second pass on reachable buyer pain, qualified reply signals, and proof still missing."
-  },
-  {
-    prompt: "Audit rejected paths",
-    owner: "Operator",
-    result: "A shorter comparison of why automation agency, template pack, course, or SEO content routes are weaker."
-  },
-  {
-    prompt: "Define validation rule",
-    owner: "Site",
-    result: "A route-level keep, repair, stop, or blocked rule tied to first proof asset and first channel."
-  }
-];
-
-const routeFilePreview = [
-  {
-    field: "Selected route",
-    value: "One recommended path with confidence level and evidence basis."
-  },
-  {
-    field: "Rejected alternatives",
-    value: "Plausible paths that failed evidence, delivery, risk, or buyer-value tests."
-  },
-  {
-    field: "Evidence ledger",
-    value: "Verified, pending, inferred, stale, blocked, and not-claimed items."
-  },
-  {
-    field: "First proof asset",
-    value: "The smallest page, tool, sample, checklist, or outreach artifact to test first."
-  },
-  {
-    field: "Validation channel",
-    value: "The first channel, signal threshold, review window, and non-proof signals."
-  },
-  {
-    field: "Stop rule",
-    value: "The condition that blocks build expansion, checkout, or content scaling."
-  }
-];
-
-const nonDeliverables = [
-  "A guaranteed traffic, ranking, AI citation, revenue, or customer outcome.",
-  "A fully automated Deep Research platform or hidden OpenAI API workflow.",
-  "A broad content plan without route selection, rejected paths, and stop conditions.",
-  "A domain-specific research article that has not passed route usefulness checks."
 ];
 
 export default function Page() {
@@ -261,24 +124,7 @@ export default function Page() {
         </aside>
       </section>
 
-      <section className="gate-section">
-        <div className="section-head">
-          <h2>Input readiness</h2>
-          <p>
-            The workspace starts by showing whether the client supplied enough material
-            to create a research brief without inventing missing context.
-          </p>
-        </div>
-        <div className="client-readiness-grid">
-          {inputReadiness.map((item) => (
-            <article className={item.status.toLowerCase()} key={item.label}>
-              <span>{item.status}</span>
-              <h3>{item.label}</h3>
-              <p>{item.detail}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+      <ClientRouteWorkspace />
 
       <section className="gate-section">
         <div className="section-head">
@@ -295,53 +141,6 @@ export default function Page() {
               <p>{item}</p>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="gate-section">
-        <div className="section-head">
-          <h2>Project progress</h2>
-          <p>
-            The progress state is observable. It separates passed setup work from active
-            manual research and pending route-file acceptance.
-          </p>
-        </div>
-        <div className="client-progress-board">
-          {progressStages.map((stage) => (
-            <article className={stage.status.toLowerCase()} key={stage.label}>
-              <span>{stage.percent}</span>
-              <h3>{stage.label}</h3>
-              <strong>{stage.status}</strong>
-              <p>{stage.detail}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="gate-section split-section client-workflow-split">
-        <div>
-          <h2>Coverage gaps</h2>
-          <div className="client-gap-list">
-            {coverageGaps.map((item) => (
-              <article key={item.title}>
-                <strong>{item.severity}</strong>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-        <div>
-          <h2>Second-pass research queue</h2>
-          <div className="client-queue-list">
-            {secondPassQueue.map((item) => (
-              <article key={item.prompt}>
-                <small>{item.owner}</small>
-                <h3>{item.prompt}</h3>
-                <p>{item.result}</p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -376,33 +175,15 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="gate-section">
-        <div className="section-head">
-          <h2>Final route-file preview</h2>
-          <p>
-            The deliverable is one route file, not two unrelated research reports. The
-            file must be specific enough to guide the next build or stop decision.
-          </p>
-        </div>
-        <div className="route-file-preview">
-          {routeFilePreview.map((item) => (
-            <article key={item.field}>
-              <ShieldCheck aria-hidden="true" size={18} />
-              <h3>{item.field}</h3>
-              <p>{item.value}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="gate-section split-section client-workflow-split">
         <div>
-          <h2>What is not a delivery</h2>
-          <ul className="compact-list">
-            {nonDeliverables.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          <h2>Why the workspace replaces repeated explanation</h2>
+          <p>
+            Progress, coverage gaps, repair triggers, final file structure, and
+            non-delivery boundaries now live in one client workspace module. This page
+            can focus on intake details and manual research policy instead of repeating
+            the same Route File list in several sections.
+          </p>
         </div>
         <div>
           <h2>Manual Deep Research boundary</h2>

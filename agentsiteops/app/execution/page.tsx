@@ -9,6 +9,7 @@ import {
   Languages,
   SearchCheck
 } from "lucide-react";
+import { ClientRouteWorkspace } from "@/components/ClientRouteWorkspace";
 import { ExecutionWorkbench } from "@/components/ExecutionWorkbench";
 import { siteUrl } from "@/lib/site";
 
@@ -148,6 +149,19 @@ export default function ExecutionPage() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="route-foundation-section execution-client-section">
+        <div className="route-section-heading">
+          <span>Client progress layer</span>
+          <h2>The workbench also needs a customer-readable status surface.</h2>
+          <p>
+            This embedded workspace shows what the client can inspect while the operator
+            moves through intake, manual research, coverage repair, Route File synthesis,
+            and public-copy conversion.
+          </p>
+        </div>
+        <ClientRouteWorkspace />
       </section>
 
       <ExecutionWorkbench />

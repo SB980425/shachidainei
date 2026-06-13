@@ -153,6 +153,11 @@ export const routePages: RoutePage[] = [
           "The page connects intake, scope lock, manual research, coverage gate, Route File output, and social copy into a single visible workflow."
       },
       {
+        title: "Client progress layer",
+        body:
+          "The embedded client workspace shows input readiness, current stage, passed checks, repair triggers, Route File structure, not-delivery boundaries, and bilingual public copy in one product module."
+      },
+      {
         title: "Event logic",
         body:
           "The event layer tracks aggregate-safe workbench view, stage selection, and social copy export events without raw text, contact data, or private project details."
@@ -1341,9 +1346,9 @@ export const routePages: RoutePage[] = [
     pageType: "report",
     title: "Client Route Workflow",
     description:
-      "A client-facing project workspace preview showing intake, manual Deep Research progress, coverage checks, gap research, and final route-file boundaries.",
+      "A client-facing project workspace preview showing input readiness, manual Deep Research progress, coverage checks, gap research, final route-file boundaries, and bilingual public copy.",
     answer:
-      "The client route workflow shows how AgentSiteOps turns messy project material into a visible process: intake, scope lock, manual Deep Research, local coverage review, second-pass gap handling when needed, and one final route file.",
+      "The client route workflow shows how AgentSiteOps turns messy project material into a visible workspace: input readiness, intake, scope lock, manual Deep Research, local coverage review, second-pass gap handling when needed, one final Route File, and public copy that does not change the claim boundary.",
     primaryAction: { label: "Open research workflow", href: "/templates/route-research-prompt-pack/" },
     secondaryAction: { label: "View sample route file", href: "/sample/" },
     aiTarget:
@@ -1359,7 +1364,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Visible progress",
         body:
-          "The progress surface separates passed intake and scope work from active manual research, pending coverage review, second-pass gap prompts, and final synthesis."
+          "The progress surface separates passed intake and scope work from active manual research, pending coverage review, second-pass gap prompts, final synthesis, and public-copy conversion."
       },
       {
         title: "Route file contract",
