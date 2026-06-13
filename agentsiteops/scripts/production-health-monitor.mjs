@@ -431,14 +431,6 @@ async function main() {
     "seal_required"
   ]);
   await checkPage("/reports/route-evidence-dashboard/", ["Route Evidence Dashboard", "Route evidence table", "GSC pending"]);
-  await checkPage("/reports/route-basis/", [
-    "Route Basis Report",
-    "Source files",
-    "What raises confidence",
-    "What lowers confidence",
-    "What forces rejection",
-    "52/100"
-  ]);
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
