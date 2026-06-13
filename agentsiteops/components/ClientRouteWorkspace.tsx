@@ -10,6 +10,7 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
+import { socialCopyBoundaryRows, socialCopyPreviewRows } from "@/lib/socialCopy";
 
 const inputRows = [
   {
@@ -137,19 +138,6 @@ const nonDeliveryRows = [
   "Public social copy that changes the evidence boundary of the Route File."
 ];
 
-const socialCopyRows = [
-  {
-    language: "中文",
-    text:
-      "AgentSiteOps 把混乱项目材料整理成一份 Route File：选定路线、被否决方案、证据台账、第一证明资产、验证渠道和停止规则。它不承诺流量、排名或收入。"
-  },
-  {
-    language: "English",
-    text:
-      "AgentSiteOps turns messy project material into one Route File: selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule. It does not promise traffic, rankings, or revenue."
-  }
-];
-
 export function ClientRouteWorkspace() {
   return (
     <section className="client-route-workspace" aria-label="Client route workspace preview">
@@ -269,12 +257,20 @@ export function ClientRouteWorkspace() {
           </span>
           <h3>中英文可以转换，承诺边界不能改变。</h3>
         </div>
-        {socialCopyRows.map((item) => (
+        {socialCopyPreviewRows.map((item) => (
           <article key={item.language}>
             <strong>{item.language}</strong>
             <p>{item.text}</p>
           </article>
         ))}
+        <div className="client-social-boundary" aria-label="Social copy claim boundary">
+          {socialCopyBoundaryRows.map((item) => (
+            <article key={item.label}>
+              <strong>{item.label}</strong>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
         <Link prefetch={false} href="/execution/">
           Open execution workbench
           <ArrowRight aria-hidden="true" size={15} />

@@ -7743,6 +7743,10 @@ textarea {
   display: grid;
   gap: 8px;
   align-content: center;
+  border: 1px solid rgba(226, 232, 240, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 14px;
 }
 
 .client-workspace-social span {
@@ -7757,6 +7761,22 @@ textarea {
 
 .client-workspace-social article strong {
   color: #9fe34b;
+}
+
+.client-social-boundary {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.client-social-boundary article {
+  border-color: rgba(214, 166, 58, 0.22);
+  background: rgba(214, 166, 58, 0.08);
+}
+
+.client-social-boundary article strong {
+  color: #d6a63a;
 }
 
 .client-workspace-social a {
@@ -10204,6 +10224,38 @@ textarea {
   line-height: 1.6;
 }
 
+.execution-social-boundary {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.execution-social-boundary article {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  border: 1px solid rgba(214, 166, 58, 0.2);
+  border-radius: 8px;
+  background: rgba(214, 166, 58, 0.08);
+  padding: 10px;
+}
+
+.execution-social-boundary article strong {
+  color: #d6a63a;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.execution-social-boundary article span {
+  color: rgba(247, 234, 214, 0.78);
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: 0;
+  line-height: 1.45;
+  text-transform: none;
+}
+
 .route-source-ribbon {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -10452,7 +10504,9 @@ textarea {
   .execution-room-path-grid,
   .client-workspace-inputs,
   .client-workspace-timeline,
-  .client-route-file-grid {
+  .client-route-file-grid,
+  .client-social-boundary,
+  .execution-social-boundary {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -10492,6 +10546,8 @@ textarea {
   .client-workspace-inputs,
   .client-workspace-timeline,
   .client-route-file-grid,
+  .client-social-boundary,
+  .execution-social-boundary,
   .client-route-file-paper > div:first-child {
     grid-template-columns: 1fr;
   }
