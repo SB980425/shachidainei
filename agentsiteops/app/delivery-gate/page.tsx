@@ -10,6 +10,7 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
+import { RouteFileAcceptancePanel } from "@/components/RouteFileAcceptancePanel";
 import { siteUrl } from "@/lib/site";
 
 const path = "/delivery-gate/";
@@ -175,6 +176,8 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <RouteFileAcceptancePanel />
 
       <section className="gate-section split-section delivery-gate-split">
         <div>
