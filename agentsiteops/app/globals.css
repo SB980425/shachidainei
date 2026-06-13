@@ -6991,6 +6991,10 @@ textarea {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
+.delivery-progress-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .delivery-contract-grid article {
   display: grid;
   gap: 11px;

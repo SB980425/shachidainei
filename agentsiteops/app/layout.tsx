@@ -70,7 +70,7 @@ const navItems = [
   { href: "/start/", label: "Start", Icon: ClipboardList },
   { href: "/how-it-works/", label: "How it works", Icon: GitBranch },
   { href: "/sample/", label: "Sample", Icon: FileText },
-  { href: "/checklists/route-file-delivery-gate/", label: "Delivery", Icon: FileCheck2 },
+  { href: "/delivery-gate/", label: "Delivery", Icon: FileCheck2 },
   { href: "/updates/", label: "Updates", Icon: Newspaper }
 ];
 
@@ -108,7 +108,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link prefetch={false} href="/launch-kit/">Launch Kit</Link>
             <Link prefetch={false} href="/methodology/route-selection/">Method</Link>
             <Link prefetch={false} href="/templates/route-research-prompt-pack/">Research</Link>
-            <Link prefetch={false} href="/checklists/route-file-delivery-gate/">Delivery Gate</Link>
+            <Link prefetch={false} href="/delivery-gate/">Delivery Gate</Link>
             <Link prefetch={false} href="/reports/route-basis/">Route Basis</Link>
             <Link prefetch={false} href="/updates/">Updates</Link>
             <Link prefetch={false} href="/pricing/">Pricing</Link>

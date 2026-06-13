@@ -1,6 +1,7 @@
 const kvPrefix = "analytics:v1:daily";
 const sampleViewEvents = new Set([
   "launch_blueprint_sample_view",
+  "sample_route_file_view",
   "sample_audit_view",
   "fit_review_sample_view"
 ]);

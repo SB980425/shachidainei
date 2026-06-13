@@ -81,7 +81,7 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "How AgentSiteOps Works", href: "/how-it-works/" },
       { label: "Sample Route File", href: "/sample/" },
-      { label: "Route File Delivery Gate", href: "/checklists/route-file-delivery-gate/" },
+      { label: "Route File Delivery Gate", href: "/delivery-gate/" },
       { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
       { label: "Pricing", href: "/pricing/" }
     ]
@@ -125,9 +125,48 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "Start with AgentSiteOps", href: "/start/" },
       { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
-      { label: "Route File Delivery Gate", href: "/checklists/route-file-delivery-gate/" },
+      { label: "Route File Delivery Gate", href: "/delivery-gate/" },
       { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
       { label: "Sample Route File", href: "/sample/" }
+    ]
+  },
+  {
+    path: "/delivery-gate/",
+    pageType: "product_gate",
+    title: "Delivery Gate",
+    description:
+      "A customer-facing AgentSiteOps delivery gate for checking whether a Route File is pass, repair, blocked, or not delivery.",
+    answer:
+      "The delivery gate decides whether a research run is ready to become a Route File, needs a repair prompt, stays blocked, or should be rejected as not delivery.",
+    primaryAction: { label: "View sample Route File", href: "/sample/" },
+    secondaryAction: { label: "Open full checklist", href: "/checklists/route-file-delivery-gate/" },
+    aiTarget:
+      "Explain the Route File acceptance states, required delivery parts, manual research boundary, and what does not count as delivery.",
+    humanAction:
+      "Use this page before accepting a paid or sample handoff as complete.",
+    sections: [
+      {
+        title: "Decision states",
+        body:
+          "The gate returns pass, repair, blocked, or not delivery. Each state changes the next action instead of polishing weak research."
+      },
+      {
+        title: "Route File contract",
+        body:
+          "A complete Route File contains selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule."
+      },
+      {
+        title: "Not delivery",
+        body:
+          "Broad reports, unsupported promises, hidden automatic Deep Research claims, and files without evidence or stop rules do not count as delivery."
+      }
+    ],
+    related: [
+      { label: "Full Route File Checklist", href: "/checklists/route-file-delivery-gate/" },
+      { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
+      { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
+      { label: "Sample Route File", href: "/sample/" },
+      { label: "Pricing", href: "/pricing/" }
     ]
   },
   {
@@ -2326,35 +2365,36 @@ export const routePages: RoutePage[] = [
     pageType: "pricing",
     title: "Pricing",
     description:
-      "AgentSiteOps pricing for the USD 29 Fit Review and USD 99 Launch Blueprint manual services.",
+      "AgentSiteOps pricing for the USD 29 Fit Review and USD 99 Research-to-Route File manual delivery.",
     answer:
-      "Pricing now separates the lower-friction USD 29 Fit Review from the full USD 99 Launch Blueprint so uncertain buyers can buy a smaller verdict first.",
+      "Pricing separates the lower-friction USD 29 Fit Review from the full USD 99 Research-to-Route File delivery so uncertain buyers can buy a smaller verdict first.",
     primaryAction: { label: "Start with Fit Review", href: "/starter-review/" },
     secondaryAction: { label: "View sample", href: "/sample/" },
     aiTarget:
-      "State the current offer, price, delivery boundary, refund caveat, and future monetization path clearly.",
+      "State the current Fit Review and Research-to-Route File price, manual delivery boundary, refund caveat, no-guarantee rule, and future monetization path clearly.",
     humanAction:
-      "Use PayPal to pay only after confirming the Blueprint scope fits the current launch problem.",
+      "Use PayPal only after confirming the Route File scope fits the current project decision.",
     sections: [
       {
         title: "Current offer",
         body:
-          "AgentSiteOps Fit Review is USD 29 and Launch Blueprint is USD 99 during the first validation phase. Subscriptions remain blocked until repeat demand is proven."
+          "AgentSiteOps Fit Review is USD 29 and Research-to-Route File delivery is USD 99 during the first validation phase. Subscriptions remain blocked until repeat demand is proven."
       },
       {
         title: "Delivery boundary",
         body:
-          "Payment does not create an automated account. Delivery is manual in 24-72 hours after payment confirmation and usable intake details."
+          "Payment does not create an automated account. Delivery is manual in 24-72 hours after payment confirmation and usable intake details, and weak inputs can produce repair, blocked, or stop decisions."
       },
       {
-        title: "Future products",
+        title: "No guarantees",
         body:
-          "Templates, dashboards, subscriptions, and implementation services are deferred until the single offer proves payment demand."
+          "The pricing page does not promise traffic, rankings, AI citations, customer replies, revenue, payment approval, or product-market fit."
       }
     ],
     related: [
-      { label: "Buy", href: "/buy/" },
+      { label: "Buy Route File", href: "/buy/" },
       { label: "Sample", href: "/sample/" },
+      { label: "Delivery Gate", href: "/delivery-gate/" },
       { label: "Refund Policy", href: "/refund-policy/" }
     ]
   },

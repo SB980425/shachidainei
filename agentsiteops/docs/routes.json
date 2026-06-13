@@ -33,6 +33,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/delivery-gate/",
+      "pageType": "product_gate",
+      "template": "delivery_gate",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.84,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/ai-website-operating-system/",
       "pageType": "pillar",
       "template": "pillar",

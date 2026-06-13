@@ -223,7 +223,7 @@ export default function Page() {
             the next route before those later stages consume more work.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
               <FileCheck2 aria-hidden="true" size={17} />
               Delivery gate
             </Link>

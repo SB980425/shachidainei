@@ -138,7 +138,7 @@ const supportLinks = [
   { href: "/start/", label: "Start here" },
   { href: "/how-it-works/", label: "How it works" },
   { href: "/reports/client-route-workflow/", label: "Client route workflow" },
-  { href: "/checklists/route-file-delivery-gate/", label: "Delivery gate" },
+  { href: "/delivery-gate/", label: "Delivery gate" },
   { href: "/templates/route-research-prompt-pack/", label: "Research prompt pack" },
   { href: "/reports/route-basis/", label: "Route basis report" },
   { href: "/methodology/route-selection/", label: "Route selection methodology" },
@@ -375,7 +375,7 @@ export default function HomePage() {
             <ClipboardList aria-hidden="true" size={17} />
             Start here
           </Link>
-          <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+          <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
             <FileCheck2 aria-hidden="true" size={17} />
             Check delivery gate
           </Link>

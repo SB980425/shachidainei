@@ -201,7 +201,7 @@ export default function Page() {
               <ArrowRight aria-hidden="true" size={17} />
               Prompt pack
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
               <FileCheck2 aria-hidden="true" size={17} />
               Delivery gate
             </Link>

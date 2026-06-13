@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-13T07:29:20.300Z
+- Generated: 2026-06-13T07:49:12.483Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 57
+- Sitemap routes: 58
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 57 |
+| Routes passed | 58 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -22,6 +22,7 @@
 | / | pass | 200 | Research-to-Route File | https://agentsiteops.com/ | 1 | 19 | pass | - |
 | /start/ | pass | 200 | Start with AgentSiteOps \| AgentSiteOps | https://agentsiteops.com/start/ | 1 | 18 | pass | - |
 | /how-it-works/ | pass | 200 | How AgentSiteOps Works \| AgentSiteOps | https://agentsiteops.com/how-it-works/ | 1 | 19 | pass | - |
+| /delivery-gate/ | pass | 200 | Delivery Gate \| AgentSiteOps | https://agentsiteops.com/delivery-gate/ | 1 | 20 | pass | - |
 | /ai-website-operating-system/ | pass | 200 | AI Website Operating System \| AgentSiteOps | https://agentsiteops.com/ai-website-operating-system/ | 1 | 22 | pass | - |
 | /tools/website-opportunity-scorer/ | pass | 200 | Website Opportunity Scorer \| AgentSiteOps | https://agentsiteops.com/tools/website-opportunity-scorer/ | 1 | 20 | pass | - |
 | /tools/ai-crawler-readiness/ | pass | 200 | AI Crawler Readiness Tool \| AgentSiteOps | https://agentsiteops.com/tools/ai-crawler-readiness/ | 1 | 20 | pass | - |
@@ -41,7 +42,7 @@
 | /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 22 | pass | - |
 | /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 23 | pass | - |
 | /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 23 | pass | - |
-| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 57 | pass | - |
+| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 58 | pass | - |
 | /reports/route-basis/ | pass | 200 | Route Basis Report \| AgentSiteOps | https://agentsiteops.com/reports/route-basis/ | 1 | 20 | pass | - |
 | /reports/agentsiteops-route-run/ | pass | 200 | AgentSiteOps Route Run \| AgentSiteOps | https://agentsiteops.com/reports/agentsiteops-route-run/ | 1 | 18 | pass | - |
 | /reports/client-route-workflow/ | pass | 200 | Client Route Workflow \| AgentSiteOps | https://agentsiteops.com/reports/client-route-workflow/ | 1 | 19 | pass | - |
@@ -64,7 +65,7 @@
 | /privacy/ | pass | 200 | Privacy Policy \| AgentSiteOps | https://agentsiteops.com/privacy/ | 1 | 19 | pass | - |
 | /disclosure/ | pass | 200 | Disclosure \| AgentSiteOps | https://agentsiteops.com/disclosure/ | 1 | 20 | pass | - |
 | /website-opportunity-audit/ | pass | 200 | AgentSiteOps Launch Blueprint \| AgentSiteOps | https://agentsiteops.com/website-opportunity-audit/ | 1 | 21 | pass | - |
-| /pricing/ | pass | 200 | Pricing \| AgentSiteOps | https://agentsiteops.com/pricing/ | 1 | 22 | pass | - |
+| /pricing/ | pass | 200 | Pricing \| AgentSiteOps | https://agentsiteops.com/pricing/ | 1 | 21 | pass | - |
 | /examples/fit-review-sample/ | pass | 200 | Fit Review Sample \| AgentSiteOps | https://agentsiteops.com/examples/fit-review-sample/ | 1 | 20 | pass | - |
 | /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 20 | pass | - |
 | /compare/ | pass | 200 | Compare Launch Options \| AgentSiteOps | https://agentsiteops.com/compare/ | 1 | 20 | pass | - |

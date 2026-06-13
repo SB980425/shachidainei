@@ -235,7 +235,7 @@ export default function Page() {
               <FileText aria-hidden="true" size={17} />
               View sample route file
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
               <FileText aria-hidden="true" size={17} />
               Check delivery gate
             </Link>
@@ -412,7 +412,7 @@ export default function Page() {
             automatic research results, or treat broad market context as proof of demand.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
               <ArrowRight aria-hidden="true" size={17} />
               Apply delivery gate
             </Link>

@@ -263,7 +263,7 @@ export default function Page() {
               <FileText aria-hidden="true" size={17} />
               View route basis
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
               <ShieldCheck aria-hidden="true" size={17} />
               Check delivery gate
             </Link>
@@ -543,7 +543,7 @@ export default function Page() {
               <ArrowRight aria-hidden="true" size={17} />
               Self route run
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
               <ArrowRight aria-hidden="true" size={17} />
               Delivery gate
             </Link>

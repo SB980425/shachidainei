@@ -4,6 +4,7 @@ import {
   AlertTriangle,
   ArrowRight,
   CheckCircle2,
+  ClipboardList,
   FileText,
   GitCompareArrows,
   ShieldCheck
@@ -178,7 +179,11 @@ export default function Page() {
             final synthesis.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/reports/client-route-workflow/">
+            <Link prefetch={false} className="primary-action" href="/start/">
+              <ClipboardList aria-hidden="true" size={17} />
+              Start with a project
+            </Link>
+            <Link prefetch={false} className="secondary-action" href="/reports/client-route-workflow/">
               <FileText aria-hidden="true" size={17} />
               Open client workflow
             </Link>
@@ -186,7 +191,7 @@ export default function Page() {
               <ArrowRight aria-hidden="true" size={17} />
               Run research workflow
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
               <ShieldCheck aria-hidden="true" size={17} />
               Check delivery gate
             </Link>
@@ -345,7 +350,7 @@ export default function Page() {
               <FileText aria-hidden="true" size={17} />
               Client workflow
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
               <ShieldCheck aria-hidden="true" size={17} />
               Delivery gate
             </Link>

@@ -5,11 +5,8 @@ import {
   authorityBoundaries,
   blueprintEvidenceInputs,
   launchComparisons,
-  launchDeliverables,
-  launchProduct,
   pricingBenchmarks,
   purchaseObjectionResponses,
-  samplePaidArtifactChecklist,
   starterReviewDeliverables,
   starterReviewProduct
 } from "@/lib/launch";
@@ -22,13 +19,13 @@ const pageUrl = `${siteUrl}${path}`;
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "AgentSiteOps pricing: USD 29 for a manual fit review or USD 99 for a complete Launch Blueprint.",
+    "AgentSiteOps pricing: USD 29 for a manual Fit Review or USD 99 for a Research-to-Route File delivery.",
   alternates: {
     canonical: path
   },
   openGraph: {
     title: "Pricing",
-    description: "Choose the USD 29 fit review or the USD 99 Launch Blueprint through PayPal.",
+    description: "Choose the USD 29 Fit Review or the USD 99 Research-to-Route File delivery through PayPal.",
     url: pageUrl,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -39,8 +36,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Offer",
-  name: primaryOffer.name,
-  description: primaryOffer.delivery,
+  name: "AgentSiteOps Research-to-Route File",
+  description:
+    "Manual delivery of a checked Route File with selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.",
   price: String(primaryOffer.price),
   priceCurrency: primaryOffer.currency,
   url: primaryOffer.href,
@@ -56,24 +54,64 @@ const ladder = [
   {
     title: "Inspect",
     price: "Free",
-    body: "Read the sample and fit checker before opening a payment link.",
-    href: "/examples/fit-review-sample/",
-    action: "View sample"
+    body: "Read the sample Route File, delivery gate, and workflow before opening a payment link.",
+    href: "/sample/",
+    action: "View Route File sample"
   },
   {
     title: "Validate",
     price: `USD ${starterOffer.price}`,
-    body: starterOffer.fit,
+    body:
+      "Use Fit Review when the project may not be ready for a full Route File and needs a go, narrow, or stop verdict first.",
     href: "/starter-review/",
     action: "Choose Fit Review"
   },
   {
-    title: "Build route",
+    title: "Receive route",
     price: `USD ${primaryOffer.price}`,
-    body: primaryOffer.fit,
+    body:
+      "Use Research-to-Route File when the messy inputs are ready for manual research, coverage checking, gap repair, and final synthesis.",
     href: "/buy/",
-    action: "View blueprint"
+    action: "View Route File payment"
   }
+];
+
+const routeFileOfferName = "AgentSiteOps Research-to-Route File";
+
+const routeFileDeliverables = [
+  {
+    title: "Selected route",
+    body: "Selected route with confidence level and evidence basis."
+  },
+  {
+    title: "Rejected alternatives",
+    body: "Rejected alternatives with reasons tied to current evidence and constraints."
+  },
+  {
+    title: "Evidence ledger",
+    body:
+      "Evidence ledger separating verified, pending, inferred, stale, blocked, and not-claimed items."
+  },
+  {
+    title: "First proof asset",
+    body: "First proof asset that can test the route before larger build work."
+  },
+  {
+    title: "Validation channel",
+    body: "Validation channel with counted signal, ignored weak signal, review window, and stop rule."
+  },
+  {
+    title: "Not-delivery boundary",
+    body:
+      "Explicit not-delivery boundary for traffic, ranking, AI citation, revenue, and customer-response claims."
+  }
+];
+
+const pricingBoundaries = [
+  "No guarantees of traffic, ranking, AI citation, customer replies, revenue, payment approval, or product-market fit.",
+  "No hidden OpenAI API call or automatic Deep Research. The research run is manual and uses the client's or operator's ChatGPT Deep Research allowance.",
+  "No login account, dashboard, subscription workspace, automated DMs, scraping, or platform growth scripts.",
+  "Manual delivery starts after payment confirmation and usable intake; weak inputs can produce repair, blocked, or stop decisions."
 ];
 
 const compactEvidence = blueprintEvidenceInputs.slice(0, 3);
@@ -90,12 +128,13 @@ export default function Page() {
 
       <section className="decision-hero pricing-decision-hero">
         <div className="decision-hero-copy">
-          <p className="eyebrow">Transparent manual pricing</p>
-          <h1>Choose the smallest purchase that can answer the decision.</h1>
+          <p className="eyebrow">Research-to-Route File pricing</p>
+          <h1>Choose the smallest manual step that can produce a route decision.</h1>
           <p>
             AgentSiteOps has two paid paths: a USD {starterOffer.price} Fit Review and a
-            USD {primaryOffer.price} AgentSiteOps Launch Blueprint. Start small when the
-            route is uncertain.
+            USD {primaryOffer.price} Research-to-Route File delivery. Start small when
+            the route is uncertain; buy the full Route File only when the intake can
+            support manual delivery.
           </p>
           <div className="hero-actions hero-actions-tight">
             <a
@@ -116,7 +155,7 @@ export default function Page() {
             </Link>
             <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
-              Blueprint sample
+              Route File sample
             </Link>
           </div>
         </div>
@@ -129,7 +168,8 @@ export default function Page() {
           <h2>{starterOffer.name}</h2>
           <p>{starterOffer.delivery}</p>
           <small>
-            Payment opens PayPal. PayPal-hosted payment instead of collecting card data directly.
+            Payment opens PayPal. AgentSiteOps does not collect card data directly; manual
+            delivery starts only after payment confirmation and usable intake.
           </small>
           <a
             className="primary-action"
@@ -150,8 +190,8 @@ export default function Page() {
         <div className="section-head">
           <h2>Decision ladder</h2>
           <p>
-            The full blueprint should not be the first click for every visitor. Move only
-            as far as the evidence supports.
+            The full Route File should not be the first click for every visitor. Move
+            only as far as the evidence supports.
           </p>
         </div>
         <div className="decision-ladder decision-ladder-pricing">
@@ -174,9 +214,9 @@ export default function Page() {
         <div className="section-head">
           <h2>Why pay for a manual route</h2>
           <p>
-            The paid value is the forced selection: one offer, one buyer, one page
-            structure, one outreach path, and one stop rule. It is not a keyword tool,
-            dashboard, or generic chat session.
+            The paid value is forced selection and traceability: one route, rejected
+            alternatives, tagged evidence, first proof asset, validation channel, and stop
+            rule. It is not a keyword tool, dashboard, or generic chat session.
           </p>
         </div>
         <div className="value-proof-grid">
@@ -195,8 +235,8 @@ export default function Page() {
         <div className="section-head">
           <h2>Offer comparison</h2>
           <p>
-            Use the Fit Review to answer whether the larger Launch Blueprint should exist
-            for your current evidence.
+            Use Fit Review to decide whether the larger Route File should be bought now,
+            repaired first, or blocked.
           </p>
         </div>
         <div className="offer-choice-grid">
@@ -226,19 +266,22 @@ export default function Page() {
 
           <article className="offer-choice-card">
             <FileText aria-hidden="true" size={20} />
-            <h3>{primaryOffer.name}</h3>
+            <h3>{routeFileOfferName}</h3>
             <strong>USD {primaryOffer.price}</strong>
-            <p>{primaryOffer.delivery}</p>
+            <p>
+              A manual 24-72 hour Route File delivery covering research, coverage review,
+              repair prompts when needed, and final synthesis.
+            </p>
             <ul className="compact-list">
-              {launchDeliverables.slice(0, 4).map((item) => (
-                <li key={item}>{item}</li>
+              {routeFileDeliverables.slice(0, 4).map((item) => (
+                <li key={item.title}>{item.body}</li>
               ))}
             </ul>
             <a
               className="secondary-action"
               data-analytics-event="payment_cta_click"
-              data-analytics-label="pricing_card_paypal_launch_blueprint"
-              data-analytics-type="launch_blueprint"
+              data-analytics-label="pricing_card_paypal_route_file"
+              data-analytics-type="route_file"
               href={primaryOffer.href}
               rel="noreferrer"
               target="_blank"
@@ -252,14 +295,15 @@ export default function Page() {
 
       <section className="pricing-grid-section compact-home-section">
         <div className="section-head">
-          <h2>What USD 99 must produce</h2>
+          <h2>What USD {primaryOffer.price} must produce</h2>
           <p>
-            If a paid report does not contain these parts, the price is not justified.
-            This list is the delivery standard, not a marketing promise.
+            If the paid file does not contain these parts, it is not a complete
+            Research-to-Route File delivery. This is the delivery standard, not a traffic
+            or revenue promise.
           </p>
         </div>
         <div className="artifact-standard-grid">
-          {samplePaidArtifactChecklist.map((item, index) => (
+          {routeFileDeliverables.map((item, index) => (
             <article key={item.title}>
               <span>{index + 1}</span>
               <h3>{item.title}</h3>
@@ -290,7 +334,7 @@ export default function Page() {
           <h2>Objections that should block or redirect payment</h2>
           <p>
             If these answers do not make the value clear, do not pay. The current product
-            is manual judgment, not software, traffic, or implementation.
+            is manual route judgment, not software, traffic, or implementation.
           </p>
         </div>
         <div className="objection-grid">
@@ -317,12 +361,11 @@ export default function Page() {
           </ul>
         </div>
         <div>
-          <h2>Service limits</h2>
+          <h2>No guarantees and service limits</h2>
           <ul className="compact-list">
-            <li>{launchProduct.nonPromise}</li>
-            <li>No login account, dashboard, or subscription workspace.</li>
-            <li>No automated DMs, comments, scraping, or platform growth scripts.</li>
-            <li>Manual delivery starts after payment confirmation and usable intake.</li>
+            {pricingBoundaries.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
           <div className="hero-actions">
             <Link prefetch={false} className="secondary-action" href="/refund-policy/">
