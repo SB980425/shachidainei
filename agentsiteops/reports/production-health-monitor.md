@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-13T01:16:11.416Z
+- Generated: 2026-06-13T01:27:24.884Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 231
+- Checks: 236
 - Blockers: 0
 - Warnings: 0
 
@@ -60,6 +60,11 @@
 | /templates/route-research-prompt-pack/ | pass | canonical points to production URL | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Free manual Deep Research plan | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | The free plan does not call the OpenAI API | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Generate, check, repair, and fuse the route research | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Copy Deep Research prompt | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Local acceptance check | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Second-pass gap prompt | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Route-file synthesis skeleton | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Research delivery loop | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Acceptance gate before delivery | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Second manual pass when needed | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
