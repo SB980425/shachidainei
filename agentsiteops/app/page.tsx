@@ -337,11 +337,12 @@ export default function HomePage() {
 
       <section className="route-foundation-section frontstage-workbench-section">
         <div className="route-section-heading">
-          <span>Internal route engine</span>
-          <h2>The interactive workbench remains as the system layer.</h2>
+          <span>Product workbench</span>
+          <h2>The route workflow becomes the thing people can click.</h2>
           <p>
-            The workbench is useful for operators and advanced readers. The customer
-            offer is still the Route File, not the dashboard itself.
+            The first screen now leads with the Route File outcome, then exposes the
+            route map, coverage decision, evidence settings, and bilingual social copy
+            as one balanced product surface.
           </p>
         </div>
         <RouteCommandCenter />

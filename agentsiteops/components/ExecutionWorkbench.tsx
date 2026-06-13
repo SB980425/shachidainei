@@ -11,7 +11,6 @@ import {
   FileText,
   GitMerge,
   Languages,
-  MousePointerClick,
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
@@ -25,6 +24,7 @@ type StageStatus = "pass" | "repair" | "blocked" | "not_delivery";
 const stages: Array<{
   id: StageId;
   label: string;
+  zh: string;
   title: string;
   state: string;
   icon: typeof ClipboardList;
@@ -38,6 +38,7 @@ const stages: Array<{
   {
     id: "intake",
     label: "Intake",
+    zh: "项目接入",
     title: "Collect usable project facts",
     state: "Ready",
     icon: ClipboardList,
@@ -52,6 +53,7 @@ const stages: Array<{
   {
     id: "scope",
     label: "Scope",
+    zh: "边界锁定",
     title: "Lock the research boundary",
     state: "Operator",
     icon: ShieldCheck,
@@ -66,6 +68,7 @@ const stages: Array<{
   {
     id: "research",
     label: "Research",
+    zh: "手动研究",
     title: "Run manual Deep Research",
     state: "Manual",
     icon: SearchCheck,
@@ -80,6 +83,7 @@ const stages: Array<{
   {
     id: "gate",
     label: "Gate",
+    zh: "覆盖验收",
     title: "Check coverage and repair gaps",
     state: "Decision",
     icon: FileCheck2,
@@ -94,6 +98,7 @@ const stages: Array<{
   {
     id: "route",
     label: "Route File",
+    zh: "路线文件",
     title: "Fuse accepted research into one file",
     state: "Output",
     icon: FileText,
@@ -108,6 +113,7 @@ const stages: Array<{
   {
     id: "social",
     label: "Social",
+    zh: "社交转换",
     title: "Convert the Route File into public copy",
     state: "Share",
     icon: Languages,
@@ -138,45 +144,49 @@ const routeFilePreview = [
   "Stop rule"
 ];
 
-const stageStatusOptions: Array<{ id: StageStatus; label: string; detail: string }> = [
+const stageStatusOptions: Array<{ id: StageStatus; label: string; zh: string; detail: string }> = [
   {
     id: "pass",
     label: "Pass",
+    zh: "通过",
     detail: "Move to the next stage."
   },
   {
     id: "repair",
     label: "Repair",
+    zh: "补研",
     detail: "Generate a focused repair prompt or missing-input request."
   },
   {
     id: "blocked",
     label: "Blocked",
+    zh: "阻断",
     detail: "Pause because evidence, rights, or delivery capacity is missing."
   },
   {
     id: "not_delivery",
     label: "Not delivery",
+    zh: "非交付",
     detail: "Reject the output as outside the Route File contract."
   }
 ];
 
 const moduleMerges = [
   {
-    from: "Homepage long explanation",
-    to: "Keep the short input -> research -> check -> route sequence and send detailed operation to this workbench."
+    from: "Homepage explanation",
+    to: "首页只保留强入口、路线文件预览和进入工作台的动作。"
   },
   {
-    from: "Prompt pack and client workflow overlap",
-    to: "Prompt pack owns research text; client workflow owns visible progress; this page owns the click path."
+    from: "Prompt pack overlap",
+    to: "提示词页负责研究文本，工作台只显示当前阶段和下一步。"
   },
   {
-    from: "Delivery caveats repeated on many pages",
-    to: "Delivery gate owns pass, repair, blocked, and not-delivery definitions."
+    from: "Delivery caveats",
+    to: "交付门负责 Pass、Repair、Blocked、Not delivery 的定义。"
   },
   {
-    from: "Paid-product caveats in front-stage CTAs",
-    to: "Pricing stays available, but primary navigation points to execution, sample, and delivery logic first."
+    from: "Payment-first CTAs",
+    to: "支付入口后置，主路径先展示执行、样本和验收逻辑。"
   }
 ];
 
@@ -190,7 +200,7 @@ const socialVariants: Record<
     en:
       "AgentSiteOps turns messy project material into one Route File: selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule. It does not promise traffic or revenue.",
     zh:
-      "AgentSiteOps 把混乱项目资料整理成一个 Route File：选定路线、被拒方案、证据台账、第一个证明资产、验证渠道和停止规则。不承诺流量或收入。"
+      "AgentSiteOps 把混乱项目材料整理成一份 Route File：选定路线、被否决方案、证据台账、第一证明资产、验证渠道和停止规则。不承诺流量或收入。"
   },
   technical: {
     label: "Technical audience",
@@ -206,7 +216,7 @@ const socialVariants: Record<
     en:
       "Use AgentSiteOps before building more pages, tools, checkout, or content. The first output is a route decision file, not a growth promise.",
     zh:
-      "在继续做页面、工具、支付或内容前，先用 AgentSiteOps 产出一个路线决策文件。它交付的是路线判断，不是增长承诺。"
+      "在继续做页面、工具、支付或内容前，先用 AgentSiteOps 产出一份路线决策文件。它交付的是路线判断，不是增长承诺。"
   },
   "public-update": {
     label: "Public changelog",
@@ -214,7 +224,7 @@ const socialVariants: Record<
     en:
       "New execution workbench: intake, scope, manual research, coverage gate, Route File, and bilingual social copy now sit in one visible path.",
     zh:
-      "新增执行工作台：intake、边界锁定、手动研究、覆盖度验收、Route File 和中英文社交文案已经整合进一条可见路径。"
+      "新增执行工作台：项目接入、边界锁定、手动研究、覆盖验收、Route File 和中英文社交文案已经整合进一条可见路径。"
   }
 };
 
@@ -292,11 +302,11 @@ async function writeClipboard(text: string) {
 }
 
 export function ExecutionWorkbench() {
-  const [activeStageId, setActiveStageId] = useState<StageId>("intake");
+  const [activeStageId, setActiveStageId] = useState<StageId>("research");
   const [activeChannel, setActiveChannel] = useState<SocialChannel>("founder");
-  const [activeLanguage, setActiveLanguage] = useState<SocialLanguage>("en");
+  const [activeLanguage, setActiveLanguage] = useState<SocialLanguage>("zh");
   const [stageDecisions, setStageDecisions] = useState(defaultStageDecisions);
-  const [copyState, setCopyState] = useState("Copy");
+  const [stageCopyStatus, setStageCopyStatus] = useState<CopyStatus>("idle");
   const [primaryCopyStatus, setPrimaryCopyStatus] = useState<CopyStatus>("idle");
   const [pairCopyStatus, setPairCopyStatus] = useState<CopyStatus>("idle");
   const [skeletonCopyStatus, setSkeletonCopyStatus] = useState<CopyStatus>("idle");
@@ -309,10 +319,12 @@ export function ExecutionWorkbench() {
   const activeSocialText = activeLanguage === "en" ? activeSocial.en : activeSocial.zh;
   const pairedSocialText = activeLanguage === "en" ? activeSocial.zh : activeSocial.en;
   const activeStageStatus = stageDecisions[activeStageId];
-  const activeStatusDetail =
-    stageStatusOptions.find((option) => option.id === activeStageStatus)?.detail ??
-    stageStatusOptions[0].detail;
+  const activeStatus =
+    stageStatusOptions.find((option) => option.id === activeStageStatus) ??
+    stageStatusOptions[0];
   const routeSkeleton = buildRouteSkeleton(stageDecisions);
+  const stageCopyLabel =
+    stageCopyStatus === "copied" ? "Stage copied" : stageCopyStatus === "failed" ? "Copy failed" : "Copy stage";
   const primaryCopyLabel =
     primaryCopyStatus === "copied"
       ? "Copied"
@@ -346,22 +358,16 @@ export function ExecutionWorkbench() {
     track("execution_stage_status_changed", { stage: activeStageId, status });
   }
 
-  async function copyText(
-    text: string,
-    label: string,
-    eventName: "social_copy_variant_copied" | "template_copy_click",
-    payload: Record<string, string | number | boolean>
-  ) {
-    const copied = await writeClipboard(text);
-
+  async function copyStage() {
+    const copied = await writeClipboard(buildStagePacket(activeStage));
+    setStageCopyStatus(copied ? "copied" : "failed");
     if (copied) {
-      setCopyState(label);
-      track(eventName, payload);
-    } else {
-      setCopyState("Copy failed");
+      track("template_copy_click", {
+        label: activeStage.id,
+        length: buildStagePacket(activeStage).length
+      });
     }
-
-    window.setTimeout(() => setCopyState("Copy"), 1600);
+    window.setTimeout(() => setStageCopyStatus("idle"), 1600);
   }
 
   async function copySocialText(
@@ -372,15 +378,13 @@ export function ExecutionWorkbench() {
     const copied = await writeClipboard(text);
     const setStatus = variant === "primary" ? setPrimaryCopyStatus : setPairCopyStatus;
 
+    setStatus(copied ? "copied" : "failed");
     if (copied) {
-      setStatus("copied");
       track("social_copy_variant_copied", {
         channel: activeChannel,
         lang: language,
         variant
       });
-    } else {
-      setStatus("failed");
     }
 
     window.setTimeout(() => setStatus("idle"), 1600);
@@ -388,52 +392,75 @@ export function ExecutionWorkbench() {
 
   async function copyRouteSkeleton() {
     const copied = await writeClipboard(routeSkeleton);
+    setSkeletonCopyStatus(copied ? "copied" : "failed");
 
     if (copied) {
-      setSkeletonCopyStatus("copied");
       track("template_copy_click", {
         label: "route_file_skeleton",
         length: routeSkeleton.length
       });
-    } else {
-      setSkeletonCopyStatus("failed");
     }
 
     window.setTimeout(() => setSkeletonCopyStatus("idle"), 1600);
   }
 
   return (
-    <section className="execution-workbench" aria-label="Execution Workbench">
-      <div className="execution-stage-rail" aria-label="Execution stages">
-        {stages.map((stage) => {
-          const Icon = stage.icon;
-          const isActive = stage.id === activeStageId;
-
-          return (
-            <button
-              className={isActive ? "is-active" : ""}
-              key={stage.id}
-              type="button"
-              onClick={() => selectStage(stage.id)}
-            >
-              <Icon aria-hidden="true" size={17} />
-              <span>{stage.label}</span>
-              <small>{stage.state}</small>
-            </button>
-          );
-        })}
+    <section className="execution-room" aria-label="Execution Workbench">
+      <div className="execution-room-head">
+        <div>
+          <span>Execution Command</span>
+          <h2>从接入到 Route File 的一条可点击路径</h2>
+          <p>
+            页面结构保留 6 个阶段，但把重复解释压缩到当前阶段、决策状态、
+            Route File 预览和中英文文案转换。
+          </p>
+        </div>
+        <div className="execution-room-actions">
+          <Link prefetch={false} className="route-room-primary" href={activeStage.href}>
+            Open current step
+            <ArrowRight aria-hidden="true" size={16} />
+          </Link>
+          <button className="route-room-secondary" type="button" onClick={copyStage}>
+            <Copy aria-hidden="true" size={15} />
+            {stageCopyLabel}
+          </button>
+        </div>
       </div>
 
-      <div className="execution-layout">
-        <article className="execution-stage-panel">
-          <div className="execution-panel-kicker">
-            <MousePointerClick aria-hidden="true" size={17} />
-            <span>Active step</span>
+      <div className="execution-room-grid">
+        <nav className="execution-room-rail" aria-label="Execution stages">
+          {stages.map((stage, index) => {
+            const Icon = stage.icon;
+            const isActive = stage.id === activeStageId;
+
+            return (
+              <button
+                className={isActive ? "is-active" : ""}
+                key={stage.id}
+                type="button"
+                onClick={() => selectStage(stage.id)}
+              >
+                <span>{index + 1}</span>
+                <Icon aria-hidden="true" size={18} />
+                <strong>{stage.label}</strong>
+                <small>{stage.zh}</small>
+              </button>
+            );
+          })}
+        </nav>
+
+        <article className="execution-room-stage">
+          <div className="route-room-section-head">
+            <span>
+              <FileCheck2 aria-hidden="true" size={16} />
+              Current Stage
+            </span>
+            <strong>{activeStage.state}</strong>
           </div>
-          <h2>{activeStage.title}</h2>
+          <h3>{activeStage.title}</h3>
           <p>{activeStage.purpose}</p>
 
-          <dl className="execution-state-list">
+          <dl className="execution-room-state-list">
             <div>
               <dt>Pass condition</dt>
               <dd>{activeStage.pass}</dd>
@@ -451,84 +478,42 @@ export function ExecutionWorkbench() {
               <dd>{activeStage.notDelivery}</dd>
             </div>
           </dl>
-
-          <section className="execution-decision-strip" aria-label="Current decision">
-            <div>
-              <span>Current decision</span>
-              <strong>{stageStatusOptions.find((option) => option.id === activeStageStatus)?.label}</strong>
-              <p>{activeStatusDetail}</p>
-            </div>
-            <div className="execution-status-buttons">
-              {stageStatusOptions.map((option) => (
-                <button
-                  className={option.id === activeStageStatus ? "is-active" : ""}
-                  key={option.id}
-                  type="button"
-                  onClick={() => setStageStatus(option.id)}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-          </section>
-
-          <div className="execution-panel-actions">
-            <Link prefetch={false} className="primary-action" href={activeStage.href}>
-              Open step
-              <ArrowRight aria-hidden="true" size={16} />
-            </Link>
-            <button
-              className="secondary-action"
-              type="button"
-              onClick={() =>
-                copyText(buildStagePacket(activeStage), "Stage copied", "template_copy_click", {
-                  label: activeStage.id,
-                  length: buildStagePacket(activeStage).length
-                })
-              }
-            >
-              <Copy aria-hidden="true" size={16} />
-              {copyState}
-            </button>
-          </div>
         </article>
 
-        <aside className="execution-event-panel" aria-label="Event logic">
-          <div className="execution-panel-kicker">
-            <FileCheck2 aria-hidden="true" size={17} />
-            <span>Event logic</span>
+        <aside className="execution-room-decision" aria-label="Stage decision">
+          <div className="route-room-section-head">
+            <span>
+              <ShieldCheck aria-hidden="true" size={16} />
+              Stage Decision
+            </span>
+            <strong>{activeStatus.label}</strong>
           </div>
-          <ul>
-            <li>
-              <strong>execution_workbench_view</strong>
-              <span>Route-specific page view for the new workbench.</span>
-            </li>
-            <li>
-              <strong>execution_stage_selected</strong>
-              <span>Stage click, payload only stores the stage id.</span>
-            </li>
-            <li>
-              <strong>social_copy_variant_copied</strong>
-              <span>Social copy export, payload stores channel, language, and variant.</span>
-            </li>
-            <li>
-              <strong>cta_click</strong>
-              <span>Existing safe link event for marked actions.</span>
-            </li>
-          </ul>
+          <p>{activeStatus.detail}</p>
+          <div className="execution-room-status-buttons">
+            {stageStatusOptions.map((option) => (
+              <button
+                className={`is-${option.id} ${option.id === activeStageStatus ? "is-active" : ""}`}
+                key={option.id}
+                type="button"
+                onClick={() => setStageStatus(option.id)}
+              >
+                {option.label}
+                <span>{option.zh}</span>
+              </button>
+            ))}
+          </div>
         </aside>
       </div>
 
-      <section className="execution-clickpath" aria-label="Click path">
-        <div className="route-section-heading execution-heading">
-          <span>Click path</span>
-          <h2>Each click has one clear next state.</h2>
-          <p>
-            The site path now moves from project facts to research, coverage, Route File,
-            and observable client progress without making payment the first decision.
-          </p>
+      <section className="execution-room-path" aria-label="Click path">
+        <div className="route-room-section-head">
+          <span>
+            <GitMerge aria-hidden="true" size={16} />
+            Click path
+          </span>
+          <strong>每个入口只负责一个下一步。</strong>
         </div>
-        <div className="execution-path-grid">
+        <div className="execution-room-path-grid">
           {clickPath.map((item, index) => (
             <Link prefetch={false} href={item.href} key={item.href}>
               <span>{String(index + 1).padStart(2, "0")}</span>
@@ -540,23 +525,20 @@ export function ExecutionWorkbench() {
         </div>
       </section>
 
-      <section className="execution-output-grid" aria-label="Route File and module merge">
-        <article className="execution-route-preview">
-          <div className="execution-panel-kicker">
-            <FileText aria-hidden="true" size={17} />
+      <section className="execution-room-output-grid" aria-label="Route File and module merge">
+        <article className="route-file-document">
+          <div className="route-file-document-head">
             <span>Route File preview</span>
+            <strong>Final file structure</strong>
+            <em>{activeStatus.zh}</em>
           </div>
-          <h2>Final file structure stays compact.</h2>
-          <ul>
+          <div className="route-file-tabs">
             {routeFilePreview.map((item) => (
-              <li key={item}>
-                <CheckCircle2 aria-hidden="true" size={16} />
-                {item}
-              </li>
+              <span key={item}>{item}</span>
             ))}
-          </ul>
+          </div>
           <div className="execution-route-skeleton">
-            <strong>Route File skeleton</strong>
+            <strong>Execution decisions</strong>
             <div>
               {stages.map((stage) => (
                 <span key={stage.id}>
@@ -564,46 +546,42 @@ export function ExecutionWorkbench() {
                 </span>
               ))}
             </div>
-            <button
-              className="secondary-action"
-              type="button"
-              onClick={copyRouteSkeleton}
-            >
-              <Copy aria-hidden="true" size={16} />
+            <button className="route-room-secondary" type="button" onClick={copyRouteSkeleton}>
+              <Copy aria-hidden="true" size={15} />
               {skeletonCopyLabel}
             </button>
           </div>
         </article>
 
-        <article className="execution-merge-panel">
-          <div className="execution-panel-kicker">
-            <GitMerge aria-hidden="true" size={17} />
-            <span>Module merge</span>
+        <article className="execution-room-merge">
+          <div className="route-room-section-head">
+            <span>
+              <GitMerge aria-hidden="true" size={16} />
+              Module merge
+            </span>
+            <strong>重复内容合并到一个责任页面。</strong>
           </div>
-          <h2>Repeated modules get one owner.</h2>
-          <div className="execution-merge-list">
+          <div>
             {moduleMerges.map((item) => (
-              <div key={item.from}>
-                <strong>{item.from}</strong>
+              <section key={item.from}>
+                <h3>{item.from}</h3>
                 <p>{item.to}</p>
-              </div>
+              </section>
             ))}
           </div>
         </article>
       </section>
 
-      <section className="execution-social-panel" aria-label="Bilingual social copy">
-        <div className="route-section-heading execution-heading">
-          <span>Bilingual social copy</span>
-          <h2>Convert public updates between English and Chinese.</h2>
-          <p>
-            These variants keep the same claim boundary: route decision, research
-            process, visible artifact, and no unsupported growth promise.
-          </p>
+      <section className="route-social-dock execution-social-room" aria-label="Bilingual social copy">
+        <div>
+          <span>
+            <Languages aria-hidden="true" size={16} />
+            Bilingual social copy
+          </span>
+          <strong>{activeSocial.context}</strong>
         </div>
-
         <div className="execution-social-controls">
-          <div className="execution-segmented" aria-label="Social channel">
+          <div className="route-language-switch" aria-label="Social channel">
             {(Object.keys(socialVariants) as SocialChannel[]).map((channel) => (
               <button
                 className={activeChannel === channel ? "is-active" : ""}
@@ -618,8 +596,8 @@ export function ExecutionWorkbench() {
               </button>
             ))}
           </div>
-          <div className="execution-segmented is-language" aria-label="Language">
-            {(["en", "zh"] as SocialLanguage[]).map((language) => (
+          <div className="route-language-switch" aria-label="Language">
+            {(["zh", "en"] as SocialLanguage[]).map((language) => (
               <button
                 className={activeLanguage === language ? "is-active" : ""}
                 key={language}
@@ -634,36 +612,26 @@ export function ExecutionWorkbench() {
             ))}
           </div>
         </div>
-
-        <div className="execution-copy-grid">
-          <article>
-            <span>{activeSocial.context}</span>
-            <p>{activeSocialText}</p>
-            <button
-              className="primary-action"
-              type="button"
-              onClick={() => copySocialText(activeSocialText, "primary", activeLanguage)}
-            >
-              <Copy aria-hidden="true" size={16} />
-              {primaryCopyLabel}
-            </button>
-          </article>
-
-          <article>
-            <span>{activeLanguage === "en" ? "Chinese pair" : "English pair"}</span>
-            <p>{pairedSocialText}</p>
-            <button
-              className="secondary-action"
-              type="button"
-              onClick={() =>
-                copySocialText(pairedSocialText, "paired", activeLanguage === "en" ? "zh" : "en")
-              }
-            >
-              <Copy aria-hidden="true" size={16} />
-              {pairCopyLabel}
-            </button>
-          </article>
-        </div>
+        <p>{activeSocialText}</p>
+        <p>{pairedSocialText}</p>
+        <button
+          className="route-room-primary"
+          type="button"
+          onClick={() => copySocialText(activeSocialText, "primary", activeLanguage)}
+        >
+          <Copy aria-hidden="true" size={15} />
+          {primaryCopyLabel}
+        </button>
+        <button
+          className="route-room-secondary"
+          type="button"
+          onClick={() =>
+            copySocialText(pairedSocialText, "paired", activeLanguage === "en" ? "zh" : "en")
+          }
+        >
+          <Copy aria-hidden="true" size={15} />
+          {pairCopyLabel}
+        </button>
       </section>
     </section>
   );

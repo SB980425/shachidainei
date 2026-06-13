@@ -1,24 +1,26 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState, type CSSProperties } from "react";
+import { useMemo, useState } from "react";
 import {
-  Activity,
   ArrowRight,
   CheckCircle2,
+  ClipboardList,
+  Copy,
+  FileCheck2,
   FileText,
-  Gauge,
   GitBranch,
+  Languages,
+  Map,
   RotateCcw,
-  Sun
+  SearchCheck,
+  ShieldCheck
 } from "lucide-react";
 import {
   projectRouteFitMatrix,
   routeConfidenceBands,
   routeSourceMap
 } from "@/lib/routeEvidence";
-
-type ThemeMode = "night" | "day";
 
 const evidenceLevels = [
   {
@@ -108,7 +110,8 @@ const routeConstraints = [
 const executionStages = [
   {
     id: "foundation",
-    title: "Foundation",
+    title: "Intake",
+    zh: "项目接入",
     window: "Day 1",
     metric: "Scope locked",
     tasks: ["Name project type", "Select buyer or internal user", "Record hard risks"],
@@ -116,47 +119,68 @@ const executionStages = [
   },
   {
     id: "evidence",
-    title: "Evidence",
+    title: "Scope",
+    zh: "边界锁定",
     window: "Day 1-2",
     metric: "Sources mapped",
-    tasks: ["Attach search, buyer, proof, or usage evidence", "Mark missing facts"],
+    tasks: ["Attach accepted sources", "Mark missing facts", "Block unsupported claims"],
     output: "Evidence ledger and route confidence band."
   },
   {
     id: "selection",
-    title: "Route Select",
+    title: "Research",
+    zh: "手动研究",
     window: "Day 2",
     metric: "Weak paths pruned",
-    tasks: ["Score candidate routes", "Explain rejected paths", "Lock first asset"],
+    tasks: ["Run prompt pack", "Read source coverage", "Preserve rejected paths"],
     output: "Selected route plus why alternatives were not selected."
   },
   {
     id: "prototype",
-    title: "Prototype",
+    title: "Gate",
+    zh: "覆盖验收",
     window: "Day 3-5",
     metric: "Artifact visible",
-    tasks: ["Build checker, sample, page skeleton, or workflow screenshot"],
+    tasks: ["Check buyer logic", "Check proof asset", "Trigger repair prompts"],
     output: "Public proof asset that the route can be inspected."
   },
   {
     id: "launch",
-    title: "Launch",
+    title: "Route File",
+    zh: "路线文件",
     window: "Day 5-7",
-    metric: "Exposure started",
-    tasks: ["Submit sitemap or IndexNow", "Send narrow outreach", "Record replies"],
-    output: "First traffic and buyer-response evidence."
+    metric: "Output shipped",
+    tasks: ["Fuse accepted research", "Name first asset", "Set validation channel"],
+    output: "First route file and buyer-response boundary."
   },
   {
     id: "growth",
-    title: "Growth",
+    title: "Social",
+    zh: "社交转换",
     window: "After signal",
     metric: "Only if proven",
-    tasks: ["Expand pages", "Add paid path", "Package reusable workflow"],
+    tasks: ["Translate public copy", "Keep claim boundary", "Log replies"],
     output: "Growth only after the stop rule is cleared."
   }
 ];
 
 const defaultProjectType = "Micro tool or dashboard";
+
+const routeFileSections = [
+  "Selected route",
+  "Rejected alternatives",
+  "Evidence ledger",
+  "First proof asset",
+  "Validation channel",
+  "Stop rule"
+];
+
+const socialCopy = {
+  zh:
+    "AgentSiteOps 把混乱项目材料整理成一份可执行 Route File：选定路线、被否决方案、证据台账、第一证明资产、验证渠道和停止规则。不承诺流量、排名或收入。",
+  en:
+    "AgentSiteOps turns messy project material into one actionable Route File: selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule. No promises about traffic, rankings, or revenue."
+};
 
 function clampScore(score: number) {
   return Math.max(0, Math.min(100, Math.round(score)));
@@ -210,7 +234,7 @@ function buildRouteExport({
   activeStage: typeof executionStages[number];
 }) {
   return [
-    "AgentSiteOps Custom Route Map",
+    "AgentSiteOps Route File",
     "",
     `Project: ${projectName}`,
     `Project type: ${projectType}`,
@@ -246,7 +270,6 @@ function buildRouteExport({
 }
 
 export function RouteCommandCenter() {
-  const [theme, setTheme] = useState<ThemeMode>("night");
   const [projectName, setProjectName] = useState("AgentSiteOps internal roadmap engine");
   const [projectType, setProjectType] = useState(defaultProjectType);
   const [goal, setGoal] = useState(projectGoals[0]);
@@ -257,7 +280,9 @@ export function RouteCommandCenter() {
   const [constraints, setConstraints] = useState<string[]>(["Generic AI can produce similar output"]);
   const [activeRouteType, setActiveRouteType] = useState(defaultProjectType);
   const [activeStageId, setActiveStageId] = useState("selection");
-  const [copyState, setCopyState] = useState("Copy route map");
+  const [language, setLanguage] = useState<"zh" | "en">("zh");
+  const [copyState, setCopyState] = useState("Export Route File");
+  const [socialCopyState, setSocialCopyState] = useState("Copy public copy");
 
   const evidenceLevel = evidenceLevels.find((item) => item.label === evidence) ?? evidenceLevels[0];
   const proofLevel = proofLevels.find((item) => item.label === proof) ?? proofLevels[0];
@@ -368,7 +393,8 @@ export function RouteCommandCenter() {
     routeConfidenceBands.find((item) => item.band === band) ?? routeConfidenceBands[3];
   const activeStage =
     executionStages.find((stage) => stage.id === activeStageId) ?? executionStages[2];
-  const visibleCandidates = routeCandidates.slice(0, 4);
+  const visibleCandidates = routeCandidates.slice(0, 5);
+  const activeSocialCopy = socialCopy[language];
 
   function track(name: string, payload: Record<string, string | number | boolean> = {}) {
     window.codexAnalytics?.track(name, {
@@ -381,17 +407,25 @@ export function RouteCommandCenter() {
     });
   }
 
-  function toggleTheme() {
-    const nextTheme = theme === "night" ? "day" : "night";
-    setTheme(nextTheme);
-    track("route_theme_changed", { theme: nextTheme });
-  }
-
   function toggleConstraint(label: string) {
     setConstraints((current) =>
       current.includes(label) ? current.filter((item) => item !== label) : [...current, label]
     );
     track("route_constraint_toggled", { constraint: label });
+  }
+
+  async function copyText(text: string, copiedLabel: string, resetLabel: string) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return copiedLabel;
+    } catch {
+      return "Copy failed";
+    } finally {
+      window.setTimeout(() => {
+        setCopyState("Export Route File");
+        setSocialCopyState("Copy public copy");
+      }, 1600);
+    }
   }
 
   async function copyRouteMap() {
@@ -410,88 +444,268 @@ export function RouteCommandCenter() {
       activeStage
     });
 
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopyState("Copied");
-      track("route_map_exported", { export_method: "clipboard" });
-    } catch {
-      setCopyState("Copy failed");
-    }
+    setCopyState(await copyText(text, "Route File copied", "Export Route File"));
+    track("route_map_exported", { export_method: "clipboard" });
+  }
 
-    window.setTimeout(() => setCopyState("Copy route map"), 1600);
+  async function copyPublicCopy() {
+    setSocialCopyState(await copyText(activeSocialCopy, "Copy ready", "Copy public copy"));
+    track("social_copy_variant_copied", { language, variant: "route_command_center" });
   }
 
   return (
-    <section className="route-command-shell" data-route-theme={theme}>
-      <div className="route-command-bg" aria-hidden="true" />
+    <section className="route-room-shell" aria-label="AgentSiteOps route workspace">
+      <div className="route-room-hero">
+        <img
+          className="route-room-backdrop"
+          src="/assets/route-room-backdrop.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <div className="route-room-hero-copy">
+          <span className="route-room-kicker">Route File Studio</span>
+          <h2>
+            <span>路线不是建议，</span>
+            <span>是可验收的交付物</span>
+          </h2>
+          <p>
+            从混乱输入到一个可执行的路线文件：人工研究、证据验收、被否决方案、
+            第一证明资产和停止规则都进入同一条可点击路径。
+          </p>
+          <div className="route-room-actions">
+            <Link prefetch={false} className="route-room-primary" href="/execution/">
+              继续执行工作区
+              <ArrowRight aria-hidden="true" size={16} />
+            </Link>
+            <Link prefetch={false} className="route-room-secondary" href="/sample/">
+              查看 Route File 样本
+            </Link>
+          </div>
+          <div className="route-room-proof-strip" aria-label="Route File boundaries">
+            <span>人工研究</span>
+            <span>证据可追溯</span>
+            <span>停止规则</span>
+          </div>
+        </div>
 
-      <div className="route-command-topbar route-command-workbar">
-        <div className="route-workbar-label">
-          <span>Route workspace</span>
-          <strong>Score, prune, export</strong>
+        <div className="route-room-preview" aria-label="Workspace preview">
+          <article>
+            <SearchCheck aria-hidden="true" size={20} />
+            <strong>研究资料库</strong>
+            <span>12 sources</span>
+          </article>
+          <article className="is-active">
+            <ShieldCheck aria-hidden="true" size={20} />
+            <strong>覆盖验收</strong>
+            <span>{band} confidence</span>
+          </article>
+          <article>
+            <FileText aria-hidden="true" size={20} />
+            <strong>Route File</strong>
+            <span>v1.0 draft</span>
+          </article>
         </div>
-        <div className="route-workbar-steps" aria-label="Route workspace steps">
-          <span>Project facts</span>
-          <span>Evidence state</span>
-          <span>Route choice</span>
-          <span>First asset</span>
-          <span>Stop rule</span>
-        </div>
-        <button className="route-theme-toggle" type="button" onClick={toggleTheme}>
-          <Sun aria-hidden="true" size={16} />
-          {theme === "night" ? "Night" : "Day"}
+      </div>
+
+      <div className="route-room-controls" aria-label="Route controls">
+        <label>
+          <span>项目名称</span>
+          <input value={projectName} onChange={(event) => setProjectName(event.target.value)} />
+        </label>
+        <label>
+          <span>项目类型</span>
+          <select
+            value={projectType}
+            onChange={(event) => {
+              setProjectType(event.target.value);
+              setActiveRouteType(event.target.value);
+              track("route_project_type_changed", { value: event.target.value });
+            }}
+          >
+            {projectRouteFitMatrix.map((route) => (
+              <option key={route.projectType}>{route.projectType}</option>
+            ))}
+          </select>
+        </label>
+        <label>
+          <span>主要目标</span>
+          <select value={goal} onChange={(event) => setGoal(event.target.value)}>
+            {projectGoals.map((item) => (
+              <option key={item}>{item}</option>
+            ))}
+          </select>
+        </label>
+        <button
+          className="route-room-reset"
+          type="button"
+          onClick={() => {
+            setActiveRouteType(topRoute.projectType);
+            track("route_analysis_rerun", { top_route: topRoute.projectType });
+          }}
+        >
+          <RotateCcw aria-hidden="true" size={15} />
+          重新定位路线
         </button>
       </div>
 
-      <div className="route-command-layout">
-        <aside className="route-input-panel" aria-label="Project route inputs">
-          <div className="panel-caption">
-            <FileText aria-hidden="true" size={16} />
-            Project input
+      <div className="route-room-workspace">
+        <div className="route-atlas-panel">
+          <div className="route-room-section-head">
+            <span>
+              <Map aria-hidden="true" size={16} />
+              Route Atlas
+            </span>
+            <strong>选定一条路线，折叠其余方向。</strong>
           </div>
 
-          <label className="route-field">
-            <span>Project name</span>
-            <input value={projectName} onChange={(event) => setProjectName(event.target.value)} />
-          </label>
+          <div className="route-atlas-canvas" aria-label="Candidate route map">
+            {visibleCandidates.map((route, index) => {
+              const isSelected = route.projectType === selectedRoute.projectType;
+              const isTop = route.projectType === topRoute.projectType;
 
-          <label className="route-field">
-            <span>Project type</span>
-            <select
-              value={projectType}
-              onChange={(event) => {
-                setProjectType(event.target.value);
-                setActiveRouteType(event.target.value);
-                track("route_project_type_changed", { value: event.target.value });
-              }}
-            >
-              {projectRouteFitMatrix.map((route) => (
-                <option key={route.projectType}>{route.projectType}</option>
+              return (
+                <button
+                  className={`route-atlas-card route-atlas-card-${index + 1} ${
+                    isSelected ? "is-selected" : ""
+                  } ${isTop ? "is-top-route" : ""}`}
+                  key={route.projectType}
+                  type="button"
+                  onClick={() => {
+                    setActiveRouteType(route.projectType);
+                    track("route_candidate_selected", { candidate: route.projectType });
+                  }}
+                >
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{route.projectType}</strong>
+                  <small>{route.decision}</small>
+                  <em>{route.score}/100</em>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="route-stage-dock" aria-label="Execution stages">
+            {executionStages.map((stage, index) => (
+              <button
+                className={stage.id === activeStageId ? "is-active" : ""}
+                key={stage.id}
+                type="button"
+                onClick={() => {
+                  setActiveStageId(stage.id);
+                  track("route_stage_selected", { stage: stage.id });
+                }}
+              >
+                <span>{index + 1}</span>
+                <strong>{stage.title}</strong>
+                <small>{stage.zh}</small>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <aside className="route-decision-panel" aria-label="Route decision console">
+          <div className="route-room-section-head">
+            <span>
+              <FileCheck2 aria-hidden="true" size={16} />
+              Decision Console
+            </span>
+            <strong>{activeStage.zh}</strong>
+          </div>
+
+          <section className="route-active-stage">
+            <span>{activeStage.metric}</span>
+            <h3>{activeStage.title}</h3>
+            <p>{activeStage.output}</p>
+            <ul>
+              {activeStage.tasks.map((task) => (
+                <li key={task}>
+                  <CheckCircle2 aria-hidden="true" size={14} />
+                  {task}
+                </li>
               ))}
-            </select>
-          </label>
+            </ul>
+          </section>
 
-          <label className="route-field">
-            <span>Primary goal</span>
-            <select value={goal} onChange={(event) => setGoal(event.target.value)}>
-              {projectGoals.map((item) => (
-                <option key={item}>{item}</option>
-              ))}
-            </select>
-          </label>
+          <section className="route-decision-states" aria-label="Stage decision buttons">
+            <button type="button" className="is-pass">Pass<span>通过</span></button>
+            <button type="button" className="is-repair">Repair<span>补研</span></button>
+            <button type="button" className="is-blocked">Blocked<span>阻断</span></button>
+            <button type="button" className="is-muted">Not delivery<span>非交付</span></button>
+          </section>
 
-          <label className="route-field">
-            <span>Demand evidence</span>
-            <select value={evidence} onChange={(event) => setEvidence(event.target.value)}>
-              {evidenceLevels.map((item) => (
-                <option key={item.label}>{item.label}</option>
-              ))}
-            </select>
-            <small>{evidenceLevel.detail}</small>
-          </label>
+          <section className="route-missing-panel">
+            <h3>缺失证据</h3>
+            <label>
+              <input
+                checked={constraints.includes(routeConstraints[0].label)}
+                type="checkbox"
+                onChange={() => toggleConstraint(routeConstraints[0].label)}
+              />
+              Generic AI substitute risk
+            </label>
+            <label>
+              <input
+                checked={constraints.includes(routeConstraints[2].label)}
+                type="checkbox"
+                onChange={() => toggleConstraint(routeConstraints[2].label)}
+              />
+              Data rights boundary
+            </label>
+            <p>{bandDetail.requiredEvidence}</p>
+          </section>
+        </aside>
+      </div>
 
-          <div className="route-split-fields">
-            <label className="route-field">
+      <div className="route-file-studio-grid">
+        <article className="route-file-document" aria-label="Route File preview">
+          <div className="route-file-document-head">
+            <span>Route File v1.0</span>
+            <strong>{selectedRoute.projectType}</strong>
+            <em>{band} / {activeScore}</em>
+          </div>
+          <div className="route-file-tabs">
+            {routeFileSections.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+          <div className="route-file-document-body">
+            <section>
+              <h3>Why this route</h3>
+              <ul>
+                {selectedRoute.why.map((reason) => (
+                  <li key={reason}>{reason}</li>
+                ))}
+              </ul>
+            </section>
+            <section>
+              <h3>Stop rule</h3>
+              <p>{selectedRoute.weakRouteWhen}</p>
+            </section>
+          </div>
+          <button className="route-room-primary" type="button" onClick={copyRouteMap}>
+            <Copy aria-hidden="true" size={15} />
+            {copyState}
+          </button>
+        </article>
+
+        <article className="route-evidence-console" aria-label="Evidence controls">
+          <div className="route-room-section-head">
+            <span>
+              <ClipboardList aria-hidden="true" size={16} />
+              Evidence settings
+            </span>
+            <strong>只保留影响路线的输入。</strong>
+          </div>
+          <div className="route-compact-fields">
+            <label>
+              <span>Demand evidence</span>
+              <select value={evidence} onChange={(event) => setEvidence(event.target.value)}>
+                {evidenceLevels.map((item) => (
+                  <option key={item.label}>{item.label}</option>
+                ))}
+              </select>
+            </label>
+            <label>
               <span>Proof asset</span>
               <select value={proof} onChange={(event) => setProof(event.target.value)}>
                 {proofLevels.map((item) => (
@@ -499,8 +713,15 @@ export function RouteCommandCenter() {
                 ))}
               </select>
             </label>
-
-            <label className="route-field">
+            <label>
+              <span>Delivery boundary</span>
+              <select value={delivery} onChange={(event) => setDelivery(event.target.value)}>
+                {deliveryLevels.map((item) => (
+                  <option key={item.label}>{item.label}</option>
+                ))}
+              </select>
+            </label>
+            <label>
               <span>Data rights</span>
               <select value={dataRights} onChange={(event) => setDataRights(event.target.value)}>
                 {dataRightsLevels.map((item) => (
@@ -509,213 +730,38 @@ export function RouteCommandCenter() {
               </select>
             </label>
           </div>
-
-          <label className="route-field">
-            <span>Delivery boundary</span>
-            <select value={delivery} onChange={(event) => setDelivery(event.target.value)}>
-              {deliveryLevels.map((item) => (
-                <option key={item.label}>{item.label}</option>
-              ))}
-            </select>
-          </label>
-
-          <div className="route-constraint-list" aria-label="Route constraints">
-            <span>Constraints</span>
-            {routeConstraints.map((item) => (
-              <label key={item.id}>
-                <input
-                  checked={constraints.includes(item.label)}
-                  type="checkbox"
-                  onChange={() => toggleConstraint(item.label)}
-                />
-                {item.label}
-              </label>
-            ))}
-          </div>
-
-          <button
-            className="route-rerun-button"
-            type="button"
-            onClick={() => {
-              setActiveRouteType(topRoute.projectType);
-              track("route_analysis_rerun", { top_route: topRoute.projectType });
-            }}
-          >
-            <RotateCcw aria-hidden="true" size={16} />
-            Re-run analysis
-          </button>
-        </aside>
-
-        <div className="route-main-panel">
-          <div className="route-main-heading">
-            <div>
-              <h1>AI Route Selection Engine</h1>
-              <p>
-                Turn a project idea into one selected route, rejected alternatives, a
-                first asset, and a 7-day execution path.
-              </p>
-            </div>
-            <div className="analysis-pill">
-              <Activity aria-hidden="true" size={15} />
-              Analysis complete
-            </div>
-          </div>
-
-          <div className="route-graph" aria-label="Candidate route graph">
-            <div className="route-origin-node">
-              <span>Your project</span>
-              <strong>{projectType}</strong>
-              <small>{goal}</small>
-            </div>
-
-            <div className="route-candidate-stack">
-              {visibleCandidates.map((route, index) => {
-                const isSelected = route.projectType === selectedRoute.projectType;
-                const isTop = route.projectType === topRoute.projectType;
-
-                return (
-                  <button
-                    className={`route-candidate route-candidate-${index + 1} ${
-                      isSelected ? "is-selected" : ""
-                    } ${isTop ? "is-top-route" : ""}`}
-                    key={route.projectType}
-                    type="button"
-                    onClick={() => {
-                      setActiveRouteType(route.projectType);
-                      track("route_candidate_selected", { candidate: route.projectType });
-                    }}
-                  >
-                    <span className="route-node-icon">
-                      {isTop ? (
-                        <CheckCircle2 aria-hidden="true" size={18} />
-                      ) : (
-                        <GitBranch aria-hidden="true" size={18} />
-                      )}
-                    </span>
-                    <span>
-                      <strong>{route.projectType}</strong>
-                      <small>{route.strongestRouteWhen}</small>
-                    </span>
-                    <em>{route.score}/100</em>
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="route-output-node">
-              <span>Recommended route</span>
-              <strong>{topRoute.projectType}</strong>
-              <small>{topRoute.decision}</small>
-              <Link prefetch={false} href="/methodology/route-selection/">
-                Inspect method <ArrowRight aria-hidden="true" size={15} />
-              </Link>
-            </div>
-          </div>
-
-          <div className="route-timeline" aria-label="Execution timeline">
-            <div className="timeline-head">
-              <h2>Execution Roadmap</h2>
-              <span>Route: {selectedRoute.projectType}</span>
-            </div>
-
-            <div className="timeline-rail">
-              {executionStages.map((stage, index) => (
-                <button
-                  className={stage.id === activeStageId ? "is-active" : ""}
-                  key={stage.id}
-                  type="button"
-                  onClick={() => {
-                    setActiveStageId(stage.id);
-                    track("route_stage_selected", { stage: stage.id });
-                  }}
-                >
-                  <span>{index + 1}</span>
-                  <strong>{stage.title}</strong>
-                  <small>{stage.window}</small>
-                </button>
-              ))}
-            </div>
-
-            <article className="stage-detail-card">
-              <div>
-                <span>{activeStage.metric}</span>
-                <h3>{activeStage.title}</h3>
-                <p>{activeStage.output}</p>
-              </div>
-              <ul>
-                {activeStage.tasks.map((task) => (
-                  <li key={task}>
-                    <CheckCircle2 aria-hidden="true" size={15} />
-                    {task}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          </div>
-        </div>
-
-        <aside className="route-inspector-panel" aria-label="Route confidence inspector">
-          <div className="confidence-ring" style={{ "--score": activeScore } as CSSProperties}>
-            <strong>{activeScore}</strong>
-            <span>/100</span>
-          </div>
-
-          <div className={`confidence-badge confidence-${band.toLowerCase()}`}>
-            {band} confidence
-          </div>
-          <p>{bandDetail.allowedOutput}</p>
-
-          <section>
-            <h2>Evidence strength</h2>
-            <div className="evidence-bar">
-              <span style={{ width: `${Math.min(100, evidenceLevel.score * 25 + proofLevel.score * 12)}%` }} />
-            </div>
-            <small>{bandDetail.requiredEvidence}</small>
-          </section>
-
-          <section>
-            <h2>Why selected</h2>
-            <ul className="route-reason-list">
-              {selectedRoute.why.map((reason) => (
-                <li key={reason}>{reason}</li>
-              ))}
-            </ul>
-          </section>
-
-          <section>
-            <h2>Failure gate</h2>
-            <p>{selectedRoute.weakRouteWhen}</p>
-          </section>
-
-          <section>
-            <h2>Next 3 actions</h2>
-            <ol className="next-action-list">
-              <li>Turn the selected route into one public sample.</li>
-              <li>Collect one search, buyer, usage, or payment signal.</li>
-              <li>Re-score before adding pages, payment, or automation.</li>
-            </ol>
-          </section>
-
-          <div className="route-inspector-actions">
-            <button className="primary-action" type="button" onClick={copyRouteMap}>
-              {copyState}
-            </button>
-            <Link prefetch={false} className="secondary-action" href="/reports/route-basis/">
-              Route basis
-            </Link>
-          </div>
-        </aside>
+          <small>{evidenceLevel.detail}</small>
+        </article>
       </div>
 
-      <div className="route-basis-strip" aria-label="Route basis">
+      <div className="route-social-dock" aria-label="Bilingual social copy">
         <div>
-          <h2>How this creates our own roadmap</h2>
-          <p>
-            The system does not start from a score. It starts from project facts, then
-            selects a route only when evidence, proof, delivery, data rights, and risk
-            boundaries support it.
-          </p>
+          <span>
+            <Languages aria-hidden="true" size={16} />
+            Social copy
+          </span>
+          <strong>把 Route File 转成公开说明，但不改变承诺边界。</strong>
         </div>
+        <div className="route-language-switch" aria-label="Language">
+          {(["zh", "en"] as const).map((item) => (
+            <button
+              className={language === item ? "is-active" : ""}
+              key={item}
+              type="button"
+              onClick={() => setLanguage(item)}
+            >
+              {item === "zh" ? "中文" : "English"}
+            </button>
+          ))}
+        </div>
+        <p>{activeSocialCopy}</p>
+        <button className="route-room-secondary" type="button" onClick={copyPublicCopy}>
+          <Copy aria-hidden="true" size={15} />
+          {socialCopyState}
+        </button>
+      </div>
+
+      <div className="route-source-ribbon" aria-label="Route basis">
         {routeSourceMap
           .filter((item) =>
             [
@@ -727,32 +773,11 @@ export function RouteCommandCenter() {
             ].includes(item.dimension)
           )
           .map((item) => (
-            <article key={item.dimension}>
-              <span>{item.dimension}</span>
-              <strong>{item.acceptedEvidence}</strong>
-              <small>{item.stopRule}</small>
-            </article>
+            <span key={item.dimension}>
+              <strong>{item.dimension}</strong>
+              {item.stopRule}
+            </span>
           ))}
-      </div>
-
-      <div className="route-command-cta">
-        <div>
-          <h2>Use this before building the next project.</h2>
-          <p>
-            For each new site or product, enter the project type, attach evidence, prune
-            weak paths, and export a route map before code, content, or UI work starts.
-          </p>
-        </div>
-        <div>
-          <button className="primary-action" type="button" onClick={copyRouteMap}>
-            <Gauge aria-hidden="true" size={17} />
-            Export route map
-          </button>
-          <Link prefetch={false} className="secondary-action" href="/templates/route-research-prompt-pack/">
-            <FileText aria-hidden="true" size={17} />
-            Research workflow
-          </Link>
-        </div>
       </div>
     </section>
   );
