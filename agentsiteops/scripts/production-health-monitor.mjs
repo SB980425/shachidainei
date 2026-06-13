@@ -437,6 +437,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-47 Self route file upgrade",
     "M4-22 48-hour exposure sprint",
     "M4-21 Route basis and first traffic foundation",
     "M4-20 Evidence-led value layer",

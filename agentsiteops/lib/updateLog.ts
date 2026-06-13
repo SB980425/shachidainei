@@ -11,6 +11,40 @@ export type UpdateLogEntry = {
 
 export const updateLog: UpdateLogEntry[] = [
   {
+    date: "2026-06-13",
+    step: "M4-47 Self route file upgrade",
+    status: "completed",
+    keyPoints: [
+      "Rebuilt `/reports/agentsiteops-route-run/` from a generic route page into an inspectable internal route file.",
+      "Added the route decision matrix so buyer problem, proof asset, delivery capacity, monetization fit, and generic-AI substitution risk visibly affect the selected route.",
+      "Added rejected alternatives, evidence ledger, first proof asset, 7-day operating rule, stop or pivot rule, and delivery acceptance checklist.",
+      "Kept the selected route bounded: manual route-planning system for internal and client project decisions, not SaaS, subscription, broad SEO agency, or course positioning.",
+      "Verified production health and notified IndexNow after deployment."
+    ],
+    aiAngle:
+      "AI and search readers now have a concrete self-use route file to inspect before trusting AgentSiteOps as a route planner for other projects.",
+    files: [
+      "app/reports/agentsiteops-route-run/page.tsx",
+      "scripts/production-health-monitor.mjs",
+      "reports/technical-seo-ci.md",
+      "reports/production-health-monitor.md",
+      "reports/indexnow-submit.md",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "code-quality gate pass",
+      "route consistency gate pass: 275 checks, 0 blockers",
+      "build pass with 59 static pages",
+      "technical SEO CI pass: 53 routes, 0 blockers, 0 warnings",
+      "Chrome render check: desktop 1440/1440 and mobile 390/390, route decision matrix and delivery acceptance checklist visible",
+      "production health pass: 247 checks, 0 blockers",
+      "IndexNow submit pass: 53 URLs, HTTP 200"
+    ],
+    next:
+      "Use the upgraded self route file as the acceptance standard for the first real internal project route run; if it cannot improve a future project decision, keep the product internal and do not strengthen paid claims."
+  },
+  {
     date: "2026-06-12",
     step: "M4-46 Route Confidence Checker release",
     status: "completed",
