@@ -28,24 +28,37 @@ const routeFileContract = [
   "Stop rule that blocks build, checkout, or content expansion when evidence is missing."
 ];
 
-const frontstageCards = [
+const homeInputRows = [
   {
-    label: "What you submit",
-    title: "Messy project material",
-    body:
-      "Send the project idea, target user, available notes, demos, sources, constraints, blocked claims, and the decision that keeps the project from moving."
+    label: "Project material",
+    body: "Idea, target user, current assets, notes, demos, sources, and constraints."
   },
   {
-    label: "What we do",
-    title: "Research, check, repair",
-    body:
-      "Lock the scope, generate a manual Deep Research prompt pack, check coverage when the report returns, and create a second-pass gap prompt when evidence is weak."
+    label: "Decision block",
+    body: "The question that prevents the next page, tool, checkout, or content batch."
   },
   {
-    label: "What you receive",
-    title: "One Route File",
-    body:
-      "Receive a client-readable file that says what to build first, what not to build, what evidence is missing, where to validate, and when to stop."
+    label: "Risk boundary",
+    body: "Claims, data limits, buyer promises, private material, and delivery limits."
+  },
+  {
+    label: "Candidate routes",
+    body: "Options that should be selected, rejected, repaired, or blocked with evidence."
+  }
+];
+
+const homeOutputRows = [
+  {
+    label: "Client-visible progress",
+    body: "The customer can see intake, scope lock, manual research, repair watch, and Route File synthesis."
+  },
+  {
+    label: "Manual research boundary",
+    body: "The website prepares prompts and checks reports. ChatGPT Deep Research is run outside the website."
+  },
+  {
+    label: "Claim-safe public copy",
+    body: "Chinese and English updates keep the same evidence boundary and do not add growth guarantees."
   }
 ];
 
@@ -207,55 +220,76 @@ export default function HomePage() {
         </aside>
       </section>
 
-      <section className="route-foundation-section frontstage-intake-section">
+      <section className="route-foundation-section home-operating-section">
         <div className="route-section-heading">
-          <span>Client path</span>
-          <h2>Submit the mess. Receive a route.</h2>
+          <span>Operating path</span>
+          <h2>One customer-readable path replaces scattered method pages.</h2>
           <p>
-            The front-stage product is intentionally simple. The templates, research
-            prompts, and gates stay behind the scenes until a client needs to inspect the
-            method.
+            The homepage now shows the product as an execution surface: submit the
+            project, run manual research outside the website, check coverage, deliver one
+            Route File, then stop or validate.
           </p>
         </div>
-        <div className="frontstage-card-grid">
-          {frontstageCards.map((item) => (
-            <article key={item.label}>
-              <small>{item.label}</small>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+        <div className="home-operating-panel">
+          <div className="home-intake-panel">
+            <span>Client input</span>
+            <h3>Submit the messy project once.</h3>
+            <p>
+              The client does not need a polished brief. The system only needs enough
+              material to lock the decision boundary and block unsupported claims.
+            </p>
+            <div className="home-input-list">
+              {homeInputRows.map((item) => (
+                <article key={item.label}>
+                  <CheckCircle2 aria-hidden="true" size={15} />
+                  <div>
+                    <strong>{item.label}</strong>
+                    <p>{item.body}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
 
-      <section className="route-foundation-section route-flow-section">
-        <div className="route-section-heading">
-          <span>Product path</span>
-          <h2>{"Input -> Research -> Check -> Route -> Stop rule."}</h2>
-          <p>
-            This is the operational path behind the customer-facing offer. It keeps
-            research visible enough to trust without making the user operate the whole
-            backend method library.
-          </p>
-        </div>
-
-        <div className="route-flow-board">
-          {routeFlowCards.map((item, index) => {
-            const Icon = item.Icon;
-
-            return (
+          <aside className="home-output-panel" aria-label="What the client can inspect">
+            <span>Visible output</span>
+            <h3>The method library becomes one inspected route.</h3>
+            {homeOutputRows.map((item) => (
               <article key={item.label}>
-                <div>
-                  <span>{String(index + 1).padStart(2, "0")}</span>
-                  <Icon aria-hidden="true" size={22} />
-                </div>
-                <small>{item.label}</small>
-                <h3>{item.title}</h3>
+                <strong>{item.label}</strong>
                 <p>{item.body}</p>
-                <strong>{item.output}</strong>
               </article>
-            );
-          })}
+            ))}
+            <div className="home-output-actions">
+              <Link prefetch={false} href="/reports/client-route-workflow/">
+                Client progress
+                <ArrowRight aria-hidden="true" size={15} />
+              </Link>
+              <Link prefetch={false} href="/execution/">
+                Workbench
+                <ArrowRight aria-hidden="true" size={15} />
+              </Link>
+            </div>
+          </aside>
+
+          <div className="home-flow-lane" aria-label="Input to stop rule flow">
+            {routeFlowCards.map((item, index) => {
+              const Icon = item.Icon;
+
+              return (
+                <article key={item.label}>
+                  <div>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <Icon aria-hidden="true" size={20} />
+                  </div>
+                  <small>{item.label}</small>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                  <strong>{item.output}</strong>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </section>
 
