@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-13T01:27:24.884Z
+- Generated: 2026-06-13T01:36:49.019Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 236
+- Checks: 245
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 52 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 53 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -69,6 +69,15 @@
 | /templates/route-research-prompt-pack/ | pass | Acceptance gate before delivery | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Second manual pass when needed | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | The final delivery is one fused route file | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /reports/agentsiteops-route-run/ | pass | HTTP 200 | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
+| /reports/agentsiteops-route-run/ | pass | HTML title exists | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
+| /reports/agentsiteops-route-run/ | pass | canonical points to production URL | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
+| /reports/agentsiteops-route-run/ | pass | AgentSiteOps Route Run | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
+| /reports/agentsiteops-route-run/ | pass | Selected route | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
+| /reports/agentsiteops-route-run/ | pass | Rejected alternatives | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
+| /reports/agentsiteops-route-run/ | pass | Evidence used | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
+| /reports/agentsiteops-route-run/ | pass | First proof asset | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
+| /reports/agentsiteops-route-run/ | pass | Stop or pivot rule | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
 | /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | canonical points to production URL | [link](https://agentsiteops.com/pricing/) |
