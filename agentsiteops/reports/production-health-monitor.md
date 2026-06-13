@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-13T03:35:18.541Z
+- Generated: 2026-06-13T03:43:29.185Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 244
+- Checks: 245
 - Blockers: 0
 - Warnings: 0
 
@@ -65,6 +65,7 @@
 | /templates/route-research-prompt-pack/ | pass | Local acceptance check | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Second-pass gap prompt | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Route-file synthesis skeleton | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Decision matrix | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Research delivery loop | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Acceptance gate before delivery | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Second manual pass when needed | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |

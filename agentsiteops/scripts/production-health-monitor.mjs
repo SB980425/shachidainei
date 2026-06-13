@@ -352,6 +352,7 @@ async function main() {
     "Local acceptance check",
     "Second-pass gap prompt",
     "Route-file synthesis skeleton",
+    "Decision matrix",
     "Research delivery loop",
     "Acceptance gate before delivery",
     "Second manual pass when needed",
