@@ -20,6 +20,7 @@ type StageId = "intake" | "scope" | "research" | "gate" | "route" | "social";
 type SocialChannel = "founder" | "technical" | "wechat" | "public-update";
 type SocialLanguage = "en" | "zh";
 type CopyStatus = "idle" | "copied" | "failed";
+type StageStatus = "pass" | "repair" | "blocked" | "not_delivery";
 
 const stages: Array<{
   id: StageId;
@@ -137,6 +138,29 @@ const routeFilePreview = [
   "Stop rule"
 ];
 
+const stageStatusOptions: Array<{ id: StageStatus; label: string; detail: string }> = [
+  {
+    id: "pass",
+    label: "Pass",
+    detail: "Move to the next stage."
+  },
+  {
+    id: "repair",
+    label: "Repair",
+    detail: "Generate a focused repair prompt or missing-input request."
+  },
+  {
+    id: "blocked",
+    label: "Blocked",
+    detail: "Pause because evidence, rights, or delivery capacity is missing."
+  },
+  {
+    id: "not_delivery",
+    label: "Not delivery",
+    detail: "Reject the output as outside the Route File contract."
+  }
+];
+
 const moduleMerges = [
   {
     from: "Homepage long explanation",
@@ -213,6 +237,28 @@ function buildStagePacket(stage: (typeof stages)[number]) {
   ].join("\n");
 }
 
+function defaultStageDecisions() {
+  return Object.fromEntries(stages.map((stage) => [stage.id, "pass"])) as Record<
+    StageId,
+    StageStatus
+  >;
+}
+
+function buildRouteSkeleton(decisions: Record<StageId, StageStatus>) {
+  return [
+    "AgentSiteOps Route File skeleton",
+    "",
+    "Required sections:",
+    ...routeFilePreview.map((item) => `- ${item}`),
+    "",
+    "Execution decisions:",
+    ...stages.map((stage) => `- ${stage.label}: ${decisions[stage.id]}`),
+    "",
+    "Stop condition:",
+    "- Any repair, blocked, or not_delivery stage must be resolved before expanding pages, tools, checkout, or content."
+  ].join("\n");
+}
+
 async function writeClipboard(text: string) {
   if (navigator.clipboard?.writeText) {
     try {
@@ -227,11 +273,14 @@ async function writeClipboard(text: string) {
   textarea.value = text;
   textarea.setAttribute("readonly", "true");
   textarea.style.position = "fixed";
-  textarea.style.top = "-1000px";
-  textarea.style.left = "-1000px";
+  textarea.style.top = "0";
+  textarea.style.left = "0";
+  textarea.style.opacity = "0";
+  textarea.style.pointerEvents = "none";
   document.body.appendChild(textarea);
   textarea.focus();
   textarea.select();
+  textarea.setSelectionRange(0, text.length);
 
   try {
     return document.execCommand("copy");
@@ -246,9 +295,11 @@ export function ExecutionWorkbench() {
   const [activeStageId, setActiveStageId] = useState<StageId>("intake");
   const [activeChannel, setActiveChannel] = useState<SocialChannel>("founder");
   const [activeLanguage, setActiveLanguage] = useState<SocialLanguage>("en");
+  const [stageDecisions, setStageDecisions] = useState(defaultStageDecisions);
   const [copyState, setCopyState] = useState("Copy");
   const [primaryCopyStatus, setPrimaryCopyStatus] = useState<CopyStatus>("idle");
   const [pairCopyStatus, setPairCopyStatus] = useState<CopyStatus>("idle");
+  const [skeletonCopyStatus, setSkeletonCopyStatus] = useState<CopyStatus>("idle");
 
   const activeStage = useMemo(
     () => stages.find((stage) => stage.id === activeStageId) ?? stages[0],
@@ -257,6 +308,11 @@ export function ExecutionWorkbench() {
   const activeSocial = socialVariants[activeChannel];
   const activeSocialText = activeLanguage === "en" ? activeSocial.en : activeSocial.zh;
   const pairedSocialText = activeLanguage === "en" ? activeSocial.zh : activeSocial.en;
+  const activeStageStatus = stageDecisions[activeStageId];
+  const activeStatusDetail =
+    stageStatusOptions.find((option) => option.id === activeStageStatus)?.detail ??
+    stageStatusOptions[0].detail;
+  const routeSkeleton = buildRouteSkeleton(stageDecisions);
   const primaryCopyLabel =
     primaryCopyStatus === "copied"
       ? "Copied"
@@ -265,6 +321,12 @@ export function ExecutionWorkbench() {
         : `Copy ${activeLanguage === "en" ? "English" : "Chinese"}`;
   const pairCopyLabel =
     pairCopyStatus === "copied" ? "Copied" : pairCopyStatus === "failed" ? "Copy failed" : "Copy pair";
+  const skeletonCopyLabel =
+    skeletonCopyStatus === "copied"
+      ? "Skeleton copied"
+      : skeletonCopyStatus === "failed"
+        ? "Copy failed"
+        : "Copy Route File skeleton";
 
   function resetSocialCopyStatus() {
     setPrimaryCopyStatus("idle");
@@ -274,6 +336,14 @@ export function ExecutionWorkbench() {
   function selectStage(stageId: StageId) {
     setActiveStageId(stageId);
     track("execution_stage_selected", { stage: stageId });
+  }
+
+  function setStageStatus(status: StageStatus) {
+    setStageDecisions((current) => ({
+      ...current,
+      [activeStageId]: status
+    }));
+    track("execution_stage_status_changed", { stage: activeStageId, status });
   }
 
   async function copyText(
@@ -314,6 +384,22 @@ export function ExecutionWorkbench() {
     }
 
     window.setTimeout(() => setStatus("idle"), 1600);
+  }
+
+  async function copyRouteSkeleton() {
+    const copied = await writeClipboard(routeSkeleton);
+
+    if (copied) {
+      setSkeletonCopyStatus("copied");
+      track("template_copy_click", {
+        label: "route_file_skeleton",
+        length: routeSkeleton.length
+      });
+    } else {
+      setSkeletonCopyStatus("failed");
+    }
+
+    window.setTimeout(() => setSkeletonCopyStatus("idle"), 1600);
   }
 
   return (
@@ -365,6 +451,26 @@ export function ExecutionWorkbench() {
               <dd>{activeStage.notDelivery}</dd>
             </div>
           </dl>
+
+          <section className="execution-decision-strip" aria-label="Current decision">
+            <div>
+              <span>Current decision</span>
+              <strong>{stageStatusOptions.find((option) => option.id === activeStageStatus)?.label}</strong>
+              <p>{activeStatusDetail}</p>
+            </div>
+            <div className="execution-status-buttons">
+              {stageStatusOptions.map((option) => (
+                <button
+                  className={option.id === activeStageStatus ? "is-active" : ""}
+                  key={option.id}
+                  type="button"
+                  onClick={() => setStageStatus(option.id)}
+                >
+                  {option.label}
+                </button>
+              ))}
+            </div>
+          </section>
 
           <div className="execution-panel-actions">
             <Link prefetch={false} className="primary-action" href={activeStage.href}>
@@ -449,6 +555,24 @@ export function ExecutionWorkbench() {
               </li>
             ))}
           </ul>
+          <div className="execution-route-skeleton">
+            <strong>Route File skeleton</strong>
+            <div>
+              {stages.map((stage) => (
+                <span key={stage.id}>
+                  {stage.label}: {stageDecisions[stage.id]}
+                </span>
+              ))}
+            </div>
+            <button
+              className="secondary-action"
+              type="button"
+              onClick={copyRouteSkeleton}
+            >
+              <Copy aria-hidden="true" size={16} />
+              {skeletonCopyLabel}
+            </button>
+          </div>
         </article>
 
         <article className="execution-merge-panel">

@@ -90,6 +90,7 @@ const allowedEvents = new Set([
   "template_copy_click",
   "checklist_copy_click",
   "execution_stage_selected",
+  "execution_stage_status_changed",
   "social_copy_variant_copied",
   "payment_cta_click",
   "intake_email_click",

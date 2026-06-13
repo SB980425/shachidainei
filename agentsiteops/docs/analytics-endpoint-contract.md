@@ -66,6 +66,7 @@ Minimum v1 allowlist:
 - `tool_completed`
 - `tool_result_export`
 - `execution_stage_selected`
+- `execution_stage_status_changed`
 - `social_copy_variant_copied`
 - `payment_cta_click`
 - `cta_click`

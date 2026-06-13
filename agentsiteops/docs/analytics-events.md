@@ -94,6 +94,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `template_copy_click` | User copies a template block | `label`, `length` |
 | `checklist_copy_click` | User copies checklist content | `label`, `length` |
 | `execution_stage_selected` | User selects an Execution Workbench stage | `surface`, `stage` |
+| `execution_stage_status_changed` | User changes an Execution Workbench stage decision | `surface`, `stage`, `status` |
 | `social_copy_variant_copied` | User copies an Execution Workbench social copy variant | `surface`, `channel`, `lang`, `variant` |
 | `payment_cta_click` | User clicks a live PayPal Fit Review or Route File payment link | `label`, `target`, `type` |
 | `intake_email_click` | User clicks the intake email link | `label`, `target`, `type` |

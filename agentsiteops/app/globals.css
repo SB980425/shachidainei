@@ -6913,6 +6913,67 @@ textarea {
   line-height: 1.45;
 }
 
+.execution-decision-strip {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 12px;
+  align-items: stretch;
+  margin-top: 14px;
+  border: 1px solid rgba(103, 232, 249, 0.18);
+  border-radius: 8px;
+  background: rgba(103, 232, 249, 0.07);
+  padding: 12px;
+}
+
+.execution-decision-strip > div:first-child {
+  display: grid;
+  gap: 5px;
+  align-content: center;
+}
+
+.execution-decision-strip span {
+  color: var(--route-accent);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.execution-decision-strip strong {
+  color: var(--route-text);
+  font-size: 20px;
+}
+
+.execution-decision-strip p {
+  margin: 0;
+  color: var(--route-muted);
+  line-height: 1.45;
+}
+
+.execution-status-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.execution-status-buttons button {
+  min-width: 0;
+  min-height: 42px;
+  border: 1px solid rgba(226, 232, 240, 0.16);
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.62);
+  color: var(--route-muted);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.execution-status-buttons button.is-active {
+  border-color: rgba(74, 222, 128, 0.44);
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--route-text);
+}
+
 .execution-panel-actions,
 .execution-social-controls {
   display: flex;
@@ -7021,6 +7082,33 @@ textarea {
 .execution-route-preview svg {
   margin-top: 3px;
   color: var(--route-good);
+}
+
+.execution-route-skeleton {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+  border-top: 1px solid rgba(226, 232, 240, 0.12);
+  padding-top: 14px;
+}
+
+.execution-route-skeleton strong {
+  color: var(--route-text);
+}
+
+.execution-route-skeleton div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.execution-route-skeleton span {
+  border: 1px solid rgba(226, 232, 240, 0.12);
+  border-radius: 8px;
+  color: var(--route-muted);
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .execution-merge-list {
@@ -8240,6 +8328,7 @@ textarea {
   .execution-layout,
   .execution-output-grid,
   .execution-copy-grid,
+  .execution-decision-strip,
   .route-graph,
   .stage-detail-card,
   .prompt-meta-grid,
@@ -8386,10 +8475,15 @@ textarea {
   .execution-stage-rail,
   .execution-path-grid,
   .execution-state-list,
-  .execution-merge-list {
+  .execution-merge-list,
+  .execution-route-skeleton div {
     grid-template-columns: 1fr;
     padding-right: 14px;
     padding-left: 14px;
+  }
+
+  .execution-status-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .execution-workbench {
@@ -8399,7 +8493,8 @@ textarea {
   .execution-stage-rail,
   .execution-path-grid,
   .execution-state-list,
-  .execution-merge-list {
+  .execution-merge-list,
+  .execution-route-skeleton div {
     padding-right: 0;
     padding-left: 0;
   }
