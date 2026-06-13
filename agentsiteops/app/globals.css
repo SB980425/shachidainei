@@ -6677,6 +6677,118 @@ textarea {
   padding: 18px;
 }
 
+.delivery-gate-page .gate-hero {
+  align-items: center;
+}
+
+.delivery-state-grid,
+.delivery-contract-grid,
+.delivery-check-list,
+.delivery-repair-list {
+  display: grid;
+  gap: 14px;
+}
+
+.delivery-state-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.delivery-state-grid article,
+.delivery-contract-grid article,
+.delivery-check-list article,
+.delivery-repair-list article {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+}
+
+.delivery-state-grid article {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-height: 214px;
+  padding: 18px;
+}
+
+.delivery-state-grid span,
+.delivery-contract-grid span {
+  width: fit-content;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  padding: 5px 8px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.delivery-state-grid article:nth-child(2) span {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.delivery-state-grid article:nth-child(3) span,
+.delivery-state-grid article:nth-child(4) span {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.delivery-contract-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.delivery-contract-grid article {
+  display: grid;
+  gap: 11px;
+  align-content: start;
+  min-height: 252px;
+  padding: 16px;
+}
+
+.delivery-contract-grid svg,
+.delivery-check-list svg {
+  color: var(--blue);
+}
+
+.delivery-repair-list svg {
+  color: var(--amber);
+}
+
+.delivery-state-grid h3,
+.delivery-contract-grid h3,
+.delivery-check-list h3,
+.delivery-repair-list h3 {
+  margin: 0;
+  color: var(--ink);
+}
+
+.delivery-state-grid p,
+.delivery-contract-grid p,
+.delivery-check-list p,
+.delivery-repair-list p,
+.delivery-gate-split p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.delivery-check-list article,
+.delivery-repair-list article {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 14px;
+}
+
+.delivery-linked-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
 .manual-boundary-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -7466,6 +7578,8 @@ textarea {
 
   .client-checklist-grid,
   .client-readiness-grid,
+  .delivery-state-grid,
+  .delivery-contract-grid,
   .manual-boundary-grid,
   .sample-snapshot-grid,
   .route-file-preview {
@@ -7488,6 +7602,8 @@ textarea {
   .client-checklist-grid,
   .client-progress-board,
   .client-readiness-grid,
+  .delivery-state-grid,
+  .delivery-contract-grid,
   .manual-boundary-grid,
   .sample-snapshot-grid,
   .sample-ledger-table > div,

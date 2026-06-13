@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-13T06:51:58.150Z
+- Generated: 2026-06-13T07:05:59.286Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 54
+- Sitemap routes: 55
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 54 |
+| Routes passed | 55 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -19,7 +19,7 @@
 
 | Route | Status | HTTP | Title | Canonical | JSON-LD | Links | Mobile | Issues |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| / | pass | 200 | AgentSiteOps | https://agentsiteops.com/ | 1 | 18 | pass | - |
+| / | pass | 200 | AgentSiteOps | https://agentsiteops.com/ | 1 | 19 | pass | - |
 | /ai-website-operating-system/ | pass | 200 | AI Website Operating System \| AgentSiteOps | https://agentsiteops.com/ai-website-operating-system/ | 1 | 20 | pass | - |
 | /tools/website-opportunity-scorer/ | pass | 200 | Website Opportunity Scorer \| AgentSiteOps | https://agentsiteops.com/tools/website-opportunity-scorer/ | 1 | 17 | pass | - |
 | /tools/ai-crawler-readiness/ | pass | 200 | AI Crawler Readiness Tool \| AgentSiteOps | https://agentsiteops.com/tools/ai-crawler-readiness/ | 1 | 18 | pass | - |
@@ -35,14 +35,15 @@
 | /checklists/gsc-bing-indexnow-launch/ | pass | 200 | GSC, Bing, and IndexNow Launch Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/gsc-bing-indexnow-launch/ | 1 | 22 | pass | - |
 | /checklists/ai-citation-readiness/ | pass | 200 | AI Citation Readiness Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/ai-citation-readiness/ | 1 | 20 | pass | - |
 | /checklists/launch-validation-decision-gate/ | pass | 200 | Launch Validation Decision Gate \| AgentSiteOps | https://agentsiteops.com/checklists/launch-validation-decision-gate/ | 1 | 19 | pass | - |
+| /checklists/route-file-delivery-gate/ | pass | 200 | Route File Delivery Gate \| AgentSiteOps | https://agentsiteops.com/checklists/route-file-delivery-gate/ | 1 | 17 | pass | - |
 | /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 19 | pass | - |
 | /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 21 | pass | - |
 | /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 21 | pass | - |
-| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 54 | pass | - |
+| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 55 | pass | - |
 | /reports/route-basis/ | pass | 200 | Route Basis Report \| AgentSiteOps | https://agentsiteops.com/reports/route-basis/ | 1 | 18 | pass | - |
 | /reports/agentsiteops-route-run/ | pass | 200 | AgentSiteOps Route Run \| AgentSiteOps | https://agentsiteops.com/reports/agentsiteops-route-run/ | 1 | 16 | pass | - |
-| /reports/client-route-workflow/ | pass | 200 | Client Route Workflow \| AgentSiteOps | https://agentsiteops.com/reports/client-route-workflow/ | 1 | 17 | pass | - |
-| /templates/route-research-prompt-pack/ | pass | 200 | Route Research Prompt Pack \| AgentSiteOps | https://agentsiteops.com/templates/route-research-prompt-pack/ | 1 | 19 | pass | - |
+| /reports/client-route-workflow/ | pass | 200 | Client Route Workflow \| AgentSiteOps | https://agentsiteops.com/reports/client-route-workflow/ | 1 | 18 | pass | - |
+| /templates/route-research-prompt-pack/ | pass | 200 | Route Research Prompt Pack \| AgentSiteOps | https://agentsiteops.com/templates/route-research-prompt-pack/ | 1 | 20 | pass | - |
 | /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 20 | pass | - |
 | /methodology/route-selection/ | pass | 200 | Route Selection Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/route-selection/ | 1 | 18 | pass | - |
 | /guides/first-traffic-system/ | pass | 200 | First Traffic System \| AgentSiteOps | https://agentsiteops.com/guides/first-traffic-system/ | 1 | 19 | pass | - |
@@ -63,7 +64,7 @@
 | /website-opportunity-audit/ | pass | 200 | AgentSiteOps Launch Blueprint \| AgentSiteOps | https://agentsiteops.com/website-opportunity-audit/ | 1 | 19 | pass | - |
 | /pricing/ | pass | 200 | Pricing \| AgentSiteOps | https://agentsiteops.com/pricing/ | 1 | 20 | pass | - |
 | /examples/fit-review-sample/ | pass | 200 | Fit Review Sample \| AgentSiteOps | https://agentsiteops.com/examples/fit-review-sample/ | 1 | 18 | pass | - |
-| /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 18 | pass | - |
+| /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 19 | pass | - |
 | /compare/ | pass | 200 | Compare Launch Options \| AgentSiteOps | https://agentsiteops.com/compare/ | 1 | 18 | pass | - |
 | /starter-review/ | pass | 200 | Fit Review \| AgentSiteOps | https://agentsiteops.com/starter-review/ | 1 | 18 | pass | - |
 | /buy/ | pass | 200 | Buy Launch Blueprint \| AgentSiteOps | https://agentsiteops.com/buy/ | 1 | 19 | pass | - |

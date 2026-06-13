@@ -159,6 +159,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/checklists/route-file-delivery-gate/",
+      "pageType": "checklist",
+      "template": "checklist",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.76,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/guides/ai-search-friendly-robots-txt/",
       "pageType": "guide",
       "template": "guide",

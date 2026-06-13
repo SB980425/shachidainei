@@ -186,6 +186,10 @@ export default function Page() {
               <ArrowRight aria-hidden="true" size={17} />
               Run research workflow
             </Link>
+            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+              <ShieldCheck aria-hidden="true" size={17} />
+              Check delivery gate
+            </Link>
             <Link prefetch={false} className="secondary-action" href="/compare/">
               <GitCompareArrows aria-hidden="true" size={17} />
               Compare options
@@ -340,6 +344,10 @@ export default function Page() {
             <Link prefetch={false} className="secondary-action" href="/reports/client-route-workflow/">
               <FileText aria-hidden="true" size={17} />
               Client workflow
+            </Link>
+            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+              <ShieldCheck aria-hidden="true" size={17} />
+              Delivery gate
             </Link>
             <Link prefetch={false} className="secondary-action" href="/reports/route-basis/">
               <ShieldCheck aria-hidden="true" size={17} />

@@ -42,6 +42,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/checklists/gsc-bing-indexnow-launch/": ["search_console_launch_checklist_view"],
   "/checklists/ai-citation-readiness/": ["ai_citation_readiness_view"],
   "/checklists/launch-validation-decision-gate/": ["launch_validation_decision_gate_view"],
+  "/checklists/route-file-delivery-gate/": ["route_file_delivery_gate_view"],
   "/checklists/programmatic-seo-gate/": ["pseo_batch_audit_view", "pseo_index_map_view"],
   "/guides/ai-search-friendly-robots-txt/": ["ai_search_robots_guide_view"],
   "/guides/indexnow-cloudflare-pages/": ["indexnow_cloudflare_pages_view"],

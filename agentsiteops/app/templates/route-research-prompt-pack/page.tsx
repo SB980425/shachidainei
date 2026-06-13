@@ -263,6 +263,10 @@ export default function Page() {
               <FileText aria-hidden="true" size={17} />
               View route basis
             </Link>
+            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+              <ShieldCheck aria-hidden="true" size={17} />
+              Check delivery gate
+            </Link>
           </div>
         </div>
         <aside className="decision-card">
@@ -538,6 +542,10 @@ export default function Page() {
             <Link prefetch={false} className="secondary-action" href="/reports/agentsiteops-route-run/">
               <ArrowRight aria-hidden="true" size={17} />
               Self route run
+            </Link>
+            <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Delivery gate
             </Link>
           </div>
         </div>

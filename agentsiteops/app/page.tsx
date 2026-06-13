@@ -115,6 +115,7 @@ const preservedLinks = [
   { href: "/methodology/route-selection/", label: "Route selection methodology" },
   { href: "/templates/route-research-prompt-pack/", label: "Research delivery workflow" },
   { href: "/reports/client-route-workflow/", label: "Client route workflow" },
+  { href: "/checklists/route-file-delivery-gate/", label: "Delivery gate" },
   { href: "/reports/agentsiteops-route-run/", label: "Self route run" },
   { href: "/reports/route-basis/", label: "Route basis report" },
   { href: "/sample/", label: "Sample route file" },
@@ -280,6 +281,10 @@ export default function HomePage() {
           <Link prefetch={false} className="secondary-action" href="/reports/client-route-workflow/">
             <Gauge aria-hidden="true" size={17} />
             Open client workspace
+          </Link>
+          <Link prefetch={false} className="secondary-action" href="/checklists/route-file-delivery-gate/">
+            <FileCheck2 aria-hidden="true" size={17} />
+            Check delivery gate
           </Link>
           <Link prefetch={false} className="secondary-action" href="/launch-kit/">
             <FileText aria-hidden="true" size={17} />

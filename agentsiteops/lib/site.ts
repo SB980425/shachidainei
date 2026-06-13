@@ -743,6 +743,55 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/checklists/route-file-delivery-gate/",
+    pageType: "checklist",
+    title: "Route File Delivery Gate",
+    description:
+      "A final AgentSiteOps delivery checklist for deciding whether a research run is ready to become a route file, needs repair, or must stay blocked.",
+    answer:
+      "The route file delivery gate checks selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, stop rule, and non-delivery boundaries before the final client handoff.",
+    primaryAction: { label: "Compare sample route file", href: "/sample/" },
+    secondaryAction: { label: "Inspect client workflow", href: "/reports/client-route-workflow/" },
+    aiTarget:
+      "Define the final acceptance gate that separates deliverable route files from broad reports, weak research, unsupported claims, and hidden automation claims.",
+    humanAction:
+      "Apply the checklist after manual Deep Research and coverage review before calling a route file complete.",
+    sections: [
+      {
+        title: "Delivery states",
+        body:
+          "The gate returns pass, repair, blocked, or not delivery. A weak report is not polished into a confident handoff."
+      },
+      {
+        title: "Route file contract",
+        body:
+          "A completed route file must include selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule."
+      },
+      {
+        title: "Content completion",
+        body:
+          "The page checks client input boundaries, manual Deep Research disclosure, coverage gaps, unsupported claims, and the next action boundary."
+      },
+      {
+        title: "Repair queue",
+        body:
+          "Missing buyer proof, loose evidence, skipped alternatives, or vague validation rules become focused second-pass research prompts."
+      },
+      {
+        title: "Not delivery",
+        body:
+          "Generic research memos, content plans, automatic Deep Research claims, unsupported growth promises, and domain notes that fail route usefulness checks are rejected."
+      }
+    ],
+    related: [
+      { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
+      { label: "Sample Route File", href: "/sample/" },
+      { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
+      { label: "Route Basis Report", href: "/reports/route-basis/" },
+      { label: "Launch Validation Decision Gate", href: "/checklists/launch-validation-decision-gate/" }
+    ]
+  },
+  {
     path: "/guides/ai-citation-grounding-metrics/",
     pageType: "guide",
     title: "AI Citation and Grounding Metrics",
@@ -1151,6 +1200,7 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
+      { label: "Route File Delivery Gate", href: "/checklists/route-file-delivery-gate/" },
       { label: "AgentSiteOps Route Run", href: "/reports/agentsiteops-route-run/" },
       { label: "Route Basis Report", href: "/reports/route-basis/" },
       { label: "Sample Route File", href: "/sample/" },
@@ -1196,6 +1246,7 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
       { label: "Route Basis Report", href: "/reports/route-basis/" },
+      { label: "Route File Delivery Gate", href: "/checklists/route-file-delivery-gate/" },
       { label: "Evidence Ledger Template", href: "/templates/evidence-ledger-template/" },
       { label: "Website Opportunity Scoring Template", href: "/templates/website-opportunity-scoring-template/" },
       { label: "Route Confidence Checker", href: "/tools/route-confidence-checker/" }
