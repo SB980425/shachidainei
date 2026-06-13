@@ -4,9 +4,11 @@ import {
   ArrowRight,
   BadgeDollarSign,
   CheckCircle2,
+  ClipboardList,
+  FileCheck2,
   FileText,
   Gauge,
-  GitBranch,
+  SearchCheck,
   ShieldCheck
 } from "lucide-react";
 import { RouteCommandCenter } from "@/components/RouteCommandCenter";
@@ -19,67 +21,92 @@ export const metadata: Metadata = {
     "AgentSiteOps turns project facts, evidence, risk boundaries, and delivery capacity into one route map, one rejected-path record, and one 7-day execution plan."
 };
 
-const foundationCards = [
+const routeFlowCards = [
   {
-    title: "Not a random score",
-    body: "Scores come from evidence maturity, proof assets, delivery boundary, data rights, hard blockers, and route fit.",
-    Icon: Gauge
+    label: "Input",
+    title: "Messy project intake",
+    body:
+      "Capture project facts, target user, available assets, source boundaries, constraints, and the decision blocking progress.",
+    output: "Usable route brief",
+    Icon: ClipboardList
   },
   {
-    title: "Rejected paths stay visible",
-    body: "The interface shows why weak routes are pruned before a build, paid offer, or content cluster starts.",
-    Icon: GitBranch
+    label: "Research",
+    title: "Manual Deep Research run",
+    body:
+      "Generate the prompt pack, then run it in ChatGPT Deep Research with the user's own allowance. The website does not run hidden research.",
+    output: "Cited research report",
+    Icon: SearchCheck
   },
   {
-    title: "Reusable for our own projects",
-    body: "Each future site starts with the same route brief, evidence ledger, first asset, and failure gate.",
+    label: "Check",
+    title: "Coverage gate",
+    body:
+      "Check buyer logic, source table, rejected alternatives, proof asset, validation channel, and stop rule before accepting the report.",
+    output: "Pass or gap prompt",
+    Icon: FileCheck2
+  },
+  {
+    label: "Route",
+    title: "One route file",
+    body:
+      "Fuse accepted research into selected route, rejected alternatives, evidence ledger, first proof asset, and first validation channel.",
+    output: "Client-readable file",
     Icon: FileText
   },
   {
-    title: "Claims are bounded",
-    body: "The system blocks guaranteed traffic, ranking, AI citation, revenue, and unsupported regulated advice.",
+    label: "Stop rule",
+    title: "Build or stop decision",
+    body:
+      "The route either enters a small validation cycle or stays blocked. No page, checkout, or content batch expands without evidence.",
+    output: "Next action boundary",
     Icon: ShieldCheck
   }
 ];
 
-const clientPathCards = [
+const workspaceSignals = [
   {
-    title: "Bring a messy project",
-    body:
-      "Start with the project idea, target user, available files, constraints, payment limits, and the decision that must be made before building."
+    label: "Current stage",
+    value: "Research run",
+    detail: "Intake, scope lock, and prompt brief are already visible before report acceptance."
   },
   {
-    title: "Lock the research boundary",
-    body:
-      "The route brief separates in-scope material from future material, names blocked claims, and prevents unrelated domain work from mixing with the site plan."
+    label: "Pending check",
+    value: "Coverage gate",
+    detail: "Missing source table, rejected paths, or stop rule becomes a second-pass research prompt."
   },
   {
-    title: "Run the research loop",
-    body:
-      "The visible workflow shows prompt generation, manual Deep Research, coverage checking, second-pass gaps when needed, and synthesis."
-  },
-  {
-    title: "Receive one route file",
-    body:
-      "The delivery is not a loose report. It must include the selected route, rejected alternatives, evidence ledger, first asset, validation channel, and stop rule."
+    label: "Final artifact",
+    value: "Route file",
+    detail: "The output is not a loose report. It must show what to build, reject, validate, and stop."
   }
 ];
 
-const customerProofPoints = [
+const boundaryCards = [
   {
-    title: "You can inspect the method before paying.",
+    title: "No automatic Deep Research claim",
     body:
-      "The route basis, prompt pack, sample file, and acceptance gates are public enough to judge whether the process is useful."
+      "AgentSiteOps prepares prompts and checks returned reports. It does not pretend to run ChatGPT Deep Research through a hidden API."
   },
   {
-    title: "You can see what is still unproven.",
+    title: "No guaranteed growth claim",
     body:
-      "The site marks missing search evidence, weak buyer proof, unsupported pricing, data-rights risk, and generic-AI substitution risk."
+      "Traffic, ranking, revenue, AI citation, payment approval, and buyer response stay unclaimed until first-party evidence exists."
   },
   {
-    title: "You can stop before a build starts.",
+    title: "No mixed domain execution",
     body:
-      "If the route cannot produce a first asset, validation channel, and stop rule, it stays in research instead of becoming a website or paid offer."
+      "Domain research can feed the route only after scope, rights, risk, evidence quality, and usefulness checks pass."
+  },
+  {
+    title: "Rejected paths stay in the file",
+    body:
+      "Weak routes are recorded with rejection reasons, so the project does not drift back into unsupported build work."
+  },
+  {
+    title: "Route confidence is evidence-bound",
+    body:
+      "Scores and route choices depend on proof assets, buyer signals, delivery capacity, data rights, and hard blockers."
   }
 ];
 
@@ -129,84 +156,74 @@ export default function HomePage() {
 
       <RouteCommandCenter />
 
-      <section className="route-foundation-section">
+      <section className="route-foundation-section route-flow-section">
         <div className="route-section-heading">
-          <span>Client path</span>
-          <h2>What a customer should understand before using the site.</h2>
+          <span>Product path</span>
+          <h2>{"Input -> Research -> Check -> Route -> Stop rule."}</h2>
           <p>
-            AgentSiteOps is not a content generator and not a prediction engine. It is a
-            route workspace for turning unclear project material into a bounded decision,
-            then showing the evidence, rejected paths, and next operating step.
+            AgentSiteOps turns unclear project material into a client-readable route file.
+            The site shows where the work is, what is missing, and why the next action is
+            build, repair, or stop.
           </p>
         </div>
 
-        <div className="route-foundation-grid">
-          {clientPathCards.map((item) => (
-            <article key={item.title}>
-              <CheckCircle2 aria-hidden="true" size={22} />
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-
-        <div className="route-boundary-grid">
-          {customerProofPoints.map((item) => (
-            <article key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="route-foundation-section">
-        <div className="route-section-heading">
-          <span>System foundation</span>
-          <h2>How AgentSiteOps becomes our route planner.</h2>
-          <p>
-            The product is useful only if it can guide our own projects first. The
-            homepage now exposes the same route logic we will use before creating a new
-            site, tool, content cluster, or paid offer.
-          </p>
-        </div>
-
-        <div className="route-foundation-grid">
-          {foundationCards.map((item) => {
+        <div className="route-flow-board">
+          {routeFlowCards.map((item, index) => {
             const Icon = item.Icon;
 
             return (
-              <article key={item.title}>
-                <Icon aria-hidden="true" size={22} />
+              <article key={item.label}>
+                <div>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <Icon aria-hidden="true" size={22} />
+                </div>
+                <small>{item.label}</small>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
+                <strong>{item.output}</strong>
               </article>
             );
           })}
         </div>
 
-        <div className="route-boundary-grid">
-          <article>
-            <h3>Evidence used, not guessed.</h3>
-            <p>
-              A route can move forward only when project facts, proof assets, search or
-              buyer signals, and delivery capacity support the recommendation.
-            </p>
-          </article>
-          <article>
-            <h3>What the buyer receives is a route file, not a score.</h3>
-            <p>
-              Paid work must include the selected route, rejected alternatives, evidence
-              ledger, first asset, execution window, and stop rule.
-            </p>
-          </article>
-          <article>
-            <h3>Market signals are context, not proof.</h3>
-            <p>
-              Public research can shape the checklist, but it does not prove demand,
-              willingness to pay, rankings, AI citations, or revenue.
-            </p>
-          </article>
+        <div className="route-workspace-strip">
+          <div>
+            <span>Client workspace</span>
+            <h3>Progress is visible before a final handoff.</h3>
+          </div>
+          {workspaceSignals.map((item) => (
+            <article key={item.label}>
+              <small>{item.label}</small>
+              <strong>{item.value}</strong>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+          <Link prefetch={false} className="route-workspace-link" href="/reports/client-route-workflow/">
+            Open client workspace
+            <ArrowRight aria-hidden="true" size={16} />
+          </Link>
+        </div>
+      </section>
+
+      <section className="route-foundation-section">
+        <div className="route-section-heading">
+          <span>Delivery boundary</span>
+          <h2>What the product blocks before it sells or builds.</h2>
+          <p>
+            The workflow is intentionally narrow: it can organize evidence and route
+            decisions, but it cannot turn weak research into a guarantee or a finished
+            market.
+          </p>
+        </div>
+
+        <div className="route-foundation-grid is-boundary-grid">
+          {boundaryCards.map((item) => (
+            <article key={item.title}>
+              <ShieldCheck aria-hidden="true" size={22} />
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -259,6 +276,10 @@ export default function HomePage() {
           <Link prefetch={false} className="primary-action" href="/templates/route-research-prompt-pack/">
             <FileText aria-hidden="true" size={17} />
             Run research workflow
+          </Link>
+          <Link prefetch={false} className="secondary-action" href="/reports/client-route-workflow/">
+            <Gauge aria-hidden="true" size={17} />
+            Open client workspace
           </Link>
           <Link prefetch={false} className="secondary-action" href="/launch-kit/">
             <FileText aria-hidden="true" size={17} />

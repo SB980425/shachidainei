@@ -353,7 +353,7 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "Route Confidence Checker", href: "/tools/route-confidence-checker/" },
       { label: "Compare Launch Options", href: "/compare/" },
-      { label: "Sample Launch Blueprint", href: "/sample/" },
+      { label: "Sample Route File", href: "/sample/" },
       { label: "Pricing", href: "/pricing/" },
       { label: "Buy", href: "/buy/" }
     ]
@@ -1624,7 +1624,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
-      { label: "Launch Blueprint sample", href: "/sample/" },
+      { label: "Sample Route File", href: "/sample/" },
       { label: "Fit Review sample", href: "/examples/fit-review-sample/" },
       { label: "Validate an AI service offer", href: "/answers/validate-ai-service-offer-before-building/" },
       { label: "Route Basis Report", href: "/reports/route-basis/" },
@@ -1733,7 +1733,7 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Route Basis Report", href: "/reports/route-basis/" },
-      { label: "Launch Blueprint Sample", href: "/sample/" },
+      { label: "Sample Route File", href: "/sample/" },
       { label: "Compare Launch Options", href: "/compare/" },
       { label: "Launch Kit", href: "/launch-kit/" }
     ]

@@ -57,6 +57,29 @@ const outputContract = [
   }
 ];
 
+const manualModeBoundaries = [
+  {
+    title: "No OpenAI API call",
+    body:
+      "The website does not send the project brief to OpenAI, store a model response, or create an API bill in the free manual workflow."
+  },
+  {
+    title: "Use your own ChatGPT Deep Research allowance",
+    body:
+      "The operator copies the generated prompt into ChatGPT Deep Research using the user's own ChatGPT Deep Research allowance."
+  },
+  {
+    title: "Local coverage check",
+    body:
+      "After the report returns, AgentSiteOps checks required sections locally and marks missing evidence as a gap instead of hiding it."
+  },
+  {
+    title: "Fusion, not automation theater",
+    body:
+      "Accepted first-pass and second-pass results are fused into one route file with rejected alternatives and a stop rule."
+  }
+];
+
 const clientObservationStages = [
   {
     title: "Scope lock",
@@ -226,9 +249,10 @@ export default function Page() {
           <p className="eyebrow">Route research template</p>
           <h1>Run Deep Research manually, then let AgentSiteOps judge the route.</h1>
           <p>
-            The free plan does not call the OpenAI API. AgentSiteOps prepares the prompt,
-            the operator runs Deep Research in ChatGPT, then the result is checked,
-            repaired if needed, and fused into one route map.
+            No OpenAI API call happens in this workflow. AgentSiteOps prepares the prompt,
+            the operator runs Deep Research in ChatGPT with your own ChatGPT Deep Research
+            allowance, then the result is checked, repaired if needed, and fused into one
+            route map.
           </p>
           <div className="hero-actions">
             <Link prefetch={false} className="primary-action" href="/methodology/route-selection/">
@@ -244,11 +268,31 @@ export default function Page() {
         <aside className="decision-card">
           <strong>Free mode boundary</strong>
           <p>
-            Website-side model cost is zero in this mode. The research still uses the
-            user's own ChatGPT Deep Research allowance, and a second pass is only used
-            when the first report misses required sections.
+            Website-side model cost is zero in this mode. The research still uses your own
+            ChatGPT Deep Research allowance, and a second pass is only used when the first
+            report misses required sections.
           </p>
         </aside>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>Manual mode boundary</h2>
+          <p>
+            The product is transparent about where research happens. The website creates
+            prompts, checks coverage, creates gap prompts, and fuses accepted outputs; it
+            does not pretend the manual step is automatic.
+          </p>
+        </div>
+        <div className="manual-boundary-grid">
+          {manualModeBoundaries.map((item) => (
+            <article key={item.title}>
+              <ShieldCheck aria-hidden="true" size={18} />
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="gate-section">

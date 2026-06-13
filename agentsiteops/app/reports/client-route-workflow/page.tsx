@@ -36,6 +36,29 @@ const intakeChecklist = [
   "Known alternatives that should be compared instead of silently ignored."
 ];
 
+const inputReadiness = [
+  {
+    label: "Project facts",
+    status: "Ready",
+    detail: "Target buyer, current asset set, delivery capacity, and decision question are present."
+  },
+  {
+    label: "Source boundary",
+    status: "Ready",
+    detail: "Usable public pages and private material limits are separated before research."
+  },
+  {
+    label: "Risk boundary",
+    status: "Ready",
+    detail: "No guaranteed traffic, revenue, ranking, AI citation, or regulated advice claims are allowed."
+  },
+  {
+    label: "Evidence quality",
+    status: "Weak",
+    detail: "Buyer proof, payment evidence, first-party search exports, and customer outcomes are still missing."
+  }
+];
+
 const progressStages = [
   {
     label: "Intake",
@@ -99,6 +122,47 @@ const secondPassTriggers = [
   "Buyer problem, delivery capacity, or generic-AI substitution risk is vague.",
   "First proof asset, validation channel, or stop condition is missing.",
   "Research drifts into domain content that does not change the route decision."
+];
+
+const coverageGaps = [
+  {
+    title: "Buyer proof",
+    severity: "High",
+    body: "The current project can name a likely buyer, but it still needs qualified replies or paid intake before confidence can rise."
+  },
+  {
+    title: "Source table",
+    severity: "Medium",
+    body: "A report must separate dated sources, public context, first-party evidence, and unsupported assumptions."
+  },
+  {
+    title: "Rejected alternatives",
+    severity: "High",
+    body: "The selected route is not accepted unless competing paths are preserved with evidence-based rejection reasons."
+  },
+  {
+    title: "Stop condition",
+    severity: "High",
+    body: "The final file must state what evidence blocks build expansion, checkout, or content scaling."
+  }
+];
+
+const secondPassQueue = [
+  {
+    prompt: "Find buyer evidence",
+    owner: "Operator",
+    result: "A focused second pass on reachable buyer pain, qualified reply signals, and proof still missing."
+  },
+  {
+    prompt: "Audit rejected paths",
+    owner: "Operator",
+    result: "A shorter comparison of why automation agency, template pack, course, or SEO content routes are weaker."
+  },
+  {
+    prompt: "Define validation rule",
+    owner: "Site",
+    result: "A route-level keep, repair, stop, or blocked rule tied to first proof asset and first channel."
+  }
 ];
 
 const routeFilePreview = [
@@ -180,7 +244,36 @@ export default function Page() {
             Coverage review, second-pass gap handling, and final synthesis are still
             pending.
           </p>
+          <dl>
+            <div>
+              <dt>Visible progress</dt>
+              <dd>63%</dd>
+            </div>
+            <div>
+              <dt>Next gate</dt>
+              <dd>Coverage gaps</dd>
+            </div>
+          </dl>
         </aside>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>Input readiness</h2>
+          <p>
+            The workspace starts by showing whether the client supplied enough material
+            to create a research brief without inventing missing context.
+          </p>
+        </div>
+        <div className="client-readiness-grid">
+          {inputReadiness.map((item) => (
+            <article className={item.status.toLowerCase()} key={item.label}>
+              <span>{item.status}</span>
+              <h3>{item.label}</h3>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="gate-section">
@@ -218,6 +311,33 @@ export default function Page() {
               <p>{stage.detail}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="gate-section split-section client-workflow-split">
+        <div>
+          <h2>Coverage gaps</h2>
+          <div className="client-gap-list">
+            {coverageGaps.map((item) => (
+              <article key={item.title}>
+                <strong>{item.severity}</strong>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h2>Second-pass research queue</h2>
+          <div className="client-queue-list">
+            {secondPassQueue.map((item) => (
+              <article key={item.prompt}>
+                <small>{item.owner}</small>
+                <h3>{item.prompt}</h3>
+                <p>{item.result}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

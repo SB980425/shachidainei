@@ -413,7 +413,7 @@
     {
       "path": "/sample/",
       "pageType": "example",
-      "template": "sample_blueprint",
+      "template": "sample_route_file",
       "cluster": "launch_blueprint",
       "index": true,
       "priority": 0.74,

@@ -1,27 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, FileText, GitCompareArrows } from "lucide-react";
 import {
-  sampleBlueprintDecision,
-  sampleBlueprintInputs,
-  sampleBlueprintRejectedPaths,
-  sampleLandingPageBlocks,
-  samplePaidArtifactChecklist,
-  sampleReportSections,
-  sampleValidationPlan
-} from "@/lib/launch";
+  AlertTriangle,
+  ArrowRight,
+  CheckCircle2,
+  FileText,
+  GitCompareArrows,
+  ShieldCheck
+} from "lucide-react";
 import { siteUrl } from "@/lib/site";
 
 const path = "/sample/";
 
 export const metadata: Metadata = {
-  title: "Sample Launch Blueprint",
+  title: "Sample Route File",
   description:
-    "A sample AgentSiteOps Launch Blueprint showing the offer, buyer, landing page, and 7-day validation structure.",
+    "A sample AgentSiteOps route file showing selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, stop rule, and unproven claims.",
   alternates: { canonical: path },
   openGraph: {
-    title: "Sample Launch Blueprint",
-    description: "Preview the manual blueprint structure before buying.",
+    title: "Sample Route File",
+    description:
+      "Preview the route-file structure before using the AgentSiteOps research workflow.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -29,39 +28,163 @@ export const metadata: Metadata = {
   }
 };
 
+const inputSnapshot = [
+  {
+    label: "Project",
+    value: "AI-capable solo builder with several possible services and no clear first buyer."
+  },
+  {
+    label: "Available proof",
+    value: "Two private demos, one public workflow screenshot, and no confirmed payment yet."
+  },
+  {
+    label: "Constraint",
+    value: "Seven-day validation window, no paid ads, no regulated advice, no private account takeover."
+  },
+  {
+    label: "Decision needed",
+    value: "Choose one route to test first, or stop before building more pages."
+  }
+];
+
+const selectedRoute = [
+  {
+    label: "Selected route",
+    value:
+      "Pilot a narrow AI intake and follow-up workflow setup for solo consultants before building a broader agency, course, or tool."
+  },
+  {
+    label: "Confidence",
+    value:
+      "Medium for delivery feasibility; low for paid demand until qualified replies or payment plus usable intake exists."
+  },
+  {
+    label: "Reason",
+    value:
+      "The route uses existing build ability, can be explained in one page, and can produce a first proof asset without search traffic."
+  }
+];
+
+const rejectedAlternatives = [
+  {
+    route: "Broad AI automation agency",
+    reason:
+      "Rejected because it requires general trust, multiple service lines, and stronger proof than the current asset set supports."
+  },
+  {
+    route: "Prompt pack",
+    reason:
+      "Rejected because generic prompt output is easy to replace with ordinary ChatGPT use and does not prove delivery value."
+  },
+  {
+    route: "SEO content site",
+    reason:
+      "Rejected because search-first validation is too slow for the current seven-day decision window."
+  },
+  {
+    route: "AI visibility dashboard",
+    reason:
+      "Rejected because monitoring software needs data scale, recurring demand, and technical scope not proven by the intake."
+  }
+];
+
+const evidenceLedger = [
+  {
+    claim: "The builder can deliver a simple workflow setup.",
+    status: "Verified",
+    source: "Existing demos and workflow screenshot.",
+    next: "Turn one demo into a public walkthrough."
+  },
+  {
+    claim: "Solo consultants feel repeated intake and follow-up pain.",
+    status: "Inferred",
+    source: "Public context and operator observation.",
+    next: "Collect qualified replies from targeted outreach."
+  },
+  {
+    claim: "Buyers will pay for this service.",
+    status: "Pending",
+    source: "No payment plus usable intake yet.",
+    next: "Offer a small pilot and record payment or rejection."
+  },
+  {
+    claim: "Search demand can support expansion.",
+    status: "Not proven",
+    source: "No GSC, Bing, or first-party search export.",
+    next: "Do not scale content on search assumptions."
+  }
+];
+
+const proofAsset = [
+  "A one-page service route explaining the intake problem, 72-hour setup scope, included handoff, exclusions, and first CTA.",
+  "One anonymized before/after workflow screenshot or walkthrough.",
+  "A short outreach message that asks for a workflow review, not a broad AI transformation sale."
+];
+
+const validationChannel = [
+  {
+    label: "First channel",
+    value: "Manual outreach to a small set of solo consultants with visible service offers."
+  },
+  {
+    label: "Signal that counts",
+    value: "Qualified reply, payment plus usable intake, or repeated objection that identifies a repair path."
+  },
+  {
+    label: "Signal that does not count",
+    value: "Page views, sitemap submission, AI-generated praise, or broad market context without buyer action."
+  }
+];
+
+const stopRules = [
+  "Stop this route if 30 targeted messages produce no qualified reply.",
+  "Stop paid positioning if buyers ask for implementation outside the stated delivery capacity.",
+  "Stop content expansion if the only evidence is search context without first-party signals.",
+  "Block the route if it drifts into regulated advice, private account access, spam automation, or guaranteed outcomes."
+];
+
+const notProven = [
+  "Traffic, ranking, AI citation, revenue, customer response, or product-market fit.",
+  "That the selected buyer segment is the highest-value market.",
+  "That the route should become software, subscription, course, or broad agency work.",
+  "That public market research is enough to justify checkout or content scaling."
+];
+
 export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    name: "Sample AgentSiteOps Launch Blueprint",
-    description: "An anonymized example structure for the paid Launch Blueprint deliverable.",
+    name: "Sample AgentSiteOps Route File",
+    description:
+      "An example route file showing selected path, rejected alternatives, evidence ledger, proof asset, validation channel, and stop rule.",
     url: `${siteUrl}${path}`,
     inLanguage: "en"
   };
 
   return (
-    <main className="gate-page">
+    <main className="gate-page sample-route-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="gate-hero">
+      <section className="gate-hero sample-route-hero">
         <div>
-          <p className="eyebrow">Sample deliverable</p>
-          <h1>What a Launch Blueprint looks like.</h1>
+          <p className="eyebrow">Sample route file</p>
+          <h1>What the final AgentSiteOps handoff should contain.</h1>
           <p>
-            This sample shows the shape of the paid artifact. Real delivery is customized
-            from the buyer's skills, assets, target market, constraints, and launch window.
+            This sample is a fictional route file. It shows the structure a client should
+            expect after intake, manual Deep Research, coverage checking, gap repair, and
+            final synthesis.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/tools/launch-blueprint-fit-checker/">
-              <CheckCircle2 aria-hidden="true" size={17} />
-              Check fit first
+            <Link prefetch={false} className="primary-action" href="/reports/client-route-workflow/">
+              <FileText aria-hidden="true" size={17} />
+              Open client workflow
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/intake/">
+            <Link prefetch={false} className="secondary-action" href="/templates/route-research-prompt-pack/">
               <ArrowRight aria-hidden="true" size={17} />
-              View intake fields
+              Run research workflow
             </Link>
             <Link prefetch={false} className="secondary-action" href="/compare/">
               <GitCompareArrows aria-hidden="true" size={17} />
@@ -72,76 +195,25 @@ export default function Page() {
         <aside className="decision-card">
           <strong>Sample status</strong>
           <p>
-            This is a fictional example. It demonstrates format and specificity, not a customer case study.
+            Format example only. It proves the artifact structure, not traffic, payment,
+            demand, ranking, AI citation, or customer outcomes.
           </p>
         </aside>
       </section>
 
       <section className="gate-section">
         <div className="section-head">
-          <h2>Sample input snapshot</h2>
+          <h2>Input snapshot</h2>
           <p>
-            A paid blueprint is only useful if it starts from actual operating facts. The
-            example below shows the minimum evidence used before selecting a route.
+            A route file starts from the client's actual situation. Missing inputs remain
+            visible instead of being replaced by confident language.
           </p>
         </div>
-        <div className="comparison-table comparison-table-wide" role="table" aria-label="Sample input snapshot">
-          <div role="row">
-            <strong role="columnheader">Input</strong>
-            <strong role="columnheader">Sample value</strong>
-          </div>
-          {sampleBlueprintInputs.map((item) => (
-            <div key={item.label} role="row">
-              <span role="cell">{item.label}</span>
-              <span role="cell">{item.value}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="gate-section split-section gate-split">
-        <div>
-          <h2>Decision output</h2>
-          <ul className="compact-list">
-            <li>
-              <strong>Selected offer:</strong> {sampleBlueprintDecision.selectedOffer}
-            </li>
-            <li>
-              <strong>Target buyer:</strong> {sampleBlueprintDecision.targetBuyer}
-            </li>
-            <li>
-              <strong>First price:</strong> {sampleBlueprintDecision.firstPrice}
-            </li>
-            <li>
-              <strong>Confidence:</strong> {sampleBlueprintDecision.confidence}
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h2>Rejected paths</h2>
-          <ul className="compact-list">
-            {sampleBlueprintRejectedPaths.map((item) => (
-              <li key={item.path}>
-                <strong>{item.path}:</strong> {item.reason}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="gate-section">
-        <div className="section-head">
-          <h2>Sample report sections</h2>
-          <p>
-            A useful blueprint should make one path easier to execute, not add more options.
-          </p>
-        </div>
-        <div className="loop-grid">
-          {sampleReportSections.map((section, index) => (
-            <article key={section.title}>
-              <span>{index + 1}</span>
-              <h3>{section.title}</h3>
-              <p>{section.body}</p>
+        <div className="sample-snapshot-grid">
+          {inputSnapshot.map((item) => (
+            <article key={item.label}>
+              <small>{item.label}</small>
+              <p>{item.value}</p>
             </article>
           ))}
         </div>
@@ -149,20 +221,29 @@ export default function Page() {
 
       <section className="gate-section split-section gate-split">
         <div>
-          <h2>Landing page outline</h2>
-          <ul className="compact-list">
-            {sampleLandingPageBlocks.map((item) => (
-              <li key={item}>{item}</li>
+          <h2>Selected route</h2>
+          <div className="sample-route-stack">
+            {selectedRoute.map((item) => (
+              <article key={item.label}>
+                <CheckCircle2 aria-hidden="true" size={18} />
+                <div>
+                  <h3>{item.label}</h3>
+                  <p>{item.value}</p>
+                </div>
+              </article>
             ))}
-          </ul>
+          </div>
         </div>
         <div>
-          <h2>7-day validation plan</h2>
-          <div className="timeline-grid">
-            {sampleValidationPlan.map((item) => (
-              <article key={item.day}>
-                <small>{item.day}</small>
-                <p>{item.action}</p>
+          <h2>Rejected alternatives</h2>
+          <div className="sample-route-stack is-rejected">
+            {rejectedAlternatives.map((item) => (
+              <article key={item.route}>
+                <AlertTriangle aria-hidden="true" size={18} />
+                <div>
+                  <h3>{item.route}</h3>
+                  <p>{item.reason}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -171,52 +252,98 @@ export default function Page() {
 
       <section className="gate-section">
         <div className="section-head">
-          <h2>What the paid file must contain</h2>
+          <h2>Evidence ledger</h2>
           <p>
-            The USD 99 price is not for a score. It is for a compact decision artifact
-            that can be executed in the next validation cycle.
+            Each claim is tagged before it can raise route confidence. This prevents
+            public context from being treated as buyer proof.
           </p>
         </div>
-        <div className="loop-grid">
-          {samplePaidArtifactChecklist.map((item, index) => (
-            <article key={item.title}>
-              <span>{index + 1}</span>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
+        <div className="sample-ledger-table" role="table" aria-label="Sample evidence ledger">
+          <div role="row">
+            <strong role="columnheader">Claim</strong>
+            <strong role="columnheader">Status</strong>
+            <strong role="columnheader">Source</strong>
+            <strong role="columnheader">Next evidence</strong>
+          </div>
+          {evidenceLedger.map((item) => (
+            <div role="row" key={item.claim}>
+              <span role="cell">{item.claim}</span>
+              <span role="cell">{item.status}</span>
+              <span role="cell">{item.source}</span>
+              <span role="cell">{item.next}</span>
+            </div>
           ))}
         </div>
       </section>
 
       <section className="gate-section split-section gate-split">
         <div>
-          <h2>What this sample proves</h2>
+          <h2>First proof asset</h2>
           <ul className="compact-list">
-            <li>
-              <CheckCircle2 aria-hidden="true" size={16} /> The deliverable is a launch decision artifact, not a generic SEO audit.
-            </li>
-            <li>
-              <CheckCircle2 aria-hidden="true" size={16} /> It connects offer, buyer, page structure, price, outreach, and stop rules.
-            </li>
-            <li>
-              <CheckCircle2 aria-hidden="true" size={16} /> It avoids traffic, ranking, revenue, and platform-growth promises.
-            </li>
+            {proofAsset.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </div>
         <div>
-          <h2>What a real report adds</h2>
+          <h2>Validation channel</h2>
+          <div className="sample-validation-list">
+            {validationChannel.map((item) => (
+              <article key={item.label}>
+                <ShieldCheck aria-hidden="true" size={18} />
+                <div>
+                  <h3>{item.label}</h3>
+                  <p>{item.value}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="gate-section split-section gate-split">
+        <div>
+          <h2>Stop rule</h2>
+          <ul className="compact-list">
+            {stopRules.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h2>What is not proven</h2>
+          <ul className="compact-list">
+            {notProven.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="gate-section split-section gate-split">
+        <div>
+          <h2>How to use this sample</h2>
           <p>
-            A real paid report uses the buyer's submitted details, assets, constraints, and market
-            path. The final artifact is delivered manually after payment confirmation and intake.
+            Compare any delivered AgentSiteOps route file against this structure. If the
+            file does not choose one route, reject alternatives, tag evidence, define the
+            first proof asset, name a validation channel, and state a stop rule, it is not
+            complete.
+          </p>
+        </div>
+        <div>
+          <h2>Next step</h2>
+          <p>
+            Start with the client workflow if the project is messy, or use the prompt pack
+            when the intake boundary is already clear enough for manual Deep Research.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
-              <CheckCircle2 aria-hidden="true" size={17} />
-              Check fit first
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/buy/">
+            <Link prefetch={false} className="secondary-action" href="/reports/client-route-workflow/">
               <FileText aria-hidden="true" size={17} />
-              View buy page
+              Client workflow
+            </Link>
+            <Link prefetch={false} className="secondary-action" href="/reports/route-basis/">
+              <ShieldCheck aria-hidden="true" size={17} />
+              Route basis
             </Link>
           </div>
         </div>

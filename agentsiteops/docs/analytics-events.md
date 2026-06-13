@@ -68,7 +68,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `answer_stop_rule_view` | `/answers/when-to-stop-an-ai-website-idea/` load | `path` |
 | `launch_blueprint_legacy_view` | `/website-opportunity-audit/` load | `path` |
 | `launch_blueprint_pricing_view` | `/pricing/` load | `path` |
-| `launch_blueprint_sample_view` | `/sample/` load | `path` |
+| `sample_route_file_view` | `/sample/` load | `path` |
 | `launch_blueprint_compare_view` | `/compare/` load | `path` |
 | `starter_review_view` | `/starter-review/` load | `path` |
 | `launch_blueprint_buy_view` | `/buy/` load | `path` |

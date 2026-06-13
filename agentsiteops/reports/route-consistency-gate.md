@@ -1,6 +1,6 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-13T06:30:29.906Z
+- Generated: 2026-06-13T06:52:24.577Z
 - Status: pass
 - Checks: 280
 - Blockers: 0
@@ -222,7 +222,7 @@
 | analytics_allowlist | pass | answer_stop_rule_view is registered |
 | analytics_allowlist | pass | launch_blueprint_legacy_view is registered |
 | analytics_allowlist | pass | launch_blueprint_pricing_view is registered |
-| analytics_allowlist | pass | launch_blueprint_sample_view is registered |
+| analytics_allowlist | pass | sample_route_file_view is registered |
 | analytics_allowlist | pass | launch_blueprint_compare_view is registered |
 | analytics_allowlist | pass | starter_review_view is registered |
 | analytics_allowlist | pass | launch_blueprint_buy_view is registered |

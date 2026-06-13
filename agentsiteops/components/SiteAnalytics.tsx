@@ -69,7 +69,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/answers/when-to-stop-an-ai-website-idea/": ["answer_stop_rule_view"],
   "/website-opportunity-audit/": ["launch_blueprint_legacy_view"],
   "/pricing/": ["launch_blueprint_pricing_view"],
-  "/sample/": ["launch_blueprint_sample_view"],
+  "/sample/": ["sample_route_file_view"],
   "/compare/": ["launch_blueprint_compare_view"],
   "/starter-review/": ["starter_review_view"],
   "/buy/": ["launch_blueprint_buy_view"],

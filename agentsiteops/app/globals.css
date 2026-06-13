@@ -6232,6 +6232,134 @@ textarea {
   padding: 22px;
 }
 
+.route-flow-board {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.route-flow-board article {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-height: 300px;
+  border: 1px solid rgba(226, 232, 240, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(103, 232, 249, 0.08), rgba(9, 19, 33, 0.96)),
+    rgba(9, 19, 33, 0.96);
+  padding: 18px;
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.14);
+}
+
+.route-flow-board article > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.route-flow-board span {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(103, 232, 249, 0.28);
+  border-radius: 8px;
+  background: rgba(103, 232, 249, 0.1);
+  color: var(--route-accent);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.route-flow-board svg {
+  color: var(--route-good);
+}
+
+.route-flow-board small,
+.route-workspace-strip small {
+  color: var(--route-muted);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.route-flow-board h3,
+.route-workspace-strip h3 {
+  margin: 0;
+  color: var(--route-text);
+}
+
+.route-flow-board p,
+.route-workspace-strip p {
+  margin: 0;
+  color: var(--route-muted);
+  line-height: 1.55;
+}
+
+.route-flow-board strong {
+  align-self: end;
+  border-top: 1px solid rgba(226, 232, 240, 0.12);
+  color: var(--route-text);
+  padding-top: 12px;
+  font-size: 13px;
+}
+
+.route-workspace-strip {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.9fr) repeat(3, minmax(0, 1fr)) auto;
+  gap: 12px;
+  align-items: stretch;
+  margin-top: 14px;
+}
+
+.route-workspace-strip > div,
+.route-workspace-strip article,
+.route-workspace-link {
+  border: 1px solid rgba(226, 232, 240, 0.18);
+  border-radius: 8px;
+  background: rgba(9, 19, 33, 0.94);
+  padding: 16px;
+}
+
+.route-workspace-strip > div {
+  display: grid;
+  gap: 8px;
+  align-content: center;
+}
+
+.route-workspace-strip article {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.route-workspace-strip article strong {
+  color: var(--route-text);
+  font-size: 18px;
+}
+
+.route-workspace-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 180px;
+  color: var(--route-text);
+  font-weight: 900;
+}
+
+.route-workspace-link:hover {
+  border-color: rgba(103, 232, 249, 0.46);
+  transform: translateY(-2px);
+}
+
+.route-foundation-grid.is-boundary-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .route-boundary-grid article {
   min-height: 190px;
   border: 1px solid rgba(226, 232, 240, 0.22);
@@ -6348,6 +6476,7 @@ textarea {
 
 .client-checklist-grid,
 .client-progress-board,
+.client-readiness-grid,
 .route-file-preview {
   display: grid;
   gap: 14px;
@@ -6359,6 +6488,9 @@ textarea {
 
 .client-checklist-grid article,
 .client-progress-board article,
+.client-readiness-grid article,
+.client-gap-list article,
+.client-queue-list article,
 .route-file-preview article {
   min-width: 0;
   border: 1px solid var(--line);
@@ -6384,11 +6516,48 @@ textarea {
 
 .client-checklist-grid p,
 .client-progress-board p,
+.client-readiness-grid p,
+.client-gap-list p,
+.client-queue-list p,
 .route-file-preview p,
 .client-workflow-split p {
   margin: 0;
   color: var(--muted);
   line-height: 1.6;
+}
+
+.client-readiness-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.client-readiness-grid article {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-height: 190px;
+  padding: 16px;
+}
+
+.client-readiness-grid span {
+  width: fit-content;
+  border-radius: 8px;
+  background: var(--green-soft);
+  color: var(--green);
+  padding: 5px 8px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.client-readiness-grid .weak span {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.client-readiness-grid h3,
+.client-gap-list h3,
+.client-queue-list h3 {
+  margin: 0;
+  color: var(--ink);
 }
 
 .client-progress-board {
@@ -6468,6 +6637,35 @@ textarea {
   margin: 6px 0 0;
 }
 
+.client-gap-list,
+.client-queue-list {
+  display: grid;
+  gap: 10px;
+}
+
+.client-gap-list article,
+.client-queue-list article {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+}
+
+.client-gap-list strong {
+  width: fit-content;
+  border-radius: 8px;
+  background: #fff7df;
+  color: #b7791f;
+  padding: 5px 8px;
+  font-size: 12px;
+}
+
+.client-queue-list small {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .route-file-preview {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -6477,6 +6675,143 @@ textarea {
   gap: 10px;
   align-content: start;
   padding: 18px;
+}
+
+.manual-boundary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.manual-boundary-grid article {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-width: 0;
+  min-height: 210px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+  padding: 18px;
+}
+
+.manual-boundary-grid svg {
+  color: var(--blue);
+}
+
+.manual-boundary-grid h3 {
+  margin: 0;
+  color: var(--ink);
+}
+
+.manual-boundary-grid p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.sample-route-page .gate-hero {
+  align-items: center;
+}
+
+.sample-snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.sample-snapshot-grid article,
+.sample-route-stack article,
+.sample-validation-list article {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+}
+
+.sample-snapshot-grid article {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-height: 170px;
+  padding: 16px;
+}
+
+.sample-snapshot-grid small {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sample-snapshot-grid p,
+.sample-route-stack p,
+.sample-validation-list p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.sample-route-stack,
+.sample-validation-list {
+  display: grid;
+  gap: 10px;
+}
+
+.sample-route-stack article,
+.sample-validation-list article {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 14px;
+}
+
+.sample-route-stack svg,
+.sample-validation-list svg {
+  margin-top: 3px;
+  color: var(--green);
+}
+
+.sample-route-stack.is-rejected svg {
+  color: var(--amber);
+}
+
+.sample-route-stack h3,
+.sample-validation-list h3 {
+  margin: 0 0 6px;
+  color: var(--ink);
+}
+
+.sample-ledger-table {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.sample-ledger-table > div {
+  display: grid;
+  grid-template-columns: 1.1fr 0.55fr 0.9fr 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 15px 16px;
+}
+
+.sample-ledger-table > div:first-child {
+  background: #eef4e8;
+}
+
+.sample-ledger-table > div + div {
+  border-top: 1px solid var(--line);
+}
+
+.sample-ledger-table span {
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .manual-research-grid {
@@ -7123,11 +7458,16 @@ textarea {
 
   .route-basis-strip,
   .route-foundation-grid,
+  .route-flow-board,
+  .route-workspace-strip,
   .route-boundary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .client-checklist-grid,
+  .client-readiness-grid,
+  .manual-boundary-grid,
+  .sample-snapshot-grid,
   .route-file-preview {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -7143,8 +7483,14 @@ textarea {
   .route-graph,
   .stage-detail-card,
   .prompt-meta-grid,
+  .route-flow-board,
+  .route-foundation-grid.is-boundary-grid,
   .client-checklist-grid,
   .client-progress-board,
+  .client-readiness-grid,
+  .manual-boundary-grid,
+  .sample-snapshot-grid,
+  .sample-ledger-table > div,
   .route-file-preview,
   .manual-research-grid,
   .manual-workspace-head,
@@ -7200,6 +7546,7 @@ textarea {
   }
 
   .route-preserved-section dl,
+  .route-workspace-strip,
   .route-link-board {
     grid-template-columns: 1fr;
   }

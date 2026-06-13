@@ -1,6 +1,6 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-13T06:31:10.444Z
+- Generated: 2026-06-13T06:51:58.150Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
@@ -63,7 +63,7 @@
 | /website-opportunity-audit/ | pass | 200 | AgentSiteOps Launch Blueprint \| AgentSiteOps | https://agentsiteops.com/website-opportunity-audit/ | 1 | 19 | pass | - |
 | /pricing/ | pass | 200 | Pricing \| AgentSiteOps | https://agentsiteops.com/pricing/ | 1 | 20 | pass | - |
 | /examples/fit-review-sample/ | pass | 200 | Fit Review Sample \| AgentSiteOps | https://agentsiteops.com/examples/fit-review-sample/ | 1 | 18 | pass | - |
-| /sample/ | pass | 200 | Sample Launch Blueprint \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 20 | pass | - |
+| /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 18 | pass | - |
 | /compare/ | pass | 200 | Compare Launch Options \| AgentSiteOps | https://agentsiteops.com/compare/ | 1 | 18 | pass | - |
 | /starter-review/ | pass | 200 | Fit Review \| AgentSiteOps | https://agentsiteops.com/starter-review/ | 1 | 18 | pass | - |
 | /buy/ | pass | 200 | Buy Launch Blueprint \| AgentSiteOps | https://agentsiteops.com/buy/ | 1 | 19 | pass | - |
