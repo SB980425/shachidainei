@@ -24,6 +24,8 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 |---|---|---|
 | `page_view` | Any route load | `path` |
 | `update_log_view` | `/updates/` load | `path` |
+| `start_page_view` | `/start/` load | `path` |
+| `how_it_works_view` | `/how-it-works/` load | `path` |
 | `operating_system_view` | `/ai-website-operating-system/` load | `path` |
 | `tool_page_view` | `/tools/website-opportunity-scorer/` load | `path` |
 | `ai_crawler_readiness_view` | `/tools/ai-crawler-readiness/` load | `path` |

@@ -43,6 +43,94 @@ export const workflow = [
 
 export const routePages: RoutePage[] = [
   {
+    path: "/start/",
+    pageType: "product_entry",
+    title: "Start with AgentSiteOps",
+    description:
+      "A customer starting page for turning messy project material into a checked Route File without pretending the project is already validated.",
+    answer:
+      "Start with AgentSiteOps by submitting project facts, source material, constraints, and candidate routes. The output is a Route File, not a guarantee of traffic, customers, revenue, or AI citations.",
+    primaryAction: { label: "View sample Route File", href: "/sample/" },
+    secondaryAction: { label: "See how it works", href: "/how-it-works/" },
+    aiTarget:
+      "Explain what a customer should submit, who AgentSiteOps fits, who it does not fit, and what a Route File contains.",
+    humanAction:
+      "Use this page before sending a project intake or deciding whether AgentSiteOps is the right route review method.",
+    sections: [
+      {
+        title: "What you submit",
+        body:
+          "Submit project facts, source material, constraints, and candidate routes. The input can be messy, but it must expose the decision boundary."
+      },
+      {
+        title: "Good fit",
+        body:
+          "AgentSiteOps fits projects with too many possible routes and not enough evidence to choose the next build path."
+      },
+      {
+        title: "Not a fit",
+        body:
+          "It is not for guaranteed traffic, ranking, AI citation, revenue, payment approval, hidden automatic Deep Research, or ongoing monitoring software."
+      },
+      {
+        title: "Route File",
+        body:
+          "The output includes selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule."
+      }
+    ],
+    related: [
+      { label: "How AgentSiteOps Works", href: "/how-it-works/" },
+      { label: "Sample Route File", href: "/sample/" },
+      { label: "Route File Delivery Gate", href: "/checklists/route-file-delivery-gate/" },
+      { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
+      { label: "Pricing", href: "/pricing/" }
+    ]
+  },
+  {
+    path: "/how-it-works/",
+    pageType: "product_explainer",
+    title: "How AgentSiteOps Works",
+    description:
+      "The visible workflow from messy project input to Route File: scope lock, manual Deep Research, coverage gate, repair prompt, synthesis, and stop rule.",
+    answer:
+      "AgentSiteOps locks the project boundary, generates a manual Deep Research brief, checks the returned report, repairs gaps with a second-pass prompt, then fuses accepted research into a Route File.",
+    primaryAction: { label: "Start with a project", href: "/start/" },
+    secondaryAction: { label: "View client workflow", href: "/reports/client-route-workflow/" },
+    aiTarget:
+      "Describe the manual research boundary, no-OpenAI-API claim, coverage gate, repair loop, and Route File synthesis.",
+    humanAction:
+      "Read this before using the prompt pack or delivery gate so the manual research boundary is clear.",
+    sections: [
+      {
+        title: "Manual Deep Research",
+        body:
+          "The operator runs the prompt in ChatGPT Deep Research with the user's own ChatGPT Deep Research allowance. The website does not make a hidden OpenAI API call."
+      },
+      {
+        title: "Coverage gate",
+        body:
+          "The returned report is checked for buyer logic, source table, rejected alternatives, evidence ledger, proof asset, validation channel, and stop rule."
+      },
+      {
+        title: "Repair or stop",
+        body:
+          "Missing evidence becomes a second-pass research prompt. Unsupported routes stay blocked instead of being polished into confident copy."
+      },
+      {
+        title: "Template role",
+        body:
+          "The prompt pack, delivery gate, client workflow, evidence ledger, and sample file remain supporting method assets behind the simpler product path."
+      }
+    ],
+    related: [
+      { label: "Start with AgentSiteOps", href: "/start/" },
+      { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
+      { label: "Route File Delivery Gate", href: "/checklists/route-file-delivery-gate/" },
+      { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
+      { label: "Sample Route File", href: "/sample/" }
+    ]
+  },
+  {
     path: "/ai-website-operating-system/",
     pageType: "pillar",
     title: "AI Website Operating System",

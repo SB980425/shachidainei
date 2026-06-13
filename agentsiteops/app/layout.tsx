@@ -4,9 +4,9 @@ import {
   BadgeDollarSign,
   ClipboardList,
   FileCheck2,
+  FileText,
   GitBranch,
-  Newspaper,
-  SearchCheck
+  Newspaper
 } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     template: "%s | AgentSiteOps"
   },
   description:
-    "Turn scattered AI capability into one sellable offer, one landing page structure, and one 7-day validation path.",
+    "Turn messy project material into one checked Route File before building more pages, tools, checkout, or content systems.",
   openGraph: {
     title: "AgentSiteOps",
     description:
-      "A manual Fit Review and Launch Blueprint for AI-capable solo builders who need one offer, one page, and one first validation path.",
+      "A Research-to-Route File service for unclear projects that need one selected route, rejected alternatives, evidence ledger, validation channel, and stop rule.",
     url: "https://agentsiteops.com/",
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AgentSiteOps",
     description:
-      "Validate one AI service offer before building the site, automation demo, or content system.",
+      "Turn messy project input into a checked Route File before build expansion.",
     images: ["/twitter-image.png"]
   },
   icons: {
@@ -67,10 +67,10 @@ export const viewport: Viewport = {
 };
 
 const navItems = [
-  { href: "/ai-website-operating-system/", label: "System", Icon: GitBranch },
-  { href: "/methodology/route-selection/", label: "Method", Icon: SearchCheck },
-  { href: "/templates/route-research-prompt-pack/", label: "Research", Icon: ClipboardList },
-  { href: "/sample/", label: "Sample", Icon: FileCheck2 },
+  { href: "/start/", label: "Start", Icon: ClipboardList },
+  { href: "/how-it-works/", label: "How it works", Icon: GitBranch },
+  { href: "/sample/", label: "Sample", Icon: FileText },
+  { href: "/checklists/route-file-delivery-gate/", label: "Delivery", Icon: FileCheck2 },
   { href: "/updates/", label: "Updates", Icon: Newspaper }
 ];
 
@@ -100,12 +100,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <footer className="site-footer">
           <div>
             <BrandLogo compact />
-            <p>Launch blueprint service for AI-capable solo builders who need one sellable offer and first validation path.</p>
+            <p>Research-to-Route File service for messy projects that need one selected route before build expansion.</p>
           </div>
           <div className="footer-links">
+            <Link prefetch={false} href="/start/">Start</Link>
+            <Link prefetch={false} href="/how-it-works/">How it works</Link>
             <Link prefetch={false} href="/launch-kit/">Launch Kit</Link>
             <Link prefetch={false} href="/methodology/route-selection/">Method</Link>
             <Link prefetch={false} href="/templates/route-research-prompt-pack/">Research</Link>
+            <Link prefetch={false} href="/checklists/route-file-delivery-gate/">Delivery Gate</Link>
             <Link prefetch={false} href="/reports/route-basis/">Route Basis</Link>
             <Link prefetch={false} href="/updates/">Updates</Link>
             <Link prefetch={false} href="/pricing/">Pricing</Link>

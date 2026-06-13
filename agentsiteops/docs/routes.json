@@ -9,9 +9,27 @@
       "path": "/",
       "pageType": "home",
       "template": "home",
-      "cluster": "ai_website_operating_system",
+      "cluster": "launch_blueprint",
       "index": true,
       "priority": 1,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/start/",
+      "pageType": "product_entry",
+      "template": "product_entry",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.88,
+      "changefreq": "weekly"
+    },
+    {
+      "path": "/how-it-works/",
+      "pageType": "product_explainer",
+      "template": "product_explainer",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.86,
       "changefreq": "weekly"
     },
     {
