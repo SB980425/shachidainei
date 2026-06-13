@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-13T03:43:29.185Z
+- Generated: 2026-06-13T04:10:25.379Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 245
+- Checks: 247
 - Blockers: 0
 - Warnings: 0
 
@@ -75,10 +75,12 @@
 | /reports/agentsiteops-route-run/ | pass | canonical points to production URL | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
 | /reports/agentsiteops-route-run/ | pass | AgentSiteOps Route Run | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
 | /reports/agentsiteops-route-run/ | pass | Selected route | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
+| /reports/agentsiteops-route-run/ | pass | Route decision matrix | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
 | /reports/agentsiteops-route-run/ | pass | Rejected alternatives | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
 | /reports/agentsiteops-route-run/ | pass | Evidence used | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
 | /reports/agentsiteops-route-run/ | pass | First proof asset | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
 | /reports/agentsiteops-route-run/ | pass | Stop or pivot rule | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
+| /reports/agentsiteops-route-run/ | pass | Delivery acceptance checklist | [link](https://agentsiteops.com/reports/agentsiteops-route-run/) |
 | /reports/route-basis/ | pass | HTTP 200 | [link](https://agentsiteops.com/reports/route-basis/) |
 | /reports/route-basis/ | pass | HTML title exists | [link](https://agentsiteops.com/reports/route-basis/) |
 | /reports/route-basis/ | pass | canonical points to production URL | [link](https://agentsiteops.com/reports/route-basis/) |
