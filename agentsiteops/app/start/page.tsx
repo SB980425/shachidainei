@@ -83,6 +83,30 @@ const routeFileItems = [
   "Validation channel, counted signal, weak signal, review window, and stop rule."
 ];
 
+const readinessRows = [
+  {
+    label: "Ready",
+    title: "Research can start",
+    body:
+      "Project facts, source boundary, risk limits, and candidate routes are clear enough to create a narrow research brief.",
+    Icon: CheckCircle2
+  },
+  {
+    label: "Repair",
+    title: "Ask for missing context",
+    body:
+      "The route question is useful, but buyer proof, examples, sources, constraints, or rejected options are too thin.",
+    Icon: AlertTriangle
+  },
+  {
+    label: "Blocked",
+    title: "Do not start the run",
+    body:
+      "The request depends on private account access, unsafe regulated advice, copied data, or guaranteed traffic, ranking, revenue, or buyer response.",
+    Icon: ShieldCheck
+  }
+];
+
 const nextSteps = [
   {
     title: "1. Prepare the intake",
@@ -174,6 +198,30 @@ export default function Page() {
               <p>{item.body}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>Intake readiness</h2>
+          <p>
+            The first decision is not payment. The first decision is whether the intake is
+            ready for a bounded research run, needs repair, or must stay blocked.
+          </p>
+        </div>
+        <div className="start-readiness-panel">
+          {readinessRows.map((item) => {
+            const Icon = item.Icon;
+
+            return (
+              <article key={item.label}>
+                <span>{item.label}</span>
+                <Icon aria-hidden="true" size={20} />
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 

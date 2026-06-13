@@ -5849,6 +5849,69 @@ textarea {
   color: var(--amber);
 }
 
+.start-readiness-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.start-readiness-panel article {
+  display: grid;
+  min-width: 0;
+  min-height: 230px;
+  gap: 10px;
+  align-content: start;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+  padding: 18px;
+}
+
+.start-readiness-panel span {
+  width: fit-content;
+  border-radius: 999px;
+  background: var(--green-soft);
+  color: var(--green);
+  padding: 5px 9px;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.start-readiness-panel article:nth-child(2) span {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.start-readiness-panel article:nth-child(3) span {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.start-readiness-panel svg {
+  color: var(--green);
+}
+
+.start-readiness-panel article:nth-child(2) svg {
+  color: var(--amber);
+}
+
+.start-readiness-panel article:nth-child(3) svg {
+  color: #b91c1c;
+}
+
+.start-readiness-panel h3 {
+  margin: 0;
+  color: var(--ink);
+}
+
+.start-readiness-panel p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .route-command-shell {
   --route-bg: #07111f;
   --route-panel: rgba(9, 19, 33, 0.82);
@@ -9055,6 +9118,7 @@ textarea {
   .frontstage-fit-grid,
   .start-submit-grid,
   .start-next-grid,
+  .start-readiness-panel,
   .how-step-grid,
   .how-boundary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -9108,6 +9172,7 @@ textarea {
   .route-acceptance-table > div,
   .start-submit-grid,
   .start-next-grid,
+  .start-readiness-panel,
   .how-step-grid,
   .how-boundary-grid,
   .manual-boundary-grid,
