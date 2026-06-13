@@ -57,6 +57,52 @@ const outputContract = [
   }
 ];
 
+const clientObservationStages = [
+  {
+    title: "Scope lock",
+    body:
+      "The site first records which project is being routed and which material is out of scope for this pass. A client should see the boundary before any research result is accepted."
+  },
+  {
+    title: "Research brief",
+    body:
+      "The route brief turns the project into copy-ready Deep Research prompts, acceptance gates, and rejection rules. This is where missing questions become visible."
+  },
+  {
+    title: "External research pass",
+    body:
+      "The operator runs the brief in ChatGPT Deep Research or another approved research surface. AgentSiteOps does not pretend this step is automatic when it is manual."
+  },
+  {
+    title: "Coverage review",
+    body:
+      "The report is checked against required modules. Missing evidence, weak source use, vague buyer logic, or skipped alternatives trigger a focused second pass."
+  },
+  {
+    title: "Route file",
+    body:
+      "Only the fused route file becomes the deliverable: selected route, rejected routes, evidence ledger, first asset, validation channel, stop rule, and next action."
+  }
+];
+
+const laneBoundaries = [
+  {
+    title: "This website lane",
+    body:
+      "AgentSiteOps maintains the route method, prompt pack, acceptance gates, public samples, evidence ledger, and client-facing progress surface."
+  },
+  {
+    title: "Domain research lane",
+    body:
+      "A separate project thread or workspace runs the domain-specific research, such as a classical-text sample, using the prompt pack and returning a report for review."
+  },
+  {
+    title: "No mixed execution",
+    body:
+      "The website does not silently absorb every domain note into public copy. A research run must pass scope, rights, risk, and usefulness checks before it becomes a sample."
+  }
+];
+
 function PromptCard({ prompt }: { prompt: (typeof routeResearchPrompts)[number] }) {
   return (
     <article className="prompt-card">
@@ -144,6 +190,44 @@ export default function Page() {
             when the first report misses required sections.
           </p>
         </aside>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>What a client can observe</h2>
+          <p>
+            The product should make the route process visible. A client should be able to
+            tell where the work is, what is blocked, and why a route was accepted or
+            rejected before paying for deeper execution.
+          </p>
+        </div>
+        <div className="manual-research-grid">
+          {clientObservationStages.map((stage, index) => (
+            <article key={stage.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{stage.title}</h3>
+              <p>{stage.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>Work lanes stay separate</h2>
+          <p>
+            The site is the route operating system. A domain study is a separate run that
+            can feed the site only after it passes evidence, rights, and risk gates.
+          </p>
+        </div>
+        <div className="contract-grid">
+          {laneBoundaries.map((item) => (
+            <article key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="gate-section">
