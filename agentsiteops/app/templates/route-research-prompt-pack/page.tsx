@@ -103,6 +103,65 @@ const laneBoundaries = [
   }
 ];
 
+const clientInputs = [
+  {
+    title: "Project facts",
+    body:
+      "What the project is, who it serves, what can already be built, what files or examples exist, and what decision is blocking progress."
+  },
+  {
+    title: "Source boundary",
+    body:
+      "Which files, public pages, search data, competitor references, or research notes can be used, and which material must stay private or out of scope."
+  },
+  {
+    title: "Risk boundary",
+    body:
+      "Claims that cannot be made, regulated advice to avoid, copyright limits, payment constraints, delivery capacity, and the budget or time boundary."
+  }
+];
+
+const clientDeliverables = [
+  {
+    title: "Route decision",
+    body:
+      "Proceed, pilot, pivot, stop, or blocked, with the reason tied to evidence instead of preference."
+  },
+  {
+    title: "Rejected alternatives",
+    body:
+      "At least three plausible paths preserved with concrete reasons they failed evidence, delivery, risk, or buyer-value tests."
+  },
+  {
+    title: "First proof asset",
+    body:
+      "The smallest page, tool, sample, checklist, report, or outreach asset that can test whether the route deserves more work."
+  },
+  {
+    title: "Validation window",
+    body:
+      "The first channel to test, the signal that counts, the signal that does not count, and the stop or scale condition."
+  }
+];
+
+const clientFailureRules = [
+  {
+    title: "Missing coverage",
+    body:
+      "If the report skips buyer proof, source table, pricing logic, rejected alternatives, or stop rule, the site creates a second-pass gap prompt."
+  },
+  {
+    title: "Unsupported claim",
+    body:
+      "If a claim is only inferred or copied from broad market context, it cannot raise route confidence until a better source or first-party signal exists."
+  },
+  {
+    title: "Wrong project boundary",
+    body:
+      "If the research drifts into unrelated domain content, it returns to scope lock instead of being fused into the route file."
+  }
+];
+
 function PromptCard({ prompt }: { prompt: (typeof routeResearchPrompts)[number] }) {
   return (
     <article className="prompt-card">
@@ -222,6 +281,61 @@ export default function Page() {
         </div>
         <div className="contract-grid">
           {laneBoundaries.map((item) => (
+            <article key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>What the client must provide</h2>
+          <p>
+            The route quality depends on the input boundary. A client does not need a
+            finished plan, but the project facts, usable sources, and blocked claims must
+            be visible before the research brief is generated.
+          </p>
+        </div>
+        <div className="contract-grid">
+          {clientInputs.map((item) => (
+            <article key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>What the client receives</h2>
+          <p>
+            The final output is a route decision package. It must reduce the next action
+            to one buildable path and keep the unchosen paths inspectable.
+          </p>
+        </div>
+        <div className="contract-grid">
+          {clientDeliverables.map((item) => (
+            <article key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>What happens when the research is weak</h2>
+          <p>
+            A weak report is not polished into a confident answer. It is either repaired
+            with a focused second pass, downgraded to pending, or blocked.
+          </p>
+        </div>
+        <div className="contract-grid">
+          {clientFailureRules.map((item) => (
             <article key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.body}</p>

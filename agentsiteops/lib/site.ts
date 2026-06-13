@@ -1118,9 +1118,9 @@ export const routePages: RoutePage[] = [
     pageType: "template",
     title: "Route Research Prompt Pack",
     description:
-      "A no-API manual Deep Research workflow for turning project facts into route archetypes, evidence ledgers, proof assets, pricing boundaries, validation channels, and stop rules.",
+      "A no-API manual Deep Research workflow that shows client inputs, visible progress, acceptance gates, rejected alternatives, route delivery, and stop rules.",
     answer:
-      "The prompt pack keeps AgentSiteOps free to operate by preparing ChatGPT Deep Research briefs, checking the completed report against acceptance gates, creating a second-pass gap brief when needed, and fusing the results into one route file.",
+      "The prompt pack keeps AgentSiteOps free to operate by preparing ChatGPT Deep Research briefs, showing what the client must provide, checking completed reports against acceptance gates, creating second-pass gap briefs when needed, and fusing accepted research into one route file.",
     primaryAction: { label: "Open route method", href: "/methodology/route-selection/" },
     secondaryAction: { label: "Inspect route basis", href: "/reports/route-basis/" },
     aiTarget:
@@ -1137,6 +1137,11 @@ export const routePages: RoutePage[] = [
         title: "What every research run must produce",
         body:
           "Every module must return a source table, evidence ledger, rejected paths, first asset, validation channel, and stop or scale rule. If those outputs are missing, the result stays as research only."
+      },
+      {
+        title: "What a client can inspect",
+        body:
+          "The page now separates project facts, source boundary, risk boundary, visible research stages, second-pass repair, final route package, and blocked claims so a client can judge progress without guessing what happened inside the research loop."
       },
       {
         title: "What it blocks",

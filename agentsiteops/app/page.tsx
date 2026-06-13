@@ -42,6 +42,47 @@ const foundationCards = [
   }
 ];
 
+const clientPathCards = [
+  {
+    title: "Bring a messy project",
+    body:
+      "Start with the project idea, target user, available files, constraints, payment limits, and the decision that must be made before building."
+  },
+  {
+    title: "Lock the research boundary",
+    body:
+      "The route brief separates in-scope material from future material, names blocked claims, and prevents unrelated domain work from mixing with the site plan."
+  },
+  {
+    title: "Run the research loop",
+    body:
+      "The visible workflow shows prompt generation, manual Deep Research, coverage checking, second-pass gaps when needed, and synthesis."
+  },
+  {
+    title: "Receive one route file",
+    body:
+      "The delivery is not a loose report. It must include the selected route, rejected alternatives, evidence ledger, first asset, validation channel, and stop rule."
+  }
+];
+
+const customerProofPoints = [
+  {
+    title: "You can inspect the method before paying.",
+    body:
+      "The route basis, prompt pack, sample file, and acceptance gates are public enough to judge whether the process is useful."
+  },
+  {
+    title: "You can see what is still unproven.",
+    body:
+      "The site marks missing search evidence, weak buyer proof, unsupported pricing, data-rights risk, and generic-AI substitution risk."
+  },
+  {
+    title: "You can stop before a build starts.",
+    body:
+      "If the route cannot produce a first asset, validation channel, and stop rule, it stays in research instead of becoming a website or paid offer."
+  }
+];
+
 const preservedLinks = [
   { href: "/launch-kit/", label: "Launch Kit" },
   { href: "/methodology/route-selection/", label: "Route selection methodology" },
@@ -86,6 +127,37 @@ export default function HomePage() {
       />
 
       <RouteCommandCenter />
+
+      <section className="route-foundation-section">
+        <div className="route-section-heading">
+          <span>Client path</span>
+          <h2>What a customer should understand before using the site.</h2>
+          <p>
+            AgentSiteOps is not a content generator and not a prediction engine. It is a
+            route workspace for turning unclear project material into a bounded decision,
+            then showing the evidence, rejected paths, and next operating step.
+          </p>
+        </div>
+
+        <div className="route-foundation-grid">
+          {clientPathCards.map((item) => (
+            <article key={item.title}>
+              <CheckCircle2 aria-hidden="true" size={22} />
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="route-boundary-grid">
+          {customerProofPoints.map((item) => (
+            <article key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="route-foundation-section">
         <div className="route-section-heading">
