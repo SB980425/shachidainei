@@ -357,6 +357,14 @@ async function main() {
     "Second manual pass when needed",
     "The final delivery is one fused route file"
   ]);
+  await checkPage("/reports/agentsiteops-route-run/", [
+    "AgentSiteOps Route Run",
+    "Selected route",
+    "Rejected alternatives",
+    "Evidence used",
+    "First proof asset",
+    "Stop or pivot rule"
+  ]);
   await checkPage("/pricing/", [
     "Choose the smallest purchase that can answer the decision",
     "AgentSiteOps Launch Blueprint",

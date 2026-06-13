@@ -288,6 +288,10 @@ export default function Page() {
               <ArrowRight aria-hidden="true" size={17} />
               Scoring template
             </Link>
+            <Link prefetch={false} className="secondary-action" href="/reports/agentsiteops-route-run/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Self route run
+            </Link>
           </div>
         </div>
       </section>

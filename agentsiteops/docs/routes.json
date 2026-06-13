@@ -231,6 +231,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/reports/agentsiteops-route-run/",
+      "pageType": "report",
+      "template": "route_run",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.76,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/templates/route-research-prompt-pack/",
       "pageType": "template",
       "template": "template",

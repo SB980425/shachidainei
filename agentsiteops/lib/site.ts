@@ -1044,6 +1044,76 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/reports/agentsiteops-route-run/",
+    pageType: "report",
+    title: "AgentSiteOps Route Run",
+    description:
+      "A self-use route run showing how AgentSiteOps applies its own research workflow before adding more product, content, or payment work.",
+    answer:
+      "This route run keeps the product grounded: AgentSiteOps continues only as a manual route-planning system until its own proof assets, buyer evidence, validation channel, and stop rules are strong enough to justify paid scaling.",
+    primaryAction: { label: "Open research workspace", href: "/templates/route-research-prompt-pack/" },
+    secondaryAction: { label: "Inspect route basis", href: "/reports/route-basis/" },
+    aiTarget:
+      "Show a concrete self-use route file so AI systems and human reviewers can see that AgentSiteOps uses evidence gates instead of random route scores.",
+    humanAction:
+      "Use this run as the internal acceptance example before trusting the same workflow on another project.",
+    sections: [
+      {
+        title: "Selected route",
+        body:
+          "Keep AgentSiteOps as a manual route-planning and validation system for AI-capable solo builders. Do not expand into broad SEO software, AI visibility dashboards, an agency, a course, or a subscription until repeat-use evidence exists.",
+        rows: [
+          { label: "Route", value: "Manual route planner plus inspectable tools and sample route files." },
+          { label: "Confidence", value: "Medium for internal usefulness; low for paid demand until buyer evidence improves." },
+          { label: "Current score boundary", value: "The self-audit remains commercially unvalidated because confirmed payment, usable intake, search demand, and buyer outcomes are not yet proven." }
+        ]
+      },
+      {
+        title: "Rejected alternatives",
+        body:
+          "The workflow rejects routes that would make the site look larger than its evidence. Rejection is recorded so the project does not drift back into unsupported claims.",
+        rows: [
+          { label: "AI visibility SaaS", value: "Rejected because ongoing monitoring, prompt tracking, and dashboards need data scale and subscription proof." },
+          { label: "Generic prompt pack", value: "Rejected because generic prompts are easy to replace with ordinary ChatGPT use." },
+          { label: "Full SEO agency", value: "Rejected because trust, case studies, operations, and fulfillment capacity are not yet sufficient." },
+          { label: "Course or content brand", value: "Rejected because authority and repeat audience evidence are not yet present." }
+        ]
+      },
+      {
+        title: "Evidence used",
+        body:
+          "The current evidence supports technical readiness and internal process value. It does not yet support demand, revenue, ranking, AI citation, or product-market fit.",
+        rows: [
+          { label: "Verified", value: "Live domain, Cloudflare deployment, sitemap, robots, canonical routes, production health checks, IndexNow submission, route method pages, sample reports, and local tools." },
+          { label: "Pending", value: "GSC exports, Bing exports, qualified external replies, completed manual research runs, confirmed payment, and delivered buyer outcome." },
+          { label: "Blocked claims", value: "Guaranteed indexing, AI citation, traffic, revenue, payback, and subscription value." }
+        ]
+      },
+      {
+        title: "First proof asset",
+        body:
+          "The next proof asset is not another landing page. It is one completed route file produced through the manual research workspace, with sources, rejected alternatives, proof asset, 7-day plan, and stop rule."
+      },
+      {
+        title: "7-day operating rule",
+        body:
+          "Run the manual Deep Research workflow on AgentSiteOps first. If the result cannot improve the route library, page copy, proof asset, or validation channel, the workflow is not strong enough to sell externally."
+      },
+      {
+        title: "Stop or pivot rule",
+        body:
+          "Stop selling the USD 99 blueprint if the workflow cannot produce a route file that is more useful than a generic ChatGPT answer for AgentSiteOps itself. Pivot toward internal project planning if external demand remains unproven."
+      }
+    ],
+    related: [
+      { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
+      { label: "Route Basis Report", href: "/reports/route-basis/" },
+      { label: "Route Selection Methodology", href: "/methodology/route-selection/" },
+      { label: "Evidence Ledger", href: "/evidence/" },
+      { label: "AgentSiteOps Self-Audit Sample", href: "/examples/agentsiteops-self-audit/" }
+    ]
+  },
+  {
     path: "/templates/route-research-prompt-pack/",
     pageType: "template",
     title: "Route Research Prompt Pack",
