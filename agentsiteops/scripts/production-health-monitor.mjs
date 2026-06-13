@@ -345,9 +345,11 @@ async function main() {
     "Every new project starts with a route map before a build."
   ]);
   await checkPage("/templates/route-research-prompt-pack/", [
+    "Free manual Deep Research plan",
+    "The free plan does not call the OpenAI API",
     "Research delivery loop",
     "Acceptance gate before delivery",
-    "Second research pass when needed",
+    "Second manual pass when needed",
     "The final delivery is one fused route file"
   ]);
   await checkPage("/pricing/", [

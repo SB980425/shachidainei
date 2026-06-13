@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, ClipboardList, FileText, SearchCheck, ShieldCheck } from "lucide-react";
 import { ResearchDeliveryLoop } from "@/components/ResearchDeliveryLoop";
 import {
+  manualDeepResearchSteps,
   researchAcceptanceGates,
   routeResearchPrompts,
   routeResearchProtocol
@@ -14,7 +15,7 @@ const path = "/templates/route-research-prompt-pack/";
 export const metadata: Metadata = {
   title: "Route Research Prompt Pack",
   description:
-    "Copy-ready deep research prompts for turning project facts into evidence-backed route maps, proof assets, validation channels, and stop rules.",
+    "A no-API manual Deep Research workflow for turning project facts into evidence-backed route maps, proof assets, validation channels, and stop rules.",
   alternates: { canonical: path },
   openGraph: {
     title: "Route Research Prompt Pack",
@@ -112,11 +113,11 @@ export default function Page() {
       <section className="gate-hero route-research-hero">
         <div>
           <p className="eyebrow">Route research template</p>
-          <h1>Use long-form research to make the route map less random.</h1>
+          <h1>Run Deep Research manually, then let AgentSiteOps judge the route.</h1>
           <p>
-            AgentSiteOps should not rely on a score alone. This prompt pack turns each
-            route decision into a bounded research task with sources, rejected paths,
-            proof assets, confidence rules, and stop conditions.
+            The free plan does not call the OpenAI API. AgentSiteOps prepares the prompt,
+            the operator runs Deep Research in ChatGPT, then the result is checked,
+            repaired if needed, and fused into one route map.
           </p>
           <div className="hero-actions">
             <Link prefetch={false} className="primary-action" href="/methodology/route-selection/">
@@ -130,21 +131,51 @@ export default function Page() {
           </div>
         </div>
         <aside className="decision-card">
-          <strong>Delivery window</strong>
+          <strong>Free mode boundary</strong>
           <p>
-            A normal route research run takes about 70-110 minutes. If the coverage gate
-            requires a second pass, the full cycle can take about 2 hours before final
-            synthesis.
+            Website-side model cost is zero in this mode. The research still uses the
+            user's own ChatGPT Deep Research allowance, and a second pass is only used
+            when the first report misses required sections.
           </p>
         </aside>
       </section>
 
       <section className="gate-section">
         <div className="section-head">
+          <h2>Free manual Deep Research plan</h2>
+          <p>
+            This is the current operating path. AgentSiteOps stays local and free; ChatGPT
+            Deep Research supplies the cited report through the user's existing allowance.
+          </p>
+        </div>
+        <div className="manual-research-grid">
+          {manualDeepResearchSteps.map((step, index) => (
+            <article key={step.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{step.title}</h3>
+              <dl>
+                <div>
+                  <dt>Owner</dt>
+                  <dd>{step.owner}</dd>
+                </div>
+                <div>
+                  <dt>Cost boundary</dt>
+                  <dd>{step.costBoundary}</dd>
+                </div>
+              </dl>
+              <p>{step.instruction}</p>
+              <strong>{step.output}</strong>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
           <h2>Research delivery loop</h2>
           <p>
-            The visible workflow is the delivery standard: first pass, coverage gate,
-            focused second pass when required, then one fused route file.
+            The visible workflow is the delivery standard: manual Deep Research pass,
+            coverage gate, focused second pass when required, then one fused route file.
           </p>
         </div>
         <ResearchDeliveryLoop />
@@ -174,7 +205,8 @@ export default function Page() {
           <h2>Acceptance gate before delivery</h2>
           <p>
             If the first report misses core prompt requirements, the missing parts are
-            converted into a focused gap brief before final synthesis.
+            converted into a focused gap brief for a second manual Deep Research task
+            before final synthesis.
           </p>
         </div>
         <div className="acceptance-gate-grid">

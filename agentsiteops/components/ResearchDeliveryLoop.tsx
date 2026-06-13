@@ -59,13 +59,13 @@ export function ResearchDeliveryLoop() {
 
       <div className="research-gate-note">
         <p>
-          If the coverage gate fails, missing items become a focused second-pass brief
-          before synthesis. The final delivery is one fused route file, not two unrelated
-          reports.
+          This panel previews the manual workflow. If the coverage gate fails, missing
+          items become a focused second-pass brief for ChatGPT Deep Research before
+          synthesis. The final delivery is one fused route file, not two unrelated reports.
         </p>
         <button type="button" onClick={() => setActiveIndex(nextIndex)}>
           <Play aria-hidden="true" size={15} />
-          Preview next checkpoint
+          Preview next manual checkpoint
         </button>
       </div>
     </div>

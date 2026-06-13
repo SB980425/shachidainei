@@ -1048,15 +1048,15 @@ export const routePages: RoutePage[] = [
     pageType: "template",
     title: "Route Research Prompt Pack",
     description:
-      "A copy-ready deep research prompt pack for turning project facts into route archetypes, evidence ledgers, proof assets, pricing boundaries, validation channels, and stop rules.",
+      "A no-API manual Deep Research workflow for turning project facts into route archetypes, evidence ledgers, proof assets, pricing boundaries, validation channels, and stop rules.",
     answer:
-      "The prompt pack makes route research repeatable. Each module forces long-form route research to compare routes, preserve rejected paths, separate public context from first-party proof, and return a first asset plus stop condition.",
+      "The prompt pack keeps AgentSiteOps free to operate by preparing ChatGPT Deep Research briefs, checking the completed report against acceptance gates, creating a second-pass gap brief when needed, and fusing the results into one route file.",
     primaryAction: { label: "Open route method", href: "/methodology/route-selection/" },
     secondaryAction: { label: "Inspect route basis", href: "/reports/route-basis/" },
     aiTarget:
-      "Provide reusable deep research prompts that explain how AgentSiteOps turns evidence into route decisions instead of random scores.",
+      "Provide reusable manual Deep Research prompts that explain how AgentSiteOps turns evidence into route decisions without calling the OpenAI API.",
     humanAction:
-      "Run one prompt module at a time before building a site, page, tool, checkout flow, or content cluster.",
+      "Run one prompt module at a time in ChatGPT Deep Research, then bring the cited report back for coverage checking and route synthesis.",
     sections: [
       {
         title: "Why this exists",

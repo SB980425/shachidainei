@@ -22,6 +22,57 @@ export type ResearchAcceptanceGate = {
   failAction: string;
 };
 
+export type ManualDeepResearchStep = {
+  title: string;
+  owner: string;
+  costBoundary: string;
+  instruction: string;
+  output: string;
+};
+
+export const manualDeepResearchSteps: ManualDeepResearchStep[] = [
+  {
+    title: "Generate the research brief",
+    owner: "AgentSiteOps",
+    costBoundary: "No OpenAI API call",
+    instruction:
+      "Collect project facts, constraints, target user, available proof, data rights, payment boundary, and weak assumptions into one copy-ready prompt.",
+    output: "One prompt pack plus a checklist of required report sections."
+  },
+  {
+    title: "Run Deep Research in ChatGPT",
+    owner: "User or operator",
+    costBoundary: "Uses the user's ChatGPT Deep Research allowance",
+    instruction:
+      "Open ChatGPT, select Deep research, paste the AgentSiteOps prompt, choose public web, uploaded files, or specific sites, then let the report complete.",
+    output: "A cited research report from ChatGPT, exported or copied back as text."
+  },
+  {
+    title: "Check coverage",
+    owner: "AgentSiteOps",
+    costBoundary: "No OpenAI API call",
+    instruction:
+      "Compare the report against the acceptance gates: route archetypes, buyer problem, proof asset, evidence weighting, data rights, pricing, traffic entry, and delivery blueprint.",
+    output: "Pass, blocked, or gap brief."
+  },
+  {
+    title: "Run a second manual research pass if needed",
+    owner: "User or operator",
+    costBoundary: "Uses the user's ChatGPT Deep Research allowance only when required",
+    instruction:
+      "If the report misses a required module, paste the focused gap brief into a second Deep Research task instead of rerunning the whole prompt.",
+    output: "Focused gap response covering only missing evidence, risks, comparisons, or pricing logic."
+  },
+  {
+    title: "Fuse the route file",
+    owner: "AgentSiteOps",
+    costBoundary: "No OpenAI API call",
+    instruction:
+      "Merge the first report and gap response into one route map, rejecting unsupported claims and preserving alternatives that were not selected.",
+    output: "Selected route, rejected alternatives, evidence ledger, first asset, 7-day plan, and stop rule."
+  }
+];
+
 export const researchDeliveryStages: ResearchDeliveryStage[] = [
   {
     percent: 12,
@@ -32,10 +83,10 @@ export const researchDeliveryStages: ResearchDeliveryStage[] = [
   },
   {
     percent: 34,
-    title: "First research pass",
+    title: "Manual Deep Research pass",
     window: "35-55 min",
-    visibleStatus: "Route archetypes, buyer problem, proof assets, and validation channels are being compared.",
-    output: "Primary research report with source table and candidate route comparison."
+    visibleStatus: "The copy-ready brief is run in ChatGPT Deep Research using the user's own allowance.",
+    output: "Primary cited research report with source table and candidate route comparison."
   },
   {
     percent: 52,
@@ -46,9 +97,9 @@ export const researchDeliveryStages: ResearchDeliveryStage[] = [
   },
   {
     percent: 72,
-    title: "Second research pass when needed",
+    title: "Second manual pass when needed",
     window: "45-70 min",
-    visibleStatus: "Missing points are converted into a focused follow-up research brief.",
+    visibleStatus: "Missing points are converted into a focused follow-up brief for a second manual Deep Research task.",
     output: "Gap response covering omitted route, evidence, risk, pricing, or validation details."
   },
   {
