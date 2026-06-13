@@ -1,6 +1,6 @@
 # IndexNow Submission
 
-- Generated: 2026-06-13T03:37:42.607Z
+- Generated: 2026-06-13T03:44:55.711Z
 - Endpoint: https://www.bing.com/indexnow
 - Host: agentsiteops.com
 - Key location: https://agentsiteops.com/32bc6ba6e277f850a701747381a57c48.txt
