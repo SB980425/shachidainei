@@ -240,6 +240,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/reports/client-route-workflow/",
+      "pageType": "report",
+      "template": "client_workflow",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.74,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/templates/route-research-prompt-pack/",
       "pageType": "template",
       "template": "template",

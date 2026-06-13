@@ -6342,6 +6342,143 @@ textarea {
   min-height: 150px;
 }
 
+.client-workflow-page .gate-hero {
+  align-items: center;
+}
+
+.client-checklist-grid,
+.client-progress-board,
+.route-file-preview {
+  display: grid;
+  gap: 14px;
+}
+
+.client-checklist-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.client-checklist-grid article,
+.client-progress-board article,
+.route-file-preview article {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+}
+
+.client-checklist-grid article {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 16px;
+}
+
+.client-checklist-grid svg,
+.route-file-preview svg,
+.client-status-list svg {
+  margin-top: 3px;
+  color: var(--blue);
+}
+
+.client-checklist-grid p,
+.client-progress-board p,
+.route-file-preview p,
+.client-workflow-split p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.client-progress-board {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.client-progress-board article {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  min-height: 230px;
+  padding: 16px;
+}
+
+.client-progress-board span {
+  width: fit-content;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  padding: 5px 8px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.client-progress-board h3,
+.route-file-preview h3,
+.client-status-list h3 {
+  margin: 0;
+  color: var(--ink);
+}
+
+.client-progress-board strong {
+  width: fit-content;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #475569;
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+.client-progress-board .passed strong {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.client-progress-board .active strong {
+  background: var(--amber-soft);
+  color: var(--amber);
+}
+
+.client-status-list {
+  display: grid;
+  gap: 10px;
+}
+
+.client-status-list article {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 14px;
+}
+
+.client-status-list.is-warning article {
+  border-color: rgba(202, 138, 4, 0.24);
+  background: #fffbeb;
+}
+
+.client-status-list.is-warning svg {
+  color: #b45309;
+}
+
+.client-status-list p {
+  margin: 6px 0 0;
+}
+
+.route-file-preview {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.route-file-preview article {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 18px;
+}
+
 .manual-research-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -6989,6 +7126,15 @@ textarea {
   .route-boundary-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .client-checklist-grid,
+  .route-file-preview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .client-progress-board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 900px) {
@@ -6997,6 +7143,9 @@ textarea {
   .route-graph,
   .stage-detail-card,
   .prompt-meta-grid,
+  .client-checklist-grid,
+  .client-progress-board,
+  .route-file-preview,
   .manual-research-grid,
   .manual-workspace-head,
   .manual-workspace-grid,

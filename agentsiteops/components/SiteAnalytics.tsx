@@ -52,6 +52,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/reports/route-evidence-dashboard/": ["route_evidence_dashboard_view"],
   "/reports/route-basis/": ["route_basis_report_view"],
   "/reports/agentsiteops-route-run/": ["agentsiteops_route_run_view"],
+  "/reports/client-route-workflow/": ["client_route_workflow_view"],
   "/templates/evidence-ledger-template/": ["evidence_ledger_template_view"],
   "/templates/route-research-prompt-pack/": ["route_research_prompt_pack_view"],
   "/templates/website-opportunity-scoring-template/": ["opportunity_scoring_template_view"],

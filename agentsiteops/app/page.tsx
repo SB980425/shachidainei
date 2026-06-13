@@ -87,6 +87,7 @@ const preservedLinks = [
   { href: "/launch-kit/", label: "Launch Kit" },
   { href: "/methodology/route-selection/", label: "Route selection methodology" },
   { href: "/templates/route-research-prompt-pack/", label: "Research delivery workflow" },
+  { href: "/reports/client-route-workflow/", label: "Client route workflow" },
   { href: "/reports/agentsiteops-route-run/", label: "Self route run" },
   { href: "/reports/route-basis/", label: "Route basis report" },
   { href: "/sample/", label: "Sample route file" },

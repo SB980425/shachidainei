@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-13T06:11:51.537Z
+- Generated: 2026-06-13T06:30:29.906Z
 - Status: pass
-- Checks: 275
+- Checks: 280
 - Blockers: 0
 - Warnings: 0
 
@@ -13,9 +13,9 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 53 routes aligned |
-| page_registry | pass | 53 routes aligned |
-| page_review_actions | pass | 53 routes aligned |
+| site_routes | pass | 54 routes aligned |
+| page_registry | pass | 54 routes aligned |
+| page_review_actions | pass | 54 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /ai-website-operating-system/ has canonical slash shape |
@@ -68,6 +68,8 @@
 | route_index | pass | /reports/route-basis/ index flag is true |
 | route_shape | pass | /reports/agentsiteops-route-run/ has canonical slash shape |
 | route_index | pass | /reports/agentsiteops-route-run/ index flag is true |
+| route_shape | pass | /reports/client-route-workflow/ has canonical slash shape |
+| route_index | pass | /reports/client-route-workflow/ index flag is true |
 | route_shape | pass | /templates/route-research-prompt-pack/ has canonical slash shape |
 | route_index | pass | /templates/route-research-prompt-pack/ index flag is true |
 | route_shape | pass | /templates/evidence-ledger-template/ has canonical slash shape |
@@ -148,6 +150,7 @@
 | app_page | pass | /reports/route-evidence-dashboard/ app page exists |
 | app_page | pass | /reports/route-basis/ app page exists |
 | app_page | pass | /reports/agentsiteops-route-run/ app page exists |
+| app_page | pass | /reports/client-route-workflow/ app page exists |
 | app_page | pass | /templates/route-research-prompt-pack/ app page exists |
 | app_page | pass | /templates/evidence-ledger-template/ app page exists |
 | app_page | pass | /templates/website-opportunity-scoring-template/ app page exists |
@@ -204,6 +207,7 @@
 | analytics_allowlist | pass | route_evidence_dashboard_view is registered |
 | analytics_allowlist | pass | route_basis_report_view is registered |
 | analytics_allowlist | pass | agentsiteops_route_run_view is registered |
+| analytics_allowlist | pass | client_route_workflow_view is registered |
 | analytics_allowlist | pass | evidence_ledger_template_view is registered |
 | analytics_allowlist | pass | route_research_prompt_pack_view is registered |
 | analytics_allowlist | pass | opportunity_scoring_template_view is registered |
@@ -257,6 +261,7 @@
 | route_view_event | pass | /reports/route-evidence-dashboard/ has view event |
 | route_view_event | pass | /reports/route-basis/ has view event |
 | route_view_event | pass | /reports/agentsiteops-route-run/ has view event |
+| route_view_event | pass | /reports/client-route-workflow/ has view event |
 | route_view_event | pass | /templates/route-research-prompt-pack/ has view event |
 | route_view_event | pass | /templates/evidence-ledger-template/ has view event |
 | route_view_event | pass | /templates/website-opportunity-scoring-template/ has view event |
@@ -284,7 +289,7 @@
 | route_view_event | pass | /refund-policy/ has view event |
 | route_view_event | pass | /disclaimer/ has view event |
 | route_view_event | pass | /contact/ has view event |
-| growth_snapshot | pass | 53 routes aligned |
+| growth_snapshot | pass | 54 routes aligned |
 
 ## Blocking Issues
 

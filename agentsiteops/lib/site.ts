@@ -1114,6 +1114,50 @@ export const routePages: RoutePage[] = [
     ]
   },
   {
+    path: "/reports/client-route-workflow/",
+    pageType: "report",
+    title: "Client Route Workflow",
+    description:
+      "A client-facing project workspace preview showing intake, manual Deep Research progress, coverage checks, gap research, and final route-file boundaries.",
+    answer:
+      "The client route workflow shows how AgentSiteOps turns messy project material into a visible process: intake, scope lock, manual Deep Research, local coverage review, second-pass gap handling when needed, and one final route file.",
+    primaryAction: { label: "Open research workflow", href: "/templates/route-research-prompt-pack/" },
+    secondaryAction: { label: "View sample route file", href: "/sample/" },
+    aiTarget:
+      "Explain the client-observable AgentSiteOps route workflow without implying automated Deep Research, API use, guaranteed traffic, or guaranteed revenue.",
+    humanAction:
+      "Use this page to inspect what a client provides, what is checked, what triggers second-pass research, and what is not counted as delivery.",
+    sections: [
+      {
+        title: "Client inputs",
+        body:
+          "The workflow starts with project facts, available sources, private material limits, delivery constraints, risk boundaries, and the decision that must be made before building."
+      },
+      {
+        title: "Visible progress",
+        body:
+          "The progress surface separates passed intake and scope work from active manual research, pending coverage review, second-pass gap prompts, and final synthesis."
+      },
+      {
+        title: "Route file contract",
+        body:
+          "The final delivery must include selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, stop rule, and next action."
+      },
+      {
+        title: "Delivery boundary",
+        body:
+          "The page blocks claims that the website automatically runs Deep Research, calls the OpenAI API, guarantees outcomes, or turns broad market context into proof."
+      }
+    ],
+    related: [
+      { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
+      { label: "AgentSiteOps Route Run", href: "/reports/agentsiteops-route-run/" },
+      { label: "Route Basis Report", href: "/reports/route-basis/" },
+      { label: "Sample Route File", href: "/sample/" },
+      { label: "Route Selection Methodology", href: "/methodology/route-selection/" }
+    ]
+  },
+  {
     path: "/templates/route-research-prompt-pack/",
     pageType: "template",
     title: "Route Research Prompt Pack",
