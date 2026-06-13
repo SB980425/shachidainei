@@ -2,15 +2,11 @@ import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import {
   BadgeDollarSign,
-  Bot,
-  CheckCircle2,
+  ClipboardList,
   FileCheck2,
-  Gauge,
   GitBranch,
-  GitCompareArrows,
-  Mail,
   Newspaper,
-  ShieldCheck
+  SearchCheck
 } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
@@ -72,15 +68,10 @@ export const viewport: Viewport = {
 
 const navItems = [
   { href: "/ai-website-operating-system/", label: "System", Icon: GitBranch },
-  { href: "/tools/website-opportunity-scorer/", label: "Scorer", Icon: Gauge },
-  { href: "/tools/ai-crawler-readiness/", label: "Crawler", Icon: Bot },
-  { href: "/tools/launch-blueprint-fit-checker/", label: "Fit", Icon: CheckCircle2 },
+  { href: "/methodology/route-selection/", label: "Method", Icon: SearchCheck },
+  { href: "/templates/route-research-prompt-pack/", label: "Research", Icon: ClipboardList },
   { href: "/sample/", label: "Sample", Icon: FileCheck2 },
-  { href: "/compare/", label: "Compare", Icon: GitCompareArrows },
-  { href: "/buy/", label: "Buy", Icon: BadgeDollarSign },
-  { href: "/intake/", label: "Intake", Icon: Mail },
-  { href: "/updates/", label: "Updates", Icon: Newspaper },
-  { href: "/disclaimer/", label: "Limits", Icon: ShieldCheck }
+  { href: "/updates/", label: "Updates", Icon: Newspaper }
 ];
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -113,24 +104,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
           <div className="footer-links">
             <Link prefetch={false} href="/launch-kit/">Launch Kit</Link>
+            <Link prefetch={false} href="/methodology/route-selection/">Method</Link>
+            <Link prefetch={false} href="/templates/route-research-prompt-pack/">Research</Link>
+            <Link prefetch={false} href="/reports/route-basis/">Route Basis</Link>
             <Link prefetch={false} href="/updates/">Updates</Link>
             <Link prefetch={false} href="/pricing/">Pricing</Link>
             <Link prefetch={false} href="/sample/">Sample</Link>
-            <Link prefetch={false} href="/compare/">Compare</Link>
             <Link prefetch={false} href="/terms/">Terms</Link>
             <Link prefetch={false} href="/refund-policy/">Refunds</Link>
             <Link prefetch={false} href="/contact/">Contact</Link>
-            <Link prefetch={false} href="/tools/ai-crawler-readiness/">Crawler</Link>
-            <Link prefetch={false} href="/tools/route-confidence-checker/">Route Checker</Link>
-            <Link prefetch={false} href="/tools/launch-blueprint-fit-checker/">Fit Checker</Link>
-            <Link prefetch={false} href="/templates/starter-pack/">Starter Pack</Link>
             <Link prefetch={false} href="/reports/route-evidence-dashboard/">Evidence</Link>
-            <Link prefetch={false} href="/methodology/route-selection/">Route Method</Link>
-            <Link prefetch={false} href="/templates/route-research-prompt-pack/">Research Prompts</Link>
-            <Link prefetch={false} href="/guides/48-hour-exposure-sprint/">48h Sprint</Link>
-            <Link prefetch={false} href="/guides/first-traffic-system/">Traffic System</Link>
             <Link prefetch={false} href="/authors/">Authors</Link>
-            <Link prefetch={false} href="/editorial-policy/">Editorial</Link>
             <Link prefetch={false} href="/privacy/">Privacy</Link>
             <Link prefetch={false} href="/disclosure/">Disclosure</Link>
           </div>

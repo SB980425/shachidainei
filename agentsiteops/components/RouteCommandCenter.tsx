@@ -5,17 +5,13 @@ import { useMemo, useState, type CSSProperties } from "react";
 import {
   Activity,
   ArrowRight,
-  BadgeDollarSign,
   CheckCircle2,
   FileText,
   Gauge,
   GitBranch,
   RotateCcw,
-  ShieldCheck,
-  Sun,
-  TimerReset
+  Sun
 } from "lucide-react";
-import { BrandLogo } from "@/components/BrandLogo";
 import {
   projectRouteFitMatrix,
   routeConfidenceBands,
@@ -429,23 +425,18 @@ export function RouteCommandCenter() {
     <section className="route-command-shell" data-route-theme={theme}>
       <div className="route-command-bg" aria-hidden="true" />
 
-      <div className="route-command-topbar">
-        <BrandLogo />
-        <nav aria-label="Route command navigation">
-          <span className="is-active">Command Center</span>
-          <Link prefetch={false} href="/tools/website-opportunity-scorer/">
-            Scorer
-          </Link>
-          <Link prefetch={false} href="/tools/route-confidence-checker/">
-            Route Checker
-          </Link>
-          <Link prefetch={false} href="/methodology/route-selection/">
-            Method
-          </Link>
-          <Link prefetch={false} href="/sample/">
-            Sample
-          </Link>
-        </nav>
+      <div className="route-command-topbar route-command-workbar">
+        <div className="route-workbar-label">
+          <span>Route workspace</span>
+          <strong>Score, prune, export</strong>
+        </div>
+        <div className="route-workbar-steps" aria-label="Route workspace steps">
+          <span>Project facts</span>
+          <span>Evidence state</span>
+          <span>Route choice</span>
+          <span>First asset</span>
+          <span>Stop rule</span>
+        </div>
         <button className="route-theme-toggle" type="button" onClick={toggleTheme}>
           <Sun aria-hidden="true" size={16} />
           {theme === "night" ? "Night" : "Day"}
@@ -615,8 +606,8 @@ export function RouteCommandCenter() {
               <span>Recommended route</span>
               <strong>{topRoute.projectType}</strong>
               <small>{topRoute.decision}</small>
-              <Link prefetch={false} href="/tools/route-confidence-checker/">
-                Inspect route <ArrowRight aria-hidden="true" size={15} />
+              <Link prefetch={false} href="/methodology/route-selection/">
+                Inspect method <ArrowRight aria-hidden="true" size={15} />
               </Link>
             </div>
           </div>
@@ -753,13 +744,13 @@ export function RouteCommandCenter() {
           </p>
         </div>
         <div>
-          <Link prefetch={false} className="primary-action" href="/tools/website-opportunity-scorer/">
+          <button className="primary-action" type="button" onClick={copyRouteMap}>
             <Gauge aria-hidden="true" size={17} />
-            Score a new direction
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/starter-review/">
-            <BadgeDollarSign aria-hidden="true" size={17} />
-            Fit review path
+            Export route map
+          </button>
+          <Link prefetch={false} className="secondary-action" href="/templates/route-research-prompt-pack/">
+            <FileText aria-hidden="true" size={17} />
+            Research workflow
           </Link>
         </div>
       </div>

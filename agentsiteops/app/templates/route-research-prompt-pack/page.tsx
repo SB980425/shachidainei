@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ClipboardList, FileText, SearchCheck, ShieldCheck } from "lucide-react";
-import { routeResearchPrompts, routeResearchProtocol } from "@/lib/routeResearchPromptPack";
+import { ResearchDeliveryLoop } from "@/components/ResearchDeliveryLoop";
+import {
+  researchAcceptanceGates,
+  routeResearchPrompts,
+  routeResearchProtocol
+} from "@/lib/routeResearchPromptPack";
 import { siteUrl } from "@/lib/site";
 
 const path = "/templates/route-research-prompt-pack/";
@@ -122,28 +127,35 @@ export default function Page() {
               <FileText aria-hidden="true" size={17} />
               View route basis
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/tools/route-confidence-checker/">
-              <ArrowRight aria-hidden="true" size={17} />
-              Run route checker
-            </Link>
           </div>
         </div>
         <aside className="decision-card">
-          <strong>Current use</strong>
+          <strong>Delivery window</strong>
           <p>
-            Use one module at a time. A single broad research prompt is weaker than a
-            sequence that separately tests buyer problem, proof asset, data rights,
-            pricing, validation channel, and delivery blueprint.
+            A normal route research run takes about 70-110 minutes. If the coverage gate
+            requires a second pass, the full cycle can take about 2 hours before final
+            synthesis.
           </p>
         </aside>
       </section>
 
       <section className="gate-section">
         <div className="section-head">
+          <h2>Research delivery loop</h2>
+          <p>
+            The visible workflow is the delivery standard: first pass, coverage gate,
+            focused second pass when required, then one fused route file.
+          </p>
+        </div>
+        <ResearchDeliveryLoop />
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
           <h2>Research protocol</h2>
           <p>
-            These rules keep GPT research useful. The result must become route logic, not
-            a long report that cannot change the product.
+            These rules keep long-form research useful. The result must become route
+            logic, not a long report that cannot change the product.
           </p>
         </div>
         <div className="loop-grid">
@@ -152,6 +164,28 @@ export default function Page() {
               <span>{index + 1}</span>
               <ClipboardList aria-hidden="true" size={18} />
               <h3>{rule}</h3>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>Acceptance gate before delivery</h2>
+          <p>
+            If the first report misses core prompt requirements, the missing parts are
+            converted into a focused gap brief before final synthesis.
+          </p>
+        </div>
+        <div className="acceptance-gate-grid">
+          {researchAcceptanceGates.map((gate) => (
+            <article key={gate.title}>
+              <SearchCheck aria-hidden="true" size={20} />
+              <h3>{gate.title}</h3>
+              <strong>Pass standard</strong>
+              <p>{gate.passStandard}</p>
+              <strong>Fail action</strong>
+              <p>{gate.failAction}</p>
             </article>
           ))}
         </div>

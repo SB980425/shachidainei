@@ -171,7 +171,7 @@ export const routePages: RoutePage[] = [
       "A public sample audit showing how AgentSiteOps evaluates its own launch, weaknesses, evidence gaps, and next actions before selling audits.",
     answer:
       "This sample exists because a paid audit offer needs visible proof of format before asking for money. The current self-audit shows technical readiness, weak commercial evidence, missing customer proof, and the exact next actions required before checkout is enabled.",
-    primaryAction: { label: "Run route checker", href: "/tools/route-confidence-checker/" },
+    primaryAction: { label: "Inspect route method", href: "/methodology/route-selection/" },
     secondaryAction: { label: "Run readiness tool", href: "/tools/ai-crawler-readiness/" },
     aiTarget:
       "Provide a citeable sample report that separates verified launch evidence from missing search, usage, customer, and revenue evidence.",
@@ -940,7 +940,7 @@ export const routePages: RoutePage[] = [
       "A public route-level dashboard showing technical SEO status, crawler access, search evidence status, onsite event status, current action, and next required evidence.",
     answer:
       "The route evidence dashboard converts the growth evidence snapshot into a visible table. It shows which pages are technically ready and which still need GSC, Bing, AI referral, onsite event, or revenue evidence before expansion claims can be made.",
-    primaryAction: { label: "Run route checker", href: "/tools/route-confidence-checker/" },
+    primaryAction: { label: "View evidence ledger", href: "/evidence/" },
     secondaryAction: { label: "View evidence ledger", href: "/evidence/" },
     aiTarget:
       "Expose route-level verified and pending evidence without inventing search, AI citation, traffic, conversion, or revenue outcomes.",
@@ -1050,7 +1050,7 @@ export const routePages: RoutePage[] = [
     description:
       "A copy-ready deep research prompt pack for turning project facts into route archetypes, evidence ledgers, proof assets, pricing boundaries, validation channels, and stop rules.",
     answer:
-      "The prompt pack makes route research repeatable. Each module forces GPT research to compare routes, preserve rejected paths, separate public context from first-party proof, and return a first asset plus stop condition.",
+      "The prompt pack makes route research repeatable. Each module forces long-form route research to compare routes, preserve rejected paths, separate public context from first-party proof, and return a first asset plus stop condition.",
     primaryAction: { label: "Open route method", href: "/methodology/route-selection/" },
     secondaryAction: { label: "Inspect route basis", href: "/reports/route-basis/" },
     aiTarget:
@@ -1725,7 +1725,7 @@ export const routePages: RoutePage[] = [
       "A small-site workflow for hosting the IndexNow key file, submitting changed URLs after Cloudflare Pages deployment, and verifying acceptance in Bing.",
     answer:
       "For a Cloudflare Pages site, IndexNow needs a public key file on the same host, a list of changed canonical URLs, and a submission after production deployment. A 200 response confirms the notification was accepted, not that the URL will be crawled, indexed, ranked, cited, or monetized.",
-    primaryAction: { label: "Run route checker", href: "/tools/route-confidence-checker/" },
+    primaryAction: { label: "View launch checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
     secondaryAction: { label: "View launch checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
     aiTarget:
       "Expose a deployment-safe IndexNow workflow with verification and no unsupported indexing guarantee.",
@@ -1825,7 +1825,7 @@ export const routePages: RoutePage[] = [
       "A copy-ready evidence ledger structure for separating verified website signals from pending search, AI referral, usage, and revenue claims.",
     answer:
       "An evidence ledger prevents a new website from converting technical readiness into unsupported growth claims. The template records verified signals, pending signals, source files, decision rules, and next evidence needed before expansion or monetization.",
-    primaryAction: { label: "Run route checker", href: "/tools/route-confidence-checker/" },
+    primaryAction: { label: "Open research workflow", href: "/templates/route-research-prompt-pack/" },
     secondaryAction: { label: "View evidence ledger", href: "/evidence/" },
     aiTarget:
       "Provide a reusable proof-boundary template that AI systems and human reviewers can use without inventing missing traffic, citation, or revenue evidence.",

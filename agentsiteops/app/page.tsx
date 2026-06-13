@@ -44,13 +44,11 @@ const foundationCards = [
 
 const preservedLinks = [
   { href: "/launch-kit/", label: "Launch Kit" },
-  { href: "/tools/website-opportunity-scorer/", label: "Website opportunity scorer" },
-  { href: "/tools/route-confidence-checker/", label: "Route confidence checker" },
-  { href: "/tools/launch-blueprint-fit-checker/", label: "Launch blueprint fit checker" },
-  { href: "/reports/route-basis/", label: "Route basis report" },
   { href: "/methodology/route-selection/", label: "Route selection methodology" },
-  { href: "/templates/route-research-prompt-pack/", label: "Route research prompt pack" },
-  { href: "/sample/", label: "Sample route file" }
+  { href: "/templates/route-research-prompt-pack/", label: "Research delivery workflow" },
+  { href: "/reports/route-basis/", label: "Route basis report" },
+  { href: "/sample/", label: "Sample route file" },
+  { href: "/pricing/", label: "Pricing and scope" }
 ];
 
 export default function HomePage() {
@@ -143,9 +141,9 @@ export default function HomePage() {
           <span>Existing functions preserved</span>
           <h2>The redesign keeps the current tool surface alive.</h2>
           <p>
-            The new command center is a front door. The existing scorer, checker, sample,
-            methodology pages, payment path, sitemap, and report routes remain available
-            and indexable.
+            The command center is now the front door. Older scorer and checker pages
+            remain available for search and existing links, but they no longer compete
+            with the main path.
           </p>
           <dl>
             <div>
@@ -184,9 +182,9 @@ export default function HomePage() {
           </p>
         </div>
         <div className="route-final-actions">
-          <Link prefetch={false} className="primary-action" href="/tools/website-opportunity-scorer/">
-            <Gauge aria-hidden="true" size={17} />
-            Score a direction
+          <Link prefetch={false} className="primary-action" href="/templates/route-research-prompt-pack/">
+            <FileText aria-hidden="true" size={17} />
+            Run research workflow
           </Link>
           <Link prefetch={false} className="secondary-action" href="/launch-kit/">
             <FileText aria-hidden="true" size={17} />

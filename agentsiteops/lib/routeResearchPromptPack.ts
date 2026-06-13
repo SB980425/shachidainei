@@ -8,6 +8,96 @@ export type RouteResearchPrompt = {
   rejectionRules: string[];
 };
 
+export type ResearchDeliveryStage = {
+  percent: number;
+  title: string;
+  window: string;
+  visibleStatus: string;
+  output: string;
+};
+
+export type ResearchAcceptanceGate = {
+  title: string;
+  passStandard: string;
+  failAction: string;
+};
+
+export const researchDeliveryStages: ResearchDeliveryStage[] = [
+  {
+    percent: 12,
+    title: "Intake normalization",
+    window: "5-10 min",
+    visibleStatus: "Project facts are being converted into a research brief.",
+    output: "Clean brief, hard constraints, unavailable claims, and missing inputs."
+  },
+  {
+    percent: 34,
+    title: "First research pass",
+    window: "35-55 min",
+    visibleStatus: "Route archetypes, buyer problem, proof assets, and validation channels are being compared.",
+    output: "Primary research report with source table and candidate route comparison."
+  },
+  {
+    percent: 52,
+    title: "Coverage gate",
+    window: "10-15 min",
+    visibleStatus: "The report is checked against the prompt pack and acceptance gates.",
+    output: "Pass, second-pass required, or blocked decision with missing evidence list."
+  },
+  {
+    percent: 72,
+    title: "Second research pass when needed",
+    window: "45-70 min",
+    visibleStatus: "Missing points are converted into a focused follow-up research brief.",
+    output: "Gap response covering omitted route, evidence, risk, pricing, or validation details."
+  },
+  {
+    percent: 88,
+    title: "Synthesis",
+    window: "15-25 min",
+    visibleStatus: "The first pass and gap response are fused into one route file.",
+    output: "Selected route, rejected alternatives, evidence ledger, first asset, 7-day plan, and stop rule."
+  },
+  {
+    percent: 100,
+    title: "Delivery review",
+    window: "5-10 min",
+    visibleStatus: "The route file is checked for unsupported claims before delivery.",
+    output: "Client-ready route map with clear limits and next action."
+  }
+];
+
+export const researchAcceptanceGates: ResearchAcceptanceGate[] = [
+  {
+    title: "Prompt coverage",
+    passStandard:
+      "The report answers route archetypes, buyer problem, proof asset, evidence weighting, data rights, pricing, traffic entry, and delivery blueprint.",
+    failAction:
+      "Create a gap brief naming the missing modules and run a focused second research pass."
+  },
+  {
+    title: "Source and evidence quality",
+    passStandard:
+      "Claims are tied to dated sources, first-party evidence, or clearly marked inference; weak public context cannot raise route confidence.",
+    failAction:
+      "Downgrade the claim, mark it pending, or request more evidence before selecting the route."
+  },
+  {
+    title: "Rejected alternatives",
+    passStandard:
+      "At least three plausible routes are rejected with concrete reasons, not merely ignored.",
+    failAction:
+      "Ask for a comparison rewrite focused only on rejected alternatives and failure rules."
+  },
+  {
+    title: "Actionability",
+    passStandard:
+      "The final output names one first asset, one validation channel, one 7-day execution sequence, and one stop condition.",
+    failAction:
+      "Block delivery until the report becomes an execution file instead of a general research summary."
+  }
+];
+
 export const routeResearchPrompts: RouteResearchPrompt[] = [
   {
     id: "project-route-archetypes",
