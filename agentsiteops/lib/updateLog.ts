@@ -12,6 +12,36 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-13",
+    step: "M4-48 Route basis evidence upgrade",
+    status: "completed",
+    keyPoints: [
+      "Strengthened `/reports/route-basis/` so the route-selection method is visible before any paid or internal route run.",
+      "Added a route selection sequence showing that the score only opens or closes the gate; the selected route comes from archetype fit, evidence weights, downgrade rules, and delivery constraints.",
+      "Added invalid signals that cannot raise confidence, including sitemap success, IndexNow response, third-party estimates, broad target users, generic AI output, and unsupported price copying.",
+      "Added a library maturity boundary clarifying that the current 12-pattern route library is an operating base, not a customer case-study database.",
+      "Extended production health checks so the public route-basis page must expose the new sequence, invalid-signal list, and maturity boundary."
+    ],
+    aiAngle:
+      "AI and search readers now have a stronger answer for how AgentSiteOps avoids random 0-100 scoring and why route files must include evidence, rejected alternatives, and stop rules.",
+    files: [
+      "app/reports/route-basis/page.tsx",
+      "app/globals.css",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "code-quality gate pass",
+      "build pass with 59 static pages",
+      "route consistency gate pass: 275 checks, 0 blockers",
+      "technical SEO CI pass: 53 routes, 0 blockers, 0 warnings",
+      "Chrome render check: desktop 1440/1440 and mobile 390/390, no horizontal overflow, new route-basis modules visible"
+    ],
+    next:
+      "Use this route-basis page as the public standard for the next internal route run; if a future project cannot supply accepted evidence, the output must downgrade or reject instead of producing a confident roadmap."
+  },
+  {
+    date: "2026-06-13",
     step: "M4-47 Self route file upgrade",
     status: "completed",
     keyPoints: [

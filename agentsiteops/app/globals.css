@@ -7271,11 +7271,126 @@ textarea {
   overflow-wrap: anywhere;
 }
 
+.route-basis-flow,
+.route-basis-invalid-grid,
+.route-basis-maturity-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.route-basis-flow {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.route-basis-flow article,
+.route-basis-invalid-grid article,
+.route-basis-maturity-grid article,
+.route-basis-side-note {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.route-basis-flow article {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  min-height: 236px;
+  padding: 16px;
+}
+
+.route-basis-flow article > span {
+  width: fit-content;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.route-basis-flow svg,
+.route-basis-invalid-grid svg,
+.route-basis-maturity-grid svg {
+  color: var(--green);
+}
+
+.route-basis-flow h3,
+.route-basis-maturity-grid h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 17px;
+}
+
+.route-basis-flow p,
+.route-basis-maturity-grid p,
+.route-basis-side-note p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.route-basis-invalid-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.route-basis-invalid-grid article {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  padding: 13px;
+}
+
+.route-basis-invalid-grid span {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.route-basis-maturity-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.route-basis-maturity-grid article {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 16px;
+}
+
+.route-basis-side-note {
+  margin-bottom: 18px;
+  padding: 14px;
+}
+
+.route-basis-side-note strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
 @media (max-width: 640px) {
   .route-basis-report .page-grid,
   .route-basis-report .page-hero {
     padding-right: 14px;
     padding-left: 14px;
+  }
+
+  .route-basis-flow,
+  .route-basis-invalid-grid,
+  .route-basis-maturity-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1180px) {
+  .route-basis-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .route-basis-maturity-grid {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -1,7 +1,15 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import Link from "next/link";
-import { ArrowRight, Database, FileText } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Database,
+  FileText,
+  Gauge,
+  GitCompareArrows,
+  ShieldCheck
+} from "lucide-react";
 import { getRouteMetadata } from "@/components/RoutePage";
 import { routeMap, siteUrl } from "@/lib/site";
 
@@ -101,6 +109,66 @@ function RouteTable({ columns, rows }: { columns: string[]; rows: CsvRow[] }) {
   );
 }
 
+const routeSelectionSequence = [
+  {
+    title: "Normalize project facts",
+    body:
+      "The route run starts from project type, target buyer, builder ability, assets, data sources, weekly capacity, payment boundary, and risk category.",
+    icon: FileText
+  },
+  {
+    title: "Compare route archetypes",
+    body:
+      "The project is compared against the public route-pattern library. At least one archetype must fit the buyer job, proof asset, delivery burden, and stop rule.",
+    icon: GitCompareArrows
+  },
+  {
+    title: "Apply evidence weights",
+    body:
+      "Buyer-specific and first-party evidence outranks public research. Public pages, keyword estimates, and AI answers are context until verified by owned signals.",
+    icon: Database
+  },
+  {
+    title: "Downgrade weak claims",
+    body:
+      "Missing payment, search, usage, data-rights, or delivery evidence lowers the confidence band and blocks traffic, revenue, subscription, or authority claims.",
+    icon: Gauge
+  },
+  {
+    title: "Deliver or reject",
+    body:
+      "A valid route file must include selected route, rejected alternatives, evidence ledger, first proof asset, first channel, and dated stop or pivot rule.",
+    icon: ShieldCheck
+  }
+];
+
+const invalidSignals = [
+  "A high score without source evidence",
+  "Third-party keyword or traffic estimates without first-party validation",
+  "A sitemap success or IndexNow response treated as demand",
+  "Generic AI output that does not use project-specific evidence",
+  "A payment price copied from competitors without buyer budget proof",
+  "A broad target user such as all founders, all AI users, or all websites"
+];
+
+const maturityNotes = [
+  {
+    label: "Current library",
+    value:
+      "12 operating archetypes maintained as public repo data. They are route patterns, not proof of confirmed customer outcomes."
+  },
+  {
+    label: "Accepted case",
+    value:
+      "A route becomes stronger only after a completed run records source table, evidence ledger, delivered artifact, buyer feedback, or first-party search and usage signals."
+  },
+  {
+    label: "Failure rule",
+    value:
+      "If no archetype fits or generic AI can produce the same useful plan from the same inputs, the route should narrow, pivot, or stop instead of producing a polished roadmap."
+  }
+];
+
 export default function Page() {
   const routePatterns = readCsv("route-pattern-library.csv");
   const sourceMap = readCsv("route-selection-source-map.csv");
@@ -176,6 +244,64 @@ export default function Page() {
               route file can be delivered.
             </span>
           </div>
+
+          <section>
+            <h2>Route selection sequence</h2>
+            <p>
+              The route is not generated from the score alone. The score opens or closes
+              the build gate; the selected path comes from matching project evidence
+              against route archetypes, downgrade rules, and delivery constraints.
+            </p>
+            <div className="route-basis-flow">
+              {routeSelectionSequence.map((step, index) => {
+                const Icon = step.icon;
+
+                return (
+                  <article key={step.title}>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <Icon aria-hidden="true" size={18} />
+                    <h3>{step.title}</h3>
+                    <p>{step.body}</p>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+
+          <section>
+            <h2>Invalid signals that cannot raise confidence</h2>
+            <p>
+              These inputs can appear inside research, but they cannot make a route
+              commercially stronger until they are tied to buyer-specific or first-party
+              evidence.
+            </p>
+            <div className="route-basis-invalid-grid">
+              {invalidSignals.map((signal) => (
+                <article key={signal}>
+                  <ShieldCheck aria-hidden="true" size={17} />
+                  <span>{signal}</span>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2>Library maturity boundary</h2>
+            <p>
+              The current knowledge base is useful for internal route decisions because
+              it exposes patterns and stop rules. It is not yet a large customer case
+              database, and it must not be marketed as one.
+            </p>
+            <div className="route-basis-maturity-grid">
+              {maturityNotes.map((note) => (
+                <article key={note.label}>
+                  <CheckCircle2 aria-hidden="true" size={18} />
+                  <h3>{note.label}</h3>
+                  <p>{note.value}</p>
+                </article>
+              ))}
+            </div>
+          </section>
 
           <section>
             <h2>Route pattern library</h2>
@@ -255,6 +381,13 @@ export default function Page() {
 
         <aside className="side-panel">
           <h2>How to use this report</h2>
+          <div className="route-basis-side-note">
+            <strong>What this page proves</strong>
+            <p>
+              It proves that route selection has an inspectable basis. It does not prove
+              customer demand, rankings, AI citations, revenue, or product-market fit.
+            </p>
+          </div>
           <ul>
             <li>
               <Link prefetch={false} href="/reports/agentsiteops-route-run/">

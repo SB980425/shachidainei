@@ -369,6 +369,9 @@ async function main() {
     "Delivery acceptance checklist"
   ]);
   await checkPage("/reports/route-basis/", [
+    "Route selection sequence",
+    "Invalid signals that cannot raise confidence",
+    "Library maturity boundary",
     "Route pattern library",
     "Route selection source map",
     "Confidence rubric",
@@ -437,6 +440,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-48 Route basis evidence upgrade",
     "M4-47 Self route file upgrade",
     "M4-22 48-hour exposure sprint",
     "M4-21 Route basis and first traffic foundation",
