@@ -1,18 +1,18 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-12T11:21:21.824Z
+- Generated: 2026-06-13T08:46:07.678Z
 - Status: baseline_ready
-- Routes: 52
-- Technical SEO pass routes: 52
+- Routes: 59
+- Technical SEO pass routes: 59
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 52 routes
-- Bing status: pending export for 52 routes
+- GSC status: pending export for 59 routes
+- Bing status: pending export for 59 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: aggregate endpoint waiting for events on 45 routes
+- Onsite event status: aggregate endpoint waiting for events on 52 routes
 - Onsite routes with aggregate events: 7
 - Analytics summary status missing or blocked: 0
 - Analytics threshold snapshot: sample views 1, source-link clicks 0, PayPal CTA clicks 0
@@ -21,13 +21,17 @@
 
 | URL | Type | Cluster | Tech SEO | Crawler | Current action | Next evidence |
 |---|---|---|---|---|---|---|
-| / | home | ai_website_operating_system | pass | site_pass | keep | Measure homepage CTA click rate after real analytics endpoint |
+| / | home | launch_blueprint | pass | site_pass | keep | Measure homepage CTA click rate, start exits, sample exits, delivery gate exits, and confusion about what AgentSiteOps delivers |
+| /start/ | product_entry | launch_blueprint | pass | site_pass | keep | Measure start page views, sample exits, how-it-works exits, pricing exits, and repeated confusion about what to submit |
+| /how-it-works/ | product_explainer | launch_blueprint | pass | site_pass | keep | Measure how-it-works views, start exits, client workflow exits, prompt pack exits, and repeated questions about API use |
+| /execution/ | product_workbench | launch_blueprint | pass | site_pass | keep | Measure execution workbench views, stage selections, prompt pack exits, delivery gate exits, sample exits, and bilingual social copy exports |
+| /delivery-gate/ | product_gate | launch_blueprint | pass | site_pass | keep | Measure delivery gate alias views, sample exits, client workflow exits, full checklist exits, and repeated confusion about pass repair blocked or not delivery |
 | /ai-website-operating-system/ | pillar | ai_website_operating_system | pass | site_pass | keep | Review impressions and source_link_click after GSC/Bing setup |
 | /tools/website-opportunity-scorer/ | tool | website_opportunity_scoring | pass | site_pass | keep | Measure tool_completed and tool_result_export after real endpoint |
 | /tools/ai-crawler-readiness/ | tool | ai_crawler_readiness | pass | site_pass | keep | Measure readiness report copies and sample audit clicks before paid audit expansion |
 | /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
-| /examples/fit-review-sample/ | example | launch_blueprint | pass | site_pass | keep | Measure movement from sample review to Fit Review pricing intake and full blueprint pages |
-| /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Launch Blueprint pricing, sample, buy, and intake path |
+| /examples/fit-review-sample/ | example | launch_blueprint | pass | site_pass | keep | Measure movement from sample review to Fit Review pricing intake and full Route File pages |
+| /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Route File pricing, sample, buy, and intake path |
 | /tools/audit-scope-builder/ | tool | commercial_validation | pass | site_pass | keep | Measure audit_scope_builder_view, tool_completed, and tool_result_export before adding forms or payment |
 | /tools/launch-blueprint-fit-checker/ | tool | launch_blueprint | pass | site_pass | keep | Measure checker starts, copies, pricing exits, and PayPal clicks before increasing paid traffic |
 | /tools/route-confidence-checker/ | tool | launch_blueprint | pass | site_pass | keep | Measure route confidence checker starts, copied verdicts, route-basis exits, fit-checker exits, and objections about route authority |
@@ -38,6 +42,7 @@
 | /checklists/gsc-bing-indexnow-launch/ | checklist | search_console_launch | pass | site_pass | keep | Add GSC and Bing screenshots or exported status after 7 day data window |
 | /checklists/ai-citation-readiness/ | checklist | ai_citation_readiness | pass | site_pass | keep | Add crawler access evidence, Cloudflare bot setting screenshot, and first AI referral examples after data exists |
 | /checklists/launch-validation-decision-gate/ | checklist | launch_blueprint | pass | site_pass | keep | Use this page to decide whether weak launch signals require continuing, rewriting, repricing, narrowing, pivoting to implementation, or stopping before adding more content |
+| /checklists/route-file-delivery-gate/ | checklist | launch_blueprint | pass | site_pass | keep | Measure delivery gate views, sample route exits, client workflow exits, prompt pack exits, and repeated blockers before delivery |
 | /guides/ai-search-friendly-robots-txt/ | guide | ai_crawler_readiness | pass | site_pass | keep | Add Cloudflare robots and WAF evidence only after account-level settings are exported or screenshotted |
 | /guides/indexnow-cloudflare-pages/ | guide | search_console_launch | pass | site_pass | keep | Record IndexNow response codes after each production deployment and compare with Bing crawl status |
 | /guides/gsc-bing-sitemap-verification/ | guide | search_console_launch | pass | site_pass | keep | Add GSC and Bing sitemap status evidence after first crawl window |
@@ -46,6 +51,8 @@
 | /evidence/ | evidence | trust_and_policy | pass | site_pass | keep | Add GSC, Bing, AI referral, onsite event, and revenue evidence only after real exports or records exist |
 | /reports/route-evidence-dashboard/ | report | trust_and_policy | pass | site_pass | keep | Regenerate growth evidence snapshot after every route batch and compare pending evidence by page type |
 | /reports/route-basis/ | report | launch_blueprint | pass | site_pass | keep | Measure source-link clicks, route method clicks, feedback thread clicks, and objections about route authority |
+| /reports/agentsiteops-route-run/ | report | launch_blueprint | pass | site_pass | keep | Measure self-run views, research workspace exits, evidence-ledger exits, and whether the route run changes internal project decisions |
+| /reports/client-route-workflow/ | report | launch_blueprint | pass | site_pass | keep | Measure route workflow views, research workflow exits, sample route exits, and whether clients understand what is and is not delivered |
 | /templates/route-research-prompt-pack/ | template | launch_blueprint | pass | site_pass | keep | Measure prompt pack views, source-link exits, copied prompt usage, and whether completed research changes the route library |
 | /templates/evidence-ledger-template/ | template | trust_and_policy | pass | site_pass | keep | Measure template copy or source-link clicks before creating more evidence templates |
 | /templates/website-opportunity-scoring-template/ | template | website_opportunity_scoring | pass | site_pass | keep | Measure scorer usage and template copy before expanding scoring variants |
@@ -63,8 +70,8 @@
 | /disclosure/ | trust_page | trust_and_policy | pass | site_pass | keep | Update before ads, affiliate, sponsor, or paid recommendations |
 | /updates/ | log | trust_and_policy | pass | site_pass | keep | Append every major execution step |
 | /website-opportunity-audit/ | service | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
-| /pricing/ | pricing | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
-| /sample/ | example | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /pricing/ | pricing | launch_blueprint | pass | site_pass | keep | Measure Fit Review PayPal clicks, Route File PayPal clicks, sample exits, delivery gate exits, usable intake, qualified replies, and objections about manual delivery or no guarantees |
+| /sample/ | example | launch_blueprint | pass | site_pass | keep | Measure sample route-file views, client workflow exits, research workflow exits, and whether visitors understand selected route rejected alternatives evidence ledger and stop rule |
 | /compare/ | comparison | launch_blueprint | pass | site_pass | keep | Measure comparison page exits to sample pricing buy and source links |
 | /starter-review/ | commerce | launch_blueprint | pass | site_pass | keep | Measure Fit Review PayPal clicks, confirmed payments, usable intake, verdict outcomes, and upsell or stop decisions |
 | /buy/ | commerce | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |

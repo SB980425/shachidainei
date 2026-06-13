@@ -29,6 +29,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/updates/": ["update_log_view"],
   "/start/": ["start_page_view"],
   "/how-it-works/": ["how_it_works_view"],
+  "/execution/": ["execution_workbench_view"],
   "/ai-website-operating-system/": ["operating_system_view"],
   "/tools/website-opportunity-scorer/": ["tool_page_view"],
   "/tools/ai-crawler-readiness/": ["ai_crawler_readiness_view"],

@@ -43,6 +43,7 @@ Minimum v1 allowlist:
 - `update_log_view`
 - `start_page_view`
 - `how_it_works_view`
+- `execution_workbench_view`
 - `operating_system_view`
 - `evidence_ledger_view`
 - `tool_page_view`
@@ -64,6 +65,8 @@ Minimum v1 allowlist:
 - `tool_started`
 - `tool_completed`
 - `tool_result_export`
+- `execution_stage_selected`
+- `social_copy_variant_copied`
 - `payment_cta_click`
 - `cta_click`
 - `source_link_click`

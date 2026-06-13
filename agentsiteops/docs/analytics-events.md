@@ -26,6 +26,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `update_log_view` | `/updates/` load | `path` |
 | `start_page_view` | `/start/` load | `path` |
 | `how_it_works_view` | `/how-it-works/` load | `path` |
+| `execution_workbench_view` | `/execution/` load | `path` |
 | `operating_system_view` | `/ai-website-operating-system/` load | `path` |
 | `tool_page_view` | `/tools/website-opportunity-scorer/` load | `path` |
 | `ai_crawler_readiness_view` | `/tools/ai-crawler-readiness/` load | `path` |
@@ -92,6 +93,8 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `tool_result_export` | User copies or downloads a tool result | `tool`, `export_method`, `score`, `decision` |
 | `template_copy_click` | User copies a template block | `label`, `length` |
 | `checklist_copy_click` | User copies checklist content | `label`, `length` |
+| `execution_stage_selected` | User selects an Execution Workbench stage | `surface`, `stage` |
+| `social_copy_variant_copied` | User copies an Execution Workbench social copy variant | `surface`, `channel`, `lang`, `variant` |
 | `payment_cta_click` | User clicks a live PayPal Fit Review or Route File payment link | `label`, `target`, `type` |
 | `intake_email_click` | User clicks the intake email link | `label`, `target`, `type` |
 | `contact_email_click` | User clicks the contact email link | `label`, `target`, `type` |

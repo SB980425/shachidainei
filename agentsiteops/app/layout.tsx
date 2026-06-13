@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import {
-  BadgeDollarSign,
+  Activity,
   ClipboardList,
   FileCheck2,
   FileText,
@@ -91,9 +91,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               </Link>
             ))}
           </nav>
-          <Link prefetch={false} className="header-action" href="/pricing/">
-            <BadgeDollarSign aria-hidden="true" size={16} />
-            Pricing
+          <Link prefetch={false} className="header-action" href="/execution/">
+            <Activity aria-hidden="true" size={16} />
+            Workbench
           </Link>
         </header>
         {children}
@@ -104,6 +104,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </div>
           <div className="footer-links">
             <Link prefetch={false} href="/start/">Start</Link>
+            <Link prefetch={false} href="/execution/">Execution</Link>
             <Link prefetch={false} href="/how-it-works/">How it works</Link>
             <Link prefetch={false} href="/launch-kit/">Launch Kit</Link>
             <Link prefetch={false} href="/methodology/route-selection/">Method</Link>

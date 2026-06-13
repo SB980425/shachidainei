@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
+  Activity,
   ArrowRight,
-  BadgeDollarSign,
   CheckCircle2,
   ClipboardList,
   FileCheck2,
@@ -12,7 +12,6 @@ import {
   ShieldCheck
 } from "lucide-react";
 import { RouteCommandCenter } from "@/components/RouteCommandCenter";
-import { primaryOffer, starterOffer } from "@/lib/payments";
 import { allRoutes, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -136,14 +135,14 @@ const boundaryCards = [
 
 const supportLinks = [
   { href: "/start/", label: "Start here" },
+  { href: "/execution/", label: "Execution workbench" },
   { href: "/how-it-works/", label: "How it works" },
   { href: "/reports/client-route-workflow/", label: "Client route workflow" },
   { href: "/delivery-gate/", label: "Delivery gate" },
   { href: "/templates/route-research-prompt-pack/", label: "Research prompt pack" },
   { href: "/reports/route-basis/", label: "Route basis report" },
   { href: "/methodology/route-selection/", label: "Route selection methodology" },
-  { href: "/sample/", label: "Sample Route File" },
-  { href: "/pricing/", label: "Pricing and scope" }
+  { href: "/sample/", label: "Sample Route File" }
 ];
 
 export default function HomePage() {
@@ -159,20 +158,7 @@ export default function HomePage() {
       "@type": "Organization",
       name: "AgentSiteOps"
     },
-    offers: [
-      {
-        "@type": "Offer",
-        name: "Fit Review",
-        price: starterOffer.price,
-        priceCurrency: "USD"
-      },
-      {
-        "@type": "Offer",
-        name: "Research-to-Route File",
-        price: primaryOffer.price,
-        priceCurrency: "USD"
-      }
-    ]
+    serviceOutput: "Checked Route File"
   };
 
   return (
@@ -196,13 +182,13 @@ export default function HomePage() {
               <ClipboardList aria-hidden="true" size={17} />
               Start with a project
             </Link>
+            <Link prefetch={false} className="secondary-action" href="/execution/">
+              <Activity aria-hidden="true" size={17} />
+              Open execution workbench
+            </Link>
             <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
               View sample Route File
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/how-it-works/">
-              <ArrowRight aria-hidden="true" size={17} />
-              How it works
             </Link>
           </div>
         </div>
@@ -317,10 +303,10 @@ export default function HomePage() {
       <section className="route-preserved-section frontstage-support-section">
         <div>
           <span>Supporting system</span>
-          <h2>The old templates stay. They move behind the product path.</h2>
+          <h2>The old templates stay. The workbench connects them.</h2>
           <p>
             The method library remains available for audit, SEO, and high-intent review.
-            It no longer needs to be the first thing a new visitor understands.
+            The execution workbench now acts as the simpler operating layer above it.
           </p>
           <dl>
             <div>
@@ -328,12 +314,12 @@ export default function HomePage() {
               <dd>{allRoutes.length}</dd>
             </div>
             <div>
-              <dt>Starter review</dt>
-              <dd>USD {starterOffer.price}</dd>
+              <dt>Execution stages</dt>
+              <dd>6</dd>
             </div>
             <div>
-              <dt>Route File path</dt>
-              <dd>USD {primaryOffer.price}</dd>
+              <dt>Public languages</dt>
+              <dd>2</dd>
             </div>
           </dl>
         </div>
@@ -379,9 +365,9 @@ export default function HomePage() {
             <FileCheck2 aria-hidden="true" size={17} />
             Check delivery gate
           </Link>
-          <Link prefetch={false} className="secondary-action" href="/pricing/">
-            <BadgeDollarSign aria-hidden="true" size={17} />
-            View pricing
+          <Link prefetch={false} className="secondary-action" href="/execution/">
+            <Activity aria-hidden="true" size={17} />
+            Open workbench
           </Link>
           <Link prefetch={false} className="secondary-action" href="/reports/client-route-workflow/">
             <Gauge aria-hidden="true" size={17} />

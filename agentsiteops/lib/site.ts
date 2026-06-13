@@ -80,6 +80,7 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "How AgentSiteOps Works", href: "/how-it-works/" },
+      { label: "Execution Workbench", href: "/execution/" },
       { label: "Sample Route File", href: "/sample/" },
       { label: "Route File Delivery Gate", href: "/delivery-gate/" },
       { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
@@ -124,10 +125,55 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Start with AgentSiteOps", href: "/start/" },
+      { label: "Execution Workbench", href: "/execution/" },
       { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
       { label: "Route File Delivery Gate", href: "/delivery-gate/" },
       { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
       { label: "Sample Route File", href: "/sample/" }
+    ]
+  },
+  {
+    path: "/execution/",
+    pageType: "product_workbench",
+    title: "Execution Workbench",
+    description:
+      "A customer-visible AgentSiteOps workbench for intake, scope lock, manual research, coverage gate, Route File synthesis, and bilingual social copy.",
+    answer:
+      "The Execution Workbench connects AgentSiteOps pages into one operating path: collect project facts, lock the research boundary, run manual Deep Research, check coverage, synthesize the Route File, and convert public copy between English and Chinese.",
+    primaryAction: { label: "Start intake", href: "/start/" },
+    secondaryAction: { label: "Open prompt pack", href: "/templates/route-research-prompt-pack/" },
+    aiTarget:
+      "Explain the main execution workflow, stage events, click path, module merge, and bilingual social copy boundary without making payment the first decision.",
+    humanAction:
+      "Use the workbench to move from messy project material to a checked Route File and public update copy.",
+    sections: [
+      {
+        title: "Main execution path",
+        body:
+          "The page connects intake, scope lock, manual research, coverage gate, Route File output, and social copy into a single visible workflow."
+      },
+      {
+        title: "Event logic",
+        body:
+          "The event layer tracks aggregate-safe workbench view, stage selection, and social copy export events without raw text, contact data, or private project details."
+      },
+      {
+        title: "Module merge",
+        body:
+          "Repeated explanations are assigned to one owner: prompt pack for research, client workflow for progress, delivery gate for acceptance, and the workbench for click path."
+      },
+      {
+        title: "Bilingual social copy",
+        body:
+          "English and Chinese variants share the same claim boundary: route decision, visible artifact, manual research process, and no unsupported growth promise."
+      }
+    ],
+    related: [
+      { label: "Start with AgentSiteOps", href: "/start/" },
+      { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
+      { label: "Delivery Gate", href: "/delivery-gate/" },
+      { label: "Sample Route File", href: "/sample/" },
+      { label: "Client Route Workflow", href: "/reports/client-route-workflow/" }
     ]
   },
   {
@@ -163,6 +209,7 @@ export const routePages: RoutePage[] = [
     ],
     related: [
       { label: "Full Route File Checklist", href: "/checklists/route-file-delivery-gate/" },
+      { label: "Execution Workbench", href: "/execution/" },
       { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
       { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
       { label: "Sample Route File", href: "/sample/" },

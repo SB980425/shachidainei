@@ -33,6 +33,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/execution/",
+      "pageType": "product_workbench",
+      "template": "execution_workbench",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.85,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/delivery-gate/",
       "pageType": "product_gate",
       "template": "delivery_gate",

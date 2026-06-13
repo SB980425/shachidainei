@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-13T08:15:55.668Z
+- Generated: 2026-06-13T08:46:13.210Z
 - Status: pass
-- Checks: 307
+- Checks: 312
 - Blockers: 0
 - Warnings: 0
 
@@ -13,15 +13,17 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 58 routes aligned |
-| page_registry | pass | 58 routes aligned |
-| page_review_actions | pass | 58 routes aligned |
+| site_routes | pass | 59 routes aligned |
+| page_registry | pass | 59 routes aligned |
+| page_review_actions | pass | 59 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /start/ has canonical slash shape |
 | route_index | pass | /start/ index flag is true |
 | route_shape | pass | /how-it-works/ has canonical slash shape |
 | route_index | pass | /how-it-works/ index flag is true |
+| route_shape | pass | /execution/ has canonical slash shape |
+| route_index | pass | /execution/ index flag is true |
 | route_shape | pass | /delivery-gate/ has canonical slash shape |
 | route_index | pass | /delivery-gate/ index flag is true |
 | route_shape | pass | /ai-website-operating-system/ has canonical slash shape |
@@ -135,6 +137,7 @@
 | app_page | pass | / app page exists |
 | app_page | pass | /start/ app page exists |
 | app_page | pass | /how-it-works/ app page exists |
+| app_page | pass | /execution/ app page exists |
 | app_page | pass | /delivery-gate/ app page exists |
 | app_page | pass | /ai-website-operating-system/ app page exists |
 | app_page | pass | /tools/website-opportunity-scorer/ app page exists |
@@ -193,6 +196,7 @@
 | analytics_allowlist | pass | update_log_view is registered |
 | analytics_allowlist | pass | start_page_view is registered |
 | analytics_allowlist | pass | how_it_works_view is registered |
+| analytics_allowlist | pass | execution_workbench_view is registered |
 | analytics_allowlist | pass | operating_system_view is registered |
 | analytics_allowlist | pass | tool_page_view is registered |
 | analytics_allowlist | pass | ai_crawler_readiness_view is registered |
@@ -261,6 +265,7 @@
 | analytics_allowlist | pass | trust_policy_view is registered |
 | route_view_event | pass | /start/ has view event |
 | route_view_event | pass | /how-it-works/ has view event |
+| route_view_event | pass | /execution/ has view event |
 | route_view_event | pass | /delivery-gate/ has view event |
 | route_view_event | pass | /ai-website-operating-system/ has view event |
 | route_view_event | pass | /tools/website-opportunity-scorer/ has view event |
@@ -316,7 +321,7 @@
 | route_view_event | pass | /refund-policy/ has view event |
 | route_view_event | pass | /disclaimer/ has view event |
 | route_view_event | pass | /contact/ has view event |
-| growth_snapshot | pass | 58 routes aligned |
+| growth_snapshot | pass | 59 routes aligned |
 
 ## Blocking Issues
 
