@@ -365,6 +365,13 @@ async function main() {
     "First proof asset",
     "Stop or pivot rule"
   ]);
+  await checkPage("/reports/route-basis/", [
+    "Route pattern library",
+    "Route selection source map",
+    "Confidence rubric",
+    "Project route fit matrix",
+    "Data-backed basis"
+  ]);
   await checkPage("/pricing/", [
     "Choose the smallest purchase that can answer the decision",
     "AgentSiteOps Launch Blueprint",

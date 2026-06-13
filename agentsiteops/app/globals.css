@@ -1646,6 +1646,8 @@ textarea {
 }
 
 .table-scroll {
+  min-width: 0;
+  max-width: 100%;
   overflow-x: auto;
   border: 1px solid var(--line-strong);
   border-radius: 8px;
@@ -7244,6 +7246,36 @@ textarea {
     min-height: 36px;
     padding: 0 10px;
     font-size: 12px;
+  }
+}
+
+.route-basis-report .page-hero > *,
+.route-basis-report .page-grid,
+.route-basis-report .page-grid > *,
+.route-basis-report .main-panel,
+.route-basis-report .side-panel {
+  min-width: 0;
+}
+
+.route-basis-report .table-scroll {
+  width: 100%;
+  max-width: 100%;
+}
+
+.route-basis-report .data-table {
+  min-width: 760px;
+}
+
+.route-basis-report .data-table th,
+.route-basis-report .data-table td {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .route-basis-report .page-grid,
+  .route-basis-report .page-hero {
+    padding-right: 14px;
+    padding-left: 14px;
   }
 }
 
