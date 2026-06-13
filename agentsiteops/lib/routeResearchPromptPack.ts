@@ -30,6 +30,180 @@ export type ManualDeepResearchStep = {
   output: string;
 };
 
+export type ManualResearchField = {
+  id: string;
+  label: string;
+  helper: string;
+  placeholder: string;
+  defaultValue: string;
+};
+
+export type ResearchCoverageCheck = {
+  id: string;
+  label: string;
+  keywords: string[];
+  whyRequired: string;
+  gapInstruction: string;
+};
+
+export const manualResearchFields: ManualResearchField[] = [
+  {
+    id: "projectName",
+    label: "Project or site direction",
+    helper: "Name the project, route, product, or website direction being tested.",
+    placeholder: "Example: AgentSiteOps route planner for new AI projects",
+    defaultValue: "AgentSiteOps route planner for internal and client project decisions"
+  },
+  {
+    id: "projectType",
+    label: "Possible project shape",
+    helper: "List the shapes that should be compared before selecting one route.",
+    placeholder: "Service, micro tool, template pack, guide cluster, dashboard, implementation service...",
+    defaultValue:
+      "Manual route-planning system, website opportunity scorer, AI crawler readiness checker, prompt-pack library, and fixed-scope launch blueprint service"
+  },
+  {
+    id: "targetUser",
+    label: "Target user and buyer",
+    helper: "Describe the real user, budget owner, and urgency trigger.",
+    placeholder: "Solo builders, small teams, agencies, operators, marketers...",
+    defaultValue:
+      "AI-capable solo builders and small operators who can build with AI but need a concrete route, proof asset, and first validation path before creating another site"
+  },
+  {
+    id: "regionLanguage",
+    label: "Region and language",
+    helper: "State the language, market, and any regional payment or compliance constraints.",
+    placeholder: "English-speaking global market, US/EU search demand, China-based operator constraints...",
+    defaultValue:
+      "English-language global web; China-based operator constraints; manual PayPal payment path; no Stripe dependency"
+  },
+  {
+    id: "monetization",
+    label: "Monetization hypothesis",
+    helper: "State the paid path, free path, and what evidence would justify charging.",
+    placeholder: "Free checker, $29 review, $99 blueprint, implementation upsell, no subscription yet...",
+    defaultValue:
+      "Free local tools and samples; low-ticket fit review; $99 manual launch blueprint only when the buyer has a concrete project and needs a route file; subscription is blocked until repeat-use evidence exists"
+  },
+  {
+    id: "proofAssets",
+    label: "Existing proof assets",
+    helper: "List pages, samples, tools, analytics, buyer evidence, or files that can be inspected.",
+    placeholder: "Current site URL, sample audit, GitHub repo, GSC/Bing data, reports, screenshots...",
+    defaultValue:
+      "agentsiteops.com, sample route file, route selection methodology, scorer, crawler readiness tool, evidence ledger, pricing page, PayPal manual payment path, GSC/Bing verification, IndexNow submissions"
+  },
+  {
+    id: "dataSources",
+    label: "Allowed research sources",
+    helper: "Name the data sources the research can use and the sources that need caution.",
+    placeholder: "Public competitor pages, docs, forums, GSC, Bing, Semrush export, customer interviews...",
+    defaultValue:
+      "Public search results, competitor service pages, official docs, GSC and Bing aggregate data, Semrush trial exports if available, GitHub public repos, user-provided project facts"
+  },
+  {
+    id: "constraints",
+    label: "Hard constraints and blocked claims",
+    helper: "Name cost, legal, delivery, data, quality, and claim boundaries.",
+    placeholder: "No API spend, no guaranteed rankings, no private scraping, no fake metrics...",
+    defaultValue:
+      "No OpenAI API cost for the free workflow; manual ChatGPT Deep Research only; no guaranteed traffic, ranking, AI citation, or revenue claims; no copied competitor data; no subscription claim without repeat-use evidence"
+  },
+  {
+    id: "decisionNeed",
+    label: "Decision needed from research",
+    helper: "Define the exact output required before building or selling.",
+    placeholder: "Proceed, pilot, pivot, stop; first proof asset; 7-day validation path...",
+    defaultValue:
+      "Decide whether AgentSiteOps should continue as a route-planning system, which first proof asset should be improved next, what alternatives should be rejected, and what evidence is required before asking for payment"
+  }
+];
+
+export const researchCoverageChecks: ResearchCoverageCheck[] = [
+  {
+    id: "route-archetypes",
+    label: "Route archetypes compared",
+    keywords: ["archetype", "route", "alternative", "comparison", "reject"],
+    whyRequired:
+      "The route is not credible if it jumps directly to one answer without comparing plausible shapes.",
+    gapInstruction:
+      "Compare at least eight route archetypes and reject weak alternatives with evidence, delivery burden, generic-AI substitution risk, and stop rule."
+  },
+  {
+    id: "buyer-problem",
+    label: "Buyer problem in buyer language",
+    keywords: ["buyer", "pain", "problem", "job", "trigger", "budget"],
+    whyRequired:
+      "A route map has no value if the buyer problem is invented internally.",
+    gapInstruction:
+      "Find direct buyer wording, urgency triggers, budget owner, problem severity, and what would make the buyer seek help now."
+  },
+  {
+    id: "source-table",
+    label: "Source table with dates",
+    keywords: ["source", "citation", "date", "published", "evidence"],
+    whyRequired:
+      "The route cannot be audited if sources, dates, and evidence types are not visible.",
+    gapInstruction:
+      "Return a source table with source URL or name, publication/update date where visible, evidence type, and claim supported."
+  },
+  {
+    id: "proof-asset",
+    label: "First proof asset",
+    keywords: ["proof asset", "sample", "demo", "checker", "template", "report"],
+    whyRequired:
+      "The project needs an inspectable asset before asking for trust or payment.",
+    gapInstruction:
+      "Select one first proof asset, explain what it proves, what it cannot prove, and the build checklist."
+  },
+  {
+    id: "data-rights",
+    label: "Data rights and source boundary",
+    keywords: ["data rights", "terms", "license", "allowed", "attribution", "freshness"],
+    whyRequired:
+      "Data-heavy pages can become copied, stale, or risky without source rules.",
+    gapInstruction:
+      "Audit source rights, allowed use, blocked use, attribution, freshness cadence, and owner for updates."
+  },
+  {
+    id: "pricing-fit",
+    label: "Pricing and offer fit",
+    keywords: ["pricing", "price", "offer", "payment", "refund", "scope"],
+    whyRequired:
+      "A paid route needs a value exchange, not just a checkout link.",
+    gapInstruction:
+      "Compare free diagnostic, low-ticket review, fixed-scope blueprint, implementation service, and subscription; state what evidence justifies payment."
+  },
+  {
+    id: "validation-channel",
+    label: "First validation channel",
+    keywords: ["validation", "channel", "outreach", "search", "traffic", "signal"],
+    whyRequired:
+      "The plan needs a reachable path to evidence, not passive waiting for search discovery.",
+    gapInstruction:
+      "Select the first validation channel, first asset to show, counted signals, rejected vanity signals, and first 20 queries or prospects."
+  },
+  {
+    id: "stop-rule",
+    label: "Stop or pivot rule",
+    keywords: ["stop", "pivot", "kill", "threshold", "blocked", "decision rule"],
+    whyRequired:
+      "The project must know when to stop instead of continuing because a page exists.",
+    gapInstruction:
+      "Define the proceed, pilot, pivot, stop, and blocked conditions for the next 7 to 14 days."
+  },
+  {
+    id: "delivery-blueprint",
+    label: "Delivery blueprint",
+    keywords: ["blueprint", "7-day", "task", "owner", "deadline", "deliverable"],
+    whyRequired:
+      "Research must become an execution file that can guide the next build.",
+    gapInstruction:
+      "Convert the selected route into a 7-day task plan with owner, first asset, required page changes, evidence capture, and final decision."
+  }
+];
+
 export const manualDeepResearchSteps: ManualDeepResearchStep[] = [
   {
     title: "Generate the research brief",
@@ -336,3 +510,143 @@ export const routeResearchProtocol = [
   "Record rejected paths so the recommendation can be audited later.",
   "Turn every research result into one rule, one first asset, and one stop condition."
 ];
+
+export function buildManualDeepResearchPrompt(fields: Record<string, string>) {
+  const value = (id: string) => fields[id]?.trim() || "[not provided]";
+
+  return `Run a deep research route audit for this project. The goal is not to write marketing copy. The goal is to decide whether this project direction should proceed, pilot, pivot, stop, or stay blocked before more website, UI, checkout, or content work is built.
+
+PROJECT FACTS
+- Project or direction: ${value("projectName")}
+- Possible project shape: ${value("projectType")}
+- Target user and buyer: ${value("targetUser")}
+- Region and language: ${value("regionLanguage")}
+- Monetization hypothesis: ${value("monetization")}
+- Existing proof assets: ${value("proofAssets")}
+- Allowed research sources: ${value("dataSources")}
+- Hard constraints and blocked claims: ${value("constraints")}
+- Decision needed: ${value("decisionNeed")}
+
+RESEARCH TASK
+1. Compare at least eight route archetypes before selecting one route.
+2. Identify buyer problem evidence in the buyer's own language where possible.
+3. Separate public market context from first-party proof and clearly mark inference.
+4. Design the smallest inspectable proof asset needed before payment or wider promotion.
+5. Audit data rights, source freshness, citation needs, and maintenance burden.
+6. Compare monetization shapes: free diagnostic, low-ticket review, manual blueprint, implementation service, template pack, and subscription. Block subscription if repeat-use evidence is absent.
+7. Choose the first reachable validation channel and define what counts as real evidence.
+8. Produce a stop, pivot, pilot, proceed, or blocked decision with reasons.
+
+REQUIRED OUTPUT
+- Source table with source, date if visible, evidence type, and claim supported.
+- Route archetype comparison table.
+- Selected route and at least three rejected alternatives.
+- Buyer problem evidence and confidence level.
+- First proof asset, what it proves, and what it cannot prove.
+- Data rights and source-governance notes.
+- Pricing and offer-fit recommendation.
+- First validation channel and first asset to show.
+- 7-day execution plan with owner, task, artifact, and expected evidence.
+- Stop or pivot rule.
+
+REJECT THE RECOMMENDATION IF
+- It relies on generic optimism, internal preference, or page existence.
+- It treats IndexNow, sitemap success, or search-result visibility as buyer demand.
+- It claims traffic, ranking, AI citation, or revenue without first-party evidence.
+- It recommends subscription without repeat-use evidence.
+- It fails to name rejected alternatives.`;
+}
+
+export function buildGapResearchPrompt(
+  fields: Record<string, string>,
+  missingChecks: ResearchCoverageCheck[]
+) {
+  const projectName = fields.projectName?.trim() || "[project not provided]";
+  const gaps = missingChecks.length
+    ? missingChecks.map((check, index) => `${index + 1}. ${check.gapInstruction}`).join("\n")
+    : "No required gap detected. Do not run a second pass unless a human reviewer finds a material omission.";
+
+  return `Run a focused second-pass deep research task for ${projectName}. Do not repeat the full report. Only repair the missing modules below.
+
+MISSING MODULES
+${gaps}
+
+OUTPUT FORMAT
+- Missing module repaired.
+- New sources or evidence used.
+- Confidence impact.
+- Whether this changes the selected route.
+- Whether the final route file can now be delivered.
+
+BOUNDARY
+Do not introduce new growth, ranking, traffic, AI citation, or revenue claims unless the evidence directly supports them.`;
+}
+
+export function buildRouteSynthesisTemplate(
+  fields: Record<string, string>,
+  missingChecks: ResearchCoverageCheck[]
+) {
+  const status =
+    missingChecks.length === 0
+      ? "Ready for synthesis if the pasted report is source-backed."
+      : `Blocked from final delivery until ${missingChecks.length} gap item(s) are repaired.`;
+
+  return `# Route File Synthesis
+
+## Project
+${fields.projectName?.trim() || "[project not provided]"}
+
+## Current Synthesis Status
+${status}
+
+## Selected Route
+[Name the route only after the report compares alternatives.]
+
+## Rejected Alternatives
+1. [Alternative]
+   - Rejection reason:
+   - Evidence:
+2. [Alternative]
+   - Rejection reason:
+   - Evidence:
+3. [Alternative]
+   - Rejection reason:
+   - Evidence:
+
+## Evidence Ledger
+| Claim | Evidence | Source | Status | Confidence impact |
+| --- | --- | --- | --- | --- |
+| [claim] | [evidence] | [source/date] | verified/pending/inferred/stale/blocked | [impact] |
+
+## First Proof Asset
+- Asset:
+- What it proves:
+- What it cannot prove:
+- Build checklist:
+
+## Pricing Boundary
+- Free path:
+- Paid path:
+- What must be true before payment:
+- Refund or no-go condition:
+
+## First Validation Channel
+- Channel:
+- First asset to show:
+- Signals that count:
+- Signals that do not count:
+
+## 7-Day Execution Plan
+| Day | Task | Artifact | Evidence expected |
+| --- | --- | --- | --- |
+| 1 | [task] | [artifact] | [evidence] |
+| 2 | [task] | [artifact] | [evidence] |
+| 3 | [task] | [artifact] | [evidence] |
+| 4 | [task] | [artifact] | [evidence] |
+| 5 | [task] | [artifact] | [evidence] |
+| 6 | [task] | [artifact] | [evidence] |
+| 7 | [decision] | [report] | [proceed/pilot/pivot/stop] |
+
+## Stop or Pivot Rule
+[State the exact threshold that stops the project or changes the route.]`;
+}

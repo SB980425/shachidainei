@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ClipboardList, FileText, SearchCheck, ShieldCheck } from "lucide-react";
+import { ManualDeepResearchWorkspace } from "@/components/ManualDeepResearchWorkspace";
 import { ResearchDeliveryLoop } from "@/components/ResearchDeliveryLoop";
 import {
   manualDeepResearchSteps,
@@ -168,6 +169,10 @@ export default function Page() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section className="gate-section">
+        <ManualDeepResearchWorkspace />
       </section>
 
       <section className="gate-section">

@@ -347,6 +347,11 @@ async function main() {
   await checkPage("/templates/route-research-prompt-pack/", [
     "Free manual Deep Research plan",
     "The free plan does not call the OpenAI API",
+    "Generate, check, repair, and fuse the route research",
+    "Copy Deep Research prompt",
+    "Local acceptance check",
+    "Second-pass gap prompt",
+    "Route-file synthesis skeleton",
     "Research delivery loop",
     "Acceptance gate before delivery",
     "Second manual pass when needed",
