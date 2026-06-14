@@ -61,7 +61,7 @@ export function IntakePacketBuilder() {
   }
 
   return (
-    <section className="gate-section">
+    <section className="gate-section" id="intake-packet">
       <div className="intake-packet-tool" aria-label="Copy-ready intake packet">
         <div className="intake-packet-copy">
           <span>

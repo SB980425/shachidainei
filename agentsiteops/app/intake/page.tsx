@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   AlertTriangle,
+  ArrowRight,
   CheckCircle2,
   ClipboardList,
+  FileText,
   Mail,
   ShieldCheck
 } from "lucide-react";
@@ -82,6 +85,37 @@ const intakeProcessSteps = [
   }
 ];
 
+const submissionStates = [
+  {
+    label: "Automatic receipt",
+    status: "Website",
+    body:
+      "The request can be formatted, copied, emailed, and stored in the browser session as a packet. This confirms submission only.",
+    next: "Missing fields are visible before review."
+  },
+  {
+    label: "Manual acceptance",
+    status: "Operator",
+    body:
+      "A person checks whether the project is safe, scoped, evidenced, and specific enough for route work.",
+    next: "Ready, repair, blocked, or not delivery."
+  },
+  {
+    label: "Research carrier",
+    status: "Approved path",
+    body:
+      "Research may use manual source review, a client report, an operator-controlled pass, or another approved carrier.",
+    next: "Returned material enters the coverage gate."
+  },
+  {
+    label: "Route File output",
+    status: "Handoff",
+    body:
+      "Accepted material becomes selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.",
+    next: "The client receives one execution boundary."
+  }
+];
+
 export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -120,6 +154,14 @@ export default function Page() {
               <Mail aria-hidden="true" size={17} />
               Email project intake
             </a>
+            <a className="secondary-action" href="#intake-packet">
+              <ClipboardList aria-hidden="true" size={17} />
+              Build packet
+            </a>
+            <Link prefetch={false} className="secondary-action" href="/sample/">
+              <FileText aria-hidden="true" size={17} />
+              View output
+            </Link>
           </div>
         </div>
         <aside className="decision-card">
@@ -143,7 +185,39 @@ export default function Page() {
 
       <RouteFlowBridge current="intake" nextHref="/how-it-works/" nextLabel="Continue to scope lock" />
 
-      <CustomerResponseLifecycle />
+      <section className="gate-section intake-submission-section">
+        <div className="section-head">
+          <h2>After the intake is sent</h2>
+          <p>
+            The site can create the packet and next-state visibility. It does not
+            automatically accept the project, run hidden research, or produce a route
+            without manual review and coverage checking.
+          </p>
+        </div>
+        <div className="intake-submission-grid">
+          {submissionStates.map((item, index) => (
+            <article key={item.label}>
+              <div>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{item.status}</strong>
+              </div>
+              <h3>{item.label}</h3>
+              <p>{item.body}</p>
+              <small>
+                {item.next}
+                <ArrowRight aria-hidden="true" size={14} />
+              </small>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <CustomerResponseLifecycle
+        variant="compact"
+        eyebrow="Submission is not acceptance"
+        title="The customer sees receipt first; route work starts only after manual acceptance."
+        body="This keeps the intake page aligned with the full site promise: visible state, approved research carrier, coverage gate, and checked Route File output."
+      />
 
       <IntakePacketBuilder />
 

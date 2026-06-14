@@ -50,67 +50,67 @@ const homeInputRows = [
 
 const homeOutputRows = [
   {
-    label: "Client-visible progress",
-    body: "The customer can see intake, scope lock, research-channel status, repair watch, and Route File synthesis."
+    label: "Automatic receipt",
+    body: "The site can preserve the packet, show missing fields, and route the customer to the next visible state."
   },
   {
-    label: "Research-channel boundary",
-    body: "The website prepares briefs and checks reports. The research carrier is approved per project and can change without changing the Route File standard."
+    label: "Manual acceptance",
+    body: "A person decides ready, repair, blocked, or not delivery before research and synthesis begin."
   },
   {
-    label: "Claim-safe public copy",
-    body: "Chinese and English updates keep the same evidence boundary and do not add growth guarantees."
+    label: "Route File handoff",
+    body: "Accepted material becomes one selected route, rejected alternatives, evidence ledger, proof asset, channel, and stop rule."
   }
 ];
 
 const heroFlowSteps = [
-  { label: "Intake", body: "Facts and constraints" },
-  { label: "Scope Lock", body: "Boundary and risks" },
-  { label: "Research Run", body: "Approved channel" },
-  { label: "Coverage Gate", body: "Pass or repair" },
-  { label: "Route File", body: "Decision output" }
+  { label: "Submit", body: "Messy input" },
+  { label: "Receipt", body: "Packet visible" },
+  { label: "Review", body: "Ready or repair" },
+  { label: "Research", body: "Approved carrier" },
+  { label: "Route File", body: "Output + stop" }
 ];
 
 const routeFlowCards = [
   {
-    label: "Input",
-    title: "Messy project intake",
+    label: "Submit",
+    title: "Client sends the messy project",
     body:
-      "Capture project facts, target user, assets, source boundaries, constraints, and the decision blocking progress.",
-    output: "Usable route brief",
+      "Collect the project facts, target user, assets, source boundaries, constraints, candidate routes, and current blocker.",
+    output: "Intake packet",
     Icon: ClipboardList
   },
   {
-    label: "Research",
-    title: "Approved research run",
+    label: "Receipt",
+    title: "The request becomes visible",
     body:
-      "Generate the route brief, then run it through an approved research channel, manual source review, or client-provided report workflow. The website does not run hidden research.",
-    output: "Cited research report",
-    Icon: SearchCheck
+      "The site can format the packet, preserve the missing-input list, and show the next state without claiming hidden automatic research.",
+    output: "Received, missing, or blocked",
+    Icon: Gauge
   },
   {
-    label: "Check",
-    title: "Coverage gate",
+    label: "Review",
+    title: "Operator accepts or repairs",
     body:
-      "Check buyer logic, source table, rejected alternatives, proof asset, validation channel, and stop rule before accepting the report.",
-    output: "Pass or gap prompt",
+      "A person checks scope, safety, source rights, buyer evidence, and delivery capacity before the route workflow proceeds.",
+    output: "Ready, repair, or not delivery",
     Icon: FileCheck2
   },
   {
-    label: "Route",
-    title: "One Route File",
+    label: "Research",
+    title: "Evidence carrier can change",
     body:
-      "Fuse accepted research into selected route, rejected alternatives, evidence ledger, first proof asset, and validation channel.",
-    output: "Client-readable file",
-    Icon: FileText
+      "Research can use manual source review, a client report, an operator-controlled pass, or another approved carrier. The acceptance standard stays fixed.",
+    output: "Checked source material",
+    Icon: SearchCheck
   },
   {
-    label: "Stop rule",
-    title: "Build or stop decision",
+    label: "Route File",
+    title: "One output with a stop rule",
     body:
-      "The route either enters a small validation cycle or stays blocked. No page, checkout, or content batch expands without evidence.",
-    output: "Next action boundary",
-    Icon: ShieldCheck
+      "Accepted material becomes one selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.",
+    output: "Client-readable handoff",
+    Icon: FileText
   }
 ];
 
@@ -193,12 +193,11 @@ export default function HomePage() {
       <section className="frontstage-hero route-foundry-hero">
         <div className="frontstage-hero-copy">
           <p className="eyebrow">Route Foundry</p>
-          <h1>Turn messy client input into one reviewable Route File.</h1>
+          <h1>From messy input to one checked Route File.</h1>
           <p>
-            Bring the unclear project, mixed notes, possible offers, risk limits, and
-            open decisions. AgentSiteOps processes them through intake, scope lock,
-            approved research channel, coverage gate, and final route output before another page,
-            tool, checkout, or content system is built.
+            Submit the unclear project once. AgentSiteOps turns it into a visible
+            intake packet, manual acceptance state, approved research carrier, coverage
+            gate, and final route handoff before more build work starts.
           </p>
           <div className="hero-actions">
             <Link prefetch={false} className="primary-action" href="/intake/">
@@ -242,20 +241,19 @@ export default function HomePage() {
       <section className="route-foundation-section home-operating-section">
         <div className="route-section-heading">
           <span>Operating path</span>
-          <h2>One customer-readable path replaces scattered method pages.</h2>
+          <h2>The visitor should always know the current state and next action.</h2>
           <p>
-            The homepage now shows the product as an execution surface: submit the
-            project, run research outside the website through an approved carrier, check coverage, deliver one
-            Route File, then stop or validate.
+            The support pages remain available, but the homepage now leads with the
+            customer-facing path from submission to output.
           </p>
         </div>
         <div className="home-operating-panel">
           <div className="home-intake-panel">
             <span>Client input</span>
-            <h3>Submit the messy project once.</h3>
+            <h3>Submit once. Repair only what is missing.</h3>
             <p>
-              The client does not need a polished brief. The system only needs enough
-              material to lock the decision boundary and block unsupported claims.
+              The client does not need a polished brief. The intake only needs enough
+              material to expose the route decision, missing evidence, and blocked claims.
             </p>
             <div className="home-input-list">
               {homeInputRows.map((item) => (
@@ -272,7 +270,7 @@ export default function HomePage() {
 
           <aside className="home-output-panel" aria-label="What the client can inspect">
             <span>Visible output</span>
-            <h3>The method library becomes one inspected route.</h3>
+            <h3>The response path stays visible.</h3>
             {homeOutputRows.map((item) => (
               <article key={item.label}>
                 <strong>{item.label}</strong>
@@ -312,7 +310,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <CustomerResponseLifecycle />
+      <CustomerResponseLifecycle
+        variant="compact"
+        eyebrow="Client response loop"
+        title="The site can receive and organize the request; final judgment stays visible and manual."
+        body="Research tooling is replaceable. The fixed product is the accepted Route File standard and the visible state path around it."
+      />
 
       <section className="route-foundation-section">
         <div className="route-section-heading">

@@ -1,6 +1,6 @@
 # Internal Link Gate
 
-- Generated: 2026-06-14T12:06:03.309Z
+- Generated: 2026-06-14T12:25:07.254Z
 - Status: pass
 - Checks: 63
 - Blockers: 0

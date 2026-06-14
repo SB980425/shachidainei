@@ -13197,7 +13197,8 @@ body {
 
 .sample-handoff-grid,
 .purchase-start-grid,
-.thank-response-grid {
+.thank-response-grid,
+.intake-submission-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
@@ -13205,12 +13206,82 @@ body {
 
 .sample-handoff-grid article,
 .purchase-start-grid article,
-.thank-response-grid article {
+.thank-response-grid article,
+.intake-submission-grid article {
   display: grid;
   gap: 10px;
   align-content: start;
   min-height: 190px;
   padding: 16px;
+}
+
+.intake-submission-section {
+  scroll-margin-top: 96px;
+}
+
+.intake-submission-grid article {
+  min-width: 0;
+  border: 1px solid rgba(226, 231, 238, 0.12);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(30, 39, 41, 0.92), rgba(12, 17, 19, 0.94));
+  color: var(--foundry-text);
+  box-shadow: none;
+}
+
+.intake-submission-grid article > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.intake-submission-grid article > div span {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 9px;
+  background: rgba(255, 104, 70, 0.14);
+  color: #ffd7cb;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.intake-submission-grid article > div strong {
+  color: #aef8cc;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.intake-submission-grid h3 {
+  margin: 0;
+  color: var(--foundry-text);
+  line-height: 1.18;
+}
+
+.intake-submission-grid p {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.7);
+  line-height: 1.55;
+}
+
+.intake-submission-grid small {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  align-self: end;
+  border-top: 1px solid rgba(226, 231, 238, 0.1);
+  color: rgba(246, 241, 232, 0.58);
+  line-height: 1.45;
+  padding-top: 10px;
+}
+
+.intake-submission-grid svg {
+  color: var(--foundry-coral);
+  flex: 0 0 auto;
 }
 
 .purchase-start-grid article {
@@ -13229,7 +13300,8 @@ body {
   .execution-response-grid,
   .sample-handoff-grid,
   .purchase-start-grid,
-  .thank-response-grid {
+  .thank-response-grid,
+  .intake-submission-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -13263,6 +13335,7 @@ body {
   .sample-handoff-grid,
   .purchase-start-grid,
   .thank-response-grid,
+  .intake-submission-grid,
   .execution-output-checklist > div:last-child {
     grid-template-columns: 1fr;
   }
@@ -13270,7 +13343,8 @@ body {
   .execution-response-grid article,
   .sample-handoff-grid article,
   .purchase-start-grid article,
-  .thank-response-grid article {
+  .thank-response-grid article,
+  .intake-submission-grid article {
     min-height: auto;
   }
 }

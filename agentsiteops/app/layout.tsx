@@ -67,7 +67,7 @@ export const viewport: Viewport = {
 };
 
 const navItems = [
-  { href: "/start/", label: "System", Icon: Workflow },
+  { href: "/start/", label: "Start", Icon: Workflow },
   { href: "/how-it-works/", label: "Method", Icon: GitBranch },
   { href: "/templates/route-research-prompt-pack/", label: "Research", Icon: SearchCheck },
   { href: "/sample/", label: "Sample", Icon: FileText },
