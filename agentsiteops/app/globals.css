@@ -5817,6 +5817,79 @@ textarea {
   color: var(--blue);
 }
 
+.start-route-path {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.32fr) minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(239, 246, 255, 0.92), rgba(240, 253, 244, 0.72)),
+    #ffffff;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+  padding: clamp(18px, 3vw, 26px);
+}
+
+.start-route-path > div:first-child {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.start-route-path > div:first-child > span {
+  width: fit-content;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #15803d;
+  padding: 5px 9px;
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.start-route-path h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 0.95;
+}
+
+.start-route-path p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.start-route-path-steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.start-route-path-steps article {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  border: 1px solid rgba(37, 99, 235, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 12px;
+}
+
+.start-route-path-steps small {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 950;
+}
+
+.start-route-path-steps h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
+}
+
 .frontstage-workbench-section {
   padding-right: 0;
   padding-left: 0;
@@ -9547,6 +9620,7 @@ textarea {
   .delivery-contract-grid,
   .route-acceptance-states,
   .route-acceptance-table > div,
+  .start-route-path,
   .start-submit-grid,
   .start-next-grid,
   .start-readiness-panel,
@@ -9584,6 +9658,10 @@ textarea {
   }
 
   .frontstage-hero-flow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .start-route-path-steps {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -9714,6 +9792,10 @@ textarea {
   }
 
   .frontstage-hero-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .start-route-path-steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

@@ -107,6 +107,29 @@ const readinessRows = [
   }
 ];
 
+const startPathSteps = [
+  {
+    label: "Intake",
+    body: "Collect facts, sources, constraints, and candidate routes."
+  },
+  {
+    label: "Scope",
+    body: "Lock what is in scope, out of scope, and not allowed as a claim."
+  },
+  {
+    label: "Research",
+    body: "Run the prompt pack manually in ChatGPT Deep Research."
+  },
+  {
+    label: "Gate",
+    body: "Mark pass, repair, blocked, or not delivery."
+  },
+  {
+    label: "Route File",
+    body: "Fuse accepted evidence into one decision file and stop rule."
+  }
+];
+
 const nextSteps = [
   {
     title: "1. Prepare the intake",
@@ -184,6 +207,26 @@ export default function Page() {
             </div>
           </dl>
         </aside>
+      </section>
+
+      <section className="gate-section start-route-path" aria-label="Start execution path">
+        <div>
+          <span>First path</span>
+          <h2>Start means opening intake, not jumping to payment.</h2>
+          <p>
+            The first click should create a usable project boundary. Payment, build work,
+            and public copy stay behind the route decision.
+          </p>
+        </div>
+        <div className="start-route-path-steps">
+          {startPathSteps.map((step, index) => (
+            <article key={step.label}>
+              <small>{String(index + 1).padStart(2, "0")}</small>
+              <h3>{step.label}</h3>
+              <p>{step.body}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="gate-section">
