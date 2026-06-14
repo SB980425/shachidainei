@@ -5912,6 +5912,27 @@ textarea {
   line-height: 1.6;
 }
 
+.intake-ready-split .compact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.intake-ready-split .compact-list li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+}
+
+.intake-ready-split .compact-list svg {
+  margin-top: 4px;
+  color: var(--green);
+}
+
+.intake-ready-split > div:last-child .compact-list svg {
+  color: var(--amber);
+}
+
 .route-command-shell {
   --route-bg: #07111f;
   --route-panel: rgba(9, 19, 33, 0.82);

@@ -1,24 +1,29 @@
 import type { Metadata } from "next";
-import { CheckCircle2, ClipboardList, Mail } from "lucide-react";
 import {
-  deliveryProcessSteps,
+  AlertTriangle,
+  CheckCircle2,
+  ClipboardList,
+  Mail,
+  ShieldCheck
+} from "lucide-react";
+import {
   intakeFields,
   launchProduct,
-  paymentConfirmationFields,
-  starterReviewProduct
+  paymentConfirmationFields
 } from "@/lib/launch";
 import { siteUrl } from "@/lib/site";
 
 const path = "/intake/";
 
 export const metadata: Metadata = {
-  title: "Order Intake",
+  title: "Project Intake",
   description:
-    "Project details needed after buying the AgentSiteOps Fit Review or Route File.",
+    "Project context, source boundaries, constraints, and optional order confirmation for AgentSiteOps route review.",
   alternates: { canonical: path },
   openGraph: {
-    title: "Order Intake",
-    description: "Send these details after payment so the manual review or Route File can be delivered.",
+    title: "Project Intake",
+    description:
+      "Send project facts first. Payment confirmation is only needed when a Fit Review or Route File order already exists.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -26,23 +31,71 @@ export const metadata: Metadata = {
   }
 };
 
+const intakeTriageRows = [
+  {
+    label: "Ready",
+    title: "Scope can be locked",
+    body:
+      "The project facts, source boundary, risks, and candidate routes are specific enough to create a research brief.",
+    Icon: CheckCircle2
+  },
+  {
+    label: "Repair",
+    title: "More context required",
+    body:
+      "The route question is useful, but the intake lacks examples, evidence, constraints, or rejected alternatives.",
+    Icon: AlertTriangle
+  },
+  {
+    label: "Blocked",
+    title: "Do not start delivery",
+    body:
+      "The request depends on private access, unsafe regulated advice, copied data, or guaranteed traffic, ranking, revenue, or buyer response.",
+    Icon: ShieldCheck
+  }
+];
+
+const intakeProcessSteps = [
+  {
+    title: "1. Receive project facts",
+    body:
+      "Project context, source material, constraints, candidate routes, and delivery limits are collected before any route decision."
+  },
+  {
+    title: "2. Screen readiness",
+    body:
+      "The intake is marked ready, repair, or blocked so weak material does not become unsupported route work."
+  },
+  {
+    title: "3. Lock the research boundary",
+    body:
+      "A narrow research brief is prepared only after the route question, source rules, and unacceptable claims are clear."
+  },
+  {
+    title: "4. Hand off the Route File path",
+    body:
+      "Accepted research becomes one selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule."
+  }
+];
+
 export default function Page() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Order Intake",
-    description: "Project details needed after buying the AgentSiteOps Fit Review or Route File.",
+    name: "Project Intake",
+    description:
+      "Project context, source boundaries, constraints, and optional order confirmation for AgentSiteOps route review.",
     url: `${siteUrl}${path}`,
     inLanguage: "en"
   };
-  const mailSubject = encodeURIComponent("AgentSiteOps order intake");
+  const mailSubject = encodeURIComponent("AgentSiteOps project intake");
   const mailBody = encodeURIComponent(
     [
-      "Payment confirmation",
-      ...paymentConfirmationFields.map((field) => `- ${field}:`),
-      "",
       "Project intake",
-      ...intakeFields.map((field) => `- ${field}:`)
+      ...intakeFields.map((field) => `- ${field}:`),
+      "",
+      "If you already ordered a Fit Review or Route File",
+      ...paymentConfirmationFields.map((field) => `- ${field}:`)
     ].join("\n")
   );
 
@@ -54,11 +107,12 @@ export default function Page() {
       />
       <section className="gate-hero">
         <div>
-          <p className="eyebrow">Post-payment intake</p>
-          <h1>Send the details needed for manual delivery.</h1>
+          <p className="eyebrow">Project intake</p>
+          <h1>Send the context needed to judge the route.</h1>
           <p>
-            The site does not use a login system yet. After payment for the Fit Review or
-            Route File, send the details below so the manual deliverable can be prepared.
+            Use this page before a Fit Review or Route File begins. The intake answers
+            decide whether the project is ready, needs repair, or must stay blocked.
+            Payment evidence is only needed when an order already exists.
           </p>
           <div className="hero-actions">
             <a
@@ -68,23 +122,76 @@ export default function Page() {
               href={`mailto:${launchProduct.supportEmail}?subject=${mailSubject}&body=${mailBody}`}
             >
               <Mail aria-hidden="true" size={17} />
-              Email intake
+              Email project intake
             </a>
           </div>
         </div>
         <aside className="decision-card">
-          <strong>Delivery clock</strong>
-          <p>{starterReviewProduct.timeline}</p>
-          <p>{launchProduct.timeline}</p>
+          <strong>What gets checked</strong>
+          <p>
+            Facts, source rights, constraints, candidate routes, buyer proof, and
+            delivery ability are checked before the route path is accepted.
+          </p>
+          <dl>
+            <div>
+              <dt>Main decision</dt>
+              <dd>Ready, repair, blocked, or stop.</dd>
+            </div>
+            <div>
+              <dt>Payment role</dt>
+              <dd>Order matching only.</dd>
+            </div>
+          </dl>
         </aside>
       </section>
 
       <section className="gate-section">
         <div className="section-head">
-          <h2>Payment confirmation</h2>
+          <h2>Project intake fields</h2>
+          <p>Use concise factual answers. Do not send passwords, private API keys, bank details, account recovery information, or private customer data.</p>
+        </div>
+        <div className="loop-grid">
+          {intakeFields.map((field, index) => (
+            <article key={field}>
+              <span>{index + 1}</span>
+              <h3>{field}</h3>
+              <p>Provide the shortest useful version. Public links are acceptable when they are safe to inspect.</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>Intake triage</h2>
           <p>
-            Send enough payment evidence to match the PayPal payment to the manual
-            delivery request. Do not send card numbers or bank details.
+            The first pass separates usable project context from missing context and
+            blocked requests before any research or delivery promise is made.
+          </p>
+        </div>
+        <div className="start-readiness-panel">
+          {intakeTriageRows.map((item) => {
+            const Icon = item.Icon;
+
+            return (
+              <article key={item.label}>
+                <span>{item.label}</span>
+                <Icon aria-hidden="true" size={20} />
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>Payment confirmation if already ordered</h2>
+          <p>
+            Send enough evidence to match the PayPal payment to the manual request
+            only when a Fit Review or Route File order already exists. Do not send card
+            numbers or bank details.
           </p>
         </div>
         <div className="loop-grid">
@@ -100,30 +207,14 @@ export default function Page() {
 
       <section className="gate-section">
         <div className="section-head">
-          <h2>Project intake fields</h2>
-          <p>Use concise factual answers. Do not send passwords, private API keys, bank details, or account recovery information.</p>
-        </div>
-        <div className="loop-grid">
-          {intakeFields.map((field, index) => (
-            <article key={field}>
-              <span>{index + 1}</span>
-              <h3>{field}</h3>
-              <p>Provide the shortest useful version. Links are acceptable when they are public and safe to inspect.</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="gate-section">
-        <div className="section-head">
-          <h2>Manual delivery process</h2>
+          <h2>Manual intake process</h2>
           <p>
-            This is a service workflow, not an automated account portal. The process is
-            designed to reject unsafe or under-evidenced orders before they turn into vague work.
+            This is a service workflow, not an automated account portal. The process
+            rejects unsafe or under-evidenced requests before they turn into vague work.
           </p>
         </div>
         <div className="workflow-grid">
-          {deliveryProcessSteps.map((step) => (
+          {intakeProcessSteps.map((step) => (
             <article className="workflow-card" key={step.title}>
               <span>
                 <ClipboardList aria-hidden="true" size={18} />
@@ -135,17 +226,17 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="gate-section split-section gate-split">
+      <section className="gate-section split-section gate-split intake-ready-split">
         <div>
           <h2>Ready to send</h2>
           <ul className="compact-list">
             <li>
               <CheckCircle2 aria-hidden="true" size={16} />
-              Payment evidence can be matched to the order.
+              The project goal, buyer, delivery ability, and current blocker are clear.
             </li>
             <li>
               <CheckCircle2 aria-hidden="true" size={16} />
-              Public links or examples are safe to inspect.
+              Public links, demos, examples, notes, or source limits are safe to inspect.
             </li>
             <li>
               <CheckCircle2 aria-hidden="true" size={16} />
@@ -154,11 +245,24 @@ export default function Page() {
           </ul>
         </div>
         <div>
-          <h2>Delivery pause triggers</h2>
+          <h2>Pause triggers</h2>
           <ul className="compact-list">
-            <li>Missing payment confirmation.</li>
-            <li>Secrets, passwords, account recovery details, or private customer data in the intake.</li>
-            <li>Requests for guaranteed traffic, ranking, revenue, customers, approvals, or unsafe automation.</li>
+            <li>
+              <AlertTriangle aria-hidden="true" size={16} />
+              The route question is too broad to research without inventing context.
+            </li>
+            <li>
+              <AlertTriangle aria-hidden="true" size={16} />
+              Payment confirmation is missing for an already ordered manual deliverable.
+            </li>
+            <li>
+              <AlertTriangle aria-hidden="true" size={16} />
+              Secrets, passwords, account recovery details, or private customer data in the intake.
+            </li>
+            <li>
+              <AlertTriangle aria-hidden="true" size={16} />
+              Requests for guaranteed traffic, ranking, revenue, customers, approvals, or unsafe automation.
+            </li>
           </ul>
         </div>
       </section>
