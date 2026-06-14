@@ -9,6 +9,7 @@ import {
   Languages,
   SearchCheck
 } from "lucide-react";
+import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { ClientRouteWorkspace } from "@/components/ClientRouteWorkspace";
 import { ExecutionWorkbench } from "@/components/ExecutionWorkbench";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 
 const operatingRules = [
   "Start from project facts, not a checkout decision.",
-  "Run research manually with a locked prompt pack.",
+  "Run research through an approved channel with a locked brief.",
   "Check returned reports before synthesis.",
   "Merge duplicate modules into one owned page.",
   "Translate public copy without changing the claim boundary."
@@ -58,8 +59,8 @@ export default function ExecutionPage() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     url: `${siteUrl}/execution/`,
-    description:
-      "A browser workbench for routing messy project material through intake, scope lock, manual research, coverage gate, Route File synthesis, and bilingual social copy."
+  description:
+      "A browser workbench for routing messy project material through intake, scope lock, approved research channels, coverage gate, Route File synthesis, and bilingual social copy."
   };
 
   return (
@@ -74,8 +75,8 @@ export default function ExecutionPage() {
           <p className="eyebrow">Execution Workbench</p>
           <h1>Run the Route File workflow before expanding the site.</h1>
           <p>
-            Use this page as the main operating path: intake, scope lock, manual
-            research, coverage gate, Route File, and bilingual social copy. Payment stays
+            Use this page as the main operating path: intake, scope lock, approved
+            research channel, coverage gate, Route File, and bilingual social copy. Payment stays
             secondary to execution clarity.
           </p>
           <div className="hero-actions">
@@ -139,6 +140,8 @@ export default function ExecutionPage() {
         nextLabel="Review Route File output"
       />
 
+      <CustomerResponseLifecycle />
+
       <section className="route-foundation-section execution-output-section">
         <div className="route-section-heading">
           <span>Visible product logic</span>
@@ -165,7 +168,7 @@ export default function ExecutionPage() {
           <h2>The workbench also needs a customer-readable status surface.</h2>
           <p>
             This embedded workspace shows what the client can inspect while the operator
-            moves through intake, manual research, coverage repair, Route File synthesis,
+            moves through intake, research-channel handling, coverage repair, Route File synthesis,
             and public-copy conversion.
           </p>
         </div>

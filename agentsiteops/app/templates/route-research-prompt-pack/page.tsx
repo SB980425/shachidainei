@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ClipboardList, FileText, SearchCheck, ShieldCheck } from "lucide-react";
+import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { ManualDeepResearchWorkspace } from "@/components/ManualDeepResearchWorkspace";
 import { ResearchDeliveryLoop } from "@/components/ResearchDeliveryLoop";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
@@ -17,7 +18,7 @@ const path = "/templates/route-research-prompt-pack/";
 export const metadata: Metadata = {
   title: "Route Research Prompt Pack",
   description:
-    "A no-API manual Deep Research workflow for turning project facts into evidence-backed route maps, proof assets, validation channels, and stop rules.",
+    "A carrier-neutral research brief workflow for turning project facts into evidence-backed route maps, proof assets, validation channels, and stop rules.",
   alternates: { canonical: path },
   openGraph: {
     title: "Route Research Prompt Pack",
@@ -60,14 +61,14 @@ const outputContract = [
 
 const manualModeBoundaries = [
   {
-    title: "No OpenAI API call",
+    title: "No hidden research run",
     body:
-      "The website does not send the project brief to OpenAI, store a model response, or create an API bill in the free manual workflow."
+      "The website does not silently turn the project brief into a model result or an automatic research answer."
   },
   {
-    title: "Use your own ChatGPT Deep Research allowance",
+    title: "Use an approved research carrier",
     body:
-      "The operator copies the generated prompt into ChatGPT Deep Research using the user's own ChatGPT Deep Research allowance."
+      "The operator copies the generated brief into the selected research channel, manual source-review path, or client-provided report workflow."
   },
   {
     title: "Local coverage check",
@@ -90,12 +91,12 @@ const clientObservationStages = [
   {
     title: "Research brief",
     body:
-      "The route brief turns the project into copy-ready Deep Research prompts, acceptance gates, and rejection rules. This is where missing questions become visible."
+      "The route brief turns the project into copy-ready research instructions, acceptance gates, and rejection rules. This is where missing questions become visible."
   },
   {
     title: "External research pass",
     body:
-      "The operator runs the brief in ChatGPT Deep Research or another approved research surface. AgentSiteOps does not pretend this step is automatic when it is manual."
+      "The operator runs the brief through an approved research surface, manual source review, or client-provided report path. AgentSiteOps does not pretend this step is automatic when it is manual."
   },
   {
     title: "Coverage review",
@@ -248,12 +249,11 @@ export default function Page() {
       <section className="gate-hero route-research-hero">
         <div>
           <p className="eyebrow">Route research template</p>
-          <h1>Run Deep Research manually, then let AgentSiteOps judge the route.</h1>
+          <h1>Run research through an approved channel, then let AgentSiteOps judge the route.</h1>
           <p>
-            No OpenAI API call happens in this workflow. AgentSiteOps prepares the prompt,
-            the operator runs Deep Research in ChatGPT with your own ChatGPT Deep Research
-            allowance, then the result is checked, repaired if needed, and fused into one
-            route map.
+            AgentSiteOps prepares the research brief, the operator runs it through an
+            approved research channel or manual source-review path, then the result is
+            checked, repaired if needed, and fused into one route map.
           </p>
           <div className="hero-actions">
             <Link prefetch={false} className="primary-action" href="/methodology/route-selection/">
@@ -273,26 +273,28 @@ export default function Page() {
         <aside className="decision-card">
           <strong>Free mode boundary</strong>
           <p>
-            Website-side model cost is zero in this mode. The research still uses your own
-            ChatGPT Deep Research allowance, and a second pass is only used when the first
-            report misses required sections.
+            The site does not create a hidden research result. A second pass is only used
+            when the first report misses required sections, and the final standard remains
+            the Route File contract.
           </p>
         </aside>
       </section>
 
       <RouteFlowBridge current="research" nextHref="/delivery-gate/" nextLabel="Continue to gate" />
 
+      <CustomerResponseLifecycle />
+
       <section className="gate-section route-research-receipt-section">
         <div className="section-head">
-          <h2>Manual research operating receipt</h2>
+          <h2>Research-channel operating receipt</h2>
           <p>
             This is the condensed execution contract for the page. It separates what the
-            website does, what happens in ChatGPT Deep Research, what the client can see,
+            website does, what happens in the selected research channel, what the client can see,
             and when the work turns into one Route File.
           </p>
         </div>
         <div className="route-research-receipt">
-          <div className="research-receipt-boundaries" aria-label="Manual research boundaries">
+          <div className="research-receipt-boundaries" aria-label="Research-channel boundaries">
             {manualModeBoundaries.map((item) => (
               <article key={item.title}>
                 <ShieldCheck aria-hidden="true" size={17} />
@@ -392,10 +394,11 @@ export default function Page() {
 
       <section className="gate-section">
         <div className="section-head">
-          <h2>Free manual Deep Research plan</h2>
+          <h2>Carrier-neutral research plan</h2>
           <p>
-            This is the current operating path. AgentSiteOps stays local and free; ChatGPT
-            Deep Research supplies the cited report through the user's existing allowance.
+            This is the current operating path. AgentSiteOps prepares the brief, the
+            approved carrier supplies the cited report or review notes, and the site checks
+            the result before synthesis.
           </p>
         </div>
         <div className="manual-research-grid">
@@ -428,7 +431,7 @@ export default function Page() {
         <div className="section-head">
           <h2>Research delivery loop</h2>
           <p>
-            The visible workflow is the delivery standard: manual Deep Research pass,
+            The visible workflow is the delivery standard: approved research pass,
             coverage gate, focused second pass when required, then one fused route file.
           </p>
         </div>
@@ -459,7 +462,7 @@ export default function Page() {
           <h2>Acceptance gate before delivery</h2>
           <p>
             If the first report misses core prompt requirements, the missing parts are
-            converted into a focused gap brief for a second manual Deep Research task
+            converted into a focused gap brief for a second approved research pass
             before final synthesis.
           </p>
         </div>
@@ -498,7 +501,7 @@ export default function Page() {
 
       <section className="gate-section">
         <div className="section-head">
-          <h2>Deep research modules</h2>
+          <h2>Research modules</h2>
           <p>
             Run these modules in order when a new project is unclear. Stop early when a
             module returns a hard blocker that cannot be repaired.

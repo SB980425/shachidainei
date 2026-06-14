@@ -85,7 +85,7 @@ const evidenceLedger = [
   },
   {
     claim: "The route workflow can help our own future projects.",
-    evidence: "Methodology, route basis data, manual Deep Research workspace, and synthesis skeleton.",
+    evidence: "Methodology, route basis data, route research workspace, and synthesis skeleton.",
     status: "Partly verified",
     impact: "Requires one completed internal route file."
   },

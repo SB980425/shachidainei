@@ -417,7 +417,7 @@ export function RouteCommandCenter() {
     socialVariants.founder.zh,
     "",
     "Boundary:",
-    "Language and tone can change. The Route File sections, manual research boundary, and no-growth-promise rule must stay unchanged."
+    "Language and tone can change. The Route File sections, research-channel boundary, and no-growth-promise rule must stay unchanged."
   ].join("\n");
 
   function track(name: string, payload: Record<string, string | number | boolean> = {}) {
@@ -489,7 +489,7 @@ export function RouteCommandCenter() {
             <span>Keep every rejected path visible.</span>
           </h2>
           <p>
-            Intake, scope lock, manual research, coverage gate, Route File output, and
+            Intake, scope lock, approved research channel, coverage gate, Route File output, and
             social copy stay in one balanced workspace. No floating card covers the
             decision path.
           </p>
@@ -503,8 +503,8 @@ export function RouteCommandCenter() {
             </Link>
           </div>
           <div className="route-room-proof-strip" aria-label="Route File boundaries">
-            <span>No API fee</span>
-            <span>Manual research</span>
+            <span>No hidden research run</span>
+            <span>Replaceable channel</span>
             <span>Coverage checked locally</span>
             <span>Stop rule</span>
           </div>

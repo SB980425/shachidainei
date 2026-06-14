@@ -11,6 +11,7 @@ import {
   launchProduct,
   paymentConfirmationFields
 } from "@/lib/launch";
+import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { IntakePacketBuilder } from "@/components/IntakePacketBuilder";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { buildProjectIntakePacket } from "@/lib/intakePacket";
@@ -141,6 +142,8 @@ export default function Page() {
       </section>
 
       <RouteFlowBridge current="intake" nextHref="/how-it-works/" nextLabel="Continue to scope lock" />
+
+      <CustomerResponseLifecycle />
 
       <IntakePacketBuilder />
 

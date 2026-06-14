@@ -58,11 +58,11 @@ const stageRows = [
   },
   {
     step: "03",
-    label: "Manual research",
+    label: "Research channel",
     status: "Active",
-    owner: "ChatGPT Deep Research",
+    owner: "Operator",
     output: "Cited report",
-    body: "The operator runs the prompt outside the website with the user's own ChatGPT Deep Research allowance."
+    body: "The accepted brief runs outside the website in an approved research channel, manual source review, or client-provided report path."
   },
   {
     step: "04",
@@ -92,7 +92,7 @@ const stageRows = [
 
 const passRows = [
   "Input boundary is visible before research starts.",
-  "Manual Deep Research is named as an external user-allowance step.",
+  "Research carrier is visible and replaceable instead of hidden inside the website.",
   "Coverage gate has pass, repair, blocked, and not-delivery states.",
   "Route File sections are fixed before public copy is written."
 ];
@@ -133,7 +133,7 @@ const routeFileRows = [
 
 const nonDeliveryRows = [
   "Guaranteed traffic, ranking, AI citation, revenue, or customer response.",
-  "A hidden automatic Deep Research workflow or website-side OpenAI API claim.",
+  "A hidden automatic research workflow or website-side model/API claim.",
   "A broad research article with no route decision, proof asset, or stop condition.",
   "Public social copy that changes the evidence boundary of the Route File."
 ];
@@ -153,7 +153,7 @@ export function ClientRouteWorkspace() {
         <div className="client-workspace-status">
           <strong>Simulated project</strong>
           <span>63%</span>
-          <p>Manual Deep Research active. Coverage gate is the next acceptance point.</p>
+          <p>Approved research channel active. Coverage gate is the next acceptance point.</p>
         </div>
       </div>
 

@@ -17,9 +17,9 @@ export const socialVariants: Record<
     label: "Technical audience",
     context: "Builder or operator channel",
     en:
-      "The website does not call the OpenAI API for Deep Research. It prepares prompt packs, checks returned reports, creates gap prompts, and fuses accepted research into a Route File.",
+      "The website does not create hidden research results. It prepares route briefs, checks returned reports, creates gap prompts, and fuses accepted research into a Route File.",
     zh:
-      "这个网站不调用 OpenAI API 执行 Deep Research。它负责准备提示词包、检查返回报告、生成补研提示词，并把通过验收的研究融合成 Route File。"
+      "这个网站不生成隐藏研究结果。它负责准备路线简报、检查返回报告、生成补研提示词，并把通过验收的研究融合成 Route File。"
   },
   wechat: {
     label: "Chinese social",
@@ -33,9 +33,9 @@ export const socialVariants: Record<
     label: "Public changelog",
     context: "Product update or launch note",
     en:
-      "New execution workbench: intake, scope, manual research, coverage gate, Route File, and bilingual social copy now sit in one visible path.",
+      "New execution workbench: intake, scope, approved research channel, coverage gate, Route File, and bilingual social copy now sit in one visible path.",
     zh:
-      "新增执行工作台：项目接入、边界锁定、手动研究、覆盖验收、Route File 和中英文社交文案已经整合进一条可见路径。"
+      "新增执行工作台：项目接入、边界锁定、研究通道、覆盖验收、Route File 和中英文社交文案已经整合进一条可见路径。"
   }
 };
 
@@ -57,10 +57,10 @@ export const socialCopyBoundaryRows = [
   },
   {
     label: "Keep evidence",
-    body: "Route File sections and manual research boundary must stay present."
+    body: "Route File sections and research-channel boundary must stay present."
   },
   {
     label: "Block promises",
-    body: "No added traffic, ranking, revenue, buyer response, or hidden API claim."
+    body: "No added traffic, ranking, revenue, buyer response, or hidden automation claim."
   }
 ];

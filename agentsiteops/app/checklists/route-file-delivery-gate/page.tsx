@@ -97,9 +97,9 @@ const contentCompletionChecks = [
       "Project facts, source boundary, risk boundary, delivery capacity, and blocked claims are visible before research is accepted."
   },
   {
-    title: "Manual Deep Research boundary",
+    title: "Research-channel boundary",
     body:
-      "The page says the website does not call the OpenAI API and uses the client's or operator's ChatGPT Deep Research allowance."
+      "The page says the website does not create hidden research results and that the research carrier remains visible and replaceable."
   },
   {
     title: "Coverage gaps",
@@ -145,7 +145,7 @@ const nonDeliveryExamples = [
   "A long research memo that does not choose one route.",
   "A content plan without rejected alternatives, evidence tags, proof asset, validation channel, and stop rule.",
   "A promise of traffic, ranking, AI citation, customers, payment approval, revenue, or product-market fit.",
-  "A claim that the website automatically runs ChatGPT Deep Research through a hidden OpenAI API flow.",
+  "A claim that the website automatically runs hidden research or produces an opaque model/API result.",
   "A domain research article that has not passed route usefulness, rights, risk, and source-quality checks."
 ];
 
@@ -211,7 +211,7 @@ export default function Page() {
             </div>
             <div>
               <dt>Current use</dt>
-              <dd>Final check after manual Deep Research and coverage review.</dd>
+              <dd>Final check after approved research-channel output and coverage review.</dd>
             </div>
           </dl>
         </aside>
@@ -301,9 +301,8 @@ export default function Page() {
           <p>
             Use this checklist after the client workflow reaches coverage review and
             before a sample or paid handoff is treated as complete. It is also the page
-            that keeps the free manual Deep Research workflow honest: prompt generation,
-            report checking, gap repair, and synthesis are visible; hidden automation is
-            not claimed.
+            that keeps the research workflow honest: brief generation, report checking,
+            gap repair, and synthesis are visible; hidden automation is not claimed.
           </p>
           <div className="delivery-linked-actions">
             <Link prefetch={false} className="secondary-action" href="/reports/client-route-workflow/">

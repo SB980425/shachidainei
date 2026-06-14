@@ -17,12 +17,12 @@ const path = "/how-it-works/";
 export const metadata: Metadata = {
   title: "How AgentSiteOps Works",
   description:
-    "How AgentSiteOps turns messy project input into a Route File through scope lock, manual ChatGPT Deep Research, coverage gates, repair prompts, and delivery checks.",
+    "How AgentSiteOps turns messy project input into a Route File through scope lock, approved research channels, coverage gates, repair prompts, and delivery checks.",
   alternates: { canonical: path },
   openGraph: {
     title: "How AgentSiteOps Works",
     description:
-      "The visible path from messy project intake to checked Route File, without hidden OpenAI API calls or unsupported growth promises.",
+      "The visible path from messy project intake to checked Route File, without hidden automatic research or unsupported growth promises.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -42,9 +42,9 @@ const workflowSteps = [
       "AgentSiteOps turns the boundary into copy-ready research prompts, acceptance gates, rejection rules, and required output sections."
   },
   {
-    title: "3. Run manual Deep Research",
+    title: "3. Run the approved research channel",
     body:
-      "The operator runs the prompt in ChatGPT Deep Research with the user's own ChatGPT Deep Research allowance. No OpenAI API call happens in this website workflow."
+      "The operator runs the locked brief through an approved research channel, manual source-review path, or client-provided report workflow. The website does not create hidden research results."
   },
   {
     title: "4. Apply the Coverage gate",
@@ -60,14 +60,14 @@ const workflowSteps = [
 
 const manualBoundaries = [
   {
-    title: "No OpenAI API call",
+    title: "No hidden research run",
     body:
-      "The website does not send project material to OpenAI, store a model response, or create an API bill in the manual workflow."
+      "The website does not silently run a model, store an undisclosed research response, or turn intake into an automatic result."
   },
   {
-    title: "Use existing ChatGPT access",
+    title: "Use an approved carrier",
     body:
-      "The research run uses the client's or operator's ChatGPT Deep Research allowance, outside the website."
+      "The research run can use an approved external research surface, manual source review, or a client-provided report outside the website."
   },
   {
     title: "Local checking after research",
@@ -117,7 +117,7 @@ export default function Page() {
           <p className="eyebrow">How it works</p>
           <h1>How AgentSiteOps works from intake to Route File.</h1>
           <p>
-            The product path is visible: scope lock, manual research, Coverage gate,
+            The product path is visible: scope lock, approved research channel, Coverage gate,
             second-pass repair when needed, and final Route File synthesis. It does not
             claim hidden automation or guaranteed outcomes.
           </p>
@@ -135,9 +135,8 @@ export default function Page() {
         <aside className="decision-card">
           <strong>Core boundary</strong>
           <p>
-            No OpenAI API call happens in the free manual workflow. The website handles
-            prompts, checks, gap repair, and synthesis. The Deep Research run uses the
-            user's own ChatGPT Deep Research allowance.
+            The website handles briefs, checks, gap repair, and synthesis. Research
+            tooling is replaceable; the fixed standard is the Route File acceptance gate.
           </p>
         </aside>
       </section>
@@ -169,7 +168,7 @@ export default function Page() {
 
       <section className="gate-section">
         <div className="section-head">
-          <h2>Manual research boundary</h2>
+          <h2>Research-channel boundary</h2>
           <p>
             The manual mode is explicit so customers do not mistake prompt preparation
             and checking for an automatic research platform.

@@ -73,11 +73,11 @@ const stages: Array<{
     id: "research",
     label: "Research",
     zh: "手动研究",
-    title: "Run manual Deep Research",
-    state: "Manual",
+    title: "Run the approved research channel",
+    state: "Carrier",
     icon: SearchCheck,
     purpose:
-      "Use the prompt pack in the user's own ChatGPT Deep Research allowance. The website prepares prompts and checks returned reports.",
+      "Use the locked brief in an approved research channel, manual source-review path, or client-provided report workflow. The website prepares the brief and checks returned reports.",
     pass: "Returned report includes sources, buyer logic, alternatives, proof needs, and validation limits.",
     trigger: "A locked prompt pack is ready to run outside the website.",
     next: "Check coverage before synthesis.",
@@ -133,7 +133,7 @@ const stages: Array<{
 
 const clickPath = [
   { label: "Intake", href: "/intake/", result: "Project facts and constraints" },
-  { label: "Prompt pack", href: "/templates/route-research-prompt-pack/", result: "Manual research brief" },
+  { label: "Prompt pack", href: "/templates/route-research-prompt-pack/", result: "Carrier-neutral research brief" },
   { label: "Delivery gate", href: "/delivery-gate/", result: "Pass, repair, blocked, or not delivery" },
   { label: "Sample", href: "/sample/", result: "Route File structure" },
   { label: "Client workflow", href: "/reports/client-route-workflow/", result: "Observable progress" }
@@ -298,7 +298,7 @@ export function ExecutionWorkbench() {
     "中文:",
     activeSocial.zh,
     "",
-    "Boundary: do not add traffic, ranking, revenue, buyer response, or hidden API claims."
+    "Boundary: do not add traffic, ranking, revenue, buyer response, or hidden automation claims."
   ].join("\n");
   const activeStageStatus = stageDecisions[activeStageId];
   const activeStatus =

@@ -8,6 +8,7 @@ import {
   FileText,
   SearchCheck
 } from "lucide-react";
+import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { ClientRouteWorkspace } from "@/components/ClientRouteWorkspace";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { siteUrl } from "@/lib/site";
@@ -17,12 +18,12 @@ const path = "/reports/client-route-workflow/";
 export const metadata: Metadata = {
   title: "Client Route Workflow",
   description:
-    "A client-facing project workspace preview showing intake, manual Deep Research progress, coverage checks, gap research, and final route-file boundaries.",
+    "A client-facing project workspace preview showing intake, operator response, research-channel progress, coverage checks, gap research, and final route-file boundaries.",
   alternates: { canonical: path },
   openGraph: {
     title: "Client Route Workflow",
     description:
-      "Inspect how AgentSiteOps turns a messy project intake into a checked route file without pretending manual Deep Research is automatic.",
+      "Inspect how AgentSiteOps turns a messy project intake into a checked route file without pretending the research step is automatic.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -44,9 +45,9 @@ const passedItems = [
       "The workspace names what is in scope, what is out of scope, and which claims cannot be used in public copy."
   },
   {
-    title: "Manual cost boundary is explicit",
+    title: "Research carrier boundary is explicit",
     body:
-      "The website does not call the OpenAI API. The research step uses the client's or operator's ChatGPT Deep Research access."
+      "The site does not create hidden research results. The accepted brief runs through an approved research channel or manual source-review path."
   },
   {
     title: "Acceptance gates exist",
@@ -112,7 +113,7 @@ export default function Page() {
         <aside className="decision-card">
           <strong>Current simulated project</strong>
           <p>
-            Status: manual Deep Research is running. Intake and scope lock have passed.
+            Status: approved research channel is running. Intake and scope lock have passed.
             Coverage review, second-pass gap handling, and final synthesis are still
             pending.
           </p>
@@ -135,6 +136,8 @@ export default function Page() {
         nextHref="/delivery-gate/"
         nextLabel="Continue to coverage gate"
       />
+
+      <CustomerResponseLifecycle />
 
       <ClientRouteWorkspace />
 
@@ -193,16 +196,16 @@ export default function Page() {
           <p>
             Progress, coverage gaps, repair triggers, final file structure, and
             non-delivery boundaries now live in one client workspace module. This page
-            can focus on intake details and manual research policy instead of repeating
+            can focus on intake details and research-channel policy instead of repeating
             the same Route File list in several sections.
           </p>
         </div>
         <div>
-          <h2>Manual Deep Research boundary</h2>
+          <h2>Research-channel boundary</h2>
           <p>
             AgentSiteOps prepares prompts, checks coverage, generates a gap prompt when
-            needed, and fuses accepted outputs. It does not hide API usage, create
-            automatic research results, or treat broad market context as proof of demand.
+            needed, and fuses accepted outputs. It does not create hidden automatic
+            research results or treat broad market context as proof of demand.
           </p>
           <div className="hero-actions">
             <Link prefetch={false} className="secondary-action" href="/delivery-gate/">

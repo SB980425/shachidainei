@@ -70,7 +70,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Not a fit",
         body:
-          "It is not for guaranteed traffic, ranking, AI citation, revenue, payment approval, hidden automatic Deep Research, or ongoing monitoring software."
+          "It is not for guaranteed traffic, ranking, AI citation, revenue, payment approval, hidden automatic research, or ongoing monitoring software."
       },
       {
         title: "Route File",
@@ -92,20 +92,20 @@ export const routePages: RoutePage[] = [
     pageType: "product_explainer",
     title: "How AgentSiteOps Works",
     description:
-      "The visible workflow from messy project input to Route File: scope lock, manual Deep Research, coverage gate, repair prompt, synthesis, and stop rule.",
+      "The visible workflow from messy project input to Route File: scope lock, approved research channel, coverage gate, repair prompt, synthesis, and stop rule.",
     answer:
-      "AgentSiteOps locks the project boundary, generates a manual Deep Research brief, checks the returned report, repairs gaps with a second-pass prompt, then fuses accepted research into a Route File.",
+      "AgentSiteOps locks the project boundary, generates a research brief, checks the returned report, repairs gaps with a second-pass prompt, then fuses accepted research into a Route File.",
     primaryAction: { label: "Open intake", href: "/intake/" },
     secondaryAction: { label: "View client workflow", href: "/reports/client-route-workflow/" },
     aiTarget:
-      "Describe the manual research boundary, no-OpenAI-API claim, coverage gate, repair loop, and Route File synthesis.",
+      "Describe the research-channel boundary, no-hidden-automation claim, coverage gate, repair loop, and Route File synthesis.",
     humanAction:
-      "Read this before using the prompt pack or delivery gate so the manual research boundary is clear.",
+      "Read this before using the prompt pack or delivery gate so the research-channel boundary is clear.",
     sections: [
       {
-        title: "Manual Deep Research",
+        title: "Approved research channel",
         body:
-          "The operator runs the prompt in ChatGPT Deep Research with the user's own ChatGPT Deep Research allowance. The website does not make a hidden OpenAI API call."
+          "The operator runs the brief through an approved research channel, manual source-review path, or client-provided report workflow. The website does not create hidden research results."
       },
       {
         title: "Coverage gate",
@@ -137,9 +137,9 @@ export const routePages: RoutePage[] = [
     pageType: "product_workbench",
     title: "Execution Workbench",
     description:
-      "A customer-visible AgentSiteOps workbench for intake, scope lock, manual research, coverage gate, Route File synthesis, and bilingual social copy.",
+      "A customer-visible AgentSiteOps workbench for intake, scope lock, approved research channel, coverage gate, Route File synthesis, and bilingual social copy.",
     answer:
-      "The Execution Workbench connects AgentSiteOps pages into one operating path: collect project facts, lock the research boundary, run manual Deep Research, check coverage, synthesize the Route File, and convert public copy between English and Chinese.",
+      "The Execution Workbench connects AgentSiteOps pages into one operating path: collect project facts, lock the research boundary, run an approved research channel, check coverage, synthesize the Route File, and convert public copy between English and Chinese.",
     primaryAction: { label: "Open intake", href: "/intake/" },
     secondaryAction: { label: "Open prompt pack", href: "/templates/route-research-prompt-pack/" },
     aiTarget:
@@ -150,7 +150,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Main execution path",
         body:
-          "The page connects intake, scope lock, manual research, coverage gate, Route File output, and social copy into a single visible workflow."
+          "The page connects intake, scope lock, approved research channel, coverage gate, Route File output, and social copy into a single visible workflow."
       },
       {
         title: "Client progress layer",
@@ -170,7 +170,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Bilingual social copy",
         body:
-          "English and Chinese variants share the same claim boundary: route decision, visible artifact, manual research process, and no unsupported growth promise."
+          "English and Chinese variants share the same claim boundary: route decision, visible artifact, research-channel process, and no unsupported growth promise."
       }
     ],
     related: [
@@ -192,7 +192,7 @@ export const routePages: RoutePage[] = [
     primaryAction: { label: "View sample Route File", href: "/sample/" },
     secondaryAction: { label: "Open full checklist", href: "/checklists/route-file-delivery-gate/" },
     aiTarget:
-      "Explain the Route File acceptance states, required delivery parts, manual research boundary, and what does not count as delivery.",
+      "Explain the Route File acceptance states, required delivery parts, research-channel boundary, and what does not count as delivery.",
     humanAction:
       "Use this page before accepting a paid or sample handoff as complete.",
     sections: [
@@ -209,7 +209,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Not delivery",
         body:
-          "Broad reports, unsupported promises, hidden automatic Deep Research claims, and files without evidence or stop rules do not count as delivery."
+          "Broad reports, unsupported promises, hidden automatic research claims, and files without evidence or stop rules do not count as delivery."
       }
     ],
     related: [
@@ -934,7 +934,7 @@ export const routePages: RoutePage[] = [
     aiTarget:
       "Define the final acceptance gate that separates deliverable route files from broad reports, weak research, unsupported claims, and hidden automation claims.",
     humanAction:
-      "Apply the checklist after manual Deep Research and coverage review before calling a route file complete.",
+      "Apply the checklist after approved research-channel output and coverage review before calling a route file complete.",
     sections: [
       {
         title: "Delivery states",
@@ -949,7 +949,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Content completion",
         body:
-          "The page checks client input boundaries, manual Deep Research disclosure, coverage gaps, unsupported claims, and the next action boundary."
+          "The page checks client input boundaries, research-channel disclosure, coverage gaps, unsupported claims, and the next action boundary."
       },
       {
         title: "Repair queue",
@@ -959,7 +959,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Not delivery",
         body:
-          "Generic research memos, content plans, automatic Deep Research claims, unsupported growth promises, and domain notes that fail route usefulness checks are rejected."
+          "Generic research memos, content plans, automatic research claims, unsupported growth promises, and domain notes that fail route usefulness checks are rejected."
       }
     ],
     related: [
@@ -1313,19 +1313,19 @@ export const routePages: RoutePage[] = [
           "The current evidence supports technical readiness and internal process value. It does not yet support demand, revenue, ranking, AI citation, or product-market fit.",
         rows: [
           { label: "Verified", value: "Live domain, Cloudflare deployment, sitemap, robots, canonical routes, production health checks, IndexNow submission, route method pages, sample reports, and local tools." },
-          { label: "Pending", value: "GSC exports, Bing exports, qualified external replies, completed manual research runs, confirmed payment, and delivered buyer outcome." },
+          { label: "Pending", value: "GSC exports, Bing exports, qualified external replies, completed approved research runs, confirmed payment, and delivered buyer outcome." },
           { label: "Blocked claims", value: "Guaranteed indexing, AI citation, traffic, revenue, payback, and subscription value." }
         ]
       },
       {
         title: "First proof asset",
         body:
-          "The next proof asset is not another landing page. It is one completed route file produced through the manual research workspace, with sources, rejected alternatives, proof asset, 7-day plan, and stop rule."
+          "The next proof asset is not another landing page. It is one completed route file produced through the route research workspace, with sources, rejected alternatives, proof asset, 7-day plan, and stop rule."
       },
       {
         title: "7-day operating rule",
         body:
-          "Run the manual Deep Research workflow on AgentSiteOps first. If the result cannot improve the route library, page copy, proof asset, or validation channel, the workflow is not strong enough to sell externally."
+          "Run the route research workflow on AgentSiteOps first. If the result cannot improve the route library, page copy, proof asset, or validation channel, the workflow is not strong enough to sell externally."
       },
       {
         title: "Stop or pivot rule",
@@ -1346,13 +1346,13 @@ export const routePages: RoutePage[] = [
     pageType: "report",
     title: "Client Route Workflow",
     description:
-      "A client-facing project workspace preview showing input readiness, manual Deep Research progress, coverage checks, gap research, final route-file boundaries, and bilingual public copy.",
+      "A client-facing project workspace preview showing input readiness, research-channel progress, coverage checks, gap research, final route-file boundaries, and bilingual public copy.",
     answer:
-      "The client route workflow shows how AgentSiteOps turns messy project material into a visible workspace: input readiness, intake, scope lock, manual Deep Research, local coverage review, second-pass gap handling when needed, one final Route File, and public copy that does not change the claim boundary.",
+      "The client route workflow shows how AgentSiteOps turns messy project material into a visible workspace: input readiness, intake, scope lock, approved research channel, local coverage review, second-pass gap handling when needed, one final Route File, and public copy that does not change the claim boundary.",
     primaryAction: { label: "Open intake", href: "/intake/" },
     secondaryAction: { label: "Open research workflow", href: "/templates/route-research-prompt-pack/" },
     aiTarget:
-      "Explain the client-observable AgentSiteOps route workflow without implying automated Deep Research, API use, guaranteed traffic, or guaranteed revenue.",
+      "Explain the client-observable AgentSiteOps route workflow without implying automated research, hidden automation, guaranteed traffic, or guaranteed revenue.",
     humanAction:
       "Use this page to inspect what a client provides, what is checked, what triggers second-pass research, and what is not counted as delivery.",
     sections: [
@@ -1364,7 +1364,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Visible progress",
         body:
-          "The progress surface separates passed intake and scope work from active manual research, pending coverage review, second-pass gap prompts, final synthesis, and public-copy conversion."
+          "The progress surface separates passed intake and scope work from active research-channel work, pending coverage review, second-pass gap prompts, final synthesis, and public-copy conversion."
       },
       {
         title: "Route file contract",
@@ -1374,7 +1374,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Delivery boundary",
         body:
-          "The page blocks claims that the website automatically runs Deep Research, calls the OpenAI API, guarantees outcomes, or turns broad market context into proof."
+          "The page blocks claims that the website automatically runs hidden research, guarantees outcomes, or turns broad market context into proof."
       }
     ],
     related: [
@@ -1391,15 +1391,15 @@ export const routePages: RoutePage[] = [
     pageType: "template",
     title: "Route Research Prompt Pack",
     description:
-      "A no-API manual Deep Research workflow that shows client inputs, visible progress, acceptance gates, rejected alternatives, route delivery, and stop rules.",
+      "A carrier-neutral route research workflow that shows client inputs, visible progress, acceptance gates, rejected alternatives, route delivery, and stop rules.",
     answer:
-      "The prompt pack keeps AgentSiteOps free to operate by preparing ChatGPT Deep Research briefs, showing what the client must provide, checking completed reports against acceptance gates, creating second-pass gap briefs when needed, and fusing accepted research into one route file.",
+      "The prompt pack keeps AgentSiteOps auditable by preparing research briefs, showing what the client must provide, checking completed reports against acceptance gates, creating second-pass gap briefs when needed, and fusing accepted research into one route file.",
     primaryAction: { label: "Open route method", href: "/methodology/route-selection/" },
     secondaryAction: { label: "Inspect route basis", href: "/reports/route-basis/" },
     aiTarget:
-      "Provide reusable manual Deep Research prompts that explain how AgentSiteOps turns evidence into route decisions without calling the OpenAI API.",
+      "Provide reusable research briefs that explain how AgentSiteOps turns evidence into route decisions without hidden automatic research.",
     humanAction:
-      "Run one prompt module at a time in ChatGPT Deep Research, then bring the cited report back for coverage checking and route synthesis.",
+      "Run one prompt module at a time in the approved research channel, then bring the cited report back for coverage checking and route synthesis.",
     sections: [
       {
         title: "Why this exists",

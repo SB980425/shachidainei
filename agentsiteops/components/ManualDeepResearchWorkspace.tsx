@@ -16,15 +16,15 @@ const initialFields = Object.fromEntries(
 
 const manualBoundaryRows = [
   {
-    title: "Prompt only",
+    title: "Brief only",
     body:
-      "AgentSiteOps prepares the Deep Research prompt and required output contract.",
+      "AgentSiteOps prepares the research brief and required output contract.",
     Icon: ClipboardCopy
   },
   {
-    title: "User allowance",
+    title: "Replaceable carrier",
     body:
-      "The research run happens in ChatGPT Deep Research with the user's own allowance.",
+      "The research run happens outside the site through an approved channel, manual source review, or client-provided report path.",
     Icon: SearchCheck
   },
   {
@@ -98,10 +98,10 @@ export function ManualDeepResearchWorkspace() {
           <p className="eyebrow">Local workspace</p>
           <h2>Generate, check, repair, and fuse the route research.</h2>
           <p>
-            This workspace does not run Deep Research by itself. It prepares the prompt
-            for ChatGPT, checks the pasted report locally, then creates the gap prompt
-            and route-file skeleton. It does not call an OpenAI API or upload the pasted
-            report from this component.
+            This workspace does not run research by itself. It prepares the brief for an
+            approved research channel, checks the pasted report locally, then creates the
+            gap brief and route-file skeleton. It does not create a hidden model/API run
+            or upload the pasted report from this component.
           </p>
         </div>
         <div className="manual-workspace-meter" aria-label={`Coverage ${coveragePercent}%`}>
@@ -113,7 +113,7 @@ export function ManualDeepResearchWorkspace() {
         </div>
       </div>
 
-      <div className="manual-mode-strip" aria-label="Manual Deep Research boundaries">
+      <div className="manual-mode-strip" aria-label="Manual research boundaries">
         {manualBoundaryRows.map((item) => {
           const Icon = item.Icon;
 
@@ -135,7 +135,7 @@ export function ManualDeepResearchWorkspace() {
             <SearchCheck aria-hidden="true" size={18} />
             <div>
               <h3 id="manual-brief-title">1. Project facts</h3>
-              <p>Edit these fields before copying the Deep Research prompt.</p>
+              <p>Edit these fields before copying the research brief.</p>
             </div>
           </div>
           <div className="manual-field-grid">
@@ -162,14 +162,14 @@ export function ManualDeepResearchWorkspace() {
           <div className="manual-panel-head">
             <ClipboardCopy aria-hidden="true" size={18} />
             <div>
-              <h3 id="manual-prompt-title">2. Copy to ChatGPT Deep Research</h3>
-              <p>Use this prompt in ChatGPT web. The site does not call the OpenAI API.</p>
+              <h3 id="manual-prompt-title">2. Copy to an approved research channel</h3>
+              <p>Use this brief in the selected research channel. The site does not create a hidden research run.</p>
             </div>
           </div>
           <textarea className="manual-generated-text" readOnly value={masterPrompt} rows={18} />
-          <button type="button" className="primary-action" onClick={() => copyText("Deep Research prompt", masterPrompt)}>
+          <button type="button" className="primary-action" onClick={() => copyText("Research brief", masterPrompt)}>
             <ClipboardCopy aria-hidden="true" size={15} />
-            Copy Deep Research prompt
+            Copy research brief
           </button>
         </section>
       </div>
@@ -187,7 +187,7 @@ export function ManualDeepResearchWorkspace() {
             className="manual-report-text"
             value={report}
             onChange={(event) => setReport(event.target.value)}
-            placeholder="Paste the completed ChatGPT Deep Research report here..."
+            placeholder="Paste the completed research report here..."
             rows={16}
           />
         </section>

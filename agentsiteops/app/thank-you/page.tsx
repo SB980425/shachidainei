@@ -63,7 +63,7 @@ export default function Page() {
             </div>
             <div>
               <dt>Manual boundary</dt>
-              <dd>No account, dashboard, hidden API call, or automatic Deep Research run.</dd>
+              <dd>No account, dashboard, hidden research run, or automatic route result.</dd>
             </div>
           </dl>
         </aside>

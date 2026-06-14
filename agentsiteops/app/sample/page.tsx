@@ -177,8 +177,8 @@ export default function Page() {
           <h1>What the final AgentSiteOps handoff should contain.</h1>
           <p>
             This sample is a fictional route file. It shows the structure a client should
-            expect after intake, manual Deep Research, coverage checking, gap repair, and
-            final synthesis.
+            expect after intake, approved research-channel output, coverage checking, gap
+            repair, and final synthesis.
           </p>
           <div className="hero-actions">
             <Link prefetch={false} className="primary-action" href="/intake/">
@@ -349,7 +349,8 @@ export default function Page() {
           <h2>Next step</h2>
           <p>
             Start with the client workflow if the project is messy, or use the prompt pack
-            when the intake boundary is already clear enough for manual Deep Research.
+            when the intake boundary is already clear enough for an approved research
+            channel.
           </p>
           <div className="hero-actions">
             <Link prefetch={false} className="secondary-action" href="/reports/client-route-workflow/">

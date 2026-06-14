@@ -71,7 +71,7 @@ const ladder = [
     title: "Receive route",
     price: `USD ${primaryOffer.price}`,
     body:
-      "Use Research-to-Route File when the messy inputs are ready for manual research, coverage checking, gap repair, and final synthesis.",
+      "Use Research-to-Route File when the messy inputs are ready for an approved research run, coverage checking, gap repair, and final synthesis.",
     href: "/buy/",
     action: "Review purchase gate"
   }
@@ -110,7 +110,7 @@ const routeFileDeliverables = [
 
 const pricingBoundaries = [
   "No guarantees of traffic, ranking, AI citation, customer replies, revenue, payment approval, or product-market fit.",
-  "No hidden OpenAI API call or automatic Deep Research. The research run is manual and uses the client's or operator's ChatGPT Deep Research allowance.",
+  "No hidden automatic research or opaque model/API result. The research carrier is approved per project and the final judgment remains manual.",
   "No login account, dashboard, subscription workspace, automated DMs, scraping, or platform growth scripts.",
   "Manual delivery starts after payment confirmation and usable intake; weak inputs can produce repair, blocked, or stop decisions."
 ];

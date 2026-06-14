@@ -12,6 +12,7 @@ import {
   ShieldCheck
 } from "lucide-react";
 import { RouteCommandCenter } from "@/components/RouteCommandCenter";
+import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { allRoutes, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -50,11 +51,11 @@ const homeInputRows = [
 const homeOutputRows = [
   {
     label: "Client-visible progress",
-    body: "The customer can see intake, scope lock, manual research, repair watch, and Route File synthesis."
+    body: "The customer can see intake, scope lock, research-channel status, repair watch, and Route File synthesis."
   },
   {
-    label: "Manual research boundary",
-    body: "The website prepares prompts and checks reports. ChatGPT Deep Research is run outside the website."
+    label: "Research-channel boundary",
+    body: "The website prepares briefs and checks reports. The research carrier is approved per project and can change without changing the Route File standard."
   },
   {
     label: "Claim-safe public copy",
@@ -65,7 +66,7 @@ const homeOutputRows = [
 const heroFlowSteps = [
   { label: "Intake", body: "Facts and constraints" },
   { label: "Scope Lock", body: "Boundary and risks" },
-  { label: "Research Run", body: "Manual Deep Research" },
+  { label: "Research Run", body: "Approved channel" },
   { label: "Coverage Gate", body: "Pass or repair" },
   { label: "Route File", body: "Decision output" }
 ];
@@ -81,9 +82,9 @@ const routeFlowCards = [
   },
   {
     label: "Research",
-    title: "Manual Deep Research run",
+    title: "Approved research run",
     body:
-      "Generate the prompt pack, then run it in ChatGPT Deep Research with the user's own allowance. The website does not run hidden research.",
+      "Generate the route brief, then run it through an approved research channel, manual source review, or client-provided report workflow. The website does not run hidden research.",
     output: "Cited research report",
     Icon: SearchCheck
   },
@@ -133,9 +134,9 @@ const fitCards = [
 
 const boundaryCards = [
   {
-    title: "No automatic Deep Research claim",
+    title: "No automatic research claim",
     body:
-      "AgentSiteOps prepares prompts and checks returned reports. It does not pretend to run ChatGPT Deep Research through a hidden API."
+      "AgentSiteOps prepares briefs and checks returned reports. It does not pretend to run hidden research through a website-side model/API workflow."
   },
   {
     title: "No guaranteed growth claim",
@@ -172,7 +173,7 @@ export default function HomePage() {
     "@type": "Service",
     name: "AgentSiteOps Research-to-Route File",
     description:
-      "A manual research and route-selection service that turns messy project material into one Route File with rejected alternatives and stop rules.",
+      "An operator-reviewed research and route-selection service that turns messy project material into one Route File with rejected alternatives and stop rules.",
     inLanguage: "en",
     url: siteUrl,
     provider: {
@@ -196,7 +197,7 @@ export default function HomePage() {
           <p>
             Bring the unclear project, mixed notes, possible offers, risk limits, and
             open decisions. AgentSiteOps processes them through intake, scope lock,
-            manual research, coverage gate, and final route output before another page,
+            approved research channel, coverage gate, and final route output before another page,
             tool, checkout, or content system is built.
           </p>
           <div className="hero-actions">
@@ -244,7 +245,7 @@ export default function HomePage() {
           <h2>One customer-readable path replaces scattered method pages.</h2>
           <p>
             The homepage now shows the product as an execution surface: submit the
-            project, run manual research outside the website, check coverage, deliver one
+            project, run research outside the website through an approved carrier, check coverage, deliver one
             Route File, then stop or validate.
           </p>
         </div>
@@ -310,6 +311,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <CustomerResponseLifecycle />
 
       <section className="route-foundation-section">
         <div className="route-section-heading">

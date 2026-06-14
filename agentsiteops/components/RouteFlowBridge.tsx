@@ -27,8 +27,8 @@ const routeFlowStages = [
   {
     id: "research",
     label: "Research Run",
-    title: "Manual research",
-    body: "Prompt pack, Deep Research run, and source coverage.",
+    title: "Approved research",
+    body: "Brief, approved research channel, and source coverage.",
     href: "/templates/route-research-prompt-pack/",
     Icon: SearchCheck
   },

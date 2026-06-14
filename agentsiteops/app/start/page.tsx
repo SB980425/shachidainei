@@ -72,7 +72,7 @@ const fitRows = [
   {
     label: "Not a fit",
     body:
-      "You want hidden automatic Deep Research or a tool that calls the OpenAI API without a visible manual step."
+      "You want hidden automatic research, opaque model output, or a tool that bypasses visible operator review."
   }
 ];
 
@@ -119,7 +119,7 @@ const startPathSteps = [
   },
   {
     label: "Research",
-    body: "Run the prompt pack manually in ChatGPT Deep Research."
+    body: "Run the locked brief through an approved research channel."
   },
   {
     label: "Gate",
@@ -140,7 +140,7 @@ const nextSteps = [
   {
     title: "2. Run the research path",
     body:
-      "Use the prompt pack in ChatGPT Deep Research with the user's own allowance, then bring the report back for checking."
+      "Use the approved research channel or manual source-review path, then bring the report back for checking."
   },
   {
     title: "3. Apply the delivery gate",

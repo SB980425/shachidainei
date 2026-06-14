@@ -75,9 +75,9 @@ const progressChecks = [
       "Project facts, source limits, constraints, candidate routes, and blocked claims are visible before research starts."
   },
   {
-    title: "Manual research complete",
+    title: "Research channel complete",
     body:
-      "The report came from a visible ChatGPT Deep Research run using the client or operator allowance, not a hidden website API call."
+      "The report came from a visible approved research channel, manual source-review path, or client-provided report, not a hidden automatic website result."
   },
   {
     title: "Coverage reviewed",
