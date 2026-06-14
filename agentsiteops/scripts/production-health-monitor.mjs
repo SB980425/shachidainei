@@ -342,10 +342,10 @@ async function main() {
     "Every new project starts with a Route File before a build."
   ]);
   await checkPage("/templates/route-research-prompt-pack/", [
-    "Free manual Deep Research plan",
-    "No OpenAI API call happens in this workflow.",
+    "Carrier-neutral research plan",
+    "The site does not create a hidden research result.",
     "Generate, check, repair, and fuse the route research",
-    "Copy Deep Research prompt",
+    "Copy research brief",
     "Local acceptance check",
     "Second-pass gap prompt",
     "Route-file synthesis skeleton",

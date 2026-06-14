@@ -113,8 +113,8 @@ function checkProductionHealthAssertions() {
   const monitor = read("scripts/production-health-monitor.mjs");
   addCheck(
     "production_health",
-    monitor.includes("Route Foundry") && monitor.includes("No OpenAI API call happens in this workflow.") ? "pass" : "fail",
-    "production monitor checks the Route Foundry homepage and no-API research workflow path"
+    monitor.includes("Route Foundry") && monitor.includes("The site does not create a hidden research result.") ? "pass" : "fail",
+    "production monitor checks the Route Foundry homepage and channel-neutral research workflow path"
   );
   addCheck(
     "production_health",

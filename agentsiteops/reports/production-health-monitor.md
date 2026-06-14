@@ -1,6 +1,6 @@
 # Production Health Monitor
 
-- Generated: 2026-06-14T07:19:14.703Z
+- Generated: 2026-06-14T11:26:22.583Z
 - Status: pass
 - Site: https://agentsiteops.com
 - Checks: 248
@@ -55,10 +55,10 @@
 | /templates/route-research-prompt-pack/ | pass | HTTP 200 | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | HTML title exists | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | canonical points to production URL | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
-| /templates/route-research-prompt-pack/ | pass | Free manual Deep Research plan | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
-| /templates/route-research-prompt-pack/ | pass | No OpenAI API call happens in this workflow. | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Carrier-neutral research plan | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | The site does not create a hidden research result. | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Generate, check, repair, and fuse the route research | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
-| /templates/route-research-prompt-pack/ | pass | Copy Deep Research prompt | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Copy research brief | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Local acceptance check | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Second-pass gap prompt | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Route-file synthesis skeleton | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
