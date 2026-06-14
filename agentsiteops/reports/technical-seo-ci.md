@@ -1,6 +1,6 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-14T00:21:00.160Z
+- Generated: 2026-06-14T00:32:48.096Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
@@ -76,7 +76,7 @@
 | /terms/ | pass | 200 | Service Terms \| AgentSiteOps | https://agentsiteops.com/terms/ | 1 | 20 | pass | - |
 | /refund-policy/ | pass | 200 | Refund Policy \| AgentSiteOps | https://agentsiteops.com/refund-policy/ | 1 | 19 | pass | - |
 | /disclaimer/ | pass | 200 | Disclaimer \| AgentSiteOps | https://agentsiteops.com/disclaimer/ | 1 | 19 | pass | - |
-| /contact/ | pass | 200 | Contact \| AgentSiteOps | https://agentsiteops.com/contact/ | 1 | 19 | pass | - |
+| /contact/ | pass | 200 | Contact \| AgentSiteOps | https://agentsiteops.com/contact/ | 1 | 20 | pass | - |
 | /updates/ | pass | 200 | Updates \| AgentSiteOps | https://agentsiteops.com/updates/ | 1 | 20 | pass | - |
 
 ## Blocking Issues
