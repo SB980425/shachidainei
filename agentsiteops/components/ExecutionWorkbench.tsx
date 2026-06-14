@@ -275,6 +275,7 @@ export function ExecutionWorkbench() {
   const [stageCopyStatus, setStageCopyStatus] = useState<CopyStatus>("idle");
   const [primaryCopyStatus, setPrimaryCopyStatus] = useState<CopyStatus>("idle");
   const [pairCopyStatus, setPairCopyStatus] = useState<CopyStatus>("idle");
+  const [bundleCopyStatus, setBundleCopyStatus] = useState<CopyStatus>("idle");
   const [skeletonCopyStatus, setSkeletonCopyStatus] = useState<CopyStatus>("idle");
 
   const activeStage = useMemo(
@@ -287,6 +288,18 @@ export function ExecutionWorkbench() {
   const pairedSocialText = pairedLanguage === "en" ? activeSocial.en : activeSocial.zh;
   const activeLanguageLabel = activeLanguage === "en" ? "English" : "中文";
   const pairedLanguageLabel = pairedLanguage === "en" ? "English" : "中文";
+  const bilingualBundle = [
+    `Channel: ${activeSocial.label}`,
+    `Context: ${activeSocial.context}`,
+    "",
+    "English:",
+    activeSocial.en,
+    "",
+    "中文:",
+    activeSocial.zh,
+    "",
+    "Boundary: do not add traffic, ranking, revenue, buyer response, or hidden API claims."
+  ].join("\n");
   const activeStageStatus = stageDecisions[activeStageId];
   const activeStatus =
     stageStatusOptions.find((option) => option.id === activeStageStatus) ??
@@ -302,6 +315,12 @@ export function ExecutionWorkbench() {
         : `Copy ${activeLanguage === "en" ? "English" : "Chinese"}`;
   const pairCopyLabel =
     pairCopyStatus === "copied" ? "Copied" : pairCopyStatus === "failed" ? "Copy failed" : "Copy pair";
+  const bundleCopyLabel =
+    bundleCopyStatus === "copied"
+      ? "Pair copied"
+      : bundleCopyStatus === "failed"
+        ? "Copy failed"
+        : "Copy bilingual pair";
   const skeletonCopyLabel =
     skeletonCopyStatus === "copied"
       ? "Skeleton copied"
@@ -312,6 +331,7 @@ export function ExecutionWorkbench() {
   function resetSocialCopyStatus() {
     setPrimaryCopyStatus("idle");
     setPairCopyStatus("idle");
+    setBundleCopyStatus("idle");
   }
 
   function selectStage(stageId: StageId) {
@@ -357,6 +377,21 @@ export function ExecutionWorkbench() {
     }
 
     window.setTimeout(() => setStatus("idle"), 1600);
+  }
+
+  async function copyBilingualBundle() {
+    const copied = await writeClipboard(bilingualBundle);
+    setBundleCopyStatus(copied ? "copied" : "failed");
+
+    if (copied) {
+      track("social_copy_variant_copied", {
+        channel: activeChannel,
+        lang: "bilingual",
+        variant: "bundle"
+      });
+    }
+
+    window.setTimeout(() => setBundleCopyStatus("idle"), 1600);
   }
 
   async function copyRouteSkeleton() {
@@ -565,6 +600,10 @@ export function ExecutionWorkbench() {
               </button>
             ))}
           </div>
+          <button className="route-room-secondary execution-copy-pair-button" type="button" onClick={copyBilingualBundle}>
+            <Copy aria-hidden="true" size={15} />
+            {bundleCopyLabel}
+          </button>
           <div className="route-language-switch" aria-label="Language">
             {(["zh", "en"] as SocialLanguage[]).map((language) => (
               <button
