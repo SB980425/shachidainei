@@ -482,22 +482,16 @@ export function RouteCommandCenter() {
   return (
     <section className="route-room-shell" aria-label="AgentSiteOps route workspace">
       <div className="route-room-hero">
-        <img
-          className="route-room-backdrop"
-          src="/assets/route-room-backdrop.png"
-          alt=""
-          aria-hidden="true"
-        />
         <div className="route-room-hero-copy">
-          <span className="route-room-kicker">Route File Studio</span>
+          <span className="route-room-kicker">Route Foundry Workbench</span>
           <h2>
-            <span>Route decisions are not loose advice.</span>
-            <span>They are reviewable delivery files.</span>
+            <span>Turn client input into a Route File.</span>
+            <span>Keep every rejected path visible.</span>
           </h2>
           <p>
-            Move from messy inputs to one executable Route File: manual research,
-            evidence acceptance, rejected alternatives, first proof asset, and stop rule
-            all stay in the same clickable path.
+            Intake, scope lock, manual research, coverage gate, Route File output, and
+            social copy stay in one balanced workspace. No floating card covers the
+            decision path.
           </p>
           <div className="route-room-actions">
             <Link prefetch={false} className="route-room-primary" href="/execution/">
@@ -509,8 +503,9 @@ export function RouteCommandCenter() {
             </Link>
           </div>
           <div className="route-room-proof-strip" aria-label="Route File boundaries">
+            <span>No API fee</span>
             <span>Manual research</span>
-            <span>Traceable evidence</span>
+            <span>Coverage checked locally</span>
             <span>Stop rule</span>
           </div>
         </div>
@@ -532,6 +527,24 @@ export function RouteCommandCenter() {
             <span>v1.0 draft</span>
           </article>
         </div>
+      </div>
+
+      <div className="route-room-foundry-track" aria-label="Client input to output flow">
+        {executionStages.slice(0, 5).map((stage, index) => (
+          <button
+            className={stage.id === activeStageId ? "is-active" : ""}
+            key={stage.id}
+            type="button"
+            onClick={() => {
+              setActiveStageId(stage.id);
+              track("route_stage_selected", { stage: stage.id, source: "foundry_track" });
+            }}
+          >
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{stage.title}</strong>
+            <small>{stage.zh}</small>
+          </button>
+        ))}
       </div>
 
       <div className="route-room-controls" aria-label="Route controls">

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, ClipboardList, FileText, SearchCheck, ShieldCheck } from "lucide-react";
 import { ManualDeepResearchWorkspace } from "@/components/ManualDeepResearchWorkspace";
 import { ResearchDeliveryLoop } from "@/components/ResearchDeliveryLoop";
+import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import {
   manualDeepResearchSteps,
   researchAcceptanceGates,
@@ -278,6 +279,8 @@ export default function Page() {
           </p>
         </aside>
       </section>
+
+      <RouteFlowBridge current="research" nextHref="/delivery-gate/" nextLabel="Continue to gate" />
 
       <section className="gate-section route-research-receipt-section">
         <div className="section-head">

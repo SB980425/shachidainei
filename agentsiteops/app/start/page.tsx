@@ -9,6 +9,7 @@ import {
   FileText,
   ShieldCheck
 } from "lucide-react";
+import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { siteUrl } from "@/lib/site";
 
 const path = "/start/";
@@ -208,6 +209,8 @@ export default function Page() {
           </dl>
         </aside>
       </section>
+
+      <RouteFlowBridge current="intake" nextHref="/how-it-works/" nextLabel="Continue to method" />
 
       <section className="gate-section start-route-path" aria-label="Start execution path">
         <div>

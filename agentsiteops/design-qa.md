@@ -1,44 +1,40 @@
-source visual truth path:
-- C:\Users\98043\.codex\generated_images\019ebfa7-e914-7ed0-a7cf-25d1a3600d00\ig_020c31c2ae178280016a2d3fc74c708191943163a5f3a9c091.png
-- C:\Users\98043\.codex\generated_images\019ebfa7-e914-7ed0-a7cf-25d1a3600d00\ig_020c31c2ae178280016a2d3f646eb08191a8fa60276f40a8d9.png
-- C:\Users\98043\.codex\generated_images\019ebfa7-e914-7ed0-a7cf-25d1a3600d00\ig_020c31c2ae178280016a2d3e92fcbc819183b2359d1a8ad946.png
+**Findings**
+- No P0/P1/P2 findings remain.
 
-implementation screenshot path:
-- C:\Users\98043\AppData\Local\Temp\agentsiteops-ui-check-final-static-v2\home-route-room-desktop.png
-- C:\Users\98043\AppData\Local\Temp\agentsiteops-ui-check-final-static-v2\execution-room-desktop.png
-- C:\Users\98043\AppData\Local\Temp\agentsiteops-ui-check-final-static-v2\home-route-room-mobile.png
+**Source Visual Truth**
+- Source direction: user-selected Route Foundry direction from the current Product Design sequence: strong first-screen impact, unified page structure, route map as the core interaction, no blue/ochre clash, no white grid background, no covering overlays.
+- Defect evidence used: user screenshots showing the old overlaid route map, white grid/page backgrounds, color mismatch, mobile/desktop proportion problems, and blocked top content.
 
-viewport:
-- Desktop: 1440 x 1200
-- Mobile: 390 x 1200
+**Implementation Evidence**
+- Local URL: http://127.0.0.1:4175/
+- Viewports checked: 1440x1024 desktop and 390x844 mobile.
+- Routes checked: /, /start/, /how-it-works/, /templates/route-research-prompt-pack/, /sample/, /delivery-gate/, /execution/, /updates/.
+- Full-view comparison evidence: browser captures were reviewed for desktop home, mobile home, RouteCommandCenter, and workbench interaction state in this run.
+- Focused region comparison evidence: RouteCommandCenter stage track, route atlas, social-copy language switch, top navigation, route-flow bridge, and manual research workspace were checked directly. No extra focused crop was needed because the remaining issues were layout, contrast, and interaction-state issues visible in full viewport plus DOM metrics.
 
-state:
-- Static export served from the built `out` directory through a temporary local Node server.
-- Home route room default state.
-- Execution workbench default research stage.
-- Interaction checks: route card selection, language switch, and execution decision switch.
+**Required Fidelity Surfaces**
+- Fonts and typography: display scale was reduced on mobile, letter spacing remains non-negative, button and nav text no longer clips or overlaps.
+- Spacing and layout rhythm: desktop and mobile hero sections now leave the next section visible; old floating overlay composition was replaced by ordered grid/track sections.
+- Colors and visual tokens: final layer maps legacy blue/amber to mint/coral Route Foundry tokens and removes old white-grid panels except the intentional Route File paper preview.
+- Image quality and asset fidelity: no fake decorative image placeholders are used in the rebuilt workbench; icons remain from the existing icon library.
+- Copy and content: top navigation now maps to System, Method, Research, Sample, Updates, and Workbench; page flow consistently follows Intake, Scope Lock, Research Run, Coverage Gate, Route File.
 
-full-view comparison evidence:
-- The implementation uses the selected mixed direction: dark first-screen visual impact, light Route File document surface, route-map interaction, and execution controls.
-- The old score-ring, dense left form stack, and blue-dominant route graph were removed from the active implementation.
+**Patches Made Since Previous QA Pass**
+- Added RouteFlowBridge and connected it to the main navigation pages.
+- Rebuilt RouteCommandCenter hero, stage track, route atlas, Route File preview, and bilingual social-copy surface.
+- Added final Route Foundry CSS layer for colors, panels, footer, manual research workspace, delivery states, mobile header, responsive hero rhythm, and interaction focus states.
+- Removed old visible white panels and corrected mobile navigation truncation/overlap.
 
-focused region comparison evidence:
-- Hero: final desktop screenshot shows two-line Chinese headline, dark product room backdrop, primary action, and three proof chips.
-- Route Atlas: final desktop screenshot shows five route candidates, selected state, stage dock, and decision console.
-- Route File: final desktop screenshot shows warm paper surface with readable tabs, route reasoning, stop rule, and export button.
-- Execution page: final desktop screenshot shows rail navigation, current stage, decision states, click path, file preview, module merge, and bilingual social copy.
-- Mobile: final mobile screenshot stacks the same modules vertically without horizontal overflow.
+**Implementation Checklist**
+- Desktop visual scan: passed.
+- Mobile visual scan: passed.
+- Top navigation link scan: passed.
+- RouteFlowBridge presence scan: passed.
+- RouteCommandCenter control click test: passed.
+- White-background residual scan: passed, excluding the intentional Route File paper preview.
+- Horizontal overflow scan: passed.
 
-findings:
-- No remaining P0, P1, or P2 issues found in the checked states.
-
-patches made since previous QA pass:
-- Split the hero H2 into controlled two-line spans and forced span text to inherit the display heading style.
-- Raised route-room surfaces above the global sticky header during screenshots and route scrolling.
-- Increased contrast for secondary buttons placed on the light Route File document surface.
-
-follow-up polish:
-- P3: The mobile route basis ribbon is dense and could later be collapsed into an accordion.
-- P3: The route atlas cards could get a drawn connecting-path image asset in a later visual pass.
+**Follow-up Polish**
+- P3: replace the small header logo asset with a Route Foundry-specific mark if a durable brand asset is created later.
 
 final result: passed

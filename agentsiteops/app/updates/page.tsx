@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { siteUrl } from "@/lib/site";
 import { updateLog, type UpdateLogEntry } from "@/lib/updateLog";
 
@@ -77,6 +78,13 @@ export default function Page() {
           </Link>
         </aside>
       </section>
+
+      <RouteFlowBridge
+        current="route-file"
+        eyebrow="Release context"
+        nextHref="/execution/"
+        nextLabel="Open current workbench"
+      />
 
       <section className="updates-timeline" aria-label="site update log">
         {publicUpdates.map((entry) => (

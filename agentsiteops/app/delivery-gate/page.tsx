@@ -10,6 +10,7 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
+import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteFileAcceptancePanel } from "@/components/RouteFileAcceptancePanel";
 import { siteUrl } from "@/lib/site";
 
@@ -157,6 +158,8 @@ export default function Page() {
           </dl>
         </aside>
       </section>
+
+      <RouteFlowBridge current="gate" nextHref="/sample/" nextLabel="Continue to sample" />
 
       <section className="gate-section">
         <div className="section-head">

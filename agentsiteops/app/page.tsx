@@ -63,11 +63,11 @@ const homeOutputRows = [
 ];
 
 const heroFlowSteps = [
-  { label: "Input", body: "Project facts" },
-  { label: "Research", body: "Manual run" },
-  { label: "Gate", body: "Pass or repair" },
-  { label: "Route", body: "One file" },
-  { label: "Stop", body: "Evidence rule" }
+  { label: "Intake", body: "Facts and constraints" },
+  { label: "Scope Lock", body: "Boundary and risks" },
+  { label: "Research Run", body: "Manual Deep Research" },
+  { label: "Coverage Gate", body: "Pass or repair" },
+  { label: "Route File", body: "Decision output" }
 ];
 
 const routeFlowCards = [
@@ -189,14 +189,15 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="frontstage-hero">
+      <section className="frontstage-hero route-foundry-hero">
         <div className="frontstage-hero-copy">
-          <p className="eyebrow">AgentSiteOps Route File</p>
-          <h1>Research-to-Route File for messy projects.</h1>
+          <p className="eyebrow">Route Foundry</p>
+          <h1>Turn messy client input into one reviewable Route File.</h1>
           <p>
             Bring the unclear project, mixed notes, possible offers, risk limits, and
-            open decisions. AgentSiteOps turns them into one checked Route File before
-            you build another page, tool, checkout, or content system.
+            open decisions. AgentSiteOps processes them through intake, scope lock,
+            manual research, coverage gate, and final route output before another page,
+            tool, checkout, or content system is built.
           </p>
           <div className="hero-actions">
             <Link prefetch={false} className="primary-action" href="/intake/">
@@ -224,7 +225,7 @@ export default function HomePage() {
         </div>
 
         <aside className="route-file-brief" aria-label="Route File output">
-          <span>Route File</span>
+          <span>Route File Output</span>
           <h2>One decision package, not another loose research report.</h2>
           <ul>
             {routeFileContract.map((item) => (

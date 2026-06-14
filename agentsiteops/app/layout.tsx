@@ -2,11 +2,11 @@ import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import {
   Activity,
-  ClipboardList,
-  FileCheck2,
   FileText,
   GitBranch,
-  Newspaper
+  Newspaper,
+  SearchCheck,
+  Workflow
 } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
@@ -67,10 +67,10 @@ export const viewport: Viewport = {
 };
 
 const navItems = [
-  { href: "/start/", label: "Start", Icon: ClipboardList },
-  { href: "/how-it-works/", label: "How it works", Icon: GitBranch },
+  { href: "/start/", label: "System", Icon: Workflow },
+  { href: "/how-it-works/", label: "Method", Icon: GitBranch },
+  { href: "/templates/route-research-prompt-pack/", label: "Research", Icon: SearchCheck },
   { href: "/sample/", label: "Sample", Icon: FileText },
-  { href: "/delivery-gate/", label: "Delivery", Icon: FileCheck2 },
   { href: "/updates/", label: "Updates", Icon: Newspaper }
 ];
 

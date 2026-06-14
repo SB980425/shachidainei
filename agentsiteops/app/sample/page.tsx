@@ -9,6 +9,7 @@ import {
   GitCompareArrows,
   ShieldCheck
 } from "lucide-react";
+import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteFileAcceptancePanel } from "@/components/RouteFileAcceptancePanel";
 import { siteUrl } from "@/lib/site";
 
@@ -210,6 +211,8 @@ export default function Page() {
           </p>
         </aside>
       </section>
+
+      <RouteFlowBridge current="route-file" nextHref="/execution/" nextLabel="Open workbench" />
 
       <section className="gate-section">
         <div className="section-head">

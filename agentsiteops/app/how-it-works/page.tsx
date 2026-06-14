@@ -9,6 +9,7 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
+import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { siteUrl } from "@/lib/site";
 
 const path = "/how-it-works/";
@@ -140,6 +141,12 @@ export default function Page() {
           </p>
         </aside>
       </section>
+
+      <RouteFlowBridge
+        current="scope"
+        nextHref="/templates/route-research-prompt-pack/"
+        nextLabel="Continue to research"
+      />
 
       <section className="gate-section">
         <div className="section-head">

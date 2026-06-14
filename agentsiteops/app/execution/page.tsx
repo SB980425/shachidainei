@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { ClientRouteWorkspace } from "@/components/ClientRouteWorkspace";
 import { ExecutionWorkbench } from "@/components/ExecutionWorkbench";
+import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -130,6 +131,13 @@ export default function ExecutionPage() {
           </ul>
         </aside>
       </section>
+
+      <RouteFlowBridge
+        current="gate"
+        eyebrow="Workbench context"
+        nextHref="/sample/"
+        nextLabel="Review Route File output"
+      />
 
       <section className="route-foundation-section execution-output-section">
         <div className="route-section-heading">
