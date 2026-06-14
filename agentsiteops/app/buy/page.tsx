@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, CreditCard, FileText, Mail, ShieldCheck } from "lucide-react";
+import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import {
   launchAcceptanceCriteria,
   launchDeliverables,
@@ -48,6 +49,25 @@ const purchaseGateSteps = [
     title: "4. Receive Route File",
     body:
       "The manual Route File is delivered in 24-72 hours after payment confirmation and usable details are received."
+  }
+];
+
+const beforePaymentChecks = [
+  {
+    label: "Fit is checked",
+    body: "The project needs route selection, not guaranteed traffic, revenue, ranking, legal advice, or hidden automation."
+  },
+  {
+    label: "Intake is usable",
+    body: "Buyer, current assets, source material, decision question, delivery boundary, and validation window are visible."
+  },
+  {
+    label: "Operator can accept",
+    body: "A person can judge whether the request should proceed, be repaired, be blocked, or be rejected as not delivery."
+  },
+  {
+    label: "Output is understood",
+    body: "The expected artifact is a Route File with selected route, rejected alternatives, evidence ledger, proof asset, validation channel, and stop rule."
   }
 ];
 
@@ -124,6 +144,33 @@ export default function Page() {
           </Link>
         </aside>
       </section>
+
+      <section className="pricing-grid-section">
+        <div className="section-head">
+          <h2>Before payment</h2>
+          <p>
+            This page is a purchase gate, not the main product interface. Payment should
+            happen only after the project fits the Route File workflow and the client
+            understands what will and will not be delivered.
+          </p>
+        </div>
+        <div className="purchase-start-grid">
+          {beforePaymentChecks.map((item) => (
+            <article key={item.label}>
+              <ShieldCheck aria-hidden="true" size={18} />
+              <h3>{item.label}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <CustomerResponseLifecycle
+        variant="compact"
+        eyebrow="Purchase is not the workflow"
+        title="Payment does not replace intake, review, research, or coverage checking."
+        body="The website can receive and organize the request. Operator review, approved research carrier output, coverage acceptance, and final Route File synthesis remain explicit steps."
+      />
 
       <section className="pricing-grid-section">
         <div className="section-head">

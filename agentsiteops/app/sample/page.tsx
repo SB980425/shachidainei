@@ -50,6 +50,33 @@ const inputSnapshot = [
   }
 ];
 
+const sampleHandoffPath = [
+  {
+    label: "1. Intake accepted",
+    state: "Visible to client",
+    body:
+      "The project has a decision question, usable source material, delivery limits, and a first validation window."
+  },
+  {
+    label: "2. Research carrier approved",
+    state: "Not tool-locked",
+    body:
+      "Research can come from manual source review, a client report, an operator-controlled research pass, or another approved evidence carrier."
+  },
+  {
+    label: "3. Coverage checked",
+    state: "Repair before synthesis",
+    body:
+      "Weak coverage triggers a missing-input request or second-pass research brief instead of a confident-looking Route File."
+  },
+  {
+    label: "4. Route File sent",
+    state: "Final handoff",
+    body:
+      "Only accepted material becomes the selected route, rejected alternatives, evidence ledger, proof asset, validation channel, and stop rule."
+  }
+];
+
 const selectedRoute = [
   {
     label: "Selected route",
@@ -213,6 +240,26 @@ export default function Page() {
       </section>
 
       <RouteFlowBridge current="route-file" nextHref="/execution/" nextLabel="Open workbench" />
+
+      <section className="gate-section sample-handoff-section">
+        <div className="section-head">
+          <h2>How this sample becomes a real handoff</h2>
+          <p>
+            The sample is not tied to one research product. It represents the output after
+            a client request is accepted, researched through an approved carrier, checked
+            for coverage, and synthesized by an operator.
+          </p>
+        </div>
+        <div className="sample-handoff-grid">
+          {sampleHandoffPath.map((item) => (
+            <article key={item.label}>
+              <span>{item.state}</span>
+              <h3>{item.label}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="gate-section">
         <div className="section-head">

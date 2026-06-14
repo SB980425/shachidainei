@@ -148,6 +148,91 @@ const routeFilePreview = [
   "Stop rule"
 ];
 
+const responseLifecycle = [
+  {
+    label: "Auto receipt",
+    zh: "自动回执",
+    owner: "Website",
+    body:
+      "The site can confirm that a request was received, preserve the intake packet, and show which fields are missing.",
+    evidence: "Timestamp, intake fields, missing-input list."
+  },
+  {
+    label: "Operator review",
+    zh: "人工验收",
+    owner: "Operator",
+    body:
+      "A person checks whether the project can be researched, whether evidence rights are usable, and whether the request is inside the delivery boundary.",
+    evidence: "Accepted, repair requested, blocked, or not delivery."
+  },
+  {
+    label: "Research carrier",
+    zh: "研究载体",
+    owner: "Approved channel",
+    body:
+      "The research can run through any approved carrier: manual source review, a client report, a research tool, or an operator-controlled research pass.",
+    evidence: "Source list, findings, rejected paths, uncertainty notes."
+  },
+  {
+    label: "Coverage gate",
+    zh: "覆盖检查",
+    owner: "Quality gate",
+    body:
+      "Returned material is checked before synthesis. Missing buyer logic, source coverage, proof asset, or stop rule triggers repair instead of delivery.",
+    evidence: "Pass, repair prompt, blocked reason, or rejection."
+  }
+];
+
+const routeOutputChecks = [
+  {
+    label: "Selected route",
+    body: "One chosen path that can be executed first, not a list of equal options."
+  },
+  {
+    label: "Rejected alternatives",
+    body: "Visible reasons for the routes that were not selected."
+  },
+  {
+    label: "Evidence ledger",
+    body: "Claims tagged as verified, inferred, pending, or not proven."
+  },
+  {
+    label: "First proof asset",
+    body: "The smallest inspectable asset needed before more build or content work."
+  },
+  {
+    label: "Validation channel",
+    body: "The first channel where buyer response, usage, search, or payment evidence can appear."
+  },
+  {
+    label: "Stop rule",
+    body: "A concrete condition that prevents endless planning or unsupported expansion."
+  }
+];
+
+const nextActionCards = [
+  {
+    label: "Submit intake",
+    href: "/intake/",
+    body: "Use this when the project facts, constraints, or decision question are still incomplete."
+  },
+  {
+    label: "Review sample",
+    href: "/sample/",
+    body: "Use this to inspect the exact Route File structure before expecting delivery."
+  },
+  {
+    label: "Check gate",
+    href: "/delivery-gate/",
+    body: "Use this to see why a returned report becomes pass, repair, blocked, or not delivery."
+  },
+  {
+    label: "Client workflow",
+    href: "/reports/client-route-workflow/",
+    body: "Use this to follow the visible client progress from intake to final handoff."
+  }
+];
+
 const stageStatusOptions: Array<{ id: StageStatus; label: string; zh: string; detail: string }> = [
   {
     id: "pass",
@@ -526,6 +611,70 @@ export function ExecutionWorkbench() {
               <ArrowRight aria-hidden="true" size={16} />
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="execution-room-response" aria-label="Customer response and output path">
+        <div className="route-room-section-head">
+          <span>
+            <ShieldCheck aria-hidden="true" size={16} />
+            Client response path
+          </span>
+          <strong>网站负责可见状态，人工负责验收和最终判断。</strong>
+        </div>
+        <div className="execution-response-grid">
+          {responseLifecycle.map((item, index) => (
+            <article key={item.label}>
+              <div>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <small>{item.owner}</small>
+              </div>
+              <h3>{item.label}</h3>
+              <strong>{item.zh}</strong>
+              <p>{item.body}</p>
+              <em>{item.evidence}</em>
+            </article>
+          ))}
+        </div>
+        <div className="execution-response-split">
+          <article className="execution-output-checklist">
+            <div className="route-room-section-head">
+              <span>
+                <FileText aria-hidden="true" size={16} />
+                Route File output
+              </span>
+              <strong>交付必须同时包含 6 个部分。</strong>
+            </div>
+            <div>
+              {routeOutputChecks.map((item) => (
+                <section key={item.label}>
+                  <CheckCircle2 aria-hidden="true" size={17} />
+                  <div>
+                    <h3>{item.label}</h3>
+                    <p>{item.body}</p>
+                  </div>
+                </section>
+              ))}
+            </div>
+          </article>
+          <article className="execution-next-actions">
+            <div className="route-room-section-head">
+              <span>
+                <ArrowRight aria-hidden="true" size={16} />
+                Next action
+              </span>
+              <strong>按当前问题进入下一页。</strong>
+            </div>
+            <div>
+              {nextActionCards.map((item) => (
+                <Link prefetch={false} href={item.href} key={item.href}>
+                  <strong>{item.label}</strong>
+                  <small>{item.body}</small>
+                  <ArrowRight aria-hidden="true" size={15} />
+                </Link>
+              ))}
+            </div>
+          </article>
         </div>
       </section>
 

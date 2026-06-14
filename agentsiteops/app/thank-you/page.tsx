@@ -11,6 +11,29 @@ import { siteUrl } from "@/lib/site";
 
 const path = "/thank-you/";
 
+const responseExpectations = [
+  {
+    label: "Automatic receipt",
+    body:
+      "The site can preserve the intake packet and show that the request has been received."
+  },
+  {
+    label: "Manual acceptance",
+    body:
+      "A person checks whether the project is inside scope, whether evidence can be used, and whether a Route File can be produced."
+  },
+  {
+    label: "Repair or block",
+    body:
+      "If facts, rights, buyer evidence, or delivery capacity are missing, the next message is a repair request or blocked reason."
+  },
+  {
+    label: "Route File handoff",
+    body:
+      "Accepted work returns one selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule."
+  }
+];
+
 export const metadata: Metadata = {
   title: "Route File Next Steps",
   description: "Next steps after payment or purchase intent for the AgentSiteOps Route File.",
@@ -67,6 +90,25 @@ export default function Page() {
             </div>
           </dl>
         </aside>
+      </section>
+
+      <section className="gate-section thank-response-panel">
+        <div className="section-head">
+          <h2>What happens after submission</h2>
+          <p>
+            There is no hidden automatic research run. The next visible state is receipt,
+            manual acceptance, repair/block, or Route File handoff.
+          </p>
+        </div>
+        <div className="thank-response-grid">
+          {responseExpectations.map((item, index) => (
+            <article key={item.label}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{item.label}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="gate-section next-step-board">

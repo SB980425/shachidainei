@@ -133,8 +133,21 @@ function storeEvent(event: AnalyticsEvent) {
   }
 }
 
-function sendEvent(event: AnalyticsEvent) {
+function shouldSendEvent() {
   if (!endpoint) {
+    return false;
+  }
+
+  const isLocalStaticHost =
+    window.location.hostname === "127.0.0.1" ||
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "::1";
+
+  return !(isLocalStaticHost && endpoint === "/api/events");
+}
+
+function sendEvent(event: AnalyticsEvent) {
+  if (!shouldSendEvent()) {
     return;
   }
 
