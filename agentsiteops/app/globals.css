@@ -10930,6 +10930,17 @@ textarea {
   color: var(--rr-text);
 }
 
+.route-social-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.route-social-actions .route-room-secondary {
+  flex: 0 0 auto;
+}
+
 .route-social-dock p {
   margin: 0;
   color: rgba(247, 234, 214, 0.8);

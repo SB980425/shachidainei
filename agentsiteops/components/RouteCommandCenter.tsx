@@ -298,6 +298,7 @@ export function RouteCommandCenter() {
   const [language, setLanguage] = useState<"zh" | "en">("zh");
   const [copyState, setCopyState] = useState("Export Route File");
   const [socialCopyState, setSocialCopyState] = useState("Copy public copy");
+  const [pairCopyState, setPairCopyState] = useState("Copy bilingual pair");
 
   const evidenceLevel = evidenceLevels.find((item) => item.label === evidence) ?? evidenceLevels[0];
   const proofLevel = proofLevels.find((item) => item.label === proof) ?? proofLevels[0];
@@ -408,6 +409,16 @@ export function RouteCommandCenter() {
     executionStages.find((stage) => stage.id === activeStageId) ?? executionStages[2];
   const visibleCandidates = routeCandidates.slice(0, 5);
   const activeSocialCopy = socialVariants.founder[language];
+  const bilingualSocialCopy = [
+    "English:",
+    socialVariants.founder.en,
+    "",
+    "中文:",
+    socialVariants.founder.zh,
+    "",
+    "Boundary:",
+    "Language and tone can change. The Route File sections, manual research boundary, and no-growth-promise rule must stay unchanged."
+  ].join("\n");
 
   function track(name: string, payload: Record<string, string | number | boolean> = {}) {
     window.codexAnalytics?.track(name, {
@@ -424,6 +435,7 @@ export function RouteCommandCenter() {
     window.setTimeout(() => {
       setCopyState("Export Route File");
       setSocialCopyState("Copy public copy");
+      setPairCopyState("Copy bilingual pair");
     }, 1600);
   }
 
@@ -459,6 +471,12 @@ export function RouteCommandCenter() {
     setSocialCopyState((await writeClipboard(activeSocialCopy)) ? "Copy ready" : "Copy failed");
     resetCopyStates();
     track("social_copy_variant_copied", { language, variant: "route_command_center" });
+  }
+
+  async function copyBilingualCopy() {
+    setPairCopyState((await writeClipboard(bilingualSocialCopy)) ? "Pair copied" : "Copy failed");
+    resetCopyStates();
+    track("social_copy_variant_copied", { language: "bilingual", variant: "route_command_center" });
   }
 
   return (
@@ -764,10 +782,16 @@ export function RouteCommandCenter() {
           ))}
         </div>
         <p>{activeSocialCopy}</p>
-        <button className="route-room-secondary" type="button" onClick={copyPublicCopy}>
-          <Copy aria-hidden="true" size={15} />
-          {socialCopyState}
-        </button>
+        <div className="route-social-actions">
+          <button className="route-room-secondary" type="button" onClick={copyPublicCopy}>
+            <Copy aria-hidden="true" size={15} />
+            {socialCopyState}
+          </button>
+          <button className="route-room-secondary" type="button" onClick={copyBilingualCopy}>
+            <Copy aria-hidden="true" size={15} />
+            {pairCopyState}
+          </button>
+        </div>
       </div>
 
       <div className="route-source-ribbon" aria-label="Route basis">
