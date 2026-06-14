@@ -100,8 +100,8 @@ function checkProductionHealthAssertions() {
   const monitor = read("scripts/production-health-monitor.mjs");
   addCheck(
     "production_health",
-    monitor.includes("Route workspace") && monitor.includes("Research delivery loop") ? "pass" : "fail",
-    "production monitor checks the reduced homepage workspace and research workflow path"
+    monitor.includes("Route Foundry") && monitor.includes("No OpenAI API call happens in this workflow.") ? "pass" : "fail",
+    "production monitor checks the Route Foundry homepage and no-API research workflow path"
   );
   addCheck(
     "production_health",
@@ -110,8 +110,10 @@ function checkProductionHealthAssertions() {
   );
   addCheck(
     "production_health",
-    monitor.includes("/tools/launch-blueprint-fit-checker/") ? "pass" : "fail",
-    "production monitor checks the Launch Blueprint Fit Checker route"
+    monitor.includes("/tools/launch-blueprint-fit-checker/") && monitor.includes("Route File Fit Checker")
+      ? "pass"
+      : "fail",
+    "production monitor checks the Route File Fit Checker route"
   );
 }
 

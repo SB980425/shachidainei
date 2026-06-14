@@ -334,19 +334,16 @@ async function main() {
   await checkBrandIcon();
   await checkAnalyticsSummary();
   await checkPage("/", [
-    "Route workspace",
-    "Score, prune, export",
-    "How AgentSiteOps becomes our route planner.",
-    "Existing functions preserved",
-    "Fit Review",
-    "Evidence used, not guessed",
-    "What the buyer receives is a route file, not a score",
-    "Market signals are context, not proof",
-    "Every new project starts with a route map before a build."
+    "Route Foundry",
+    "Turn messy client input into one reviewable Route File.",
+    "One decision package, not another loose research report.",
+    "Operating path",
+    "The route workflow becomes the thing people can click.",
+    "Every new project starts with a Route File before a build."
   ]);
   await checkPage("/templates/route-research-prompt-pack/", [
     "Free manual Deep Research plan",
-    "The free plan does not call the OpenAI API",
+    "No OpenAI API call happens in this workflow.",
     "Generate, check, repair, and fuse the route research",
     "Copy Deep Research prompt",
     "Local acceptance check",
@@ -379,26 +376,30 @@ async function main() {
     "Data-backed basis"
   ]);
   await checkPage("/pricing/", [
-    "Choose the smallest purchase that can answer the decision",
-    "AgentSiteOps Launch Blueprint",
+    "Choose the smallest manual step that can produce a route decision.",
     "Fit Review",
     "USD",
     "PayPal",
     "Why pay for a manual route",
-    "What USD 99 must produce"
+    "delivery standard"
   ]);
   await checkPage("/pricing/", ["Objections that should block or redirect payment", "I can ask ChatGPT for this."]);
-  await checkPage("/examples/fit-review-sample/", ["A smaller paid verdict", "Do not buy the USD 99 blueprint yet", "It does not prove traffic"]);
-  await checkPage("/sample/", ["What a Launch Blueprint looks like", "Sample", "What the paid file must contain", "Check fit first"]);
+  await checkPage("/examples/fit-review-sample/", ["A smaller paid verdict", "Full Route File", "It does not prove traffic"]);
+  await checkPage("/sample/", [
+    "What the final AgentSiteOps handoff should contain.",
+    "Sample",
+    "First proof asset",
+    "What is not proven"
+  ]);
   await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
   await checkPage("/compare/", ["Common objections before payment", "I need someone to build it, not just advise."]);
   await checkPage("/examples/agentsiteops-self-audit/", ["AgentSiteOps Self-Audit Sample", "52/100", "commercially unvalidated"]);
-  await checkPage("/starter-review/", ["Get a go, narrow, or stop verdict", "USD", "reject the larger sale"]);
-  await checkPage("/buy/", ["Get one sellable offer", "Pay with PayPal", "Acceptance criteria", "If the route is not ready"]);
-  await checkPage("/intake/", ["Order Intake", "Email intake", "Payment confirmation", "Manual delivery process"]);
+  await checkPage("/starter-review/", ["Check whether the project deserves the full Route File.", "USD", "reject the larger sale"]);
+  await checkPage("/buy/", ["Check the project before paying for the Route File.", "Pay with PayPal", "Acceptance criteria", "If the route is not ready"]);
+  await checkPage("/intake/", ["Project intake", "Email project intake", "Payment confirmation", "Manual intake process"]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Current objective self-score", "Score update rules", "52/100", "Claims not made"]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);
-  await checkPage("/tools/launch-blueprint-fit-checker/", ["Launch Blueprint Fit Checker", "Do not buy", "No request, account, payment"]);
+  await checkPage("/tools/launch-blueprint-fit-checker/", ["Route File Fit Checker", "Do not buy", "No request, account, payment"]);
   await checkPage("/checklists/launch-validation-decision-gate/", [
     "Launch Validation Decision Gate",
     "Stop, rewrite, or pivot before scaling",

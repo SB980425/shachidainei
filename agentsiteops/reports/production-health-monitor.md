@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-13T04:32:01.295Z
+- Generated: 2026-06-14T06:59:00.172Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 252
+- Checks: 248
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 53 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 59 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -46,20 +46,17 @@
 | / | pass | HTTP 200 | [link](https://agentsiteops.com/) |
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
-| / | pass | Route workspace | [link](https://agentsiteops.com/) |
-| / | pass | Score, prune, export | [link](https://agentsiteops.com/) |
-| / | pass | How AgentSiteOps becomes our route planner. | [link](https://agentsiteops.com/) |
-| / | pass | Existing functions preserved | [link](https://agentsiteops.com/) |
-| / | pass | Fit Review | [link](https://agentsiteops.com/) |
-| / | pass | Evidence used, not guessed | [link](https://agentsiteops.com/) |
-| / | pass | What the buyer receives is a route file, not a score | [link](https://agentsiteops.com/) |
-| / | pass | Market signals are context, not proof | [link](https://agentsiteops.com/) |
-| / | pass | Every new project starts with a route map before a build. | [link](https://agentsiteops.com/) |
+| / | pass | Route Foundry | [link](https://agentsiteops.com/) |
+| / | pass | Turn messy client input into one reviewable Route File. | [link](https://agentsiteops.com/) |
+| / | pass | One decision package, not another loose research report. | [link](https://agentsiteops.com/) |
+| / | pass | Operating path | [link](https://agentsiteops.com/) |
+| / | pass | The route workflow becomes the thing people can click. | [link](https://agentsiteops.com/) |
+| / | pass | Every new project starts with a Route File before a build. | [link](https://agentsiteops.com/) |
 | /templates/route-research-prompt-pack/ | pass | HTTP 200 | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | HTML title exists | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | canonical points to production URL | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Free manual Deep Research plan | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
-| /templates/route-research-prompt-pack/ | pass | The free plan does not call the OpenAI API | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | No OpenAI API call happens in this workflow. | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Generate, check, repair, and fuse the route research | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Copy Deep Research prompt | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Local acceptance check | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
@@ -95,13 +92,12 @@
 | /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | canonical points to production URL | [link](https://agentsiteops.com/pricing/) |
-| /pricing/ | pass | Choose the smallest purchase that can answer the decision | [link](https://agentsiteops.com/pricing/) |
-| /pricing/ | pass | AgentSiteOps Launch Blueprint | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | Choose the smallest manual step that can produce a route decision. | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | Fit Review | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | USD | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | PayPal | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | Why pay for a manual route | [link](https://agentsiteops.com/pricing/) |
-| /pricing/ | pass | What USD 99 must produce | [link](https://agentsiteops.com/pricing/) |
+| /pricing/ | pass | delivery standard | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTTP 200 | [link](https://agentsiteops.com/pricing/) |
 | /pricing/ | pass | HTML title exists | [link](https://agentsiteops.com/pricing/) |
@@ -113,15 +109,15 @@
 | /examples/fit-review-sample/ | pass | HTML title exists | [link](https://agentsiteops.com/examples/fit-review-sample/) |
 | /examples/fit-review-sample/ | pass | canonical points to production URL | [link](https://agentsiteops.com/examples/fit-review-sample/) |
 | /examples/fit-review-sample/ | pass | A smaller paid verdict | [link](https://agentsiteops.com/examples/fit-review-sample/) |
-| /examples/fit-review-sample/ | pass | Do not buy the USD 99 blueprint yet | [link](https://agentsiteops.com/examples/fit-review-sample/) |
+| /examples/fit-review-sample/ | pass | Full Route File | [link](https://agentsiteops.com/examples/fit-review-sample/) |
 | /examples/fit-review-sample/ | pass | It does not prove traffic | [link](https://agentsiteops.com/examples/fit-review-sample/) |
 | /sample/ | pass | HTTP 200 | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | HTML title exists | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | canonical points to production URL | [link](https://agentsiteops.com/sample/) |
-| /sample/ | pass | What a Launch Blueprint looks like | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | What the final AgentSiteOps handoff should contain. | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | Sample | [link](https://agentsiteops.com/sample/) |
-| /sample/ | pass | What the paid file must contain | [link](https://agentsiteops.com/sample/) |
-| /sample/ | pass | Check fit first | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | First proof asset | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | What is not proven | [link](https://agentsiteops.com/sample/) |
 | /compare/ | pass | HTTP 200 | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | HTML title exists | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | canonical points to production URL | [link](https://agentsiteops.com/compare/) |
@@ -142,14 +138,14 @@
 | /starter-review/ | pass | HTTP 200 | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | HTML title exists | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | canonical points to production URL | [link](https://agentsiteops.com/starter-review/) |
-| /starter-review/ | pass | Get a go, narrow, or stop verdict | [link](https://agentsiteops.com/starter-review/) |
+| /starter-review/ | pass | Check whether the project deserves the full Route File. | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | USD | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | reject the larger sale | [link](https://agentsiteops.com/starter-review/) |
 | /starter-review/ | pass | retired payment test copy and link are absent | [link](https://agentsiteops.com/starter-review/) |
 | /buy/ | pass | HTTP 200 | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | HTML title exists | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | canonical points to production URL | [link](https://agentsiteops.com/buy/) |
-| /buy/ | pass | Get one sellable offer | [link](https://agentsiteops.com/buy/) |
+| /buy/ | pass | Check the project before paying for the Route File. | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | Pay with PayPal | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | Acceptance criteria | [link](https://agentsiteops.com/buy/) |
 | /buy/ | pass | If the route is not ready | [link](https://agentsiteops.com/buy/) |
@@ -157,10 +153,10 @@
 | /intake/ | pass | HTTP 200 | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | HTML title exists | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | canonical points to production URL | [link](https://agentsiteops.com/intake/) |
-| /intake/ | pass | Order Intake | [link](https://agentsiteops.com/intake/) |
-| /intake/ | pass | Email intake | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Project intake | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Email project intake | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Payment confirmation | [link](https://agentsiteops.com/intake/) |
-| /intake/ | pass | Manual delivery process | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Manual intake process | [link](https://agentsiteops.com/intake/) |
 | /evidence/ | pass | HTTP 200 | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | HTML title exists | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | canonical points to production URL | [link](https://agentsiteops.com/evidence/) |
@@ -179,7 +175,7 @@
 | /tools/launch-blueprint-fit-checker/ | pass | HTTP 200 | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
 | /tools/launch-blueprint-fit-checker/ | pass | HTML title exists | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
 | /tools/launch-blueprint-fit-checker/ | pass | canonical points to production URL | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
-| /tools/launch-blueprint-fit-checker/ | pass | Launch Blueprint Fit Checker | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
+| /tools/launch-blueprint-fit-checker/ | pass | Route File Fit Checker | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
 | /tools/launch-blueprint-fit-checker/ | pass | Do not buy | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
 | /tools/launch-blueprint-fit-checker/ | pass | No request, account, payment | [link](https://agentsiteops.com/tools/launch-blueprint-fit-checker/) |
 | /checklists/launch-validation-decision-gate/ | pass | HTTP 200 | [link](https://agentsiteops.com/checklists/launch-validation-decision-gate/) |
