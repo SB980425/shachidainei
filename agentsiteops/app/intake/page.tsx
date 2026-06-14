@@ -11,6 +11,8 @@ import {
   launchProduct,
   paymentConfirmationFields
 } from "@/lib/launch";
+import { IntakePacketBuilder } from "@/components/IntakePacketBuilder";
+import { buildProjectIntakePacket } from "@/lib/intakePacket";
 import { siteUrl } from "@/lib/site";
 
 const path = "/intake/";
@@ -89,15 +91,7 @@ export default function Page() {
     inLanguage: "en"
   };
   const mailSubject = encodeURIComponent("AgentSiteOps project intake");
-  const mailBody = encodeURIComponent(
-    [
-      "Project intake",
-      ...intakeFields.map((field) => `- ${field}:`),
-      "",
-      "If you already ordered a Fit Review or Route File",
-      ...paymentConfirmationFields.map((field) => `- ${field}:`)
-    ].join("\n")
-  );
+  const mailBody = encodeURIComponent(buildProjectIntakePacket(true));
 
   return (
     <main className="gate-page">
@@ -144,6 +138,8 @@ export default function Page() {
           </dl>
         </aside>
       </section>
+
+      <IntakePacketBuilder />
 
       <section className="gate-section">
         <div className="section-head">
