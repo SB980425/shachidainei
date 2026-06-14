@@ -11,6 +11,43 @@ export type UpdateLogEntry = {
 
 export const updateLog: UpdateLogEntry[] = [
   {
+    date: "2026-06-14",
+    step: "M4-53 Navigation context and updates ledger",
+    status: "completed",
+    keyPoints: [
+      "Replaced the static header links with a pathname-aware primary navigation component so Start, Method, Research, Sample, Updates, and Workbench expose the current page group.",
+      "Mapped `/intake/` into the Start path and changed the shared route-flow bridge intake step to point directly at the customer intake page.",
+      "Reframed `/updates/` as a verification ledger that sends visitors back to intake, sample output, and the workbench instead of acting like the main product interface.",
+      "Added visual active states and an Updates context panel that match the current dark foundry shell without reintroducing the earlier light-grid layout.",
+      "Kept the change scoped to navigation clarity and page-to-page continuity; it does not claim traffic, buyer demand, revenue, ranking, or automated research completion."
+    ],
+    aiAngle:
+      "AI and search readers now see the public site as a connected customer path: intake starts the work, method explains the gate, research describes approved carriers, sample shows the output, updates prove changes, and the workbench remains the operating surface.",
+    files: [
+      "components/PrimaryNavigation.tsx",
+      "app/layout.tsx",
+      "components/RouteFlowBridge.tsx",
+      "app/updates/page.tsx",
+      "app/globals.css",
+      "lib/updateLog.ts",
+      "reports/code-quality-gate.md",
+      "reports/internal-link-gate.md",
+      "reports/route-consistency-gate.md",
+      "reports/technical-seo-ci.md"
+    ],
+    verification: [
+      "typecheck pass",
+      "code-quality gate pass: 16 checks, 0 blockers",
+      "build pass with 65 static pages",
+      "route consistency gate pass: 312 checks, 0 blockers",
+      "internal link gate pass: 63 checks, 0 blockers",
+      "technical SEO CI pass: 59 routes, 0 blockers, 0 warnings",
+      "Playwright render check: desktop 1440 and mobile 390 across home, start, intake, method, research, sample, updates, and execution; no horizontal overflow, header coverage, or active navigation mismatch"
+    ],
+    next:
+      "Continue reducing repeated route explanations by turning Start, Method, Research, Sample, Updates, and Workbench into one continuous product path with fewer duplicate modules."
+  },
+  {
     date: "2026-06-13",
     step: "M4-48 Route basis evidence upgrade",
     status: "completed",

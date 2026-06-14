@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowRight, CheckCircle2, ClipboardList, FileText } from "lucide-react";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { siteUrl } from "@/lib/site";
 import { updateLog, type UpdateLogEntry } from "@/lib/updateLog";
@@ -21,6 +22,34 @@ function isPublicEnglishEntry(entry: UpdateLogEntry) {
 }
 
 const publicUpdates = updateLog.filter(isPublicEnglishEntry);
+const latestUpdate = publicUpdates[0];
+
+const updateContextCards = [
+  {
+    title: "Current product state",
+    body:
+      "The public site now presents AgentSiteOps as a visible path from intake to operator review, approved research carrier, coverage gate, and Route File output.",
+    href: "/execution/",
+    label: "Open workbench",
+    Icon: CheckCircle2
+  },
+  {
+    title: "Where visitors should act",
+    body:
+      "A visitor should move from a page explanation into intake, sample inspection, delivery gate, or the workbench without guessing what the next click means.",
+    href: "/intake/",
+    label: "Open intake",
+    Icon: ClipboardList
+  },
+  {
+    title: "What this log proves",
+    body:
+      "Updates prove changed files, verification scope, and deployment state. They do not prove traffic, revenue, ranking, or buyer demand.",
+    href: "/sample/",
+    label: "View output",
+    Icon: FileText
+  }
+];
 
 export const metadata: Metadata = {
   title: "Updates",
@@ -71,8 +100,8 @@ export default function Page() {
           </p>
         </div>
         <aside className="decision-card">
-          <strong>Log rule</strong>
-          <p>Each public entry must include the decision, changed files, verification scope, residual risk, and next action.</p>
+          <strong>Latest state</strong>
+          <p>{latestUpdate ? latestUpdate.step : "No public update entries are available."}</p>
           <Link prefetch={false} className="secondary-action" href="/checklists/ai-content-quality-gate/">
             View content gate
           </Link>
@@ -85,6 +114,34 @@ export default function Page() {
         nextHref="/execution/"
         nextLabel="Open current workbench"
       />
+
+      <section className="updates-context-panel" aria-label="Updates page role">
+        <div>
+          <span>Page role</span>
+          <h2>Updates explain what changed; the product path still lives in intake and workbench.</h2>
+          <p>
+            This page is a verification ledger. It should send users back to the live
+            customer path instead of acting like the main product interface.
+          </p>
+        </div>
+        <div className="updates-context-grid">
+          {updateContextCards.map((item) => {
+            const Icon = item.Icon;
+
+            return (
+              <article key={item.title}>
+                <Icon aria-hidden="true" size={19} />
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+                <Link prefetch={false} href={item.href}>
+                  {item.label}
+                  <ArrowRight aria-hidden="true" size={15} />
+                </Link>
+              </article>
+            );
+          })}
+        </div>
+      </section>
 
       <section className="updates-timeline" aria-label="site update log">
         {publicUpdates.map((entry) => (

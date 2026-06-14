@@ -1,14 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
-import {
-  Activity,
-  FileText,
-  GitBranch,
-  Newspaper,
-  SearchCheck,
-  Workflow
-} from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
+import { PrimaryNavigation } from "@/components/PrimaryNavigation";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
 import "./globals.css";
 
@@ -66,14 +59,6 @@ export const viewport: Viewport = {
   colorScheme: "light"
 };
 
-const navItems = [
-  { href: "/start/", label: "Start", Icon: Workflow },
-  { href: "/how-it-works/", label: "Method", Icon: GitBranch },
-  { href: "/templates/route-research-prompt-pack/", label: "Research", Icon: SearchCheck },
-  { href: "/sample/", label: "Sample", Icon: FileText },
-  { href: "/updates/", label: "Updates", Icon: Newspaper }
-];
-
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
@@ -83,18 +68,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Link prefetch={false} className="brand" href="/" aria-label="AgentSiteOps home">
             <BrandLogo />
           </Link>
-          <nav className="nav" aria-label="Primary navigation">
-            {navItems.map((item) => (
-              <Link prefetch={false} key={item.href} href={item.href}>
-                <item.Icon aria-hidden="true" size={15} strokeWidth={2.2} />
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <Link prefetch={false} className="header-action" href="/execution/">
-            <Activity aria-hidden="true" size={16} />
-            Workbench
-          </Link>
+          <PrimaryNavigation />
         </header>
         {children}
         <footer className="site-footer">

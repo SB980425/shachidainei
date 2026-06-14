@@ -13,7 +13,7 @@ const routeFlowStages = [
     label: "Intake",
     title: "Client input",
     body: "Facts, sources, constraints, and candidate routes.",
-    href: "/start/",
+    href: "/intake/",
     Icon: ClipboardList
   },
   {
