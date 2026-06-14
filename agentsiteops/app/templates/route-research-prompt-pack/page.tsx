@@ -279,43 +279,38 @@ export default function Page() {
         </aside>
       </section>
 
-      <section className="gate-section">
+      <section className="gate-section route-research-receipt-section">
         <div className="section-head">
-          <h2>Manual mode boundary</h2>
+          <h2>Manual research operating receipt</h2>
           <p>
-            The product is transparent about where research happens. The website creates
-            prompts, checks coverage, creates gap prompts, and fuses accepted outputs; it
-            does not pretend the manual step is automatic.
+            This is the condensed execution contract for the page. It separates what the
+            website does, what happens in ChatGPT Deep Research, what the client can see,
+            and when the work turns into one Route File.
           </p>
         </div>
-        <div className="manual-boundary-grid">
-          {manualModeBoundaries.map((item) => (
-            <article key={item.title}>
-              <ShieldCheck aria-hidden="true" size={18} />
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="gate-section">
-        <div className="section-head">
-          <h2>What a client can observe</h2>
-          <p>
-            The product should make the route process visible. A client should be able to
-            tell where the work is, what is blocked, and why a route was accepted or
-            rejected before paying for deeper execution.
-          </p>
-        </div>
-        <div className="manual-research-grid">
-          {clientObservationStages.map((stage, index) => (
-            <article key={stage.title}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{stage.title}</h3>
-              <p>{stage.body}</p>
-            </article>
-          ))}
+        <div className="route-research-receipt">
+          <div className="research-receipt-boundaries" aria-label="Manual research boundaries">
+            {manualModeBoundaries.map((item) => (
+              <article key={item.title}>
+                <ShieldCheck aria-hidden="true" size={17} />
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="research-receipt-timeline" aria-label="Client visible research stages">
+            {clientObservationStages.map((stage, index) => (
+              <article key={stage.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <div>
+                  <h3>{stage.title}</h3>
+                  <p>{stage.body}</p>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

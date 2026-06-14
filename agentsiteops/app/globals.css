@@ -8620,6 +8620,85 @@ textarea {
   line-height: 1.6;
 }
 
+.route-research-receipt {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.research-receipt-boundaries {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.research-receipt-boundaries article {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 10px;
+  min-width: 0;
+  border: 1px solid rgba(37, 99, 235, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(239, 246, 255, 0.92), rgba(255, 255, 255, 0.94)),
+    #ffffff;
+  padding: 14px;
+}
+
+.research-receipt-boundaries svg {
+  margin-top: 2px;
+  color: var(--blue);
+}
+
+.research-receipt-boundaries h3,
+.research-receipt-timeline h3 {
+  margin: 0 0 5px;
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.research-receipt-boundaries p,
+.research-receipt-timeline p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.52;
+}
+
+.research-receipt-timeline {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.06);
+}
+
+.research-receipt-timeline article {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 12px;
+  min-width: 0;
+  padding: 14px 16px;
+}
+
+.research-receipt-timeline article + article {
+  border-top: 1px solid var(--line);
+}
+
+.research-receipt-timeline span {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 950;
+}
+
 .sample-route-page .gate-hero {
   align-items: center;
 }
@@ -9484,6 +9563,7 @@ textarea {
   .manual-workspace-grid.is-review-grid,
   .manual-workspace-grid.is-synthesis-grid,
   .research-workflow-current,
+  .route-research-receipt,
   .research-step-strip,
   .acceptance-gate-grid,
   .intake-packet-tool,
@@ -9635,6 +9715,10 @@ textarea {
 
   .frontstage-hero-flow {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .research-receipt-boundaries {
+    grid-template-columns: 1fr;
   }
 
   .route-basis-strip,
