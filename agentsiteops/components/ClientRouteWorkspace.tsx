@@ -290,9 +290,9 @@ export function ClientRouteWorkspace() {
           <FileText aria-hidden="true" size={16} />
           Sample Route File
         </Link>
-        <Link prefetch={false} href="/start/">
+        <Link prefetch={false} href="/intake/">
           <ClipboardList aria-hidden="true" size={16} />
-          Start intake
+          Open intake
         </Link>
       </div>
     </section>

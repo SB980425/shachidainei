@@ -81,14 +81,14 @@ export default function ExecutionPage() {
             <Link
               prefetch={false}
               className="primary-action"
-              href="/start/"
+              href="/intake/"
               data-analytics-event="cta_click"
               data-analytics-label="execution_start"
-              data-analytics-target="/start/"
+              data-analytics-target="/intake/"
               data-analytics-type="execution_page"
             >
               <ClipboardList aria-hidden="true" size={17} />
-              Start intake
+              Open intake
             </Link>
             <Link
               prefetch={false}

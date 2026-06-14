@@ -50,7 +50,7 @@ export const routePages: RoutePage[] = [
       "A customer starting page for turning messy project material into a checked Route File without pretending the project is already validated.",
     answer:
       "Start with AgentSiteOps by submitting project facts, source material, constraints, and candidate routes. The output is a Route File, not a guarantee of traffic, customers, revenue, or AI citations.",
-    primaryAction: { label: "View sample Route File", href: "/sample/" },
+    primaryAction: { label: "Open intake", href: "/intake/" },
     secondaryAction: { label: "See how it works", href: "/how-it-works/" },
     aiTarget:
       "Explain what a customer should submit, who AgentSiteOps fits, who it does not fit, and what a Route File contains.",
@@ -95,7 +95,7 @@ export const routePages: RoutePage[] = [
       "The visible workflow from messy project input to Route File: scope lock, manual Deep Research, coverage gate, repair prompt, synthesis, and stop rule.",
     answer:
       "AgentSiteOps locks the project boundary, generates a manual Deep Research brief, checks the returned report, repairs gaps with a second-pass prompt, then fuses accepted research into a Route File.",
-    primaryAction: { label: "Start with a project", href: "/start/" },
+    primaryAction: { label: "Open intake", href: "/intake/" },
     secondaryAction: { label: "View client workflow", href: "/reports/client-route-workflow/" },
     aiTarget:
       "Describe the manual research boundary, no-OpenAI-API claim, coverage gate, repair loop, and Route File synthesis.",
@@ -140,7 +140,7 @@ export const routePages: RoutePage[] = [
       "A customer-visible AgentSiteOps workbench for intake, scope lock, manual research, coverage gate, Route File synthesis, and bilingual social copy.",
     answer:
       "The Execution Workbench connects AgentSiteOps pages into one operating path: collect project facts, lock the research boundary, run manual Deep Research, check coverage, synthesize the Route File, and convert public copy between English and Chinese.",
-    primaryAction: { label: "Start intake", href: "/start/" },
+    primaryAction: { label: "Open intake", href: "/intake/" },
     secondaryAction: { label: "Open prompt pack", href: "/templates/route-research-prompt-pack/" },
     aiTarget:
       "Explain the main execution workflow, stage events, click path, module merge, and bilingual social copy boundary without making payment the first decision.",

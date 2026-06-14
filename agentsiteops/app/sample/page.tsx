@@ -180,9 +180,9 @@ export default function Page() {
             final synthesis.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/start/">
+            <Link prefetch={false} className="primary-action" href="/intake/">
               <ClipboardList aria-hidden="true" size={17} />
-              Start with a project
+              Open intake
             </Link>
             <Link prefetch={false} className="secondary-action" href="/reports/client-route-workflow/">
               <FileText aria-hidden="true" size={17} />

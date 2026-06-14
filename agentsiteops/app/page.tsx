@@ -191,9 +191,9 @@ export default function HomePage() {
             you build another page, tool, checkout, or content system.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/start/">
+            <Link prefetch={false} className="primary-action" href="/intake/">
               <ClipboardList aria-hidden="true" size={17} />
-              Start with a project
+              Open intake
             </Link>
             <Link prefetch={false} className="secondary-action" href="/execution/">
               <Activity aria-hidden="true" size={17} />
@@ -392,9 +392,9 @@ export default function HomePage() {
           </p>
         </div>
         <div className="route-final-actions">
-          <Link prefetch={false} className="primary-action" href="/start/">
+          <Link prefetch={false} className="primary-action" href="/intake/">
             <ClipboardList aria-hidden="true" size={17} />
-            Start here
+            Open intake
           </Link>
           <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
             <FileCheck2 aria-hidden="true" size={17} />

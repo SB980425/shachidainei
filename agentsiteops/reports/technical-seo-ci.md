@@ -1,6 +1,6 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-14T00:32:48.096Z
+- Generated: 2026-06-14T00:38:12.092Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
@@ -19,10 +19,10 @@
 
 | Route | Status | HTTP | Title | Canonical | JSON-LD | Links | Mobile | Issues |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| / | pass | 200 | Research-to-Route File | https://agentsiteops.com/ | 1 | 20 | pass | - |
-| /start/ | pass | 200 | Start with AgentSiteOps \| AgentSiteOps | https://agentsiteops.com/start/ | 1 | 19 | pass | - |
-| /how-it-works/ | pass | 200 | How AgentSiteOps Works \| AgentSiteOps | https://agentsiteops.com/how-it-works/ | 1 | 20 | pass | - |
-| /execution/ | pass | 200 | Execution Workbench \| AgentSiteOps | https://agentsiteops.com/execution/ | 1 | 20 | pass | - |
+| / | pass | 200 | Research-to-Route File | https://agentsiteops.com/ | 1 | 21 | pass | - |
+| /start/ | pass | 200 | Start with AgentSiteOps \| AgentSiteOps | https://agentsiteops.com/start/ | 1 | 20 | pass | - |
+| /how-it-works/ | pass | 200 | How AgentSiteOps Works \| AgentSiteOps | https://agentsiteops.com/how-it-works/ | 1 | 21 | pass | - |
+| /execution/ | pass | 200 | Execution Workbench \| AgentSiteOps | https://agentsiteops.com/execution/ | 1 | 21 | pass | - |
 | /delivery-gate/ | pass | 200 | Delivery Gate \| AgentSiteOps | https://agentsiteops.com/delivery-gate/ | 1 | 21 | pass | - |
 | /ai-website-operating-system/ | pass | 200 | AI Website Operating System \| AgentSiteOps | https://agentsiteops.com/ai-website-operating-system/ | 1 | 23 | pass | - |
 | /tools/website-opportunity-scorer/ | pass | 200 | Website Opportunity Scorer \| AgentSiteOps | https://agentsiteops.com/tools/website-opportunity-scorer/ | 1 | 21 | pass | - |
@@ -46,7 +46,7 @@
 | /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 59 | pass | - |
 | /reports/route-basis/ | pass | 200 | Route Basis Report \| AgentSiteOps | https://agentsiteops.com/reports/route-basis/ | 1 | 21 | pass | - |
 | /reports/agentsiteops-route-run/ | pass | 200 | AgentSiteOps Route Run \| AgentSiteOps | https://agentsiteops.com/reports/agentsiteops-route-run/ | 1 | 19 | pass | - |
-| /reports/client-route-workflow/ | pass | 200 | Client Route Workflow \| AgentSiteOps | https://agentsiteops.com/reports/client-route-workflow/ | 1 | 20 | pass | - |
+| /reports/client-route-workflow/ | pass | 200 | Client Route Workflow \| AgentSiteOps | https://agentsiteops.com/reports/client-route-workflow/ | 1 | 21 | pass | - |
 | /templates/route-research-prompt-pack/ | pass | 200 | Route Research Prompt Pack \| AgentSiteOps | https://agentsiteops.com/templates/route-research-prompt-pack/ | 1 | 22 | pass | - |
 | /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 24 | pass | - |
 | /methodology/route-selection/ | pass | 200 | Route Selection Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/route-selection/ | 1 | 21 | pass | - |
@@ -68,7 +68,7 @@
 | /website-opportunity-audit/ | pass | 200 | AgentSiteOps Route File \| AgentSiteOps | https://agentsiteops.com/website-opportunity-audit/ | 1 | 22 | pass | - |
 | /pricing/ | pass | 200 | Pricing \| AgentSiteOps | https://agentsiteops.com/pricing/ | 1 | 22 | pass | - |
 | /examples/fit-review-sample/ | pass | 200 | Fit Review Sample \| AgentSiteOps | https://agentsiteops.com/examples/fit-review-sample/ | 1 | 21 | pass | - |
-| /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 21 | pass | - |
+| /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 22 | pass | - |
 | /compare/ | pass | 200 | Compare Route File Options \| AgentSiteOps | https://agentsiteops.com/compare/ | 1 | 21 | pass | - |
 | /starter-review/ | pass | 200 | Fit Review \| AgentSiteOps | https://agentsiteops.com/starter-review/ | 1 | 21 | pass | - |
 | /buy/ | pass | 200 | Route File Purchase Gate \| AgentSiteOps | https://agentsiteops.com/buy/ | 1 | 22 | pass | - |

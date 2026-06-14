@@ -153,7 +153,11 @@ export default function Page() {
             the project enters build work.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/sample/">
+            <Link prefetch={false} className="primary-action" href="/intake/">
+              <ClipboardList aria-hidden="true" size={17} />
+              Open intake
+            </Link>
+            <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
               View sample Route File
             </Link>
