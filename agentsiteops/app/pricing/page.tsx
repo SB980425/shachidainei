@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BadgeDollarSign, CheckCircle2, CreditCard, FileText, Mail, ShieldCheck } from "lucide-react";
+import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import {
   authorityBoundaries,
   blueprintEvidenceInputs,
@@ -186,6 +187,13 @@ export default function Page() {
           </a>
         </aside>
       </section>
+
+      <CustomerResponseLifecycle
+        variant="compact"
+        eyebrow="Before payment"
+        title="Payment does not bypass intake or operator review."
+        body="A paid path still starts with usable intake, source boundaries, and accepted scope. Weak inputs can produce repair, blocked, or stop decisions."
+      />
 
       <section className="pricing-grid-section compact-home-section">
         <div className="section-head">

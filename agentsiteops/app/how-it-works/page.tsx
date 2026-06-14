@@ -9,6 +9,7 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
+import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { siteUrl } from "@/lib/site";
 
@@ -145,6 +146,13 @@ export default function Page() {
         current="scope"
         nextHref="/templates/route-research-prompt-pack/"
         nextLabel="Continue to research"
+      />
+
+      <CustomerResponseLifecycle
+        variant="compact"
+        eyebrow="Customer-visible method"
+        title="The method stays visible while the research carrier can change."
+        body="AgentSiteOps owns the intake boundary, acceptance gate, repair loop, and Route File synthesis. The research tool or source-review surface can change per project."
       />
 
       <section className="gate-section">

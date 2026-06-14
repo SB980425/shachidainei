@@ -72,18 +72,31 @@ const boundaryRows = [
   }
 ];
 
-export function CustomerResponseLifecycle() {
+type CustomerResponseLifecycleProps = {
+  variant?: "full" | "compact";
+  eyebrow?: string;
+  title?: string;
+  body?: string;
+};
+
+export function CustomerResponseLifecycle({
+  variant = "full",
+  eyebrow = "After submission",
+  title = "Submission creates a response path, not an automatic research result.",
+  body = "The customer-facing promise is simple: intake creates a visible packet, the operator decides whether it is ready, missing inputs are requested, and the final handoff is a checked Route File."
+}: CustomerResponseLifecycleProps) {
+  const isCompact = variant === "compact";
+
   return (
-    <section className="customer-response-lifecycle" aria-label="Customer response lifecycle">
+    <section
+      className={`customer-response-lifecycle ${isCompact ? "is-compact" : ""}`}
+      aria-label="Customer response lifecycle"
+    >
       <div className="customer-response-head">
         <div>
-          <span>After submission</span>
-          <h2>Submission creates a response path, not an automatic research result.</h2>
-          <p>
-            The customer-facing promise is simple: intake creates a visible packet, the
-            operator decides whether it is ready, missing inputs are requested, and the
-            final handoff is a checked Route File.
-          </p>
+          <span>{eyebrow}</span>
+          <h2>{title}</h2>
+          <p>{body}</p>
         </div>
         <aside>
           <strong>Core rule</strong>
@@ -106,13 +119,13 @@ export function CustomerResponseLifecycle() {
               </div>
               <small>{stage.label}</small>
               <h3>{stage.title}</h3>
-              <p>{stage.body}</p>
+              {!isCompact ? <p>{stage.body}</p> : null}
             </article>
           );
         })}
       </div>
 
-      <div className="customer-response-boundary">
+      {!isCompact ? <div className="customer-response-boundary">
         {boundaryRows.map((item) => {
           const Icon = item.Icon;
 
@@ -126,7 +139,7 @@ export function CustomerResponseLifecycle() {
             </article>
           );
         })}
-      </div>
+      </div> : null}
     </section>
   );
 }

@@ -12810,6 +12810,19 @@ body {
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
 }
 
+.customer-response-lifecycle.is-compact {
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.customer-response-lifecycle.is-compact .customer-response-head {
+  grid-template-columns: 1fr;
+}
+
+.customer-response-lifecycle.is-compact .customer-response-head aside {
+  display: none;
+}
+
 .customer-response-head {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(260px, 0.36fr);
@@ -12866,6 +12879,12 @@ body {
   margin-top: 24px;
 }
 
+.customer-response-lifecycle.is-compact .customer-response-stage-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
 .customer-response-stage-grid article {
   min-height: 228px;
   padding: 16px;
@@ -12873,6 +12892,11 @@ body {
   border-radius: 18px;
   background:
     linear-gradient(180deg, rgba(30, 39, 41, 0.92), rgba(10, 15, 17, 0.95));
+}
+
+.customer-response-lifecycle.is-compact .customer-response-stage-grid article {
+  min-height: 130px;
+  padding: 14px;
 }
 
 .customer-response-stage-grid article > div {
@@ -12912,6 +12936,18 @@ body {
   color: var(--foundry-text);
   font-size: 1rem;
   line-height: 1.2;
+}
+
+.customer-response-lifecycle.is-compact .customer-response-head h2 {
+  font-size: clamp(1.28rem, 2vw, 1.72rem);
+}
+
+.customer-response-lifecycle.is-compact .customer-response-head p {
+  max-width: 760px;
+}
+
+.customer-response-lifecycle.is-compact .customer-response-stage-grid h3 {
+  font-size: 0.92rem;
 }
 
 .customer-response-stage-grid p,
@@ -12962,12 +12998,27 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .customer-response-stage-grid {
+  .customer-response-stage-grid,
+  .customer-response-lifecycle:not(.is-compact) .customer-response-stage-grid {
     grid-template-columns: 1fr;
   }
 
-  .customer-response-stage-grid article {
+  .customer-response-lifecycle.is-compact .customer-response-stage-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .customer-response-stage-grid article,
+  .customer-response-lifecycle.is-compact .customer-response-stage-grid article {
     min-height: auto;
+  }
+
+  .customer-response-lifecycle.is-compact .customer-response-stage-grid article {
+    padding: 12px;
+    min-height: 112px;
+  }
+
+  .customer-response-lifecycle.is-compact .customer-response-stage-grid article > div {
+    margin-bottom: 10px;
   }
 }
 

@@ -10,6 +10,7 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
+import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteFileAcceptancePanel } from "@/components/RouteFileAcceptancePanel";
 import { siteUrl } from "@/lib/site";
@@ -160,6 +161,13 @@ export default function Page() {
       </section>
 
       <RouteFlowBridge current="gate" nextHref="/sample/" nextLabel="Continue to sample" />
+
+      <CustomerResponseLifecycle
+        variant="compact"
+        eyebrow="Before handoff"
+        title="The gate checks the report before it becomes delivery."
+        body="A returned report can pass, trigger repair, stay blocked, or fail as not delivery. The client should see that decision before treating the Route File as complete."
+      />
 
       <section className="gate-section">
         <div className="section-head">

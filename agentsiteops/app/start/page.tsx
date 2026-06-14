@@ -9,6 +9,7 @@ import {
   FileText,
   ShieldCheck
 } from "lucide-react";
+import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { siteUrl } from "@/lib/site";
 
@@ -211,6 +212,13 @@ export default function Page() {
       </section>
 
       <RouteFlowBridge current="intake" nextHref="/how-it-works/" nextLabel="Continue to method" />
+
+      <CustomerResponseLifecycle
+        variant="compact"
+        eyebrow="Start response path"
+        title="Start creates a review queue, not an instant answer."
+        body="The first useful outcome is intake readiness: ready, repair, blocked, or stop. Research begins only after a human/operator accepts the boundary."
+      />
 
       <section className="gate-section start-route-path" aria-label="Start execution path">
         <div>
