@@ -9,7 +9,6 @@ import {
   Copy,
   FileCheck2,
   FileText,
-  GitBranch,
   Languages,
   Map,
   RotateCcw,
@@ -21,6 +20,13 @@ import {
   routeConfidenceBands,
   routeSourceMap
 } from "@/lib/routeEvidence";
+import { socialVariants } from "@/lib/socialCopy";
+
+type RouteCandidate = (typeof projectRouteFitMatrix)[number] & {
+  score: number;
+  decision: string;
+  why: string[];
+};
 
 const evidenceLevels = [
   {
@@ -175,13 +181,6 @@ const routeFileSections = [
   "Stop rule"
 ];
 
-const socialCopy = {
-  zh:
-    "AgentSiteOps 把混乱项目材料整理成一份可执行 Route File：选定路线、被否决方案、证据台账、第一证明资产、验证渠道和停止规则。不承诺流量、排名或收入。",
-  en:
-    "AgentSiteOps turns messy project material into one actionable Route File: selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule. No promises about traffic, rankings, or revenue."
-};
-
 function clampScore(score: number) {
   return Math.max(0, Math.min(100, Math.round(score)));
 }
@@ -202,6 +201,26 @@ function getBand(score: number, hasHardBlocker: boolean) {
   return "Low";
 }
 
+function writeClipboard(text: string) {
+  if (navigator.clipboard?.writeText) {
+    return navigator.clipboard.writeText(text).then(() => true).catch(() => false);
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "true");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+
+  try {
+    return Promise.resolve(document.execCommand("copy"));
+  } finally {
+    document.body.removeChild(textarea);
+  }
+}
+
 function buildRouteExport({
   projectName,
   projectType,
@@ -219,11 +238,7 @@ function buildRouteExport({
   projectName: string;
   projectType: string;
   goal: string;
-  selectedRoute: (typeof projectRouteFitMatrix)[number] & {
-    score: number;
-    decision: string;
-    why: string[];
-  };
+  selectedRoute: RouteCandidate;
   score: number;
   band: string;
   evidence: string;
@@ -231,7 +246,7 @@ function buildRouteExport({
   delivery: string;
   dataRights: string;
   constraints: string[];
-  activeStage: typeof executionStages[number];
+  activeStage: (typeof executionStages)[number];
 }) {
   return [
     "AgentSiteOps Route File",
@@ -289,7 +304,7 @@ export function RouteCommandCenter() {
   const deliveryLevel = deliveryLevels.find((item) => item.label === delivery) ?? deliveryLevels[0];
   const dataRightsLevel = dataRightsLevels.find((item) => item.label === dataRights) ?? dataRightsLevels[0];
 
-  const routeCandidates = useMemo(() => {
+  const routeCandidates = useMemo<RouteCandidate[]>(() => {
     return projectRouteFitMatrix
       .map((route) => {
         const selectedTypeBonus = route.projectType === projectType ? 26 : 0;
@@ -343,12 +358,6 @@ export function RouteCommandCenter() {
             privateAccountPenalty
         );
 
-        const why = [
-          route.strongestRouteWhen,
-          `First asset: ${route.firstAsset}`,
-          `Evidence needed: ${route.evidenceBeforePayment}`
-        ];
-
         return {
           ...route,
           score,
@@ -360,7 +369,11 @@ export function RouteCommandCenter() {
                 : score >= 35
                   ? "Evidence gap"
                   : "Do not build yet",
-          why
+          why: [
+            route.strongestRouteWhen,
+            `First asset: ${route.firstAsset}`,
+            `Evidence needed: ${route.evidenceBeforePayment}`
+          ]
         };
       })
       .sort((a, b) => b.score - a.score);
@@ -394,7 +407,7 @@ export function RouteCommandCenter() {
   const activeStage =
     executionStages.find((stage) => stage.id === activeStageId) ?? executionStages[2];
   const visibleCandidates = routeCandidates.slice(0, 5);
-  const activeSocialCopy = socialCopy[language];
+  const activeSocialCopy = socialVariants.founder[language];
 
   function track(name: string, payload: Record<string, string | number | boolean> = {}) {
     window.codexAnalytics?.track(name, {
@@ -407,25 +420,18 @@ export function RouteCommandCenter() {
     });
   }
 
+  function resetCopyStates() {
+    window.setTimeout(() => {
+      setCopyState("Export Route File");
+      setSocialCopyState("Copy public copy");
+    }, 1600);
+  }
+
   function toggleConstraint(label: string) {
     setConstraints((current) =>
       current.includes(label) ? current.filter((item) => item !== label) : [...current, label]
     );
     track("route_constraint_toggled", { constraint: label });
-  }
-
-  async function copyText(text: string, copiedLabel: string, resetLabel: string) {
-    try {
-      await navigator.clipboard.writeText(text);
-      return copiedLabel;
-    } catch {
-      return "Copy failed";
-    } finally {
-      window.setTimeout(() => {
-        setCopyState("Export Route File");
-        setSocialCopyState("Copy public copy");
-      }, 1600);
-    }
   }
 
   async function copyRouteMap() {
@@ -444,12 +450,14 @@ export function RouteCommandCenter() {
       activeStage
     });
 
-    setCopyState(await copyText(text, "Route File copied", "Export Route File"));
+    setCopyState((await writeClipboard(text)) ? "Route File copied" : "Copy failed");
+    resetCopyStates();
     track("route_map_exported", { export_method: "clipboard" });
   }
 
   async function copyPublicCopy() {
-    setSocialCopyState(await copyText(activeSocialCopy, "Copy ready", "Copy public copy"));
+    setSocialCopyState((await writeClipboard(activeSocialCopy)) ? "Copy ready" : "Copy failed");
+    resetCopyStates();
     track("social_copy_variant_copied", { language, variant: "route_command_center" });
   }
 
@@ -465,38 +473,39 @@ export function RouteCommandCenter() {
         <div className="route-room-hero-copy">
           <span className="route-room-kicker">Route File Studio</span>
           <h2>
-            <span>路线不是建议，</span>
-            <span>是可验收的交付物</span>
+            <span>Route decisions are not loose advice.</span>
+            <span>They are reviewable delivery files.</span>
           </h2>
           <p>
-            从混乱输入到一个可执行的路线文件：人工研究、证据验收、被否决方案、
-            第一证明资产和停止规则都进入同一条可点击路径。
+            Move from messy inputs to one executable Route File: manual research,
+            evidence acceptance, rejected alternatives, first proof asset, and stop rule
+            all stay in the same clickable path.
           </p>
           <div className="route-room-actions">
             <Link prefetch={false} className="route-room-primary" href="/execution/">
-              继续执行工作区
+              Continue in workbench
               <ArrowRight aria-hidden="true" size={16} />
             </Link>
             <Link prefetch={false} className="route-room-secondary" href="/sample/">
-              查看 Route File 样本
+              View Route File sample
             </Link>
           </div>
           <div className="route-room-proof-strip" aria-label="Route File boundaries">
-            <span>人工研究</span>
-            <span>证据可追溯</span>
-            <span>停止规则</span>
+            <span>Manual research</span>
+            <span>Traceable evidence</span>
+            <span>Stop rule</span>
           </div>
         </div>
 
         <div className="route-room-preview" aria-label="Workspace preview">
           <article>
             <SearchCheck aria-hidden="true" size={20} />
-            <strong>研究资料库</strong>
+            <strong>Research sources</strong>
             <span>12 sources</span>
           </article>
           <article className="is-active">
             <ShieldCheck aria-hidden="true" size={20} />
-            <strong>覆盖验收</strong>
+            <strong>Coverage gate</strong>
             <span>{band} confidence</span>
           </article>
           <article>
@@ -509,11 +518,11 @@ export function RouteCommandCenter() {
 
       <div className="route-room-controls" aria-label="Route controls">
         <label>
-          <span>项目名称</span>
+          <span>Project name</span>
           <input value={projectName} onChange={(event) => setProjectName(event.target.value)} />
         </label>
         <label>
-          <span>项目类型</span>
+          <span>Project type</span>
           <select
             value={projectType}
             onChange={(event) => {
@@ -528,7 +537,7 @@ export function RouteCommandCenter() {
           </select>
         </label>
         <label>
-          <span>主要目标</span>
+          <span>Main goal</span>
           <select value={goal} onChange={(event) => setGoal(event.target.value)}>
             {projectGoals.map((item) => (
               <option key={item}>{item}</option>
@@ -544,7 +553,7 @@ export function RouteCommandCenter() {
           }}
         >
           <RotateCcw aria-hidden="true" size={15} />
-          重新定位路线
+          Re-rank route
         </button>
       </div>
 
@@ -555,7 +564,7 @@ export function RouteCommandCenter() {
               <Map aria-hidden="true" size={16} />
               Route Atlas
             </span>
-            <strong>选定一条路线，折叠其余方向。</strong>
+            <strong>Select one route and preserve the rejected paths.</strong>
           </div>
 
           <div className="route-atlas-canvas" aria-label="Candidate route map">
@@ -634,7 +643,7 @@ export function RouteCommandCenter() {
           </section>
 
           <section className="route-missing-panel">
-            <h3>缺失证据</h3>
+            <h3>Missing evidence</h3>
             <label>
               <input
                 checked={constraints.includes(routeConstraints[0].label)}
@@ -694,7 +703,7 @@ export function RouteCommandCenter() {
               <ClipboardList aria-hidden="true" size={16} />
               Evidence settings
             </span>
-            <strong>只保留影响路线的输入。</strong>
+            <strong>Only keep inputs that change the route decision.</strong>
           </div>
           <div className="route-compact-fields">
             <label>
@@ -740,7 +749,7 @@ export function RouteCommandCenter() {
             <Languages aria-hidden="true" size={16} />
             Social copy
           </span>
-          <strong>把 Route File 转成公开说明，但不改变承诺边界。</strong>
+          <strong>Convert the Route File into public copy without changing the claim boundary.</strong>
         </div>
         <div className="route-language-switch" aria-label="Language">
           {(["zh", "en"] as const).map((item) => (
