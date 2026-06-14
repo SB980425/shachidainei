@@ -62,8 +62,21 @@ function hasMojibake(text) {
 function checkPackageScript() {
   const packageJson = JSON.parse(read("package.json"));
   const lintScript = packageJson.scripts?.lint ?? "";
+  const linksScript = packageJson.scripts?.["links:gate"] ?? "";
+  const rootWorkflowPath = resolve(rootDir, "..", ".github", "workflows", "agentsiteops-ci.yml");
+  const rootWorkflow = existsSync(rootWorkflowPath) ? readFileSync(rootWorkflowPath, "utf8") : "";
   addCheck("package", lintScript === "node scripts/code-quality-gate.mjs" ? "pass" : "fail", "lint script runs the project code quality gate");
   addCheck("package", !/\bnext lint\b/.test(lintScript) ? "pass" : "fail", "lint script does not use removed Next lint command");
+  addCheck(
+    "package",
+    linksScript === "node scripts/internal-link-gate.mjs" ? "pass" : "fail",
+    "links:gate runs the internal link closure gate"
+  );
+  addCheck(
+    "package",
+    rootWorkflow.includes("npm run links:gate") ? "pass" : "fail",
+    "root CI runs the internal link gate after build"
+  );
 }
 
 function checkRetiredPaymentTestPatterns(files) {

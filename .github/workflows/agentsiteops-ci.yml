@@ -48,6 +48,7 @@ jobs:
       - run: npm run search:evidence
       - run: npm run routes:gate
       - run: npm run build
+      - run: npm run links:gate
       - run: npx serve@latest out -l 3000 > serve-start.log 2>&1 &
       - run: |
           for attempt in {1..45}; do

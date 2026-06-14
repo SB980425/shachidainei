@@ -1,8 +1,8 @@
 # Code Quality Gate
 
-- Generated: 2026-06-14T07:06:17.324Z
+- Generated: 2026-06-14T07:16:46.865Z
 - Status: pass
-- Checks: 14
+- Checks: 16
 - Blockers: 0
 
 ## Summary
@@ -11,6 +11,8 @@
 |---|---|---|
 | package | pass | lint script runs the project code quality gate |
 | package | pass | lint script does not use removed Next lint command |
+| package | pass | links:gate runs the internal link closure gate |
+| package | pass | root CI runs the internal link gate after build |
 | payment_boundary | pass | retired 1 USD payment test patterns are absent from source files |
 | encoding | pass | visible mojibake markers are absent from scanned source files |
 | production_health | pass | production monitor checks the Route Foundry homepage and no-API research workflow path |

@@ -19,6 +19,7 @@
     "analytics:gate": "node scripts/analytics-endpoint-gate.mjs",
     "analytics:summary": "node scripts/import-analytics-summary.mjs",
     "commercial:gate": "node scripts/commercial-validation-gate.mjs",
+    "links:gate": "node scripts/internal-link-gate.mjs",
     "routes:gate": "node scripts/route-consistency-gate.mjs",
     "production:health": "node scripts/production-health-monitor.mjs",
     "search:evidence": "node scripts/import-search-evidence.mjs",
