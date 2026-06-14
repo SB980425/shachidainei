@@ -72,7 +72,7 @@ const ladder = [
     body:
       "Use Research-to-Route File when the messy inputs are ready for manual research, coverage checking, gap repair, and final synthesis.",
     href: "/buy/",
-    action: "View Route File payment"
+    action: "Review purchase gate"
   }
 ];
 
@@ -277,18 +277,16 @@ export default function Page() {
                 <li key={item.title}>{item.body}</li>
               ))}
             </ul>
-            <a
+            <Link
+              prefetch={false}
               className="secondary-action"
-              data-analytics-event="payment_cta_click"
-              data-analytics-label="pricing_card_paypal_route_file"
-              data-analytics-type="route_file"
-              href={primaryOffer.href}
-              rel="noreferrer"
-              target="_blank"
+              data-analytics-event="route_file_purchase_gate_click"
+              data-analytics-label="pricing_card_route_file_gate"
+              href="/buy/"
             >
-              <CreditCard aria-hidden="true" size={17} />
-              Pay USD {primaryOffer.price}
-            </a>
+              <ArrowRight aria-hidden="true" size={17} />
+              Review purchase gate
+            </Link>
           </article>
         </div>
       </section>

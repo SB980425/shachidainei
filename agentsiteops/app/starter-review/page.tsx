@@ -14,12 +14,12 @@ const path = "/starter-review/";
 export const metadata: Metadata = {
   title: "Fit Review",
   description:
-    "A USD 29 manual pre-purchase review that decides whether the full AgentSiteOps Research-to-Route File is worth buying.",
+    "A USD 29 manual fit verdict that reviews project readiness before the full AgentSiteOps Research-to-Route File is worth buying.",
   alternates: { canonical: path },
   openGraph: {
     title: "AgentSiteOps Fit Review",
     description:
-      "Pay USD 29 for a manual go, narrow, or stop verdict before buying the full Route File.",
+      "Review the intake boundary, then use a USD 29 manual go, narrow, or stop verdict before buying the full Route File.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -43,7 +43,8 @@ const decisionCards = [
 ];
 
 const processSteps = [
-  "Pay with PayPal and send the intake facts.",
+  "Review the intake fields and remove secrets, private account material, and unsupported claims.",
+  "Pay with PayPal only when the supplied facts are enough for a short manual verdict.",
   "The review checks buyer fit, proof, risk, and route clarity.",
   "You receive a short verdict that can approve, narrow, or reject the larger sale."
 ];
@@ -74,15 +75,20 @@ export default function Page() {
 
       <section className="decision-hero">
         <div className="decision-hero-copy">
-          <p className="eyebrow">USD {starterOffer.price} fit verdict</p>
-          <h1>Get a go, narrow, or stop verdict before you buy the full Route File.</h1>
+          <p className="eyebrow">Fit verdict gate</p>
+          <h1>Check whether the project deserves the full Route File.</h1>
           <p>
             The Fit Review is the smallest paid step. It exists to reject the larger sale
-            when your offer, buyer, evidence, or execution route is not ready.
+            when your offer, buyer, evidence, or execution route is not ready. Start with
+            the intake boundary, then pay only if the project can be judged from the facts.
           </p>
           <div className="hero-actions hero-actions-tight">
+            <Link prefetch={false} className="primary-action" href="/intake/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Review intake fields
+            </Link>
             <a
-              className="primary-action"
+              className="secondary-action"
               data-analytics-event="payment_cta_click"
               data-analytics-label="starter_review_paypal"
               data-analytics-type="starter_review"
@@ -91,15 +97,11 @@ export default function Page() {
               target="_blank"
             >
               <CreditCard aria-hidden="true" size={17} />
-              Pay USD {starterOffer.price} for the verdict
+              Pay USD {starterOffer.price} when ready
             </a>
             <Link prefetch={false} className="secondary-action" href="/examples/fit-review-sample/">
               <FileText aria-hidden="true" size={17} />
               See sample
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/intake/">
-              <ArrowRight aria-hidden="true" size={17} />
-              Intake fields
             </Link>
           </div>
         </div>

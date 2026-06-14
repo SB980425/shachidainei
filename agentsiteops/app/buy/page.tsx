@@ -13,19 +13,43 @@ import { siteUrl } from "@/lib/site";
 const path = "/buy/";
 
 export const metadata: Metadata = {
-  title: "Buy Route File",
+  title: "Route File Purchase Gate",
   description:
-    "Buy the AgentSiteOps Research-to-Route File for USD 99 through PayPal and receive manual delivery in 24-72 hours.",
+    "Check Route File fit, review intake requirements, then use PayPal for USD 99 manual delivery when the project is ready.",
   alternates: { canonical: path },
   openGraph: {
-    title: "Buy Route File",
-    description: "Pay with PayPal and send intake details for manual Route File delivery.",
+    title: "Route File Purchase Gate",
+    description:
+      "Review the sample, fit, and intake boundary before paying for manual Route File delivery.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
     type: "website"
   }
 };
+
+const purchaseGateSteps = [
+  {
+    title: "1. Check route readiness",
+    body:
+      "Use the sample, fit checker, and intake fields before paying. If the route question is still weak, use Fit Review or repair the intake first."
+  },
+  {
+    title: "2. Pay only when the scope fits",
+    body:
+      "Open PayPal only after the project can support a manual Route File and does not require guaranteed traffic, revenue, approvals, or unsafe access."
+  },
+  {
+    title: "3. Send intake and order match",
+    body:
+      "Send project facts first, plus payment confirmation only when the order already exists, so the manual request can be matched safely."
+  },
+  {
+    title: "4. Receive Route File",
+    body:
+      "The manual Route File is delivered in 24-72 hours after payment confirmation and usable details are received."
+  }
+];
 
 export default function Page() {
   const jsonLd = {
@@ -52,23 +76,38 @@ export default function Page() {
       />
       <section className="pricing-hero">
         <div>
-          <p className="eyebrow">Buy the checked route artifact</p>
-          <h1>Buy a Research-to-Route File handoff.</h1>
+          <p className="eyebrow">Route File purchase gate</p>
+          <h1>Check the project before paying for the Route File.</h1>
           <p>
-            The Route File is a manual service for messy projects that need one selected route,
-            rejected alternatives, an evidence ledger, a first proof asset, a validation channel,
-            and a stop rule. If that purchase decision is still unclear, use the USD {starterOffer.price} Fit Review first.
+            The Route File is a manual service for messy projects that need one selected
+            route, rejected alternatives, an evidence ledger, a first proof asset, a
+            validation channel, and a stop rule. This page keeps payment behind fit,
+            intake, and sample review.
           </p>
+          <div className="hero-actions">
+            <Link prefetch={false} className="primary-action" href="/intake/">
+              <Mail aria-hidden="true" size={17} />
+              Review intake first
+            </Link>
+            <Link prefetch={false} className="secondary-action" href="/sample/">
+              <FileText aria-hidden="true" size={17} />
+              View sample Route File
+            </Link>
+          </div>
         </div>
         <aside className="pricing-receipt" aria-label="Buy Route File">
           <div className="receipt-topline">
-            <span>Manual service</span>
+            <span>Manual route file</span>
             <strong>USD {primaryOffer.price}</strong>
           </div>
           <h2>{primaryOffer.name}</h2>
           <p>{primaryOffer.delivery}</p>
+          <Link prefetch={false} className="primary-action" href="/tools/launch-blueprint-fit-checker/">
+            <CheckCircle2 aria-hidden="true" size={17} />
+            Check Route File fit first
+          </Link>
           <a
-            className="primary-action"
+            className="secondary-action"
             data-analytics-event="payment_cta_click"
             data-analytics-label="buy_paypal_route_file"
             href={primaryOffer.href}
@@ -76,18 +115,60 @@ export default function Page() {
             target="_blank"
           >
             <CreditCard aria-hidden="true" size={17} />
-            Pay with PayPal
+            Pay with PayPal when ready
           </a>
           <small>{launchProduct.timeline}</small>
-          <Link prefetch={false} className="secondary-action" href="/tools/launch-blueprint-fit-checker/">
-            <CheckCircle2 aria-hidden="true" size={17} />
-            Check Route File fit first
-          </Link>
           <Link prefetch={false} className="secondary-action" href="/starter-review/">
             <ShieldCheck aria-hidden="true" size={17} />
             Start with USD {starterOffer.price} review
           </Link>
         </aside>
+      </section>
+
+      <section className="pricing-grid-section">
+        <div className="section-head">
+          <h2>How the purchase gate works</h2>
+          <p>
+            The payment link is not the first decision. Project readiness, intake quality,
+            and delivery boundaries decide whether the full Route File should proceed.
+          </p>
+        </div>
+        <div className="workflow-grid">
+          {purchaseGateSteps.map((step) => (
+            <article className="workflow-card" key={step.title}>
+              <span>
+                <CheckCircle2 aria-hidden="true" size={18} />
+              </span>
+              <h3>{step.title}</h3>
+              <p>{step.body}</p>
+            </article>
+          ))}
+        </div>
+        <div className="hero-actions">
+          <Link prefetch={false} className="secondary-action" href="/starter-review/">
+            <ShieldCheck aria-hidden="true" size={17} />
+            Fit Review
+          </Link>
+          <Link prefetch={false} className="secondary-action" href="/intake/">
+            <Mail aria-hidden="true" size={17} />
+            Project intake
+          </Link>
+          <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
+            <CheckCircle2 aria-hidden="true" size={17} />
+            Delivery gate
+          </Link>
+          <a
+            className="primary-action"
+            data-analytics-event="payment_cta_click"
+            data-analytics-label="buy_purchase_gate_paypal_route_file"
+            href={primaryOffer.href}
+            rel="noreferrer"
+            target="_blank"
+          >
+            <CreditCard aria-hidden="true" size={17} />
+            Pay USD {primaryOffer.price}
+          </a>
+        </div>
       </section>
 
       <section className="pricing-grid-section split-section gate-split">
@@ -107,52 +188,6 @@ export default function Page() {
             <li>No login account, dashboard, or subscription workspace in this first validation offer.</li>
             <li>No legal, tax, financial, medical, security, or regulated professional advice.</li>
           </ul>
-        </div>
-      </section>
-
-      <section className="pricing-grid-section">
-        <div className="section-head">
-          <h2>How the purchase works</h2>
-          <p>Use a simple payment and intake path before any heavier checkout or account system exists.</p>
-        </div>
-        <div className="workflow-grid">
-          <article className="workflow-card">
-            <span>1</span>
-            <h3>Check fit</h3>
-            <p>Use the fit checker first. If the decision is unclear, buy the smaller Fit Review instead.</p>
-          </article>
-          <article className="workflow-card">
-            <span>2</span>
-            <h3>Pay and send intake</h3>
-            <p>Open PayPal, complete the USD {primaryOffer.price} payment, then send the requested project details.</p>
-          </article>
-          <article className="workflow-card">
-            <span>3</span>
-            <h3>Receive Route File</h3>
-            <p>The manual Route File is delivered in 24-72 hours after payment and usable details are received.</p>
-          </article>
-        </div>
-        <div className="hero-actions">
-          <Link prefetch={false} className="secondary-action" href="/sample/">
-            <FileText aria-hidden="true" size={17} />
-            View sample
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/starter-review/">
-            <ShieldCheck aria-hidden="true" size={17} />
-            Fit Review
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/intake/">
-            <Mail aria-hidden="true" size={17} />
-            View intake
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/refund-policy/">
-            <ShieldCheck aria-hidden="true" size={17} />
-            Refund policy
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
-            <CheckCircle2 aria-hidden="true" size={17} />
-            Delivery gate
-          </Link>
         </div>
       </section>
 
