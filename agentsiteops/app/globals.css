@@ -8634,6 +8634,42 @@ textarea {
   transition: width 220ms ease;
 }
 
+.manual-mode-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.manual-mode-strip article {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 9px;
+  min-width: 0;
+  border: 1px solid rgba(37, 99, 235, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.76);
+  padding: 12px;
+}
+
+.manual-mode-strip svg {
+  margin-top: 2px;
+  color: var(--blue);
+}
+
+.manual-mode-strip strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.manual-mode-strip p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 .manual-workspace-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 0.95fr);
@@ -9151,6 +9187,7 @@ textarea {
   .delivery-contract-grid,
   .route-acceptance-states,
   .manual-boundary-grid,
+  .manual-mode-strip,
   .sample-snapshot-grid,
   .route-file-preview {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -9197,6 +9234,7 @@ textarea {
   .how-step-grid,
   .how-boundary-grid,
   .manual-boundary-grid,
+  .manual-mode-strip,
   .sample-snapshot-grid,
   .sample-ledger-table > div,
   .route-file-preview,

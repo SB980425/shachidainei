@@ -14,6 +14,33 @@ const initialFields = Object.fromEntries(
   manualResearchFields.map((field) => [field.id, field.defaultValue])
 ) as Record<string, string>;
 
+const manualBoundaryRows = [
+  {
+    title: "Prompt only",
+    body:
+      "AgentSiteOps prepares the Deep Research prompt and required output contract.",
+    Icon: ClipboardCopy
+  },
+  {
+    title: "User allowance",
+    body:
+      "The research run happens in ChatGPT Deep Research with the user's own allowance.",
+    Icon: SearchCheck
+  },
+  {
+    title: "Local gate",
+    body:
+      "The pasted report is checked in this browser session for required coverage.",
+    Icon: FileCheck2
+  },
+  {
+    title: "Fuse or repair",
+    body:
+      "Missing coverage creates a focused gap prompt before final route synthesis.",
+    Icon: CheckCircle2
+  }
+];
+
 function hasKeyword(report: string, keywords: string[]) {
   const normalized = report.toLowerCase();
   return keywords.some((keyword) => normalized.includes(keyword.toLowerCase()));
@@ -22,7 +49,9 @@ function hasKeyword(report: string, keywords: string[]) {
 export function ManualDeepResearchWorkspace() {
   const [fields, setFields] = useState<Record<string, string>>(initialFields);
   const [report, setReport] = useState("");
-  const [copyState, setCopyState] = useState("Nothing copied yet.");
+  const [copyState, setCopyState] = useState(
+    "Nothing copied yet. Report text stays in this browser session until reload."
+  );
 
   const masterPrompt = useMemo(() => buildManualDeepResearchPrompt(fields), [fields]);
 
@@ -71,7 +100,8 @@ export function ManualDeepResearchWorkspace() {
           <p>
             This workspace does not run Deep Research by itself. It prepares the prompt
             for ChatGPT, checks the pasted report locally, then creates the gap prompt
-            and route-file skeleton.
+            and route-file skeleton. It does not call an OpenAI API or upload the pasted
+            report from this component.
           </p>
         </div>
         <div className="manual-workspace-meter" aria-label={`Coverage ${coveragePercent}%`}>
@@ -81,6 +111,22 @@ export function ManualDeepResearchWorkspace() {
             <i style={{ width: `${coveragePercent}%` }} />
           </div>
         </div>
+      </div>
+
+      <div className="manual-mode-strip" aria-label="Manual Deep Research boundaries">
+        {manualBoundaryRows.map((item) => {
+          const Icon = item.Icon;
+
+          return (
+            <article key={item.title}>
+              <Icon aria-hidden="true" size={17} />
+              <div>
+                <strong>{item.title}</strong>
+                <p>{item.body}</p>
+              </div>
+            </article>
+          );
+        })}
       </div>
 
       <div className="manual-workspace-grid">

@@ -1,6 +1,6 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-14T00:06:29.771Z
+- Generated: 2026-06-14T00:14:03.383Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
@@ -71,8 +71,8 @@
 | /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 21 | pass | - |
 | /compare/ | pass | 200 | Compare Route File Options \| AgentSiteOps | https://agentsiteops.com/compare/ | 1 | 21 | pass | - |
 | /starter-review/ | pass | 200 | Fit Review \| AgentSiteOps | https://agentsiteops.com/starter-review/ | 1 | 21 | pass | - |
-| /buy/ | pass | 200 | Buy Route File \| AgentSiteOps | https://agentsiteops.com/buy/ | 1 | 22 | pass | - |
-| /intake/ | pass | 200 | Order Intake \| AgentSiteOps | https://agentsiteops.com/intake/ | 1 | 19 | pass | - |
+| /buy/ | pass | 200 | Route File Purchase Gate \| AgentSiteOps | https://agentsiteops.com/buy/ | 1 | 22 | pass | - |
+| /intake/ | pass | 200 | Project Intake \| AgentSiteOps | https://agentsiteops.com/intake/ | 1 | 19 | pass | - |
 | /terms/ | pass | 200 | Service Terms \| AgentSiteOps | https://agentsiteops.com/terms/ | 1 | 20 | pass | - |
 | /refund-policy/ | pass | 200 | Refund Policy \| AgentSiteOps | https://agentsiteops.com/refund-policy/ | 1 | 19 | pass | - |
 | /disclaimer/ | pass | 200 | Disclaimer \| AgentSiteOps | https://agentsiteops.com/disclaimer/ | 1 | 19 | pass | - |
