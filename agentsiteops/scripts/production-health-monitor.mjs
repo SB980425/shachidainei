@@ -335,7 +335,7 @@ async function main() {
   await checkAnalyticsSummary();
   await checkPage("/", [
     "Route Foundry",
-    "Turn messy client input into one reviewable Route File.",
+    "From messy input to one checked Route File.",
     "One decision package, not another loose research report.",
     "Operating path",
     "The route workflow becomes the thing people can click.",

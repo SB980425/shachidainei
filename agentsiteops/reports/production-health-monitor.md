@@ -1,6 +1,6 @@
 # Production Health Monitor
 
-- Generated: 2026-06-14T12:09:07.314Z
+- Generated: 2026-06-14T12:30:56.508Z
 - Status: pass
 - Site: https://agentsiteops.com
 - Checks: 248
@@ -47,7 +47,7 @@
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
 | / | pass | Route Foundry | [link](https://agentsiteops.com/) |
-| / | pass | Turn messy client input into one reviewable Route File. | [link](https://agentsiteops.com/) |
+| / | pass | From messy input to one checked Route File. | [link](https://agentsiteops.com/) |
 | / | pass | One decision package, not another loose research report. | [link](https://agentsiteops.com/) |
 | / | pass | Operating path | [link](https://agentsiteops.com/) |
 | / | pass | The route workflow becomes the thing people can click. | [link](https://agentsiteops.com/) |
