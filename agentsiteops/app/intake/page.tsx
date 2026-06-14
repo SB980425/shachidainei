@@ -12,6 +12,7 @@ import {
   paymentConfirmationFields
 } from "@/lib/launch";
 import { IntakePacketBuilder } from "@/components/IntakePacketBuilder";
+import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { buildProjectIntakePacket } from "@/lib/intakePacket";
 import { siteUrl } from "@/lib/site";
 
@@ -138,6 +139,8 @@ export default function Page() {
           </dl>
         </aside>
       </section>
+
+      <RouteFlowBridge current="intake" nextHref="/how-it-works/" nextLabel="Continue to scope lock" />
 
       <IntakePacketBuilder />
 

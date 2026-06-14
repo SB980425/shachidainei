@@ -12391,3 +12391,359 @@ body {
   }
 }
 
+/* Route Foundry long-tail unification pass */
+.route-brief,
+.route-brief dl div,
+.main-panel,
+.side-panel,
+.side-panel a,
+.answer-block,
+.scope-form,
+.table-scroll,
+.evidence-table-wrap,
+.pricing-hero,
+.pricing-receipt,
+.decision-hero,
+.decision-ticket,
+.decision-ladder,
+.decision-ladder article,
+.offer-choice-card,
+.value-proof-grid article,
+.artifact-standard-grid article,
+.decision-card-grid article,
+.objection-grid article,
+.pricing-grid article,
+.source-grid a,
+.repo-grid article,
+.update-grid section,
+.trust-policy-page .page-grid article,
+.client-checklist-grid article,
+.client-status-list article,
+.intake-packet-tool,
+.intake-packet-toggle,
+.intake-packet-preview,
+.workflow-grid,
+.workflow-grid article,
+.scope-panel,
+.scope-score,
+.source-stack a {
+  border-color: rgba(226, 231, 238, 0.12) !important;
+  background:
+    linear-gradient(180deg, rgba(247, 242, 234, 0.045), rgba(247, 242, 234, 0.018)),
+    rgba(17, 24, 26, 0.86) !important;
+  color: var(--foundry-text) !important;
+  box-shadow: none !important;
+}
+
+.pricing-hero,
+.decision-hero {
+  width: min(1180px, calc(100% - 40px));
+  margin: 30px auto 0;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.pricing-hero::before,
+.decision-hero::before {
+  opacity: 0.42;
+}
+
+.route-brief strong,
+.main-panel h2,
+.side-panel h2,
+.answer-block span,
+.scope-form label,
+.pricing-hero h1,
+.pricing-hero h2,
+.pricing-receipt h2,
+.decision-hero h1,
+.decision-ticket h2,
+.decision-ladder h3,
+.offer-choice-card h3,
+.value-proof-grid h3,
+.artifact-standard-grid h3,
+.decision-card-grid h3,
+.objection-grid h3,
+.pricing-grid h3,
+.client-checklist-grid p,
+.client-status-list h3 {
+  color: var(--foundry-text) !important;
+}
+
+.route-brief dd,
+.main-panel p,
+.side-panel li,
+.scope-form p,
+.pricing-hero p,
+.pricing-receipt p,
+.pricing-receipt small,
+.decision-hero p,
+.decision-ticket p,
+.decision-ticket small,
+.decision-ladder p,
+.offer-choice-card p,
+.value-proof-grid p,
+.value-proof-grid small,
+.artifact-standard-grid p,
+.decision-card-grid p,
+.objection-grid p,
+.objection-grid small,
+.pricing-grid p,
+.client-status-list p {
+  color: rgba(246, 241, 232, 0.72) !important;
+}
+
+.intake-packet-copy h2,
+.intake-packet-copy > span,
+.intake-packet-toggle,
+.workflow-grid h3,
+.scope-panel h2,
+.scope-panel strong,
+.source-stack a strong {
+  color: var(--foundry-text) !important;
+}
+
+.intake-packet-copy p,
+.workflow-grid p,
+.scope-panel p,
+.scope-panel li,
+.source-stack a span {
+  color: rgba(246, 241, 232, 0.72) !important;
+}
+
+.route-brief dt,
+.route-brief svg,
+.answer-block svg,
+.scope-form small,
+.decision-ladder span,
+.artifact-standard-grid span,
+.pricing-grid span,
+.client-checklist-grid svg,
+.client-status-list svg {
+  color: var(--foundry-green) !important;
+}
+
+.workflow-grid span,
+.scope-score > span,
+.intake-packet-copy svg {
+  background: rgba(55, 217, 140, 0.12) !important;
+  color: var(--foundry-green) !important;
+}
+
+.data-table,
+.data-table tbody,
+.data-table tr,
+.data-table th,
+.data-table td,
+.table-scroll table,
+.evidence-table-wrap table,
+.table-scroll th,
+.table-scroll td,
+.evidence-table-wrap th,
+.evidence-table-wrap td {
+  border-color: rgba(226, 231, 238, 0.12) !important;
+  background: rgba(5, 9, 10, 0.58) !important;
+  color: rgba(246, 241, 232, 0.78) !important;
+}
+
+.data-table th,
+.table-scroll th,
+.evidence-table-wrap th {
+  color: var(--foundry-text) !important;
+}
+
+.scope-form input,
+.scope-form select,
+.scope-form textarea,
+.pricing-page input,
+.pricing-page select,
+.pricing-page textarea,
+.page-main input,
+.page-main select,
+.page-main textarea {
+  border-color: rgba(226, 231, 238, 0.15) !important;
+  background: rgba(5, 9, 10, 0.72) !important;
+  color: var(--foundry-text) !important;
+}
+
+.intake-packet-preview {
+  white-space: pre-wrap;
+}
+
+.scope-form input::placeholder,
+.scope-form textarea::placeholder,
+.page-main input::placeholder,
+.page-main textarea::placeholder {
+  color: rgba(246, 241, 232, 0.42) !important;
+}
+
+.source-grid a:hover,
+.side-panel a:hover {
+  border-color: rgba(55, 217, 140, 0.34) !important;
+  background: rgba(55, 217, 140, 0.09) !important;
+}
+
+.pricing-page .primary-action[href*="paypal"],
+.conversion-page .primary-action[href*="paypal"],
+.pricing-page .secondary-action[href*="paypal"] {
+  background: rgba(255, 104, 70, 0.12) !important;
+  border-color: rgba(255, 104, 70, 0.38) !important;
+  color: #ffd7cb !important;
+  box-shadow: none !important;
+}
+
+.pricing-page .primary-action[href*="paypal"]:hover,
+.conversion-page .primary-action[href*="paypal"]:hover,
+.pricing-page .secondary-action[href*="paypal"]:hover {
+  background: rgba(255, 104, 70, 0.18) !important;
+}
+
+@media (max-width: 720px) {
+  .pricing-hero,
+  .decision-hero {
+    width: calc(100% - 20px);
+    margin-top: 18px;
+    padding: 18px;
+  }
+}
+
+/* Route Foundry dark shell: remove light-shell leftovers without changing page logic. */
+.site-header {
+  border-bottom: 1px solid rgba(226, 231, 238, 0.12) !important;
+  background:
+    linear-gradient(90deg, rgba(8, 12, 14, 0.98), rgba(15, 22, 24, 0.96) 58%, rgba(25, 20, 18, 0.96)) !important;
+  box-shadow: 0 18px 52px rgba(0, 0, 0, 0.34) !important;
+  color: var(--foundry-text) !important;
+}
+
+.site-header .brand,
+.site-header .brand span,
+.site-header .brand strong,
+.site-header .brand-text strong {
+  color: var(--foundry-text) !important;
+}
+
+.site-header .brand-text small {
+  color: rgba(246, 241, 232, 0.58) !important;
+}
+
+.site-header .brand-symbol {
+  border-color: rgba(226, 231, 238, 0.18) !important;
+  background: rgba(247, 242, 234, 0.92) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22) !important;
+}
+
+.site-header .nav a,
+.nav a {
+  border-color: rgba(226, 231, 238, 0.09) !important;
+  background: rgba(20, 27, 29, 0.64) !important;
+  color: rgba(246, 241, 232, 0.72) !important;
+}
+
+.site-header .nav a:hover,
+.site-header .nav a:focus-visible,
+.nav a:hover,
+.nav a:focus-visible {
+  border-color: rgba(55, 217, 140, 0.34) !important;
+  background: rgba(55, 217, 140, 0.1) !important;
+  color: var(--foundry-text) !important;
+}
+
+.site-header .header-action,
+.header-action {
+  border-color: rgba(255, 104, 70, 0.48) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 104, 70, 0.98), rgba(214, 80, 52, 0.96)) !important;
+  color: #180b08 !important;
+  box-shadow: 0 16px 38px rgba(255, 104, 70, 0.2) !important;
+}
+
+.frontstage-hero-flow,
+.home-operating-panel,
+.home-intake-panel,
+.home-output-panel,
+.home-flow-lane article,
+.route-flow-bridge,
+.route-flow-bridge-track a,
+.workflow-grid,
+.workflow-grid article,
+.loop-grid article,
+.start-readiness-panel article,
+.start-route-path,
+.client-workspace-status,
+.client-workspace-inputs article,
+.client-workspace-timeline article,
+.client-workspace-gates article,
+.client-workspace-social article,
+.client-route-file-paper,
+.client-route-file-grid article,
+.client-workspace-non-delivery,
+.gate-section article,
+.route-foundation-grid article,
+.frontstage-fit-grid article,
+.how-step-grid article,
+.how-boundary-grid article,
+.delivery-state-grid article,
+.delivery-contract-grid article,
+.sample-snapshot-grid article,
+.manual-boundary-grid article,
+.acceptance-gate-grid article {
+  border-color: rgba(226, 231, 238, 0.12) !important;
+  background:
+    linear-gradient(180deg, rgba(26, 34, 36, 0.92), rgba(12, 17, 19, 0.92)) !important;
+  color: var(--foundry-text) !important;
+  box-shadow: none !important;
+}
+
+.frontstage-hero-flow article {
+  background: transparent !important;
+}
+
+.route-flow-bridge-track a.is-current,
+.workflow-grid article.is-active,
+.client-workspace-timeline article.is-active,
+.client-workspace-inputs .is-weak {
+  border-color: rgba(255, 104, 70, 0.52) !important;
+  background:
+    linear-gradient(180deg, rgba(59, 31, 25, 0.92), rgba(20, 21, 20, 0.94)) !important;
+}
+
+.route-flow-bridge-track a.is-passed,
+.client-workspace-inputs .is-ready {
+  border-color: rgba(55, 217, 140, 0.26) !important;
+  background:
+    linear-gradient(180deg, rgba(19, 43, 32, 0.72), rgba(12, 17, 19, 0.94)) !important;
+}
+
+.frontstage-hero-flow small,
+.home-operating-panel p,
+.home-intake-panel p,
+.home-output-panel p,
+.workflow-grid p,
+.loop-grid p,
+.client-workspace-status p,
+.client-workspace-inputs p,
+.client-workspace-timeline p,
+.route-flow-bridge-track small {
+  color: rgba(246, 241, 232, 0.72) !important;
+}
+
+.pricing-page .decision-ladder strong,
+.pricing-page .offer-choice-card strong,
+.pricing-page .receipt-topline strong {
+  color: var(--foundry-text) !important;
+}
+
+.pricing-page .decision-ladder .primary-action {
+  border-color: rgba(255, 104, 70, 0.5) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 104, 70, 0.98), rgba(214, 80, 52, 0.96)) !important;
+  color: #180b08 !important;
+}
+
+.pricing-page .secondary-action[href*="paypal"] {
+  border-color: rgba(255, 104, 70, 0.28) !important;
+  background: rgba(59, 31, 25, 0.38) !important;
+  color: #ffd7cb !important;
+}
+

@@ -19,13 +19,14 @@ const pageUrl = `${siteUrl}${path}`;
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "AgentSiteOps pricing: USD 29 for a manual Fit Review or USD 99 for a Research-to-Route File delivery.",
+    "AgentSiteOps pricing starts with free sample inspection, then a USD 29 manual Fit Review or USD 99 Research-to-Route File delivery when the intake supports it.",
   alternates: {
     canonical: path
   },
   openGraph: {
     title: "Pricing",
-    description: "Choose the USD 29 Fit Review or the USD 99 Research-to-Route File delivery through PayPal.",
+    description:
+      "Inspect the sample and delivery gate before choosing a USD 29 Fit Review or USD 99 Research-to-Route File delivery.",
     url: pageUrl,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -137,8 +138,16 @@ export default function Page() {
             support manual delivery.
           </p>
           <div className="hero-actions hero-actions-tight">
+            <Link prefetch={false} className="primary-action" href="/sample/">
+              <FileText aria-hidden="true" size={17} />
+              Inspect sample first
+            </Link>
+            <Link prefetch={false} className="secondary-action" href="/starter-review/">
+              <ArrowRight aria-hidden="true" size={17} />
+              Fit Review details
+            </Link>
             <a
-              className="primary-action"
+              className="secondary-action"
               data-analytics-event="payment_cta_click"
               data-analytics-label="pricing_hero_paypal_fit_review"
               data-analytics-type="starter_review"
@@ -149,14 +158,6 @@ export default function Page() {
               <CreditCard aria-hidden="true" size={17} />
               Pay USD {starterOffer.price}
             </a>
-            <Link prefetch={false} className="secondary-action" href="/starter-review/">
-              <ArrowRight aria-hidden="true" size={17} />
-              Fit Review details
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/sample/">
-              <FileText aria-hidden="true" size={17} />
-              Route File sample
-            </Link>
           </div>
         </div>
 
@@ -172,7 +173,7 @@ export default function Page() {
             delivery starts only after payment confirmation and usable intake.
           </small>
           <a
-            className="primary-action"
+            className="secondary-action"
             data-analytics-event="payment_cta_click"
             data-analytics-label="pricing_ticket_paypal_fit_review"
             data-analytics-type="starter_review"
@@ -201,7 +202,7 @@ export default function Page() {
               <strong>{item.price}</strong>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
-              <Link prefetch={false} className={index === 1 ? "primary-action" : "secondary-action"} href={item.href}>
+              <Link prefetch={false} className={index === 0 ? "primary-action" : "secondary-action"} href={item.href}>
                 <ArrowRight aria-hidden="true" size={17} />
                 {item.action}
               </Link>
@@ -251,7 +252,7 @@ export default function Page() {
               ))}
             </ul>
             <a
-              className="primary-action"
+              className="secondary-action"
               data-analytics-event="payment_cta_click"
               data-analytics-label="pricing_card_paypal_fit_review"
               data-analytics-type="starter_review"

@@ -9,6 +9,7 @@ import {
   SearchCheck
 } from "lucide-react";
 import { ClientRouteWorkspace } from "@/components/ClientRouteWorkspace";
+import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { siteUrl } from "@/lib/site";
 
 const path = "/reports/client-route-workflow/";
@@ -127,6 +128,13 @@ export default function Page() {
           </dl>
         </aside>
       </section>
+
+      <RouteFlowBridge
+        current="research"
+        eyebrow="Client progress"
+        nextHref="/delivery-gate/"
+        nextLabel="Continue to coverage gate"
+      />
 
       <ClientRouteWorkspace />
 
