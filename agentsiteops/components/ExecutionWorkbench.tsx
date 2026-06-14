@@ -283,7 +283,10 @@ export function ExecutionWorkbench() {
   );
   const activeSocial = socialVariants[activeChannel];
   const activeSocialText = activeLanguage === "en" ? activeSocial.en : activeSocial.zh;
-  const pairedSocialText = activeLanguage === "en" ? activeSocial.zh : activeSocial.en;
+  const pairedLanguage: SocialLanguage = activeLanguage === "en" ? "zh" : "en";
+  const pairedSocialText = pairedLanguage === "en" ? activeSocial.en : activeSocial.zh;
+  const activeLanguageLabel = activeLanguage === "en" ? "English" : "中文";
+  const pairedLanguageLabel = pairedLanguage === "en" ? "English" : "中文";
   const activeStageStatus = stageDecisions[activeStageId];
   const activeStatus =
     stageStatusOptions.find((option) => option.id === activeStageStatus) ??
@@ -586,26 +589,39 @@ export function ExecutionWorkbench() {
             </article>
           ))}
         </div>
-        <p>{activeSocialText}</p>
-        <p>{pairedSocialText}</p>
-        <button
-          className="route-room-primary"
-          type="button"
-          onClick={() => copySocialText(activeSocialText, "primary", activeLanguage)}
-        >
-          <Copy aria-hidden="true" size={15} />
-          {primaryCopyLabel}
-        </button>
-        <button
-          className="route-room-secondary"
-          type="button"
-          onClick={() =>
-            copySocialText(pairedSocialText, "paired", activeLanguage === "en" ? "zh" : "en")
-          }
-        >
-          <Copy aria-hidden="true" size={15} />
-          {pairCopyLabel}
-        </button>
+        <div className="execution-social-copy-grid">
+          <article className="execution-social-copy-card">
+            <div>
+              <span>Selected language</span>
+              <strong>{activeLanguageLabel}</strong>
+            </div>
+            <p dir="auto">{activeSocialText}</p>
+            <button
+              className="route-room-primary"
+              type="button"
+              onClick={() => copySocialText(activeSocialText, "primary", activeLanguage)}
+            >
+              <Copy aria-hidden="true" size={15} />
+              {primaryCopyLabel}
+            </button>
+          </article>
+
+          <article className="execution-social-copy-card">
+            <div>
+              <span>Paired translation</span>
+              <strong>{pairedLanguageLabel}</strong>
+            </div>
+            <p dir="auto">{pairedSocialText}</p>
+            <button
+              className="route-room-secondary"
+              type="button"
+              onClick={() => copySocialText(pairedSocialText, "paired", pairedLanguage)}
+            >
+              <Copy aria-hidden="true" size={15} />
+              {pairCopyLabel}
+            </button>
+          </article>
+        </div>
       </section>
     </section>
   );
