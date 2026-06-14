@@ -12747,3 +12747,47 @@ body {
   color: #ffd7cb !important;
 }
 
+.updates-timeline {
+  display: grid;
+  gap: 18px;
+}
+
+.update-entry {
+  border: 1px solid rgba(226, 231, 238, 0.12) !important;
+  border-radius: 18px !important;
+  background:
+    linear-gradient(135deg, rgba(24, 34, 36, 0.96), rgba(10, 15, 17, 0.96)) !important;
+  color: var(--foundry-text) !important;
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.24) !important;
+}
+
+.update-meta {
+  border-color: rgba(226, 231, 238, 0.12) !important;
+}
+
+.update-meta span {
+  color: rgba(246, 241, 232, 0.58) !important;
+}
+
+.update-meta strong {
+  background: rgba(55, 217, 140, 0.12) !important;
+  color: #aef8cc !important;
+}
+
+.update-entry h2,
+.update-grid h3 {
+  color: var(--foundry-text) !important;
+}
+
+.update-angle,
+.update-grid li,
+.update-grid p {
+  color: rgba(246, 241, 232, 0.72) !important;
+}
+
+.update-grid section {
+  border-color: rgba(226, 231, 238, 0.12) !important;
+  background:
+    linear-gradient(180deg, rgba(28, 37, 39, 0.94), rgba(12, 17, 19, 0.94)) !important;
+}
+
