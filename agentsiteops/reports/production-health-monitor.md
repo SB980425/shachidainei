@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-14T12:30:56.508Z
+- Generated: 2026-06-14T12:48:38.059Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 248
+- Checks: 249
 - Blockers: 0
 - Warnings: 0
 
@@ -236,6 +236,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-53 Navigation context and updates ledger | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-48 Route basis evidence upgrade | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-47 Self route file upgrade | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-22 48-hour exposure sprint | [link](https://agentsiteops.com/updates/) |
