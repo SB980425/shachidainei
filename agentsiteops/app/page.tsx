@@ -62,6 +62,14 @@ const homeOutputRows = [
   }
 ];
 
+const heroFlowSteps = [
+  { label: "Input", body: "Project facts" },
+  { label: "Research", body: "Manual run" },
+  { label: "Gate", body: "Pass or repair" },
+  { label: "Route", body: "One file" },
+  { label: "Stop", body: "Evidence rule" }
+];
+
 const routeFlowCards = [
   {
     label: "Input",
@@ -203,6 +211,15 @@ export default function HomePage() {
               <FileText aria-hidden="true" size={17} />
               View sample Route File
             </Link>
+          </div>
+          <div className="frontstage-hero-flow" aria-label="AgentSiteOps route flow">
+            {heroFlowSteps.map((step, index) => (
+              <article key={step.label}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <strong>{step.label}</strong>
+                <small>{step.body}</small>
+              </article>
+            ))}
           </div>
         </div>
 
