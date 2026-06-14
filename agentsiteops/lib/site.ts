@@ -1349,8 +1349,8 @@ export const routePages: RoutePage[] = [
       "A client-facing project workspace preview showing input readiness, manual Deep Research progress, coverage checks, gap research, final route-file boundaries, and bilingual public copy.",
     answer:
       "The client route workflow shows how AgentSiteOps turns messy project material into a visible workspace: input readiness, intake, scope lock, manual Deep Research, local coverage review, second-pass gap handling when needed, one final Route File, and public copy that does not change the claim boundary.",
-    primaryAction: { label: "Open research workflow", href: "/templates/route-research-prompt-pack/" },
-    secondaryAction: { label: "View sample route file", href: "/sample/" },
+    primaryAction: { label: "Open intake", href: "/intake/" },
+    secondaryAction: { label: "Open research workflow", href: "/templates/route-research-prompt-pack/" },
     aiTarget:
       "Explain the client-observable AgentSiteOps route workflow without implying automated Deep Research, API use, guaranteed traffic, or guaranteed revenue.",
     humanAction:

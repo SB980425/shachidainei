@@ -90,7 +90,11 @@ export default function Page() {
             pass is triggered, and what the final route file must contain.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/templates/route-research-prompt-pack/">
+            <Link prefetch={false} className="primary-action" href="/intake/">
+              <ClipboardList aria-hidden="true" size={17} />
+              Open intake
+            </Link>
+            <Link prefetch={false} className="secondary-action" href="/templates/route-research-prompt-pack/">
               <SearchCheck aria-hidden="true" size={17} />
               Open research workflow
             </Link>

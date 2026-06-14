@@ -278,6 +278,10 @@ export function ClientRouteWorkspace() {
       </div>
 
       <div className="client-workspace-links">
+        <Link prefetch={false} href="/intake/">
+          <ClipboardList aria-hidden="true" size={16} />
+          Open intake
+        </Link>
         <Link prefetch={false} href="/templates/route-research-prompt-pack/">
           <SearchCheck aria-hidden="true" size={16} />
           Prompt pack
@@ -289,10 +293,6 @@ export function ClientRouteWorkspace() {
         <Link prefetch={false} href="/sample/">
           <FileText aria-hidden="true" size={16} />
           Sample Route File
-        </Link>
-        <Link prefetch={false} href="/intake/">
-          <ClipboardList aria-hidden="true" size={16} />
-          Open intake
         </Link>
       </div>
     </section>

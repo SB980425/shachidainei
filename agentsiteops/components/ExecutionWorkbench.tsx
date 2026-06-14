@@ -49,10 +49,10 @@ const stages: Array<{
     purpose:
       "Capture the project, target user, source material, constraints, assets, and the decision that is blocking execution.",
     pass: "Project facts, target user, current assets, blocked claims, and decision question are present.",
-    trigger: "Client opens the start path or sends a project packet.",
+    trigger: "Client opens the intake path or sends a project packet.",
     next: "Move to scope lock when the input exposes the real route decision.",
     notDelivery: "A vague idea, pasted notes, or a private chat dump without a decision question.",
-    href: "/start/"
+    href: "/intake/"
   },
   {
     id: "scope",
@@ -132,7 +132,7 @@ const stages: Array<{
 ];
 
 const clickPath = [
-  { label: "Start", href: "/start/", result: "Project facts and constraints" },
+  { label: "Intake", href: "/intake/", result: "Project facts and constraints" },
   { label: "Prompt pack", href: "/templates/route-research-prompt-pack/", result: "Manual research brief" },
   { label: "Delivery gate", href: "/delivery-gate/", result: "Pass, repair, blocked, or not delivery" },
   { label: "Sample", href: "/sample/", result: "Route File structure" },
