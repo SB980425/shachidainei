@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-15T04:19:05.282Z
+- Generated: 2026-06-15T04:46:18.078Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 259
+- Checks: 264
 - Blockers: 0
 - Warnings: 0
 
@@ -58,6 +58,10 @@
 | /plan/ | pass | Plan Studio | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Fill in your project plan before asking for a Route File. | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Write the project once. | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | One field per decision | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Route frame | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Decision boundary | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Operating choices | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Selected draft route | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Copy plan brief | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | A draft is not the final Route File. | [link](https://agentsiteops.com/plan/) |
@@ -245,6 +249,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-55 Plan Studio spacious intake redesign | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-54 Plan Studio and client workspace cleanup | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-53 Navigation context and updates ledger | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-48 Route basis evidence upgrade | [link](https://agentsiteops.com/updates/) |
