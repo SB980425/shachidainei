@@ -345,6 +345,10 @@ async function main() {
     "Plan Studio",
     "Fill in your project plan before asking for a Route File.",
     "Write the project once.",
+    "One field per decision",
+    "Route frame",
+    "Decision boundary",
+    "Operating choices",
     "Selected draft route",
     "Copy plan brief",
     "A draft is not the final Route File."
@@ -449,6 +453,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-55 Plan Studio spacious intake redesign",
     "M4-54 Plan Studio and client workspace cleanup",
     "M4-53 Navigation context and updates ledger",
     "M4-48 Route basis evidence upgrade",

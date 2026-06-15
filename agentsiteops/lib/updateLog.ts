@@ -12,6 +12,35 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-15",
+    step: "M4-55 Plan Studio spacious intake redesign",
+    status: "completed",
+    keyPoints: [
+      "Rebuilt the Plan Studio input area from a compressed two-column grid into a single-column grouped intake flow so no form row contains two fillable fields.",
+      "Split the fields into four strict sections: Route frame, Audience and proof, Decision boundary, and Operating choices.",
+      "Added field-level prompts that explain what each answer must decide, what evidence it should expose, and which claims or constraints must stay visible.",
+      "Gave text-heavy fields larger writing areas and made the input panel wider than the output panel so the customer can write the plan before reading the route draft.",
+      "Kept the browser-local boundary intact: the screen still creates a preliminary draft only, without API calls, payment, hidden research, or final delivery claims."
+    ],
+    aiAngle:
+      "AI and search readers can now interpret Plan Studio as a structured intake workspace rather than a generic form: each answer maps to a route-file decision, evidence gap, rejected alternative, or stop rule.",
+    files: [
+      "components/PlanDraftStudio.tsx",
+      "app/globals.css",
+      "lib/updateLog.ts",
+      "scripts/production-health-monitor.mjs"
+    ],
+    verification: [
+      "typecheck pass",
+      "code-quality gate pass: 16 checks, 0 blockers",
+      "build pass with 66 static pages",
+      "Playwright layout check: 10 Plan Studio fields, 0 same-row field pairs, input panel wider than output panel, minimum field card height 163px, mobile overflow 0",
+      "Plan Studio example interaction pass: readiness score 100 and selected route generated"
+    ],
+    next:
+      "Watch whether visitors still miss where to enter their project plan; if they do, move Plan Studio higher on the first page or add a persistent draft entry from the route-flow bridge."
+  },
+  {
+    date: "2026-06-15",
     step: "M4-54 Plan Studio and client workspace cleanup",
     status: "completed",
     keyPoints: [

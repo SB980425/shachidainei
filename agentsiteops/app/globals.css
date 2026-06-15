@@ -13911,3 +13911,226 @@ body {
   }
 }
 
+/* Plan Studio spacious intake upgrade. */
+.plan-draft-studio {
+  width: min(1280px, calc(100% - 40px));
+}
+
+.plan-studio-grid {
+  grid-template-columns: minmax(560px, 1.16fr) minmax(360px, 0.84fr);
+  gap: 20px;
+}
+
+.plan-input-panel {
+  gap: 20px;
+  padding: 22px;
+}
+
+.plan-input-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.plan-input-summary span {
+  min-height: 38px;
+  border: 1px solid rgba(55, 217, 140, 0.18);
+  border-radius: 999px;
+  background: rgba(55, 217, 140, 0.07);
+  color: #cbffdf;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.plan-question-stack,
+.plan-field-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.plan-question-group {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  border: 1px solid rgba(226, 231, 238, 0.13);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(23, 31, 33, 0.94), rgba(9, 14, 15, 0.94));
+  padding: 18px;
+}
+
+.plan-question-group legend {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 3px 10px;
+  width: 100%;
+  margin-bottom: 2px;
+  padding: 0;
+}
+
+.plan-question-group legend span {
+  grid-row: 1 / 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 104, 70, 0.36);
+  border-radius: 12px;
+  background: rgba(255, 104, 70, 0.1);
+  color: var(--foundry-coral);
+  font-size: 12px;
+  font-weight: 950;
+}
+
+.plan-question-group legend strong {
+  color: var(--foundry-text);
+  font-size: 18px;
+  line-height: 1.15;
+}
+
+.plan-question-group legend small {
+  color: rgba(246, 241, 232, 0.58);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.plan-field-card {
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(226, 231, 238, 0.1);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(15, 22, 24, 0.98), rgba(6, 10, 11, 0.98));
+  padding: 16px;
+}
+
+.plan-input-panel .plan-field-label {
+  color: var(--foundry-green);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plan-field-card strong {
+  max-width: 74ch;
+  color: rgba(246, 241, 232, 0.88);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.plan-input-panel input,
+.plan-input-panel select,
+.plan-input-panel textarea {
+  width: 100%;
+  border: 1px solid rgba(226, 231, 238, 0.16);
+  border-radius: 14px;
+  background: rgba(0, 5, 7, 0.7);
+  color: var(--foundry-text);
+  font: inherit;
+  outline: none;
+}
+
+.plan-input-panel input,
+.plan-input-panel select {
+  min-height: 50px;
+  padding: 0 15px;
+}
+
+.plan-input-panel textarea {
+  min-height: 146px;
+  padding: 14px 15px;
+  resize: vertical;
+}
+
+.plan-input-panel input::placeholder,
+.plan-input-panel textarea::placeholder {
+  color: rgba(246, 241, 232, 0.42);
+}
+
+.plan-input-panel input:focus,
+.plan-input-panel select:focus,
+.plan-input-panel textarea:focus {
+  border-color: rgba(55, 217, 140, 0.54);
+  box-shadow: 0 0 0 3px rgba(55, 217, 140, 0.13);
+}
+
+.plan-field-card small {
+  max-width: 78ch;
+  color: rgba(246, 241, 232, 0.56);
+  line-height: 1.5;
+}
+
+.plan-output-panel {
+  gap: 15px;
+  padding: 18px;
+}
+
+.plan-score-card {
+  padding: 16px;
+}
+
+.plan-score-card strong {
+  font-size: clamp(48px, 5vw, 72px);
+}
+
+.plan-output-tabs {
+  grid-template-columns: 1fr;
+}
+
+.plan-output-tabs section,
+.plan-seven-day,
+.plan-stop-rule {
+  padding: 15px;
+}
+
+@media (max-width: 1080px) {
+  .plan-draft-studio {
+    width: calc(100% - 28px);
+  }
+
+  .plan-studio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-output-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .plan-draft-studio {
+    width: calc(100% - 20px);
+  }
+
+  .plan-input-panel,
+  .plan-output-panel {
+    padding: 14px;
+  }
+
+  .plan-input-summary,
+  .plan-question-group legend {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-question-group legend span {
+    grid-row: auto;
+  }
+
+  .plan-question-group,
+  .plan-field-card {
+    border-radius: 14px;
+    padding: 14px;
+  }
+
+  .plan-input-panel textarea {
+    min-height: 160px;
+  }
+}
+

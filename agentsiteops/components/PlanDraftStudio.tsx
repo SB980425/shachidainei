@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import {
   AlertTriangle,
-  ArrowRight,
   CheckCircle2,
   ClipboardCopy,
   ClipboardList,
@@ -49,47 +48,141 @@ const exampleInput: PlanDraftInput = {
   constraints: "No guaranteed revenue, no private customer data in public output, no claim that the website runs hidden research"
 };
 
-const textareaFields: Array<{
+type PlanField = {
   key: keyof PlanDraftInput;
   label: string;
+  prompt: string;
   helper: string;
-  placeholder: string;
+} & (
+  | {
+      kind: "input" | "textarea";
+      placeholder: string;
+      rows?: number;
+    }
+  | {
+      kind: "select";
+      options: string[];
+    }
+);
+
+const planQuestionGroups: Array<{
+  number: string;
+  title: string;
+  description: string;
+  fields: PlanField[];
 }> = [
   {
-    key: "projectName",
-    label: "Project name",
-    helper: "A working name is enough.",
-    placeholder: "Example: AI client support workflow"
+    number: "01",
+    title: "Route frame",
+    description: "Name the project and define the decision this draft must resolve.",
+    fields: [
+      {
+        key: "projectName",
+        kind: "input",
+        label: "Project name",
+        prompt: "Give the work a short name so the route file can refer to it consistently.",
+        helper: "A working name is enough. Do not spend time branding the idea yet.",
+        placeholder: "Example: AI client support workflow"
+      },
+      {
+        key: "projectType",
+        kind: "select",
+        label: "Project type",
+        prompt: "Choose the closest category so the draft can pick the right route pattern.",
+        helper: "If the project is still unclear, choose Unsure and use the blocker field to explain why.",
+        options: projectTypeOptions
+      },
+      {
+        key: "currentGoal",
+        kind: "textarea",
+        label: "Current goal",
+        prompt: "State the one decision the plan must make before more pages, tools, or offers are built.",
+        helper: "Good input names the next decision, not a broad ambition.",
+        placeholder: "Choose one first route before building a dashboard, checkout page, or content system.",
+        rows: 4
+      }
+    ]
   },
   {
-    key: "targetUser",
-    label: "Target user",
-    helper: "Name the buyer or user who would care first.",
-    placeholder: "Who has the repeated problem?"
+    number: "02",
+    title: "Audience and proof",
+    description: "Separate who this is for from what evidence already exists.",
+    fields: [
+      {
+        key: "targetUser",
+        kind: "textarea",
+        label: "Target user",
+        prompt: "Describe the first reachable buyer, operator, reader, or user with a repeated problem.",
+        helper: "Avoid everyone, creators, companies, or vague markets. Name a concrete user group.",
+        placeholder: "Small service teams that repeat manual support triage every week.",
+        rows: 4
+      },
+      {
+        key: "existingAssets",
+        kind: "textarea",
+        label: "Existing assets",
+        prompt: "List what can be inspected now: notes, links, screenshots, demos, examples, or source material.",
+        helper: "Only include material you can actually provide or verify.",
+        placeholder: "One workflow note, two examples, a rough page, screenshots, source links, manual delivery capacity.",
+        rows: 5
+      }
+    ]
   },
   {
-    key: "currentGoal",
-    label: "Current goal",
-    helper: "State what you want the next route to decide.",
-    placeholder: "Choose one first route before building more."
+    number: "03",
+    title: "Decision boundary",
+    description: "Make the blocked decision and the forbidden claims visible.",
+    fields: [
+      {
+        key: "blocker",
+        kind: "textarea",
+        label: "Current blocker",
+        prompt: "Name the choice you cannot make yet and the alternatives that keep pulling attention.",
+        helper: "This is the reason the route draft exists.",
+        placeholder: "I cannot choose between automation setup, dashboard, training pack, and done-for-you implementation.",
+        rows: 4
+      },
+      {
+        key: "constraints",
+        kind: "textarea",
+        label: "Constraints",
+        prompt: "Write the claims, data, delivery, payment, risk, and timeline limits that the route must respect.",
+        helper: "This prevents the plan from implying hidden automation, guaranteed outcomes, or unavailable proof.",
+        placeholder: "No guaranteed revenue, no private customer data in public output, no hidden research claim.",
+        rows: 5
+      }
+    ]
   },
   {
-    key: "existingAssets",
-    label: "Existing assets",
-    helper: "Notes, links, screenshots, demos, examples, source material.",
-    placeholder: "What already exists and can be inspected?"
-  },
-  {
-    key: "blocker",
-    label: "Current blocker",
-    helper: "The decision that prevents the next build or launch step.",
-    placeholder: "What are you unable to choose?"
-  },
-  {
-    key: "constraints",
-    label: "Constraints",
-    helper: "Claims, delivery limits, data rights, risk, payment, timeline.",
-    placeholder: "What must the route not claim or depend on?"
+    number: "04",
+    title: "Operating choices",
+    description: "Choose how this draft should move from browser-local plan to review or intake.",
+    fields: [
+      {
+        key: "executionMode",
+        kind: "select",
+        label: "Execution mode",
+        prompt: "Decide whether you want to execute alone or send this for operator review.",
+        helper: "This affects whether the next step is self-run, manual review, implementation help, or research only.",
+        options: executionModeOptions
+      },
+      {
+        key: "researchCarrier",
+        kind: "select",
+        label: "Research carrier",
+        prompt: "Choose the research source style without locking the product to one AI platform.",
+        helper: "Carrier-neutral keeps the plan portable across manual review, client reports, or AI research tools.",
+        options: researchCarrierOptions
+      },
+      {
+        key: "timeWindow",
+        kind: "select",
+        label: "Review window",
+        prompt: "Set the time box for deciding whether to continue, repair, pivot, or stop.",
+        helper: "Shorter windows are better for route selection than open-ended exploration.",
+        options: timeWindowOptions
+      }
+    ]
   }
 ];
 
@@ -145,7 +238,7 @@ export function PlanDraftStudio() {
   return (
     <section className="plan-draft-studio" aria-label="Plan draft studio">
       <div className="plan-studio-grid">
-        <form className="plan-input-panel">
+        <form className="plan-input-panel" onSubmit={(event) => event.preventDefault()}>
           <div className="plan-panel-head">
             <span>Input</span>
             <h2>Write the project once.</h2>
@@ -155,68 +248,54 @@ export function PlanDraftStudio() {
             </p>
           </div>
 
-          <div className="plan-select-row">
-            <label>
-              <span>Project type</span>
-              <select
-                value={input.projectType}
-                onChange={(event) => setInput(setInputValue(input, "projectType", event.target.value))}
-              >
-                {projectTypeOptions.map((option) => (
-                  <option key={option}>{option}</option>
-                ))}
-              </select>
-            </label>
-            <label>
-              <span>Execution mode</span>
-              <select
-                value={input.executionMode}
-                onChange={(event) => setInput(setInputValue(input, "executionMode", event.target.value))}
-              >
-                {executionModeOptions.map((option) => (
-                  <option key={option}>{option}</option>
-                ))}
-              </select>
-            </label>
+          <div className="plan-input-summary" aria-label="Plan Studio input rules">
+            <span>No API call</span>
+            <span>One field per decision</span>
+            <span>Draft before intake</span>
           </div>
 
-          <div className="plan-select-row">
-            <label>
-              <span>Research carrier</span>
-              <select
-                value={input.researchCarrier}
-                onChange={(event) => setInput(setInputValue(input, "researchCarrier", event.target.value))}
-              >
-                {researchCarrierOptions.map((option) => (
-                  <option key={option}>{option}</option>
-                ))}
-              </select>
-            </label>
-            <label>
-              <span>Review window</span>
-              <select
-                value={input.timeWindow}
-                onChange={(event) => setInput(setInputValue(input, "timeWindow", event.target.value))}
-              >
-                {timeWindowOptions.map((option) => (
-                  <option key={option}>{option}</option>
-                ))}
-              </select>
-            </label>
-          </div>
+          <div className="plan-question-stack">
+            {planQuestionGroups.map((group) => (
+              <fieldset className="plan-question-group" key={group.number}>
+                <legend>
+                  <span>{group.number}</span>
+                  <strong>{group.title}</strong>
+                  <small>{group.description}</small>
+                </legend>
 
-          <div className="plan-text-grid">
-            {textareaFields.map((field) => (
-              <label key={field.key}>
-                <span>{field.label}</span>
-                <textarea
-                  value={input[field.key]}
-                  placeholder={field.placeholder}
-                  rows={field.key === "projectName" ? 2 : 4}
-                  onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
-                />
-                <small>{field.helper}</small>
-              </label>
+                <div className="plan-field-stack">
+                  {group.fields.map((field) => (
+                    <label className="plan-field-card" key={field.key}>
+                      <span className="plan-field-label">{field.label}</span>
+                      <strong>{field.prompt}</strong>
+                      {field.kind === "select" ? (
+                        <select
+                          value={input[field.key]}
+                          onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
+                        >
+                          {field.options.map((option) => (
+                            <option key={option}>{option}</option>
+                          ))}
+                        </select>
+                      ) : field.kind === "input" ? (
+                        <input
+                          value={input[field.key]}
+                          placeholder={field.placeholder}
+                          onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
+                        />
+                      ) : (
+                        <textarea
+                          value={input[field.key]}
+                          placeholder={field.placeholder}
+                          rows={field.rows ?? 5}
+                          onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
+                        />
+                      )}
+                      <small>{field.helper}</small>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
             ))}
           </div>
 
