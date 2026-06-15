@@ -145,8 +145,12 @@ export default function Page() {
             Payment evidence is only needed when an order already exists.
           </p>
           <div className="hero-actions">
+            <Link prefetch={false} className="primary-action" href="/plan/">
+              <ClipboardList aria-hidden="true" size={17} />
+              Draft plan first
+            </Link>
             <a
-              className="primary-action"
+              className="secondary-action"
               data-analytics-event="intake_email_click"
               data-analytics-label="intake_mailto"
               href={`mailto:${launchProduct.supportEmail}?subject=${mailSubject}&body=${mailBody}`}

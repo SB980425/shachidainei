@@ -341,6 +341,14 @@ async function main() {
     "The route workflow becomes the thing people can click.",
     "Every new project starts with a Route File before a build."
   ]);
+  await checkPage("/plan/", [
+    "Plan Studio",
+    "Fill in your project plan before asking for a Route File.",
+    "Write the project once.",
+    "Selected draft route",
+    "Copy plan brief",
+    "A draft is not the final Route File."
+  ]);
   await checkPage("/templates/route-research-prompt-pack/", [
     "Carrier-neutral research plan",
     "The site does not create a hidden research result.",
@@ -441,6 +449,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-54 Plan Studio and client workspace cleanup",
     "M4-53 Navigation context and updates ledger",
     "M4-48 Route basis evidence upgrade",
     "M4-47 Self route file upgrade",

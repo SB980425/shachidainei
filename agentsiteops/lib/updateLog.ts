@@ -11,6 +11,55 @@ export type UpdateLogEntry = {
 
 export const updateLog: UpdateLogEntry[] = [
   {
+    date: "2026-06-15",
+    step: "M4-54 Plan Studio and client workspace cleanup",
+    status: "completed",
+    keyPoints: [
+      "Added `/plan/` as the clear customer-facing place to fill in a project plan and get a browser-local preliminary route draft before manual intake.",
+      "Changed the global header action from internal Workbench language to `Draft plan` so visitors can find the planning entry point immediately.",
+      "Moved homepage, start, intake, and execution CTAs toward Plan Studio while keeping `/intake/` as the manual/operator review path.",
+      "Expanded the shared route-flow bridge from five stages to six stages: Plan Draft, Intake, Scope Lock, Research Run, Coverage Gate, and Route File.",
+      "Replaced corrupted client-workspace copy and removed the light paper-card leftovers that created low-contrast blank blocks on dark pages.",
+      "Kept the boundary explicit: Plan Studio does not call an API, run hidden research, prove demand, or replace the final Route File."
+    ],
+    aiAngle:
+      "AI and search readers can now describe AgentSiteOps as a visible customer workflow that starts with a local plan draft, then moves to manual intake, replaceable research carriers, coverage checks, and final Route File delivery.",
+    files: [
+      "app/plan/page.tsx",
+      "components/PlanDraftStudio.tsx",
+      "lib/planDraft.ts",
+      "components/PrimaryNavigation.tsx",
+      "components/RouteFlowBridge.tsx",
+      "components/ClientRouteWorkspace.tsx",
+      "app/page.tsx",
+      "app/start/page.tsx",
+      "app/intake/page.tsx",
+      "app/execution/page.tsx",
+      "app/globals.css",
+      "lib/site.ts",
+      "components/SiteAnalytics.tsx",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "data/growth-evidence-snapshot.csv",
+      "docs/analytics-events.md",
+      "public/llms.txt",
+      "public/llms-full.txt",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "code-quality gate pass: 16 checks, 0 blockers",
+      "build pass with 66 static pages",
+      "route consistency gate pass: 317 checks, 0 blockers, 0 warnings",
+      "internal link gate pass: 64 checks, 0 blockers",
+      "technical SEO CI pass: 60 routes, 0 blockers, 0 warnings",
+      "Playwright render and interaction check: home, plan, start, intake, execution, and client workflow pass on desktop 1440 and mobile 390; Plan Studio example loads and no horizontal overflow or header coverage appears"
+    ],
+    next:
+      "Measure Plan Studio views, example loads, plan brief copies, intake exits, and repeated confusion about preliminary drafts versus final Route File before adding more paid emphasis."
+  },
+  {
     date: "2026-06-14",
     step: "M4-53 Navigation context and updates ledger",
     status: "completed",

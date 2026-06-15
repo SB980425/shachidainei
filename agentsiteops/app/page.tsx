@@ -156,6 +156,7 @@ const boundaryCards = [
 ];
 
 const supportLinks = [
+  { href: "/plan/", label: "Plan Studio" },
   { href: "/start/", label: "Start here" },
   { href: "/execution/", label: "Execution workbench" },
   { href: "/how-it-works/", label: "How it works" },
@@ -200,9 +201,9 @@ export default function HomePage() {
             gate, and final route handoff before more build work starts.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/intake/">
+            <Link prefetch={false} className="primary-action" href="/plan/">
               <ClipboardList aria-hidden="true" size={17} />
-              Open intake
+              Draft your plan
             </Link>
             <Link prefetch={false} className="secondary-action" href="/execution/">
               <Activity aria-hidden="true" size={17} />
@@ -278,8 +279,8 @@ export default function HomePage() {
               </article>
             ))}
             <div className="home-output-actions">
-              <Link prefetch={false} href="/reports/client-route-workflow/">
-                Client progress
+              <Link prefetch={false} href="/plan/">
+                Draft plan
                 <ArrowRight aria-hidden="true" size={15} />
               </Link>
               <Link prefetch={false} href="/execution/">
@@ -416,9 +417,9 @@ export default function HomePage() {
           </p>
         </div>
         <div className="route-final-actions">
-          <Link prefetch={false} className="primary-action" href="/intake/">
+          <Link prefetch={false} className="primary-action" href="/plan/">
             <ClipboardList aria-hidden="true" size={17} />
-            Open intake
+            Draft your plan
           </Link>
           <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
             <FileCheck2 aria-hidden="true" size={17} />

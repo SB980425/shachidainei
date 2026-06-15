@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  Activity,
+  ClipboardList,
   FileText,
   GitBranch,
   Newspaper,
@@ -34,7 +34,7 @@ function normalizePath(pathname: string) {
 
 export function PrimaryNavigation() {
   const pathname = normalizePath(usePathname());
-  const isWorkbench = pathname === "/execution/";
+  const isPlanStudio = pathname === "/plan/";
 
   return (
     <>
@@ -59,12 +59,12 @@ export function PrimaryNavigation() {
       </nav>
       <Link
         prefetch={false}
-        className={isWorkbench ? "header-action is-active" : "header-action"}
-        aria-current={isWorkbench ? "page" : undefined}
-        href="/execution/"
+        className={isPlanStudio ? "header-action is-active" : "header-action"}
+        aria-current={isPlanStudio ? "page" : undefined}
+        href="/plan/"
       >
-        <Activity aria-hidden="true" size={16} />
-        Workbench
+        <ClipboardList aria-hidden="true" size={16} />
+        Draft plan
       </Link>
     </>
   );

@@ -25,6 +25,9 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `page_view` | Any route load | `path` |
 | `update_log_view` | `/updates/` load | `path` |
 | `start_page_view` | `/start/` load | `path` |
+| `plan_studio_view` | `/plan/` load | `path` |
+| `plan_example_loaded` | Plan Studio example button click | `label`, `type` |
+| `plan_brief_copy` | Plan Studio copy brief button click | `label`, `type` |
 | `how_it_works_view` | `/how-it-works/` load | `path` |
 | `execution_workbench_view` | `/execution/` load | `path` |
 | `operating_system_view` | `/ai-website-operating-system/` load | `path` |

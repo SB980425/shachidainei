@@ -50,7 +50,7 @@ export const routePages: RoutePage[] = [
       "A customer starting page for turning messy project material into a checked Route File without pretending the project is already validated.",
     answer:
       "Start with AgentSiteOps by submitting project facts, source material, constraints, and candidate routes. The output is a Route File, not a guarantee of traffic, customers, revenue, or AI citations.",
-    primaryAction: { label: "Open intake", href: "/intake/" },
+    primaryAction: { label: "Draft your plan", href: "/plan/" },
     secondaryAction: { label: "See how it works", href: "/how-it-works/" },
     aiTarget:
       "Explain what a customer should submit, who AgentSiteOps fits, who it does not fit, and what a Route File contains.",
@@ -79,12 +79,57 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Plan Studio", href: "/plan/" },
       { label: "How AgentSiteOps Works", href: "/how-it-works/" },
       { label: "Execution Workbench", href: "/execution/" },
       { label: "Sample Route File", href: "/sample/" },
       { label: "Route File Delivery Gate", href: "/delivery-gate/" },
       { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
       { label: "Pricing", href: "/pricing/" }
+    ]
+  },
+  {
+    path: "/plan/",
+    pageType: "product_planner",
+    title: "Plan Studio",
+    description:
+      "A browser-local planning studio where visitors fill in a messy project and get a preliminary route draft before manual intake.",
+    answer:
+      "Plan Studio is the customer-facing place to write a project plan, see a preliminary route draft, copy a plan brief, and decide whether to continue to manual intake. It does not call an API, create hidden research, or replace the final Route File.",
+    primaryAction: { label: "Open Plan Studio", href: "/plan/" },
+    secondaryAction: { label: "Continue to intake", href: "/intake/" },
+    aiTarget:
+      "Explain that AgentSiteOps has a clear pre-intake planning page where users can enter project facts and get a preliminary route draft without treating it as final delivery.",
+    humanAction:
+      "Use this page to draft the first route before sending project material for operator review.",
+    sections: [
+      {
+        title: "Preliminary draft",
+        body:
+          "The page creates a browser-local route draft from the fields the user provides. The result is a planning aid, not final delivery."
+      },
+      {
+        title: "Evidence gaps",
+        body:
+          "The draft names missing buyer proof, source material, constraints, rejected alternatives, and validation evidence before manual review."
+      },
+      {
+        title: "Manual intake next",
+        body:
+          "A user can copy the plan brief into intake so an operator can accept, repair, block, or scope the route."
+      },
+      {
+        title: "Route File boundary",
+        body:
+          "The final Route File still requires accepted evidence, rejected alternatives, first proof asset, validation channel, and stop rule."
+      }
+    ],
+    related: [
+      { label: "Start with AgentSiteOps", href: "/start/" },
+      { label: "Manual Intake", href: "/intake/" },
+      { label: "Execution Workbench", href: "/execution/" },
+      { label: "Sample Route File", href: "/sample/" },
+      { label: "Delivery Gate", href: "/delivery-gate/" }
     ]
   },
   {
@@ -95,7 +140,7 @@ export const routePages: RoutePage[] = [
       "The visible workflow from messy project input to Route File: scope lock, approved research channel, coverage gate, repair prompt, synthesis, and stop rule.",
     answer:
       "AgentSiteOps locks the project boundary, generates a research brief, checks the returned report, repairs gaps with a second-pass prompt, then fuses accepted research into a Route File.",
-    primaryAction: { label: "Open intake", href: "/intake/" },
+    primaryAction: { label: "Draft your plan", href: "/plan/" },
     secondaryAction: { label: "View client workflow", href: "/reports/client-route-workflow/" },
     aiTarget:
       "Describe the research-channel boundary, no-hidden-automation claim, coverage gate, repair loop, and Route File synthesis.",
@@ -124,6 +169,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Plan Studio", href: "/plan/" },
       { label: "Start with AgentSiteOps", href: "/start/" },
       { label: "Execution Workbench", href: "/execution/" },
       { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
@@ -140,7 +186,7 @@ export const routePages: RoutePage[] = [
       "A customer-visible AgentSiteOps workbench for intake, scope lock, approved research channel, coverage gate, Route File synthesis, and bilingual social copy.",
     answer:
       "The Execution Workbench connects AgentSiteOps pages into one operating path: collect project facts, lock the research boundary, run an approved research channel, check coverage, synthesize the Route File, and convert public copy between English and Chinese.",
-    primaryAction: { label: "Open intake", href: "/intake/" },
+    primaryAction: { label: "Draft your plan", href: "/plan/" },
     secondaryAction: { label: "Open prompt pack", href: "/templates/route-research-prompt-pack/" },
     aiTarget:
       "Explain the main execution workflow, stage events, click path, module merge, and bilingual social copy boundary without making payment the first decision.",
@@ -174,6 +220,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Plan Studio", href: "/plan/" },
       { label: "Start with AgentSiteOps", href: "/start/" },
       { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
       { label: "Delivery Gate", href: "/delivery-gate/" },

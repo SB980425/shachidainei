@@ -171,16 +171,16 @@ export default function Page() {
       <section className="gate-hero start-hero">
         <div>
           <p className="eyebrow">Start here</p>
-          <h1>Start with a messy project. Leave with a Route File.</h1>
+          <h1>Start with a messy project. Draft the first route before intake.</h1>
           <p>
             This page explains what to submit, what we need, who is a Good fit,
             who is Not a fit, and what the final Route File must contain before
             the project enters build work.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/intake/">
+            <Link prefetch={false} className="primary-action" href="/plan/">
               <ClipboardList aria-hidden="true" size={17} />
-              Open intake
+              Draft your plan
             </Link>
             <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
@@ -223,10 +223,11 @@ export default function Page() {
       <section className="gate-section start-route-path" aria-label="Start execution path">
         <div>
           <span>First path</span>
-          <h2>Start means opening intake, not jumping to payment.</h2>
+          <h2>Start means drafting the project before intake or payment.</h2>
           <p>
-            The first click should create a usable project boundary. Payment, build work,
-            and public copy stay behind the route decision.
+            The first click should let the visitor write the plan and see a preliminary
+            route draft. Payment, build work, and public copy stay behind the route
+            decision.
           </p>
         </div>
         <div className="start-route-path-steps">

@@ -13495,3 +13495,419 @@ body {
   }
 }
 
+.plan-page {
+  background:
+    radial-gradient(circle at 18% 4%, rgba(55, 217, 140, 0.14), transparent 30%),
+    radial-gradient(circle at 88% 10%, rgba(255, 104, 70, 0.16), transparent 28%),
+    var(--foundry-bg);
+  color: var(--foundry-text);
+}
+
+.plan-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 28px 28px auto;
+  width: min(38vw, 420px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(55, 217, 140, 0.8), transparent);
+  opacity: 0.75;
+}
+
+.plan-brief {
+  min-height: 100%;
+}
+
+.plan-flow-strip,
+.plan-draft-studio,
+.plan-boundary-section,
+.plan-final-cta {
+  width: min(1180px, calc(100% - 40px));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.plan-flow-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.plan-flow-strip article,
+.plan-boundary-grid article,
+.plan-input-panel,
+.plan-output-panel,
+.plan-output-tabs section,
+.plan-seven-day,
+.plan-stop-rule {
+  border: 1px solid rgba(226, 231, 238, 0.12);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(26, 34, 36, 0.92), rgba(12, 17, 19, 0.92));
+  color: var(--foundry-text);
+  box-shadow: none;
+}
+
+.plan-flow-strip article {
+  display: grid;
+  gap: 8px;
+  min-height: 136px;
+  padding: 16px;
+}
+
+.plan-flow-strip span,
+.plan-panel-head span,
+.plan-route-card span,
+.plan-boundary-section .route-section-heading span,
+.plan-output-tabs h3,
+.plan-seven-day h3,
+.plan-stop-rule h3 {
+  color: var(--foundry-green);
+}
+
+.plan-flow-strip span {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.plan-flow-strip h2,
+.plan-boundary-grid h3,
+.plan-panel-head h2,
+.plan-route-card h2,
+.plan-output-tabs h3,
+.plan-seven-day h3,
+.plan-stop-rule h3 {
+  margin: 0;
+  color: var(--foundry-text);
+}
+
+.plan-flow-strip p,
+.plan-boundary-grid p,
+.plan-panel-head p,
+.plan-route-card p,
+.plan-output-tabs li,
+.plan-seven-day li,
+.plan-stop-rule p,
+.plan-next-action {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.72);
+  line-height: 1.55;
+}
+
+.plan-boundary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.plan-boundary-grid article {
+  display: grid;
+  gap: 12px;
+  min-height: 210px;
+  padding: 18px;
+}
+
+.plan-boundary-grid svg,
+.plan-output-tabs svg,
+.plan-seven-day svg,
+.plan-stop-rule svg {
+  color: var(--foundry-coral);
+}
+
+.plan-draft-studio {
+  margin-top: 22px;
+  scroll-margin-top: 110px;
+}
+
+.plan-studio-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.92fr) minmax(360px, 1.08fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.plan-input-panel,
+.plan-output-panel {
+  display: grid;
+  gap: 16px;
+  min-width: 0;
+  padding: 18px;
+}
+
+.plan-panel-head {
+  display: grid;
+  gap: 8px;
+}
+
+.plan-panel-head span,
+.plan-route-card span {
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plan-select-row,
+.plan-text-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.plan-select-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.plan-text-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.plan-input-panel label {
+  display: grid;
+  gap: 7px;
+  min-width: 0;
+}
+
+.plan-input-panel label span {
+  color: rgba(246, 241, 232, 0.86);
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.plan-input-panel select,
+.plan-input-panel textarea {
+  width: 100%;
+  border: 1px solid rgba(226, 231, 238, 0.14);
+  border-radius: 12px;
+  background: rgba(3, 8, 10, 0.48);
+  color: var(--foundry-text);
+  font: inherit;
+  padding: 11px 12px;
+  outline: none;
+}
+
+.plan-input-panel textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+
+.plan-input-panel select:focus,
+.plan-input-panel textarea:focus {
+  border-color: rgba(55, 217, 140, 0.46);
+  box-shadow: 0 0 0 3px rgba(55, 217, 140, 0.12);
+}
+
+.plan-input-panel small {
+  color: rgba(246, 241, 232, 0.54);
+  line-height: 1.4;
+}
+
+.plan-input-actions,
+.plan-output-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.plan-input-actions button,
+.plan-output-actions button,
+.plan-output-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  border: 1px solid rgba(226, 231, 238, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--foundry-text);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 850;
+  padding: 0 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.plan-output-actions button:first-child {
+  border-color: rgba(255, 104, 70, 0.48);
+  background: linear-gradient(180deg, rgba(255, 104, 70, 0.98), rgba(214, 80, 52, 0.96));
+  color: #180b08;
+}
+
+.plan-output-panel {
+  position: sticky;
+  top: 96px;
+}
+
+.plan-score-card {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  border: 1px solid rgba(55, 217, 140, 0.24);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(55, 217, 140, 0.2), transparent 44%),
+    rgba(55, 217, 140, 0.06);
+  padding: 18px;
+}
+
+.plan-score-card span {
+  color: var(--foundry-green);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plan-score-card strong {
+  color: var(--foundry-text);
+  font-size: clamp(54px, 8vw, 86px);
+  font-weight: 950;
+  line-height: 0.95;
+}
+
+.plan-score-card small {
+  color: rgba(246, 241, 232, 0.6);
+}
+
+.plan-route-card {
+  display: grid;
+  gap: 8px;
+  border-left: 3px solid var(--foundry-coral);
+  padding-left: 14px;
+}
+
+.plan-output-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.plan-output-tabs section,
+.plan-seven-day,
+.plan-stop-rule {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.plan-output-tabs section > div,
+.plan-seven-day > div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.plan-output-tabs ul,
+.plan-seven-day ol {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.plan-stop-rule {
+  grid-template-columns: 20px minmax(0, 1fr);
+}
+
+.plan-next-action {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  border-top: 1px solid rgba(226, 231, 238, 0.1);
+  padding-top: 12px;
+}
+
+.plan-next-action svg {
+  color: var(--foundry-green);
+  flex: 0 0 auto;
+}
+
+.client-route-file-paper,
+.client-route-file-grid section,
+.split-section > div,
+.client-progress-board article,
+.route-file-preview article {
+  border-color: rgba(226, 231, 238, 0.12) !important;
+  background:
+    linear-gradient(180deg, rgba(26, 34, 36, 0.92), rgba(12, 17, 19, 0.92)) !important;
+  color: var(--foundry-text) !important;
+  box-shadow: none !important;
+}
+
+.client-route-file-paper > div:first-child strong,
+.client-route-file-grid h3,
+.route-file-preview h3,
+.split-section h2 {
+  color: var(--foundry-text) !important;
+}
+
+.client-route-file-grid p,
+.route-file-preview p,
+.split-section p {
+  color: rgba(246, 241, 232, 0.72) !important;
+}
+
+.client-route-file-paper > div:first-child em {
+  background: rgba(55, 217, 140, 0.14) !important;
+  color: #d8ffe8 !important;
+}
+
+.route-flow-bridge-track {
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+}
+
+.route-flow-bridge-track a {
+  min-height: 138px !important;
+}
+
+@media (max-width: 1080px) {
+  .plan-studio-grid,
+  .plan-flow-strip,
+  .plan-boundary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .route-flow-bridge-track {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .plan-output-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 720px) {
+  .plan-flow-strip,
+  .plan-draft-studio,
+  .plan-boundary-section,
+  .plan-final-cta {
+    width: calc(100% - 20px);
+  }
+
+  .plan-select-row,
+  .plan-text-grid,
+  .plan-output-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .route-flow-bridge-track {
+    grid-template-columns: 1fr !important;
+  }
+
+  .plan-input-panel,
+  .plan-output-panel {
+    padding: 12px;
+  }
+
+  .plan-score-card strong {
+    font-size: 56px;
+  }
+}
+

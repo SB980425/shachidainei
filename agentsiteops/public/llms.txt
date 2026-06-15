@@ -5,6 +5,7 @@
 Status: public self-score 52/100; technically launchable; commercially unvalidated until confirmed payment plus usable intake exists.
 
 Primary site: https://agentsiteops.com
+Plan Studio: https://agentsiteops.com/plan/
 Launch kit: https://agentsiteops.com/launch-kit/
 48-hour exposure sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 Route selection method: https://agentsiteops.com/methodology/route-selection/
@@ -28,6 +29,7 @@ Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?t
 ## What AgentSiteOps Does
 
 - Scores whether a first AI-service offer is ready for a short validation path.
+- Provides a browser-local Plan Studio where a visitor can fill in a project plan and get a preliminary route draft before manual intake.
 - Selects one route archetype instead of producing a generic idea list.
 - Uses confidence bands and a project-route fit matrix before selling a roadmap.
 - Exposes the route source map, confidence bands, and project route fit matrix directly on the route selection method page.
@@ -41,6 +43,7 @@ Structured route feedback: https://github.com/SB980425/shachidainei/issues/new?t
 
 - No guaranteed traffic, rankings, AI citations, revenue, customers, or payback.
 - No automated account, dashboard, subscription software, raw event store, user tracking profile, or third-party analytics endpoint.
+- Plan Studio drafts are preliminary planning aids, not final Route Files or proof of demand.
 - First-party analytics endpoint is aggregate-only: https://agentsiteops.com/api/events/summary?days=2
 - No legal, medical, financial, tax, safety, or other regulated advice.
 - PayPal clicks, sitemap success, IndexNow success, crawler access, and page existence are not revenue or demand proof.

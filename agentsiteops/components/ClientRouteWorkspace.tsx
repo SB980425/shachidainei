@@ -42,6 +42,14 @@ const inputRows = [
 const stageRows = [
   {
     step: "01",
+    label: "Plan draft",
+    status: "Passed",
+    owner: "Client",
+    output: "Preliminary route draft",
+    body: "The project has been written into a usable draft before manual intake starts."
+  },
+  {
+    step: "02",
     label: "Intake",
     status: "Passed",
     owner: "Client",
@@ -49,7 +57,7 @@ const stageRows = [
     body: "The project has enough facts to create a narrow route question instead of a broad research request."
   },
   {
-    step: "02",
+    step: "03",
     label: "Scope lock",
     status: "Passed",
     owner: "Operator",
@@ -57,15 +65,15 @@ const stageRows = [
     body: "The first run is limited to one route decision, accepted sources, blocked claims, and rejected non-goals."
   },
   {
-    step: "03",
+    step: "04",
     label: "Research channel",
     status: "Active",
     owner: "Operator",
     output: "Cited report",
-    body: "The accepted brief runs outside the website in an approved research channel, manual source review, or client-provided report path."
+    body: "The accepted brief runs in an approved research channel, manual source review, or client-provided report path."
   },
   {
-    step: "04",
+    step: "05",
     label: "Coverage gate",
     status: "Repair watch",
     owner: "Site",
@@ -73,20 +81,12 @@ const stageRows = [
     body: "The returned report must cover sources, buyer logic, alternatives, evidence ledger, proof asset, channel, and stop rule."
   },
   {
-    step: "05",
+    step: "06",
     label: "Route File",
     status: "Pending",
     owner: "Operator",
     output: "Fused decision file",
     body: "Accepted research becomes one client-readable file with selected route and rejected alternatives."
-  },
-  {
-    step: "06",
-    label: "Public copy",
-    status: "Pending",
-    owner: "Site",
-    output: "Chinese + English copy",
-    body: "The route is translated for public updates without adding traffic, ranking, revenue, or automation claims."
   }
 ];
 
@@ -144,10 +144,11 @@ export function ClientRouteWorkspace() {
       <div className="client-workspace-head">
         <div>
           <span>Client workspace</span>
-          <h2>一个客户能看懂的项目进度页。</h2>
+          <h2>A client-readable progress page for the route decision.</h2>
           <p>
-            这个模块把 AgentSiteOps 的后台方法压缩成客户可观察状态：输入是否可用、
-            当前阶段在哪里、哪些内容已通过、哪些缺口触发补研、最终 Route File 交付什么。
+            This module compresses the AgentSiteOps method into a visible client state:
+            whether input is usable, which stage is active, what has passed, what
+            triggers repair, and what the final Route File must contain.
           </p>
         </div>
         <div className="client-workspace-status">
@@ -255,7 +256,7 @@ export function ClientRouteWorkspace() {
             <Languages aria-hidden="true" size={16} />
             Social copy boundary
           </span>
-          <h3>中英文可以转换，承诺边界不能改变。</h3>
+          <h3>Chinese and English copy can change form; the claim boundary cannot change.</h3>
         </div>
         {socialCopyPreviewRows.map((item) => (
           <article key={item.language}>
@@ -278,9 +279,13 @@ export function ClientRouteWorkspace() {
       </div>
 
       <div className="client-workspace-links">
+        <Link prefetch={false} href="/plan/">
+          <ClipboardList aria-hidden="true" size={16} />
+          Draft plan
+        </Link>
         <Link prefetch={false} href="/intake/">
           <ClipboardList aria-hidden="true" size={16} />
-          Open intake
+          Manual intake
         </Link>
         <Link prefetch={false} href="/templates/route-research-prompt-pack/">
           <SearchCheck aria-hidden="true" size={16} />

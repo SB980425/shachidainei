@@ -11,6 +11,7 @@ AgentSiteOps is a small public operating system for deciding whether an AI-capab
 - Technical foundation: launchable.
 - Commercial validation: not proven.
 - First-party analytics: aggregate endpoint active; current threshold counts remain unproven until real non-self events appear.
+- Plan Studio: browser-local preliminary route draft before manual intake; not final delivery and not proof of demand.
 - Payment path: PayPal-hosted links.
 - Fulfillment: manual, after confirmed payment and usable intake.
 - Data policy: aggregate public evidence only; no private names, emails, handles, payment identifiers, bank details, or private replies in the public repo.
@@ -18,6 +19,7 @@ AgentSiteOps is a small public operating system for deciding whether an AI-capab
 ## Core Pages
 
 - Home: https://agentsiteops.com/
+- Plan Studio: https://agentsiteops.com/plan/
 - Launch kit: https://agentsiteops.com/launch-kit/
 - 48-hour sprint: https://agentsiteops.com/guides/48-hour-exposure-sprint/
 - First traffic system: https://agentsiteops.com/guides/first-traffic-system/

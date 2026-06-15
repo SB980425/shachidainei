@@ -1,16 +1,16 @@
 # Internal Link Gate
 
-- Generated: 2026-06-14T12:43:48.440Z
+- Generated: 2026-06-15T04:15:22.077Z
 - Status: pass
-- Checks: 63
+- Checks: 64
 - Blockers: 0
 
 ## Summary
 
 | Scope | Status | Detail | Source |
 |---|---|---|---|
-| html_files | pass | 64 generated HTML files scanned | out/ |
-| internal_links | pass | 61 same-site link targets discovered | out/ |
+| html_files | pass | 65 generated HTML files scanned | out/ |
+| internal_links | pass | 62 same-site link targets discovered | out/ |
 | internal_link | pass | / | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /ai-website-operating-system/ | guides\ai-citation-grounding-metrics\index.html, methodology\website-opportunity-scoring\index.html, reports\route-evidence-dashboard\index.html |
 | internal_link | pass | /answers/ai-service-route-vs-generic-chatgpt/ | reports\route-evidence-dashboard\index.html |
@@ -48,6 +48,7 @@
 | internal_link | pass | /launch-kit/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /methodology/route-selection/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /methodology/website-opportunity-scoring/ | checklists\programmatic-seo-gate\index.html, guides\ai-citation-grounding-metrics\index.html, reports\route-evidence-dashboard\index.html |
+| internal_link | pass | /plan/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /pricing/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /privacy/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /refund-policy/ | 404\index.html, 404.html, ai-website-operating-system\index.html |

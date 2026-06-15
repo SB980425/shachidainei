@@ -9,12 +9,20 @@ import {
 
 const routeFlowStages = [
   {
+    id: "plan",
+    label: "Plan Draft",
+    title: "Project plan",
+    body: "Write the messy project and generate a preliminary route draft.",
+    href: "/plan/",
+    Icon: ClipboardList
+  },
+  {
     id: "intake",
     label: "Intake",
-    title: "Client input",
-    body: "Facts, sources, constraints, and candidate routes.",
+    title: "Manual review",
+    body: "Send the plan brief for operator acceptance or repair.",
     href: "/intake/",
-    Icon: ClipboardList
+    Icon: FileCheck2
   },
   {
     id: "scope",

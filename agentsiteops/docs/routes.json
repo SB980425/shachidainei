@@ -24,6 +24,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/plan/",
+      "pageType": "product_planner",
+      "template": "plan_studio",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.89,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/how-it-works/",
       "pageType": "product_explainer",
       "template": "product_explainer",

@@ -83,14 +83,14 @@ export default function ExecutionPage() {
             <Link
               prefetch={false}
               className="primary-action"
-              href="/intake/"
+              href="/plan/"
               data-analytics-event="cta_click"
-              data-analytics-label="execution_start"
-              data-analytics-target="/intake/"
+              data-analytics-label="execution_plan"
+              data-analytics-target="/plan/"
               data-analytics-type="execution_page"
             >
               <ClipboardList aria-hidden="true" size={17} />
-              Open intake
+              Draft plan
             </Link>
             <Link
               prefetch={false}
@@ -182,12 +182,16 @@ export default function ExecutionPage() {
           <span>Next path</span>
           <h2>Keep templates, but make the workbench the operating center.</h2>
           <p>
-            The prompt pack, delivery gate, client workflow, route basis, and sample stay
-            available. This page connects them into one visible execution loop.
+          The Plan Studio, prompt pack, delivery gate, client workflow, route basis, and
+            sample stay available. This page connects them into one visible execution loop.
           </p>
         </div>
         <div className="route-final-actions">
-          <Link prefetch={false} className="primary-action" href="/delivery-gate/">
+          <Link prefetch={false} className="primary-action" href="/plan/">
+            <ClipboardList aria-hidden="true" size={17} />
+            Draft plan
+          </Link>
+          <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
             <FileCheck2 aria-hidden="true" size={17} />
             Check delivery
           </Link>
