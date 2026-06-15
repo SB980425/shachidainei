@@ -402,9 +402,25 @@ async function main() {
   ]);
   await checkPage("/pricing/", ["Objections that should block or redirect payment", "I can ask ChatGPT for this."]);
   await checkPage("/examples/fit-review-sample/", ["A smaller paid verdict", "Full Route File", "It does not prove traffic"]);
+  await checkPage("/examples/ai-service-route-file/", [
+    "AI service route file example.",
+    "Selected route",
+    "Evidence ledger",
+    "Seven-day validation path",
+    "A real Route File must explain what to do and what not to build."
+  ]);
+  await checkPage("/examples/blocked-intake/", [
+    "This request should not become a Route File.",
+    "Block delivery",
+    "Why it is blocked",
+    "Repair request",
+    "Acceptable resubmission"
+  ]);
   await checkPage("/sample/", [
     "What the final AgentSiteOps handoff should contain.",
-    "Sample",
+    "Proof cases to inspect before trusting the workflow",
+    "View AI service case",
+    "View blocked intake",
     "First proof asset",
     "What is not proven"
   ]);
@@ -415,9 +431,11 @@ async function main() {
   await checkPage("/buy/", ["Check the project before paying for the Route File.", "Pay with PayPal", "Acceptance criteria", "If the route is not ready"]);
   await checkPage("/intake/", [
     "Project intake",
-    "Email project intake",
+    "Open email",
+    "Copy the packet first",
+    "Paste and send",
     "Payment confirmation",
-    "Manual intake process",
+    "Manual delivery process",
     "No saved Plan Studio draft",
     "Start in Plan Studio",
     "After sending",
@@ -470,11 +488,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-59 Proof cases and intake handoff cleanup",
     "M4-58 Customer path completion pass",
     "M4-57 Lightweight updates page",
     "M4-56 Plan-to-intake interaction continuity",
-    "M4-55 Plan Studio spacious intake redesign",
-    "M4-54 Plan Studio and client workspace cleanup"
+    "M4-55 Plan Studio spacious intake redesign"
   ]);
 
   const report = renderReport(generatedAt);

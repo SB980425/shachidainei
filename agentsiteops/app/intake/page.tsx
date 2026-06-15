@@ -6,18 +6,15 @@ import {
   CheckCircle2,
   ClipboardList,
   FileText,
-  Mail,
   ShieldCheck
 } from "lucide-react";
 import {
   intakeFields,
-  launchProduct,
   paymentConfirmationFields
 } from "@/lib/launch";
 import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { IntakePacketBuilder } from "@/components/IntakePacketBuilder";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
-import { buildProjectIntakePacket } from "@/lib/intakePacket";
 import { siteUrl } from "@/lib/site";
 
 const path = "/intake/";
@@ -126,9 +123,6 @@ export default function Page() {
     url: `${siteUrl}${path}`,
     inLanguage: "en"
   };
-  const mailSubject = encodeURIComponent("AgentSiteOps project intake");
-  const mailBody = encodeURIComponent(buildProjectIntakePacket(true));
-
   return (
     <main className="gate-page">
       <script
@@ -153,15 +147,6 @@ export default function Page() {
               <ClipboardList aria-hidden="true" size={17} />
               Draft plan first
             </Link>
-            <a
-              className="secondary-action"
-              data-analytics-event="intake_email_click"
-              data-analytics-label="intake_mailto"
-              href={`mailto:${launchProduct.supportEmail}?subject=${mailSubject}&body=${mailBody}`}
-            >
-              <Mail aria-hidden="true" size={17} />
-              Email project intake
-            </a>
             <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
               View output
@@ -287,7 +272,7 @@ export default function Page() {
 
       <section className="gate-section">
         <div className="section-head">
-          <h2>Manual intake process</h2>
+          <h2>Manual delivery process</h2>
           <p>
             This is a service workflow, not an automated account portal. The process
             rejects unsafe or under-evidenced requests before they turn into vague work.

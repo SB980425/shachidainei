@@ -54,7 +54,7 @@ export function IntakePacketBuilder() {
     copyStatus === "copied" ? "Packet copied" : copyStatus === "failed" ? "Copy failed" : "Copy packet";
   const mailHref = `mailto:${launchProduct.supportEmail}?subject=${encodeURIComponent(
     "AgentSiteOps project intake"
-  )}&body=${encodeURIComponent(packet)}`;
+  )}`;
 
   useEffect(() => {
     try {
@@ -97,6 +97,12 @@ export function IntakePacketBuilder() {
             The copied packet keeps project facts first. Order confirmation fields are optional
             and should only be included when a Fit Review or Route File purchase already exists.
           </p>
+          <div className="intake-send-steps" aria-label="Intake sending steps">
+            <span>1. Copy packet</span>
+            <span>2. Open email</span>
+            <span>3. Paste and send</span>
+            <span>4. Wait for review state</span>
+          </div>
           {planBrief ? (
             <div className="intake-saved-plan">
               <strong>Saved Plan Studio draft detected</strong>
@@ -142,9 +148,13 @@ export function IntakePacketBuilder() {
               href={mailHref}
             >
               <Mail aria-hidden="true" size={16} />
-              Email packet
+              Open email
             </a>
           </div>
+          <p className="intake-mail-note">
+            Copy the packet first, then open email and paste it into the message body.
+            This avoids a fragile long email link on mobile browsers.
+          </p>
           <div className="intake-after-send" aria-label="After intake is sent">
             <strong>After sending</strong>
             <p>

@@ -1,12 +1,12 @@
 # Weekly Growth Review
 
-- Date: 2026-06-13
+- Date: 2026-06-15
 - Review type: production baseline evidence review
 - Decision: continue evidence collection; do not scale content clusters yet
 
 ## Conclusion
 
-- The production site has 59 indexable routes with technical SEO passing.
+- The production site has 62 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, AI referrals, and revenue evidence are still pending exports or records; the first-party aggregate endpoint is active but currently waiting for events.
@@ -16,13 +16,13 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 59 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 59/59 routes pass |
+| Route registry | docs/routes.json | 62 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 62/62 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
-| IndexNow | latest command output | 59 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 62 URLs submitted successfully in current deployment cycle |
 | Event layer | /api/events/summary | First-party aggregate endpoint active; sample views 1, source-link clicks 0, PayPal CTA clicks 0 |
 
 ## Unverified
@@ -41,6 +41,7 @@
 |---|---|---|---|---|---|---|
 | / | home | launch_blueprint | pass | site_pass | keep | Measure homepage CTA click rate, start exits, sample exits, delivery gate exits, and confusion about what AgentSiteOps delivers |
 | /start/ | product_entry | launch_blueprint | pass | site_pass | keep | Measure start page views, sample exits, how-it-works exits, pricing exits, and repeated confusion about what to submit |
+| /plan/ | product_planner | launch_blueprint | pass | site_pass | keep | Measure plan studio views, example loads, plan brief copies, intake exits, sample exits, and repeated confusion about preliminary draft versus final Route File |
 | /how-it-works/ | product_explainer | launch_blueprint | pass | site_pass | keep | Measure how-it-works views, start exits, client workflow exits, prompt pack exits, and repeated questions about API use |
 | /execution/ | product_workbench | launch_blueprint | pass | site_pass | keep | Measure execution workbench views, stage selections, prompt pack exits, delivery gate exits, sample exits, and bilingual social copy exports |
 | /delivery-gate/ | product_gate | launch_blueprint | pass | site_pass | keep | Measure delivery gate alias views, sample exits, client workflow exits, full checklist exits, and repeated confusion about pass repair blocked or not delivery |
@@ -48,6 +49,8 @@
 | /tools/website-opportunity-scorer/ | tool | website_opportunity_scoring | pass | site_pass | keep | Measure tool_completed and tool_result_export after real endpoint |
 | /tools/ai-crawler-readiness/ | tool | ai_crawler_readiness | pass | site_pass | keep | Measure readiness report copies and sample audit clicks before paid audit expansion |
 | /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
+| /examples/ai-service-route-file/ | example | launch_blueprint | pass | site_pass | keep | Measure proof-case views, Plan Studio exits, blocked-intake comparison exits, and sample returns |
+| /examples/blocked-intake/ | example | launch_blueprint | pass | site_pass | keep | Measure blocked-intake views, Plan Studio repair exits, intake exits, and comparison with the completed case |
 | /examples/fit-review-sample/ | example | launch_blueprint | pass | site_pass | keep | Measure movement from sample review to Fit Review pricing intake and full Route File pages |
 | /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Route File pricing, sample, buy, and intake path |
 | /tools/audit-scope-builder/ | tool | commercial_validation | pass | site_pass | keep | Measure audit_scope_builder_view, tool_completed, and tool_result_export before adding forms or payment |

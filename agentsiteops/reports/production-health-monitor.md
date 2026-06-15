@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-15T08:10:42.145Z
+- Generated: 2026-06-15T08:44:39.030Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 255
+- Checks: 275
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 60 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 62 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -129,11 +129,29 @@
 | /examples/fit-review-sample/ | pass | A smaller paid verdict | [link](https://agentsiteops.com/examples/fit-review-sample/) |
 | /examples/fit-review-sample/ | pass | Full Route File | [link](https://agentsiteops.com/examples/fit-review-sample/) |
 | /examples/fit-review-sample/ | pass | It does not prove traffic | [link](https://agentsiteops.com/examples/fit-review-sample/) |
+| /examples/ai-service-route-file/ | pass | HTTP 200 | [link](https://agentsiteops.com/examples/ai-service-route-file/) |
+| /examples/ai-service-route-file/ | pass | HTML title exists | [link](https://agentsiteops.com/examples/ai-service-route-file/) |
+| /examples/ai-service-route-file/ | pass | canonical points to production URL | [link](https://agentsiteops.com/examples/ai-service-route-file/) |
+| /examples/ai-service-route-file/ | pass | AI service route file example. | [link](https://agentsiteops.com/examples/ai-service-route-file/) |
+| /examples/ai-service-route-file/ | pass | Selected route | [link](https://agentsiteops.com/examples/ai-service-route-file/) |
+| /examples/ai-service-route-file/ | pass | Evidence ledger | [link](https://agentsiteops.com/examples/ai-service-route-file/) |
+| /examples/ai-service-route-file/ | pass | Seven-day validation path | [link](https://agentsiteops.com/examples/ai-service-route-file/) |
+| /examples/ai-service-route-file/ | pass | A real Route File must explain what to do and what not to build. | [link](https://agentsiteops.com/examples/ai-service-route-file/) |
+| /examples/blocked-intake/ | pass | HTTP 200 | [link](https://agentsiteops.com/examples/blocked-intake/) |
+| /examples/blocked-intake/ | pass | HTML title exists | [link](https://agentsiteops.com/examples/blocked-intake/) |
+| /examples/blocked-intake/ | pass | canonical points to production URL | [link](https://agentsiteops.com/examples/blocked-intake/) |
+| /examples/blocked-intake/ | pass | This request should not become a Route File. | [link](https://agentsiteops.com/examples/blocked-intake/) |
+| /examples/blocked-intake/ | pass | Block delivery | [link](https://agentsiteops.com/examples/blocked-intake/) |
+| /examples/blocked-intake/ | pass | Why it is blocked | [link](https://agentsiteops.com/examples/blocked-intake/) |
+| /examples/blocked-intake/ | pass | Repair request | [link](https://agentsiteops.com/examples/blocked-intake/) |
+| /examples/blocked-intake/ | pass | Acceptable resubmission | [link](https://agentsiteops.com/examples/blocked-intake/) |
 | /sample/ | pass | HTTP 200 | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | HTML title exists | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | canonical points to production URL | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | What the final AgentSiteOps handoff should contain. | [link](https://agentsiteops.com/sample/) |
-| /sample/ | pass | Sample | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Proof cases to inspect before trusting the workflow | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | View AI service case | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | View blocked intake | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | First proof asset | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | What is not proven | [link](https://agentsiteops.com/sample/) |
 | /compare/ | pass | HTTP 200 | [link](https://agentsiteops.com/compare/) |
@@ -172,9 +190,11 @@
 | /intake/ | pass | HTML title exists | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | canonical points to production URL | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Project intake | [link](https://agentsiteops.com/intake/) |
-| /intake/ | pass | Email project intake | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Open email | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Copy the packet first | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Paste and send | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Payment confirmation | [link](https://agentsiteops.com/intake/) |
-| /intake/ | pass | Manual intake process | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Manual delivery process | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | No saved Plan Studio draft | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Start in Plan Studio | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | After sending | [link](https://agentsiteops.com/intake/) |
@@ -261,11 +281,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-59 Proof cases and intake handoff cleanup | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-58 Customer path completion pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-57 Lightweight updates page | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-56 Plan-to-intake interaction continuity | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-55 Plan Studio spacious intake redesign | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-54 Plan Studio and client workspace cleanup | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

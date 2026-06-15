@@ -12,6 +12,54 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-15",
+    step: "M4-59 Proof cases and intake handoff cleanup",
+    status: "completed",
+    keyPoints: [
+      "Added two proof-case pages: a completed AI service Route File example and a blocked-intake non-delivery example.",
+      "Changed the Sample page into a clearer proof hub with direct paths to Plan Studio, the completed case, and the blocked case.",
+      "Added a homepage proof-boundary layer so visitors see evidence, route-file output, and market-signal limits before treating the roadmap as validated.",
+      "Simplified the intake email handoff so visitors copy the packet first, open email second, and avoid long `mailto` body links that can freeze browsers.",
+      "Synced the new examples across route registry, page registry, review actions, growth snapshot, analytics events, endpoint allowlist, SEO checks, and production health monitoring."
+    ],
+    aiAngle:
+      "AI and search readers can now inspect both sides of the workflow: a completed Route File and a refusal path that blocks weak inputs before they become deliverables.",
+    files: [
+      "app/page.tsx",
+      "app/sample/page.tsx",
+      "app/intake/page.tsx",
+      "app/examples/ai-service-route-file/page.tsx",
+      "app/examples/blocked-intake/page.tsx",
+      "components/IntakePacketBuilder.tsx",
+      "components/SiteAnalytics.tsx",
+      "functions/api/events.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "docs/analytics-events.md",
+      "data/page-review-actions.csv",
+      "data/growth-evidence-snapshot.csv",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "app/globals.css"
+    ],
+    verification: [
+      "`npm run typecheck` pass",
+      "`npm run lint` pass: 16 checks, 0 blockers",
+      "`npm run build` pass: 68 static pages",
+      "`npm run routes:gate` pass: 327 checks, 0 blockers, 0 warnings",
+      "`npm run links:gate` pass: 66 checks, 0 blockers",
+      "`npm run analytics:gate` pass: endpoint active, 0 failures",
+      "`npm run commercial:gate` pass: 304 checks, 0 blockers",
+      "`npm run growth:snapshot` baseline_ready: 62 routes",
+      "`npm run seo:ci` pass: 62 routes, 0 blockers, 0 warnings",
+      "Playwright local check pass: Sample, AI service example, blocked intake, and Intake have 0 horizontal overflow at 1440px and 390px; intake mailto has no `body=` parameter",
+      "`npx wrangler pages deploy out --project-name agentsiteops --branch master` pass",
+      "`npm run production:health` pass: 275 checks, 0 blockers, 0 warnings"
+    ],
+    next:
+      "Use the two proof cases as the public benchmark for future case studies, then collect qualified replies, objections, and usable intake before adding more paid emphasis."
+  },
+  {
+    date: "2026-06-15",
     step: "M4-58 Customer path completion pass",
     status: "completed",
     keyPoints: [

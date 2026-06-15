@@ -1,18 +1,18 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-13T10:45:12.760Z
+- Generated: 2026-06-15T08:35:38.825Z
 - Status: baseline_ready
-- Routes: 59
-- Technical SEO pass routes: 59
+- Routes: 62
+- Technical SEO pass routes: 62
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 59 routes
-- Bing status: pending export for 59 routes
+- GSC status: pending export for 62 routes
+- Bing status: pending export for 62 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: aggregate endpoint waiting for events on 52 routes
+- Onsite event status: aggregate endpoint waiting for events on 55 routes
 - Onsite routes with aggregate events: 7
 - Analytics summary status missing or blocked: 0
 - Analytics threshold snapshot: sample views 1, source-link clicks 0, PayPal CTA clicks 0
@@ -23,6 +23,7 @@
 |---|---|---|---|---|---|---|
 | / | home | launch_blueprint | pass | site_pass | keep | Measure homepage CTA click rate, start exits, sample exits, delivery gate exits, and confusion about what AgentSiteOps delivers |
 | /start/ | product_entry | launch_blueprint | pass | site_pass | keep | Measure start page views, sample exits, how-it-works exits, pricing exits, and repeated confusion about what to submit |
+| /plan/ | product_planner | launch_blueprint | pass | site_pass | keep | Measure plan studio views, example loads, plan brief copies, intake exits, sample exits, and repeated confusion about preliminary draft versus final Route File |
 | /how-it-works/ | product_explainer | launch_blueprint | pass | site_pass | keep | Measure how-it-works views, start exits, client workflow exits, prompt pack exits, and repeated questions about API use |
 | /execution/ | product_workbench | launch_blueprint | pass | site_pass | keep | Measure execution workbench views, stage selections, prompt pack exits, delivery gate exits, sample exits, and bilingual social copy exports |
 | /delivery-gate/ | product_gate | launch_blueprint | pass | site_pass | keep | Measure delivery gate alias views, sample exits, client workflow exits, full checklist exits, and repeated confusion about pass repair blocked or not delivery |
@@ -30,6 +31,8 @@
 | /tools/website-opportunity-scorer/ | tool | website_opportunity_scoring | pass | site_pass | keep | Measure tool_completed and tool_result_export after real endpoint |
 | /tools/ai-crawler-readiness/ | tool | ai_crawler_readiness | pass | site_pass | keep | Measure readiness report copies and sample audit clicks before paid audit expansion |
 | /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
+| /examples/ai-service-route-file/ | example | launch_blueprint | pass | site_pass | keep | Measure proof-case views, Plan Studio exits, blocked-intake comparison exits, and sample returns |
+| /examples/blocked-intake/ | example | launch_blueprint | pass | site_pass | keep | Measure blocked-intake views, Plan Studio repair exits, intake exits, and comparison with the completed case |
 | /examples/fit-review-sample/ | example | launch_blueprint | pass | site_pass | keep | Measure movement from sample review to Fit Review pricing intake and full Route File pages |
 | /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Route File pricing, sample, buy, and intake path |
 | /tools/audit-scope-builder/ | tool | commercial_validation | pass | site_pass | keep | Measure audit_scope_builder_view, tool_completed, and tool_result_export before adding forms or payment |

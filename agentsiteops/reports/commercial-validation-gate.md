@@ -1,6 +1,6 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-12T09:50:57.040Z
+- Generated: 2026-06-15T08:35:20.178Z
 - Status: pass
 - Checks: 304
 - Blockers: 0
@@ -59,7 +59,7 @@
 | payment_path | pass | buy page contains only current paid offer CTA |
 | payment_path | pass | starter review page has paid CTA |
 | service_boundary | pass | starter review can reject the full blueprint sale |
-| service_boundary | pass | fit review sample can recommend not buying the full blueprint |
+| service_boundary | pass | fit review sample can recommend not buying the full Route File yet |
 | service_boundary | pass | fit review sample states proof boundary |
 | service_boundary | pass | launch product blocks guarantee claims |
 | service_boundary | pass | launch objections include generic AI alternative |
@@ -76,7 +76,7 @@
 | service_boundary | pass | disclaimer blocks guarantee claims |
 | trust_pages | pass | terms page covers PayPal payment path |
 | trust_pages | pass | refund page exists and states refund boundary |
-| revenue_experiments | pass | Launch Blueprint is recorded as live validation |
+| revenue_experiments | pass | Route File is recorded as live validation |
 | revenue_experiments | pass | Fit Review is recorded as live validation |
 | revenue_experiments | pass | revenue experiment table contains only active or planned commercial hypotheses |
 | revenue_experiments | pass | subscription remains blocked |
@@ -93,8 +93,8 @@
 | manual_fulfillment | pass | manual fulfillment runbook links Launch Blueprint delivery template |
 | manual_fulfillment | pass | Fit Review delivery template has verdict boundary |
 | manual_fulfillment | pass | Fit Review delivery template blocks guarantee claims |
-| manual_fulfillment | pass | Launch Blueprint delivery template selects one offer |
-| manual_fulfillment | pass | Launch Blueprint delivery template includes evidence ledger |
+| manual_fulfillment | pass | Route File delivery template selects one route |
+| manual_fulfillment | pass | Route File delivery template includes evidence ledger |
 | manual_fulfillment | pass | delivery checklist blocks sensitive data storage |
 | manual_fulfillment | pass | delivery checklist blocks guarantee claims |
 | manual_outreach | pass | outreach templates block inflated claims |

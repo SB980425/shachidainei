@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   AlertTriangle,
-  ArrowRight,
   CheckCircle2,
   ClipboardList,
   FileText,
-  GitCompareArrows,
   ShieldCheck
 } from "lucide-react";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
@@ -47,6 +45,21 @@ const inputSnapshot = [
   {
     label: "Decision needed",
     value: "Choose one route to test first, or stop before building more pages."
+  }
+];
+
+const proofCases = [
+  {
+    title: "AI service route file",
+    href: "/examples/ai-service-route-file/",
+    body:
+      "A complete proof case showing messy AI-service input, selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule."
+  },
+  {
+    title: "Blocked intake",
+    href: "/examples/blocked-intake/",
+    body:
+      "A non-delivery case showing why weak inputs, missing source rights, and unsupported promises should return repair or blocked instead of a polished route file."
   }
 ];
 
@@ -208,25 +221,17 @@ export default function Page() {
             repair, and final synthesis.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/intake/">
+            <Link prefetch={false} className="primary-action" href="/plan/">
               <ClipboardList aria-hidden="true" size={17} />
-              Open intake
+              Start your plan
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/reports/client-route-workflow/">
+            <Link prefetch={false} className="secondary-action" href="/examples/ai-service-route-file/">
               <FileText aria-hidden="true" size={17} />
-              Open client workflow
+              View AI service case
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/templates/route-research-prompt-pack/">
-              <ArrowRight aria-hidden="true" size={17} />
-              Run research workflow
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
+            <Link prefetch={false} className="secondary-action" href="/examples/blocked-intake/">
               <ShieldCheck aria-hidden="true" size={17} />
-              Check delivery gate
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/compare/">
-              <GitCompareArrows aria-hidden="true" size={17} />
-              Compare options
+              View blocked intake
             </Link>
           </div>
         </div>
@@ -239,7 +244,24 @@ export default function Page() {
         </aside>
       </section>
 
-      <RouteFlowBridge current="route-file" nextHref="/execution/" nextLabel="Open workbench" />
+      <section className="gate-section sample-proof-section">
+        <div className="section-head">
+          <h2>Proof cases to inspect before trusting the workflow</h2>
+          <p>
+            A route workflow is credible only when visitors can inspect both a completed
+            route file and a blocked request that should not be delivered.
+          </p>
+        </div>
+        <div className="sample-proof-grid">
+          {proofCases.map((item) => (
+            <Link prefetch={false} href={item.href} key={item.href}>
+              <FileText aria-hidden="true" size={20} />
+              <strong>{item.title}</strong>
+              <p>{item.body}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section className="gate-section sample-handoff-section">
         <div className="section-head">
@@ -260,6 +282,8 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <RouteFlowBridge current="route-file" nextHref="/execution/" nextLabel="Open workbench" />
 
       <section className="gate-section">
         <div className="section-head">

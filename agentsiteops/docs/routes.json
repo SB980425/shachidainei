@@ -96,6 +96,24 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/examples/ai-service-route-file/",
+      "pageType": "example",
+      "template": "route_file_proof_case",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.78,
+      "changefreq": "monthly"
+    },
+    {
+      "path": "/examples/blocked-intake/",
+      "pageType": "example",
+      "template": "blocked_intake_proof_case",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.76,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/examples/fit-review-sample/",
       "pageType": "example",
       "template": "fit_review_sample",

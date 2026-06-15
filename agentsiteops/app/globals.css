@@ -14354,6 +14354,165 @@ body {
   color: #cbffdf;
 }
 
+.intake-send-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.intake-send-steps span {
+  min-width: 0;
+  border: 1px solid rgba(55, 217, 140, 0.18);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(55, 217, 140, 0.12), rgba(55, 217, 140, 0.04)),
+    rgba(8, 13, 14, 0.72);
+  color: #dfffea;
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1.35;
+  padding: 10px 11px;
+}
+
+.intake-mail-note {
+  border-left: 3px solid var(--foundry-coral);
+  border-radius: 8px;
+  background: rgba(255, 104, 70, 0.08);
+  color: rgba(246, 241, 232, 0.78) !important;
+  padding: 10px 12px;
+}
+
+.sample-proof-grid,
+.proof-case-grid,
+.blocked-reason-grid,
+.proof-timeline {
+  display: grid;
+  gap: 12px;
+}
+
+.sample-proof-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.proof-case-grid,
+.blocked-reason-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.proof-timeline {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sample-proof-grid a,
+.proof-case-grid article,
+.blocked-reason-grid article,
+.proof-timeline article {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(226, 231, 238, 0.12);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(55, 217, 140, 0.11), transparent 34%),
+    linear-gradient(180deg, rgba(247, 242, 234, 0.075), rgba(247, 242, 234, 0.028)),
+    rgba(8, 13, 14, 0.78);
+  color: var(--foundry-text);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.18);
+  padding: 18px;
+}
+
+.sample-proof-grid a {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 8px 12px;
+  align-items: start;
+}
+
+.sample-proof-grid a:hover,
+.sample-proof-grid a:focus-visible {
+  border-color: rgba(55, 217, 140, 0.36);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(55, 217, 140, 0.16), transparent 36%),
+    linear-gradient(180deg, rgba(247, 242, 234, 0.095), rgba(247, 242, 234, 0.035)),
+    rgba(8, 13, 14, 0.9);
+}
+
+.sample-proof-grid a svg {
+  grid-row: span 2;
+  margin-top: 2px;
+  color: var(--foundry-green);
+}
+
+.sample-proof-grid a strong,
+.proof-case-grid small,
+.blocked-reason-grid small,
+.proof-timeline span {
+  color: var(--foundry-green);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sample-proof-grid a p,
+.proof-case-grid p,
+.blocked-reason-grid p,
+.proof-timeline p {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.74);
+  line-height: 1.58;
+}
+
+.proof-case-grid article,
+.blocked-reason-grid article,
+.proof-timeline article {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.proof-verdict-card {
+  border-color: rgba(255, 104, 70, 0.24);
+  background:
+    linear-gradient(180deg, rgba(255, 104, 70, 0.1), rgba(247, 242, 234, 0.035)),
+    rgba(8, 13, 14, 0.7);
+}
+
+.sample-route-hero .decision-card,
+.proof-case-hero .decision-card {
+  align-self: center;
+}
+
+.sample-route-page .section-head h2,
+.proof-case-page .section-head h2 {
+  max-width: 720px;
+  font-size: 42px;
+  line-height: 1.02;
+}
+
+.sample-proof-section .section-head {
+  align-items: end;
+}
+
+.blocked-hero .proof-verdict-card {
+  border-color: rgba(255, 104, 70, 0.36);
+}
+
+.proof-final-cta {
+  border-color: rgba(55, 217, 140, 0.2);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(55, 217, 140, 0.12), transparent 30%),
+    linear-gradient(180deg, rgba(19, 25, 27, 0.92), rgba(8, 13, 14, 0.94));
+}
+
+@media (max-width: 960px) {
+  .intake-send-steps,
+  .proof-case-grid,
+  .blocked-reason-grid,
+  .proof-timeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 720px) {
   .plan-output-actions button,
   .plan-output-actions a,
@@ -14361,6 +14520,23 @@ body {
   .intake-packet-actions a {
     width: 100%;
     min-height: 46px;
+  }
+
+  .intake-send-steps,
+  .sample-proof-grid,
+  .proof-case-grid,
+  .blocked-reason-grid,
+  .proof-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .sample-proof-grid a {
+    grid-template-columns: 24px minmax(0, 1fr);
+  }
+
+  .sample-route-page .section-head h2,
+  .proof-case-page .section-head h2 {
+    font-size: 32px;
   }
 }
 

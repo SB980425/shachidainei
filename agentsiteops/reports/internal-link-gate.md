@@ -1,16 +1,16 @@
 # Internal Link Gate
 
-- Generated: 2026-06-15T08:08:12.674Z
+- Generated: 2026-06-15T08:35:38.819Z
 - Status: pass
-- Checks: 64
+- Checks: 66
 - Blockers: 0
 
 ## Summary
 
 | Scope | Status | Detail | Source |
 |---|---|---|---|
-| html_files | pass | 65 generated HTML files scanned | out/ |
-| internal_links | pass | 62 same-site link targets discovered | out/ |
+| html_files | pass | 67 generated HTML files scanned | out/ |
+| internal_links | pass | 64 same-site link targets discovered | out/ |
 | internal_link | pass | / | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /ai-website-operating-system/ | guides\ai-citation-grounding-metrics\index.html, methodology\website-opportunity-scoring\index.html, reports\route-evidence-dashboard\index.html |
 | internal_link | pass | /answers/ai-service-route-vs-generic-chatgpt/ | reports\route-evidence-dashboard\index.html |
@@ -25,7 +25,7 @@
 | internal_link | pass | /checklists/launch-validation-decision-gate/ | answers\when-to-stop-an-ai-website-idea\index.html, guides\48-hour-exposure-sprint\index.html, guides\first-traffic-system\index.html |
 | internal_link | pass | /checklists/programmatic-seo-gate/ | ai-website-operating-system\index.html, checklists\ai-content-quality-gate\index.html, reports\route-evidence-dashboard\index.html |
 | internal_link | pass | /checklists/route-file-delivery-gate/ | delivery-gate\index.html, reports\route-evidence-dashboard\index.html |
-| internal_link | pass | /compare/ | answers\ai-service-route-vs-generic-chatgpt\index.html, reports\route-evidence-dashboard\index.html, sample\index.html |
+| internal_link | pass | /compare/ | answers\ai-service-route-vs-generic-chatgpt\index.html, reports\route-evidence-dashboard\index.html, tools\launch-blueprint-fit-checker\index.html |
 | internal_link | pass | /contact/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /delivery-gate/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /disclaimer/ | reports\route-evidence-dashboard\index.html, terms\index.html, website-opportunity-audit\index.html |
@@ -34,6 +34,8 @@
 | internal_link | pass | /editorial-policy/ | checklists\ai-content-quality-gate\index.html, methodology\website-opportunity-scoring\index.html, reports\route-evidence-dashboard\index.html |
 | internal_link | pass | /evidence/ | answers\when-to-stop-an-ai-website-idea\index.html, checklists\launch-validation-decision-gate\index.html, examples\agentsiteops-self-audit\index.html |
 | internal_link | pass | /examples/agentsiteops-self-audit/ | reports\route-evidence-dashboard\index.html, services\ai-website-opportunity-audit\index.html, templates\evidence-ledger-template\index.html |
+| internal_link | pass | /examples/ai-service-route-file/ | examples\blocked-intake\index.html, reports\route-evidence-dashboard\index.html, sample\index.html |
+| internal_link | pass | /examples/blocked-intake/ | examples\ai-service-route-file\index.html, reports\route-evidence-dashboard\index.html, sample\index.html |
 | internal_link | pass | /examples/fit-review-sample/ | answers\validate-ai-service-offer-before-building\index.html, checklists\launch-validation-decision-gate\index.html, guides\48-hour-exposure-sprint\index.html |
 | internal_link | pass | /execution/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /guides/48-hour-exposure-sprint/ | answers\when-to-stop-an-ai-website-idea\index.html, guides\first-traffic-system\index.html, launch-kit\index.html |

@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-15T08:08:12.551Z
+- Generated: 2026-06-15T08:35:38.819Z
 - Status: pass
-- Checks: 317
+- Checks: 327
 - Blockers: 0
 - Warnings: 0
 
@@ -13,9 +13,9 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 60 routes aligned |
-| page_registry | pass | 60 routes aligned |
-| page_review_actions | pass | 60 routes aligned |
+| site_routes | pass | 62 routes aligned |
+| page_registry | pass | 62 routes aligned |
+| page_review_actions | pass | 62 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /start/ has canonical slash shape |
@@ -36,6 +36,10 @@
 | route_index | pass | /tools/ai-crawler-readiness/ index flag is true |
 | route_shape | pass | /examples/agentsiteops-self-audit/ has canonical slash shape |
 | route_index | pass | /examples/agentsiteops-self-audit/ index flag is true |
+| route_shape | pass | /examples/ai-service-route-file/ has canonical slash shape |
+| route_index | pass | /examples/ai-service-route-file/ index flag is true |
+| route_shape | pass | /examples/blocked-intake/ has canonical slash shape |
+| route_index | pass | /examples/blocked-intake/ index flag is true |
 | route_shape | pass | /examples/fit-review-sample/ has canonical slash shape |
 | route_index | pass | /examples/fit-review-sample/ index flag is true |
 | route_shape | pass | /services/ai-website-opportunity-audit/ has canonical slash shape |
@@ -146,6 +150,8 @@
 | app_page | pass | /tools/website-opportunity-scorer/ app page exists |
 | app_page | pass | /tools/ai-crawler-readiness/ app page exists |
 | app_page | pass | /examples/agentsiteops-self-audit/ app page exists |
+| app_page | pass | /examples/ai-service-route-file/ app page exists |
+| app_page | pass | /examples/blocked-intake/ app page exists |
 | app_page | pass | /examples/fit-review-sample/ app page exists |
 | app_page | pass | /services/ai-website-opportunity-audit/ app page exists |
 | app_page | pass | /tools/audit-scope-builder/ app page exists |
@@ -206,6 +212,8 @@
 | analytics_allowlist | pass | ai_crawler_readiness_view is registered |
 | analytics_allowlist | pass | sample_audit_view is registered |
 | analytics_allowlist | pass | fit_review_sample_view is registered |
+| analytics_allowlist | pass | ai_service_route_file_example_view is registered |
+| analytics_allowlist | pass | blocked_intake_example_view is registered |
 | analytics_allowlist | pass | audit_intent_page_view is registered |
 | analytics_allowlist | pass | audit_scope_builder_view is registered |
 | analytics_allowlist | pass | launch_blueprint_fit_checker_view is registered |
@@ -276,6 +284,8 @@
 | route_view_event | pass | /tools/website-opportunity-scorer/ has view event |
 | route_view_event | pass | /tools/ai-crawler-readiness/ has view event |
 | route_view_event | pass | /examples/agentsiteops-self-audit/ has view event |
+| route_view_event | pass | /examples/ai-service-route-file/ has view event |
+| route_view_event | pass | /examples/blocked-intake/ has view event |
 | route_view_event | pass | /examples/fit-review-sample/ has view event |
 | route_view_event | pass | /services/ai-website-opportunity-audit/ has view event |
 | route_view_event | pass | /tools/audit-scope-builder/ has view event |
@@ -326,7 +336,7 @@
 | route_view_event | pass | /refund-policy/ has view event |
 | route_view_event | pass | /disclaimer/ has view event |
 | route_view_event | pass | /contact/ has view event |
-| growth_snapshot | pass | 60 routes aligned |
+| growth_snapshot | pass | 62 routes aligned |
 
 ## Blocking Issues
 

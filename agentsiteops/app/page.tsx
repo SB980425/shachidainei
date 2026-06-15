@@ -155,6 +155,24 @@ const boundaryCards = [
   }
 ];
 
+const proofLayerCards = [
+  {
+    title: "Evidence used, not guessed",
+    body:
+      "A Route File can use project material, source notes, buyer replies, search exports, and onsite events, but weak signals stay tagged until verified."
+  },
+  {
+    title: "What the buyer receives is a route file, not a score",
+    body:
+      "The output is one selected route, rejected alternatives, an evidence ledger, first proof asset, validation channel, and stop rule."
+  },
+  {
+    title: "Market signals are context, not proof",
+    body:
+      "Search demand, market examples, and public trend research can shape the route, but they do not prove payment, buyer response, or product-market fit."
+  }
+];
+
 const supportLinks = [
   { href: "/plan/", label: "Plan Studio" },
   { href: "/start/", label: "Start here" },
@@ -165,6 +183,7 @@ const supportLinks = [
   { href: "/templates/route-research-prompt-pack/", label: "Research prompt pack" },
   { href: "/reports/route-basis/", label: "Route basis report" },
   { href: "/methodology/route-selection/", label: "Route selection methodology" },
+  { href: "/launch-kit/", label: "Launch Kit" },
   { href: "/sample/", label: "Sample Route File" }
 ];
 
@@ -237,6 +256,26 @@ export default function HomePage() {
             ))}
           </ul>
         </aside>
+      </section>
+
+      <section className="route-foundation-section home-proof-section">
+        <div className="route-section-heading">
+          <span>Proof boundary</span>
+          <h2>The route decision must show what is proven and what is still unverified.</h2>
+          <p>
+            This keeps the site from turning research context, page activity, or generated
+            confidence into unsupported delivery claims.
+          </p>
+        </div>
+        <div className="route-foundation-grid is-boundary-grid">
+          {proofLayerCards.map((item) => (
+            <article key={item.title}>
+              <ShieldCheck aria-hidden="true" size={19} />
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="route-foundation-section home-operating-section">
