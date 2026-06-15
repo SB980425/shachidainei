@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-15T04:46:18.078Z
+- Generated: 2026-06-15T06:34:23.214Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 264
+- Checks: 270
 - Blockers: 0
 - Warnings: 0
 
@@ -59,6 +59,9 @@
 | /plan/ | pass | Fill in your project plan before asking for a Route File. | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Write the project once. | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | One field per decision | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Input coverage | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Find next missing | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Saved drafts can be detected | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Route frame | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Decision boundary | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Operating choices | [link](https://agentsiteops.com/plan/) |
@@ -170,6 +173,8 @@
 | /intake/ | pass | Email project intake | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Payment confirmation | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Manual intake process | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | No saved Plan Studio draft | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Start in Plan Studio | [link](https://agentsiteops.com/intake/) |
 | /evidence/ | pass | HTTP 200 | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | HTML title exists | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | canonical points to production URL | [link](https://agentsiteops.com/evidence/) |
@@ -249,6 +254,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-56 Plan-to-intake interaction continuity | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-55 Plan Studio spacious intake redesign | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-54 Plan Studio and client workspace cleanup | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-53 Navigation context and updates ledger | [link](https://agentsiteops.com/updates/) |
