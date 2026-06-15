@@ -12755,9 +12755,40 @@ body {
 .updates-timeline {
   display: grid;
   gap: 18px;
+  min-width: 0;
+}
+
+.updates-timeline-head {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  border: 1px solid rgba(226, 231, 238, 0.12);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(26, 34, 36, 0.88), rgba(10, 15, 17, 0.88));
+  padding: 16px;
+}
+
+.updates-timeline-head span {
+  color: var(--foundry-green);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.updates-timeline-head p {
+  max-width: 760px;
+  margin: 0;
+  color: rgba(246, 241, 232, 0.7);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
 .update-entry {
+  content-visibility: auto;
+  contain-intrinsic-size: 620px;
+  min-width: 0;
   border: 1px solid rgba(226, 231, 238, 0.12) !important;
   border-radius: 18px !important;
   background:

@@ -463,33 +463,13 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "Latest five public entries",
+    "Full history stays in git",
+    "M4-57 Lightweight updates page",
     "M4-56 Plan-to-intake interaction continuity",
     "M4-55 Plan Studio spacious intake redesign",
     "M4-54 Plan Studio and client workspace cleanup",
-    "M4-53 Navigation context and updates ledger",
-    "M4-48 Route basis evidence upgrade",
-    "M4-47 Self route file upgrade",
-    "M4-22 48-hour exposure sprint",
-    "M4-21 Route basis and first traffic foundation",
-    "M4-20 Evidence-led value layer",
-    "evidence-bounded route-selection service",
-    "M4-17 Self-score maintenance protocol",
-    "M4-16 Objective self-score calibration",
-    "M4-15 Launch validation decision gate",
-    "M4-14 Objection response conversion layer",
-    "M4-13 Search evidence import guardrail",
-    "M4-12 Manual outreach evidence loop",
-    "M4-11 Delivery artifact templates",
-    "M4-10 Fit Review sample artifact",
-    "M4-09 Fit Review entry offer",
-    "M4-08 Launch funnel evidence boundary",
-    "M4-07 Intake and manual fulfillment path",
-    "M4-06 Purchase acceptance and encoding gate",
-    "M4-05 Quality gate and evidence-ready sample",
-    "M4-04 Pre-purchase fit checker",
-    "M4-03 Launch comparison and sample depth",
-    "M4-01 Launch Blueprint reset and payment flow",
-    "IndexNow submit pass"
+    "M4-53 Navigation context and updates ledger"
   ]);
 
   const report = renderReport(generatedAt);

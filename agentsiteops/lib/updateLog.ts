@@ -12,6 +12,38 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-15",
+    step: "M4-57 Lightweight updates page",
+    status: "completed",
+    keyPoints: [
+      "Removed Updates from the top navigation so the main customer path stays focused on Start, Method, Research, Sample, and Draft plan.",
+      "Changed `/updates/` from a full historical timeline into a lightweight release summary that renders only the latest five public entries.",
+      "Limited Updates JSON-LD to the same latest-five entries instead of serializing the entire historical log into the page.",
+      "Added a page note that full history remains in git, production health reports, and `lib/updateLog.ts` rather than being rendered for every visitor.",
+      "Added `content-visibility` to update entries as an additional rendering guard if the visible list grows later."
+    ],
+    aiAngle:
+      "AI and search readers still see the latest execution status, while human visitors avoid a heavy update archive that distracts from Plan Studio, intake, and sample output.",
+    files: [
+      "components/PrimaryNavigation.tsx",
+      "app/updates/page.tsx",
+      "app/globals.css",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "typecheck pass",
+      "code-quality gate pass: 16 checks, 0 blockers",
+      "build pass with 66 static pages",
+      "route consistency gate pass: 317 checks, 0 blockers, 0 warnings",
+      "internal link gate pass: 64 checks, 0 blockers",
+      "technical SEO CI pass: 60 routes, 0 blockers, 0 warnings",
+      "Updates HTML reduced from about 590 KB to about 78 KB; old M4-48 content no longer renders on the page"
+    ],
+    next:
+      "Continue pre-launch work on the customer path: homepage entry clarity, Plan Studio completion flow, intake trust copy, sample output readability, and production performance checks."
+  },
+  {
+    date: "2026-06-15",
     step: "M4-56 Plan-to-intake interaction continuity",
     status: "completed",
     keyPoints: [

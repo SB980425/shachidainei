@@ -22,6 +22,8 @@ function isPublicEnglishEntry(entry: UpdateLogEntry) {
 }
 
 const publicUpdates = updateLog.filter(isPublicEnglishEntry);
+const visibleUpdateLimit = 5;
+const visibleUpdates = publicUpdates.slice(0, visibleUpdateLimit);
 const latestUpdate = publicUpdates[0];
 
 const updateContextCards = [
@@ -44,9 +46,9 @@ const updateContextCards = [
   {
     title: "What this log proves",
     body:
-      "Updates prove changed files, verification scope, and deployment state. They do not prove traffic, revenue, ranking, or buyer demand.",
-    href: "/sample/",
-    label: "View output",
+      "The public page keeps only the latest release summary. Full history stays in git, health reports, and source files so the page remains fast.",
+    href: "/reports/route-basis/",
+    label: "Review basis",
     Icon: FileText
   }
 ];
@@ -72,10 +74,10 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "AgentSiteOps Updates",
-  description: "Public execution log for AgentSiteOps.",
+  description: "Latest public execution updates for AgentSiteOps.",
   inLanguage: "en",
   url: pageUrl,
-  hasPart: publicUpdates.map((entry) => ({
+  hasPart: visibleUpdates.map((entry) => ({
     "@type": "CreativeWork",
     name: entry.step,
     dateModified: entry.date,
@@ -95,8 +97,8 @@ export default function Page() {
           <p className="eyebrow">Execution log</p>
           <h1>Updates</h1>
           <p>
-            This page keeps the public timeline for domain changes, production readiness,
-            verification status, and the next actions required before site expansion.
+            This page now keeps only the latest public release status so it stays fast.
+            Historical details remain in the repository, health reports, and source log.
           </p>
         </div>
         <aside className="decision-card">
@@ -120,8 +122,8 @@ export default function Page() {
           <span>Page role</span>
           <h2>Updates explain what changed; the product path still lives in intake and workbench.</h2>
           <p>
-            This page is a verification ledger. It should send users back to the live
-            customer path instead of acting like the main product interface.
+            This is a lightweight verification summary, not the main product interface.
+            Use Plan Studio, intake, and sample output for the customer path.
           </p>
         </div>
         <div className="updates-context-grid">
@@ -144,7 +146,14 @@ export default function Page() {
       </section>
 
       <section className="updates-timeline" aria-label="site update log">
-        {publicUpdates.map((entry) => (
+        <div className="updates-timeline-head">
+          <span>Latest five public entries</span>
+          <p>
+            Showing {Math.min(publicUpdates.length, visibleUpdateLimit)} of {publicUpdates.length} public entries.
+            Full detail remains in `lib/updateLog.ts` and production health reports.
+          </p>
+        </div>
+        {visibleUpdates.map((entry) => (
           <article key={entry.step} className="update-entry">
             <div className="update-meta">
               <span>{entry.date}</span>

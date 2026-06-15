@@ -6,7 +6,6 @@ import {
   ClipboardList,
   FileText,
   GitBranch,
-  Newspaper,
   SearchCheck,
   Workflow
 } from "lucide-react";
@@ -20,8 +19,7 @@ const navItems = [
     Icon: SearchCheck,
     match: ["/templates/route-research-prompt-pack/", "/reports/route-basis/", "/methodology/route-selection/"]
   },
-  { href: "/sample/", label: "Sample", Icon: FileText, match: ["/sample/", "/reports/client-route-workflow/"] },
-  { href: "/updates/", label: "Updates", Icon: Newspaper, match: ["/updates/"] }
+  { href: "/sample/", label: "Sample", Icon: FileText, match: ["/sample/", "/reports/client-route-workflow/"] }
 ];
 
 function normalizePath(pathname: string) {

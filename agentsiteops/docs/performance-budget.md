@@ -52,7 +52,7 @@ These are CI targets, not field-data replacements.
 | `/checklists/*` | High; copy action and AI citation target |
 | `/guides/*` and `/methodology/*` | Medium; source and metrics content |
 | trust pages | Medium; must remain readable and accessible |
-| `/updates/` | Medium; grows over time, watch HTML size |
+| `/updates/` | Low-medium; render latest five entries only and keep history in git/reports |
 
 ## CI Implementation Plan
 
@@ -72,7 +72,7 @@ Do not add Lighthouse CI as a hard release gate until a deployment target exists
 3. Avoid third-party scripts until privacy/compliance review.
 4. Avoid decorative media unless it improves the actual task.
 5. Keep tables horizontally scrollable instead of breaking layout.
-6. Monitor `/updates/` size as the log grows.
+6. Keep `/updates/` limited to the latest five entries; do not render the full historical log for every visitor.
 
 ## Sources
 
