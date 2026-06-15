@@ -1,18 +1,18 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-15T12:53:25.872Z
+- Generated: 2026-06-15T13:07:00.015Z
 - Status: baseline_ready
-- Routes: 62
-- Technical SEO pass routes: 62
+- Routes: 63
+- Technical SEO pass routes: 63
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 62 routes
-- Bing status: pending export for 62 routes
+- GSC status: pending export for 63 routes
+- Bing status: pending export for 63 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: aggregate endpoint waiting for events on 55 routes
+- Onsite event status: aggregate endpoint waiting for events on 56 routes
 - Onsite routes with aggregate events: 7
 - Analytics summary status missing or blocked: 0
 - Analytics threshold snapshot: sample views 1, source-link clicks 0, PayPal CTA clicks 0
@@ -25,6 +25,7 @@
 | /start/ | product_entry | launch_blueprint | pass | site_pass | keep | Measure start page views, sample exits, how-it-works exits, pricing exits, and repeated confusion about what to submit |
 | /plan/ | product_planner | launch_blueprint | pass | site_pass | keep | Measure plan studio views, example loads, plan brief copies, intake exits, sample exits, and repeated confusion about preliminary draft versus final Route File |
 | /how-it-works/ | product_explainer | launch_blueprint | pass | site_pass | keep | Measure how-it-works views, start exits, client workflow exits, prompt pack exits, and repeated questions about API use |
+| /scope/ | product_state | launch_blueprint | pass | site_pass | keep | Measure scope lock views, research exits, intake repair exits, coverage gate exits, and repeated confusion about what is frozen before research |
 | /execution/ | product_workbench | launch_blueprint | pass | site_pass | keep | Measure execution workbench views, stage selections, prompt pack exits, delivery gate exits, sample exits, and bilingual social copy exports |
 | /delivery-gate/ | product_gate | launch_blueprint | pass | site_pass | keep | Measure delivery gate alias views, sample exits, client workflow exits, full checklist exits, and repeated confusion about pass repair blocked or not delivery |
 | /ai-website-operating-system/ | pillar | ai_website_operating_system | pass | site_pass | keep | Review impressions and source_link_click after GSC/Bing setup |

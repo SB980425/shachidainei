@@ -12,6 +12,51 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-15",
+    step: "M4-62 Dedicated scope lock state",
+    status: "completed",
+    keyPoints: [
+      "Added a dedicated `/scope/` page so Scope Lock is a real customer-visible state instead of a label that lands on the general how-it-works page.",
+      "Updated the Route Project lifecycle so the scope stage links to `/scope/` across Route Flow Bridge and Client Route State panels.",
+      "Changed Intake's next action to continue to Scope Lock before research.",
+      "Registered Scope Lock across the route registry, page registry, page-review actions, analytics view events, sitemap source, site brief, and production health monitor.",
+      "Kept Scope Lock under the Workbench navigation group so the top navigation stays simple while the project state path becomes more precise."
+    ],
+    aiAngle:
+      "AI and search readers can now identify the exact pre-research state that freezes claims, sources, candidate routes, non-goals, and stop conditions before evidence collection.",
+    files: [
+      "app/scope/page.tsx",
+      "app/intake/page.tsx",
+      "components/PrimaryNavigation.tsx",
+      "components/SiteAnalytics.tsx",
+      "lib/routeProjectSystem.ts",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "docs/analytics-events.md",
+      "functions/api/events.ts",
+      "docs/site-brief.md",
+      "scripts/production-health-monitor.mjs",
+      "app/globals.css"
+    ],
+    verification: [
+      "`npm run typecheck` pass",
+      "`npm run lint` pass",
+      "`npm run build` pass",
+      "`npm run routes:gate` pass",
+      "`npm run links:gate` pass",
+      "`npm run analytics:gate` pass",
+      "`npm run commercial:gate` pass",
+      "`npm run growth:snapshot` pass",
+      "`npm run seo:ci` pass",
+      "Playwright local check pass: Intake, Scope, Execution, and Sample route-state links have 0 horizontal overflow at 1440px and 390px",
+      "`npm run production:health` pass"
+    ],
+    next:
+      "Use `/scope/` as the permanent landing page for pre-research boundary decisions; keep `/how-it-works/` as an explanatory article instead of a workflow state."
+  },
+  {
+    date: "2026-06-15",
     step: "M4-61 Client state continuity layer",
     status: "completed",
     keyPoints: [

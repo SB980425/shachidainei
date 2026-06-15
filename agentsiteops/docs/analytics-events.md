@@ -34,6 +34,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `client_state_next_click` | Client Route State next-state link click | `label`, `type` |
 | `intake_saved_plan_detected` | Intake packet builder detects a browser-local Plan Studio brief | `length` |
 | `how_it_works_view` | `/how-it-works/` load | `path` |
+| `scope_lock_view` | `/scope/` load | `path` |
 | `execution_workbench_view` | `/execution/` load | `path` |
 | `operating_system_view` | `/ai-website-operating-system/` load | `path` |
 | `tool_page_view` | `/tools/website-opportunity-scorer/` load | `path` |

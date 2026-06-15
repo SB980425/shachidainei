@@ -363,6 +363,15 @@ async function main() {
     "Visible result",
     "A draft is not the final Route File."
   ]);
+  await checkPage("/scope/", [
+    "Scope Lock",
+    "Freeze the route boundary before research starts.",
+    "The research brief needs six visible boundaries.",
+    "The accepted packet can only move in three directions.",
+    "The research tool can change; the evidence standard cannot.",
+    "Next: Research Run",
+    "Continue to research"
+  ]);
   await checkPage("/execution/", [
     "Execution Workbench",
     "Run the Route File workflow before expanding the site.",
@@ -504,11 +513,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-62 Dedicated scope lock state",
     "M4-61 Client state continuity layer",
     "M4-60 Route Project OS architecture pass",
     "M4-59 Proof cases and intake handoff cleanup",
-    "M4-58 Customer path completion pass",
-    "M4-57 Lightweight updates page"
+    "M4-58 Customer path completion pass"
   ]);
 
   const report = renderReport(generatedAt);

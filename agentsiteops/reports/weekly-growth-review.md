@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-- The production site has 62 indexable routes with technical SEO passing.
+- The production site has 63 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, AI referrals, and revenue evidence are still pending exports or records; the first-party aggregate endpoint is active but currently waiting for events.
@@ -16,13 +16,13 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 62 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 62/62 routes pass |
+| Route registry | docs/routes.json | 63 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 63/63 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
-| IndexNow | latest command output | 62 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 63 URLs submitted successfully in current deployment cycle |
 | Event layer | /api/events/summary | First-party aggregate endpoint active; sample views 1, source-link clicks 0, PayPal CTA clicks 0 |
 
 ## Unverified
@@ -43,6 +43,7 @@
 | /start/ | product_entry | launch_blueprint | pass | site_pass | keep | Measure start page views, sample exits, how-it-works exits, pricing exits, and repeated confusion about what to submit |
 | /plan/ | product_planner | launch_blueprint | pass | site_pass | keep | Measure plan studio views, example loads, plan brief copies, intake exits, sample exits, and repeated confusion about preliminary draft versus final Route File |
 | /how-it-works/ | product_explainer | launch_blueprint | pass | site_pass | keep | Measure how-it-works views, start exits, client workflow exits, prompt pack exits, and repeated questions about API use |
+| /scope/ | product_state | launch_blueprint | pass | site_pass | keep | Measure scope lock views, research exits, intake repair exits, coverage gate exits, and repeated confusion about what is frozen before research |
 | /execution/ | product_workbench | launch_blueprint | pass | site_pass | keep | Measure execution workbench views, stage selections, prompt pack exits, delivery gate exits, sample exits, and bilingual social copy exports |
 | /delivery-gate/ | product_gate | launch_blueprint | pass | site_pass | keep | Measure delivery gate alias views, sample exits, client workflow exits, full checklist exits, and repeated confusion about pass repair blocked or not delivery |
 | /ai-website-operating-system/ | pillar | ai_website_operating_system | pass | site_pass | keep | Review impressions and source_link_click after GSC/Bing setup |

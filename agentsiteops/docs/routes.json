@@ -42,6 +42,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/scope/",
+      "pageType": "product_state",
+      "template": "scope_lock",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.855,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/execution/",
       "pageType": "product_workbench",
       "template": "execution_workbench",

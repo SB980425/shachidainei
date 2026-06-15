@@ -66,6 +66,7 @@ Research-to-Route File.
 | `/` | Home | State the Route Project OS and route visitors into Plan, Intake, Workbench, and Sample. |
 | `/plan/` | Product workbench | Let visitors draft a project plan locally before intake. |
 | `/intake/` | Product workbench | Turn the draft into a copy-ready review packet and explain ready, repair, blocked, or not-delivery states. |
+| `/scope/` | Product state | Freeze the route question, source boundary, blocked claims, candidate routes, non-goals, and stop condition before research. |
 | `/execution/` | Product workbench | Show the operating path from intake through coverage gate and Route File output. |
 | `/sample/` | Example | Show the Route File output structure and proof cases. |
 | `/examples/ai-service-route-file/` | Example | Show a completed AI service Route File proof case. |

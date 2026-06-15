@@ -21,6 +21,7 @@ const allowedEvents = new Set([
   "update_log_view",
   "start_page_view",
   "how_it_works_view",
+  "scope_lock_view",
   "execution_workbench_view",
   "operating_system_view",
   "tool_page_view",

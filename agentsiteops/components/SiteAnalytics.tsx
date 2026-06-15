@@ -30,6 +30,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/start/": ["start_page_view"],
   "/plan/": ["plan_studio_view"],
   "/how-it-works/": ["how_it_works_view"],
+  "/scope/": ["scope_lock_view"],
   "/execution/": ["execution_workbench_view"],
   "/ai-website-operating-system/": ["operating_system_view"],
   "/tools/website-opportunity-scorer/": ["tool_page_view"],

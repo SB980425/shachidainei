@@ -28,6 +28,7 @@ const navItems = [
     Icon: Workflow,
     match: [
       "/execution/",
+      "/scope/",
       "/how-it-works/",
       "/delivery-gate/",
       "/templates/route-research-prompt-pack/",

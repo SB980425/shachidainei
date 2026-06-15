@@ -174,7 +174,7 @@ export default function Page() {
         </aside>
       </section>
 
-      <RouteFlowBridge current="intake" nextHref="/how-it-works/" nextLabel="Continue to scope lock" />
+      <RouteFlowBridge current="intake" nextHref="/scope/" nextLabel="Continue to scope lock" />
 
       <RouteProjectLifecycle
         current="intake"

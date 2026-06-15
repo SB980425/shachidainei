@@ -77,7 +77,7 @@ export const routeProjectStages: RouteProjectStage[] = [
     title: "Freeze claims, sources, routes, and non-goals",
     body:
       "Accepted intake becomes a locked decision frame so research cannot drift into broad market advice or unsupported build work.",
-    href: "/how-it-works/",
+    href: "/scope/",
     owner: "Operator",
     input: "Accepted intake packet",
     output: "Locked research and delivery boundary",

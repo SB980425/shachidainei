@@ -1,16 +1,16 @@
 # Internal Link Gate
 
-- Generated: 2026-06-15T12:50:34.456Z
+- Generated: 2026-06-15T13:03:47.473Z
 - Status: pass
-- Checks: 66
+- Checks: 67
 - Blockers: 0
 
 ## Summary
 
 | Scope | Status | Detail | Source |
 |---|---|---|---|
-| html_files | pass | 67 generated HTML files scanned | out/ |
-| internal_links | pass | 64 same-site link targets discovered | out/ |
+| html_files | pass | 68 generated HTML files scanned | out/ |
+| internal_links | pass | 65 same-site link targets discovered | out/ |
 | internal_link | pass | / | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /ai-website-operating-system/ | guides\ai-citation-grounding-metrics\index.html, methodology\website-opportunity-scoring\index.html, reports\route-evidence-dashboard\index.html |
 | internal_link | pass | /answers/ai-service-route-vs-generic-chatgpt/ | reports\route-evidence-dashboard\index.html |
@@ -59,6 +59,7 @@
 | internal_link | pass | /reports/route-basis/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /reports/route-evidence-dashboard/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /sample/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
+| internal_link | pass | /scope/ | delivery-gate\index.html, execution\index.html, how-it-works\index.html |
 | internal_link | pass | /services/ai-website-opportunity-audit/ | examples\agentsiteops-self-audit\index.html, reports\route-evidence-dashboard\index.html, tools\audit-scope-builder\index.html |
 | internal_link | pass | /start/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /starter-review/ | buy\index.html, compare\index.html, examples\fit-review-sample\index.html |

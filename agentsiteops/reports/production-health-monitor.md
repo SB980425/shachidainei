@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-15T12:52:41.124Z
+- Generated: 2026-06-15T13:06:17.186Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 292
+- Checks: 302
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 62 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 63 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -75,6 +75,16 @@
 | /plan/ | pass | Plan Studio tells the visitor what happens before intake. | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Visible result | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | A draft is not the final Route File. | [link](https://agentsiteops.com/plan/) |
+| /scope/ | pass | HTTP 200 | [link](https://agentsiteops.com/scope/) |
+| /scope/ | pass | HTML title exists | [link](https://agentsiteops.com/scope/) |
+| /scope/ | pass | canonical points to production URL | [link](https://agentsiteops.com/scope/) |
+| /scope/ | pass | Scope Lock | [link](https://agentsiteops.com/scope/) |
+| /scope/ | pass | Freeze the route boundary before research starts. | [link](https://agentsiteops.com/scope/) |
+| /scope/ | pass | The research brief needs six visible boundaries. | [link](https://agentsiteops.com/scope/) |
+| /scope/ | pass | The accepted packet can only move in three directions. | [link](https://agentsiteops.com/scope/) |
+| /scope/ | pass | The research tool can change; the evidence standard cannot. | [link](https://agentsiteops.com/scope/) |
+| /scope/ | pass | Next: Research Run | [link](https://agentsiteops.com/scope/) |
+| /scope/ | pass | Continue to research | [link](https://agentsiteops.com/scope/) |
 | /execution/ | pass | HTTP 200 | [link](https://agentsiteops.com/execution/) |
 | /execution/ | pass | HTML title exists | [link](https://agentsiteops.com/execution/) |
 | /execution/ | pass | canonical points to production URL | [link](https://agentsiteops.com/execution/) |
@@ -298,11 +308,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-62 Dedicated scope lock state | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-61 Client state continuity layer | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-60 Route Project OS architecture pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-59 Proof cases and intake handoff cleanup | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-58 Customer path completion pass | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-57 Lightweight updates page | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

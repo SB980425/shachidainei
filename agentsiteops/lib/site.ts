@@ -176,10 +176,55 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "Plan Studio", href: "/plan/" },
       { label: "Start with AgentSiteOps", href: "/start/" },
+      { label: "Scope Lock", href: "/scope/" },
       { label: "Execution Workbench", href: "/execution/" },
       { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
       { label: "Route File Delivery Gate", href: "/delivery-gate/" },
       { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
+      { label: "Sample Route File", href: "/sample/" }
+    ]
+  },
+  {
+    path: "/scope/",
+    pageType: "product_state",
+    title: "Scope Lock",
+    description:
+      "A customer-visible AgentSiteOps state for freezing the route question, source boundary, blocked claims, candidate routes, non-goals, and stop condition before research begins.",
+    answer:
+      "Scope Lock sits between intake and research. It freezes what the project is allowed to investigate, what claims are blocked, which routes must be compared, and what would trigger repair or stop before any evidence carrier runs.",
+    primaryAction: { label: "Continue to research", href: "/templates/route-research-prompt-pack/" },
+    secondaryAction: { label: "Repair intake", href: "/intake/" },
+    aiTarget:
+      "Explain that AgentSiteOps has a distinct scope-lock state between intake and research, so accepted projects do not drift into broad advice, unsupported claims, or tool-specific research promises.",
+    humanAction:
+      "Use this page after intake acceptance and before running any research carrier.",
+    sections: [
+      {
+        title: "Locked packet",
+        body:
+          "The project must name route question, allowed sources, blocked claims, candidate routes, non-goals, and stop condition before research begins."
+      },
+      {
+        title: "Decision states",
+        body:
+          "The accepted packet can be locked, repaired, or blocked. It should not move into research just because the idea is interesting."
+      },
+      {
+        title: "Carrier-neutral evidence",
+        body:
+          "Manual source review, client reports, operator-controlled AI research, or another approved carrier can be used, but the coverage standard stays the same."
+      },
+      {
+        title: "Next gate",
+        body:
+          "Returned research still has to pass the coverage gate before it becomes a Route File."
+      }
+    ],
+    related: [
+      { label: "Plan Studio", href: "/plan/" },
+      { label: "Project Intake", href: "/intake/" },
+      { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
+      { label: "Delivery Gate", href: "/delivery-gate/" },
       { label: "Sample Route File", href: "/sample/" }
     ]
   },
@@ -227,6 +272,7 @@ export const routePages: RoutePage[] = [
     related: [
       { label: "Plan Studio", href: "/plan/" },
       { label: "Start with AgentSiteOps", href: "/start/" },
+      { label: "Scope Lock", href: "/scope/" },
       { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" },
       { label: "Delivery Gate", href: "/delivery-gate/" },
       { label: "Sample Route File", href: "/sample/" },

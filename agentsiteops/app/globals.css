@@ -14696,6 +14696,127 @@ body {
   margin-top: 14px;
 }
 
+.scope-lock-hero {
+  border-bottom: 1px solid rgba(226, 231, 238, 0.12);
+}
+
+.scope-lock-brief {
+  align-self: center;
+}
+
+.scope-lock-grid,
+.scope-lock-matrix {
+  display: grid;
+  gap: 12px;
+}
+
+.scope-lock-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.scope-lock-matrix {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.scope-lock-grid article,
+.scope-lock-matrix article,
+.scope-carrier-panel {
+  min-width: 0;
+  border: 1px solid rgba(226, 231, 238, 0.12);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(55, 217, 140, 0.11), transparent 34%),
+    linear-gradient(180deg, rgba(247, 242, 234, 0.065), rgba(247, 242, 234, 0.025)),
+    rgba(8, 13, 14, 0.78);
+  color: var(--foundry-text);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.18);
+  padding: 18px;
+}
+
+.scope-lock-grid article,
+.scope-lock-matrix article {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.scope-lock-grid span,
+.scope-lock-matrix span,
+.scope-carrier-section .route-section-heading span {
+  color: var(--foundry-green);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.scope-lock-grid h3,
+.scope-lock-matrix h3 {
+  margin: 0;
+  color: var(--foundry-text);
+}
+
+.scope-lock-grid p,
+.scope-lock-matrix p,
+.scope-carrier-panel li {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.74);
+  line-height: 1.58;
+}
+
+.scope-lock-matrix article:nth-child(2) {
+  border-color: rgba(255, 104, 70, 0.28);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(255, 104, 70, 0.12), transparent 34%),
+    rgba(8, 13, 14, 0.82);
+}
+
+.scope-lock-matrix article:nth-child(3) {
+  border-color: rgba(226, 231, 238, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 104, 70, 0.08), rgba(247, 242, 234, 0.025)),
+    rgba(8, 13, 14, 0.84);
+}
+
+.scope-lock-matrix svg {
+  color: var(--foundry-green);
+}
+
+.scope-lock-matrix article:nth-child(2) svg,
+.scope-lock-matrix article:nth-child(3) svg {
+  color: var(--foundry-coral);
+}
+
+.scope-carrier-panel {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.scope-carrier-panel > svg {
+  color: var(--foundry-coral);
+}
+
+.scope-carrier-panel ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.scope-carrier-panel li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 8px;
+}
+
+.scope-carrier-panel li svg {
+  margin-top: 4px;
+  color: var(--foundry-green);
+}
+
 .sample-proof-grid,
 .proof-case-grid,
 .blocked-reason-grid,
@@ -14822,7 +14943,9 @@ body {
   .intake-send-steps,
   .proof-case-grid,
   .blocked-reason-grid,
-  .proof-timeline {
+  .proof-timeline,
+  .scope-lock-grid,
+  .scope-lock-matrix {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -14840,7 +14963,13 @@ body {
   .sample-proof-grid,
   .proof-case-grid,
   .blocked-reason-grid,
-  .proof-timeline {
+  .proof-timeline,
+  .scope-lock-grid,
+  .scope-lock-matrix {
+    grid-template-columns: 1fr;
+  }
+
+  .scope-carrier-panel {
     grid-template-columns: 1fr;
   }
 
