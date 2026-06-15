@@ -215,6 +215,7 @@ function setInputValue(
 export function PlanDraftStudio() {
   const router = useRouter();
   const [input, setInput] = useState<PlanDraftInput>(emptyInput);
+  const [activeGroupIndex, setActiveGroupIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [exported, setExported] = useState(false);
   const [hydrated, setHydrated] = useState(false);
@@ -229,6 +230,8 @@ export function PlanDraftStudio() {
     [input]
   );
   const nextMissingField = missingCoreFields[0];
+  const activeGroup = planQuestionGroups[activeGroupIndex] ?? planQuestionGroups[0];
+  const activeGroupCompleteCount = activeGroup.fields.filter((field) => fieldIsComplete(input, field)).length;
 
   useEffect(() => {
     try {
@@ -362,6 +365,14 @@ export function PlanDraftStudio() {
       return;
     }
 
+    const groupIndex = planQuestionGroups.findIndex((group) =>
+      group.fields.some((field) => field.key === nextMissingField.key)
+    );
+
+    if (groupIndex >= 0) {
+      setActiveGroupIndex(groupIndex);
+    }
+
     const control = document.querySelector<HTMLElement>(`[data-plan-control="${nextMissingField.key}"]`);
     control?.scrollIntoView({ behavior: "smooth", block: "center" });
     window.setTimeout(() => control?.focus(), 260);
@@ -381,6 +392,20 @@ export function PlanDraftStudio() {
     router.push("/intake/?from=plan");
   }
 
+  function goToPreviousGroup() {
+    setActiveGroupIndex((current) => Math.max(0, current - 1));
+    window.codexAnalytics?.track("plan_step_selected", {
+      step: Math.max(0, activeGroupIndex - 1) + 1
+    });
+  }
+
+  function goToNextGroup() {
+    setActiveGroupIndex((current) => Math.min(planQuestionGroups.length - 1, current + 1));
+    window.codexAnalytics?.track("plan_step_selected", {
+      step: Math.min(planQuestionGroups.length - 1, activeGroupIndex + 1) + 1
+    });
+  }
+
   return (
     <section className="plan-draft-studio" aria-label="Plan draft studio">
       <div className="plan-studio-grid">
@@ -398,6 +423,32 @@ export function PlanDraftStudio() {
             <span>No API call</span>
             <span>One field per decision</span>
             <span>Draft before intake</span>
+          </div>
+
+          <div className="plan-stepper" aria-label="Plan Studio steps">
+            {planQuestionGroups.map((group, index) => {
+              const isActive = index === activeGroupIndex;
+              const readyCount = group.fields.filter((field) => fieldIsComplete(input, field)).length;
+
+              return (
+                <button
+                  aria-current={isActive ? "step" : undefined}
+                  className={isActive ? "is-active" : readyCount === group.fields.length ? "is-complete" : undefined}
+                  data-analytics-event="plan_step_selected"
+                  data-analytics-label={group.title}
+                  data-analytics-type="plan_studio"
+                  key={group.number}
+                  onClick={() => setActiveGroupIndex(index)}
+                  type="button"
+                >
+                  <span>{group.number}</span>
+                  <strong>{group.title}</strong>
+                  <small>
+                    {readyCount}/{group.fields.length}
+                  </small>
+                </button>
+              );
+            })}
           </div>
 
           <div className="plan-input-state" aria-label="Plan Studio completion state">
@@ -423,60 +474,70 @@ export function PlanDraftStudio() {
           </div>
 
           <div className="plan-question-stack">
-            {planQuestionGroups.map((group) => (
-              <fieldset className="plan-question-group" key={group.number}>
-                <legend>
-                  <span>{group.number}</span>
-                  <strong>{group.title}</strong>
-                  <small>{group.description}</small>
-                </legend>
+            <fieldset className="plan-question-group">
+              <legend>
+                <span>{activeGroup.number}</span>
+                <strong>{activeGroup.title}</strong>
+                <small>{activeGroup.description}</small>
+              </legend>
 
-                <div className="plan-field-stack">
-                  {group.fields.map((field) => {
-                    const isComplete = fieldIsComplete(input, field);
+              <div className="plan-field-stack">
+                {activeGroup.fields.map((field) => {
+                  const isComplete = fieldIsComplete(input, field);
 
-                    return (
-                    <label
-                      className={isComplete ? "plan-field-card is-filled" : "plan-field-card is-missing"}
-                      data-plan-field={field.key}
-                      key={field.key}
-                    >
-                      <span className="plan-field-label">{field.label}</span>
-                      <strong>{field.prompt}</strong>
-                      {field.kind === "select" ? (
-                        <select
-                          data-plan-control={field.key}
-                          value={input[field.key]}
-                          onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
-                        >
-                          {field.options.map((option) => (
-                            <option key={option}>{option}</option>
-                          ))}
-                        </select>
-                      ) : field.kind === "input" ? (
-                        <input
-                          data-plan-control={field.key}
-                          value={input[field.key]}
-                          placeholder={field.placeholder}
-                          onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
-                        />
-                      ) : (
-                        <textarea
-                          data-plan-control={field.key}
-                          value={input[field.key]}
-                          placeholder={field.placeholder}
-                          rows={field.rows ?? 5}
-                          onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
-                        />
-                      )}
-                      <small>{field.helper}</small>
-                      <em className="plan-field-status">{isComplete ? "Ready" : "Needs input"}</em>
-                    </label>
-                    );
-                  })}
-                </div>
-              </fieldset>
-            ))}
+                  return (
+                  <label
+                    className={isComplete ? "plan-field-card is-filled" : "plan-field-card is-missing"}
+                    data-plan-field={field.key}
+                    key={field.key}
+                  >
+                    <span className="plan-field-label">{field.label}</span>
+                    <strong>{field.prompt}</strong>
+                    {field.kind === "select" ? (
+                      <select
+                        data-plan-control={field.key}
+                        value={input[field.key]}
+                        onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
+                      >
+                        {field.options.map((option) => (
+                          <option key={option}>{option}</option>
+                        ))}
+                      </select>
+                    ) : field.kind === "input" ? (
+                      <input
+                        data-plan-control={field.key}
+                        value={input[field.key]}
+                        placeholder={field.placeholder}
+                        onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
+                      />
+                    ) : (
+                      <textarea
+                        data-plan-control={field.key}
+                        value={input[field.key]}
+                        placeholder={field.placeholder}
+                        rows={field.rows ?? 5}
+                        onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
+                      />
+                    )}
+                    <small>{field.helper}</small>
+                    <em className="plan-field-status">{isComplete ? "Ready" : "Needs input"}</em>
+                  </label>
+                  );
+                })}
+              </div>
+            </fieldset>
+          </div>
+
+          <div className="plan-step-actions">
+            <button type="button" onClick={goToPreviousGroup} disabled={activeGroupIndex === 0}>
+              Previous
+            </button>
+            <span>
+              Step {activeGroupIndex + 1}: {activeGroupCompleteCount}/{activeGroup.fields.length} fields ready
+            </span>
+            <button type="button" onClick={goToNextGroup} disabled={activeGroupIndex === planQuestionGroups.length - 1}>
+              Next step
+            </button>
           </div>
 
           <div className="plan-input-actions">

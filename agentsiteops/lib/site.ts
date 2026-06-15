@@ -2554,6 +2554,7 @@ export const routeMap = new Map(routePages.map((page) => [page.path, page]));
 
 export const customRoutes = [
   "/examples/ai-service-route-file/",
+  "/examples/route-file-from-messy-project/",
   "/examples/blocked-intake/",
   "/examples/fit-review-sample/",
   "/sample/",

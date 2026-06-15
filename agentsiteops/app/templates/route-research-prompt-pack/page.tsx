@@ -5,6 +5,7 @@ import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycl
 import { ManualDeepResearchWorkspace } from "@/components/ManualDeepResearchWorkspace";
 import { ResearchDeliveryLoop } from "@/components/ResearchDeliveryLoop";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
+import { RouteStageHeader } from "@/components/RouteStageHeader";
 import {
   manualDeepResearchSteps,
   researchAcceptanceGates,
@@ -187,6 +188,29 @@ const clientFailureRules = [
   }
 ];
 
+const clientOperatingQuestions = [
+  {
+    title: "What is automatic",
+    body:
+      "The browser can organize the brief, expose missing fields, show the stage, and run local coverage checks. It does not create a hidden research answer or contact a research provider by itself."
+  },
+  {
+    title: "Who responds after submission",
+    body:
+      "An operator reviews the intake, accepts it, asks for repair, blocks it, or prepares the research handoff. The page shows the expected state instead of pretending every request is instantly fulfilled."
+  },
+  {
+    title: "Research carrier can change",
+    body:
+      "The evidence carrier can be manual source review, a client-provided report, an operator-controlled AI research pass, interviews, exported search data, or another approved path."
+  },
+  {
+    title: "What the client sees",
+    body:
+      "The client should see accepted input, current stage, missing evidence, repair trigger, selected route, rejected alternatives, proof asset, validation channel, and stop rule."
+  }
+];
+
 function PromptCard({ prompt }: { prompt: (typeof routeResearchPrompts)[number] }) {
   return (
     <article className="prompt-card">
@@ -278,6 +302,31 @@ export default function Page() {
             the Route File contract.
           </p>
         </aside>
+      </section>
+
+      <RouteStageHeader
+        current="research"
+        title="Research runs through an approved evidence carrier."
+        body="The carrier can be manual source review, client report, operator-controlled AI research, or another approved path; the coverage standard does not change."
+      />
+
+      <section className="gate-section">
+        <div className="section-head">
+          <h2>Client view before research starts</h2>
+          <p>
+            The page should answer the practical browsing question: after a project is
+            submitted, which parts happen in the website, which parts require operator
+            review, and which research carrier is allowed to produce evidence.
+          </p>
+        </div>
+        <div className="contract-grid">
+          {clientOperatingQuestions.map((item) => (
+            <article key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <RouteFlowBridge current="research" nextHref="/delivery-gate/" nextLabel="Continue to gate" />

@@ -13,6 +13,7 @@ import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
 import { PlanDraftStudio } from "@/components/PlanDraftStudio";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
+import { RouteStageHeader } from "@/components/RouteStageHeader";
 import { siteUrl } from "@/lib/site";
 
 const path = "/plan/";
@@ -125,6 +126,12 @@ export default function PlanPage() {
           </ul>
         </aside>
       </section>
+
+      <RouteStageHeader
+        current="plan"
+        title="Plan Draft is the first usable product step."
+        body="Fill one staged draft before the project becomes intake, scope, research, gate, Route File, or validation work."
+      />
 
       <RouteFlowBridge
         current="plan"

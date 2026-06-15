@@ -348,6 +348,7 @@ async function main() {
     "Plan Studio",
     "Fill in your project plan before asking for a Route File.",
     "Write the project once.",
+    "Browser-local draft",
     "One field per decision",
     "Input coverage",
     "Find next missing",
@@ -381,6 +382,10 @@ async function main() {
   ]);
   await checkPage("/templates/route-research-prompt-pack/", [
     "Carrier-neutral research plan",
+    "Client view before research starts",
+    "What is automatic",
+    "Who responds after submission",
+    "Research carrier can change",
     "The site does not create a hidden research result.",
     "Generate, check, repair, and fuse the route research",
     "Copy research brief",
@@ -430,6 +435,15 @@ async function main() {
     "Seven-day validation path",
     "A real Route File must explain what to do and what not to build."
   ]);
+  await checkPage("/examples/route-file-from-messy-project/", [
+    "From messy project input to one Route File.",
+    "1. Messy input",
+    "2. Repair before scope lock",
+    "3. Route File output",
+    "4. Evidence ledger",
+    "5. Final acceptance check",
+    "This case proves the workflow shape, not buyer demand"
+  ]);
   await checkPage("/examples/blocked-intake/", [
     "This request should not become a Route File.",
     "Block delivery",
@@ -440,12 +454,20 @@ async function main() {
   await checkPage("/sample/", [
     "What the final AgentSiteOps handoff should contain.",
     "Proof cases to inspect before trusting the workflow",
+    "Messy project to Route File",
     "View AI service case",
     "View blocked intake",
+    "Route File Viewer",
+    "Inspect the handoff as one decision package",
+    "Input",
+    "Route",
+    "Evidence",
+    "Validation",
+    "Boundary",
     "The final handoff still points to a validation action.",
     "Next: Validation",
     "First proof asset",
-    "What is not proven"
+    "Not proven"
   ]);
   await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
   await checkPage("/compare/", ["Common objections before payment", "I need someone to build it, not just advise."]);
@@ -513,11 +535,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-63 Route File proof flow pass",
     "M4-62 Dedicated scope lock state",
     "M4-61 Client state continuity layer",
     "M4-60 Route Project OS architecture pass",
-    "M4-59 Proof cases and intake handoff cleanup",
-    "M4-58 Customer path completion pass"
+    "M4-59 Proof cases and intake handoff cleanup"
   ]);
 
   const report = renderReport(generatedAt);

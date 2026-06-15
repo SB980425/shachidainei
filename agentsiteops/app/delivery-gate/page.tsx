@@ -13,6 +13,7 @@ import {
 import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteFileAcceptancePanel } from "@/components/RouteFileAcceptancePanel";
+import { RouteStageHeader } from "@/components/RouteStageHeader";
 import { siteUrl } from "@/lib/site";
 
 const path = "/delivery-gate/";
@@ -159,6 +160,12 @@ export default function Page() {
           </dl>
         </aside>
       </section>
+
+      <RouteStageHeader
+        current="gate"
+        title="Coverage Gate decides pass, repair, block, or reject."
+        body="Returned research is not delivery until buyer logic, evidence ledger, rejected alternatives, proof asset, validation channel, and stop rule are covered."
+      />
 
       <RouteFlowBridge current="gate" nextHref="/sample/" nextLabel="Continue to sample" />
 

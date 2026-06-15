@@ -1,18 +1,18 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-15T13:07:00.015Z
+- Generated: 2026-06-15T13:51:08.714Z
 - Status: baseline_ready
-- Routes: 63
-- Technical SEO pass routes: 63
+- Routes: 64
+- Technical SEO pass routes: 64
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 63 routes
-- Bing status: pending export for 63 routes
+- GSC status: pending export for 64 routes
+- Bing status: pending export for 64 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: aggregate endpoint waiting for events on 56 routes
+- Onsite event status: aggregate endpoint waiting for events on 57 routes
 - Onsite routes with aggregate events: 7
 - Analytics summary status missing or blocked: 0
 - Analytics threshold snapshot: sample views 1, source-link clicks 0, PayPal CTA clicks 0
@@ -33,6 +33,7 @@
 | /tools/ai-crawler-readiness/ | tool | ai_crawler_readiness | pass | site_pass | keep | Measure readiness report copies and sample audit clicks before paid audit expansion |
 | /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
 | /examples/ai-service-route-file/ | example | launch_blueprint | pass | site_pass | keep | Measure proof-case views, Plan Studio exits, blocked-intake comparison exits, and sample returns |
+| /examples/route-file-from-messy-project/ | example | launch_blueprint | pass | site_pass | keep | Measure messy-project case views, Plan Studio exits, sample viewer returns, delivery gate exits, and repeated confusion about automatic versus manual handoff |
 | /examples/blocked-intake/ | example | launch_blueprint | pass | site_pass | keep | Measure blocked-intake views, Plan Studio repair exits, intake exits, and comparison with the completed case |
 | /examples/fit-review-sample/ | example | launch_blueprint | pass | site_pass | keep | Measure movement from sample review to Fit Review pricing intake and full Route File pages |
 | /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Route File pricing, sample, buy, and intake path |

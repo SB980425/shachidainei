@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-15T13:06:17.186Z
+- Generated: 2026-06-15T13:50:09.615Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 302
+- Checks: 325
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 63 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 64 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -61,6 +61,7 @@
 | /plan/ | pass | Plan Studio | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Fill in your project plan before asking for a Route File. | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Write the project once. | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Browser-local draft | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | One field per decision | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Input coverage | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Find next missing | [link](https://agentsiteops.com/plan/) |
@@ -97,6 +98,10 @@
 | /templates/route-research-prompt-pack/ | pass | HTML title exists | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | canonical points to production URL | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Carrier-neutral research plan | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Client view before research starts | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | What is automatic | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Who responds after submission | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
+| /templates/route-research-prompt-pack/ | pass | Research carrier can change | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | The site does not create a hidden research result. | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Generate, check, repair, and fuse the route research | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | Copy research brief | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
@@ -160,6 +165,16 @@
 | /examples/ai-service-route-file/ | pass | Evidence ledger | [link](https://agentsiteops.com/examples/ai-service-route-file/) |
 | /examples/ai-service-route-file/ | pass | Seven-day validation path | [link](https://agentsiteops.com/examples/ai-service-route-file/) |
 | /examples/ai-service-route-file/ | pass | A real Route File must explain what to do and what not to build. | [link](https://agentsiteops.com/examples/ai-service-route-file/) |
+| /examples/route-file-from-messy-project/ | pass | HTTP 200 | [link](https://agentsiteops.com/examples/route-file-from-messy-project/) |
+| /examples/route-file-from-messy-project/ | pass | HTML title exists | [link](https://agentsiteops.com/examples/route-file-from-messy-project/) |
+| /examples/route-file-from-messy-project/ | pass | canonical points to production URL | [link](https://agentsiteops.com/examples/route-file-from-messy-project/) |
+| /examples/route-file-from-messy-project/ | pass | From messy project input to one Route File. | [link](https://agentsiteops.com/examples/route-file-from-messy-project/) |
+| /examples/route-file-from-messy-project/ | pass | 1. Messy input | [link](https://agentsiteops.com/examples/route-file-from-messy-project/) |
+| /examples/route-file-from-messy-project/ | pass | 2. Repair before scope lock | [link](https://agentsiteops.com/examples/route-file-from-messy-project/) |
+| /examples/route-file-from-messy-project/ | pass | 3. Route File output | [link](https://agentsiteops.com/examples/route-file-from-messy-project/) |
+| /examples/route-file-from-messy-project/ | pass | 4. Evidence ledger | [link](https://agentsiteops.com/examples/route-file-from-messy-project/) |
+| /examples/route-file-from-messy-project/ | pass | 5. Final acceptance check | [link](https://agentsiteops.com/examples/route-file-from-messy-project/) |
+| /examples/route-file-from-messy-project/ | pass | This case proves the workflow shape, not buyer demand | [link](https://agentsiteops.com/examples/route-file-from-messy-project/) |
 | /examples/blocked-intake/ | pass | HTTP 200 | [link](https://agentsiteops.com/examples/blocked-intake/) |
 | /examples/blocked-intake/ | pass | HTML title exists | [link](https://agentsiteops.com/examples/blocked-intake/) |
 | /examples/blocked-intake/ | pass | canonical points to production URL | [link](https://agentsiteops.com/examples/blocked-intake/) |
@@ -173,12 +188,20 @@
 | /sample/ | pass | canonical points to production URL | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | What the final AgentSiteOps handoff should contain. | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | Proof cases to inspect before trusting the workflow | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Messy project to Route File | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | View AI service case | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | View blocked intake | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Route File Viewer | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Inspect the handoff as one decision package | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Input | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Route | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Evidence | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Validation | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Boundary | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | The final handoff still points to a validation action. | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | Next: Validation | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | First proof asset | [link](https://agentsiteops.com/sample/) |
-| /sample/ | pass | What is not proven | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Not proven | [link](https://agentsiteops.com/sample/) |
 | /compare/ | pass | HTTP 200 | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | HTML title exists | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | canonical points to production URL | [link](https://agentsiteops.com/compare/) |
@@ -308,11 +331,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-63 Route File proof flow pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-62 Dedicated scope lock state | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-61 Client state continuity layer | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-60 Route Project OS architecture pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-59 Proof cases and intake handoff cleanup | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-58 Customer path completion pass | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

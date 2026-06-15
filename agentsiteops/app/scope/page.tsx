@@ -13,6 +13,7 @@ import {
 import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
+import { RouteStageHeader } from "@/components/RouteStageHeader";
 import { siteUrl } from "@/lib/site";
 
 const path = "/scope/";
@@ -159,6 +160,12 @@ export default function ScopePage() {
           </ul>
         </aside>
       </section>
+
+      <RouteStageHeader
+        current="scope"
+        title="Scope Lock freezes the project before research."
+        body="Research can use different carriers, but the route question, allowed sources, blocked claims, and stop condition must be fixed first."
+      />
 
       <RouteFlowBridge current="scope" nextHref="/templates/route-research-prompt-pack/" nextLabel="Continue to research" />
 

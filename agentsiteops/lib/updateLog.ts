@@ -12,6 +12,56 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-15",
+    step: "M4-63 Route File proof flow pass",
+    status: "completed",
+    keyPoints: [
+      "Added a shared Route Stage Header to core workflow pages so Plan, Intake, Scope, Research, Delivery Gate, Route File, and Validation read as one connected project path.",
+      "Changed Plan Studio from a dense all-fields surface into a stepped intake guide with one visible decision group at a time.",
+      "Upgraded the Sample page with an interactive Route File Viewer that separates input, route decision, evidence, validation, and boundary tabs.",
+      "Added a complete messy-project proof case showing vague input, repair before scope lock, Route File output, evidence ledger, and final acceptance checks.",
+      "Strengthened the research template page with a client-visible explanation of what is automatic, who responds after submission, and why the research carrier is not fixed to one tool."
+    ],
+    aiAngle:
+      "AI and search readers can now describe AgentSiteOps as a client-visible Route File workflow with a reviewable proof case, not a hidden automatic research product or tool-locked prompt pack.",
+    files: [
+      "components/RouteStageHeader.tsx",
+      "components/RouteFileViewer.tsx",
+      "components/PlanDraftStudio.tsx",
+      "app/plan/page.tsx",
+      "app/intake/page.tsx",
+      "app/scope/page.tsx",
+      "app/templates/route-research-prompt-pack/page.tsx",
+      "app/delivery-gate/page.tsx",
+      "app/execution/page.tsx",
+      "app/sample/page.tsx",
+      "app/examples/route-file-from-messy-project/page.tsx",
+      "components/SiteAnalytics.tsx",
+      "functions/api/events.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "docs/analytics-events.md",
+      "data/page-review-actions.csv",
+      "scripts/production-health-monitor.mjs",
+      "app/globals.css"
+    ],
+    verification: [
+      "`npm run typecheck` pass",
+      "`npm run lint` pass",
+      "`npm run build` pass",
+      "`npm run routes:gate` pass",
+      "`npm run links:gate` pass",
+      "`npm run analytics:gate` pass",
+      "`npm run commercial:gate` pass",
+      "`npm run growth:snapshot` pass",
+      "`npm run seo:ci` pass",
+      "Playwright local check pass: Plan, Research, Sample, and messy-project proof case have 0 horizontal overflow at desktop and mobile widths",
+      "`npm run production:health` pass"
+    ],
+    next:
+      "Use the proof-flow structure as the default for future content: every public route should show where the client enters, what the system checks, what the operator decides, what evidence remains weak, and what validation action follows."
+  },
+  {
+    date: "2026-06-15",
     step: "M4-62 Dedicated scope lock state",
     status: "completed",
     keyPoints: [

@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  AlertTriangle,
-  CheckCircle2,
-  ClipboardList,
-  FileText,
-  ShieldCheck
-} from "lucide-react";
+import { ClipboardList, FileText, ShieldCheck } from "lucide-react";
 import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteFileAcceptancePanel } from "@/components/RouteFileAcceptancePanel";
+import { RouteFileViewer } from "@/components/RouteFileViewer";
 import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
+import { RouteStageHeader } from "@/components/RouteStageHeader";
 import { siteUrl } from "@/lib/site";
 
 const path = "/sample/";
@@ -51,6 +47,12 @@ const inputSnapshot = [
 ];
 
 const proofCases = [
+  {
+    title: "Messy project to Route File",
+    href: "/examples/route-file-from-messy-project/",
+    body:
+      "A full walkthrough showing how a vague request is repaired before it becomes a selected route, evidence ledger, proof asset, validation channel, and stop rule."
+  },
   {
     title: "AI service route file",
     href: "/examples/ai-service-route-file/",
@@ -285,6 +287,12 @@ export default function Page() {
         </div>
       </section>
 
+      <RouteStageHeader
+        current="route-file"
+        title="Route File is the output, not the end of the decision."
+        body="The handoff must show selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule."
+      />
+
       <RouteFlowBridge current="route-file" nextHref="/guides/48-hour-exposure-sprint/" nextLabel="Run validation" />
 
       <RouteProjectLifecycle
@@ -301,126 +309,18 @@ export default function Page() {
         compact
       />
 
-      <section className="gate-section">
-        <div className="section-head">
-          <h2>Input snapshot</h2>
-          <p>
-            A route file starts from the client's actual situation. Missing inputs remain
-            visible instead of being replaced by confident language.
-          </p>
-        </div>
-        <div className="sample-snapshot-grid">
-          {inputSnapshot.map((item) => (
-            <article key={item.label}>
-              <small>{item.label}</small>
-              <p>{item.value}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+      <RouteFileViewer
+        inputSnapshot={inputSnapshot}
+        selectedRoute={selectedRoute}
+        rejectedAlternatives={rejectedAlternatives}
+        evidenceLedger={evidenceLedger}
+        proofAsset={proofAsset}
+        validationChannel={validationChannel}
+        stopRules={stopRules}
+        notProven={notProven}
+      />
 
       <RouteFileAcceptancePanel />
-
-      <section className="gate-section split-section gate-split">
-        <div>
-          <h2>Selected route</h2>
-          <div className="sample-route-stack">
-            {selectedRoute.map((item) => (
-              <article key={item.label}>
-                <CheckCircle2 aria-hidden="true" size={18} />
-                <div>
-                  <h3>{item.label}</h3>
-                  <p>{item.value}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-        <div>
-          <h2>Rejected alternatives</h2>
-          <div className="sample-route-stack is-rejected">
-            {rejectedAlternatives.map((item) => (
-              <article key={item.route}>
-                <AlertTriangle aria-hidden="true" size={18} />
-                <div>
-                  <h3>{item.route}</h3>
-                  <p>{item.reason}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="gate-section">
-        <div className="section-head">
-          <h2>Evidence ledger</h2>
-          <p>
-            Each claim is tagged before it can raise route confidence. This prevents
-            public context from being treated as buyer proof.
-          </p>
-        </div>
-        <div className="sample-ledger-table" role="table" aria-label="Sample evidence ledger">
-          <div role="row">
-            <strong role="columnheader">Claim</strong>
-            <strong role="columnheader">Status</strong>
-            <strong role="columnheader">Source</strong>
-            <strong role="columnheader">Next evidence</strong>
-          </div>
-          {evidenceLedger.map((item) => (
-            <div role="row" key={item.claim}>
-              <span role="cell">{item.claim}</span>
-              <span role="cell">{item.status}</span>
-              <span role="cell">{item.source}</span>
-              <span role="cell">{item.next}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="gate-section split-section gate-split">
-        <div>
-          <h2>First proof asset</h2>
-          <ul className="compact-list">
-            {proofAsset.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2>Validation channel</h2>
-          <div className="sample-validation-list">
-            {validationChannel.map((item) => (
-              <article key={item.label}>
-                <ShieldCheck aria-hidden="true" size={18} />
-                <div>
-                  <h3>{item.label}</h3>
-                  <p>{item.value}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="gate-section split-section gate-split">
-        <div>
-          <h2>Stop rule</h2>
-          <ul className="compact-list">
-            {stopRules.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2>What is not proven</h2>
-          <ul className="compact-list">
-            {notProven.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
 
       <section className="gate-section split-section gate-split">
         <div>

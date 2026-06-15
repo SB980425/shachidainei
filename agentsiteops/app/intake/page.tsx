@@ -17,6 +17,7 @@ import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycl
 import { IntakePacketBuilder } from "@/components/IntakePacketBuilder";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
+import { RouteStageHeader } from "@/components/RouteStageHeader";
 import { siteUrl } from "@/lib/site";
 
 const path = "/intake/";
@@ -173,6 +174,12 @@ export default function Page() {
           </dl>
         </aside>
       </section>
+
+      <RouteStageHeader
+        current="intake"
+        title="Intake decides whether the project can be reviewed."
+        body="Submission is visible, but acceptance stays manual: ready, repair, blocked, or not delivery."
+      />
 
       <RouteFlowBridge current="intake" nextHref="/scope/" nextLabel="Continue to scope lock" />
 

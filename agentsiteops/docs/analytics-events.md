@@ -27,11 +27,13 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `start_page_view` | `/start/` load | `path` |
 | `plan_studio_view` | `/plan/` load | `path` |
 | `plan_example_loaded` | Plan Studio example button click | `label`, `type` |
+| `plan_step_selected` | Plan Studio stepper selection | `step` or click-captured `label`, `type` |
 | `plan_brief_copy` | Plan Studio copy brief button click | `label`, `type` |
 | `plan_missing_field_focus` | Plan Studio missing-field focus button click | `field`, `missing_count`; click capture also records `label`, `type` |
 | `plan_copy_continue` | Plan Studio copy-and-continue action | `copied`, `missing_count`, `readiness_score`; click capture also records `label`, `type` |
 | `client_state_current_click` | Client Route State current-state link click | `label`, `type` |
 | `client_state_next_click` | Client Route State next-state link click | `label`, `type` |
+| `route_file_viewer_tab` | Sample Route File Viewer tab click | `label`, `type` |
 | `intake_saved_plan_detected` | Intake packet builder detects a browser-local Plan Studio brief | `length` |
 | `how_it_works_view` | `/how-it-works/` load | `path` |
 | `scope_lock_view` | `/scope/` load | `path` |
@@ -42,6 +44,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `sample_audit_view` | `/examples/agentsiteops-self-audit/` load | `path` |
 | `fit_review_sample_view` | `/examples/fit-review-sample/` load | `path` |
 | `ai_service_route_file_example_view` | `/examples/ai-service-route-file/` load | `path` |
+| `messy_project_route_file_example_view` | `/examples/route-file-from-messy-project/` load | `path` |
 | `blocked_intake_example_view` | `/examples/blocked-intake/` load | `path` |
 | `audit_intent_page_view` | `/services/ai-website-opportunity-audit/` load | `path` |
 | `audit_scope_builder_view` | `/tools/audit-scope-builder/` load | `path` |

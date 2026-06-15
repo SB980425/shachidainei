@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-15T13:05:35.351Z
+- Generated: 2026-06-15T13:46:46.384Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 63
+- Sitemap routes: 64
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 63 |
+| Routes passed | 64 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -45,7 +45,7 @@
 | /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 25 | pass | - |
 | /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 26 | pass | - |
 | /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 26 | pass | - |
-| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 62 | pass | - |
+| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 64 | pass | - |
 | /reports/route-basis/ | pass | 200 | Route Basis Report \| AgentSiteOps | https://agentsiteops.com/reports/route-basis/ | 1 | 23 | pass | - |
 | /reports/agentsiteops-route-run/ | pass | 200 | AgentSiteOps Route Run \| AgentSiteOps | https://agentsiteops.com/reports/agentsiteops-route-run/ | 1 | 21 | pass | - |
 | /reports/client-route-workflow/ | pass | 200 | Client Route Workflow \| AgentSiteOps | https://agentsiteops.com/reports/client-route-workflow/ | 1 | 24 | pass | - |
@@ -70,9 +70,10 @@
 | /website-opportunity-audit/ | pass | 200 | AgentSiteOps Route File \| AgentSiteOps | https://agentsiteops.com/website-opportunity-audit/ | 1 | 24 | pass | - |
 | /pricing/ | pass | 200 | Pricing \| AgentSiteOps | https://agentsiteops.com/pricing/ | 1 | 23 | pass | - |
 | /examples/ai-service-route-file/ | pass | 200 | AI Service Route File Example \| AgentSiteOps | https://agentsiteops.com/examples/ai-service-route-file/ | 1 | 22 | pass | - |
+| /examples/route-file-from-messy-project/ | pass | 200 | Messy Project to Route File Example \| AgentSiteOps | https://agentsiteops.com/examples/route-file-from-messy-project/ | 1 | 23 | pass | - |
 | /examples/blocked-intake/ | pass | 200 | Blocked Intake Example \| AgentSiteOps | https://agentsiteops.com/examples/blocked-intake/ | 1 | 22 | pass | - |
 | /examples/fit-review-sample/ | pass | 200 | Fit Review Sample \| AgentSiteOps | https://agentsiteops.com/examples/fit-review-sample/ | 1 | 23 | pass | - |
-| /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 26 | pass | - |
+| /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 27 | pass | - |
 | /compare/ | pass | 200 | Compare Route File Options \| AgentSiteOps | https://agentsiteops.com/compare/ | 1 | 23 | pass | - |
 | /starter-review/ | pass | 200 | Fit Review \| AgentSiteOps | https://agentsiteops.com/starter-review/ | 1 | 22 | pass | - |
 | /buy/ | pass | 200 | Route File Purchase Gate \| AgentSiteOps | https://agentsiteops.com/buy/ | 1 | 23 | pass | - |

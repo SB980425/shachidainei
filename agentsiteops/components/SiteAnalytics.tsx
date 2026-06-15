@@ -38,6 +38,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/examples/agentsiteops-self-audit/": ["sample_audit_view"],
   "/examples/fit-review-sample/": ["fit_review_sample_view"],
   "/examples/ai-service-route-file/": ["ai_service_route_file_example_view"],
+  "/examples/route-file-from-messy-project/": ["messy_project_route_file_example_view"],
   "/examples/blocked-intake/": ["blocked_intake_example_view"],
   "/services/ai-website-opportunity-audit/": ["audit_intent_page_view"],
   "/tools/audit-scope-builder/": ["audit_scope_builder_view"],

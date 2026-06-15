@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-- The production site has 63 indexable routes with technical SEO passing.
+- The production site has 64 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, AI referrals, and revenue evidence are still pending exports or records; the first-party aggregate endpoint is active but currently waiting for events.
@@ -16,13 +16,13 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 63 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 63/63 routes pass |
+| Route registry | docs/routes.json | 64 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 64/64 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
-| IndexNow | latest command output | 63 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 64 URLs submitted successfully in current deployment cycle |
 | Event layer | /api/events/summary | First-party aggregate endpoint active; sample views 1, source-link clicks 0, PayPal CTA clicks 0 |
 
 ## Unverified
@@ -51,6 +51,7 @@
 | /tools/ai-crawler-readiness/ | tool | ai_crawler_readiness | pass | site_pass | keep | Measure readiness report copies and sample audit clicks before paid audit expansion |
 | /examples/agentsiteops-self-audit/ | example | commercial_validation | pass | site_pass | keep | Measure whether sample views lead to audit intent clicks |
 | /examples/ai-service-route-file/ | example | launch_blueprint | pass | site_pass | keep | Measure proof-case views, Plan Studio exits, blocked-intake comparison exits, and sample returns |
+| /examples/route-file-from-messy-project/ | example | launch_blueprint | pass | site_pass | keep | Measure messy-project case views, Plan Studio exits, sample viewer returns, delivery gate exits, and repeated confusion about automatic versus manual handoff |
 | /examples/blocked-intake/ | example | launch_blueprint | pass | site_pass | keep | Measure blocked-intake views, Plan Studio repair exits, intake exits, and comparison with the completed case |
 | /examples/fit-review-sample/ | example | launch_blueprint | pass | site_pass | keep | Measure movement from sample review to Fit Review pricing intake and full Route File pages |
 | /services/ai-website-opportunity-audit/ | service | commercial_validation | pass | site_pass | keep | Keep as legacy service context; route qualified commercial intent toward the Route File pricing, sample, buy, and intake path |

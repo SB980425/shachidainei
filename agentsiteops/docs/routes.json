@@ -114,6 +114,15 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/examples/route-file-from-messy-project/",
+      "pageType": "example",
+      "template": "messy_project_route_file_case",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.78,
+      "changefreq": "monthly"
+    },
+    {
       "path": "/examples/blocked-intake/",
       "pageType": "example",
       "template": "blocked_intake_proof_case",

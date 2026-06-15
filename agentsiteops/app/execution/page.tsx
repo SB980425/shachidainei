@@ -15,6 +15,7 @@ import { ClientRouteWorkspace } from "@/components/ClientRouteWorkspace";
 import { ExecutionWorkbench } from "@/components/ExecutionWorkbench";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
+import { RouteStageHeader } from "@/components/RouteStageHeader";
 import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -134,6 +135,12 @@ export default function ExecutionPage() {
           </ul>
         </aside>
       </section>
+
+      <RouteStageHeader
+        current="gate"
+        title="Execution Workbench focuses on coverage and repair."
+        body="Use the workbench to inspect research carrier, coverage gate, repair state, Route File readiness, and public copy boundaries."
+      />
 
       <RouteFlowBridge
         current="gate"

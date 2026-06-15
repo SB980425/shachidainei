@@ -12,6 +12,8 @@ The core product is not a generic SEO blog, AI research wrapper, prompt library,
 
 Every core product page should show the client state: what the customer can do now, what the website can handle automatically, what requires manual/operator review, what visible result comes next, and what condition triggers repair or stop.
 
+Every proof page should show the full route chain when possible: messy input, repair before scope lock, accepted or blocked state, evidence ledger, first proof asset, validation channel, stop rule, and what remains unproven.
+
 The final Route File must contain:
 
 - Selected route.
@@ -70,6 +72,7 @@ Research-to-Route File.
 | `/execution/` | Product workbench | Show the operating path from intake through coverage gate and Route File output. |
 | `/sample/` | Example | Show the Route File output structure and proof cases. |
 | `/examples/ai-service-route-file/` | Example | Show a completed AI service Route File proof case. |
+| `/examples/route-file-from-messy-project/` | Example | Show the full chain from vague project input to repaired scope and one Route File. |
 | `/examples/blocked-intake/` | Example | Show a non-delivery case that should be repaired or blocked. |
 | `/ai-website-operating-system/` | Pillar | Define the operating system and stop rules. |
 | `/tools/website-opportunity-scorer/` | Tool | Score candidate website directions. |
