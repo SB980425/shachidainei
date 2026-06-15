@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-15T07:00:15.424Z
+- Generated: 2026-06-15T08:10:42.145Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 250
+- Checks: 255
 - Blockers: 0
 - Warnings: 0
 
@@ -67,6 +67,8 @@
 | /plan/ | pass | Operating choices | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Selected draft route | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Copy plan brief | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Download route draft | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Handoff state | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | A draft is not the final Route File. | [link](https://agentsiteops.com/plan/) |
 | /templates/route-research-prompt-pack/ | pass | HTTP 200 | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | HTML title exists | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
@@ -175,6 +177,9 @@
 | /intake/ | pass | Manual intake process | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | No saved Plan Studio draft | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Start in Plan Studio | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | After sending | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Operator review is manual | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Research carrier is chosen after manual acceptance | [link](https://agentsiteops.com/intake/) |
 | /evidence/ | pass | HTTP 200 | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | HTML title exists | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | canonical points to production URL | [link](https://agentsiteops.com/evidence/) |
@@ -256,11 +261,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-58 Customer path completion pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-57 Lightweight updates page | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-56 Plan-to-intake interaction continuity | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-55 Plan Studio spacious intake redesign | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-54 Plan Studio and client workspace cleanup | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-53 Navigation context and updates ledger | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

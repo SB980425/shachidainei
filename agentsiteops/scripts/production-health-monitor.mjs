@@ -474,8 +474,7 @@ async function main() {
     "M4-57 Lightweight updates page",
     "M4-56 Plan-to-intake interaction continuity",
     "M4-55 Plan Studio spacious intake redesign",
-    "M4-54 Plan Studio and client workspace cleanup",
-    "M4-53 Navigation context and updates ledger"
+    "M4-54 Plan Studio and client workspace cleanup"
   ]);
 
   const report = renderReport(generatedAt);
