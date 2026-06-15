@@ -13,6 +13,7 @@ import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycl
 import { ClientRouteWorkspace } from "@/components/ClientRouteWorkspace";
 import { ExecutionWorkbench } from "@/components/ExecutionWorkbench";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
+import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
 import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -138,6 +139,13 @@ export default function ExecutionPage() {
         eyebrow="Workbench context"
         nextHref="/sample/"
         nextLabel="Review Route File output"
+      />
+
+      <RouteProjectLifecycle
+        current="gate"
+        eyebrow="Workbench state"
+        title="Execution is the quality-control middle of the Route Project."
+        body="The workbench should make research carrier, coverage gate, repair state, and final output visible without pretending the website runs hidden research."
       />
 
       <CustomerResponseLifecycle />

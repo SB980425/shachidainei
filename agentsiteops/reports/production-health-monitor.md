@@ -1,6 +1,6 @@
 # Production Health Monitor
 
-- Generated: 2026-06-15T08:44:39.030Z
+- Generated: 2026-06-15T12:37:12.243Z
 - Status: pass
 - Site: https://agentsiteops.com
 - Checks: 275
@@ -281,11 +281,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-60 Route Project OS architecture pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-59 Proof cases and intake handoff cleanup | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-58 Customer path completion pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-57 Lightweight updates page | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-56 Plan-to-intake interaction continuity | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-55 Plan Studio spacious intake redesign | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

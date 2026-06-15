@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { RouteCommandCenter } from "@/components/RouteCommandCenter";
 import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
+import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
 import { allRoutes, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -257,6 +258,14 @@ export default function HomePage() {
           </ul>
         </aside>
       </section>
+
+      <RouteProjectLifecycle
+        current="plan"
+        title="AgentSiteOps is a Route Project operating system, not a pile of pages."
+        body="Every public route should either move the same project object forward, prove the output, or support validation after delivery."
+        showObjects
+        showSupportLayer
+      />
 
       <section className="route-foundation-section home-proof-section">
         <div className="route-section-heading">

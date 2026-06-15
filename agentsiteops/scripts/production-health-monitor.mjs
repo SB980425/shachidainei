@@ -488,11 +488,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-60 Route Project OS architecture pass",
     "M4-59 Proof cases and intake handoff cleanup",
     "M4-58 Customer path completion pass",
     "M4-57 Lightweight updates page",
-    "M4-56 Plan-to-intake interaction continuity",
-    "M4-55 Plan Studio spacious intake redesign"
+    "M4-56 Plan-to-intake interaction continuity"
   ]);
 
   const report = renderReport(generatedAt);

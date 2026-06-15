@@ -15,6 +15,7 @@ import {
 import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { IntakePacketBuilder } from "@/components/IntakePacketBuilder";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
+import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
 import { siteUrl } from "@/lib/site";
 
 const path = "/intake/";
@@ -173,6 +174,13 @@ export default function Page() {
       </section>
 
       <RouteFlowBridge current="intake" nextHref="/how-it-works/" nextLabel="Continue to scope lock" />
+
+      <RouteProjectLifecycle
+        current="intake"
+        eyebrow="Current state"
+        title="Intake is a state transition, not a contact form."
+        body="The visitor should see whether the project becomes ready, repair, blocked, or not delivery before any research or Route File work begins."
+      />
 
       <section className="gate-section intake-submission-section">
         <div className="section-head">

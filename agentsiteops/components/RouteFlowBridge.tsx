@@ -1,65 +1,27 @@
 import Link from "next/link";
 import {
+  Activity,
   ClipboardList,
   FileCheck2,
   FileText,
   LockKeyhole,
-  SearchCheck
+  SearchCheck,
+  ShieldCheck
 } from "lucide-react";
+import { routeProjectStages, type RouteProjectStageId } from "@/lib/routeProjectSystem";
 
-const routeFlowStages = [
-  {
-    id: "plan",
-    label: "Plan Draft",
-    title: "Project plan",
-    body: "Write the messy project and generate a preliminary route draft.",
-    href: "/plan/",
-    Icon: ClipboardList
-  },
-  {
-    id: "intake",
-    label: "Intake",
-    title: "Manual review",
-    body: "Send the plan brief for operator acceptance or repair.",
-    href: "/intake/",
-    Icon: FileCheck2
-  },
-  {
-    id: "scope",
-    label: "Scope Lock",
-    title: "Boundary",
-    body: "Allowed claims, blocked claims, and research limits.",
-    href: "/how-it-works/",
-    Icon: LockKeyhole
-  },
-  {
-    id: "research",
-    label: "Research Run",
-    title: "Approved research",
-    body: "Brief, approved research channel, and source coverage.",
-    href: "/templates/route-research-prompt-pack/",
-    Icon: SearchCheck
-  },
-  {
-    id: "gate",
-    label: "Coverage Gate",
-    title: "Pass or repair",
-    body: "Check coverage before synthesis or block weak output.",
-    href: "/delivery-gate/",
-    Icon: FileCheck2
-  },
-  {
-    id: "route-file",
-    label: "Route File",
-    title: "Final output",
-    body: "Selected route, rejected paths, ledger, asset, channel, stop rule.",
-    href: "/sample/",
-    Icon: FileText
-  }
-];
+const iconMap = {
+  activity: Activity,
+  clipboard: ClipboardList,
+  fileCheck: FileCheck2,
+  fileText: FileText,
+  lock: LockKeyhole,
+  search: SearchCheck,
+  shield: ShieldCheck
+};
 
 type RouteFlowBridgeProps = {
-  current: (typeof routeFlowStages)[number]["id"];
+  current: RouteProjectStageId;
   eyebrow?: string;
   nextHref?: string;
   nextLabel?: string;
@@ -71,26 +33,26 @@ export function RouteFlowBridge({
   nextHref,
   nextLabel
 }: RouteFlowBridgeProps) {
-  const currentIndex = routeFlowStages.findIndex((stage) => stage.id === current);
+  const currentIndex = routeProjectStages.findIndex((stage) => stage.id === current);
   const safeIndex = currentIndex >= 0 ? currentIndex : 0;
   const resolvedNext = nextHref
     ? { href: nextHref, label: nextLabel ?? "Continue" }
-    : routeFlowStages[Math.min(safeIndex + 1, routeFlowStages.length - 1)];
+    : routeProjectStages[Math.min(safeIndex + 1, routeProjectStages.length - 1)];
 
   return (
     <section className="route-flow-bridge" aria-label="AgentSiteOps route flow">
       <div className="route-flow-bridge-head">
         <span>{eyebrow}</span>
         <strong>
-          Stage {safeIndex + 1} / {routeFlowStages.length}: {routeFlowStages[safeIndex].label}
+          Stage {safeIndex + 1} / {routeProjectStages.length}: {routeProjectStages[safeIndex].label}
         </strong>
         <Link prefetch={false} href={resolvedNext.href}>
           {resolvedNext.label}
         </Link>
       </div>
       <div className="route-flow-bridge-track">
-        {routeFlowStages.map((stage, index) => {
-          const Icon = stage.Icon;
+        {routeProjectStages.map((stage, index) => {
+          const Icon = iconMap[stage.icon];
           const isCurrent = stage.id === current;
           const isPassed = index < safeIndex;
 
@@ -104,7 +66,7 @@ export function RouteFlowBridge({
               <span>{String(index + 1).padStart(2, "0")}</span>
               <Icon aria-hidden="true" size={17} />
               <strong>{stage.label}</strong>
-              <small>{stage.body}</small>
+              <small>{stage.output}</small>
             </Link>
           );
         })}

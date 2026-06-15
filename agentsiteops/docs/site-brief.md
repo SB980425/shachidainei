@@ -6,49 +6,67 @@ AgentSiteOps
 
 ## Core Positioning
 
-AgentSiteOps is an AI website operating system for builders who want to turn website ideas into scored opportunities, structured routes, technical SEO checks, content gates, and measurable review loops.
+AgentSiteOps is a Route Project operating system for builders who need to turn messy project material into one checked Route File.
 
-The site is not a generic SEO blog. The first version is a tool-led method library: scorer, system definition, repo skeleton, content gates, pSEO gate, citation metrics, trust pages, and public updates.
+The core product is not a generic SEO blog, AI research wrapper, prompt library, or payment-first service page. The core object is a Route Project moving through plan draft, intake, scope lock, approved evidence carrier, coverage gate, Route File handoff, and validation.
+
+The final Route File must contain:
+
+- Selected route.
+- Rejected alternatives.
+- Evidence ledger.
+- First proof asset.
+- Validation channel.
+- Stop rule.
+
+Older SEO, AI visibility, templates, checklists, and launch-validation pages remain useful as support assets. They should help prove, measure, or validate the Route File workflow rather than compete with it as the main product.
 
 ## Primary Site Type
 
-Template site + tool site + methodology library.
+Route File product site + project workbench + proof library.
 
 ## First Cluster
 
-AI Website Operating System.
+Research-to-Route File.
 
 ## Target Users
 
 | User | Need | Site Value |
 |---|---|---|
-| Indie site builder | Does not know which site direction is worth building | Opportunity scorer, site-type decision model, route blueprint |
-| AI-assisted content operator | Wants to use AI without publishing low-value pages | Content quality gate, source rules, publishing decisions |
-| Codex or GitHub workflow user | Wants research to become a repo, issues, and release checks | SEO repo skeleton, CI gate, route registry |
-| SEO or growth operator | Needs to adapt to AI search and normal search together | AI citation, grounding, GSC, Bing, and onsite metrics |
-| Small team | Wants a low-cost maintainable site system | Templates, gates, weekly review, and stop rules |
+| AI-capable builder | Has demos, notes, or scattered service ideas but cannot choose the first route | Plan Studio, intake packet, Route File sample, blocked-intake example |
+| Solo operator | Needs one sellable route before building a page, tool, checkout, content batch, or outreach campaign | Selected route, rejected alternatives, proof asset, validation channel, stop rule |
+| Client or buyer | Needs to understand what will happen after submitting a messy project | Visible lifecycle, manual acceptance state, repair/blocked/not-delivery boundaries |
+| SEO or growth operator | Needs evidence discipline after the first Route File exists | Evidence ledger, validation gate, 48-hour exposure sprint, search and event reports |
+| Technical maintainer | Needs the website to remain coherent as pages and templates grow | Route registry, analytics events, health monitors, update log, support-layer governance |
 
 ## User Jobs
 
-1. Decide whether a website direction is worth building.
-2. Convert a direction into taxonomy, routes, page registry, and index policy.
-3. Create pages that AI systems can parse and humans can use.
-4. Block low-value AI content and risky pSEO batches before launch.
-5. Configure technical SEO, CI, sitemap, robots, canonical, and schema checks.
-6. Use 30-day signals to keep, rewrite, merge, noindex, or stop pages.
+1. Write a messy project plan in plain language.
+2. Convert the plan into an intake packet that can be accepted, repaired, blocked, or rejected as not delivery.
+3. Lock the scope and evidence carrier before research starts.
+4. Check returned research or source material before synthesis.
+5. Deliver one Route File with selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.
+6. Run validation without treating page views, AI praise, sitemap success, or payment clicks as proof of demand.
 
 ## Differentiation
 
 - Not a generic SEO tutorial site.
 - Not a broad AI tool directory.
 - Not a traffic or revenue promise.
-- Core assets are reusable engineering artifacts: scorer, gates, repo structure, checklists, release reports, and review loops.
+- Core asset is a checked Route File, supported by reusable gates, examples, registries, reports, and review loops.
+- The site shows both positive and negative proof: a completed Route File and a blocked intake that should not become a deliverable.
 
 ## First URLs
 
 | URL | Page Type | Purpose |
 |---|---|---|
-| `/` | Home | State positioning and route visitors into the scorer and system pages. |
+| `/` | Home | State the Route Project OS and route visitors into Plan, Intake, Workbench, and Sample. |
+| `/plan/` | Product workbench | Let visitors draft a project plan locally before intake. |
+| `/intake/` | Product workbench | Turn the draft into a copy-ready review packet and explain ready, repair, blocked, or not-delivery states. |
+| `/execution/` | Product workbench | Show the operating path from intake through coverage gate and Route File output. |
+| `/sample/` | Example | Show the Route File output structure and proof cases. |
+| `/examples/ai-service-route-file/` | Example | Show a completed AI service Route File proof case. |
+| `/examples/blocked-intake/` | Example | Show a non-delivery case that should be repaired or blocked. |
 | `/ai-website-operating-system/` | Pillar | Define the operating system and stop rules. |
 | `/tools/website-opportunity-scorer/` | Tool | Score candidate website directions. |
 | `/tools/ai-crawler-readiness/` | Tool | Score crawler, structure, evidence, and continuation readiness before audit requests. |

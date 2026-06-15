@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { PlanDraftStudio } from "@/components/PlanDraftStudio";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
+import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
 import { siteUrl } from "@/lib/site";
 
 const path = "/plan/";
@@ -129,6 +130,13 @@ export default function PlanPage() {
         eyebrow="Plan context"
         nextHref="/intake/"
         nextLabel="Continue to intake"
+      />
+
+      <RouteProjectLifecycle
+        current="plan"
+        eyebrow="Current state"
+        title="Plan Studio is the first Route Project state."
+        body="The page is not only a form. It creates the first project object that can later be reviewed, repaired, blocked, researched, and delivered."
       />
 
       <section className="plan-flow-strip" aria-label="Plan Studio flow">

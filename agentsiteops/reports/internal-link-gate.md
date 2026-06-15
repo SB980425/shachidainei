@@ -1,6 +1,6 @@
 # Internal Link Gate
 
-- Generated: 2026-06-15T08:35:38.819Z
+- Generated: 2026-06-15T12:34:39.720Z
 - Status: pass
 - Checks: 66
 - Blockers: 0
@@ -38,7 +38,7 @@
 | internal_link | pass | /examples/blocked-intake/ | examples\ai-service-route-file\index.html, reports\route-evidence-dashboard\index.html, sample\index.html |
 | internal_link | pass | /examples/fit-review-sample/ | answers\validate-ai-service-offer-before-building\index.html, checklists\launch-validation-decision-gate\index.html, guides\48-hour-exposure-sprint\index.html |
 | internal_link | pass | /execution/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
-| internal_link | pass | /guides/48-hour-exposure-sprint/ | answers\when-to-stop-an-ai-website-idea\index.html, guides\first-traffic-system\index.html, launch-kit\index.html |
+| internal_link | pass | /guides/48-hour-exposure-sprint/ | answers\when-to-stop-an-ai-website-idea\index.html, delivery-gate\index.html, execution\index.html |
 | internal_link | pass | /guides/ai-citation-grounding-metrics/ | checklists\ai-citation-readiness\index.html, checklists\programmatic-seo-gate\index.html, guides\small-website-ai-visibility-metrics\index.html |
 | internal_link | pass | /guides/ai-search-friendly-robots-txt/ | checklists\ai-citation-readiness\index.html, reports\route-evidence-dashboard\index.html |
 | internal_link | pass | /guides/first-traffic-system/ | answers\when-to-stop-an-ai-website-idea\index.html, guides\48-hour-exposure-sprint\index.html, reports\route-evidence-dashboard\index.html |

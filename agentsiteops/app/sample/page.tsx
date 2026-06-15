@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteFileAcceptancePanel } from "@/components/RouteFileAcceptancePanel";
+import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
 import { siteUrl } from "@/lib/site";
 
 const path = "/sample/";
@@ -283,7 +284,14 @@ export default function Page() {
         </div>
       </section>
 
-      <RouteFlowBridge current="route-file" nextHref="/execution/" nextLabel="Open workbench" />
+      <RouteFlowBridge current="route-file" nextHref="/guides/48-hour-exposure-sprint/" nextLabel="Run validation" />
+
+      <RouteProjectLifecycle
+        current="route-file"
+        eyebrow="Output state"
+        title="The sample is one state in the Route Project lifecycle."
+        body="A Route File is complete only when it can name the first proof asset, validation channel, ignored weak signals, and stop rule."
+      />
 
       <section className="gate-section">
         <div className="section-head">

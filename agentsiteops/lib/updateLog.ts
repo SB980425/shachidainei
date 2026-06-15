@@ -12,6 +12,49 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-15",
+    step: "M4-60 Route Project OS architecture pass",
+    status: "completed",
+    keyPoints: [
+      "Added a central Route Project system model that defines the seven-stage lifecycle from Plan Studio to validation.",
+      "Added a shared Route Project Lifecycle component so the homepage, Plan, Intake, Workbench, and Sample pages explain the same client journey.",
+      "Rewired the Route Flow Bridge to use the same lifecycle source instead of separate page-level labels.",
+      "Changed the Sample page next action toward validation so completed Route File review continues into proof instead of looping back to the workbench.",
+      "Updated the site brief so SEO, AI citation, and legacy website-growth pages are positioned as support layers for Route File delivery, not the main product."
+    ],
+    aiAngle:
+      "AI and search readers can now identify AgentSiteOps as a Route Project operating system with one visible lifecycle, one Route File output, and explicit support layers.",
+    files: [
+      "lib/routeProjectSystem.ts",
+      "components/RouteProjectLifecycle.tsx",
+      "components/RouteFlowBridge.tsx",
+      "app/page.tsx",
+      "app/plan/page.tsx",
+      "app/intake/page.tsx",
+      "app/execution/page.tsx",
+      "app/sample/page.tsx",
+      "app/globals.css",
+      "docs/site-brief.md",
+      "lib/updateLog.ts",
+      "scripts/production-health-monitor.mjs"
+    ],
+    verification: [
+      "`npm run typecheck` pass",
+      "`npm run lint` pass",
+      "`npm run build` pass",
+      "Playwright local check pass: homepage, Plan, Intake, Workbench, and Sample keep the shared lifecycle visible and have 0 horizontal overflow at desktop and 390px mobile",
+      "`npm run routes:gate` pass",
+      "`npm run links:gate` pass",
+      "`npm run analytics:gate` pass",
+      "`npm run commercial:gate` pass",
+      "`npm run growth:snapshot` pass",
+      "`npm run seo:ci` pass",
+      "`npm run production:health` pass"
+    ],
+    next:
+      "Use the unified Route Project lifecycle as the base for future proof cases, onboarding copy, and client-facing progress states instead of adding unrelated standalone pages."
+  },
+  {
+    date: "2026-06-15",
     step: "M4-59 Proof cases and intake handoff cleanup",
     status: "completed",
     keyPoints: [
