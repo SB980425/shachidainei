@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-15T06:34:23.214Z
+- Generated: 2026-06-15T07:00:15.424Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 270
+- Checks: 250
 - Blockers: 0
 - Warnings: 0
 
@@ -254,33 +254,13 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-57 Lightweight updates page | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-56 Plan-to-intake interaction continuity | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-55 Plan Studio spacious intake redesign | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-54 Plan Studio and client workspace cleanup | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-53 Navigation context and updates ledger | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-48 Route basis evidence upgrade | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-47 Self route file upgrade | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-22 48-hour exposure sprint | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-21 Route basis and first traffic foundation | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-20 Evidence-led value layer | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | evidence-bounded route-selection service | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-17 Self-score maintenance protocol | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-16 Objective self-score calibration | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-15 Launch validation decision gate | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-14 Objection response conversion layer | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-13 Search evidence import guardrail | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-12 Manual outreach evidence loop | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-11 Delivery artifact templates | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-10 Fit Review sample artifact | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-09 Fit Review entry offer | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-08 Launch funnel evidence boundary | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-07 Intake and manual fulfillment path | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-06 Purchase acceptance and encoding gate | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-05 Quality gate and evidence-ready sample | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-04 Pre-purchase fit checker | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-03 Launch comparison and sample depth | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-01 Launch Blueprint reset and payment flow | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | IndexNow submit pass | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 
