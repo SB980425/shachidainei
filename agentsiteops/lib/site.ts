@@ -95,7 +95,7 @@ export const routePages: RoutePage[] = [
     description:
       "A browser-local planning studio where visitors fill in a messy project and get a preliminary route draft before manual intake.",
     answer:
-      "Plan Studio is the customer-facing place to write a project plan, see a preliminary route draft, copy a plan brief, and decide whether to continue to manual intake. It does not call an API, create hidden research, or replace the final Route File.",
+      "Plan Studio is the customer-facing place to write a project plan, see a preliminary route draft, copy or download a plan brief, and decide whether to continue to manual intake. It does not call an API, create hidden research, or replace the final Route File.",
     primaryAction: { label: "Open Plan Studio", href: "/plan/" },
     secondaryAction: { label: "Continue to intake", href: "/intake/" },
     aiTarget:
@@ -117,6 +117,11 @@ export const routePages: RoutePage[] = [
         title: "Manual intake next",
         body:
           "A user can copy the plan brief into intake so an operator can accept, repair, block, or scope the route."
+      },
+      {
+        title: "Portable draft export",
+        body:
+          "A user can download a browser-local Markdown route draft before opening intake, so the first handoff is reviewable outside the page."
       },
       {
         title: "Route File boundary",

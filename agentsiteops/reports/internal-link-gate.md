@@ -1,6 +1,6 @@
 # Internal Link Gate
 
-- Generated: 2026-06-15T06:56:00.818Z
+- Generated: 2026-06-15T08:08:12.674Z
 - Status: pass
 - Checks: 64
 - Blockers: 0
@@ -44,7 +44,7 @@
 | internal_link | pass | /guides/indexnow-cloudflare-pages/ | checklists\gsc-bing-indexnow-launch\index.html, guides\gsc-bing-sitemap-verification\index.html, reports\route-evidence-dashboard\index.html |
 | internal_link | pass | /guides/small-website-ai-visibility-metrics/ | checklists\ai-citation-readiness\index.html, checklists\gsc-bing-indexnow-launch\index.html, evidence\index.html |
 | internal_link | pass | /how-it-works/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
-| internal_link | pass | /intake/ | buy\index.html, contact\index.html, delivery-gate\index.html |
+| internal_link | pass | /intake/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /launch-kit/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /methodology/route-selection/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /methodology/website-opportunity-scoring/ | checklists\programmatic-seo-gate\index.html, guides\ai-citation-grounding-metrics\index.html, reports\route-evidence-dashboard\index.html |

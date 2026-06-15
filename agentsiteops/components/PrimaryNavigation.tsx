@@ -4,22 +4,42 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   ClipboardList,
+  FileCheck2,
   FileText,
-  GitBranch,
-  SearchCheck,
   Workflow
 } from "lucide-react";
 
 const navItems = [
-  { href: "/start/", label: "Start", Icon: Workflow, match: ["/start/", "/intake/"] },
-  { href: "/how-it-works/", label: "Method", Icon: GitBranch, match: ["/how-it-works/", "/delivery-gate/"] },
   {
-    href: "/templates/route-research-prompt-pack/",
-    label: "Research",
-    Icon: SearchCheck,
-    match: ["/templates/route-research-prompt-pack/", "/reports/route-basis/", "/methodology/route-selection/"]
+    href: "/plan/",
+    label: "Plan",
+    Icon: ClipboardList,
+    match: ["/plan/"]
   },
-  { href: "/sample/", label: "Sample", Icon: FileText, match: ["/sample/", "/reports/client-route-workflow/"] }
+  {
+    href: "/intake/",
+    label: "Intake",
+    Icon: FileCheck2,
+    match: ["/intake/", "/start/", "/contact/", "/thank-you/"]
+  },
+  {
+    href: "/execution/",
+    label: "Workbench",
+    Icon: Workflow,
+    match: [
+      "/execution/",
+      "/how-it-works/",
+      "/delivery-gate/",
+      "/templates/route-research-prompt-pack/",
+      "/reports/client-route-workflow/"
+    ]
+  },
+  {
+    href: "/sample/",
+    label: "Sample",
+    Icon: FileText,
+    match: ["/sample/", "/reports/route-basis/", "/methodology/route-selection/"]
+  }
 ];
 
 function normalizePath(pathname: string) {
@@ -62,7 +82,7 @@ export function PrimaryNavigation() {
         href="/plan/"
       >
         <ClipboardList aria-hidden="true" size={16} />
-        Draft plan
+        Start plan
       </Link>
     </>
   );

@@ -21,6 +21,11 @@ export function buildProjectIntakePacket(includeOrderFields: boolean, planBrief 
     ...intakeFields.map(formatPacketField),
     "",
     "Do not include passwords, private API keys, bank details, recovery information, or private customer data.",
+    "",
+    "Response expectation",
+    "- Website packet preparation confirms formatting only.",
+    "- Operator review returns ready, repair, blocked, or not delivery.",
+    "- Research carrier is chosen after manual acceptance; no hidden automatic research result is created.",
     ...(includeOrderFields
       ? [
           "",

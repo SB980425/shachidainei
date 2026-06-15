@@ -14286,3 +14286,81 @@ body {
   }
 }
 
+/* Customer path completion pass: keep Plan -> Intake -> Workbench -> Sample clear. */
+.plan-handoff-card,
+.intake-after-send {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  border: 1px solid rgba(226, 231, 238, 0.12);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 104, 70, 0.12), transparent 40%),
+    linear-gradient(180deg, rgba(24, 31, 32, 0.94), rgba(8, 13, 14, 0.94));
+  color: var(--foundry-text);
+  padding: 15px;
+}
+
+.plan-handoff-card > div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.plan-handoff-card svg,
+.intake-after-send strong {
+  color: var(--foundry-coral);
+}
+
+.plan-handoff-card h3,
+.intake-after-send strong {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 950;
+}
+
+.plan-handoff-card p,
+.intake-after-send p,
+.plan-handoff-card li,
+.intake-after-send li {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.7);
+  line-height: 1.55;
+}
+
+.plan-handoff-card ul,
+.intake-after-send ul {
+  display: grid;
+  gap: 7px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.plan-output-actions button,
+.plan-output-actions a,
+.intake-packet-actions button,
+.intake-packet-actions a {
+  white-space: normal;
+}
+
+.intake-after-send {
+  border-color: rgba(55, 217, 140, 0.16);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(55, 217, 140, 0.1), transparent 38%),
+    linear-gradient(180deg, rgba(20, 31, 27, 0.94), rgba(8, 13, 14, 0.94));
+}
+
+.intake-after-send strong {
+  color: #cbffdf;
+}
+
+@media (max-width: 720px) {
+  .plan-output-actions button,
+  .plan-output-actions a,
+  .intake-packet-actions button,
+  .intake-packet-actions a {
+    width: 100%;
+    min-height: 46px;
+  }
+}
+

@@ -145,7 +145,11 @@ export default function Page() {
             Payment evidence is only needed when an order already exists.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/plan/">
+            <a className="primary-action" href="#intake-packet">
+              <ClipboardList aria-hidden="true" size={17} />
+              Build intake packet
+            </a>
+            <Link prefetch={false} className="secondary-action" href="/plan/">
               <ClipboardList aria-hidden="true" size={17} />
               Draft plan first
             </Link>
@@ -157,10 +161,6 @@ export default function Page() {
             >
               <Mail aria-hidden="true" size={17} />
               Email project intake
-            </a>
-            <a className="secondary-action" href="#intake-packet">
-              <ClipboardList aria-hidden="true" size={17} />
-              Build packet
             </a>
             <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />

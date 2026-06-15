@@ -91,6 +91,7 @@ const allowedEvents = new Set([
   "checklist_copy_click",
   "plan_example_loaded",
   "plan_brief_copy",
+  "plan_brief_download",
   "plan_missing_field_focus",
   "plan_copy_continue",
   "intake_saved_plan_detected",

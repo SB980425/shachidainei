@@ -12,10 +12,47 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-15",
+    step: "M4-58 Customer path completion pass",
+    status: "completed",
+    keyPoints: [
+      "Reworked the top navigation around the customer path: Plan, Intake, Workbench, and Sample.",
+      "Added a browser-local Markdown export action to Plan Studio so visitors can keep a portable route draft before intake.",
+      "Added a Plan Studio handoff state that separates automatic browser actions from manual/operator review.",
+      "Updated the intake packet builder and copied packet text so submission expectations show ready, repair, blocked, or not-delivery outcomes.",
+      "Locked the Next application root in config so parent lockfiles do not affect the app build boundary."
+    ],
+    aiAngle:
+      "AI and search readers can now describe the site as a clearer customer path: draft a plan, build an intake packet, wait for manual acceptance, inspect the workbench, and review the sample output.",
+    files: [
+      "next.config.mjs",
+      "components/PrimaryNavigation.tsx",
+      "components/PlanDraftStudio.tsx",
+      "components/IntakePacketBuilder.tsx",
+      "lib/intakePacket.ts",
+      "lib/site.ts",
+      "functions/api/events.ts",
+      "app/intake/page.tsx",
+      "app/globals.css",
+      "scripts/production-health-monitor.mjs"
+    ],
+    verification: [
+      "`npm run typecheck` pass",
+      "`npm run lint` pass: 16 checks, 0 blockers",
+      "`npm run build` pass: 66 static pages and no Next multi-lockfile warning",
+      "`npm run routes:gate` pass: 317 checks, 0 blockers, 0 warnings",
+      "`npm run links:gate` pass: 64 checks, 0 blockers",
+      "`npm run seo:ci` pass: 60 routes, 0 blockers, 0 warnings",
+      "Playwright customer-path check pass: Plan/Intake/Workbench/Sample nav, no Updates in top nav, example readiness 100, Markdown route draft download, Copy + intake saved-draft detection, After sending copy visible, and mobile 390px overflow 0"
+    ],
+    next:
+      "Deploy and use production checks to confirm the updated customer path is live without mobile overflow or navigation ambiguity."
+  },
+  {
+    date: "2026-06-15",
     step: "M4-57 Lightweight updates page",
     status: "completed",
     keyPoints: [
-      "Removed Updates from the top navigation so the main customer path stays focused on Start, Method, Research, Sample, and Draft plan.",
+      "Removed Updates from the top navigation so the main customer path can stay focused on Plan, Intake, Workbench, and Sample.",
       "Changed `/updates/` from a full historical timeline into a lightweight release summary that renders only the latest five public entries.",
       "Limited Updates JSON-LD to the same latest-five entries instead of serializing the entire historical log into the page.",
       "Added a page note that full history remains in git, production health reports, and `lib/updateLog.ts` rather than being rendered for every visitor.",

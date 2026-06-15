@@ -354,6 +354,8 @@ async function main() {
     "Operating choices",
     "Selected draft route",
     "Copy plan brief",
+    "Download route draft",
+    "Handoff state",
     "A draft is not the final Route File."
   ]);
   await checkPage("/templates/route-research-prompt-pack/", [
@@ -417,7 +419,10 @@ async function main() {
     "Payment confirmation",
     "Manual intake process",
     "No saved Plan Studio draft",
-    "Start in Plan Studio"
+    "Start in Plan Studio",
+    "After sending",
+    "Operator review is manual",
+    "Research carrier is chosen after manual acceptance"
   ]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Current objective self-score", "Score update rules", "52/100", "Claims not made"]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);
@@ -465,6 +470,7 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-58 Customer path completion pass",
     "M4-57 Lightweight updates page",
     "M4-56 Plan-to-intake interaction continuity",
     "M4-55 Plan Studio spacious intake redesign",

@@ -8,6 +8,7 @@ import {
   CheckCircle2,
   ClipboardCopy,
   ClipboardList,
+  Download,
   FileCheck2,
   FileText,
   RefreshCw,
@@ -215,6 +216,7 @@ export function PlanDraftStudio() {
   const router = useRouter();
   const [input, setInput] = useState<PlanDraftInput>(emptyInput);
   const [copied, setCopied] = useState(false);
+  const [exported, setExported] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [saveState, setSaveState] = useState("Local autosave ready");
   const draft = useMemo(() => createPlanDraft(input), [input]);
@@ -294,12 +296,14 @@ export function PlanDraftStudio() {
 
   function loadExample() {
     setInput(exampleInput);
+    setExported(false);
     setSaveState("Example loaded");
   }
 
   function clearDraft() {
     setInput(emptyInput);
     setCopied(false);
+    setExported(false);
     setSaveState("Local draft cleared");
 
     try {
@@ -308,6 +312,49 @@ export function PlanDraftStudio() {
     } catch {
       setSaveState("Local autosave unavailable");
     }
+  }
+
+  function downloadBrief() {
+    const safeName =
+      input.projectName
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .slice(0, 48) || "agentsiteops-plan";
+    const content = [
+      "# AgentSiteOps route draft",
+      "",
+      draft.brief,
+      "",
+      "## Draft status",
+      "",
+      `- Readiness score: ${draft.readinessScore}/100`,
+      `- Confidence: ${draft.confidenceLabel}`,
+      `- Next action: ${draft.nextAction}`,
+      "",
+      "## Boundary",
+      "",
+      "- This exported file is a browser-local draft.",
+      "- It is not the final Route File.",
+      "- Manual/operator review is still required before research acceptance or delivery."
+    ].join("\n");
+    const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
+    const url = window.URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+
+    anchor.href = url;
+    anchor.download = `${safeName}-route-draft.md`;
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+    window.URL.revokeObjectURL(url);
+    setExported(true);
+    window.setTimeout(() => setExported(false), 1800);
+    window.codexAnalytics?.track("plan_brief_download", {
+      missing_count: missingCoreFields.length,
+      readiness_score: draft.readinessScore
+    });
   }
 
   function focusNextMissingField() {
@@ -507,6 +554,21 @@ export function PlanDraftStudio() {
             </div>
           </section>
 
+          <section className="plan-handoff-card" aria-label="Plan Studio handoff state">
+            <div>
+              <ClipboardList aria-hidden="true" size={18} />
+              <h3>Handoff state</h3>
+            </div>
+            <p>
+              Copy or download the draft, then continue to intake when the project has enough
+              buyer, asset, blocker, and constraint detail for manual acceptance.
+            </p>
+            <ul>
+              <li>Automatic: browser-local draft, autosave, copied packet, email handoff.</li>
+              <li>Manual: scope acceptance, research carrier choice, repair request, Route File judgment.</li>
+            </ul>
+          </section>
+
           <div className="plan-output-actions">
             <button
               type="button"
@@ -517,6 +579,16 @@ export function PlanDraftStudio() {
             >
               <ClipboardCopy aria-hidden="true" size={16} />
               {copied ? "Copied" : "Copy plan brief"}
+            </button>
+            <button
+              type="button"
+              onClick={downloadBrief}
+              data-analytics-event="plan_brief_download"
+              data-analytics-label="download_route_draft"
+              data-analytics-type="plan_studio"
+            >
+              <Download aria-hidden="true" size={16} />
+              {exported ? "Downloaded" : "Download route draft"}
             </button>
             <button
               type="button"

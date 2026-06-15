@@ -135,10 +135,27 @@ export function IntakePacketBuilder() {
               <Copy aria-hidden="true" size={16} />
               {copyLabel}
             </button>
-            <a className="secondary-action" href={mailHref}>
+            <a
+              className="secondary-action"
+              data-analytics-event="intake_email_click"
+              data-analytics-label="intake_packet_mailto"
+              href={mailHref}
+            >
               <Mail aria-hidden="true" size={16} />
               Email packet
             </a>
+          </div>
+          <div className="intake-after-send" aria-label="After intake is sent">
+            <strong>After sending</strong>
+            <p>
+              The website can prepare the packet and email handoff. Operator review is
+              manual: the next response is ready, repair, blocked, or not delivery.
+            </p>
+            <ul>
+              <li>Ready: the route question can move to scope lock and approved research.</li>
+              <li>Repair: missing buyer, asset, source, blocker, or constraint details are requested.</li>
+              <li>Blocked: unsupported claims, unsafe data, or impossible delivery are rejected.</li>
+            </ul>
           </div>
         </div>
         <pre className="intake-packet-preview">{packet}</pre>
