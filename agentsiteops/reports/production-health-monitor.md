@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-14T12:48:38.059Z
+- Generated: 2026-06-15T04:19:05.282Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 249
+- Checks: 259
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 59 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 60 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -52,6 +52,15 @@
 | / | pass | Operating path | [link](https://agentsiteops.com/) |
 | / | pass | The route workflow becomes the thing people can click. | [link](https://agentsiteops.com/) |
 | / | pass | Every new project starts with a Route File before a build. | [link](https://agentsiteops.com/) |
+| /plan/ | pass | HTTP 200 | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | HTML title exists | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | canonical points to production URL | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Plan Studio | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Fill in your project plan before asking for a Route File. | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Write the project once. | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Selected draft route | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Copy plan brief | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | A draft is not the final Route File. | [link](https://agentsiteops.com/plan/) |
 | /templates/route-research-prompt-pack/ | pass | HTTP 200 | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | HTML title exists | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | canonical points to production URL | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
@@ -236,6 +245,7 @@
 | /updates/ | pass | HTML title exists | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | canonical points to production URL | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-54 Plan Studio and client workspace cleanup | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-53 Navigation context and updates ledger | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-48 Route basis evidence upgrade | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-47 Self route file upgrade | [link](https://agentsiteops.com/updates/) |
