@@ -4,10 +4,19 @@ function formatPacketField(field: string) {
   return `- ${field.replace(/[.!?]+$/, "")}:`;
 }
 
-export function buildProjectIntakePacket(includeOrderFields: boolean) {
+export function buildProjectIntakePacket(includeOrderFields: boolean, planBrief = "") {
+  const trimmedPlanBrief = planBrief.trim();
+
   return [
     "AgentSiteOps project intake",
     "",
+    ...(trimmedPlanBrief
+      ? [
+          "Saved Plan Studio draft",
+          trimmedPlanBrief,
+          ""
+        ]
+      : []),
     "Project context",
     ...intakeFields.map(formatPacketField),
     "",

@@ -346,6 +346,9 @@ async function main() {
     "Fill in your project plan before asking for a Route File.",
     "Write the project once.",
     "One field per decision",
+    "Input coverage",
+    "Find next missing",
+    "Saved drafts can be detected",
     "Route frame",
     "Decision boundary",
     "Operating choices",
@@ -408,7 +411,14 @@ async function main() {
   await checkPage("/examples/agentsiteops-self-audit/", ["AgentSiteOps Self-Audit Sample", "52/100", "commercially unvalidated"]);
   await checkPage("/starter-review/", ["Check whether the project deserves the full Route File.", "USD", "reject the larger sale"]);
   await checkPage("/buy/", ["Check the project before paying for the Route File.", "Pay with PayPal", "Acceptance criteria", "If the route is not ready"]);
-  await checkPage("/intake/", ["Project intake", "Email project intake", "Payment confirmation", "Manual intake process"]);
+  await checkPage("/intake/", [
+    "Project intake",
+    "Email project intake",
+    "Payment confirmation",
+    "Manual intake process",
+    "No saved Plan Studio draft",
+    "Start in Plan Studio"
+  ]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Current objective self-score", "Score update rules", "52/100", "Claims not made"]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);
   await checkPage("/tools/launch-blueprint-fit-checker/", ["Route File Fit Checker", "Do not buy", "No request, account, payment"]);
@@ -453,6 +463,7 @@ async function main() {
   await checkPage("/privacy/", ["PayPal", "manual", "no account"]);
   await checkPage("/updates/", [
     "Updates",
+    "M4-56 Plan-to-intake interaction continuity",
     "M4-55 Plan Studio spacious intake redesign",
     "M4-54 Plan Studio and client workspace cleanup",
     "M4-53 Navigation context and updates ledger",

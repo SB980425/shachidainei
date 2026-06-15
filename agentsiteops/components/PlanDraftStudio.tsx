@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   AlertTriangle,
   CheckCircle2,
@@ -47,6 +48,9 @@ const exampleInput: PlanDraftInput = {
   researchCarrier: "Operator-selected carrier",
   constraints: "No guaranteed revenue, no private customer data in public output, no claim that the website runs hidden research"
 };
+
+const planDraftStorageKey = "agentsiteops.planDraftInput.v1";
+const planBriefStorageKey = "agentsiteops.planDraftBrief.v1";
 
 type PlanField = {
   key: keyof PlanDraftInput;
@@ -186,6 +190,16 @@ const planQuestionGroups: Array<{
   }
 ];
 
+const planFields = planQuestionGroups.flatMap((group) => group.fields);
+
+function fieldIsComplete(input: PlanDraftInput, field: PlanField) {
+  if (field.kind === "select") {
+    return input[field.key].trim().length > 0;
+  }
+
+  return input[field.key].trim().length >= 4;
+}
+
 function setInputValue(
   current: PlanDraftInput,
   key: keyof PlanDraftInput,
@@ -198,9 +212,51 @@ function setInputValue(
 }
 
 export function PlanDraftStudio() {
+  const router = useRouter();
   const [input, setInput] = useState<PlanDraftInput>(emptyInput);
   const [copied, setCopied] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
+  const [saveState, setSaveState] = useState("Local autosave ready");
   const draft = useMemo(() => createPlanDraft(input), [input]);
+  const completedFieldCount = useMemo(
+    () => planFields.filter((field) => fieldIsComplete(input, field)).length,
+    [input]
+  );
+  const missingCoreFields = useMemo(
+    () => planFields.filter((field) => field.kind !== "select" && !fieldIsComplete(input, field)),
+    [input]
+  );
+  const nextMissingField = missingCoreFields[0];
+
+  useEffect(() => {
+    try {
+      const storedInput = window.localStorage.getItem(planDraftStorageKey);
+
+      if (storedInput) {
+        const parsedInput = JSON.parse(storedInput) as Partial<PlanDraftInput>;
+        setInput({ ...emptyInput, ...parsedInput });
+        setSaveState("Restored local draft");
+      }
+    } catch {
+      setSaveState("Local autosave unavailable");
+    } finally {
+      setHydrated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!hydrated) {
+      return;
+    }
+
+    try {
+      window.localStorage.setItem(planDraftStorageKey, JSON.stringify(input));
+      window.localStorage.setItem(planBriefStorageKey, draft.brief);
+      setSaveState("Saved locally");
+    } catch {
+      setSaveState("Local autosave unavailable");
+    }
+  }, [draft.brief, hydrated, input]);
 
   async function copyBrief() {
     let didCopy = false;
@@ -229,10 +285,53 @@ export function PlanDraftStudio() {
     if (didCopy) {
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1800);
-      return;
+      return true;
     }
 
     setCopied(false);
+    return false;
+  }
+
+  function loadExample() {
+    setInput(exampleInput);
+    setSaveState("Example loaded");
+  }
+
+  function clearDraft() {
+    setInput(emptyInput);
+    setCopied(false);
+    setSaveState("Local draft cleared");
+
+    try {
+      window.localStorage.removeItem(planDraftStorageKey);
+      window.localStorage.removeItem(planBriefStorageKey);
+    } catch {
+      setSaveState("Local autosave unavailable");
+    }
+  }
+
+  function focusNextMissingField() {
+    if (!nextMissingField) {
+      return;
+    }
+
+    const control = document.querySelector<HTMLElement>(`[data-plan-control="${nextMissingField.key}"]`);
+    control?.scrollIntoView({ behavior: "smooth", block: "center" });
+    window.setTimeout(() => control?.focus(), 260);
+    window.codexAnalytics?.track("plan_missing_field_focus", {
+      field: nextMissingField.key,
+      missing_count: missingCoreFields.length
+    });
+  }
+
+  async function copyAndContinue() {
+    const copiedBrief = await copyBrief();
+    window.codexAnalytics?.track("plan_copy_continue", {
+      copied: copiedBrief,
+      missing_count: missingCoreFields.length,
+      readiness_score: draft.readinessScore
+    });
+    router.push("/intake/?from=plan");
   }
 
   return (
@@ -254,6 +353,28 @@ export function PlanDraftStudio() {
             <span>Draft before intake</span>
           </div>
 
+          <div className="plan-input-state" aria-label="Plan Studio completion state">
+            <div>
+              <span>Input coverage</span>
+              <strong>
+                {completedFieldCount}/{planFields.length} fields ready
+              </strong>
+              <p>
+                {saveState}. The intake page can detect the saved draft on this device.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={focusNextMissingField}
+              disabled={!nextMissingField}
+              data-analytics-event="plan_missing_field_focus"
+              data-analytics-label={nextMissingField?.key ?? "all_fields_ready"}
+              data-analytics-type="plan_studio"
+            >
+              {nextMissingField ? `Find next missing: ${nextMissingField.label}` : "All core fields filled"}
+            </button>
+          </div>
+
           <div className="plan-question-stack">
             {planQuestionGroups.map((group) => (
               <fieldset className="plan-question-group" key={group.number}>
@@ -264,12 +385,20 @@ export function PlanDraftStudio() {
                 </legend>
 
                 <div className="plan-field-stack">
-                  {group.fields.map((field) => (
-                    <label className="plan-field-card" key={field.key}>
+                  {group.fields.map((field) => {
+                    const isComplete = fieldIsComplete(input, field);
+
+                    return (
+                    <label
+                      className={isComplete ? "plan-field-card is-filled" : "plan-field-card is-missing"}
+                      data-plan-field={field.key}
+                      key={field.key}
+                    >
                       <span className="plan-field-label">{field.label}</span>
                       <strong>{field.prompt}</strong>
                       {field.kind === "select" ? (
                         <select
+                          data-plan-control={field.key}
                           value={input[field.key]}
                           onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
                         >
@@ -279,12 +408,14 @@ export function PlanDraftStudio() {
                         </select>
                       ) : field.kind === "input" ? (
                         <input
+                          data-plan-control={field.key}
                           value={input[field.key]}
                           placeholder={field.placeholder}
                           onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
                         />
                       ) : (
                         <textarea
+                          data-plan-control={field.key}
                           value={input[field.key]}
                           placeholder={field.placeholder}
                           rows={field.rows ?? 5}
@@ -292,8 +423,10 @@ export function PlanDraftStudio() {
                         />
                       )}
                       <small>{field.helper}</small>
+                      <em className="plan-field-status">{isComplete ? "Ready" : "Needs input"}</em>
                     </label>
-                  ))}
+                    );
+                  })}
                 </div>
               </fieldset>
             ))}
@@ -302,7 +435,7 @@ export function PlanDraftStudio() {
           <div className="plan-input-actions">
             <button
               type="button"
-              onClick={() => setInput(exampleInput)}
+              onClick={loadExample}
               data-analytics-event="plan_example_loaded"
               data-analytics-label="plan_studio_example"
               data-analytics-type="plan_studio"
@@ -310,7 +443,7 @@ export function PlanDraftStudio() {
               <RefreshCw aria-hidden="true" size={16} />
               Load example
             </button>
-            <button type="button" onClick={() => setInput(emptyInput)}>
+            <button type="button" onClick={clearDraft}>
               Clear
             </button>
           </div>
@@ -385,10 +518,16 @@ export function PlanDraftStudio() {
               <ClipboardCopy aria-hidden="true" size={16} />
               {copied ? "Copied" : "Copy plan brief"}
             </button>
-            <Link prefetch={false} href="/intake/">
+            <button
+              type="button"
+              onClick={copyAndContinue}
+              data-analytics-event="plan_copy_continue"
+              data-analytics-label="copy_and_continue_intake"
+              data-analytics-type="plan_studio"
+            >
               <ClipboardList aria-hidden="true" size={16} />
-              Continue to intake
-            </Link>
+              Copy + intake
+            </button>
             <Link prefetch={false} href="/sample/">
               <FileText aria-hidden="true" size={16} />
               View sample
@@ -397,7 +536,7 @@ export function PlanDraftStudio() {
 
           <p className="plan-next-action">
             <CheckCircle2 aria-hidden="true" size={16} />
-            {draft.nextAction}
+            {draft.nextAction} Saved drafts can be detected by the intake packet builder on this device.
           </p>
         </aside>
       </div>

@@ -1,11 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ClipboardCheck, Copy, Mail } from "lucide-react";
 import { buildProjectIntakePacket } from "@/lib/intakePacket";
 import { launchProduct } from "@/lib/launch";
 
 type CopyStatus = "idle" | "copied" | "failed";
+
+const planBriefStorageKey = "agentsiteops.planDraftBrief.v1";
 
 async function writeClipboard(text: string) {
   if (navigator.clipboard?.writeText) {
@@ -41,13 +43,35 @@ async function writeClipboard(text: string) {
 
 export function IntakePacketBuilder() {
   const [includeOrderFields, setIncludeOrderFields] = useState(false);
+  const [includePlanBrief, setIncludePlanBrief] = useState(false);
+  const [planBrief, setPlanBrief] = useState("");
   const [copyStatus, setCopyStatus] = useState<CopyStatus>("idle");
-  const packet = useMemo(() => buildProjectIntakePacket(includeOrderFields), [includeOrderFields]);
+  const packet = useMemo(
+    () => buildProjectIntakePacket(includeOrderFields, includePlanBrief ? planBrief : ""),
+    [includeOrderFields, includePlanBrief, planBrief]
+  );
   const copyLabel =
     copyStatus === "copied" ? "Packet copied" : copyStatus === "failed" ? "Copy failed" : "Copy packet";
   const mailHref = `mailto:${launchProduct.supportEmail}?subject=${encodeURIComponent(
     "AgentSiteOps project intake"
   )}&body=${encodeURIComponent(packet)}`;
+
+  useEffect(() => {
+    try {
+      const savedPlanBrief = window.localStorage.getItem(planBriefStorageKey)?.trim() ?? "";
+
+      if (savedPlanBrief) {
+        setPlanBrief(savedPlanBrief);
+        setIncludePlanBrief(true);
+        window.codexAnalytics?.track("intake_saved_plan_detected", {
+          length: savedPlanBrief.length
+        });
+      }
+    } catch {
+      setPlanBrief("");
+      setIncludePlanBrief(false);
+    }
+  }, []);
 
   async function copyPacket() {
     const copied = await writeClipboard(packet);
@@ -73,6 +97,31 @@ export function IntakePacketBuilder() {
             The copied packet keeps project facts first. Order confirmation fields are optional
             and should only be included when a Fit Review or Route File purchase already exists.
           </p>
+          {planBrief ? (
+            <div className="intake-saved-plan">
+              <strong>Saved Plan Studio draft detected</strong>
+              <p>
+                The packet can include the browser-local plan brief from this device. Review it
+                before emailing; it is still a draft, not accepted scope.
+              </p>
+              <label className="intake-packet-toggle">
+                <input
+                  checked={includePlanBrief}
+                  onChange={(event) => setIncludePlanBrief(event.target.checked)}
+                  type="checkbox"
+                />
+                Include saved Plan Studio brief
+              </label>
+            </div>
+          ) : (
+            <div className="intake-saved-plan">
+              <strong>No saved Plan Studio draft</strong>
+              <p>
+                Start in Plan Studio when the project is still messy, then return here to include
+                the browser-local brief in the intake packet.
+              </p>
+            </div>
+          )}
           <label className="intake-packet-toggle">
             <input
               checked={includeOrderFields}
