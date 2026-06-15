@@ -31,6 +31,15 @@ export type RouteProjectStage = {
   icon: RouteProjectIconKey;
 };
 
+export type RouteProjectClientState = {
+  stage: RouteProjectStageId;
+  customerAction: string;
+  websiteAction: string;
+  manualAction: string;
+  nextVisibleResult: string;
+  stopOrRepair: string;
+};
+
 export const routeProjectStages: RouteProjectStage[] = [
   {
     id: "plan",
@@ -139,6 +148,65 @@ export const routeProjectStages: RouteProjectStage[] = [
   }
 ];
 
+export const routeProjectClientStates: RouteProjectClientState[] = [
+  {
+    stage: "plan",
+    customerAction: "Write the messy project once: buyer, goal, assets, blocker, constraints, execution mode, and review window.",
+    websiteAction: "Create a browser-local preliminary route draft, readiness score, evidence gaps, rejected alternatives, and exportable brief.",
+    manualAction: "No manual work starts yet. Operator review begins only after the draft is sent through intake.",
+    nextVisibleResult: "A copied or downloaded plan brief that can be included in the intake packet.",
+    stopOrRepair: "Repair before intake if buyer, assets, blocker, constraints, or forbidden claims are still vague."
+  },
+  {
+    stage: "intake",
+    customerAction: "Send the plan brief plus safe source material, links, screenshots, constraints, and optional order confirmation.",
+    websiteAction: "Format the packet, detect a saved Plan Studio draft, copy the packet, and open a clean email handoff.",
+    manualAction: "A person accepts, requests repair, blocks, or marks the request as not delivery.",
+    nextVisibleResult: "Ready, repair, blocked, or not-delivery state before research starts.",
+    stopOrRepair: "Stop or repair when private data, unsafe claims, source-right gaps, or impossible delivery promises appear."
+  },
+  {
+    stage: "scope",
+    customerAction: "Confirm the route question, allowed sources, non-goals, blocked claims, and delivery boundary.",
+    websiteAction: "Show the frozen scope path and keep the project from drifting into unrelated templates or broad advice.",
+    manualAction: "The operator locks the brief, names route alternatives, and decides which evidence carrier is acceptable.",
+    nextVisibleResult: "A narrow research and delivery boundary that can be checked later.",
+    stopOrRepair: "Repair if the brief cannot name sources, alternatives, unacceptable claims, or a stop condition."
+  },
+  {
+    stage: "research",
+    customerAction: "Provide approved source material or wait while the selected carrier returns coverage against the locked brief.",
+    websiteAction: "Keep the carrier-neutral research standard visible instead of claiming one hidden AI platform owns the workflow.",
+    manualAction: "Manual review, client reports, operator-controlled AI research, or another approved carrier can be used.",
+    nextVisibleResult: "Returned findings with sources, uncertainty, alternatives, and proof needs.",
+    stopOrRepair: "Trigger second-pass research when buyer logic, source coverage, alternatives, or proof needs are missing."
+  },
+  {
+    stage: "gate",
+    customerAction: "Inspect whether returned material covers the route decision before accepting a polished handoff.",
+    websiteAction: "Expose pass, repair, blocked, and not-delivery logic so weak reports do not become Route Files.",
+    manualAction: "The operator checks coverage and either synthesizes, repairs, blocks, or rejects the material.",
+    nextVisibleResult: "Coverage verdict plus missing-evidence request when needed.",
+    stopOrRepair: "Repair or block if the report lacks evidence tags, rejected alternatives, proof asset, channel, or stop rule."
+  },
+  {
+    stage: "route-file",
+    customerAction: "Read one selected route, the rejected paths, evidence ledger, first proof asset, validation channel, and stop rule.",
+    websiteAction: "Present sample and proof-case structure so the final handoff is inspectable before trust is requested.",
+    manualAction: "The operator fuses accepted evidence into the Route File and downgrades confidence where proof is weak.",
+    nextVisibleResult: "A client-readable Route File that explains what to do first and what not to build.",
+    stopOrRepair: "Do not deliver if multiple equal routes remain, no ledger exists, or the stop rule is absent."
+  },
+  {
+    stage: "validation",
+    customerAction: "Run the first proof asset in the chosen channel and record counted signals, ignored weak signals, and objections.",
+    websiteAction: "Provide the validation sprint and evidence language so page activity is not mistaken for demand.",
+    manualAction: "The operator or founder interprets signals and decides continue, repair, pivot, or stop.",
+    nextVisibleResult: "A validation decision backed by qualified replies, usable intake, payment plus intake, or repeated objections.",
+    stopOrRepair: "Stop or repair when only page views, AI praise, sitemap success, or unqualified clicks appear."
+  }
+];
+
 export const routeProjectObjects = [
   {
     name: "Route Project",
@@ -186,4 +254,8 @@ export const routeProjectSupportLayer = [
 
 export function getRouteProjectStage(id: RouteProjectStageId) {
   return routeProjectStages.find((stage) => stage.id === id) ?? routeProjectStages[0];
+}
+
+export function getRouteProjectClientState(id: RouteProjectStageId) {
+  return routeProjectClientStates.find((state) => state.stage === id) ?? routeProjectClientStates[0];
 }

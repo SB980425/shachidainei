@@ -96,6 +96,8 @@ const allowedEvents = new Set([
   "plan_brief_download",
   "plan_missing_field_focus",
   "plan_copy_continue",
+  "client_state_current_click",
+  "client_state_next_click",
   "intake_saved_plan_detected",
   "execution_stage_selected",
   "execution_stage_status_changed",

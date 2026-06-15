@@ -12,6 +12,48 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-15",
+    step: "M4-61 Client state continuity layer",
+    status: "completed",
+    keyPoints: [
+      "Added a shared Client Route State panel that explains customer action, website automation, manual review, visible result, and stop-or-repair rule.",
+      "Extended the Route Project system model with customer-facing state data for every lifecycle stage.",
+      "Connected the new panel to the homepage, Plan Studio, Intake, Execution Workbench, and Sample Route File pages.",
+      "Added state-panel analytics labels for current-state and next-state clicks without collecting raw project text.",
+      "Updated the site brief so future product pages must separate automatic website behavior from operator judgment and client-visible results."
+    ],
+    aiAngle:
+      "AI and search readers can now describe the site from the customer perspective instead of only from internal workflow labels.",
+    files: [
+      "lib/routeProjectSystem.ts",
+      "components/ClientRouteStatePanel.tsx",
+      "app/page.tsx",
+      "app/plan/page.tsx",
+      "app/intake/page.tsx",
+      "app/execution/page.tsx",
+      "app/sample/page.tsx",
+      "app/globals.css",
+      "docs/site-brief.md",
+      "lib/updateLog.ts",
+      "scripts/production-health-monitor.mjs"
+    ],
+    verification: [
+      "`npm run typecheck` pass",
+      "`npm run lint` pass",
+      "`npm run build` pass",
+      "Playwright local check pass: homepage, Plan, Intake, Workbench, and Sample have one client-state panel, four state cards, two action links, seven lifecycle items, and 0 horizontal overflow at 1440px and 390px",
+      "`npm run routes:gate` pass",
+      "`npm run links:gate` pass",
+      "`npm run analytics:gate` pass",
+      "`npm run commercial:gate` pass",
+      "`npm run growth:snapshot` pass",
+      "`npm run seo:ci` pass",
+      "`npm run production:health` pass"
+    ],
+    next:
+      "Use the client-state layer as the rule for future pages: every new core page must show customer action, automatic website action, manual review boundary, next visible result, and stop/repair trigger."
+  },
+  {
+    date: "2026-06-15",
     step: "M4-60 Route Project OS architecture pass",
     status: "completed",
     keyPoints: [

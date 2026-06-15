@@ -337,6 +337,9 @@ async function main() {
     "Route Foundry",
     "From messy input to one checked Route File.",
     "One decision package, not another loose research report.",
+    "Client state",
+    "The first customer action is visible before any payment or review.",
+    "Manual review",
     "Operating path",
     "The route workflow becomes the thing people can click.",
     "Every new project starts with a Route File before a build."
@@ -356,7 +359,16 @@ async function main() {
     "Copy plan brief",
     "Download route draft",
     "Handoff state",
+    "Plan Studio tells the visitor what happens before intake.",
+    "Visible result",
     "A draft is not the final Route File."
+  ]);
+  await checkPage("/execution/", [
+    "Execution Workbench",
+    "Run the Route File workflow before expanding the site.",
+    "The workbench shows what is checked before synthesis.",
+    "Stop or repair when",
+    "Next: Route File"
   ]);
   await checkPage("/templates/route-research-prompt-pack/", [
     "Carrier-neutral research plan",
@@ -421,6 +433,8 @@ async function main() {
     "Proof cases to inspect before trusting the workflow",
     "View AI service case",
     "View blocked intake",
+    "The final handoff still points to a validation action.",
+    "Next: Validation",
     "First proof asset",
     "What is not proven"
   ]);
@@ -439,6 +453,8 @@ async function main() {
     "No saved Plan Studio draft",
     "Start in Plan Studio",
     "After sending",
+    "Intake separates submission from acceptance.",
+    "Next: Scope Lock",
     "Operator review is manual",
     "Research carrier is chosen after manual acceptance"
   ]);
@@ -488,11 +504,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-61 Client state continuity layer",
     "M4-60 Route Project OS architecture pass",
     "M4-59 Proof cases and intake handoff cleanup",
     "M4-58 Customer path completion pass",
-    "M4-57 Lightweight updates page",
-    "M4-56 Plan-to-intake interaction continuity"
+    "M4-57 Lightweight updates page"
   ]);
 
   const report = renderReport(generatedAt);

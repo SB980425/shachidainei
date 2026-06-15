@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-15T12:37:12.243Z
+- Generated: 2026-06-15T12:52:41.124Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 275
+- Checks: 292
 - Blockers: 0
 - Warnings: 0
 
@@ -49,6 +49,9 @@
 | / | pass | Route Foundry | [link](https://agentsiteops.com/) |
 | / | pass | From messy input to one checked Route File. | [link](https://agentsiteops.com/) |
 | / | pass | One decision package, not another loose research report. | [link](https://agentsiteops.com/) |
+| / | pass | Client state | [link](https://agentsiteops.com/) |
+| / | pass | The first customer action is visible before any payment or review. | [link](https://agentsiteops.com/) |
+| / | pass | Manual review | [link](https://agentsiteops.com/) |
 | / | pass | Operating path | [link](https://agentsiteops.com/) |
 | / | pass | The route workflow becomes the thing people can click. | [link](https://agentsiteops.com/) |
 | / | pass | Every new project starts with a Route File before a build. | [link](https://agentsiteops.com/) |
@@ -69,7 +72,17 @@
 | /plan/ | pass | Copy plan brief | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Download route draft | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Handoff state | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Plan Studio tells the visitor what happens before intake. | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Visible result | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | A draft is not the final Route File. | [link](https://agentsiteops.com/plan/) |
+| /execution/ | pass | HTTP 200 | [link](https://agentsiteops.com/execution/) |
+| /execution/ | pass | HTML title exists | [link](https://agentsiteops.com/execution/) |
+| /execution/ | pass | canonical points to production URL | [link](https://agentsiteops.com/execution/) |
+| /execution/ | pass | Execution Workbench | [link](https://agentsiteops.com/execution/) |
+| /execution/ | pass | Run the Route File workflow before expanding the site. | [link](https://agentsiteops.com/execution/) |
+| /execution/ | pass | The workbench shows what is checked before synthesis. | [link](https://agentsiteops.com/execution/) |
+| /execution/ | pass | Stop or repair when | [link](https://agentsiteops.com/execution/) |
+| /execution/ | pass | Next: Route File | [link](https://agentsiteops.com/execution/) |
 | /templates/route-research-prompt-pack/ | pass | HTTP 200 | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | HTML title exists | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
 | /templates/route-research-prompt-pack/ | pass | canonical points to production URL | [link](https://agentsiteops.com/templates/route-research-prompt-pack/) |
@@ -152,6 +165,8 @@
 | /sample/ | pass | Proof cases to inspect before trusting the workflow | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | View AI service case | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | View blocked intake | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | The final handoff still points to a validation action. | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Next: Validation | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | First proof asset | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | What is not proven | [link](https://agentsiteops.com/sample/) |
 | /compare/ | pass | HTTP 200 | [link](https://agentsiteops.com/compare/) |
@@ -198,6 +213,8 @@
 | /intake/ | pass | No saved Plan Studio draft | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Start in Plan Studio | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | After sending | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Intake separates submission from acceptance. | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Next: Scope Lock | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Operator review is manual | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Research carrier is chosen after manual acceptance | [link](https://agentsiteops.com/intake/) |
 | /evidence/ | pass | HTTP 200 | [link](https://agentsiteops.com/evidence/) |
@@ -281,11 +298,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-61 Client state continuity layer | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-60 Route Project OS architecture pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-59 Proof cases and intake handoff cleanup | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-58 Customer path completion pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-57 Lightweight updates page | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-56 Plan-to-intake interaction continuity | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

@@ -9,6 +9,7 @@ import {
   Languages,
   SearchCheck
 } from "lucide-react";
+import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
 import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { ClientRouteWorkspace } from "@/components/ClientRouteWorkspace";
 import { ExecutionWorkbench } from "@/components/ExecutionWorkbench";
@@ -146,6 +147,13 @@ export default function ExecutionPage() {
         eyebrow="Workbench state"
         title="Execution is the quality-control middle of the Route Project."
         body="The workbench should make research carrier, coverage gate, repair state, and final output visible without pretending the website runs hidden research."
+      />
+
+      <ClientRouteStatePanel
+        current="gate"
+        title="The workbench shows what is checked before synthesis."
+        body="Returned research, manual notes, or client reports must pass the same coverage gate before becoming a Route File."
+        compact
       />
 
       <CustomerResponseLifecycle />

@@ -11,6 +11,7 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
+import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
 import { RouteCommandCenter } from "@/components/RouteCommandCenter";
 import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
@@ -265,6 +266,12 @@ export default function HomePage() {
         body="Every public route should either move the same project object forward, prove the output, or support validation after delivery."
         showObjects
         showSupportLayer
+      />
+
+      <ClientRouteStatePanel
+        current="plan"
+        title="The first customer action is visible before any payment or review."
+        body="A visitor should immediately understand where to write the project, what the browser can draft, and what still requires manual acceptance."
       />
 
       <section className="route-foundation-section home-proof-section">

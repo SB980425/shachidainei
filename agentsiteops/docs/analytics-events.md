@@ -30,6 +30,8 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `plan_brief_copy` | Plan Studio copy brief button click | `label`, `type` |
 | `plan_missing_field_focus` | Plan Studio missing-field focus button click | `field`, `missing_count`; click capture also records `label`, `type` |
 | `plan_copy_continue` | Plan Studio copy-and-continue action | `copied`, `missing_count`, `readiness_score`; click capture also records `label`, `type` |
+| `client_state_current_click` | Client Route State current-state link click | `label`, `type` |
+| `client_state_next_click` | Client Route State next-state link click | `label`, `type` |
 | `intake_saved_plan_detected` | Intake packet builder detects a browser-local Plan Studio brief | `length` |
 | `how_it_works_view` | `/how-it-works/` load | `path` |
 | `execution_workbench_view` | `/execution/` load | `path` |

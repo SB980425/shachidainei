@@ -7,6 +7,7 @@ import {
   FileText,
   ShieldCheck
 } from "lucide-react";
+import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteFileAcceptancePanel } from "@/components/RouteFileAcceptancePanel";
 import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
@@ -291,6 +292,13 @@ export default function Page() {
         eyebrow="Output state"
         title="The sample is one state in the Route Project lifecycle."
         body="A Route File is complete only when it can name the first proof asset, validation channel, ignored weak signals, and stop rule."
+      />
+
+      <ClientRouteStatePanel
+        current="route-file"
+        title="The final handoff still points to a validation action."
+        body="The client receives one route decision, but the system stays honest about confidence, missing proof, ignored signals, and when to stop."
+        compact
       />
 
       <section className="gate-section">

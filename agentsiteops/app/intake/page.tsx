@@ -12,6 +12,7 @@ import {
   intakeFields,
   paymentConfirmationFields
 } from "@/lib/launch";
+import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
 import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
 import { IntakePacketBuilder } from "@/components/IntakePacketBuilder";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
@@ -180,6 +181,13 @@ export default function Page() {
         eyebrow="Current state"
         title="Intake is a state transition, not a contact form."
         body="The visitor should see whether the project becomes ready, repair, blocked, or not delivery before any research or Route File work begins."
+      />
+
+      <ClientRouteStatePanel
+        current="intake"
+        title="Intake separates submission from acceptance."
+        body="The website can create and send a packet. A person still decides whether the project is ready, repair, blocked, or not delivery."
+        compact
       />
 
       <section className="gate-section intake-submission-section">

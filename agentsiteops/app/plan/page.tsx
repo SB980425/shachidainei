@@ -9,6 +9,7 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
+import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
 import { PlanDraftStudio } from "@/components/PlanDraftStudio";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
@@ -137,6 +138,13 @@ export default function PlanPage() {
         eyebrow="Current state"
         title="Plan Studio is the first Route Project state."
         body="The page is not only a form. It creates the first project object that can later be reviewed, repaired, blocked, researched, and delivered."
+      />
+
+      <ClientRouteStatePanel
+        current="plan"
+        title="Plan Studio tells the visitor what happens before intake."
+        body="The draft, autosave, export, and copy actions are automatic. Acceptance, scope lock, and Route File judgment remain manual."
+        compact
       />
 
       <section className="plan-flow-strip" aria-label="Plan Studio flow">

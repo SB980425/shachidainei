@@ -10,6 +10,8 @@ AgentSiteOps is a Route Project operating system for builders who need to turn m
 
 The core product is not a generic SEO blog, AI research wrapper, prompt library, or payment-first service page. The core object is a Route Project moving through plan draft, intake, scope lock, approved evidence carrier, coverage gate, Route File handoff, and validation.
 
+Every core product page should show the client state: what the customer can do now, what the website can handle automatically, what requires manual/operator review, what visible result comes next, and what condition triggers repair or stop.
+
 The final Route File must contain:
 
 - Selected route.
@@ -47,6 +49,7 @@ Research-to-Route File.
 4. Check returned research or source material before synthesis.
 5. Deliver one Route File with selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.
 6. Run validation without treating page views, AI praise, sitemap success, or payment clicks as proof of demand.
+7. See the current client state without needing technical knowledge of the workflow.
 
 ## Differentiation
 
