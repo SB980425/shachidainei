@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { ArrowRight, BookOpen, CheckCircle2, Circle, MousePointer2 } from "lucide-react";
 import { usePreferredLanguage } from "@/components/LanguageToggle";
 import {
-  getNextMainStage,
   getSiteRouteContext,
   localize,
   mainJourneyStages,
@@ -13,8 +12,8 @@ import {
 } from "@/lib/siteArchitecture";
 
 const roleLabels = {
-  main: { en: "Main path", zh: "主流程" },
-  reference: { en: "Reference", zh: "参考资料" },
+  main: { en: "Working path", zh: "工作路径" },
+  reference: { en: "Reference", zh: "参考内容" },
   proof: { en: "Output proof", zh: "输出样例" },
   legal: { en: "Policy context", zh: "规则背景" },
   support: { en: "Support", zh: "辅助内容" }
@@ -24,11 +23,13 @@ export function SiteJourneyBar() {
   const pathname = normalizeSitePath(usePathname());
   const [language] = usePreferredLanguage();
   const context = getSiteRouteContext(pathname);
-  const nextStage = getNextMainStage(context.stage);
-  const primaryHref = context.primaryHref ?? nextStage.href;
+  const currentIndex = mainJourneyStages.findIndex((item) => item.id === context.stage);
+  const primaryHref = context.primaryHref ?? "/idea-risk-test/";
   const primaryLabel = context.primaryLabel
     ? localize(context.primaryLabel, language)
-    : `${language === "zh" ? "下一步" : "Next"}: ${localize(nextStage.label, language)}`;
+    : language === "zh"
+      ? "填写想法"
+      : "Paste idea";
 
   return (
     <aside className="site-journey-bar" aria-label="Current site path">
@@ -45,30 +46,24 @@ export function SiteJourneyBar() {
         </div>
       </div>
 
-      <nav className="journey-steps" aria-label="Main product path">
+      <div className="journey-steps" aria-label="Main product path">
         {mainJourneyStages.map((stage, index) => {
           const isCurrent = stage.id === context.stage;
-          const isVisited = mainJourneyStages.findIndex((item) => item.id === context.stage) > index;
+          const isVisited = currentIndex > index;
 
           return (
-            <Link
-              prefetch={false}
-              className={isCurrent ? "is-current" : isVisited ? "is-visited" : undefined}
-              href={stage.href}
-              key={stage.id}
-              aria-current={isCurrent ? "step" : undefined}
-            >
+            <span className={isCurrent ? "is-current" : isVisited ? "is-visited" : undefined} key={stage.id}>
               {isVisited ? (
                 <CheckCircle2 aria-hidden="true" size={15} />
               ) : (
                 <Circle aria-hidden="true" size={13} />
               )}
-              <span>{String(index + 1).padStart(2, "0")}</span>
+              <small>{String(index + 1).padStart(2, "0")}</small>
               <strong>{localize(stage.shortLabel, language)}</strong>
-            </Link>
+            </span>
           );
         })}
-      </nav>
+      </div>
 
       <Link prefetch={false} className="journey-next" href={primaryHref}>
         {primaryLabel}

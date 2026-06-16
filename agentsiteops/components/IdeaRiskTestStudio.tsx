@@ -29,20 +29,20 @@ const planBriefStorageKey = "agentsiteops.planDraftBrief.v1";
 
 const ui = {
   en: {
-    freeInput: "Free test input",
-    title: "Drop the rough idea here. The site will extract the useful parts.",
+    freeInput: "Free idea input",
+    title: "Write one rough project description.",
     body:
-      "Write naturally. You do not need to know our route-file fields. The page extracts buyer, offer, proof, channel, constraints, and validation signals from messy text.",
-    mainLabel: "Messy project idea",
-    mainPrompt: "Paste notes, voice-dump text, a rough plan, or a scattered project description.",
+      "Do not split the idea into many forms. Paste the messy version; the page extracts buyer, offer, proof, channel, constraints, and validation signals.",
+    mainLabel: "Project idea",
+    mainPrompt: "Paste notes, voice-dump text, or a rough plan.",
     mainPlaceholder:
-      "Example: I want to make an AI workflow service for solo consultants. They receive messy client requests and lose time clarifying scope. I have two screenshots, one workflow note, no paid ads, and I want to test outreach for 7 days...",
-    assetsLabel: "Optional links, proof, or material",
-    assetsPrompt: "Add source links, screenshots described in text, examples, buyer replies, or existing assets.",
+      "Example: I want to build an AI workflow service for solo consultants. They receive messy client requests and lose time clarifying scope. I have two screenshots, one workflow note, no paid ads, and I want to test outreach for 7 days...",
+    assetsLabel: "Optional proof or material",
+    assetsPrompt: "Add links, screenshots described in text, examples, buyer replies, or existing assets.",
     assetsPlaceholder:
       "Example: one screenshot, two before-after notes, three anonymized client messages, one public walkthrough link.",
     extracted: "Extracted signals",
-    missing: "Missing information to improve the advice",
+    missing: "Missing information",
     noSignals: "Add a few sentences and the page will extract the first useful signals.",
     allSet: "Enough input for a first reference pass. Stronger evidence can still improve it.",
     saved: "Saved locally",
@@ -65,25 +65,24 @@ const ui = {
       "These sources explain why the risk nodes exist. They do not prove this specific project will succeed or fail.",
     stopRule: "Stop rule",
     continue: "Continue to Plan Studio",
-    review: "Review Status",
     boundary:
       "Free test output is a reference map. Final Route File acceptance still needs evidence review and scope lock.",
-    extractedScore: "extracted input"
+    extractedScore: "input extracted"
   },
   zh: {
-    freeInput: "免费测试输入",
-    title: "把零散想法丢进这里，网站会先提取有用信息。",
+    freeInput: "免费想法输入",
+    title: "先写一段粗略项目描述。",
     body:
-      "按自然语言写，不需要懂路线图字段。页面会从混乱描述里提取用户、交付物、证据、渠道、约束和验证信号。",
-    mainLabel: "散碎项目想法",
-    mainPrompt: "粘贴笔记、口述稿、粗略计划或混乱的项目描述。",
+      "不要把想法拆成很多表单。直接粘贴混乱版本，页面会提取用户、交付物、证据、渠道、约束和验证信号。",
+    mainLabel: "项目想法",
+    mainPrompt: "粘贴笔记、口述稿、粗略计划或零散描述。",
     mainPlaceholder:
       "示例：我想做一个给独立顾问用的 AI 工作流服务。他们经常收到很乱的客户需求，花很多时间确认范围。我现在有两张截图、一份流程笔记，没有广告预算，想用 7 天做私信验证...",
-    assetsLabel: "可选：链接、证据或已有材料",
-    assetsPrompt: "补充来源链接、截图说明、案例、客户回复或已有资产。",
+    assetsLabel: "可选证据或材料",
+    assetsPrompt: "补充链接、截图说明、案例、客户回复或已有资产。",
     assetsPlaceholder: "示例：一张截图、两份前后对比笔记、三条匿名客户消息、一个公开演示链接。",
     extracted: "已提取信号",
-    missing: "为了让建议更准确，还缺这些信息",
+    missing: "缺失信息",
     noSignals: "先写几句项目想法，页面会提取第一批有用信号。",
     allSet: "已足够生成第一版参考建议；更多证据仍能提升判断质量。",
     saved: "已本地保存",
@@ -102,10 +101,9 @@ const ui = {
     action: "下一步",
     time: "时间节点",
     sources: "参考依据",
-    sourceBody: "这些来源解释风险节点为什么存在。它们不能证明某个具体项目一定成功或失败。",
+    sourceBody: "这些来源解释风险节点为什么存在，但不能证明某个具体项目一定成功或失败。",
     stopRule: "停止规则",
     continue: "进入计划页",
-    review: "查看审核状态",
     boundary: "免费测试输出只是参考地图。最终 Route File 仍需要证据审核和范围锁定。",
     extractedScore: "已提取信息"
   }
@@ -119,12 +117,12 @@ const riskZh: Record<
     label: "用户或买家过于宽泛",
     why: "第一个可触达用户还不够具体，无法判断痛点、渠道、预算或证据。",
     attention: "宽泛人群会让计划看起来合理，但很难真正验证。",
-    requiredEvidence: "写出一个细分用户、反复发生的行为、可触达渠道、现有替代方案，以及他们为什么现在会回应。",
+    requiredEvidence: "写出一个细分用户、重复行为、可触达渠道、现有替代方案，以及他们为什么现在会回应。",
     nextAction: "把目标用户改写成一个窄人群，并列出 10 个可触达样本。"
   },
   "weak-pain": {
     label: "问题可能不够痛",
-    why: "想法或交付物还没有体现反复出现的问题、紧急触发点或明确前后变化。",
+    why: "想法或交付物还没有体现重复发生的问题、紧急触发点或明确前后变化。",
     attention: "可有可无的工具容易获得口头认可，但很难让用户改变行为。",
     requiredEvidence: "收集问题描述、重复手工流程、当前替代方案，以及本周行动的原因。",
     nextAction: "询问 5 个目标用户最近一次这个问题造成的时间、金钱、信誉或交付损失。"
@@ -139,7 +137,7 @@ const riskZh: Record<
   "premature-product-build": {
     label: "过早做产品",
     why: "描述已经指向产品、平台或系统，但第一份买家证据还不清楚。",
-    attention: "早期常见陷阱是产品表面积扩大，但路线还没有被市场接受。",
+    attention: "早期常见陷阱是产品表面积扩大，但路线还没被市场接受。",
     requiredEvidence: "一个窄证明资产、一条合格用户回复，以及一个可以人工交付的版本。",
     nextAction: "把产品建设替换成 48 小时手动证明或一页流程演示。"
   },
@@ -174,7 +172,7 @@ const riskZh: Record<
   "no-validation-plan": {
     label: "缺少验证渠道",
     why: "项目还不能说明哪些证据会让它继续、修复、转向或停止。",
-    attention: "没有验证渠道，计划会一直内部优化，却永远不碰真实信号。",
+    attention: "没有验证渠道，计划会一直内部优化，却不碰真实信号。",
     requiredEvidence: "首个渠道、目标数量、测试资产、有效信号、无效信号和复盘日期。",
     nextAction: "先建立 48 小时或 7 天验证循环，再投入产品、内容或投放。"
   },
@@ -221,6 +219,24 @@ function confidenceLabel(label: keyof typeof confidenceZh | string, language: Si
   return language === "zh" ? confidenceZh[label as keyof typeof confidenceZh] ?? label : label;
 }
 
+function signalLabel(label: string, language: SiteLanguage) {
+  if (language === "en") {
+    return label;
+  }
+
+  const labels: Record<string, string> = {
+    Project: "项目",
+    Idea: "想法",
+    Buyer: "用户",
+    Offer: "交付",
+    Proof: "证据",
+    Channel: "渠道",
+    Validation: "验证"
+  };
+
+  return labels[label] ?? label;
+}
+
 function sourceTypeLabel(value: string, language: SiteLanguage) {
   if (language === "en") {
     return value;
@@ -230,7 +246,7 @@ function sourceTypeLabel(value: string, language: SiteLanguage) {
     "failure analysis": "失败分析",
     "research report": "研究报告",
     "case library": "案例库",
-    "management research": "管理研究"
+    "management research": "方法研究"
   };
 
   return labels[value] ?? value;
@@ -494,7 +510,7 @@ export function IdeaRiskTestStudio() {
             <div className="idea-risk-detected-grid">
               {interpretation.detectedSignals.map((item) => (
                 <article key={item.label}>
-                  <span>{language === "zh" ? item.label.replace("Project", "项目").replace("Idea", "想法").replace("Buyer", "用户").replace("Offer", "交付").replace("Proof", "证据").replace("Channel", "渠道").replace("Validation", "验证") : item.label}</span>
+                  <span>{signalLabel(item.label, language)}</span>
                   <p>{item.value}</p>
                 </article>
               ))}
@@ -546,7 +562,7 @@ export function IdeaRiskTestStudio() {
             {language === "zh"
               ? report.confidenceLabel === "Needs input"
                 ? "这个想法可以测试，但输入还不足以形成路线决策。"
-                : `当前最应优先处理的路径是：${routeLabel(report.selectedRoute, "zh")}。`
+                : `当前应优先处理的路径是：${routeLabel(report.selectedRoute, "zh")}。`
               : report.routeReason}
           </p>
         </div>
@@ -625,13 +641,10 @@ export function IdeaRiskTestStudio() {
           </div>
         </section>
 
-        <div className="idea-risk-next-actions">
+        <div className="idea-risk-next-actions is-single">
           <Link prefetch={false} href="/plan/" onClick={persistPlanDraft}>
             <FileCheck2 aria-hidden="true" size={16} />
             {labels.continue}
-          </Link>
-          <Link prefetch={false} href="/review-status/">
-            {labels.review}
             <ArrowRight aria-hidden="true" size={15} />
           </Link>
         </div>

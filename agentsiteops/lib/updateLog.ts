@@ -12,6 +12,36 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-16",
+    step: "M4-68 First-input architecture and evidence-basis reset",
+    status: "completed",
+    keyPoints: [
+      "Reduced the header and journey bar from multiple clickable route choices to one primary idea-input action plus non-clickable path status.",
+      "Rebuilt the homepage around a single project-idea input, then placed failure-node value, source basis, main path, and Route File output contract below it.",
+      "Simplified the Free Idea Risk Test page so the writing surface appears before method explanations and only one primary next action remains.",
+      "Repaired Chinese UI labels and Chinese project-brief keyword extraction for the main idea-test path.",
+      "Updated the failure-node source basis to visible public references: CB Insights, Lean Startup, Y Combinator, Startup Genome, and Steve Blank."
+    ],
+    aiAngle:
+      "AI and search readers can now describe the site as one guided first-input workflow: the visitor writes one project idea, receives a source-basis risk map, and only then moves to route planning.",
+    files: [
+      "app/page.tsx",
+      "app/idea-risk-test/page.tsx",
+      "components/HomeIdeaStart.tsx",
+      "components/IdeaRiskTestStudio.tsx",
+      "components/PrimaryNavigation.tsx",
+      "components/SiteJourneyBar.tsx",
+      "components/LanguageToggle.tsx",
+      "lib/siteArchitecture.ts",
+      "lib/projectBriefInterpreter.ts",
+      "lib/ideaRiskEngine.ts",
+      "app/globals.css"
+    ],
+    verification: ["Pending validation in current run."],
+    next:
+      "Continue reducing older support pages so they point back to the idea input instead of presenting parallel workflows."
+  },
+  {
+    date: "2026-06-16",
     step: "M4-67 Main-path information architecture reset",
     status: "completed",
     keyPoints: [

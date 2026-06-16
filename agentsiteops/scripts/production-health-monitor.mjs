@@ -334,30 +334,30 @@ async function main() {
   await checkBrandIcon();
   await checkAnalyticsSummary();
   await checkPage("/", [
-    "Free Route Test",
-    "Test the idea before choosing a Route File path.",
-    "Start free test",
-    "Free test first",
-    "Client state",
-    "The first customer action is visible before any payment or review.",
-    "Manual review",
-    "Operating path",
-    "The route workflow becomes the thing people can click.",
-    "Every new project starts with a Route File before a build."
+    "Free idea risk test",
+    "Write the idea first. The site should prove why the next step is worth doing.",
+    "Analyze idea",
+    "Evidence used, not guessed",
+    "What the buyer receives is a route file, not a score",
+    "Market signals are context, not proof",
+    "Reference basis",
+    "Route File must include",
+    "Start free test"
   ]);
   await checkPage("/idea-risk-test/", [
-    "Test a project idea before turning it into a Route File.",
-    "one main input",
-    "Drop the rough idea here. The site will extract the useful parts.",
+    "Paste the project idea. Get the failure map before any plan.",
+    "One job on this page",
+    "Write one rough project description.",
     "Extracted signals",
-    "Start free test",
+    "Write the idea",
     "Likely failure nodes",
     "Time checkpoints",
     "Reference basis",
     "CB Insights",
-    "Harvard Business Review",
+    "The Lean Startup",
+    "Y Combinator",
     "Startup Genome",
-    "Failory",
+    "Steve Blank",
     "Stop rule",
     "What this page will not claim"
   ]);
@@ -566,11 +566,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-68 First-input architecture and evidence-basis reset",
     "M4-67 Main-path information architecture reset",
     "M4-66 Single-input idea interpreter and language switch",
     "M4-65 Free idea risk test window",
-    "M4-64 Review status response loop",
-    "M4-63 Route File proof flow pass"
+    "M4-64 Review status response loop"
   ]);
 
   const report = renderReport(generatedAt);

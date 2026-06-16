@@ -36,22 +36,9 @@ export const exampleProjectBriefInput: ProjectBriefInput = {
 };
 
 const signalRules = {
-  buyer: [
-    "target",
-    "buyer",
-    "user",
-    "customer",
-    "audience",
-    "for ",
-    "用户",
-    "客户",
-    "受众",
-    "人群",
-    "买家",
-    "给"
-  ],
+  buyer: ["target", "buyer", "user", "customer", "audience", "for ", "用户", "客户", "受众", "人群", "买家", "目标"],
   offer: ["offer", "receive", "deliver", "service", "tool", "product", "提供", "交付", "服务", "工具", "产品", "得到"],
-  assets: ["asset", "proof", "demo", "screenshot", "source", "case", "link", "已有", "证据", "截图", "链接", "案例", "材料"],
+  assets: ["asset", "proof", "demo", "screenshot", "source", "case", "link", "已有", "证据", "截图", "链接", "案例", "材料", "演示"],
   channel: ["channel", "outreach", "search", "community", "post", "email", "渠道", "推广", "流量", "私信", "社群", "搜索", "发布"],
   resources: ["resource", "budget", "operator", "days", "week", "time", "资源", "预算", "人手", "时间", "天", "周"],
   constraints: ["constraint", "risk", "no ", "not ", "without", "限制", "风险", "不能", "不要", "不得", "合规", "隐私"],
@@ -71,7 +58,7 @@ function splitLines(value: string) {
 
 function includesAny(value: string, terms: string[]) {
   const text = value.toLowerCase();
-  return terms.some((term) => text.includes(term));
+  return terms.some((term) => text.includes(term.toLowerCase()));
 }
 
 function firstMatchingLine(lines: string[], terms: string[]) {
@@ -87,7 +74,7 @@ function inferProjectName(lines: string[], raw: string) {
   if (
     firstLine &&
     !/^(i|we)\s+(want|need|plan|will|am|are)\b/i.test(firstLine) &&
-    !/^(我|我们)(想|需要|准备|打算|正在)/.test(firstLine)
+    !/^(我|我们)(想|想要|需要|准备|打算|正在)/.test(firstLine)
   ) {
     return firstLine;
   }
@@ -107,7 +94,9 @@ function inferProjectName(lines: string[], raw: string) {
     return chineseBuildMatch[1].trim();
   }
 
-  const namedMatch = normalized.match(/(?:project|product|tool|service|项目|产品|工具|服务|网站)(?:\s+is|\s+called|叫|名称是|名字是)[:：]?\s*([^，。；,.]{4,60})/i);
+  const namedMatch = normalized.match(
+    /(?:project|product|tool|service|项目|产品|工具|服务|网站)(?:\s+is|\s+called|叫|名称是|名字是)?[:：]?\s*([^，。；,.]{4,60})/i
+  );
   if (namedMatch?.[1]) {
     return namedMatch[1].trim();
   }

@@ -85,20 +85,31 @@ export const ideaRiskSources: IdeaRiskSource[] = [
     url: "https://www.cbinsights.com/research/report/startup-failure-reasons-top/",
     sourceType: "failure analysis",
     useFor:
-      "General failure pattern checks such as weak market need, cash pressure, competition, pricing, team, legal, and timing risks.",
+      "Failure-pattern checks such as lack of product-market fit, cash pressure, legal trouble, competition, pricing, team, and timing risk.",
     limitation:
-      "Post-mortem categories are broad. They should guide questions, not predict that a specific project will fail."
+      "Post-mortem categories are broad. They guide questions but do not predict one project outcome."
   },
   {
-    id: "hbr-why-startups-fail",
-    name: "Why Start-ups Fail",
-    publisher: "Harvard Business Review / Tom Eisenmann",
-    url: "https://hbr.org/2021/05/why-start-ups-fail",
+    id: "lean-startup-validated-learning",
+    name: "Validated Learning and Build-Measure-Learn",
+    publisher: "The Lean Startup",
+    url: "https://theleanstartup.com/principles",
     sourceType: "management research",
     useFor:
-      "Founder, opportunity, execution, and go-to-market failure framing when a project has a vague buyer or weak operating path.",
+      "Turning ideas into testable assumptions, measurable checkpoints, and pivot-or-persevere decisions.",
     limitation:
-      "Management research is not a substitute for first-party buyer evidence or project-specific validation."
+      "Methodology does not replace first-party buyer evidence."
+  },
+  {
+    id: "yc-talk-to-users",
+    name: "How to Talk to Users",
+    publisher: "Y Combinator Startup Library",
+    url: "https://www.ycombinator.com/library/Iq-how-to-talk-to-users",
+    sourceType: "management research",
+    useFor:
+      "Checking whether the target user, pain, and first validation channel are specific enough to test.",
+    limitation:
+      "User interview advice must be applied to real reachable users, not abstract personas."
   },
   {
     id: "startup-genome-premature-scaling",
@@ -107,20 +118,20 @@ export const ideaRiskSources: IdeaRiskSource[] = [
     url: "https://startupgenome.com/insights",
     sourceType: "research report",
     useFor:
-      "Premature scaling checks: hiring, building, content expansion, paid acquisition, or multi-channel growth before core evidence exists.",
+      "Premature scaling checks before hiring, paid acquisition, multi-channel growth, large content batches, or product expansion.",
     limitation:
-      "The report frames growth-stage patterns. Very small projects still need manual interpretation before applying the pattern."
+      "Growth-stage patterns need manual interpretation for small early projects."
   },
   {
-    id: "failory-failure-library",
-    name: "Startup failure stories and case library",
-    publisher: "Failory",
-    url: "https://www.failory.com/",
-    sourceType: "case library",
+    id: "steve-blank-customer-development",
+    name: "Customer Development",
+    publisher: "Steve Blank",
+    url: "https://steveblank.com/category/customer-development/",
+    sourceType: "management research",
     useFor:
-      "Concrete failure-story prompts and scenario comparisons when a project needs practical caution examples.",
+      "Framing startups as a search for a repeatable business model rather than execution of an assumed plan.",
     limitation:
-      "Case stories are useful examples, not statistical proof. They should be paired with stronger evidence sources."
+      "Customer development gives a process; it does not certify market demand by itself."
   }
 ];
 
@@ -188,7 +199,6 @@ const scaleTerms = [
   "paid ads",
   "hire",
   "team",
-  "marketplace",
   "global",
   "international",
   "1000",
@@ -278,7 +288,7 @@ function hasText(value: string, minLength = 8) {
 }
 
 function includesAny(text: string, terms: string[]) {
-  return terms.some((term) => text.includes(term));
+  return terms.some((term) => text.includes(term.toLowerCase()));
 }
 
 function countCompleteFields(input: IdeaRiskInput) {
@@ -290,7 +300,7 @@ const riskTemplates: RiskTemplate[] = [
     id: "unclear-buyer",
     label: "Buyer is too broad",
     baseScore: 92,
-    sources: ["cb-insights-failure-reasons", "hbr-why-startups-fail"],
+    sources: ["cb-insights-failure-reasons", "yc-talk-to-users", "steve-blank-customer-development"],
     test: (input) =>
       !hasText(input.targetUser, 18) || includesAny(normalizeText(input.targetUser), broadAudienceTerms),
     why: () =>
@@ -306,7 +316,7 @@ const riskTemplates: RiskTemplate[] = [
     id: "weak-pain",
     label: "Problem may not be painful enough",
     baseScore: 84,
-    sources: ["cb-insights-failure-reasons", "hbr-why-startups-fail", "failory-failure-library"],
+    sources: ["cb-insights-failure-reasons", "lean-startup-validated-learning", "yc-talk-to-users"],
     test: (input) => !hasText(input.ideaSummary, 40) || !hasText(input.offer, 24),
     why: () =>
       "The idea or offer does not yet show a repeated problem, urgent trigger, or concrete before-after change.",
@@ -321,7 +331,7 @@ const riskTemplates: RiskTemplate[] = [
     id: "missing-proof-asset",
     label: "No inspectable proof asset",
     baseScore: 88,
-    sources: ["cb-insights-failure-reasons", "failory-failure-library"],
+    sources: ["lean-startup-validated-learning", "steve-blank-customer-development"],
     test: (input) => !hasText(input.existingAssets, 20) || !includesAny(normalizeText(input.existingAssets), proofTerms),
     why: () =>
       "The project does not yet provide something another person can inspect before trusting the route.",
@@ -336,7 +346,7 @@ const riskTemplates: RiskTemplate[] = [
     id: "premature-product-build",
     label: "Building too much too early",
     baseScore: 80,
-    sources: ["startup-genome-premature-scaling", "hbr-why-startups-fail"],
+    sources: ["startup-genome-premature-scaling", "lean-startup-validated-learning"],
     test: (input, text) => includesAny(text, productBuildTerms) && !includesAny(normalizeText(input.existingAssets), proofTerms),
     why: () =>
       "The description points toward a product, platform, or system before the first buyer proof is visible.",
@@ -366,7 +376,7 @@ const riskTemplates: RiskTemplate[] = [
     id: "weak-acquisition-channel",
     label: "Acquisition channel is not testable",
     baseScore: 82,
-    sources: ["cb-insights-failure-reasons", "hbr-why-startups-fail"],
+    sources: ["yc-talk-to-users", "steve-blank-customer-development"],
     test: (input) => !hasText(input.acquisitionChannel, 20),
     why: () =>
       "The project does not yet name how the first real users or buyers will be reached.",
@@ -381,7 +391,7 @@ const riskTemplates: RiskTemplate[] = [
     id: "resource-runway",
     label: "Time or resource window is unclear",
     baseScore: 74,
-    sources: ["cb-insights-failure-reasons", "hbr-why-startups-fail"],
+    sources: ["cb-insights-failure-reasons", "lean-startup-validated-learning"],
     test: (input) => !hasText(input.resources, 16),
     why: () =>
       "The project does not state time, budget, labor, delivery capacity, or the window for deciding continue versus stop.",
@@ -396,7 +406,7 @@ const riskTemplates: RiskTemplate[] = [
     id: "rights-or-compliance",
     label: "Rights, privacy, or compliance boundary",
     baseScore: 86,
-    sources: ["cb-insights-failure-reasons", "hbr-why-startups-fail"],
+    sources: ["cb-insights-failure-reasons"],
     test: (input, text) => includesAny(text, riskyBoundaryTerms) && !hasText(input.constraints, 24),
     why: () =>
       "The project touches data, claims, copying, regulated topics, or account access without a clear boundary.",
@@ -411,7 +421,7 @@ const riskTemplates: RiskTemplate[] = [
     id: "no-validation-plan",
     label: "No validation channel",
     baseScore: 90,
-    sources: ["cb-insights-failure-reasons", "startup-genome-premature-scaling", "failory-failure-library"],
+    sources: ["lean-startup-validated-learning", "yc-talk-to-users", "steve-blank-customer-development"],
     test: (input) => !hasText(input.validationPlan, 24),
     why: () =>
       "The project cannot yet say what evidence would make it continue, repair, pivot, or stop.",
@@ -426,7 +436,7 @@ const riskTemplates: RiskTemplate[] = [
     id: "route-file-incomplete",
     label: "Route File would be incomplete",
     baseScore: 76,
-    sources: ["hbr-why-startups-fail", "failory-failure-library"],
+    sources: ["lean-startup-validated-learning", "steve-blank-customer-development"],
     test: (input) => countCompleteFields(input) < 7,
     why: () =>
       "The input does not yet contain enough context to produce a selected route, rejected alternatives, evidence ledger, validation channel, and stop rule.",
@@ -474,7 +484,7 @@ function selectedRoute(input: IdeaRiskInput, risks: IdeaRiskNode[]) {
     return "Repair before Route File";
   }
 
-  if (includesAny(text, ["service", "consultant", "done-for-you", "manual"])) {
+  if (includesAny(text, ["service", "consultant", "done-for-you", "manual", "服务", "顾问", "人工"])) {
     return "Manual service route test";
   }
 
@@ -541,7 +551,7 @@ export function createIdeaRiskReport(input: IdeaRiskInput): IdeaRiskReport {
       label: risk.label,
       score: Math.max(52, risk.baseScore - 24),
       severity: "watch",
-      why: `No strong trigger was found yet, but this node should stay on the watch list for early projects.`,
+      why: "No strong trigger was found yet, but this node should stay on the watch list for early projects.",
       attention: risk.attention,
       requiredEvidence: risk.requiredEvidence,
       nextAction: risk.nextAction,

@@ -1,186 +1,64 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle2,
-  ClipboardList,
-  FileCheck2,
-  FileText,
-  Gauge,
-  SearchCheck,
-  ShieldCheck
-} from "lucide-react";
-import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
-import { RouteCommandCenter } from "@/components/RouteCommandCenter";
-import { CustomerResponseLifecycle } from "@/components/CustomerResponseLifecycle";
-import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
-import { allRoutes, siteUrl } from "@/lib/site";
+import { ArrowRight, CheckCircle2, FileText, Gauge, SearchCheck, ShieldCheck } from "lucide-react";
+import { HomeIdeaStart } from "@/components/HomeIdeaStart";
+import { ideaRiskSources } from "@/lib/ideaRiskEngine";
+import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Free Idea Risk Test to Route File",
   description:
-    "AgentSiteOps turns a rough project idea into source-backed failure nodes, evidence gaps, time checkpoints, and then a checked Route File path."
+    "AgentSiteOps starts with one rough project idea, maps likely failure nodes and evidence gaps, then turns usable inputs into a checked Route File path."
 };
 
 const routeFileContract = [
-  "Selected route with confidence and evidence basis.",
-  "Rejected alternatives with rejection reasons.",
-  "Evidence ledger separating verified, pending, inferred, blocked, and not-claimed items.",
-  "First proof asset and first validation channel.",
-  "Stop rule that blocks build, checkout, or content expansion when evidence is missing."
+  "Selected route",
+  "Rejected alternatives",
+  "Evidence ledger",
+  "First proof asset",
+  "Validation channel",
+  "Stop rule"
 ];
 
-const homeInputRows = [
-  {
-    label: "Project material",
-    body: "Idea, target user, current assets, notes, demos, sources, and constraints."
-  },
-  {
-    label: "Decision block",
-    body: "The question that prevents the next page, tool, checkout, or content batch."
-  },
-  {
-    label: "Risk boundary",
-    body: "Claims, data limits, buyer promises, private material, and delivery limits."
-  },
-  {
-    label: "Candidate routes",
-    body: "Options that should be selected, rejected, repaired, or blocked with evidence."
-  }
-];
-
-const homeOutputRows = [
-  {
-    label: "Automatic receipt",
-    body: "The site can preserve the packet, show missing fields, and route the customer to the next visible state."
-  },
-  {
-    label: "Manual acceptance",
-    body: "A person decides ready, repair, blocked, or not delivery before research and synthesis begin."
-  },
-  {
-    label: "Route File handoff",
-    body: "Accepted material becomes one selected route, rejected alternatives, evidence ledger, proof asset, channel, and stop rule."
-  }
-];
-
-const heroFlowSteps = [
-  { label: "Test", body: "Idea risk nodes" },
-  { label: "Plan", body: "Draft route" },
-  { label: "Review", body: "Ready or repair" },
-  { label: "Research", body: "Approved carrier" },
-  { label: "Route File", body: "Output + stop" }
-];
-
-const routeFlowCards = [
-  {
-    label: "Submit",
-    title: "Client sends the messy project",
-    body:
-      "Collect the project facts, target user, assets, source boundaries, constraints, candidate routes, and current blocker.",
-    output: "Intake packet",
-    Icon: ClipboardList
-  },
-  {
-    label: "Receipt",
-    title: "The request becomes visible",
-    body:
-      "The site can format the packet, preserve the missing-input list, and show the next state without claiming hidden automatic research.",
-    output: "Received, missing, or blocked",
-    Icon: Gauge
-  },
-  {
-    label: "Review",
-    title: "Operator accepts or repairs",
-    body:
-      "A person checks scope, safety, source rights, buyer evidence, and delivery capacity before the route workflow proceeds.",
-    output: "Ready, repair, or not delivery",
-    Icon: FileCheck2
-  },
-  {
-    label: "Research",
-    title: "Evidence carrier can change",
-    body:
-      "Research can use manual source review, a client report, an operator-controlled pass, or another approved carrier. The acceptance standard stays fixed.",
-    output: "Checked source material",
-    Icon: SearchCheck
-  },
-  {
-    label: "Route File",
-    title: "One output with a stop rule",
-    body:
-      "Accepted material becomes one selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.",
-    output: "Client-readable handoff",
-    Icon: FileText
-  }
-];
-
-const fitCards = [
-  {
-    title: "Good fit",
-    body:
-      "You have too many possible offers, pages, tools, or research lanes and need one route to test before building more."
-  },
-  {
-    title: "Not a fit",
-    body:
-      "You need guaranteed traffic, rankings, AI citations, payment approval, customer replies, revenue, or ongoing monitoring software."
-  },
-  {
-    title: "Best first use",
-    body:
-      "Use AgentSiteOps before creating a large content batch, a checkout page, a new tool, a paid service page, or another research branch."
-  }
-];
-
-const boundaryCards = [
-  {
-    title: "No automatic research claim",
-    body:
-      "AgentSiteOps prepares briefs and checks returned reports. It does not pretend to run hidden research through a website-side model/API workflow."
-  },
-  {
-    title: "No guaranteed growth claim",
-    body:
-      "Traffic, ranking, revenue, AI citation, payment approval, and buyer response stay unclaimed until first-party evidence exists."
-  },
-  {
-    title: "Templates stay as support",
-    body:
-      "The prompt pack, delivery gate, client workflow, route basis, and sample file remain the backend method layer behind the product."
-  },
-  {
-    title: "Rejected paths stay visible",
-    body:
-      "Weak routes are recorded with rejection reasons, so the project does not drift back into unsupported build work."
-  }
-];
-
-const proofLayerCards = [
+const whyFillCards = [
   {
     title: "Evidence used, not guessed",
     body:
-      "A Route File can use project material, source notes, buyer replies, search exports, and onsite events, but weak signals stay tagged until verified."
+      "The first input can be messy. The site extracts useful signals and shows what is missing instead of forcing the visitor through many fields."
   },
   {
     title: "What the buyer receives is a route file, not a score",
     body:
-      "The output is one selected route, rejected alternatives, an evidence ledger, first proof asset, validation channel, and stop rule."
+      "The output is not a decorative confidence score. It must preserve the route, rejected alternatives, evidence status, proof asset, validation channel, and stop rule."
   },
   {
     title: "Market signals are context, not proof",
     body:
-      "Search demand, market examples, and public trend research can shape the route, but they do not prove payment, buyer response, or product-market fit."
+      "Search demand, public examples, trend reports, and market research can shape questions, but they do not prove buyer response, payment, or product-market fit."
   }
 ];
 
-const supportLinks = [
-  { href: "/how-it-works/", label: "How it works" },
-  { href: "/delivery-gate/", label: "Delivery gate" },
-  { href: "/templates/route-research-prompt-pack/", label: "Research prompt pack" },
-  { href: "/reports/route-basis/", label: "Route basis report" },
-  { href: "/launch-kit/", label: "Launch Kit" },
-  { href: "/updates/", label: "Updates" }
+const pathSteps = [
+  {
+    label: "1. Idea",
+    body: "Paste one rough project description."
+  },
+  {
+    label: "2. Risk map",
+    body: "See likely failure nodes, evidence gaps, and source basis."
+  },
+  {
+    label: "3. Plan",
+    body: "Convert the risk map into a narrow project route."
+  },
+  {
+    label: "4. Review",
+    body: "Decide ready, repair, blocked, or not-delivery before execution."
+  },
+  {
+    label: "5. Route File",
+    body: "Inspect one selected route with rejected alternatives and a stop rule."
+  }
 ];
 
 export default function HomePage() {
@@ -189,7 +67,7 @@ export default function HomePage() {
     "@type": "Service",
     name: "AgentSiteOps Research-to-Route File",
     description:
-      "An operator-reviewed research and route-selection service that turns messy project material into one Route File with rejected alternatives and stop rules.",
+      "An operator-reviewed route-selection workflow that turns messy project material into one Route File with rejected alternatives, evidence ledger, validation channel, and stop rule.",
     inLanguage: "en",
     url: siteUrl,
     provider: {
@@ -200,282 +78,145 @@ export default function HomePage() {
   };
 
   return (
-    <main className="page-main route-home frontstage-home">
+    <main className="page-main route-home frontstage-home ia-reset-home">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="frontstage-hero route-foundry-hero">
-        <div className="frontstage-hero-copy">
-          <p className="eyebrow">Free Route Test</p>
-          <h1>Test the idea before choosing a Route File path.</h1>
+      <section className="ia-hero">
+        <div className="ia-hero-copy">
+          <p className="eyebrow">Free idea risk test</p>
+          <h1>Write the idea first. The site should prove why the next step is worth doing.</h1>
           <p>
-            Start with a rough project idea. AgentSiteOps names likely failure nodes,
-            evidence gaps, and time checkpoints first, then routes usable projects into
-            Plan Studio, manual review, approved evidence work, and final Route File
-            handoff.
+            AgentSiteOps is not a page directory and not a hidden research promise. The useful
+            first action is one input: describe the project, then receive a risk map, evidence
+            gaps, time checkpoints, and the next route decision.
           </p>
-          <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/idea-risk-test/">
-              <Gauge aria-hidden="true" size={17} />
-              Start free test
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/sample/">
-              <FileText aria-hidden="true" size={17} />
-              See final output shape
-            </Link>
-          </div>
-          <div className="frontstage-hero-flow" aria-label="AgentSiteOps route flow">
-            {heroFlowSteps.map((step, index) => (
-              <article key={step.label}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{step.label}</strong>
-                <small>{step.body}</small>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <aside className="route-file-brief" aria-label="Route File output">
-          <span>Free test first</span>
-          <h2>The site starts with reference guidance, not a payment or a hidden research claim.</h2>
-          <ul>
+          <ul className="ia-hero-points">
+            <li>
+              <CheckCircle2 aria-hidden="true" size={16} />
+              One clear input instead of scattered forms.
+            </li>
             <li>
               <SearchCheck aria-hidden="true" size={16} />
-              Failure nodes are mapped from public startup-failure patterns and the fields you provide.
+              Failure nodes are mapped against a visible source basis.
             </li>
+            <li>
+              <ShieldCheck aria-hidden="true" size={16} />
+              No traffic, revenue, payment, or automatic research guarantee.
+            </li>
+          </ul>
+        </div>
+        <HomeIdeaStart />
+      </section>
+
+      <section className="route-foundation-section ia-section">
+        <div className="route-section-heading">
+          <span>Why fill it in</span>
+          <h2>The page must make the input feel useful before asking for effort.</h2>
+          <p>
+            The test is designed for unclear early projects. It turns scattered project text into
+            a decision surface: what may fail, what evidence is missing, and what should happen
+            within a defined time window.
+          </p>
+        </div>
+        <div className="ia-card-grid">
+          {whyFillCards.map((item) => (
+            <article key={item.title}>
+              <Gauge aria-hidden="true" size={19} />
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="route-foundation-section ia-section ia-source-section">
+        <div className="route-section-heading">
+          <span>Reference basis</span>
+          <h2>The advice is a reference map, not a guess.</h2>
+          <p>
+            The failure-node library is grounded in public startup failure patterns, validated
+            learning, user discovery, premature scaling research, and customer development
+            methods. These sources guide questions; they do not prove one project will succeed.
+          </p>
+        </div>
+        <div className="ia-source-grid">
+          {ideaRiskSources.map((source) => (
+            <article key={source.id}>
+              <span>{source.publisher}</span>
+              <h3>{source.name}</h3>
+              <p>{source.useFor}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="route-foundation-section ia-section">
+        <div className="route-section-heading">
+          <span>Main path</span>
+          <h2>There is one working path. Other pages are reference material.</h2>
+          <p>
+            The public site should behave like a guided product, not a menu. A new visitor should
+            understand that the next action is always the same: start with the idea input.
+          </p>
+        </div>
+        <ol className="ia-path-list">
+          {pathSteps.map((item) => (
+            <li key={item.label}>
+              <strong>{item.label}</strong>
+              <p>{item.body}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="route-foundation-section ia-section ia-output-section">
+        <div>
+          <span>Output contract</span>
+          <h2>The final thing is a Route File, not a loose suggestion.</h2>
+          <p>
+            A valid output must preserve the selected path, rejected options, source status,
+            first proof asset, validation channel, and stop rule. Anything weaker stays in test
+            or repair state.
+          </p>
+        </div>
+        <div className="ia-contract-card">
+          <FileText aria-hidden="true" size={24} />
+          <h3>Route File must include</h3>
+          <ul>
             {routeFileContract.map((item) => (
               <li key={item}>
-                <CheckCircle2 aria-hidden="true" size={16} />
+                <CheckCircle2 aria-hidden="true" size={15} />
                 {item}
               </li>
             ))}
           </ul>
-        </aside>
-      </section>
-
-      <RouteProjectLifecycle
-        current="plan"
-        title="AgentSiteOps is a Route Project operating system, not a pile of pages."
-        body="Every public route should either move the same project object forward, prove the output, or support validation after delivery."
-        showObjects
-        showSupportLayer
-      />
-
-      <ClientRouteStatePanel
-        current="plan"
-        title="The first customer action is visible before any payment or review."
-        body="A visitor should immediately understand where to write the project, what the browser can draft, and what still requires manual acceptance."
-      />
-
-      <section className="route-foundation-section home-proof-section">
-        <div className="route-section-heading">
-          <span>Proof boundary</span>
-          <h2>The route decision must show what is proven and what is still unverified.</h2>
-          <p>
-            This keeps the site from turning research context, page activity, or generated
-            confidence into unsupported delivery claims.
-          </p>
-        </div>
-        <div className="route-foundation-grid is-boundary-grid">
-          {proofLayerCards.map((item) => (
-            <article key={item.title}>
-              <ShieldCheck aria-hidden="true" size={19} />
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="route-foundation-section home-operating-section">
-        <div className="route-section-heading">
-          <span>Operating path</span>
-          <h2>The visitor should always know the current state and next action.</h2>
-          <p>
-            The support pages remain available, but the homepage now leads with the
-            customer-facing path from submission to output.
-          </p>
-        </div>
-        <div className="home-operating-panel">
-          <div className="home-intake-panel">
-            <span>Client input</span>
-            <h3>Submit once. Repair only what is missing.</h3>
-            <p>
-              The client does not need a polished brief. The intake only needs enough
-              material to expose the route decision, missing evidence, and blocked claims.
-            </p>
-            <div className="home-input-list">
-              {homeInputRows.map((item) => (
-                <article key={item.label}>
-                  <CheckCircle2 aria-hidden="true" size={15} />
-                  <div>
-                    <strong>{item.label}</strong>
-                    <p>{item.body}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-
-          <aside className="home-output-panel" aria-label="What the client can inspect">
-            <span>Visible output</span>
-            <h3>The response path stays visible.</h3>
-            {homeOutputRows.map((item) => (
-              <article key={item.label}>
-                <strong>{item.label}</strong>
-                <p>{item.body}</p>
-              </article>
-            ))}
-            <div className="home-output-actions">
-              <Link prefetch={false} href="/idea-risk-test/">
-                Start main path
-                <ArrowRight aria-hidden="true" size={15} />
-              </Link>
-              <Link prefetch={false} href="/sample/">
-                Inspect output
-                <ArrowRight aria-hidden="true" size={15} />
-              </Link>
-            </div>
-          </aside>
-
-          <div className="home-flow-lane" aria-label="Input to stop rule flow">
-            {routeFlowCards.map((item, index) => {
-              const Icon = item.Icon;
-
-              return (
-                <article key={item.label}>
-                  <div>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <Icon aria-hidden="true" size={20} />
-                  </div>
-                  <small>{item.label}</small>
-                  <h3>{item.title}</h3>
-                  <p>{item.body}</p>
-                  <strong>{item.output}</strong>
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <CustomerResponseLifecycle
-        variant="compact"
-        eyebrow="Client response loop"
-        title="The site can receive and organize the request; final judgment stays visible and manual."
-        body="Research tooling is replaceable. The fixed product is the accepted Route File standard and the visible state path around it."
-      />
-
-      <section className="route-foundation-section">
-        <div className="route-section-heading">
-          <span>Fit boundary</span>
-          <h2>Use it when the next build decision is unclear.</h2>
-          <p>
-            AgentSiteOps is not a generic AI business plan generator. It is a route
-            selection and delivery gate for projects that need a narrow next step.
-          </p>
-        </div>
-        <div className="frontstage-fit-grid">
-          {fitCards.map((item) => (
-            <article key={item.title}>
-              <ShieldCheck aria-hidden="true" size={20} />
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="route-foundation-section">
-        <div className="route-section-heading">
-          <span>Delivery boundary</span>
-          <h2>What the product blocks before it sells or builds.</h2>
-          <p>
-            The workflow can organize evidence and route decisions. It cannot turn weak
-            research into a guarantee or a finished market.
-          </p>
-        </div>
-
-        <div className="route-foundation-grid is-boundary-grid">
-          {boundaryCards.map((item) => (
-            <article key={item.title}>
-              <ShieldCheck aria-hidden="true" size={22} />
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="route-preserved-section frontstage-support-section">
-        <div>
-          <span>Supporting system</span>
-          <h2>The old templates stay. The workbench connects them.</h2>
-          <p>
-            These pages explain the method after the visitor understands the main path.
-            They are no longer positioned as the next task for a new project.
-          </p>
-          <dl>
-            <div>
-              <dt>Indexed support routes</dt>
-              <dd>{allRoutes.length}</dd>
-            </div>
-            <div>
-              <dt>Execution stages</dt>
-              <dd>6</dd>
-            </div>
-            <div>
-              <dt>Public languages</dt>
-              <dd>2</dd>
-            </div>
-          </dl>
-        </div>
-
-        <div className="route-link-board">
-          {supportLinks.map((item) => (
-            <Link prefetch={false} href={item.href} key={item.href}>
-              <CheckCircle2 aria-hidden="true" size={16} />
-              {item.label}
-              <ArrowRight aria-hidden="true" size={15} />
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="route-foundation-section frontstage-workbench-section">
-        <div className="route-section-heading">
-          <span>Product workbench</span>
-          <h2>The route workflow becomes the thing people can click.</h2>
-          <p>
-            The first screen now leads with the Route File outcome, then exposes the
-            route map, coverage decision, evidence settings, and bilingual social copy
-            as one balanced product surface.
-          </p>
-        </div>
-        <RouteCommandCenter />
-      </section>
-
-      <section className="route-final-cta">
-        <div>
-          <span>Next operating rule</span>
-          <h2>Every new project starts with a Route File before a build.</h2>
-          <p>
-            If the selected route cannot name evidence, first asset, rejected alternatives,
-            and a stop rule, the project stays in research instead of entering production.
-          </p>
-        </div>
-        <div className="route-final-actions">
-          <Link prefetch={false} className="primary-action" href="/plan/">
-            <ClipboardList aria-hidden="true" size={17} />
-            Draft your plan
+          <Link prefetch={false} className="secondary-action" href="/sample/">
+            Inspect sample output
+            <ArrowRight aria-hidden="true" size={15} />
           </Link>
-          <Link prefetch={false} className="secondary-action" href="/idea-risk-test/">
-            <Gauge aria-hidden="true" size={17} />
-            Start with risk test
+          <Link prefetch={false} className="secondary-action" href="/launch-kit/">
+            Launch Kit reference
+            <ArrowRight aria-hidden="true" size={15} />
           </Link>
         </div>
+      </section>
+
+      <section className="route-final-cta ia-final-cta">
+        <div>
+          <span>Default next action</span>
+          <h2>Start with one idea. Do not browse the method pages first.</h2>
+          <p>
+            If the project cannot name buyer, proof, channel, source boundary, and review date,
+            the correct state is still test or repair.
+          </p>
+        </div>
+        <Link prefetch={false} className="primary-action" href="/idea-risk-test/#idea-risk-test">
+          <Gauge aria-hidden="true" size={17} />
+          Start free test
+        </Link>
       </section>
     </main>
   );

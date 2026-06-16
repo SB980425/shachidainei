@@ -1,18 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle2,
-  ClipboardList,
-  FileCheck2,
-  SearchCheck,
-  ShieldCheck
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, ClipboardList, SearchCheck, ShieldCheck } from "lucide-react";
 import { IdeaRiskTestStudio } from "@/components/IdeaRiskTestStudio";
-import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
-import { RouteFlowBridge } from "@/components/RouteFlowBridge";
-import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
-import { RouteStageHeader } from "@/components/RouteStageHeader";
 import { ideaRiskSources } from "@/lib/ideaRiskEngine";
 import { siteUrl } from "@/lib/site";
 
@@ -26,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Idea Risk Test",
     description:
-      "Fill in a rough project idea and receive a source-backed failure-node map, evidence gaps, time checkpoints, and next planning actions.",
+      "Fill in one rough project idea and receive a source-backed failure-node map, evidence gaps, time checkpoints, and next planning actions.",
     url: `${siteUrl}${path}`,
     siteName: "AgentSiteOps",
     locale: "en_US",
@@ -36,24 +25,16 @@ export const metadata: Metadata = {
 
 const flowRows = [
   {
-    label: "Fill",
-    body:
-      "The visitor writes one messy project brief. The page extracts useful signals instead of asking for many fields first."
-  },
-  {
-    label: "Match",
-    body:
-      "The page checks the input against a local source-backed failure node library. It does not claim live web research."
+    label: "Write",
+    body: "Paste one messy project description. The page extracts useful fields automatically."
   },
   {
     label: "Map",
-    body:
-      "The output shows failure nodes, why they were triggered, evidence needed, reference basis, and time checkpoints."
+    body: "See likely failure nodes, evidence gaps, time checkpoints, and source basis."
   },
   {
-    label: "Route",
-    body:
-      "The visitor moves to Plan Studio, Review Status, Scope Lock, or stops before creating a false Route File."
+    label: "Decide",
+    body: "Continue to Plan Studio only when the next route is specific enough to draft."
   }
 ];
 
@@ -78,81 +59,46 @@ export default function IdeaRiskTestPage() {
   };
 
   return (
-    <main className="gate-page idea-risk-page">
+    <main className="gate-page idea-risk-page ia-risk-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="gate-hero idea-risk-hero">
+      <section className="gate-hero idea-risk-hero ia-risk-hero">
         <div>
           <p className="eyebrow">Free test window</p>
-          <h1>Test a project idea before turning it into a Route File.</h1>
+          <h1>Paste the project idea. Get the failure map before any plan.</h1>
           <p>
-            Put in scattered notes, a rough plan, or a voice-dump style description. The
-            first output is not payment, not a promise, and not a final plan. It is a
-            source-backed failure map with extracted signals, evidence gaps, time
-            checkpoints, and the next planning action.
+            This page is the first working surface. It does not ask for payment, does not
+            claim automatic research, and does not require a polished plan. It turns one
+            rough description into extracted signals, risk nodes, evidence gaps, and a
+            next route decision.
           </p>
           <div className="hero-actions">
             <a className="primary-action" href="#idea-risk-test">
               <ClipboardList aria-hidden="true" size={17} />
-              Start free test
+              Write the idea
             </a>
-            <Link prefetch={false} className="secondary-action" href="/plan/">
-              <FileCheck2 aria-hidden="true" size={17} />
-              Plan Studio
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/sample/">
-              Source to Route File
-              <ArrowRight aria-hidden="true" size={16} />
-            </Link>
           </div>
         </div>
         <aside className="decision-card">
-          <strong>Core flow</strong>
+          <strong>One job on this page</strong>
           <p>
-            User idea to failure-node match to reference basis to evidence gaps to time
-            checkpoints to Plan Studio or Review Status. The user only needs one main
-            input first.
+            Write the messy project once. Everything below exists to explain the output,
+            not to send the visitor into another branch.
           </p>
         </aside>
       </section>
 
-      <RouteStageHeader
-        current="plan"
-        title="Idea Risk Test is the free first screen before Plan Studio."
-        body="The visitor should understand what may fail before the project becomes intake, research, or final Route File work."
-      />
+      <IdeaRiskTestStudio />
 
-      <RouteFlowBridge
-        current="plan"
-        eyebrow="Free risk map"
-        nextHref="/plan/"
-        nextLabel="Convert risk map into plan"
-      />
-
-      <RouteProjectLifecycle
-        current="plan"
-        eyebrow="Pre-plan state"
-        title="The project starts as a risk map, not a confident business plan."
-        body="The site first exposes failure nodes and evidence gaps. Only then should the visitor move into Plan Studio, Review Status, Scope Lock, or Route File review."
-      />
-
-      <ClientRouteStatePanel
-        current="plan"
-        title="The customer can test the idea without payment."
-        body="The free page runs locally, shows source basis, and gives a reference plan. Manual acceptance and final Route File judgment still happen later."
-        compact
-      />
-
-      <section className="gate-section idea-risk-flow-section">
+      <section className="gate-section idea-risk-flow-section ia-risk-flow">
         <div className="section-head">
-          <h2>What happens from click to output.</h2>
+          <h2>How the test reads the input.</h2>
           <p>
-            The key support is not a hidden AI answer. It is the visible connection between
-            messy user input, extracted project signals, failure patterns, source basis,
-            evidence needed, and time-boxed action.
+            The browser-local test extracts project signals and compares them to a visible
+            failure-node library. The result is a reference map, not a guarantee.
           </p>
         </div>
         <div className="idea-risk-flow-grid">
@@ -166,9 +112,7 @@ export default function IdeaRiskTestPage() {
         </div>
       </section>
 
-      <IdeaRiskTestStudio />
-
-      <section className="gate-section split-section gate-split idea-risk-source-boundary">
+      <section className="gate-section split-section gate-split idea-risk-source-boundary" id="source-basis">
         <div>
           <h2>Reference sources are visible.</h2>
           <p>
@@ -200,10 +144,7 @@ export default function IdeaRiskTestPage() {
           <div className="hero-actions">
             <Link prefetch={false} className="primary-action" href="/plan/">
               <CheckCircle2 aria-hidden="true" size={17} />
-              Continue to Plan Studio
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/review-status/">
-              Review Status
+              Continue only after reading the map
               <ArrowRight aria-hidden="true" size={16} />
             </Link>
           </div>

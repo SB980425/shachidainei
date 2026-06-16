@@ -29,11 +29,11 @@ export const mainJourneyStages: MainJourneyStage[] = [
   {
     id: "test",
     href: "/idea-risk-test/",
-    shortLabel: { en: "Test", zh: "测试" },
-    label: { en: "Test idea", zh: "测试想法" },
+    shortLabel: { en: "Idea", zh: "想法" },
+    label: { en: "Paste idea", zh: "填写想法" },
     body: {
-      en: "Paste scattered project notes and get failure nodes before planning.",
-      zh: "粘贴散碎项目信息，先看失败节点，再进入计划。"
+      en: "Start with one messy project description.",
+      zh: "先用一段零散描述开始。"
     }
   },
   {
@@ -42,8 +42,8 @@ export const mainJourneyStages: MainJourneyStage[] = [
     shortLabel: { en: "Plan", zh: "计划" },
     label: { en: "Draft plan", zh: "生成计划" },
     body: {
-      en: "Turn the tested idea into a browser-local route draft.",
-      zh: "把测试后的想法整理成本地路线草稿。"
+      en: "Turn the tested idea into a narrow route draft.",
+      zh: "把测试后的想法整理成窄路线草稿。"
     }
   },
   {
@@ -52,18 +52,18 @@ export const mainJourneyStages: MainJourneyStage[] = [
     shortLabel: { en: "Submit", zh: "提交" },
     label: { en: "Submit packet", zh: "提交材料" },
     body: {
-      en: "Send the plan packet for manual review when it is specific enough.",
-      zh: "计划足够具体后，再提交给人工审核。"
+      en: "Submit only when buyer, proof, channel, and limits are visible.",
+      zh: "用户、证据、渠道和限制清楚后再提交。"
     }
   },
   {
     id: "status",
     href: "/review-status/",
-    shortLabel: { en: "Status", zh: "状态" },
-    label: { en: "Check status", zh: "查看状态" },
+    shortLabel: { en: "Review", zh: "审核" },
+    label: { en: "Check review", zh: "查看审核" },
     body: {
-      en: "See ready, repair, blocked, or not-delivery before research starts.",
-      zh: "在研究开始前，看见通过、修复、阻塞或不交付状态。"
+      en: "See ready, repair, blocked, or not-delivery.",
+      zh: "查看通过、修复、阻塞或不交付状态。"
     }
   },
   {
@@ -72,8 +72,8 @@ export const mainJourneyStages: MainJourneyStage[] = [
     shortLabel: { en: "Output", zh: "输出" },
     label: { en: "Inspect output", zh: "查看输出" },
     body: {
-      en: "Inspect the Route File shape before trusting the final handoff.",
-      zh: "先查看 Route File 输出形态，再理解最终交付。"
+      en: "Inspect the Route File shape before trusting the handoff.",
+      zh: "先查看 Route File 的输出形态。"
     }
   }
 ];
@@ -83,33 +83,37 @@ const routeRules: RouteRule[] = [
     match: ["/", "/start/"],
     role: "main",
     stage: "test",
-    title: { en: "Start at the first decision.", zh: "从第一个决策开始。" },
+    title: { en: "Start with one idea input.", zh: "从一个想法输入开始。" },
     body: {
-      en: "The main path is one line: test idea, draft plan, submit packet, check status, inspect output.",
-      zh: "主路径只有一条：测试想法、生成计划、提交材料、查看状态、查看输出。"
+      en: "The main path is not a menu. It is one sequence: idea, risk map, plan, review, output.",
+      zh: "主路径不是菜单，而是一条顺序：想法、风险图、计划、审核、输出。"
     },
-    primaryHref: "/idea-risk-test/",
-    primaryLabel: { en: "Start free test", zh: "开始免费测试" }
+    primaryHref: "/idea-risk-test/#idea-risk-test",
+    primaryLabel: { en: "Paste idea", zh: "填写想法" }
   },
   {
     match: ["/idea-risk-test/"],
     role: "main",
     stage: "test",
-    title: { en: "You are testing the idea.", zh: "当前在测试想法。" },
+    title: { en: "You are at the first action.", zh: "当前是第一步。" },
     body: {
-      en: "This page is the first action. Do not jump to research or delivery until the failure map is readable.",
-      zh: "这是第一个动作。失败地图清楚前，不进入研究或交付。"
-    }
+      en: "Write the rough project first. Research, review, and delivery come later.",
+      zh: "先写粗略项目。研究、审核和交付都在后面。"
+    },
+    primaryHref: "#idea-risk-test",
+    primaryLabel: { en: "Write idea", zh: "填写想法" }
   },
   {
     match: ["/plan/"],
     role: "main",
     stage: "plan",
-    title: { en: "You are drafting the plan.", zh: "当前在生成计划。" },
+    title: { en: "You are drafting the route.", zh: "当前在生成路线草稿。" },
     body: {
       en: "Use the draft to decide whether the project is specific enough to submit.",
-      zh: "用草稿判断项目是否足够具体，是否能提交审核。"
-    }
+      zh: "用草稿判断项目是否具体到可以提交审核。"
+    },
+    primaryHref: "/intake/",
+    primaryLabel: { en: "Prepare submission", zh: "准备提交" }
   },
   {
     match: ["/intake/", "/contact/", "/thank-you/"],
@@ -117,9 +121,11 @@ const routeRules: RouteRule[] = [
     stage: "submit",
     title: { en: "You are preparing submission.", zh: "当前在准备提交。" },
     body: {
-      en: "Submission creates a packet. It does not mean automatic acceptance or hidden research.",
-      zh: "提交只会形成材料包，不代表自动通过或隐藏研究。"
-    }
+      en: "Submission creates a packet. It is not automatic acceptance.",
+      zh: "提交只生成材料包，不代表自动通过。"
+    },
+    primaryHref: "/review-status/",
+    primaryLabel: { en: "Check review state", zh: "查看审核状态" }
   },
   {
     match: ["/review-status/", "/scope/"],
@@ -129,7 +135,9 @@ const routeRules: RouteRule[] = [
     body: {
       en: "The valid states are ready, repair, blocked, or not-delivery.",
       zh: "有效状态只有通过、修复、阻塞或不交付。"
-    }
+    },
+    primaryHref: "/sample/",
+    primaryLabel: { en: "Inspect output shape", zh: "查看输出样例" }
   },
   {
     match: ["/sample/", "/examples/"],
@@ -137,42 +145,44 @@ const routeRules: RouteRule[] = [
     stage: "output",
     title: { en: "You are inspecting output proof.", zh: "当前在查看输出样例。" },
     body: {
-      en: "This is proof of the handoff shape, not the next action for a new project.",
+      en: "This is proof of handoff shape, not the next action for a new project.",
       zh: "这里用于查看交付形态，不是新项目的下一步操作。"
-    }
+    },
+    primaryHref: "/idea-risk-test/",
+    primaryLabel: { en: "Test another idea", zh: "测试另一个想法" }
   },
   {
     match: ["/how-it-works/", "/execution/", "/delivery-gate/", "/templates/", "/reports/", "/methodology/", "/evidence/"],
     role: "reference",
     stage: "status",
-    title: { en: "This is a reference page.", zh: "这是参考页面。" },
+    title: { en: "This is method reference.", zh: "这是方法参考页。" },
     body: {
-      en: "Read it only when you need method details. Return to the main path to continue using the site.",
-      zh: "需要方法细节时再阅读。继续使用网站时，回到主流程。"
+      en: "Use it for details after the first idea is written.",
+      zh: "先写想法，需要细节时再看这里。"
     },
     primaryHref: "/idea-risk-test/",
-    primaryLabel: { en: "Return to main path", zh: "返回主流程" }
+    primaryLabel: { en: "Return to idea input", zh: "回到想法输入" }
   },
   {
     match: ["/tools/", "/checklists/", "/guides/", "/answers/", "/launch-kit/", "/compare/", "/starter-review/", "/website-opportunity-audit/", "/ai-website-operating-system/"],
     role: "support",
     stage: "test",
-    title: { en: "This is a support tool or article.", zh: "这是辅助工具或文章。" },
+    title: { en: "This is support content.", zh: "这是辅助内容。" },
     body: {
-      en: "Support content helps diagnosis, but the product path still starts with one project idea.",
-      zh: "辅助内容能帮助判断，但产品路径仍从一个项目想法开始。"
+      en: "Support pages help diagnosis, but the product path starts with one project idea.",
+      zh: "辅助页面可以帮助判断，但产品路径从一个项目想法开始。"
     },
     primaryHref: "/idea-risk-test/",
-    primaryLabel: { en: "Start with your idea", zh: "从想法开始" }
+    primaryLabel: { en: "Start with idea", zh: "从想法开始" }
   },
   {
     match: ["/pricing/", "/buy/", "/terms/", "/refund-policy/", "/privacy/", "/disclaimer/", "/disclosure/", "/authors/", "/editorial-policy/", "/updates/"],
     role: "legal",
     stage: "test",
-    title: { en: "This is not the work surface.", zh: "这里不是执行工作区。" },
+    title: { en: "This is not the work surface.", zh: "这里不是工作区。" },
     body: {
-      en: "Policy, pricing, and update pages are supporting context. Use the main path to work on a project.",
-      zh: "政策、价格和更新页只是背景信息。处理项目请回到主路径。"
+      en: "Policy and update pages are supporting context. Use the idea input to work on a project.",
+      zh: "政策和更新页只是背景信息。处理项目请回到想法输入。"
     },
     primaryHref: "/idea-risk-test/",
     primaryLabel: { en: "Open free test", zh: "打开免费测试" }
@@ -216,13 +226,13 @@ export function getSiteRouteContext(pathname: string): SiteRouteContext {
     match ?? {
       role: "reference",
       stage: "test",
-      title: { en: "This page supports the main path.", zh: "这个页面用于支持主路径。" },
+      title: { en: "This page supports the main path.", zh: "这个页面支持主路径。" },
       body: {
-        en: "If the next action is unclear, return to the idea test and proceed step by step.",
-        zh: "如果下一步不清楚，回到想法测试并按步骤继续。"
+        en: "If the next action is unclear, return to the idea input.",
+        zh: "如果下一步不清楚，回到想法输入。"
       },
       primaryHref: "/idea-risk-test/",
-      primaryLabel: { en: "Return to main path", zh: "返回主流程" }
+      primaryLabel: { en: "Return to idea input", zh: "回到想法输入" }
     }
   );
 }

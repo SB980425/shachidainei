@@ -1,6 +1,6 @@
 # Production Health Monitor
 
-- Generated: 2026-06-16T14:22:33.548Z
+- Generated: 2026-06-16T15:53:31.797Z
 - Status: pass
 - Site: https://agentsiteops.com
 - Checks: 358
@@ -46,31 +46,31 @@
 | / | pass | HTTP 200 | [link](https://agentsiteops.com/) |
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
-| / | pass | Free Route Test | [link](https://agentsiteops.com/) |
-| / | pass | Test the idea before choosing a Route File path. | [link](https://agentsiteops.com/) |
+| / | pass | Free idea risk test | [link](https://agentsiteops.com/) |
+| / | pass | Write the idea first. The site should prove why the next step is worth doing. | [link](https://agentsiteops.com/) |
+| / | pass | Analyze idea | [link](https://agentsiteops.com/) |
+| / | pass | Evidence used, not guessed | [link](https://agentsiteops.com/) |
+| / | pass | What the buyer receives is a route file, not a score | [link](https://agentsiteops.com/) |
+| / | pass | Market signals are context, not proof | [link](https://agentsiteops.com/) |
+| / | pass | Reference basis | [link](https://agentsiteops.com/) |
+| / | pass | Route File must include | [link](https://agentsiteops.com/) |
 | / | pass | Start free test | [link](https://agentsiteops.com/) |
-| / | pass | Free test first | [link](https://agentsiteops.com/) |
-| / | pass | Client state | [link](https://agentsiteops.com/) |
-| / | pass | The first customer action is visible before any payment or review. | [link](https://agentsiteops.com/) |
-| / | pass | Manual review | [link](https://agentsiteops.com/) |
-| / | pass | Operating path | [link](https://agentsiteops.com/) |
-| / | pass | The route workflow becomes the thing people can click. | [link](https://agentsiteops.com/) |
-| / | pass | Every new project starts with a Route File before a build. | [link](https://agentsiteops.com/) |
 | /idea-risk-test/ | pass | HTTP 200 | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | HTML title exists | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | canonical points to production URL | [link](https://agentsiteops.com/idea-risk-test/) |
-| /idea-risk-test/ | pass | Test a project idea before turning it into a Route File. | [link](https://agentsiteops.com/idea-risk-test/) |
-| /idea-risk-test/ | pass | one main input | [link](https://agentsiteops.com/idea-risk-test/) |
-| /idea-risk-test/ | pass | Drop the rough idea here. The site will extract the useful parts. | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Paste the project idea. Get the failure map before any plan. | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | One job on this page | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Write one rough project description. | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Extracted signals | [link](https://agentsiteops.com/idea-risk-test/) |
-| /idea-risk-test/ | pass | Start free test | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Write the idea | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Likely failure nodes | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Time checkpoints | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Reference basis | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | CB Insights | [link](https://agentsiteops.com/idea-risk-test/) |
-| /idea-risk-test/ | pass | Harvard Business Review | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | The Lean Startup | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Y Combinator | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Startup Genome | [link](https://agentsiteops.com/idea-risk-test/) |
-| /idea-risk-test/ | pass | Failory | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Steve Blank | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Stop rule | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | What this page will not claim | [link](https://agentsiteops.com/idea-risk-test/) |
 | /plan/ | pass | HTTP 200 | [link](https://agentsiteops.com/plan/) |
@@ -364,11 +364,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-68 First-input architecture and evidence-basis reset | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-67 Main-path information architecture reset | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-66 Single-input idea interpreter and language switch | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-65 Free idea risk test window | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-64 Review status response loop | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-63 Route File proof flow pass | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 
