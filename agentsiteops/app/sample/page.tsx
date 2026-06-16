@@ -348,6 +348,10 @@ export default function Page() {
               <ShieldCheck aria-hidden="true" size={17} />
               Delivery gate
             </Link>
+            <Link prefetch={false} className="secondary-action" href="/review-status/">
+              <ClipboardList aria-hidden="true" size={17} />
+              Review status
+            </Link>
             <Link prefetch={false} className="secondary-action" href="/reports/route-basis/">
               <ShieldCheck aria-hidden="true" size={17} />
               Route basis

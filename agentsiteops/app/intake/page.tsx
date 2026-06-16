@@ -150,6 +150,10 @@ export default function Page() {
               <ClipboardList aria-hidden="true" size={17} />
               Draft plan first
             </Link>
+            <Link prefetch={false} className="secondary-action" href="/review-status/">
+              <FileText aria-hidden="true" size={17} />
+              Review response states
+            </Link>
             <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
               View output
@@ -347,11 +351,17 @@ export default function Page() {
               <AlertTriangle aria-hidden="true" size={16} />
               Secrets, passwords, account recovery details, or private customer data in the intake.
             </li>
-            <li>
-              <AlertTriangle aria-hidden="true" size={16} />
-              Requests for guaranteed traffic, ranking, revenue, customers, approvals, or unsafe automation.
-            </li>
-          </ul>
+          <li>
+            <AlertTriangle aria-hidden="true" size={16} />
+            Requests for guaranteed traffic, ranking, revenue, customers, approvals, or unsafe automation.
+          </li>
+        </ul>
+          <div className="hero-actions">
+            <Link prefetch={false} className="secondary-action" href="/review-status/">
+              <FileText aria-hidden="true" size={17} />
+              Inspect response states
+            </Link>
+          </div>
         </div>
       </section>
     </main>

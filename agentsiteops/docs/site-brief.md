@@ -12,6 +12,8 @@ The core product is not a generic SEO blog, AI research wrapper, prompt library,
 
 Every core product page should show the client state: what the customer can do now, what the website can handle automatically, what requires manual/operator review, what visible result comes next, and what condition triggers repair or stop.
 
+Receipt and acceptance must stay separate. Receipt means the packet exists. Acceptance means a manual/operator review has approved the request for Scope Lock. A submitted packet can return ready, repair, blocked, or not delivery before any research carrier or Route File synthesis starts.
+
 Every proof page should show the full route chain when possible: messy input, repair before scope lock, accepted or blocked state, evidence ledger, first proof asset, validation channel, stop rule, and what remains unproven.
 
 The final Route File must contain:
@@ -68,6 +70,7 @@ Research-to-Route File.
 | `/` | Home | State the Route Project OS and route visitors into Plan, Intake, Workbench, and Sample. |
 | `/plan/` | Product workbench | Let visitors draft a project plan locally before intake. |
 | `/intake/` | Product workbench | Turn the draft into a copy-ready review packet and explain ready, repair, blocked, or not-delivery states. |
+| `/review-status/` | Product state | Show the valid response states after intake: ready, repair, blocked, or not delivery. |
 | `/scope/` | Product state | Freeze the route question, source boundary, blocked claims, candidate routes, non-goals, and stop condition before research. |
 | `/execution/` | Product workbench | Show the operating path from intake through coverage gate and Route File output. |
 | `/sample/` | Example | Show the Route File output structure and proof cases. |

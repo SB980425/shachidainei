@@ -359,6 +359,7 @@ async function main() {
     "Selected draft route",
     "Copy plan brief",
     "Download route draft",
+    "Review states",
     "Handoff state",
     "Plan Studio tells the visitor what happens before intake.",
     "Visible result",
@@ -467,7 +468,8 @@ async function main() {
     "The final handoff still points to a validation action.",
     "Next: Validation",
     "First proof asset",
-    "Not proven"
+    "Not proven",
+    "Review status"
   ]);
   await checkPage("/compare/", ["Compare AgentSiteOps before buying", "Generic AI chat", "Do not buy for these jobs"]);
   await checkPage("/compare/", ["Common objections before payment", "I need someone to build it, not just advise."]);
@@ -483,11 +485,23 @@ async function main() {
     "Manual delivery process",
     "No saved Plan Studio draft",
     "Start in Plan Studio",
+    "Review response states",
     "After sending",
     "Intake separates submission from acceptance.",
     "Next: Scope Lock",
     "Operator review is manual",
     "Research carrier is chosen after manual acceptance"
+  ]);
+  await checkPage("/review-status/", [
+    "After intake, the response is a state decision.",
+    "Submission creates a review state, not automatic delivery.",
+    "Ready",
+    "Repair",
+    "Blocked",
+    "Not delivery",
+    "Example: from submitted packet to response.",
+    "What is not automatic",
+    "A response state must come before research."
   ]);
   await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Current objective self-score", "Score update rules", "52/100", "Claims not made"]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);
@@ -535,11 +549,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-64 Review status response loop",
     "M4-63 Route File proof flow pass",
     "M4-62 Dedicated scope lock state",
     "M4-61 Client state continuity layer",
-    "M4-60 Route Project OS architecture pass",
-    "M4-59 Proof cases and intake handoff cleanup"
+    "M4-60 Route Project OS architecture pass"
   ]);
 
   const report = renderReport(generatedAt);

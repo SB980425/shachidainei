@@ -1,18 +1,18 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-15T13:51:08.714Z
+- Generated: 2026-06-16T01:38:20.233Z
 - Status: baseline_ready
-- Routes: 64
-- Technical SEO pass routes: 64
+- Routes: 65
+- Technical SEO pass routes: 65
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 64 routes
-- Bing status: pending export for 64 routes
+- GSC status: pending export for 65 routes
+- Bing status: pending export for 65 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: aggregate endpoint waiting for events on 57 routes
+- Onsite event status: aggregate endpoint waiting for events on 58 routes
 - Onsite routes with aggregate events: 7
 - Analytics summary status missing or blocked: 0
 - Analytics threshold snapshot: sample views 1, source-link clicks 0, PayPal CTA clicks 0
@@ -81,6 +81,7 @@
 | /starter-review/ | commerce | launch_blueprint | pass | site_pass | keep | Measure Fit Review PayPal clicks, confirmed payments, usable intake, verdict outcomes, and upsell or stop decisions |
 | /buy/ | commerce | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /intake/ | intake | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /review-status/ | product_state | launch_blueprint | pass | site_pass | keep | Measure review status views, state tab selections, response copy events, scope exits, plan repair exits, blocked example exits, and delivery gate exits |
 | /terms/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
 | /refund-policy/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
 | /disclaimer/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |

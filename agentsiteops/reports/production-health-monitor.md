@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-15T13:50:09.615Z
+- Generated: 2026-06-16T01:37:52.814Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 325
+- Checks: 340
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 64 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 65 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -72,6 +72,7 @@
 | /plan/ | pass | Selected draft route | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Copy plan brief | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Download route draft | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Review states | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Handoff state | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Plan Studio tells the visitor what happens before intake. | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Visible result | [link](https://agentsiteops.com/plan/) |
@@ -202,6 +203,7 @@
 | /sample/ | pass | Next: Validation | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | First proof asset | [link](https://agentsiteops.com/sample/) |
 | /sample/ | pass | Not proven | [link](https://agentsiteops.com/sample/) |
+| /sample/ | pass | Review status | [link](https://agentsiteops.com/sample/) |
 | /compare/ | pass | HTTP 200 | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | HTML title exists | [link](https://agentsiteops.com/compare/) |
 | /compare/ | pass | canonical points to production URL | [link](https://agentsiteops.com/compare/) |
@@ -245,11 +247,24 @@
 | /intake/ | pass | Manual delivery process | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | No saved Plan Studio draft | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Start in Plan Studio | [link](https://agentsiteops.com/intake/) |
+| /intake/ | pass | Review response states | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | After sending | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Intake separates submission from acceptance. | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Next: Scope Lock | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Operator review is manual | [link](https://agentsiteops.com/intake/) |
 | /intake/ | pass | Research carrier is chosen after manual acceptance | [link](https://agentsiteops.com/intake/) |
+| /review-status/ | pass | HTTP 200 | [link](https://agentsiteops.com/review-status/) |
+| /review-status/ | pass | HTML title exists | [link](https://agentsiteops.com/review-status/) |
+| /review-status/ | pass | canonical points to production URL | [link](https://agentsiteops.com/review-status/) |
+| /review-status/ | pass | After intake, the response is a state decision. | [link](https://agentsiteops.com/review-status/) |
+| /review-status/ | pass | Submission creates a review state, not automatic delivery. | [link](https://agentsiteops.com/review-status/) |
+| /review-status/ | pass | Ready | [link](https://agentsiteops.com/review-status/) |
+| /review-status/ | pass | Repair | [link](https://agentsiteops.com/review-status/) |
+| /review-status/ | pass | Blocked | [link](https://agentsiteops.com/review-status/) |
+| /review-status/ | pass | Not delivery | [link](https://agentsiteops.com/review-status/) |
+| /review-status/ | pass | Example: from submitted packet to response. | [link](https://agentsiteops.com/review-status/) |
+| /review-status/ | pass | What is not automatic | [link](https://agentsiteops.com/review-status/) |
+| /review-status/ | pass | A response state must come before research. | [link](https://agentsiteops.com/review-status/) |
 | /evidence/ | pass | HTTP 200 | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | HTML title exists | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | canonical points to production URL | [link](https://agentsiteops.com/evidence/) |
@@ -331,11 +346,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-64 Review status response loop | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-63 Route File proof flow pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-62 Dedicated scope lock state | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-61 Client state continuity layer | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-60 Route Project OS architecture pass | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-59 Proof cases and intake handoff cleanup | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

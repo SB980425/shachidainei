@@ -1,12 +1,12 @@
 # Weekly Growth Review
 
-- Date: 2026-06-15
+- Date: 2026-06-16
 - Review type: production baseline evidence review
 - Decision: continue evidence collection; do not scale content clusters yet
 
 ## Conclusion
 
-- The production site has 64 indexable routes with technical SEO passing.
+- The production site has 65 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, AI referrals, and revenue evidence are still pending exports or records; the first-party aggregate endpoint is active but currently waiting for events.
@@ -16,13 +16,13 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 64 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 64/64 routes pass |
+| Route registry | docs/routes.json | 65 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 65/65 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
-| IndexNow | latest command output | 64 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 65 URLs submitted successfully in current deployment cycle |
 | Event layer | /api/events/summary | First-party aggregate endpoint active; sample views 1, source-link clicks 0, PayPal CTA clicks 0 |
 
 ## Unverified
@@ -99,6 +99,7 @@
 | /starter-review/ | commerce | launch_blueprint | pass | site_pass | keep | Measure Fit Review PayPal clicks, confirmed payments, usable intake, verdict outcomes, and upsell or stop decisions |
 | /buy/ | commerce | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
 | /intake/ | intake | launch_blueprint | pass | site_pass | keep | Measure PayPal clicks, intake submissions, and qualified replies |
+| /review-status/ | product_state | launch_blueprint | pass | site_pass | keep | Measure review status views, state tab selections, response copy events, scope exits, plan repair exits, blocked example exits, and delivery gate exits |
 | /terms/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
 | /refund-policy/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |
 | /disclaimer/ | trust_page | trust | pass | site_pass | keep | Review after payment, privacy, or service scope changes |

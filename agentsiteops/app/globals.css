@@ -13410,8 +13410,8 @@ body {
     grid-column: 1 / -1 !important;
     display: flex !important;
     flex-wrap: nowrap !important;
-    width: calc(100vw - 20px) !important;
-    max-width: calc(100vw - 20px) !important;
+    width: calc(100vw - 35px) !important;
+    max-width: calc(100vw - 35px) !important;
     min-width: 0 !important;
     gap: 8px !important;
     overflow-x: auto !important;
@@ -15163,6 +15163,282 @@ body {
   min-height: 0;
 }
 
+.review-status-page {
+  background:
+    linear-gradient(180deg, rgba(5, 8, 9, 0.98), rgba(8, 13, 14, 0.98)),
+    var(--foundry-bg);
+}
+
+.review-status-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(120deg, rgba(8, 13, 14, 0.97), rgba(19, 27, 27, 0.94) 46%, rgba(34, 17, 12, 0.94)),
+    repeating-linear-gradient(90deg, rgba(246, 241, 232, 0.035) 0 1px, transparent 1px 44px);
+}
+
+.review-status-hero::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  z-index: -1;
+  border: 1px solid rgba(246, 241, 232, 0.08);
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(55, 217, 140, 0.08), transparent 32%),
+    linear-gradient(315deg, rgba(255, 104, 70, 0.08), transparent 34%);
+}
+
+.review-status-hero .decision-card {
+  align-self: center;
+  height: auto;
+  min-height: 0;
+  border-color: rgba(55, 217, 140, 0.24);
+  background:
+    linear-gradient(180deg, rgba(55, 217, 140, 0.1), rgba(247, 242, 234, 0.035)),
+    rgba(8, 13, 14, 0.86);
+}
+
+.review-status-page .customer-response-lifecycle.is-compact {
+  margin-top: 18px;
+}
+
+.review-status-console {
+  display: grid;
+  gap: 18px;
+  width: min(1180px, calc(100% - 40px));
+  margin: 18px auto 0;
+  border: 1px solid rgba(226, 231, 238, 0.12);
+  border-radius: 22px;
+  background:
+    linear-gradient(135deg, rgba(247, 242, 234, 0.055), rgba(247, 242, 234, 0.018)),
+    rgba(8, 13, 14, 0.94);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+  color: var(--foundry-text);
+  padding: clamp(18px, 3vw, 28px);
+}
+
+.review-status-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: start;
+}
+
+.review-status-head span,
+.review-state-card > div span,
+.review-example-grid span {
+  color: var(--foundry-green);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.review-status-head h2 {
+  max-width: 760px;
+  margin: 8px 0 0;
+  color: var(--foundry-text);
+  font-size: clamp(28px, 3.2vw, 46px);
+  line-height: 1.03;
+}
+
+.review-status-head p,
+.review-status-console p,
+.review-status-console li {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.72);
+  line-height: 1.58;
+}
+
+.review-status-head p {
+  max-width: 740px;
+  margin-top: 12px;
+}
+
+.review-status-head button,
+.review-state-tabs button,
+.review-state-card a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  border: 1px solid rgba(226, 231, 238, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--foundry-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.review-status-head button:hover,
+.review-status-head button:focus-visible,
+.review-state-tabs button:hover,
+.review-state-tabs button:focus-visible,
+.review-state-card a:hover,
+.review-state-card a:focus-visible {
+  border-color: rgba(55, 217, 140, 0.42);
+  background: rgba(55, 217, 140, 0.1);
+  color: var(--foundry-text);
+  outline: none;
+}
+
+.review-state-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.review-state-tabs button {
+  min-width: 0;
+  min-height: 48px;
+}
+
+.review-state-tabs button.is-active {
+  border-color: rgba(255, 104, 70, 0.46);
+  background:
+    linear-gradient(180deg, rgba(255, 104, 70, 0.14), rgba(55, 217, 140, 0.07)),
+    rgba(255, 255, 255, 0.04);
+}
+
+.review-state-tabs svg,
+.review-status-head svg {
+  flex: 0 0 auto;
+  color: var(--foundry-green);
+}
+
+.review-state-body {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+  gap: 14px;
+}
+
+.review-state-card,
+.review-state-detail article,
+.review-example-grid article {
+  min-width: 0;
+  border: 1px solid rgba(226, 231, 238, 0.12);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(247, 242, 234, 0.06), rgba(247, 242, 234, 0.025)),
+    rgba(8, 13, 14, 0.82);
+}
+
+.review-state-card {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  padding: clamp(18px, 3vw, 24px);
+}
+
+.review-state-card > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.review-state-card > div svg {
+  color: var(--foundry-green);
+}
+
+.review-state-card h3,
+.review-state-detail h3,
+.review-example-grid h3 {
+  margin: 0;
+  color: var(--foundry-text);
+}
+
+.review-state-card h3 {
+  font-size: clamp(24px, 2.6vw, 34px);
+  line-height: 1.06;
+}
+
+.review-state-card a {
+  width: fit-content;
+  margin-top: 4px;
+  color: var(--foundry-text);
+  text-decoration: none;
+}
+
+.review-state-card.is-ready {
+  border-color: rgba(55, 217, 140, 0.34);
+  background:
+    linear-gradient(180deg, rgba(55, 217, 140, 0.14), rgba(247, 242, 234, 0.025)),
+    rgba(8, 13, 14, 0.86);
+}
+
+.review-state-card.is-repair {
+  border-color: rgba(255, 104, 70, 0.4);
+  background:
+    linear-gradient(180deg, rgba(255, 104, 70, 0.14), rgba(247, 242, 234, 0.025)),
+    rgba(8, 13, 14, 0.86);
+}
+
+.review-state-card.is-blocked,
+.review-state-card.is-not-delivery {
+  border-color: rgba(246, 241, 232, 0.22);
+  background:
+    linear-gradient(180deg, rgba(246, 241, 232, 0.075), rgba(255, 104, 70, 0.055)),
+    rgba(8, 13, 14, 0.9);
+}
+
+.review-state-card.is-repair > div span,
+.review-state-card.is-repair > div svg,
+.review-state-card.is-blocked > div svg,
+.review-state-card.is-not-delivery > div svg {
+  color: var(--foundry-coral);
+}
+
+.review-state-detail {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.review-state-detail article,
+.review-example-grid article {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 16px;
+}
+
+.review-state-detail svg {
+  color: var(--foundry-green);
+}
+
+.review-response-preview {
+  overflow: auto;
+  max-width: 100%;
+  max-height: 360px;
+  margin: 0;
+  border: 1px solid rgba(55, 217, 140, 0.18);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(55, 217, 140, 0.07), rgba(0, 0, 0, 0.12)),
+    rgba(5, 8, 9, 0.82);
+  color: rgba(246, 241, 232, 0.78);
+  font-size: 13px;
+  line-height: 1.7;
+  padding: 18px;
+  white-space: pre-wrap;
+}
+
+.review-example-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.review-boundary-section .compact-list {
+  margin-top: 14px;
+}
+
 .sample-route-page .section-head h2,
 .proof-case-page .section-head h2 {
   max-width: 720px;
@@ -15543,16 +15819,24 @@ body {
   .route-case-check-grid,
   .route-file-viewer-grid,
   .route-file-viewer-split,
+  .review-example-grid,
+  .review-state-detail,
   .scope-lock-grid,
   .scope-lock-matrix {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .review-status-head,
+  .review-state-body {
+    grid-template-columns: 1fr;
   }
 
   .route-file-viewer-head {
     grid-template-columns: 1fr;
   }
 
-  .route-file-viewer-tabs {
+  .route-file-viewer-tabs,
+  .review-state-tabs {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -15585,14 +15869,28 @@ body {
   .route-file-viewer-grid,
   .route-file-viewer-split,
   .route-file-viewer-tabs,
+  .review-example-grid,
+  .review-state-detail,
+  .review-state-tabs,
   .scope-lock-grid,
   .scope-lock-matrix {
     grid-template-columns: 1fr;
   }
 
-  .route-file-viewer {
+  .route-file-viewer,
+  .review-status-console {
     width: calc(100% - 20px);
     padding: 16px;
+  }
+
+  .review-status-head button,
+  .review-state-card a {
+    width: 100%;
+  }
+
+  .review-response-preview {
+    max-height: 300px;
+    font-size: 12px;
   }
 
   .route-file-viewer-body {

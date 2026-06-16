@@ -206,6 +206,10 @@ export default function PlanPage() {
             <ClipboardList aria-hidden="true" size={17} />
             Continue to intake
           </Link>
+          <Link prefetch={false} className="secondary-action" href="/review-status/">
+            <FileCheck2 aria-hidden="true" size={17} />
+            Review states
+          </Link>
           <Link prefetch={false} className="secondary-action" href="/how-it-works/">
             <SearchCheck aria-hidden="true" size={17} />
             Read method

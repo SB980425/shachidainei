@@ -546,6 +546,15 @@
       "changefreq": "monthly"
     },
     {
+      "path": "/review-status/",
+      "pageType": "product_state",
+      "template": "review_status",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.82,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/terms/",
       "pageType": "trust_page",
       "template": "policy",

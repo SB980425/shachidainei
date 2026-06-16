@@ -84,6 +84,7 @@ const pathViewEvents: Record<string, string[]> = {
   "/starter-review/": ["starter_review_view"],
   "/buy/": ["launch_blueprint_buy_view", "route_file_buy_view"],
   "/intake/": ["launch_blueprint_intake_view", "route_file_intake_view"],
+  "/review-status/": ["review_status_page_view"],
   "/thank-you/": ["launch_blueprint_thank_you_view", "route_file_thank_you_view"],
   "/terms/": ["trust_policy_view"],
   "/refund-policy/": ["trust_policy_view"],

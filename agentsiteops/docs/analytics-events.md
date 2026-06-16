@@ -34,6 +34,9 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `client_state_current_click` | Client Route State current-state link click | `label`, `type` |
 | `client_state_next_click` | Client Route State next-state link click | `label`, `type` |
 | `route_file_viewer_tab` | Sample Route File Viewer tab click | `label`, `type` |
+| `review_status_selected` | Review Status state tab click | `label`, `type` |
+| `review_response_copy` | Review Status sample response copy | `state`, `copied` |
+| `review_status_link_click` | Intake surface link to Review Status | `label`, `target`, `type` |
 | `intake_saved_plan_detected` | Intake packet builder detects a browser-local Plan Studio brief | `length` |
 | `how_it_works_view` | `/how-it-works/` load | `path` |
 | `scope_lock_view` | `/scope/` load | `path` |
@@ -98,6 +101,7 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `route_file_buy_view` | `/buy/` load | `path` |
 | `launch_blueprint_intake_view` | `/intake/` load | `path` |
 | `route_file_intake_view` | `/intake/` load | `path` |
+| `review_status_page_view` | `/review-status/` load | `path` |
 | `launch_blueprint_thank_you_view` | `/thank-you/` load | `path` |
 | `route_file_thank_you_view` | `/thank-you/` load | `path` |
 | `contact_page_view` | `/contact/` load | `path` |

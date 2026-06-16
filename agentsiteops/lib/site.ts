@@ -2562,6 +2562,7 @@ export const customRoutes = [
   "/starter-review/",
   "/buy/",
   "/intake/",
+  "/review-status/",
   "/terms/",
   "/refund-policy/",
   "/disclaimer/",

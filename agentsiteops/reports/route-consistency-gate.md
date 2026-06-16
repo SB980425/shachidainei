@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-15T13:51:21.666Z
+- Generated: 2026-06-16T01:38:28.981Z
 - Status: pass
-- Checks: 337
+- Checks: 342
 - Blockers: 0
 - Warnings: 0
 
@@ -13,9 +13,9 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 64 routes aligned |
-| page_registry | pass | 64 routes aligned |
-| page_review_actions | pass | 64 routes aligned |
+| site_routes | pass | 65 routes aligned |
+| page_registry | pass | 65 routes aligned |
+| page_review_actions | pass | 65 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /start/ has canonical slash shape |
@@ -136,6 +136,8 @@
 | route_index | pass | /buy/ index flag is true |
 | route_shape | pass | /intake/ has canonical slash shape |
 | route_index | pass | /intake/ index flag is true |
+| route_shape | pass | /review-status/ has canonical slash shape |
+| route_index | pass | /review-status/ index flag is true |
 | route_shape | pass | /terms/ has canonical slash shape |
 | route_index | pass | /terms/ index flag is true |
 | route_shape | pass | /refund-policy/ has canonical slash shape |
@@ -204,6 +206,7 @@
 | app_page | pass | /starter-review/ app page exists |
 | app_page | pass | /buy/ app page exists |
 | app_page | pass | /intake/ app page exists |
+| app_page | pass | /review-status/ app page exists |
 | app_page | pass | /terms/ app page exists |
 | app_page | pass | /refund-policy/ app page exists |
 | app_page | pass | /disclaimer/ app page exists |
@@ -273,6 +276,7 @@
 | analytics_allowlist | pass | route_file_buy_view is registered |
 | analytics_allowlist | pass | launch_blueprint_intake_view is registered |
 | analytics_allowlist | pass | route_file_intake_view is registered |
+| analytics_allowlist | pass | review_status_page_view is registered |
 | analytics_allowlist | pass | launch_blueprint_thank_you_view is registered |
 | analytics_allowlist | pass | route_file_thank_you_view is registered |
 | analytics_allowlist | pass | trust_policy_view is registered |
@@ -342,11 +346,12 @@
 | route_view_event | pass | /starter-review/ has view event |
 | route_view_event | pass | /buy/ has view event |
 | route_view_event | pass | /intake/ has view event |
+| route_view_event | pass | /review-status/ has view event |
 | route_view_event | pass | /terms/ has view event |
 | route_view_event | pass | /refund-policy/ has view event |
 | route_view_event | pass | /disclaimer/ has view event |
 | route_view_event | pass | /contact/ has view event |
-| growth_snapshot | pass | 64 routes aligned |
+| growth_snapshot | pass | 65 routes aligned |
 
 ## Blocking Issues
 

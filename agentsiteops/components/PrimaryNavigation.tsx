@@ -20,7 +20,7 @@ const navItems = [
     href: "/intake/",
     label: "Intake",
     Icon: FileCheck2,
-    match: ["/intake/", "/start/", "/contact/", "/thank-you/"]
+    match: ["/intake/", "/review-status/", "/start/", "/contact/", "/thank-you/"]
   },
   {
     href: "/execution/",

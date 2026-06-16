@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { ClipboardCheck, Copy, Mail } from "lucide-react";
+import { ClipboardCheck, Copy, FileCheck2, Mail } from "lucide-react";
 import { buildProjectIntakePacket } from "@/lib/intakePacket";
 import { launchProduct } from "@/lib/launch";
 
@@ -150,6 +151,16 @@ export function IntakePacketBuilder() {
               <Mail aria-hidden="true" size={16} />
               Open email
             </a>
+            <Link
+              prefetch={false}
+              className="secondary-action"
+              data-analytics-event="review_status_link_click"
+              data-analytics-label="intake_packet_review_status"
+              href="/review-status/"
+            >
+              <FileCheck2 aria-hidden="true" size={16} />
+              Review states
+            </Link>
           </div>
           <p className="intake-mail-note">
             Copy the packet first, then open email and paste it into the message body.

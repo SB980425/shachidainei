@@ -1,16 +1,16 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-15T13:46:46.384Z
+- Generated: 2026-06-16T01:37:08.260Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
-- Sitemap routes: 64
+- Sitemap routes: 65
 
 ## Summary
 
 | Check | Result |
 | --- | --- |
-| Routes passed | 64 |
+| Routes passed | 65 |
 | Routes failed | 0 |
 | Blocking issues | 0 |
 | Warnings | 0 |
@@ -21,7 +21,7 @@
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | / | pass | 200 | Research-to-Route File | https://agentsiteops.com/ | 1 | 24 | pass | - |
 | /start/ | pass | 200 | Start with AgentSiteOps \| AgentSiteOps | https://agentsiteops.com/start/ | 1 | 23 | pass | - |
-| /plan/ | pass | 200 | Plan Studio \| AgentSiteOps | https://agentsiteops.com/plan/ | 1 | 23 | pass | - |
+| /plan/ | pass | 200 | Plan Studio \| AgentSiteOps | https://agentsiteops.com/plan/ | 1 | 24 | pass | - |
 | /how-it-works/ | pass | 200 | How AgentSiteOps Works \| AgentSiteOps | https://agentsiteops.com/how-it-works/ | 1 | 24 | pass | - |
 | /scope/ | pass | 200 | Scope Lock \| AgentSiteOps | https://agentsiteops.com/scope/ | 1 | 23 | pass | - |
 | /execution/ | pass | 200 | Execution Workbench \| AgentSiteOps | https://agentsiteops.com/execution/ | 1 | 24 | pass | - |
@@ -45,7 +45,7 @@
 | /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 25 | pass | - |
 | /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 26 | pass | - |
 | /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 26 | pass | - |
-| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 64 | pass | - |
+| /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 65 | pass | - |
 | /reports/route-basis/ | pass | 200 | Route Basis Report \| AgentSiteOps | https://agentsiteops.com/reports/route-basis/ | 1 | 23 | pass | - |
 | /reports/agentsiteops-route-run/ | pass | 200 | AgentSiteOps Route Run \| AgentSiteOps | https://agentsiteops.com/reports/agentsiteops-route-run/ | 1 | 21 | pass | - |
 | /reports/client-route-workflow/ | pass | 200 | Client Route Workflow \| AgentSiteOps | https://agentsiteops.com/reports/client-route-workflow/ | 1 | 24 | pass | - |
@@ -73,11 +73,12 @@
 | /examples/route-file-from-messy-project/ | pass | 200 | Messy Project to Route File Example \| AgentSiteOps | https://agentsiteops.com/examples/route-file-from-messy-project/ | 1 | 23 | pass | - |
 | /examples/blocked-intake/ | pass | 200 | Blocked Intake Example \| AgentSiteOps | https://agentsiteops.com/examples/blocked-intake/ | 1 | 22 | pass | - |
 | /examples/fit-review-sample/ | pass | 200 | Fit Review Sample \| AgentSiteOps | https://agentsiteops.com/examples/fit-review-sample/ | 1 | 23 | pass | - |
-| /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 27 | pass | - |
+| /sample/ | pass | 200 | Sample Route File \| AgentSiteOps | https://agentsiteops.com/sample/ | 1 | 28 | pass | - |
 | /compare/ | pass | 200 | Compare Route File Options \| AgentSiteOps | https://agentsiteops.com/compare/ | 1 | 23 | pass | - |
 | /starter-review/ | pass | 200 | Fit Review \| AgentSiteOps | https://agentsiteops.com/starter-review/ | 1 | 22 | pass | - |
 | /buy/ | pass | 200 | Route File Purchase Gate \| AgentSiteOps | https://agentsiteops.com/buy/ | 1 | 23 | pass | - |
-| /intake/ | pass | 200 | Project Intake \| AgentSiteOps | https://agentsiteops.com/intake/ | 1 | 23 | pass | - |
+| /intake/ | pass | 200 | Project Intake \| AgentSiteOps | https://agentsiteops.com/intake/ | 1 | 24 | pass | - |
+| /review-status/ | pass | 200 | Review Status \| AgentSiteOps | https://agentsiteops.com/review-status/ | 1 | 24 | pass | - |
 | /terms/ | pass | 200 | Service Terms \| AgentSiteOps | https://agentsiteops.com/terms/ | 1 | 22 | pass | - |
 | /refund-policy/ | pass | 200 | Refund Policy \| AgentSiteOps | https://agentsiteops.com/refund-policy/ | 1 | 21 | pass | - |
 | /disclaimer/ | pass | 200 | Disclaimer \| AgentSiteOps | https://agentsiteops.com/disclaimer/ | 1 | 21 | pass | - |
