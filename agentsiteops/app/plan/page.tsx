@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  ArrowRight,
   CheckCircle2,
   ClipboardList,
   FileCheck2,
   FileText,
   Gauge,
-  SearchCheck,
   ShieldCheck
 } from "lucide-react";
 import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
@@ -100,14 +98,6 @@ export default function PlanPage() {
             <Link prefetch={false} className="secondary-action" href="/idea-risk-test/">
               <Gauge aria-hidden="true" size={17} />
               Run free risk test
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/sample/">
-              <FileText aria-hidden="true" size={17} />
-              View final sample
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
-              <ShieldCheck aria-hidden="true" size={17} />
-              Delivery boundary
             </Link>
           </div>
         </div>
@@ -215,18 +205,6 @@ export default function PlanPage() {
           <Link prefetch={false} className="primary-action" href="/intake/">
             <ClipboardList aria-hidden="true" size={17} />
             Continue to intake
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/review-status/">
-            <FileCheck2 aria-hidden="true" size={17} />
-            Review states
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/how-it-works/">
-            <SearchCheck aria-hidden="true" size={17} />
-            Read method
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/sample/">
-            <ArrowRight aria-hidden="true" size={17} />
-            Inspect sample
           </Link>
         </div>
       </section>

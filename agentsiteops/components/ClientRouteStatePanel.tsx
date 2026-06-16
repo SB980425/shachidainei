@@ -112,7 +112,7 @@ export function ClientRouteStatePanel({
           data-analytics-label={stage.id}
           data-analytics-type="route_project"
         >
-          Open current state
+          Current stage
         </Link>
         <Link
           prefetch={false}
@@ -122,7 +122,7 @@ export function ClientRouteStatePanel({
           data-analytics-label={`${stage.id}_to_${nextStage.id}`}
           data-analytics-type="route_project"
         >
-          {nextStage.id === stage.id ? "Review validation" : `Next: ${nextStage.label}`}
+          {nextStage.id === stage.id ? "Review validation" : `Next recommended: ${nextStage.label}`}
           <ArrowRight aria-hidden="true" size={16} />
         </Link>
       </div>

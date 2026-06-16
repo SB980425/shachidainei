@@ -12,6 +12,50 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-16",
+    step: "M4-67 Main-path information architecture reset",
+    status: "completed",
+    keyPoints: [
+      "Rebuilt the public interaction architecture around one visible five-step path: Test, Plan, Submit, Status, and Output.",
+      "Added a global Site Journey Bar so every page states whether it is the main path, reference material, output proof, policy context, or support content.",
+      "Changed the header navigation to only show the main product path and made the header action resolve to the next recommended step for the current page.",
+      "Locked future route stages in lifecycle rails so visitors cannot accidentally jump from an early plan page into later research or delivery states without context.",
+      "Reduced competing CTAs on the homepage, Plan Studio, Intake, and Review Status so each surface has one clear primary action and one support action."
+    ],
+    aiAngle:
+      "AI and search readers can now describe AgentSiteOps as a guided product workflow instead of a collection of loosely related tools: each page is either a main-path state, output proof, or support reference.",
+    files: [
+      "lib/siteArchitecture.ts",
+      "components/SiteJourneyBar.tsx",
+      "components/PrimaryNavigation.tsx",
+      "components/RouteFlowBridge.tsx",
+      "components/RouteStageHeader.tsx",
+      "components/RouteProjectLifecycle.tsx",
+      "components/ClientRouteStatePanel.tsx",
+      "app/layout.tsx",
+      "app/page.tsx",
+      "app/plan/page.tsx",
+      "app/intake/page.tsx",
+      "app/review-status/page.tsx",
+      "app/globals.css",
+      "scripts/production-health-monitor.mjs"
+    ],
+    verification: [
+      "`npm run typecheck` pass",
+      "`npm run lint` pass",
+      "`npm run build` pass",
+      "`npm run routes:gate` pass",
+      "`npm run links:gate` pass",
+      "`npm run analytics:gate` pass",
+      "`npm run commercial:gate` pass",
+      "`npm run growth:snapshot` pass",
+      "`npm run seo:ci` pass",
+      "Browser local check pass: Home -> Free Idea Risk Test -> Plan follows the main path, reference pages return to the main path, future stage links are locked, and desktop/mobile console logs have no errors"
+    ],
+    next:
+      "Move the same main-path language into older support pages and progressively reduce duplicated explanations that still exist below the first viewport."
+  },
+  {
+    date: "2026-06-16",
     step: "M4-66 Single-input idea interpreter and language switch",
     status: "completed",
     keyPoints: [

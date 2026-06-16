@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Activity,
   ArrowRight,
   CheckCircle2,
   ClipboardList,
@@ -176,18 +175,12 @@ const proofLayerCards = [
 ];
 
 const supportLinks = [
-  { href: "/idea-risk-test/", label: "Free Idea Risk Test" },
-  { href: "/plan/", label: "Plan Studio" },
-  { href: "/start/", label: "Start here" },
-  { href: "/execution/", label: "Execution workbench" },
   { href: "/how-it-works/", label: "How it works" },
-  { href: "/reports/client-route-workflow/", label: "Client route workflow" },
   { href: "/delivery-gate/", label: "Delivery gate" },
   { href: "/templates/route-research-prompt-pack/", label: "Research prompt pack" },
   { href: "/reports/route-basis/", label: "Route basis report" },
-  { href: "/methodology/route-selection/", label: "Route selection methodology" },
   { href: "/launch-kit/", label: "Launch Kit" },
-  { href: "/sample/", label: "Sample Route File" }
+  { href: "/updates/", label: "Updates" }
 ];
 
 export default function HomePage() {
@@ -228,13 +221,9 @@ export default function HomePage() {
               <Gauge aria-hidden="true" size={17} />
               Start free test
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/plan/">
-              <ClipboardList aria-hidden="true" size={17} />
-              Draft plan after test
-            </Link>
             <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
-              View sample Route File
+              See final output shape
             </Link>
           </div>
           <div className="frontstage-hero-flow" aria-label="AgentSiteOps route flow">
@@ -340,12 +329,12 @@ export default function HomePage() {
               </article>
             ))}
             <div className="home-output-actions">
-              <Link prefetch={false} href="/plan/">
-                Draft plan
+              <Link prefetch={false} href="/idea-risk-test/">
+                Start main path
                 <ArrowRight aria-hidden="true" size={15} />
               </Link>
-              <Link prefetch={false} href="/execution/">
-                Workbench
+              <Link prefetch={false} href="/sample/">
+                Inspect output
                 <ArrowRight aria-hidden="true" size={15} />
               </Link>
             </div>
@@ -425,8 +414,8 @@ export default function HomePage() {
           <span>Supporting system</span>
           <h2>The old templates stay. The workbench connects them.</h2>
           <p>
-            The method library remains available for audit, SEO, and high-intent review.
-            The execution workbench now acts as the simpler operating layer above it.
+            These pages explain the method after the visitor understands the main path.
+            They are no longer positioned as the next task for a new project.
           </p>
           <dl>
             <div>
@@ -482,17 +471,9 @@ export default function HomePage() {
             <ClipboardList aria-hidden="true" size={17} />
             Draft your plan
           </Link>
-          <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
-            <FileCheck2 aria-hidden="true" size={17} />
-            Check delivery gate
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/execution/">
-            <Activity aria-hidden="true" size={17} />
-            Open workbench
-          </Link>
-          <Link prefetch={false} className="secondary-action" href="/reports/client-route-workflow/">
+          <Link prefetch={false} className="secondary-action" href="/idea-risk-test/">
             <Gauge aria-hidden="true" size={17} />
-            Client workflow
+            Start with risk test
           </Link>
         </div>
       </section>

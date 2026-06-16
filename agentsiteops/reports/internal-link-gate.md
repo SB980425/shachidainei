@@ -1,6 +1,6 @@
 # Internal Link Gate
 
-- Generated: 2026-06-16T13:24:52.434Z
+- Generated: 2026-06-16T14:21:03.343Z
 - Status: pass
 - Checks: 70
 - Blockers: 0
@@ -35,11 +35,11 @@
 | internal_link | pass | /evidence/ | answers\when-to-stop-an-ai-website-idea\index.html, checklists\launch-validation-decision-gate\index.html, examples\agentsiteops-self-audit\index.html |
 | internal_link | pass | /examples/agentsiteops-self-audit/ | reports\route-evidence-dashboard\index.html, services\ai-website-opportunity-audit\index.html, templates\evidence-ledger-template\index.html |
 | internal_link | pass | /examples/ai-service-route-file/ | examples\blocked-intake\index.html, reports\route-evidence-dashboard\index.html, sample\index.html |
-| internal_link | pass | /examples/blocked-intake/ | examples\ai-service-route-file\index.html, reports\route-evidence-dashboard\index.html, review-status\index.html |
+| internal_link | pass | /examples/blocked-intake/ | examples\ai-service-route-file\index.html, reports\route-evidence-dashboard\index.html, sample\index.html |
 | internal_link | pass | /examples/fit-review-sample/ | answers\validate-ai-service-offer-before-building\index.html, checklists\launch-validation-decision-gate\index.html, guides\48-hour-exposure-sprint\index.html |
 | internal_link | pass | /examples/route-file-from-messy-project/ | reports\route-evidence-dashboard\index.html, sample\index.html |
 | internal_link | pass | /execution/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
-| internal_link | pass | /guides/48-hour-exposure-sprint/ | answers\when-to-stop-an-ai-website-idea\index.html, delivery-gate\index.html, examples\route-file-from-messy-project\index.html |
+| internal_link | pass | /guides/48-hour-exposure-sprint/ | answers\when-to-stop-an-ai-website-idea\index.html, examples\route-file-from-messy-project\index.html, guides\first-traffic-system\index.html |
 | internal_link | pass | /guides/ai-citation-grounding-metrics/ | checklists\ai-citation-readiness\index.html, checklists\programmatic-seo-gate\index.html, guides\small-website-ai-visibility-metrics\index.html |
 | internal_link | pass | /guides/ai-search-friendly-robots-txt/ | checklists\ai-citation-readiness\index.html, reports\route-evidence-dashboard\index.html |
 | internal_link | pass | /guides/first-traffic-system/ | answers\when-to-stop-an-ai-website-idea\index.html, guides\48-hour-exposure-sprint\index.html, reports\route-evidence-dashboard\index.html |
@@ -48,7 +48,7 @@
 | internal_link | pass | /guides/small-website-ai-visibility-metrics/ | checklists\ai-citation-readiness\index.html, checklists\gsc-bing-indexnow-launch\index.html, evidence\index.html |
 | internal_link | pass | /how-it-works/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /idea-risk-test/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
-| internal_link | pass | /intake/ | buy\index.html, contact\index.html, delivery-gate\index.html |
+| internal_link | pass | /intake/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /launch-kit/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /methodology/route-selection/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /methodology/website-opportunity-scoring/ | checklists\programmatic-seo-gate\index.html, guides\ai-citation-grounding-metrics\index.html, reports\route-evidence-dashboard\index.html |
@@ -60,7 +60,7 @@
 | internal_link | pass | /reports/client-route-workflow/ | checklists\route-file-delivery-gate\index.html, delivery-gate\index.html, execution\index.html |
 | internal_link | pass | /reports/route-basis/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /reports/route-evidence-dashboard/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
-| internal_link | pass | /review-status/ | idea-risk-test\index.html, intake\index.html, plan\index.html |
+| internal_link | pass | /review-status/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /sample/ | 404\index.html, 404.html, ai-website-operating-system\index.html |
 | internal_link | pass | /scope/ | delivery-gate\index.html, examples\route-file-from-messy-project\index.html, execution\index.html |
 | internal_link | pass | /services/ai-website-opportunity-audit/ | examples\agentsiteops-self-audit\index.html, reports\route-evidence-dashboard\index.html, tools\audit-scope-builder\index.html |

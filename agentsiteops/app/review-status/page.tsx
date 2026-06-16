@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  ArrowRight,
   CheckCircle2,
   ClipboardList,
   FileCheck2,
-  FileText,
   Gauge,
   ShieldCheck
 } from "lucide-react";
@@ -97,17 +95,9 @@ export default function ReviewStatusPage() {
               <FileCheck2 aria-hidden="true" size={17} />
               Inspect states
             </a>
-            <Link prefetch={false} className="secondary-action" href="/idea-risk-test/">
-              <Gauge aria-hidden="true" size={17} />
-              Test idea risk
-            </Link>
             <Link prefetch={false} className="secondary-action" href="/intake/">
               <ClipboardList aria-hidden="true" size={17} />
-              Build intake
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/sample/">
-              <FileText aria-hidden="true" size={17} />
-              View Route File
+              Back to submission
             </Link>
           </div>
         </div>
@@ -204,14 +194,6 @@ export default function ReviewStatusPage() {
             <Link prefetch={false} className="primary-action" href="/scope/">
               <CheckCircle2 aria-hidden="true" size={17} />
               Scope Lock
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/examples/blocked-intake/">
-              <ShieldCheck aria-hidden="true" size={17} />
-              Blocked example
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/delivery-gate/">
-              Delivery Gate
-              <ArrowRight aria-hidden="true" size={16} />
             </Link>
           </div>
         </div>

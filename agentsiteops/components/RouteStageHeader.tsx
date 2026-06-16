@@ -30,21 +30,33 @@ export function RouteStageHeader({ current, title, body }: RouteStageHeaderProps
         {routeProjectStages.map((stage, index) => {
           const isCurrent = stage.id === current;
           const isPassed = index < currentIndex;
-
-          return (
-            <Link
-              prefetch={false}
-              className={`${isCurrent ? "is-current" : ""} ${isPassed ? "is-passed" : ""}`}
-              href={stage.href}
-              key={stage.id}
-            >
+          const isNext = index === currentIndex + 1;
+          const canOpen = isPassed || isCurrent || isNext;
+          const className = `${isCurrent ? "is-current" : ""} ${isPassed ? "is-passed" : ""} ${!canOpen ? "is-locked" : ""}`;
+          const content = (
+            <>
               {isPassed ? (
                 <CheckCircle2 aria-hidden="true" size={14} />
               ) : (
                 <span>{String(index + 1).padStart(2, "0")}</span>
               )}
               <strong>{stage.label}</strong>
+            </>
+          );
+
+          return canOpen ? (
+            <Link
+              prefetch={false}
+              className={className}
+              href={stage.href}
+              key={stage.id}
+            >
+              {content}
             </Link>
+          ) : (
+            <span className={className} aria-disabled="true" key={stage.id}>
+              {content}
+            </span>
           );
         })}
       </div>

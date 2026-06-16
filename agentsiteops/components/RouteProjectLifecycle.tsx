@@ -60,14 +60,11 @@ export function RouteProjectLifecycle({
           const Icon = iconMap[stage.icon];
           const isCurrent = stage.id === current;
           const isPassed = index < safeIndex;
-
-          return (
-            <Link
-              prefetch={false}
-              className={`${isCurrent ? "is-current" : ""} ${isPassed ? "is-passed" : ""}`}
-              href={stage.href}
-              key={stage.id}
-            >
+          const isNext = index === safeIndex + 1;
+          const canOpen = isPassed || isCurrent || isNext;
+          const className = `${isCurrent ? "is-current" : ""} ${isPassed ? "is-passed" : ""} ${!canOpen ? "is-locked" : ""}`;
+          const content = (
+            <>
               <div>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <Icon aria-hidden="true" size={18} />
@@ -75,7 +72,22 @@ export function RouteProjectLifecycle({
               <strong>{stage.label}</strong>
               <p>{stage.title}</p>
               <small>{stage.output}</small>
+            </>
+          );
+
+          return canOpen ? (
+            <Link
+              prefetch={false}
+              className={className}
+              href={stage.href}
+              key={stage.id}
+            >
+              {content}
             </Link>
+          ) : (
+            <span className={className} aria-disabled="true" key={stage.id}>
+              {content}
+            </span>
           );
         })}
       </div>

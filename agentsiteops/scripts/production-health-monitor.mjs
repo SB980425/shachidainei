@@ -377,7 +377,7 @@ async function main() {
     "Selected draft route",
     "Copy plan brief",
     "Download route draft",
-    "Review states",
+    "Next recommended: Intake",
     "Handoff state",
     "Plan Studio tells the visitor what happens before intake.",
     "Visible result",
@@ -389,7 +389,6 @@ async function main() {
     "The research brief needs six visible boundaries.",
     "The accepted packet can only move in three directions.",
     "The research tool can change; the evidence standard cannot.",
-    "Next: Research Run",
     "Continue to research"
   ]);
   await checkPage("/execution/", [
@@ -397,7 +396,7 @@ async function main() {
     "Run the Route File workflow before expanding the site.",
     "The workbench shows what is checked before synthesis.",
     "Stop or repair when",
-    "Next: Route File"
+    "Next recommended: Route File"
   ]);
   await checkPage("/templates/route-research-prompt-pack/", [
     "Carrier-neutral research plan",
@@ -484,7 +483,7 @@ async function main() {
     "Validation",
     "Boundary",
     "The final handoff still points to a validation action.",
-    "Next: Validation",
+    "Next recommended: Validation",
     "First proof asset",
     "Not proven",
     "Review status"
@@ -503,10 +502,10 @@ async function main() {
     "Manual delivery process",
     "No saved Plan Studio draft",
     "Start in Plan Studio",
-    "Review response states",
+    "Submission is visible",
     "After sending",
     "Intake separates submission from acceptance.",
-    "Next: Scope Lock",
+    "Next recommended: Scope Lock",
     "Operator review is manual",
     "Research carrier is chosen after manual acceptance"
   ]);
@@ -567,11 +566,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-67 Main-path information architecture reset",
     "M4-66 Single-input idea interpreter and language switch",
     "M4-65 Free idea risk test window",
     "M4-64 Review status response loop",
-    "M4-63 Route File proof flow pass",
-    "M4-62 Dedicated scope lock state"
+    "M4-63 Route File proof flow pass"
   ]);
 
   const report = renderReport(generatedAt);

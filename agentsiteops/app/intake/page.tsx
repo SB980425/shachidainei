@@ -150,14 +150,6 @@ export default function Page() {
               <ClipboardList aria-hidden="true" size={17} />
               Draft plan first
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/review-status/">
-              <FileText aria-hidden="true" size={17} />
-              Review response states
-            </Link>
-            <Link prefetch={false} className="secondary-action" href="/sample/">
-              <FileText aria-hidden="true" size={17} />
-              View output
-            </Link>
           </div>
         </div>
         <aside className="decision-card">

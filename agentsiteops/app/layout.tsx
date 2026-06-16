@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { PrimaryNavigation } from "@/components/PrimaryNavigation";
+import { SiteJourneyBar } from "@/components/SiteJourneyBar";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
 import "./globals.css";
 
@@ -72,6 +73,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <PrimaryNavigation />
           <LanguageToggle />
         </header>
+        <SiteJourneyBar />
         {children}
         <footer className="site-footer">
           <div>
