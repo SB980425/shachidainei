@@ -334,9 +334,10 @@ async function main() {
   await checkBrandIcon();
   await checkAnalyticsSummary();
   await checkPage("/", [
-    "Route Foundry",
-    "From messy input to one checked Route File.",
-    "One decision package, not another loose research report.",
+    "Free Route Test",
+    "Test the idea before choosing a Route File path.",
+    "Start free test",
+    "Free test first",
     "Client state",
     "The first customer action is visible before any payment or review.",
     "Manual review",
@@ -344,9 +345,23 @@ async function main() {
     "The route workflow becomes the thing people can click.",
     "Every new project starts with a Route File before a build."
   ]);
+  await checkPage("/idea-risk-test/", [
+    "Test a project idea before turning it into a Route File.",
+    "Start free test",
+    "Likely failure nodes",
+    "Time checkpoints",
+    "Reference basis",
+    "CB Insights",
+    "Harvard Business Review",
+    "Startup Genome",
+    "Failory",
+    "Stop rule",
+    "What this page will not claim"
+  ]);
   await checkPage("/plan/", [
     "Plan Studio",
     "Fill in your project plan before asking for a Route File.",
+    "Run free risk test",
     "Write the project once.",
     "Browser-local draft",
     "One field per decision",
@@ -549,11 +564,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-65 Free idea risk test window",
     "M4-64 Review status response loop",
     "M4-63 Route File proof flow pass",
     "M4-62 Dedicated scope lock state",
-    "M4-61 Client state continuity layer",
-    "M4-60 Route Project OS architecture pass"
+    "M4-61 Client state continuity layer"
   ]);
 
   const report = renderReport(generatedAt);

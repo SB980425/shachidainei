@@ -25,6 +25,10 @@ This file covers the first-party event layer only. Cloudflare-managed hosting an
 | `page_view` | Any route load | `path` |
 | `update_log_view` | `/updates/` load | `path` |
 | `start_page_view` | `/start/` load | `path` |
+| `idea_risk_test_view` | `/idea-risk-test/` load | `path` |
+| `idea_risk_example_loaded` | Free Idea Risk Test example button click | `source` |
+| `idea_risk_report_copy` | Free Idea Risk Test copy report button click | `copied`, `readiness_score`, `missing_count` |
+| `idea_risk_continue_plan` | Free Idea Risk Test link to Plan Studio | `label`, `target`, `type` |
 | `plan_studio_view` | `/plan/` load | `path` |
 | `plan_example_loaded` | Plan Studio example button click | `label`, `type` |
 | `plan_step_selected` | Plan Studio stepper selection | `step` or click-captured `label`, `type` |

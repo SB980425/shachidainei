@@ -15439,6 +15439,424 @@ body {
   margin-top: 14px;
 }
 
+.idea-risk-page {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 104, 70, 0.08), transparent 24%),
+    linear-gradient(180deg, rgba(5, 8, 9, 0.98), rgba(8, 13, 14, 0.98)),
+    var(--foundry-bg);
+}
+
+.idea-risk-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(125deg, rgba(9, 12, 12, 0.98), rgba(25, 30, 25, 0.95) 48%, rgba(45, 20, 12, 0.9)),
+    repeating-linear-gradient(135deg, rgba(246, 241, 232, 0.035) 0 1px, transparent 1px 30px);
+}
+
+.idea-risk-hero::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  z-index: -1;
+  border: 1px solid rgba(246, 241, 232, 0.08);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 76% 18%, rgba(55, 217, 140, 0.12), transparent 34%),
+    radial-gradient(circle at 16% 84%, rgba(255, 104, 70, 0.11), transparent 32%);
+}
+
+.idea-risk-hero .decision-card {
+  align-self: center;
+  height: auto;
+  min-height: 0;
+  border-color: rgba(255, 104, 70, 0.26);
+  background:
+    linear-gradient(180deg, rgba(255, 104, 70, 0.11), rgba(55, 217, 140, 0.045)),
+    rgba(8, 13, 14, 0.88);
+}
+
+.idea-risk-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.idea-risk-flow-grid article,
+.idea-risk-field-group,
+.idea-risk-output-panel,
+.idea-risk-source-ledger a {
+  min-width: 0;
+  border: 1px solid rgba(226, 231, 238, 0.12);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(247, 242, 234, 0.06), rgba(247, 242, 234, 0.025)),
+    rgba(8, 13, 14, 0.86);
+  color: var(--foundry-text);
+}
+
+.idea-risk-flow-grid article {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 16px;
+}
+
+.idea-risk-flow-grid span,
+.idea-risk-panel-head span,
+.idea-risk-field-group legend span,
+.idea-risk-field-group label > span,
+.idea-risk-score span,
+.idea-risk-route-card span,
+.idea-risk-node-list article > div span,
+.idea-risk-source-grid span,
+.idea-risk-source-ledger span {
+  color: var(--foundry-green);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.idea-risk-flow-grid h3,
+.idea-risk-field-group legend strong,
+.idea-risk-field-group label strong,
+.idea-risk-route-card h2,
+.idea-risk-section-head h3,
+.idea-risk-node-list h4,
+.idea-risk-stop-rule h3 {
+  margin: 0;
+  color: var(--foundry-text);
+}
+
+.idea-risk-flow-grid p,
+.idea-risk-studio p,
+.idea-risk-studio li,
+.idea-risk-field-group small,
+.idea-risk-source-ledger small {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.72);
+  line-height: 1.58;
+}
+
+.idea-risk-studio {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(380px, 1.08fr);
+  gap: 18px;
+  width: min(1180px, calc(100% - 40px));
+  margin: 18px auto 0;
+  align-items: start;
+}
+
+.idea-risk-input-panel,
+.idea-risk-output-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.idea-risk-input-panel {
+  min-width: 0;
+}
+
+.idea-risk-panel-head {
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(226, 231, 238, 0.12);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(55, 217, 140, 0.1), transparent 32%),
+    rgba(8, 13, 14, 0.9);
+  padding: clamp(18px, 3vw, 24px);
+}
+
+.idea-risk-panel-head h2 {
+  max-width: 720px;
+  margin: 0;
+  color: var(--foundry-text);
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.04;
+}
+
+.idea-risk-input-state {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.idea-risk-input-state strong,
+.idea-risk-input-state small {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  border: 1px solid rgba(226, 231, 238, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(246, 241, 232, 0.78);
+  padding: 0 12px;
+}
+
+.idea-risk-field-stack {
+  display: grid;
+  gap: 14px;
+}
+
+.idea-risk-field-group {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 18px;
+}
+
+.idea-risk-field-group legend {
+  display: grid;
+  gap: 7px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.idea-risk-field-group label {
+  display: grid;
+  gap: 8px;
+  border: 1px solid rgba(226, 231, 238, 0.1);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.035);
+  padding: 14px;
+}
+
+.idea-risk-field-group label.is-filled {
+  border-color: rgba(55, 217, 140, 0.22);
+}
+
+.idea-risk-field-group label.is-missing {
+  border-color: rgba(255, 104, 70, 0.18);
+}
+
+.idea-risk-field-group textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid rgba(226, 231, 238, 0.14);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.24);
+  color: var(--foundry-text);
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.55;
+  resize: vertical;
+  padding: 12px;
+}
+
+.idea-risk-field-group textarea:focus-visible {
+  border-color: rgba(55, 217, 140, 0.48);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(55, 217, 140, 0.12);
+}
+
+.idea-risk-actions,
+.idea-risk-next-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.idea-risk-actions button,
+.idea-risk-next-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  border: 1px solid rgba(226, 231, 238, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--foundry-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 950;
+  text-decoration: none;
+  padding: 0 16px;
+}
+
+.idea-risk-actions button:hover,
+.idea-risk-actions button:focus-visible,
+.idea-risk-next-actions a:hover,
+.idea-risk-next-actions a:focus-visible {
+  border-color: rgba(55, 217, 140, 0.42);
+  background: rgba(55, 217, 140, 0.1);
+  outline: none;
+}
+
+.idea-risk-output-panel {
+  position: sticky;
+  top: 96px;
+  padding: clamp(18px, 3vw, 24px);
+}
+
+.idea-risk-score {
+  display: grid;
+  justify-items: center;
+  border: 1px solid rgba(55, 217, 140, 0.22);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(55, 217, 140, 0.16), transparent 36%),
+    rgba(9, 18, 14, 0.82);
+  padding: 20px;
+}
+
+.idea-risk-score strong {
+  color: var(--foundry-text);
+  font-size: clamp(52px, 8vw, 76px);
+  line-height: 0.95;
+}
+
+.idea-risk-score small {
+  color: rgba(246, 241, 232, 0.66);
+}
+
+.idea-risk-route-card,
+.idea-risk-node-section,
+.idea-risk-time-section,
+.idea-risk-source-section,
+.idea-risk-stop-rule {
+  display: grid;
+  gap: 12px;
+  border: 1px solid rgba(226, 231, 238, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+  padding: 16px;
+}
+
+.idea-risk-route-card h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.05;
+}
+
+.idea-risk-section-head,
+.idea-risk-stop-rule {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: start;
+}
+
+.idea-risk-section-head svg,
+.idea-risk-stop-rule svg,
+.idea-risk-source-ledger svg {
+  color: var(--foundry-green);
+}
+
+.idea-risk-node-list {
+  display: grid;
+  gap: 10px;
+}
+
+.idea-risk-node-list article {
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(226, 231, 238, 0.1);
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.18);
+  padding: 14px;
+}
+
+.idea-risk-node-list article > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.idea-risk-node-list article > div strong {
+  color: var(--foundry-text);
+}
+
+.idea-risk-node-list article.is-high {
+  border-color: rgba(255, 104, 70, 0.36);
+  background: rgba(255, 104, 70, 0.07);
+}
+
+.idea-risk-node-list article.is-medium {
+  border-color: rgba(255, 176, 71, 0.24);
+}
+
+.idea-risk-node-list dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.idea-risk-node-list dl div {
+  display: grid;
+  gap: 3px;
+}
+
+.idea-risk-node-list dt {
+  color: var(--foundry-green);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.idea-risk-node-list dd {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.72);
+  line-height: 1.5;
+}
+
+.idea-risk-time-section ol {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.idea-risk-source-grid,
+.idea-risk-source-ledger {
+  display: grid;
+  gap: 10px;
+}
+
+.idea-risk-source-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.idea-risk-source-grid a,
+.idea-risk-source-ledger a {
+  display: grid;
+  gap: 6px;
+  border: 1px solid rgba(226, 231, 238, 0.1);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--foundry-text);
+  text-decoration: none;
+  padding: 12px;
+}
+
+.idea-risk-source-grid a:hover,
+.idea-risk-source-grid a:focus-visible,
+.idea-risk-source-ledger a:hover,
+.idea-risk-source-ledger a:focus-visible {
+  border-color: rgba(55, 217, 140, 0.36);
+  outline: none;
+}
+
+.idea-risk-source-ledger a {
+  grid-template-columns: 24px minmax(0, 0.25fr) minmax(0, 0.35fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.idea-risk-boundary {
+  display: inline-flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.idea-risk-boundary svg {
+  flex: 0 0 auto;
+  margin-top: 4px;
+  color: var(--foundry-green);
+}
+
 .sample-route-page .section-head h2,
 .proof-case-page .section-head h2 {
   max-width: 720px;
@@ -15817,6 +16235,7 @@ body {
   .route-case-grid,
   .route-case-output-grid,
   .route-case-check-grid,
+  .idea-risk-flow-grid,
   .route-file-viewer-grid,
   .route-file-viewer-split,
   .review-example-grid,
@@ -15827,8 +16246,21 @@ body {
   }
 
   .review-status-head,
+  .idea-risk-studio,
   .review-state-body {
     grid-template-columns: 1fr;
+  }
+
+  .idea-risk-output-panel {
+    position: static;
+  }
+
+  .idea-risk-source-ledger a {
+    grid-template-columns: 24px minmax(0, 1fr);
+  }
+
+  .idea-risk-source-ledger small {
+    grid-column: 2;
   }
 
   .route-file-viewer-head {
@@ -15866,6 +16298,8 @@ body {
   .route-case-grid,
   .route-case-output-grid,
   .route-case-check-grid,
+  .idea-risk-flow-grid,
+  .idea-risk-source-grid,
   .route-file-viewer-grid,
   .route-file-viewer-split,
   .route-file-viewer-tabs,
@@ -15878,9 +16312,23 @@ body {
   }
 
   .route-file-viewer,
+  .idea-risk-studio,
   .review-status-console {
     width: calc(100% - 20px);
+  }
+
+  .route-file-viewer,
+  .review-status-console {
     padding: 16px;
+  }
+
+  .idea-risk-field-group {
+    padding: 16px;
+  }
+
+  .idea-risk-actions button,
+  .idea-risk-next-actions a {
+    width: 100%;
   }
 
   .review-status-head button,

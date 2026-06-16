@@ -6,6 +6,7 @@ import {
   ClipboardList,
   FileCheck2,
   FileText,
+  Gauge,
   ShieldCheck
 } from "lucide-react";
 import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
@@ -96,6 +97,10 @@ export default function ReviewStatusPage() {
               <FileCheck2 aria-hidden="true" size={17} />
               Inspect states
             </a>
+            <Link prefetch={false} className="secondary-action" href="/idea-risk-test/">
+              <Gauge aria-hidden="true" size={17} />
+              Test idea risk
+            </Link>
             <Link prefetch={false} className="secondary-action" href="/intake/">
               <ClipboardList aria-hidden="true" size={17} />
               Build intake
@@ -186,11 +191,16 @@ export default function ReviewStatusPage() {
         <div>
           <h2>What can happen next</h2>
           <p>
-            Ready projects move to Scope Lock. Repair projects return to Plan Studio or
-            Intake. Blocked requests should inspect the blocked example. Non-delivery
-            material goes to the Delivery Gate before anyone calls it a Route File.
+            Ready projects move to Scope Lock. Repair projects return to the free idea
+            risk test, Plan Studio, or Intake. Blocked requests should inspect the
+            blocked example. Non-delivery material goes to the Delivery Gate before
+            anyone calls it a Route File.
           </p>
           <div className="hero-actions">
+            <Link prefetch={false} className="secondary-action" href="/idea-risk-test/">
+              <Gauge aria-hidden="true" size={17} />
+              Re-test risk
+            </Link>
             <Link prefetch={false} className="primary-action" href="/scope/">
               <CheckCircle2 aria-hidden="true" size={17} />
               Scope Lock

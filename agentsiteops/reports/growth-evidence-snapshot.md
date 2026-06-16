@@ -1,18 +1,18 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-16T01:38:20.233Z
+- Generated: 2026-06-16T02:41:17.981Z
 - Status: baseline_ready
-- Routes: 65
-- Technical SEO pass routes: 65
+- Routes: 66
+- Technical SEO pass routes: 66
 - Crawler access status: pass
 - Production health status: pass
 - Commercial validation status: pass
 - Code quality status: pass
-- GSC status: pending export for 65 routes
-- Bing status: pending export for 65 routes
+- GSC status: pending export for 66 routes
+- Bing status: pending export for 66 routes
 - Imported GSC route evidence: 0
 - Imported Bing route evidence: 0
-- Onsite event status: aggregate endpoint waiting for events on 58 routes
+- Onsite event status: aggregate endpoint waiting for events on 59 routes
 - Onsite routes with aggregate events: 7
 - Analytics summary status missing or blocked: 0
 - Analytics threshold snapshot: sample views 1, source-link clicks 0, PayPal CTA clicks 0
@@ -23,6 +23,7 @@
 |---|---|---|---|---|---|---|
 | / | home | launch_blueprint | pass | site_pass | keep | Measure homepage CTA click rate, start exits, sample exits, delivery gate exits, and confusion about what AgentSiteOps delivers |
 | /start/ | product_entry | launch_blueprint | pass | site_pass | keep | Measure start page views, sample exits, how-it-works exits, pricing exits, and repeated confusion about what to submit |
+| /idea-risk-test/ | product_tool | launch_blueprint | pass | site_pass | keep | Measure idea risk test views, example loads, report copies, Plan Studio exits, Review Status exits, and whether users understand the result is reference guidance rather than final delivery |
 | /plan/ | product_planner | launch_blueprint | pass | site_pass | keep | Measure plan studio views, example loads, plan brief copies, intake exits, sample exits, and repeated confusion about preliminary draft versus final Route File |
 | /how-it-works/ | product_explainer | launch_blueprint | pass | site_pass | keep | Measure how-it-works views, start exits, client workflow exits, prompt pack exits, and repeated questions about API use |
 | /scope/ | product_state | launch_blueprint | pass | site_pass | keep | Measure scope lock views, research exits, intake repair exits, coverage gate exits, and repeated confusion about what is frozen before research |

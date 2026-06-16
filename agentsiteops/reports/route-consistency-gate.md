@@ -1,8 +1,8 @@
 # Route Consistency Gate
 
-- Generated: 2026-06-16T01:38:28.981Z
+- Generated: 2026-06-16T02:41:32.974Z
 - Status: pass
-- Checks: 342
+- Checks: 347
 - Blockers: 0
 - Warnings: 0
 
@@ -13,13 +13,15 @@
 | routes | pass | no duplicates |
 | page_registry | pass | no duplicates |
 | page_review_actions | pass | no duplicates |
-| site_routes | pass | 65 routes aligned |
-| page_registry | pass | 65 routes aligned |
-| page_review_actions | pass | 65 routes aligned |
+| site_routes | pass | 66 routes aligned |
+| page_registry | pass | 66 routes aligned |
+| page_review_actions | pass | 66 routes aligned |
 | route_shape | pass | / has canonical slash shape |
 | route_index | pass | / index flag is true |
 | route_shape | pass | /start/ has canonical slash shape |
 | route_index | pass | /start/ index flag is true |
+| route_shape | pass | /idea-risk-test/ has canonical slash shape |
+| route_index | pass | /idea-risk-test/ index flag is true |
 | route_shape | pass | /plan/ has canonical slash shape |
 | route_index | pass | /plan/ index flag is true |
 | route_shape | pass | /how-it-works/ has canonical slash shape |
@@ -148,6 +150,7 @@
 | route_index | pass | /contact/ index flag is true |
 | app_page | pass | / app page exists |
 | app_page | pass | /start/ app page exists |
+| app_page | pass | /idea-risk-test/ app page exists |
 | app_page | pass | /plan/ app page exists |
 | app_page | pass | /how-it-works/ app page exists |
 | app_page | pass | /scope/ app page exists |
@@ -213,6 +216,7 @@
 | app_page | pass | /contact/ app page exists |
 | analytics_allowlist | pass | update_log_view is registered |
 | analytics_allowlist | pass | start_page_view is registered |
+| analytics_allowlist | pass | idea_risk_test_view is registered |
 | analytics_allowlist | pass | plan_studio_view is registered |
 | analytics_allowlist | pass | how_it_works_view is registered |
 | analytics_allowlist | pass | scope_lock_view is registered |
@@ -288,6 +292,7 @@
 | analytics_allowlist | pass | trust_policy_view is registered |
 | analytics_allowlist | pass | trust_policy_view is registered |
 | route_view_event | pass | /start/ has view event |
+| route_view_event | pass | /idea-risk-test/ has view event |
 | route_view_event | pass | /plan/ has view event |
 | route_view_event | pass | /how-it-works/ has view event |
 | route_view_event | pass | /scope/ has view event |
@@ -351,7 +356,7 @@
 | route_view_event | pass | /refund-policy/ has view event |
 | route_view_event | pass | /disclaimer/ has view event |
 | route_view_event | pass | /contact/ has view event |
-| growth_snapshot | pass | 65 routes aligned |
+| growth_snapshot | pass | 66 routes aligned |
 
 ## Blocking Issues
 

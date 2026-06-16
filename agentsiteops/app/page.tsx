@@ -18,9 +18,9 @@ import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
 import { allRoutes, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Research-to-Route File",
+  title: "Free Idea Risk Test to Route File",
   description:
-    "AgentSiteOps turns messy project material into a checked Route File with one selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule."
+    "AgentSiteOps turns a rough project idea into source-backed failure nodes, evidence gaps, time checkpoints, and then a checked Route File path."
 };
 
 const routeFileContract = [
@@ -66,8 +66,8 @@ const homeOutputRows = [
 ];
 
 const heroFlowSteps = [
-  { label: "Submit", body: "Messy input" },
-  { label: "Receipt", body: "Packet visible" },
+  { label: "Test", body: "Idea risk nodes" },
+  { label: "Plan", body: "Draft route" },
   { label: "Review", body: "Ready or repair" },
   { label: "Research", body: "Approved carrier" },
   { label: "Route File", body: "Output + stop" }
@@ -176,6 +176,7 @@ const proofLayerCards = [
 ];
 
 const supportLinks = [
+  { href: "/idea-risk-test/", label: "Free Idea Risk Test" },
   { href: "/plan/", label: "Plan Studio" },
   { href: "/start/", label: "Start here" },
   { href: "/execution/", label: "Execution workbench" },
@@ -214,21 +215,22 @@ export default function HomePage() {
 
       <section className="frontstage-hero route-foundry-hero">
         <div className="frontstage-hero-copy">
-          <p className="eyebrow">Route Foundry</p>
-          <h1>From messy input to one checked Route File.</h1>
+          <p className="eyebrow">Free Route Test</p>
+          <h1>Test the idea before choosing a Route File path.</h1>
           <p>
-            Submit the unclear project once. AgentSiteOps turns it into a visible
-            intake packet, manual acceptance state, approved research carrier, coverage
-            gate, and final route handoff before more build work starts.
+            Start with a rough project idea. AgentSiteOps names likely failure nodes,
+            evidence gaps, and time checkpoints first, then routes usable projects into
+            Plan Studio, manual review, approved evidence work, and final Route File
+            handoff.
           </p>
           <div className="hero-actions">
-            <Link prefetch={false} className="primary-action" href="/plan/">
-              <ClipboardList aria-hidden="true" size={17} />
-              Draft your plan
+            <Link prefetch={false} className="primary-action" href="/idea-risk-test/">
+              <Gauge aria-hidden="true" size={17} />
+              Start free test
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/execution/">
-              <Activity aria-hidden="true" size={17} />
-              Open execution workbench
+            <Link prefetch={false} className="secondary-action" href="/plan/">
+              <ClipboardList aria-hidden="true" size={17} />
+              Draft plan after test
             </Link>
             <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
@@ -247,9 +249,13 @@ export default function HomePage() {
         </div>
 
         <aside className="route-file-brief" aria-label="Route File output">
-          <span>Route File Output</span>
-          <h2>One decision package, not another loose research report.</h2>
+          <span>Free test first</span>
+          <h2>The site starts with reference guidance, not a payment or a hidden research claim.</h2>
           <ul>
+            <li>
+              <SearchCheck aria-hidden="true" size={16} />
+              Failure nodes are mapped from public startup-failure patterns and the fields you provide.
+            </li>
             {routeFileContract.map((item) => (
               <li key={item}>
                 <CheckCircle2 aria-hidden="true" size={16} />

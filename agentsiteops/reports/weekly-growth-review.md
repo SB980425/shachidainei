@@ -6,7 +6,7 @@
 
 ## Conclusion
 
-- The production site has 65 indexable routes with technical SEO passing.
+- The production site has 66 indexable routes with technical SEO passing.
 - Production crawler access audit is passing for intended search and user-retrieval crawlers.
 - Commercial validation is checked separately from revenue evidence; the manual PayPal payment path is live, but paid conversion is still unverified.
 - GSC, Bing, AI referrals, and revenue evidence are still pending exports or records; the first-party aggregate endpoint is active but currently waiting for events.
@@ -16,13 +16,13 @@
 
 | Area | Evidence | Status |
 |---|---|---|
-| Route registry | docs/routes.json | 65 routes registered |
-| Technical SEO | reports/technical-seo-ci.md | 65/65 routes pass |
+| Route registry | docs/routes.json | 66 routes registered |
+| Technical SEO | reports/technical-seo-ci.md | 66/66 routes pass |
 | Crawler access | reports/crawler-access-audit.md | pass |
 | Production health | reports/production-health-monitor.md | pass |
 | Commercial validation | reports/commercial-validation-gate.md | pass |
 | Code quality | reports/code-quality-gate.md | pass |
-| IndexNow | latest command output | 65 URLs submitted successfully in current deployment cycle |
+| IndexNow | latest command output | 66 URLs submitted successfully in current deployment cycle |
 | Event layer | /api/events/summary | First-party aggregate endpoint active; sample views 1, source-link clicks 0, PayPal CTA clicks 0 |
 
 ## Unverified
@@ -41,6 +41,7 @@
 |---|---|---|---|---|---|---|
 | / | home | launch_blueprint | pass | site_pass | keep | Measure homepage CTA click rate, start exits, sample exits, delivery gate exits, and confusion about what AgentSiteOps delivers |
 | /start/ | product_entry | launch_blueprint | pass | site_pass | keep | Measure start page views, sample exits, how-it-works exits, pricing exits, and repeated confusion about what to submit |
+| /idea-risk-test/ | product_tool | launch_blueprint | pass | site_pass | keep | Measure idea risk test views, example loads, report copies, Plan Studio exits, Review Status exits, and whether users understand the result is reference guidance rather than final delivery |
 | /plan/ | product_planner | launch_blueprint | pass | site_pass | keep | Measure plan studio views, example loads, plan brief copies, intake exits, sample exits, and repeated confusion about preliminary draft versus final Route File |
 | /how-it-works/ | product_explainer | launch_blueprint | pass | site_pass | keep | Measure how-it-works views, start exits, client workflow exits, prompt pack exits, and repeated questions about API use |
 | /scope/ | product_state | launch_blueprint | pass | site_pass | keep | Measure scope lock views, research exits, intake repair exits, coverage gate exits, and repeated confusion about what is frozen before research |

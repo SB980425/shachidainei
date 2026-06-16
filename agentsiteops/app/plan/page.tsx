@@ -6,6 +6,7 @@ import {
   ClipboardList,
   FileCheck2,
   FileText,
+  Gauge,
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
@@ -96,6 +97,10 @@ export default function PlanPage() {
               <ClipboardList aria-hidden="true" size={17} />
               Start drafting
             </a>
+            <Link prefetch={false} className="secondary-action" href="/idea-risk-test/">
+              <Gauge aria-hidden="true" size={17} />
+              Run free risk test
+            </Link>
             <Link prefetch={false} className="secondary-action" href="/sample/">
               <FileText aria-hidden="true" size={17} />
               View final sample
@@ -197,11 +202,16 @@ export default function PlanPage() {
           <span>After the draft</span>
           <h2>Use the draft to decide whether manual intake is worth opening.</h2>
           <p>
-            If the draft cannot name buyer, route, evidence gaps, rejected alternatives,
-            validation channel, and stop rule, keep repairing the plan before submitting it.
+            If the draft cannot name buyer, route, failure node, evidence gaps, rejected
+            alternatives, validation channel, and stop rule, keep repairing the plan
+            before submitting it.
           </p>
         </div>
         <div className="route-final-actions">
+          <Link prefetch={false} className="secondary-action" href="/idea-risk-test/">
+            <Gauge aria-hidden="true" size={17} />
+            Re-test idea risk
+          </Link>
           <Link prefetch={false} className="primary-action" href="/intake/">
             <ClipboardList aria-hidden="true" size={17} />
             Continue to intake

@@ -50,7 +50,7 @@ export const routePages: RoutePage[] = [
       "A customer starting page for turning messy project material into a checked Route File without pretending the project is already validated.",
     answer:
       "Start with AgentSiteOps by submitting project facts, source material, constraints, and candidate routes. The output is a Route File, not a guarantee of traffic, customers, revenue, or AI citations.",
-    primaryAction: { label: "Draft your plan", href: "/plan/" },
+    primaryAction: { label: "Start free idea risk test", href: "/idea-risk-test/" },
     secondaryAction: { label: "See how it works", href: "/how-it-works/" },
     aiTarget:
       "Explain what a customer should submit, who AgentSiteOps fits, who it does not fit, and what a Route File contains.",
@@ -79,13 +79,57 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Free Idea Risk Test", href: "/idea-risk-test/" },
       { label: "Plan Studio", href: "/plan/" },
       { label: "How AgentSiteOps Works", href: "/how-it-works/" },
       { label: "Execution Workbench", href: "/execution/" },
       { label: "Sample Route File", href: "/sample/" },
       { label: "Route File Delivery Gate", href: "/delivery-gate/" },
-      { label: "Client Route Workflow", href: "/reports/client-route-workflow/" },
-      { label: "Pricing", href: "/pricing/" }
+      { label: "Client Route Workflow", href: "/reports/client-route-workflow/" }
+    ]
+  },
+  {
+    path: "/idea-risk-test/",
+    pageType: "product_tool",
+    title: "Free Idea Risk Test",
+    description:
+      "A free browser-local test that turns a rough project idea into likely startup failure nodes, evidence gaps, time checkpoints, and a next route before Plan Studio.",
+    answer:
+      "The Free Idea Risk Test lets a visitor enter a rough idea once, then see likely failure nodes, missing evidence, 0-30 day checkpoints, and the next route. It uses public startup-failure references as a basis and does not claim to prove demand, payment, traffic, or product-market fit.",
+    primaryAction: { label: "Start free test", href: "/idea-risk-test/" },
+    secondaryAction: { label: "Continue to Plan Studio", href: "/plan/" },
+    aiTarget:
+      "Explain that AgentSiteOps starts with a free idea-risk reference test before planning, intake, research, or Route File delivery.",
+    humanAction:
+      "Use this page to test whether a rough project idea has buyer, proof, channel, rights, validation, or execution risks before investing more work.",
+    sections: [
+      {
+        title: "Client input",
+        body:
+          "The visitor writes the project idea, buyer, problem, existing proof, channel, constraints, blocked decision, and first validation attempt in plain language."
+      },
+      {
+        title: "Failure nodes",
+        body:
+          "The page maps the idea to likely failure nodes such as unclear buyer, weak pain, missing proof asset, premature build, premature scaling, weak acquisition, runway, rights, and validation gaps."
+      },
+      {
+        title: "Time checkpoints",
+        body:
+          "The output gives near-term checkpoints from the first 24 hours through day 30, so the user knows what to inspect before building or submitting intake."
+      },
+      {
+        title: "Evidence boundary",
+        body:
+          "The result is reference guidance, not a guarantee. It does not store raw text on the server, call a hidden research API, or prove demand, revenue, traffic, or product-market fit."
+      }
+    ],
+    related: [
+      { label: "Plan Studio", href: "/plan/" },
+      { label: "Review Status", href: "/review-status/" },
+      { label: "Blocked Intake Example", href: "/examples/blocked-intake/" },
+      { label: "Sample Route File", href: "/sample/" },
+      { label: "How AgentSiteOps Works", href: "/how-it-works/" }
     ]
   },
   {
@@ -130,6 +174,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
+      { label: "Free Idea Risk Test", href: "/idea-risk-test/" },
       { label: "Start with AgentSiteOps", href: "/start/" },
       { label: "Manual Intake", href: "/intake/" },
       { label: "Execution Workbench", href: "/execution/" },

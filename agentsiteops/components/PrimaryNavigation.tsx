@@ -6,10 +6,17 @@ import {
   ClipboardList,
   FileCheck2,
   FileText,
+  Gauge,
   Workflow
 } from "lucide-react";
 
 const navItems = [
+  {
+    href: "/idea-risk-test/",
+    label: "Free Test",
+    Icon: Gauge,
+    match: ["/idea-risk-test/"]
+  },
   {
     href: "/plan/",
     label: "Plan",
@@ -53,7 +60,7 @@ function normalizePath(pathname: string) {
 
 export function PrimaryNavigation() {
   const pathname = normalizePath(usePathname());
-  const isPlanStudio = pathname === "/plan/";
+  const isFreeTest = pathname === "/idea-risk-test/";
 
   return (
     <>
@@ -78,12 +85,12 @@ export function PrimaryNavigation() {
       </nav>
       <Link
         prefetch={false}
-        className={isPlanStudio ? "header-action is-active" : "header-action"}
-        aria-current={isPlanStudio ? "page" : undefined}
-        href="/plan/"
+        className={isFreeTest ? "header-action is-active" : "header-action"}
+        aria-current={isFreeTest ? "page" : undefined}
+        href="/idea-risk-test/"
       >
-        <ClipboardList aria-hidden="true" size={16} />
-        Start plan
+        <Gauge aria-hidden="true" size={16} />
+        Free test
       </Link>
     </>
   );

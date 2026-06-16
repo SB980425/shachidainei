@@ -10,6 +10,8 @@ AgentSiteOps is a Route Project operating system for builders who need to turn m
 
 The core product is not a generic SEO blog, AI research wrapper, prompt library, or payment-first service page. The core object is a Route Project moving through plan draft, intake, scope lock, approved evidence carrier, coverage gate, Route File handoff, and validation.
 
+The first public test surface is free: a visitor can enter a rough project idea and receive source-backed failure nodes, evidence gaps, and time checkpoints before Plan Studio or manual intake. This result is reference guidance, not proof of demand or final Route File delivery.
+
 Every core product page should show the client state: what the customer can do now, what the website can handle automatically, what requires manual/operator review, what visible result comes next, and what condition triggers repair or stop.
 
 Receipt and acceptance must stay separate. Receipt means the packet exists. Acceptance means a manual/operator review has approved the request for Scope Lock. A submitted packet can return ready, repair, blocked, or not delivery before any research carrier or Route File synthesis starts.
@@ -47,13 +49,14 @@ Research-to-Route File.
 
 ## User Jobs
 
-1. Write a messy project plan in plain language.
-2. Convert the plan into an intake packet that can be accepted, repaired, blocked, or rejected as not delivery.
-3. Lock the scope and evidence carrier before research starts.
-4. Check returned research or source material before synthesis.
-5. Deliver one Route File with selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.
-6. Run validation without treating page views, AI praise, sitemap success, or payment clicks as proof of demand.
-7. See the current client state without needing technical knowledge of the workflow.
+1. Test a rough project idea against failure nodes, evidence gaps, and time checkpoints.
+2. Write a messy project plan in plain language.
+3. Convert the plan into an intake packet that can be accepted, repaired, blocked, or rejected as not delivery.
+4. Lock the scope and evidence carrier before research starts.
+5. Check returned research or source material before synthesis.
+6. Deliver one Route File with selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.
+7. Run validation without treating page views, AI praise, sitemap success, or payment clicks as proof of demand.
+8. See the current client state without needing technical knowledge of the workflow.
 
 ## Differentiation
 
@@ -67,7 +70,8 @@ Research-to-Route File.
 
 | URL | Page Type | Purpose |
 |---|---|---|
-| `/` | Home | State the Route Project OS and route visitors into Plan, Intake, Workbench, and Sample. |
+| `/` | Home | State the Route Project OS and route visitors into Free Test, Plan, Intake, Workbench, and Sample. |
+| `/idea-risk-test/` | Product tool | Let visitors test a rough idea against failure nodes, evidence gaps, and 0-30 day checkpoints before planning. |
 | `/plan/` | Product workbench | Let visitors draft a project plan locally before intake. |
 | `/intake/` | Product workbench | Turn the draft into a copy-ready review packet and explain ready, repair, blocked, or not-delivery states. |
 | `/review-status/` | Product state | Show the valid response states after intake: ready, repair, blocked, or not delivery. |

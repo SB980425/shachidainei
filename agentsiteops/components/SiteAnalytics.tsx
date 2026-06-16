@@ -28,6 +28,7 @@ const sessionKey = "codex-seo-events";
 const pathViewEvents: Record<string, string[]> = {
   "/updates/": ["update_log_view"],
   "/start/": ["start_page_view"],
+  "/idea-risk-test/": ["idea_risk_test_view"],
   "/plan/": ["plan_studio_view"],
   "/how-it-works/": ["how_it_works_view"],
   "/scope/": ["scope_lock_view"],

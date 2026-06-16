@@ -12,6 +12,54 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-16",
+    step: "M4-65 Free idea risk test window",
+    status: "completed",
+    keyPoints: [
+      "Added `/idea-risk-test/` as the free first-step page where a visitor can enter a rough project idea before Plan Studio or manual intake.",
+      "Added a browser-local idea risk engine that maps user input to likely failure nodes, evidence gaps, a selected next route, 0-30 day checkpoints, and a stop rule.",
+      "Grounded the reference layer in visible startup-failure sources: CB Insights, Harvard Business Review, Startup Genome, and Failory.",
+      "Changed the primary navigation and homepage CTA so the public path starts with free reference guidance rather than payment or hidden research.",
+      "Registered the route across sitemap source, route registry, page registry, page-review actions, analytics events, site brief, and production health monitoring."
+    ],
+    aiAngle:
+      "AI and search readers can now describe AgentSiteOps as a free idea-risk and route-file workflow: rough idea input becomes source-backed failure nodes and time checkpoints before Plan Studio, intake, research, or final Route File delivery.",
+    files: [
+      "app/idea-risk-test/page.tsx",
+      "components/IdeaRiskTestStudio.tsx",
+      "lib/ideaRiskEngine.ts",
+      "components/PrimaryNavigation.tsx",
+      "app/page.tsx",
+      "app/plan/page.tsx",
+      "app/review-status/page.tsx",
+      "components/SiteAnalytics.tsx",
+      "functions/api/events.ts",
+      "lib/site.ts",
+      "docs/routes.json",
+      "docs/page-registry.csv",
+      "docs/analytics-events.md",
+      "docs/site-brief.md",
+      "data/page-review-actions.csv",
+      "scripts/production-health-monitor.mjs",
+      "app/globals.css"
+    ],
+    verification: [
+      "`npm run typecheck` pass",
+      "`npm run lint` pass",
+      "`npm run build` pass",
+      "`npm run routes:gate` pass",
+      "`npm run links:gate` pass",
+      "`npm run analytics:gate` pass",
+      "`npm run commercial:gate` pass",
+      "`npm run growth:snapshot` pass",
+      "`npm run seo:ci` pass",
+      "Playwright local check pass: Free Idea Risk Test, Home, Plan, and Review Status have 0 horizontal overflow at desktop and mobile widths",
+      "`npm run production:health` pass"
+    ],
+    next:
+      "Use `/idea-risk-test/` as the default public entry for new project ideas; future examples should show the filled idea, mapped failure nodes, time checkpoints, Plan Studio continuation, and Route File proof path."
+  },
+  {
+    date: "2026-06-16",
     step: "M4-64 Review status response loop",
     status: "completed",
     keyPoints: [

@@ -24,6 +24,15 @@
       "changefreq": "weekly"
     },
     {
+      "path": "/idea-risk-test/",
+      "pageType": "product_tool",
+      "template": "idea_risk_test",
+      "cluster": "launch_blueprint",
+      "index": true,
+      "priority": 0.9,
+      "changefreq": "weekly"
+    },
+    {
       "path": "/plan/",
       "pageType": "product_planner",
       "template": "plan_studio",

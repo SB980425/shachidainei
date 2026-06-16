@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-16T01:37:52.814Z
+- Generated: 2026-06-16T02:40:36.950Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 340
+- Checks: 356
 - Blockers: 0
 - Warnings: 0
 
@@ -13,7 +13,7 @@
 |---|---|---|---|
 | www_redirect | pass | HTTP 301 to https://agentsiteops.com/ | [link](https://www.agentsiteops.com/) |
 | sitemap | pass | HTTP 200 | [link](https://agentsiteops.com/sitemap.xml) |
-| sitemap | pass | 65 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
+| sitemap | pass | 66 URLs match route registry | [link](https://agentsiteops.com/sitemap.xml) |
 | robots | pass | HTTP 200 | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | OAI-SearchBot policy visible | [link](https://agentsiteops.com/robots.txt) |
 | robots | pass | ChatGPT-User policy visible | [link](https://agentsiteops.com/robots.txt) |
@@ -46,20 +46,36 @@
 | / | pass | HTTP 200 | [link](https://agentsiteops.com/) |
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
-| / | pass | Route Foundry | [link](https://agentsiteops.com/) |
-| / | pass | From messy input to one checked Route File. | [link](https://agentsiteops.com/) |
-| / | pass | One decision package, not another loose research report. | [link](https://agentsiteops.com/) |
+| / | pass | Free Route Test | [link](https://agentsiteops.com/) |
+| / | pass | Test the idea before choosing a Route File path. | [link](https://agentsiteops.com/) |
+| / | pass | Start free test | [link](https://agentsiteops.com/) |
+| / | pass | Free test first | [link](https://agentsiteops.com/) |
 | / | pass | Client state | [link](https://agentsiteops.com/) |
 | / | pass | The first customer action is visible before any payment or review. | [link](https://agentsiteops.com/) |
 | / | pass | Manual review | [link](https://agentsiteops.com/) |
 | / | pass | Operating path | [link](https://agentsiteops.com/) |
 | / | pass | The route workflow becomes the thing people can click. | [link](https://agentsiteops.com/) |
 | / | pass | Every new project starts with a Route File before a build. | [link](https://agentsiteops.com/) |
+| /idea-risk-test/ | pass | HTTP 200 | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | HTML title exists | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | canonical points to production URL | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Test a project idea before turning it into a Route File. | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Start free test | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Likely failure nodes | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Time checkpoints | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Reference basis | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | CB Insights | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Harvard Business Review | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Startup Genome | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Failory | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Stop rule | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | What this page will not claim | [link](https://agentsiteops.com/idea-risk-test/) |
 | /plan/ | pass | HTTP 200 | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | HTML title exists | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | canonical points to production URL | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Plan Studio | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Fill in your project plan before asking for a Route File. | [link](https://agentsiteops.com/plan/) |
+| /plan/ | pass | Run free risk test | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Write the project once. | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | Browser-local draft | [link](https://agentsiteops.com/plan/) |
 | /plan/ | pass | One field per decision | [link](https://agentsiteops.com/plan/) |
@@ -346,11 +362,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-65 Free idea risk test window | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-64 Review status response loop | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-63 Route File proof flow pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-62 Dedicated scope lock state | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-61 Client state continuity layer | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-60 Route Project OS architecture pass | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 
