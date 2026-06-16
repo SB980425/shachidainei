@@ -146,7 +146,16 @@ const broadAudienceTerms = [
   "creators",
   "founders",
   "users",
-  "customers"
+  "customers",
+  "所有人",
+  "任何人",
+  "全部用户",
+  "企业",
+  "公司",
+  "创作者",
+  "用户",
+  "客户",
+  "大家"
 ];
 
 const productBuildTerms = [
@@ -159,7 +168,17 @@ const productBuildTerms = [
   "ai agent",
   "subscription",
   "community",
-  "course"
+  "course",
+  "平台",
+  "应用",
+  "小程序",
+  "工具",
+  "看板",
+  "自动化系统",
+  "智能体",
+  "订阅",
+  "社群",
+  "课程"
 ];
 
 const scaleTerms = [
@@ -176,7 +195,18 @@ const scaleTerms = [
   "100k",
   "mass",
   "many channels",
-  "content farm"
+  "content farm",
+  "扩大",
+  "规模化",
+  "投放",
+  "广告",
+  "招聘",
+  "团队",
+  "全球",
+  "全网",
+  "爆款",
+  "大量渠道",
+  "内容矩阵"
 ];
 
 const proofTerms = [
@@ -192,7 +222,21 @@ const proofTerms = [
   "walkthrough",
   "source",
   "data",
-  "export"
+  "export",
+  "演示",
+  "截图",
+  "链接",
+  "客户",
+  "付款",
+  "回复",
+  "访谈",
+  "案例",
+  "样例",
+  "数据",
+  "导出",
+  "材料",
+  "源码",
+  "笔记"
 ];
 
 const riskyBoundaryTerms = [
@@ -209,7 +253,20 @@ const riskyBoundaryTerms = [
   "copy",
   "copyright",
   "personal data",
-  "regulated"
+  "regulated",
+  "医疗",
+  "法律",
+  "金融",
+  "投资",
+  "健康",
+  "爬取",
+  "隐私",
+  "账号",
+  "保证",
+  "版权",
+  "个人数据",
+  "监管",
+  "合规"
 ];
 
 function normalizeText(value: string) {

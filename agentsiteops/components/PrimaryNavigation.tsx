@@ -4,34 +4,28 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   ClipboardList,
-  FileCheck2,
   FileText,
   Gauge,
   Workflow
 } from "lucide-react";
+import { usePreferredLanguage, type SiteLanguage } from "@/components/LanguageToggle";
 
 const navItems = [
   {
     href: "/idea-risk-test/",
-    label: "Free Test",
+    label: { en: "Test Idea", zh: "测试想法" },
     Icon: Gauge,
     match: ["/idea-risk-test/"]
   },
   {
     href: "/plan/",
-    label: "Plan",
+    label: { en: "Plan", zh: "计划" },
     Icon: ClipboardList,
-    match: ["/plan/"]
+    match: ["/plan/", "/intake/", "/review-status/", "/start/", "/contact/", "/thank-you/"]
   },
   {
-    href: "/intake/",
-    label: "Intake",
-    Icon: FileCheck2,
-    match: ["/intake/", "/review-status/", "/start/", "/contact/", "/thank-you/"]
-  },
-  {
-    href: "/execution/",
-    label: "Workbench",
+    href: "/how-it-works/",
+    label: { en: "Method", zh: "方法" },
     Icon: Workflow,
     match: [
       "/execution/",
@@ -44,11 +38,15 @@ const navItems = [
   },
   {
     href: "/sample/",
-    label: "Sample",
+    label: { en: "Examples", zh: "样例" },
     Icon: FileText,
     match: ["/sample/", "/reports/route-basis/", "/methodology/route-selection/"]
   }
 ];
+
+function labelFor(label: Record<SiteLanguage, string>, language: SiteLanguage) {
+  return label[language] ?? label.en;
+}
 
 function normalizePath(pathname: string) {
   if (pathname === "/") {
@@ -61,6 +59,7 @@ function normalizePath(pathname: string) {
 export function PrimaryNavigation() {
   const pathname = normalizePath(usePathname());
   const isFreeTest = pathname === "/idea-risk-test/";
+  const [language] = usePreferredLanguage();
 
   return (
     <>
@@ -78,7 +77,7 @@ export function PrimaryNavigation() {
               href={item.href}
             >
               <Icon aria-hidden="true" size={15} strokeWidth={2.2} />
-              {item.label}
+              {labelFor(item.label, language)}
             </Link>
           );
         })}
@@ -90,7 +89,7 @@ export function PrimaryNavigation() {
         href="/idea-risk-test/"
       >
         <Gauge aria-hidden="true" size={16} />
-        Free test
+        {language === "zh" ? "免费测试" : "Free test"}
       </Link>
     </>
   );

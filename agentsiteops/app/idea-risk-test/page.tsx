@@ -38,7 +38,7 @@ const flowRows = [
   {
     label: "Fill",
     body:
-      "The visitor enters rough project idea, buyer, first offer, assets, channel, resources, constraints, and validation plan."
+      "The visitor writes one messy project brief. The page extracts useful signals instead of asking for many fields first."
   },
   {
     label: "Match",
@@ -89,8 +89,9 @@ export default function IdeaRiskTestPage() {
           <p className="eyebrow">Free test window</p>
           <h1>Test a project idea before turning it into a Route File.</h1>
           <p>
-            Put in a rough idea. The first output is not payment, not a promise, and not a
-            final plan. It is a source-backed failure map with evidence gaps, time
+            Put in scattered notes, a rough plan, or a voice-dump style description. The
+            first output is not payment, not a promise, and not a final plan. It is a
+            source-backed failure map with extracted signals, evidence gaps, time
             checkpoints, and the next planning action.
           </p>
           <div className="hero-actions">
@@ -112,7 +113,8 @@ export default function IdeaRiskTestPage() {
           <strong>Core flow</strong>
           <p>
             User idea to failure-node match to reference basis to evidence gaps to time
-            checkpoints to Plan Studio or Review Status.
+            checkpoints to Plan Studio or Review Status. The user only needs one main
+            input first.
           </p>
         </aside>
       </section>
@@ -149,7 +151,8 @@ export default function IdeaRiskTestPage() {
           <h2>What happens from click to output.</h2>
           <p>
             The key support is not a hidden AI answer. It is the visible connection between
-            user input, failure patterns, source basis, evidence needed, and time-boxed action.
+            messy user input, extracted project signals, failure patterns, source basis,
+            evidence needed, and time-boxed action.
           </p>
         </div>
         <div className="idea-risk-flow-grid">

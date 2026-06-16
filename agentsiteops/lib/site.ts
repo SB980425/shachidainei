@@ -93,9 +93,9 @@ export const routePages: RoutePage[] = [
     pageType: "product_tool",
     title: "Free Idea Risk Test",
     description:
-      "A free browser-local test that turns a rough project idea into likely startup failure nodes, evidence gaps, time checkpoints, and a next route before Plan Studio.",
+      "A free browser-local test that extracts useful signals from one rough project brief, then maps likely startup failure nodes, evidence gaps, time checkpoints, and a next route before Plan Studio.",
     answer:
-      "The Free Idea Risk Test lets a visitor enter a rough idea once, then see likely failure nodes, missing evidence, 0-30 day checkpoints, and the next route. It uses public startup-failure references as a basis and does not claim to prove demand, payment, traffic, or product-market fit.",
+      "The Free Idea Risk Test lets a visitor paste scattered project notes once, then see extracted buyer, offer, proof, channel, constraint, and validation signals before likely failure nodes, missing evidence, 0-30 day checkpoints, and the next route. It uses public startup-failure references as a basis and does not claim to prove demand, payment, traffic, or product-market fit.",
     primaryAction: { label: "Start free test", href: "/idea-risk-test/" },
     secondaryAction: { label: "Continue to Plan Studio", href: "/plan/" },
     aiTarget:
@@ -106,7 +106,7 @@ export const routePages: RoutePage[] = [
       {
         title: "Client input",
         body:
-          "The visitor writes the project idea, buyer, problem, existing proof, channel, constraints, blocked decision, and first validation attempt in plain language."
+          "The visitor writes one messy project brief in plain language. The page extracts buyer, problem, first offer, existing proof, channel, constraints, blocked decision, and first validation attempt instead of asking for many fields first."
       },
       {
         title: "Failure nodes",

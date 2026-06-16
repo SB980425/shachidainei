@@ -347,6 +347,9 @@ async function main() {
   ]);
   await checkPage("/idea-risk-test/", [
     "Test a project idea before turning it into a Route File.",
+    "one main input",
+    "Drop the rough idea here. The site will extract the useful parts.",
+    "Extracted signals",
     "Start free test",
     "Likely failure nodes",
     "Time checkpoints",
@@ -564,11 +567,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-66 Single-input idea interpreter and language switch",
     "M4-65 Free idea risk test window",
     "M4-64 Review status response loop",
     "M4-63 Route File proof flow pass",
-    "M4-62 Dedicated scope lock state",
-    "M4-61 Client state continuity layer"
+    "M4-62 Dedicated scope lock state"
   ]);
 
   const report = renderReport(generatedAt);

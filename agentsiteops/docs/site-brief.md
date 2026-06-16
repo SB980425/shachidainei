@@ -10,7 +10,7 @@ AgentSiteOps is a Route Project operating system for builders who need to turn m
 
 The core product is not a generic SEO blog, AI research wrapper, prompt library, or payment-first service page. The core object is a Route Project moving through plan draft, intake, scope lock, approved evidence carrier, coverage gate, Route File handoff, and validation.
 
-The first public test surface is free: a visitor can enter a rough project idea and receive source-backed failure nodes, evidence gaps, and time checkpoints before Plan Studio or manual intake. This result is reference guidance, not proof of demand or final Route File delivery.
+The first public test surface is free: a visitor can paste one rough project brief and receive extracted useful signals, source-backed failure nodes, evidence gaps, and time checkpoints before Plan Studio or manual intake. This result is reference guidance, not proof of demand or final Route File delivery.
 
 Every core product page should show the client state: what the customer can do now, what the website can handle automatically, what requires manual/operator review, what visible result comes next, and what condition triggers repair or stop.
 
@@ -71,7 +71,7 @@ Research-to-Route File.
 | URL | Page Type | Purpose |
 |---|---|---|
 | `/` | Home | State the Route Project OS and route visitors into Free Test, Plan, Intake, Workbench, and Sample. |
-| `/idea-risk-test/` | Product tool | Let visitors test a rough idea against failure nodes, evidence gaps, and 0-30 day checkpoints before planning. |
+| `/idea-risk-test/` | Product tool | Let visitors paste one rough idea brief, extract useful project signals, and test it against failure nodes, evidence gaps, and 0-30 day checkpoints before planning. |
 | `/plan/` | Product workbench | Let visitors draft a project plan locally before intake. |
 | `/intake/` | Product workbench | Turn the draft into a copy-ready review packet and explain ready, repair, blocked, or not-delivery states. |
 | `/review-status/` | Product state | Show the valid response states after intake: ready, repair, blocked, or not delivery. |

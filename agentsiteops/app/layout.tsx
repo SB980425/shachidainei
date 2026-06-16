@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
+import { LanguageToggle } from "@/components/LanguageToggle";
 import { PrimaryNavigation } from "@/components/PrimaryNavigation";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
 import "./globals.css";
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <BrandLogo />
           </Link>
           <PrimaryNavigation />
+          <LanguageToggle />
         </header>
         {children}
         <footer className="site-footer">

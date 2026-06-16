@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-16T02:40:36.950Z
+- Generated: 2026-06-16T13:26:42.483Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 356
+- Checks: 359
 - Blockers: 0
 - Warnings: 0
 
@@ -60,6 +60,9 @@
 | /idea-risk-test/ | pass | HTML title exists | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | canonical points to production URL | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Test a project idea before turning it into a Route File. | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | one main input | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Drop the rough idea here. The site will extract the useful parts. | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Extracted signals | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Start free test | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Likely failure nodes | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Time checkpoints | [link](https://agentsiteops.com/idea-risk-test/) |
@@ -362,11 +365,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-66 Single-input idea interpreter and language switch | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-65 Free idea risk test window | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-64 Review status response loop | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-63 Route File proof flow pass | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-62 Dedicated scope lock state | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-61 Client state continuity layer | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

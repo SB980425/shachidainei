@@ -1,6 +1,6 @@
 # Growth Evidence Snapshot
 
-- Generated: 2026-06-16T02:41:17.981Z
+- Generated: 2026-06-16T13:27:25.890Z
 - Status: baseline_ready
 - Routes: 66
 - Technical SEO pass routes: 66
@@ -23,7 +23,7 @@
 |---|---|---|---|---|---|---|
 | / | home | launch_blueprint | pass | site_pass | keep | Measure homepage CTA click rate, start exits, sample exits, delivery gate exits, and confusion about what AgentSiteOps delivers |
 | /start/ | product_entry | launch_blueprint | pass | site_pass | keep | Measure start page views, sample exits, how-it-works exits, pricing exits, and repeated confusion about what to submit |
-| /idea-risk-test/ | product_tool | launch_blueprint | pass | site_pass | keep | Measure idea risk test views, example loads, report copies, Plan Studio exits, Review Status exits, and whether users understand the result is reference guidance rather than final delivery |
+| /idea-risk-test/ | product_tool | launch_blueprint | pass | site_pass | keep | Measure idea risk test views, example loads, report copies, Plan Studio exits, Review Status exits, language switches, and whether users understand the result is reference guidance rather than final delivery |
 | /plan/ | product_planner | launch_blueprint | pass | site_pass | keep | Measure plan studio views, example loads, plan brief copies, intake exits, sample exits, and repeated confusion about preliminary draft versus final Route File |
 | /how-it-works/ | product_explainer | launch_blueprint | pass | site_pass | keep | Measure how-it-works views, start exits, client workflow exits, prompt pack exits, and repeated questions about API use |
 | /scope/ | product_state | launch_blueprint | pass | site_pass | keep | Measure scope lock views, research exits, intake repair exits, coverage gate exits, and repeated confusion about what is frozen before research |

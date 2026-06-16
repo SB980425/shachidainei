@@ -12,6 +12,50 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-16",
+    step: "M4-66 Single-input idea interpreter and language switch",
+    status: "completed",
+    keyPoints: [
+      "Changed the Free Idea Risk Test from many separate user fields into one primary messy-idea input plus one optional assets field.",
+      "Added a browser-local project brief interpreter that extracts project, buyer, offer, proof, channel, constraints, validation, and Plan Studio draft fields from scattered text.",
+      "Connected the extracted draft to Plan Studio local storage so users do not need to re-enter the same project information after the risk test.",
+      "Added a global English/Chinese language switch in the header and localized the primary navigation plus the main idea-risk testing surface.",
+      "Expanded risk keyword matching for Chinese project descriptions so Chinese input can trigger proof, scaling, rights, channel, and validation checks."
+    ],
+    aiAngle:
+      "AI and search readers can now describe AgentSiteOps as a single-input project interpretation workflow: messy user text becomes extracted project signals, risk nodes, time checkpoints, and a reusable planning draft.",
+    files: [
+      "components/IdeaRiskTestStudio.tsx",
+      "components/LanguageToggle.tsx",
+      "components/PrimaryNavigation.tsx",
+      "app/layout.tsx",
+      "app/idea-risk-test/page.tsx",
+      "lib/projectBriefInterpreter.ts",
+      "lib/ideaRiskEngine.ts",
+      "lib/site.ts",
+      "docs/site-brief.md",
+      "docs/page-registry.csv",
+      "data/page-review-actions.csv",
+      "scripts/production-health-monitor.mjs",
+      "app/globals.css"
+    ],
+    verification: [
+      "`npm run typecheck` pass",
+      "`npm run lint` pass",
+      "`npm run build` pass",
+      "`npm run routes:gate` pass",
+      "`npm run links:gate` pass",
+      "`npm run analytics:gate` pass",
+      "`npm run commercial:gate` pass",
+      "`npm run growth:snapshot` pass",
+      "`npm run seo:ci` pass",
+      "Browser local check pass: Free Idea Risk Test accepts one messy brief, loads example text, switches Chinese/English UI, and has 0 horizontal overflow at desktop and mobile widths",
+      "`npm run production:health` pass"
+    ],
+    next:
+      "Apply the same single-input interpretation pattern to Plan Studio and Intake so every later page reads from the same project brief object instead of re-asking the user to fill similar fields."
+  },
+  {
+    date: "2026-06-16",
     step: "M4-65 Free idea risk test window",
     status: "completed",
     keyPoints: [
