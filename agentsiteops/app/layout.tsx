@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { PrimaryNavigation } from "@/components/PrimaryNavigation";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteJourneyBar } from "@/components/SiteJourneyBar";
 import { SiteAnalytics } from "@/components/SiteAnalytics";
 import "./globals.css";
@@ -75,32 +76,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </header>
         <SiteJourneyBar />
         {children}
-        <footer className="site-footer">
-          <div>
-            <BrandLogo compact />
-            <p>Research-to-Route File service for messy projects that need one selected route before build expansion.</p>
-          </div>
-          <div className="footer-links">
-            <Link prefetch={false} href="/start/">Start</Link>
-            <Link prefetch={false} href="/execution/">Execution</Link>
-            <Link prefetch={false} href="/how-it-works/">How it works</Link>
-            <Link prefetch={false} href="/launch-kit/">Launch Kit</Link>
-            <Link prefetch={false} href="/methodology/route-selection/">Method</Link>
-            <Link prefetch={false} href="/templates/route-research-prompt-pack/">Research</Link>
-            <Link prefetch={false} href="/delivery-gate/">Delivery Gate</Link>
-            <Link prefetch={false} href="/reports/route-basis/">Route Basis</Link>
-            <Link prefetch={false} href="/updates/">Updates</Link>
-            <Link prefetch={false} href="/pricing/">Pricing</Link>
-            <Link prefetch={false} href="/sample/">Sample</Link>
-            <Link prefetch={false} href="/terms/">Terms</Link>
-            <Link prefetch={false} href="/refund-policy/">Refunds</Link>
-            <Link prefetch={false} href="/contact/">Contact</Link>
-            <Link prefetch={false} href="/reports/route-evidence-dashboard/">Evidence</Link>
-            <Link prefetch={false} href="/authors/">Authors</Link>
-            <Link prefetch={false} href="/privacy/">Privacy</Link>
-            <Link prefetch={false} href="/disclosure/">Disclosure</Link>
-          </div>
-        </footer>
+        <SiteFooter />
       </body>
     </html>
   );

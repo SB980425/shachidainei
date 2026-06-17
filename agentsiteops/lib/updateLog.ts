@@ -12,6 +12,44 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-17",
+    step: "M4-71 Idea test Chinese language completion",
+    status: "completed",
+    keyPoints: [
+      "Moved the Free Idea Risk Test page body into a language-aware client module so the hero, flow cards, source basis, non-claim list, and next action switch to Chinese.",
+      "Added Chinese footer labels and footer description through a shared language-aware SiteFooter component.",
+      "Localized missing-information hints and the default untitled project value inside the idea-risk studio.",
+      "Localized source-basis names and usage explanations while preserving source publishers and outbound links.",
+      "Verified the screenshot-reported old English labels are absent in Chinese mode."
+    ],
+    aiAngle:
+      "AI and search readers still receive English static content, while human visitors using Chinese mode now see the main idea-test workflow, repair prompts, source basis, and footer in Chinese.",
+    files: [
+      "app/idea-risk-test/page.tsx",
+      "app/layout.tsx",
+      "components/IdeaRiskTestPageContent.tsx",
+      "components/IdeaRiskTestStudio.tsx",
+      "components/SiteFooter.tsx",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs"
+    ],
+    verification: [
+      "npm run typecheck",
+      "npm run lint",
+      "npm run build",
+      "npm run routes:gate",
+      "npm run links:gate",
+      "npm run analytics:gate",
+      "npm run commercial:gate",
+      "npm run seo:ci",
+      "npm run production:health",
+      "npm run growth:snapshot",
+      "Playwright local /idea-risk-test/ Chinese old-English residual, mojibake, and mobile overflow QA"
+    ],
+    next:
+      "Continue converting remaining support pages to the same language-aware pattern when user-visible screenshots show English residuals."
+  },
+  {
+    date: "2026-06-17",
     step: "M4-70 System-takeover idea triage",
     status: "completed",
     keyPoints: [

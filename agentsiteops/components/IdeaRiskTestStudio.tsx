@@ -373,6 +373,36 @@ function signalLabel(label: string, language: SiteLanguage) {
   return labels[label] ?? label;
 }
 
+function signalValue(label: string, value: string, language: SiteLanguage) {
+  if (language === "en") {
+    return value;
+  }
+
+  if (label === "Project" && value === "Untitled project") {
+    return "未命名项目";
+  }
+
+  return value;
+}
+
+function missingHintLabel(value: string, language: SiteLanguage) {
+  if (language === "en") {
+    return value;
+  }
+
+  const labels: Record<string, string> = {
+    "Name the first reachable buyer or user group.": "说清第一批可触达买家或用户群体。",
+    "Describe the smallest first offer or result.": "描述最小的首个交付或结果。",
+    "Add one proof asset, source, screenshot, case, or link.": "补充一个证明资产、来源、截图、案例或链接。",
+    "Name the first channel where real people will see it.": "说清真实用户会在哪个第一渠道看到它。",
+    "Define what evidence would count within 48 hours, 7 days, or 30 days.":
+      "定义 48 小时、7 天或 30 天内什么证据才算有效。",
+    "State what the route must not claim, use, or promise.": "写清这条路线不能声称、使用或承诺什么。"
+  };
+
+  return labels[value] ?? value;
+}
+
 function sourceTypeLabel(value: string, language: SiteLanguage) {
   if (language === "en") {
     return value;
@@ -393,7 +423,7 @@ function localizedTimePlan(language: SiteLanguage, projectName: string, route: s
     return null;
   }
 
-  const project = projectName.trim() || "这个项目";
+  const project = !projectName.trim() || projectName.trim() === "Untitled project" ? "未命名项目" : projectName.trim();
   return [
     `0-24 小时：冻结 ${project} 的核心问题，不新增产品、付款页或内容范围。`,
     `48 小时：先修复最高风险节点：${topRisk}。只收集这个节点需要的证据。`,
@@ -668,7 +698,7 @@ export function IdeaRiskTestStudio() {
               {interpretation.detectedSignals.map((item) => (
                 <article key={item.label}>
                   <span>{signalLabel(item.label, language)}</span>
-                  <p>{item.value}</p>
+                  <p>{signalValue(item.label, item.value, language)}</p>
                 </article>
               ))}
             </div>
@@ -681,7 +711,7 @@ export function IdeaRiskTestStudio() {
             {interpretation.missingHints.length ? (
               <ul>
                 {interpretation.missingHints.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li key={item}>{missingHintLabel(item, language)}</li>
                 ))}
               </ul>
             ) : (

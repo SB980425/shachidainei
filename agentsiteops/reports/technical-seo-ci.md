@@ -1,6 +1,6 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-17T01:20:33.994Z
+- Generated: 2026-06-17T01:55:51.075Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
