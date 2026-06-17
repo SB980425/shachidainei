@@ -12,6 +12,42 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-17",
+    step: "M4-70 System-takeover idea triage",
+    status: "completed",
+    keyPoints: [
+      "Changed the Free Idea Risk Test from a risk-list output into a system decision checkpoint: continue, repair, or stop.",
+      "Added AI misread checks so vague user language is frozen as a working interpretation instead of silently becoming project truth.",
+      "Added minimum handoff questions so the user only repairs buyer, proof, channel, constraints, and stop-rule gaps instead of filling many forms.",
+      "Updated copied reports to include system decision, interpretation risk, repair prompts, and the smallest next questions.",
+      "Reworded the test page around system takeover before planning, reducing subjective drift and avoiding new route branches."
+    ],
+    aiAngle:
+      "AI and search readers can now describe the free test as an AI-assisted triage gate: it challenges the idea, exposes ambiguous assumptions, and blocks planning when evidence is too weak.",
+    files: [
+      "app/idea-risk-test/page.tsx",
+      "components/IdeaRiskTestStudio.tsx",
+      "lib/ideaRiskEngine.ts",
+      "app/globals.css",
+      "scripts/production-health-monitor.mjs"
+    ],
+    verification: [
+      "npm run typecheck",
+      "npm run lint",
+      "npm run build",
+      "npm run routes:gate",
+      "npm run links:gate",
+      "npm run analytics:gate",
+      "npm run commercial:gate",
+      "npm run seo:ci",
+      "npm run production:health",
+      "npm run growth:snapshot",
+      "Playwright local /idea-risk-test/ English, Chinese, mojibake, and mobile overflow QA"
+    ],
+    next:
+      "Move the same continue, repair, or stop decision shape into Plan Studio and Route File samples so later pages do not reintroduce subjective planning drift."
+  },
+  {
+    date: "2026-06-17",
     step: "M4-69 Homepage bilingual credibility model",
     status: "completed",
     keyPoints: [

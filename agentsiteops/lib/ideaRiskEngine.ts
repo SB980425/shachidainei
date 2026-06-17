@@ -32,11 +32,36 @@ export type IdeaRiskNode = {
   sources: string[];
 };
 
+export type IdeaRiskAssumptionCheck = {
+  id: "buyer" | "offer" | "proof" | "channel" | "constraints" | "validation";
+  label: string;
+  status: "extracted" | "missing";
+  value: string;
+  riskIfWrong: string;
+  repairPrompt: string;
+};
+
+export type IdeaRiskDecision = {
+  state: "stop" | "repair" | "continue";
+  label: string;
+  reason: string;
+  nextStep: string;
+};
+
+export type IdeaRiskHandoffQuestion = {
+  id: string;
+  question: string;
+  reason: string;
+};
+
 export type IdeaRiskReport = {
   readinessScore: number;
   confidenceLabel: "Needs input" | "Testable draft" | "Ready for review";
+  decision: IdeaRiskDecision;
   selectedRoute: string;
   routeReason: string;
+  assumptionChecks: IdeaRiskAssumptionCheck[];
+  handoffQuestions: IdeaRiskHandoffQuestion[];
   topRisks: IdeaRiskNode[];
   evidenceGaps: string[];
   timePlan: string[];
@@ -293,6 +318,184 @@ function includesAny(text: string, terms: string[]) {
 
 function countCompleteFields(input: IdeaRiskInput) {
   return Object.values(input).filter((value) => hasText(value)).length;
+}
+
+const assumptionSpecs: Array<{
+  id: IdeaRiskAssumptionCheck["id"];
+  label: string;
+  value: (input: IdeaRiskInput) => string;
+  minLength: number;
+  riskIfWrong: string;
+  repairPrompt: string;
+}> = [
+  {
+    id: "buyer",
+    label: "First reachable buyer",
+    value: (input) => input.targetUser,
+    minLength: 18,
+    riskIfWrong:
+      "If the buyer is vague, AI will optimize around a fictional audience and make the project look more viable than it is.",
+    repairPrompt:
+      "Name one reachable buyer group, where they can be contacted, and what repeated behavior proves the problem exists."
+  },
+  {
+    id: "offer",
+    label: "Smallest first offer",
+    value: (input) => input.offer,
+    minLength: 18,
+    riskIfWrong:
+      "If the offer is broad, AI may turn the idea into a platform, course, tool, or content plan before the first result is defined.",
+    repairPrompt:
+      "State the smallest result a real person would receive first, without adding extra product scope."
+  },
+  {
+    id: "proof",
+    label: "Inspectable proof asset",
+    value: (input) => input.existingAssets,
+    minLength: 18,
+    riskIfWrong:
+      "If no proof asset is visible, AI can only reason from intent and may treat opinions as evidence.",
+    repairPrompt:
+      "Provide one screenshot, demo, buyer reply, source note, example, walkthrough, or payment signal that can be inspected."
+  },
+  {
+    id: "channel",
+    label: "First validation channel",
+    value: (input) => input.acquisitionChannel,
+    minLength: 18,
+    riskIfWrong:
+      "If the first channel is missing, AI may recommend work that cannot reach real users.",
+    repairPrompt:
+      "Pick one channel, one target list, and the exact response that counts as qualified interest."
+  },
+  {
+    id: "constraints",
+    label: "Claims and rights boundary",
+    value: (input) => input.constraints,
+    minLength: 18,
+    riskIfWrong:
+      "If limits are missing, AI may propose claims, data use, or delivery steps that should be blocked.",
+    repairPrompt:
+      "List what the route must not claim, scrape, copy, access, promise, publish, or automate."
+  },
+  {
+    id: "validation",
+    label: "Continue or stop rule",
+    value: (input) => input.validationPlan,
+    minLength: 18,
+    riskIfWrong:
+      "If the stop rule is missing, AI may keep improving the plan internally while the project never meets buyer evidence.",
+    repairPrompt:
+      "Define the review date, counted signal, ignored weak signal, and what stops if evidence does not appear."
+  }
+];
+
+function buildAssumptionChecks(input: IdeaRiskInput): IdeaRiskAssumptionCheck[] {
+  return assumptionSpecs.map((spec) => {
+    const value = spec.value(input).trim();
+    const status = hasText(value, spec.minLength) ? "extracted" : "missing";
+
+    return {
+      id: spec.id,
+      label: spec.label,
+      status,
+      value: value || "Not provided",
+      riskIfWrong:
+        status === "extracted"
+          ? "Use this only as the current working interpretation. It can still be corrected by stronger evidence."
+          : spec.riskIfWrong,
+      repairPrompt: spec.repairPrompt
+    };
+  });
+}
+
+function buildHandoffQuestions(
+  assumptionChecks: IdeaRiskAssumptionCheck[],
+  risks: IdeaRiskNode[]
+): IdeaRiskHandoffQuestion[] {
+  const questions = assumptionChecks
+    .filter((check) => check.status === "missing")
+    .map<IdeaRiskHandoffQuestion>((check) => ({
+      id: check.id,
+      question: check.repairPrompt,
+      reason: check.riskIfWrong
+    }));
+
+  for (const risk of risks) {
+    if (questions.length >= 3) {
+      break;
+    }
+
+    if (questions.some((item) => item.id === risk.id)) {
+      continue;
+    }
+
+    questions.push({
+      id: risk.id,
+      question: risk.nextAction,
+      reason: risk.attention
+    });
+  }
+
+  return questions.slice(0, 3);
+}
+
+function buildDecision(
+  input: IdeaRiskInput,
+  readinessScore: number,
+  risks: IdeaRiskNode[],
+  assumptionChecks: IdeaRiskAssumptionCheck[]
+): IdeaRiskDecision {
+  const missingIds = new Set(assumptionChecks.filter((check) => check.status === "missing").map((check) => check.id));
+  const complianceRisk = risks.some((risk) => risk.id === "rights-or-compliance" && risk.severity === "high");
+
+  if (complianceRisk && missingIds.has("constraints")) {
+    return {
+      state: "stop",
+      label: "Stop before build",
+      reason:
+        "The idea touches a rights, privacy, compliance, or claims boundary but the forbidden actions are not stated.",
+      nextStep: "Write the blocked claims and excluded data before publishing, selling, researching, or automating the route."
+    };
+  }
+
+  if (
+    readinessScore < 58 ||
+    missingIds.has("buyer") ||
+    missingIds.has("proof") ||
+    missingIds.has("channel") ||
+    missingIds.has("validation")
+  ) {
+    return {
+      state: "repair",
+      label: "Repair before planning",
+      reason:
+        "The system can map risks, but the input still leaves too much room for AI to invent buyer, proof, channel, or stop conditions.",
+      nextStep:
+        "Answer only the system questions below, then re-run the same idea instead of adding more features or browsing new pages."
+    };
+  }
+
+  const highRiskCount = risks.filter((risk) => risk.severity === "high").length;
+
+  if (highRiskCount >= 3) {
+    return {
+      state: "repair",
+      label: "Repair the route",
+      reason:
+        "The idea has enough material to inspect, but too many high-risk nodes are active for a clean route decision.",
+      nextStep: "Repair the highest-risk node first and keep the route narrow until the next validation checkpoint."
+    };
+  }
+
+  return {
+    state: "continue",
+    label: "Continue to narrow route",
+    reason:
+      "The idea has enough buyer, proof, channel, constraint, and validation material to draft one bounded route.",
+    nextStep:
+      "Continue only as a narrow validation route. Keep rejected alternatives and the stop rule visible."
+  };
 }
 
 const riskTemplates: RiskTemplate[] = [
@@ -562,6 +765,9 @@ export function createIdeaRiskReport(input: IdeaRiskInput): IdeaRiskReport {
   const penalty = topRisks.reduce((sum, risk) => sum + (risk.severity === "high" ? 8 : risk.severity === "medium" ? 5 : 2), 0);
   const readinessScore = Math.max(0, Math.min(100, completedFields * 11 - penalty + 12));
   const confidenceLabel = confidenceFromScore(readinessScore);
+  const assumptionChecks = buildAssumptionChecks(input);
+  const handoffQuestions = buildHandoffQuestions(assumptionChecks, topRisks);
+  const decision = buildDecision(input, readinessScore, topRisks, assumptionChecks);
   const route = selectedRoute(input, topRisks);
   const evidenceGaps = buildEvidenceGaps(input, topRisks);
   const timePlan = buildTimePlan(input, route, topRisks);
@@ -577,7 +783,17 @@ export function createIdeaRiskReport(input: IdeaRiskInput): IdeaRiskReport {
   const brief = [
     `Project: ${input.projectName.trim() || "Untitled idea"}`,
     `Selected test route: ${route}`,
+    `System decision: ${decision.label}`,
+    `Decision reason: ${decision.reason}`,
     `Readiness: ${readinessScore}/100 (${confidenceLabel})`,
+    "",
+    "AI misread checks:",
+    ...assumptionChecks.map(
+      (check) => `- ${check.label}: ${check.status}. Current value: ${check.value}. Repair: ${check.repairPrompt}`
+    ),
+    "",
+    "System questions:",
+    ...handoffQuestions.map((question) => `- ${question.question}`),
     "",
     "Top failure nodes:",
     ...topRisks.map((risk) => `- ${risk.label}: ${risk.why} Evidence needed: ${risk.requiredEvidence}`),
@@ -594,8 +810,11 @@ export function createIdeaRiskReport(input: IdeaRiskInput): IdeaRiskReport {
   return {
     readinessScore,
     confidenceLabel,
+    decision,
     selectedRoute: route,
     routeReason,
+    assumptionChecks,
+    handoffQuestions,
     topRisks,
     evidenceGaps,
     timePlan,

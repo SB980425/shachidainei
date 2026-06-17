@@ -55,6 +55,18 @@ const ui = {
     copyUnavailable: "Copy unavailable",
     clear: "Clear",
     suggestedRoute: "Suggested next route",
+    systemDecision: "System decision",
+    systemTakesOver: "System takeover",
+    systemTakesOverBody:
+      "Do not defend the original idea. The page freezes the current interpretation, marks where AI may misread it, and asks only the minimum questions needed to repair the route.",
+    misreadChecks: "AI misread checks",
+    interpretedAs: "Interpreted as",
+    riskIfWrong: "Risk if wrong",
+    repairPrompt: "Repair prompt",
+    systemQuestions: "Answer only these questions",
+    noSystemQuestions: "No blocking questions. Keep the route narrow and preserve the stop rule.",
+    extractedStatus: "extracted",
+    missingStatus: "missing",
     riskNodes: "Likely failure nodes",
     watch: "Watch",
     evidence: "Evidence needed",
@@ -95,6 +107,18 @@ const ui = {
     copyUnavailable: "复制不可用",
     clear: "清空",
     suggestedRoute: "建议下一步路线",
+    systemDecision: "系统判断",
+    systemTakesOver: "系统接管",
+    systemTakesOverBody:
+      "不要替原始想法辩护。页面会冻结当前理解，标记 AI 可能误读的位置，并只提出修复路线所需的最少问题。",
+    misreadChecks: "AI 可能误读的位置",
+    interpretedAs: "当前理解为",
+    riskIfWrong: "如果理解错了",
+    repairPrompt: "修复提示",
+    systemQuestions: "只需要回答这些问题",
+    noSystemQuestions: "当前没有阻塞问题。继续时保持路线收窄，并保留停止规则。",
+    extractedStatus: "已提取",
+    missingStatus: "缺失",
     riskNodes: "可能失败节点",
     watch: "注意",
     evidence: "需要证据",
@@ -200,6 +224,57 @@ const confidenceZh = {
   "Ready for review": "可进入审核"
 } as const;
 
+const decisionZh = {
+  stop: {
+    label: "先停止建设",
+    reason: "项目触碰权利、隐私、合规或承诺边界，但禁止事项还没有说清。",
+    nextStep: "先写清不能使用的数据、不能做出的承诺、不能发布的内容，再继续研究或建设。"
+  },
+  repair: {
+    label: "先修复输入",
+    reason: "系统可以画出风险，但当前描述仍给 AI 留下太多自我发挥空间。",
+    nextStep: "只回答下面的系统问题，然后重新运行同一个想法，不要新增功能、页面或方向。"
+  },
+  continue: {
+    label: "继续收窄路线",
+    reason: "当前输入已经包含足够的用户、证明、渠道、约束和验证材料，可以进入一条窄路线。",
+    nextStep: "继续时只保留一条验证路线，同时保留被否方案和停止规则。"
+  }
+} as const;
+
+const assumptionZh = {
+  buyer: {
+    label: "第一批可触达买家",
+    riskIfWrong: "如果买家太模糊，AI 会围绕虚构人群优化，让项目看起来比实际更可行。",
+    repairPrompt: "说清一个可触达买家群体、在哪里能找到他们、什么重复行为证明问题存在。"
+  },
+  offer: {
+    label: "最小首个交付",
+    riskIfWrong: "如果交付物太宽，AI 可能把想法扩展成平台、课程、工具或内容计划。",
+    repairPrompt: "写出真实用户最先能收到的最小结果，不要新增产品范围。"
+  },
+  proof: {
+    label: "可检查证明资产",
+    riskIfWrong: "如果没有证明资产，AI 只能根据意图推理，并可能把观点当成证据。",
+    repairPrompt: "提供一个截图、演示、买家回复、来源笔记、样例、流程说明或付款信号。"
+  },
+  channel: {
+    label: "第一验证渠道",
+    riskIfWrong: "如果缺少第一渠道，AI 可能推荐无法触达真实用户的工作。",
+    repairPrompt: "选择一个渠道、一组目标名单，以及什么回应算合格兴趣。"
+  },
+  constraints: {
+    label: "承诺与权利边界",
+    riskIfWrong: "如果边界缺失，AI 可能提出应该被阻止的承诺、数据使用或交付步骤。",
+    repairPrompt: "列出这条路线不能承诺、爬取、复制、访问、发布或自动化的内容。"
+  },
+  validation: {
+    label: "继续或停止规则",
+    riskIfWrong: "如果停止规则缺失，AI 可能一直优化计划，但项目从不接触买家证据。",
+    repairPrompt: "定义复盘日期、有效信号、无效弱信号，以及没有证据时停止什么。"
+  }
+} as const;
+
 function localizeRisk(risk: IdeaRiskNode, language: SiteLanguage) {
   if (language === "en") {
     return risk;
@@ -217,6 +292,67 @@ function routeLabel(route: string, language: SiteLanguage) {
 
 function confidenceLabel(label: keyof typeof confidenceZh | string, language: SiteLanguage) {
   return language === "zh" ? confidenceZh[label as keyof typeof confidenceZh] ?? label : label;
+}
+
+function decisionView(report: ReturnType<typeof createIdeaRiskReport>, language: SiteLanguage) {
+  if (language === "en") {
+    return report.decision;
+  }
+
+  return decisionZh[report.decision.state];
+}
+
+function localizeAssumption(
+  check: ReturnType<typeof createIdeaRiskReport>["assumptionChecks"][number],
+  language: SiteLanguage
+) {
+  if (language === "en") {
+    return check;
+  }
+
+  const localized = assumptionZh[check.id];
+  return {
+    ...check,
+    label: localized.label,
+    riskIfWrong:
+      check.status === "extracted"
+        ? "这只是系统当前理解，不等于事实。后续证据可以覆盖它。"
+        : localized.riskIfWrong,
+    repairPrompt: localized.repairPrompt
+  };
+}
+
+function localizeQuestion(
+  question: ReturnType<typeof createIdeaRiskReport>["handoffQuestions"][number],
+  language: SiteLanguage
+) {
+  if (language === "en") {
+    return question;
+  }
+
+  if (question.id in assumptionZh) {
+    const localized = assumptionZh[question.id as keyof typeof assumptionZh];
+    return {
+      ...question,
+      question: localized.repairPrompt,
+      reason: localized.riskIfWrong
+    };
+  }
+
+  if (question.id in riskZh) {
+    const localized = riskZh[question.id];
+    return {
+      ...question,
+      question: localized.nextAction,
+      reason: localized.attention
+    };
+  }
+
+  return question;
+}
+
+function statusLabel(status: "extracted" | "missing", labels: Record<string, string>) {
+  return status === "extracted" ? labels.extractedStatus : labels.missingStatus;
 }
 
 function signalLabel(label: string, language: SiteLanguage) {
@@ -313,6 +449,9 @@ function buildLocalizedBrief(
   }
 
   const topRisks = report.topRisks.map((risk) => localizeRisk(risk, "zh"));
+  const localizedDecision = decisionView(report, "zh");
+  const localizedQuestions = report.handoffQuestions.map((question) => localizeQuestion(question, "zh"));
+  const localizedAssumptions = report.assumptionChecks.map((check) => localizeAssumption(check, "zh"));
   const timePlan =
     localizedTimePlan(
       "zh",
@@ -323,8 +462,20 @@ function buildLocalizedBrief(
 
   return [
     `项目：${interpretation.ideaRiskInput.projectName || "未命名项目"}`,
+    `系统判断：${localizedDecision.label}`,
+    `判断原因：${localizedDecision.reason}`,
+    `下一步：${localizedDecision.nextStep}`,
     `建议测试路线：${routeLabel(report.selectedRoute, "zh")}`,
     `准备度：${report.readinessScore}/100（${confidenceLabel(report.confidenceLabel, "zh")}）`,
+    "",
+    "AI 可能误读的位置：",
+    ...localizedAssumptions.map(
+      (check) =>
+        `- ${check.label}：${check.status === "extracted" ? "已提取" : "缺失"}。当前理解：${check.value}。修复：${check.repairPrompt}`
+    ),
+    "",
+    "只需要回答这些问题：",
+    ...(localizedQuestions.length ? localizedQuestions.map((item) => `- ${item.question}`) : ["- 当前没有阻塞问题。"]),
     "",
     "主要失败节点：",
     ...topRisks.map((risk) => `- ${risk.label}：${risk.why} 需要证据：${risk.requiredEvidence}`),
@@ -353,6 +504,12 @@ export function IdeaRiskTestStudio() {
   const interpretation = useMemo(() => interpretProjectBrief(input), [input]);
   const report = useMemo(() => createIdeaRiskReport(interpretation.ideaRiskInput), [interpretation]);
   const displayRisks = report.topRisks.map((risk) => localizeRisk(risk, language));
+  const displayDecision = decisionView(report, language);
+  const displayAssumptions = report.assumptionChecks.map((check) => localizeAssumption(check, language));
+  const visibleAssumptions = displayAssumptions.some((check) => check.status === "missing")
+    ? displayAssumptions.filter((check) => check.status === "missing")
+    : displayAssumptions.slice(0, 3);
+  const displayQuestions = report.handoffQuestions.map((question) => localizeQuestion(question, language));
   const displayTimePlan =
     localizedTimePlan(
       language,
@@ -566,6 +723,67 @@ export function IdeaRiskTestStudio() {
               : report.routeReason}
           </p>
         </div>
+
+        <section className={`idea-risk-decision-card is-${report.decision.state}`}>
+          <span>{labels.systemDecision}</span>
+          <h3>{displayDecision.label}</h3>
+          <p>{displayDecision.reason}</p>
+          <strong>{displayDecision.nextStep}</strong>
+        </section>
+
+        <section className="idea-risk-takeover-card">
+          <div className="idea-risk-section-head">
+            <Sparkles aria-hidden="true" size={18} />
+            <h3>{labels.systemTakesOver}</h3>
+          </div>
+          <p>{labels.systemTakesOverBody}</p>
+          <div className="idea-risk-question-list">
+            <strong>{labels.systemQuestions}</strong>
+            {displayQuestions.length ? (
+              <ol>
+                {displayQuestions.map((question) => (
+                  <li key={question.id}>
+                    <span>{question.question}</span>
+                    <small>{question.reason}</small>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <p>{labels.noSystemQuestions}</p>
+            )}
+          </div>
+        </section>
+
+        <section className="idea-risk-assumption-section">
+          <div className="idea-risk-section-head">
+            <ShieldCheck aria-hidden="true" size={18} />
+            <h3>{labels.misreadChecks}</h3>
+          </div>
+          <div className="idea-risk-assumption-list">
+            {visibleAssumptions.map((check) => (
+              <article className={`is-${check.status}`} key={check.id}>
+                <div>
+                  <span>{statusLabel(check.status, labels)}</span>
+                  <strong>{check.label}</strong>
+                </div>
+                <dl>
+                  <div>
+                    <dt>{labels.interpretedAs}</dt>
+                    <dd>{check.value}</dd>
+                  </div>
+                  <div>
+                    <dt>{labels.riskIfWrong}</dt>
+                    <dd>{check.riskIfWrong}</dd>
+                  </div>
+                  <div>
+                    <dt>{labels.repairPrompt}</dt>
+                    <dd>{check.repairPrompt}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <section className="idea-risk-node-section">
           <div className="idea-risk-section-head">

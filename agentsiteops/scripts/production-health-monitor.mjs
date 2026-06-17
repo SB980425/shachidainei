@@ -345,10 +345,13 @@ async function main() {
     "Start free test"
   ]);
   await checkPage("/idea-risk-test/", [
-    "Paste the project idea. Get the failure map before any plan.",
-    "One job on this page",
+    "Paste the project idea. Let the system challenge it before any plan.",
+    "The system takes the first pass",
     "Write one rough project description.",
     "Extracted signals",
+    "System decision",
+    "System takeover",
+    "AI misread checks",
     "Write the idea",
     "Likely failure nodes",
     "Time checkpoints",
@@ -566,11 +569,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-70 System-takeover idea triage",
     "M4-69 Homepage bilingual credibility model",
     "M4-68 First-input architecture and evidence-basis reset",
     "M4-67 Main-path information architecture reset",
-    "M4-66 Single-input idea interpreter and language switch",
-    "M4-65 Free idea risk test window"
+    "M4-66 Single-input idea interpreter and language switch"
   ]);
 
   const report = renderReport(generatedAt);

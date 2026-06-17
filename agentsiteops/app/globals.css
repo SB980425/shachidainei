@@ -16639,6 +16639,9 @@ body {
 }
 
 .idea-risk-route-card,
+.idea-risk-decision-card,
+.idea-risk-takeover-card,
+.idea-risk-assumption-section,
 .idea-risk-node-section,
 .idea-risk-time-section,
 .idea-risk-source-section,
@@ -16654,6 +16657,126 @@ body {
 .idea-risk-route-card h2 {
   font-size: clamp(24px, 3vw, 34px);
   line-height: 1.05;
+}
+
+.idea-risk-decision-card {
+  border-left: 4px solid var(--foundry-green);
+}
+
+.idea-risk-decision-card.is-stop {
+  border-left-color: #ff6846;
+  background: rgba(255, 104, 70, 0.075);
+}
+
+.idea-risk-decision-card.is-repair {
+  border-left-color: #ffb047;
+  background: rgba(255, 176, 71, 0.065);
+}
+
+.idea-risk-decision-card.is-continue {
+  border-left-color: var(--foundry-green);
+  background: rgba(55, 217, 140, 0.055);
+}
+
+.idea-risk-decision-card > span,
+.idea-risk-question-list > strong,
+.idea-risk-assumption-list article > div span {
+  color: var(--foundry-green);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.idea-risk-decision-card h3 {
+  margin: 0;
+  color: var(--foundry-text);
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.08;
+}
+
+.idea-risk-decision-card strong {
+  color: rgba(246, 241, 232, 0.9);
+  line-height: 1.55;
+}
+
+.idea-risk-question-list,
+.idea-risk-assumption-list {
+  display: grid;
+  gap: 10px;
+}
+
+.idea-risk-question-list ol {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.idea-risk-question-list li {
+  color: rgba(246, 241, 232, 0.86);
+}
+
+.idea-risk-question-list li span {
+  display: block;
+  font-weight: 850;
+}
+
+.idea-risk-question-list li small {
+  display: block;
+  margin-top: 3px;
+  color: rgba(246, 241, 232, 0.58);
+  line-height: 1.45;
+}
+
+.idea-risk-assumption-list article {
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(226, 231, 238, 0.1);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.17);
+  padding: 13px;
+}
+
+.idea-risk-assumption-list article.is-missing {
+  border-color: rgba(255, 176, 71, 0.28);
+  background: rgba(255, 176, 71, 0.055);
+}
+
+.idea-risk-assumption-list article > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.idea-risk-assumption-list article > div strong {
+  color: var(--foundry-text);
+}
+
+.idea-risk-assumption-list dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.idea-risk-assumption-list dl div {
+  display: grid;
+  gap: 3px;
+}
+
+.idea-risk-assumption-list dt {
+  color: rgba(246, 241, 232, 0.48);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.idea-risk-assumption-list dd {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.72);
+  line-height: 1.5;
 }
 
 .idea-risk-section-head,

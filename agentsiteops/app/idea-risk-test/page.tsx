@@ -25,16 +25,16 @@ export const metadata: Metadata = {
 
 const flowRows = [
   {
-    label: "Write",
-    body: "Paste one messy project description. The page extracts useful fields automatically."
+    label: "Write once",
+    body: "Paste one messy project description. The user does not need to know the correct product or startup vocabulary."
   },
   {
-    label: "Map",
-    body: "See likely failure nodes, evidence gaps, time checkpoints, and source basis."
+    label: "System takes over",
+    body: "The page extracts signals, marks what AI may misunderstand, and asks only the minimum repair questions."
   },
   {
     label: "Decide",
-    body: "Continue to Plan Studio only when the next route is specific enough to draft."
+    body: "Continue, repair, or stop before Plan Studio. Do not add more features just because the idea feels possible."
   }
 ];
 
@@ -42,7 +42,8 @@ const notClaims = [
   "It is not a success forecast.",
   "It is not investment, legal, financial, medical, or regulated advice.",
   "It does not prove product-market fit, traffic, payment, or buyer demand.",
-  "It does not run hidden API research or store raw project text on the server."
+  "It does not run hidden API research or store raw project text on the server.",
+  "It does not let subjective preference override missing buyer, proof, channel, or stop-rule evidence."
 ];
 
 export default function IdeaRiskTestPage() {
@@ -68,12 +69,12 @@ export default function IdeaRiskTestPage() {
       <section className="gate-hero idea-risk-hero ia-risk-hero">
         <div>
           <p className="eyebrow">Free test window</p>
-          <h1>Paste the project idea. Get the failure map before any plan.</h1>
+          <h1>Paste the project idea. Let the system challenge it before any plan.</h1>
           <p>
-            This page is the first working surface. It does not ask for payment, does not
-            claim automatic research, and does not require a polished plan. It turns one
-            rough description into extracted signals, risk nodes, evidence gaps, and a
-            next route decision.
+            This page is the first working surface. It does not need polished product
+            language. It takes one rough description, freezes the current interpretation,
+            shows what AI may misunderstand, asks the smallest repair questions, and
+            returns continue, repair, or stop before any plan.
           </p>
           <div className="hero-actions">
             <a className="primary-action" href="#idea-risk-test">
@@ -83,10 +84,11 @@ export default function IdeaRiskTestPage() {
           </div>
         </div>
         <aside className="decision-card">
-          <strong>One job on this page</strong>
+          <strong>The system takes the first pass</strong>
           <p>
-            Write the messy project once. Everything below exists to explain the output,
-            not to send the visitor into another branch.
+            Write the messy project once. The page should reduce subjective drift by
+            forcing buyer, proof, channel, boundary, and stop-rule checks before any
+            route is treated as real.
           </p>
         </aside>
       </section>
@@ -95,10 +97,11 @@ export default function IdeaRiskTestPage() {
 
       <section className="gate-section idea-risk-flow-section ia-risk-flow">
         <div className="section-head">
-          <h2>How the test reads the input.</h2>
+          <h2>How the system takes over the first pass.</h2>
           <p>
-            The browser-local test extracts project signals and compares them to a visible
-            failure-node library. The result is a reference map, not a guarantee.
+            The browser-local test extracts project signals and compares them to a
+            visible failure-node library. The result is a decision checkpoint, not a
+            guarantee and not a polished opinion.
           </p>
         </div>
         <div className="idea-risk-flow-grid">

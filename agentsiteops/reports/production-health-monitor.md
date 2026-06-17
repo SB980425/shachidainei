@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-17T00:45:49.305Z
+- Generated: 2026-06-17T01:25:40.481Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 358
+- Checks: 361
 - Blockers: 0
 - Warnings: 0
 
@@ -58,10 +58,13 @@
 | /idea-risk-test/ | pass | HTTP 200 | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | HTML title exists | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | canonical points to production URL | [link](https://agentsiteops.com/idea-risk-test/) |
-| /idea-risk-test/ | pass | Paste the project idea. Get the failure map before any plan. | [link](https://agentsiteops.com/idea-risk-test/) |
-| /idea-risk-test/ | pass | One job on this page | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | Paste the project idea. Let the system challenge it before any plan. | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | The system takes the first pass | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Write one rough project description. | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Extracted signals | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | System decision | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | System takeover | [link](https://agentsiteops.com/idea-risk-test/) |
+| /idea-risk-test/ | pass | AI misread checks | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Write the idea | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Likely failure nodes | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | Time checkpoints | [link](https://agentsiteops.com/idea-risk-test/) |
@@ -364,11 +367,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-70 System-takeover idea triage | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-69 Homepage bilingual credibility model | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-68 First-input architecture and evidence-basis reset | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-67 Main-path information architecture reset | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-66 Single-input idea interpreter and language switch | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-65 Free idea risk test window | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 
