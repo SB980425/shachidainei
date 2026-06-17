@@ -11,6 +11,44 @@ export type UpdateLogEntry = {
 
 export const updateLog: UpdateLogEntry[] = [
   {
+    date: "2026-06-17",
+    step: "M4-69 Homepage bilingual credibility model",
+    status: "completed",
+    keyPoints: [
+      "Moved the homepage body into a language-aware client module so the main homepage sections switch between English and Chinese.",
+      "Fixed visible Chinese mojibake in the language toggle and homepage idea-input card.",
+      "Added a credibility model section explaining that output strength depends on input completeness, evidence class, decision effect, and manual review state.",
+      "Added a competitive-edge section explaining why AgentSiteOps should not compete as a stronger generic AI answer, but as an auditable Route File decision system.",
+      "Kept the one-input homepage architecture while adding clearer trust and differentiation content below the primary action."
+    ],
+    aiAngle:
+      "AI and search readers can now distinguish AgentSiteOps from generic AI chat: the product is a bilingual, evidence-gated route decision workflow, not an unconstrained answer generator.",
+    files: [
+      "app/page.tsx",
+      "components/HomePageContent.tsx",
+      "components/HomeIdeaStart.tsx",
+      "components/LanguageToggle.tsx",
+      "app/globals.css",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs"
+    ],
+    verification: [
+      "npm run typecheck",
+      "npm run lint",
+      "npm run build",
+      "npm run routes:gate",
+      "npm run links:gate",
+      "npm run analytics:gate",
+      "npm run commercial:gate",
+      "npm run seo:ci",
+      "npm run production:health",
+      "npm run growth:snapshot",
+      "Playwright local homepage language switch, mojibake, and mobile overflow QA"
+    ],
+    next:
+      "Continue moving the same credibility model into Plan Studio, Review Status, and sample output pages so the trust model is visible beyond the homepage."
+  },
+  {
     date: "2026-06-16",
     step: "M4-68 First-input architecture and evidence-basis reset",
     status: "completed",

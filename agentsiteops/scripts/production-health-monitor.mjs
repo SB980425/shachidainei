@@ -566,11 +566,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-69 Homepage bilingual credibility model",
     "M4-68 First-input architecture and evidence-basis reset",
     "M4-67 Main-path information architecture reset",
     "M4-66 Single-input idea interpreter and language switch",
-    "M4-65 Free idea risk test window",
-    "M4-64 Review status response loop"
+    "M4-65 Free idea risk test window"
   ]);
 
   const report = renderReport(generatedAt);

@@ -113,7 +113,7 @@ function checkProductionHealthAssertions() {
   const monitor = read("scripts/production-health-monitor.mjs");
   addCheck(
     "production_health",
-    monitor.includes("Free Route Test") && monitor.includes("The site does not create a hidden research result.") ? "pass" : "fail",
+    monitor.includes("Free idea risk test") && monitor.includes("The site does not create a hidden research result.") ? "pass" : "fail",
     "production monitor checks the free-test homepage and channel-neutral research workflow path"
   );
   addCheck(

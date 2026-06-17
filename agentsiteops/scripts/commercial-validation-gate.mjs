@@ -71,7 +71,7 @@ function checkCommercialBoundary() {
   const site = read("lib/site.ts");
   const layout = read("app/layout.tsx");
   const pricingPage = read("app/pricing/page.tsx");
-  const homePage = read("app/page.tsx");
+  const homePage = `${read("app/page.tsx")}\n${read("components/HomePageContent.tsx")}`;
   const starterReviewPage = read("app/starter-review/page.tsx");
   const fitReviewSamplePage = read("app/examples/fit-review-sample/page.tsx");
   const buyPage = read("app/buy/page.tsx");

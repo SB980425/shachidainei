@@ -5944,6 +5944,8 @@ textarea {
 }
 
 .ia-card-grid,
+.ia-credibility-grid,
+.ia-advantage-grid,
 .ia-source-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -5955,6 +5957,8 @@ textarea {
 }
 
 .ia-card-grid article,
+.ia-credibility-grid article,
+.ia-advantage-grid article,
 .ia-source-grid article,
 .ia-path-list li,
 .ia-contract-card {
@@ -5968,11 +5972,31 @@ textarea {
   padding: 22px;
 }
 
-.ia-card-grid svg {
+.ia-credibility-grid,
+.ia-advantage-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ia-advantage-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ia-credibility-grid article,
+.ia-advantage-grid article {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+  min-height: 220px;
+}
+
+.ia-card-grid svg,
+.ia-advantage-grid svg {
   color: #45e297;
 }
 
 .ia-card-grid h3,
+.ia-credibility-grid h3,
+.ia-advantage-grid h3,
 .ia-source-grid h3,
 .ia-path-list strong,
 .ia-contract-card h3 {
@@ -5982,11 +6006,37 @@ textarea {
 }
 
 .ia-card-grid p,
+.ia-credibility-grid p,
+.ia-advantage-grid p,
 .ia-source-grid p,
 .ia-path-list p,
 .ia-output-section p {
   color: rgba(248, 241, 226, 0.68);
   line-height: 1.65;
+}
+
+.ia-credibility-grid article > span,
+.ia-advantage-grid article > span {
+  color: #ffcf70;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ia-confidence-meter {
+  overflow: hidden;
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ia-confidence-meter i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #45e297, #ffcf70);
 }
 
 .ia-source-grid article {
@@ -6090,6 +6140,8 @@ textarea {
   }
 
   .ia-card-grid,
+  .ia-credibility-grid,
+  .ia-advantage-grid,
   .ia-source-grid,
   .ia-path-list {
     grid-template-columns: 1fr;
