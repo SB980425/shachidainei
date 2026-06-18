@@ -7,7 +7,6 @@ import { usePreferredLanguage } from "@/components/LanguageToggle";
 import {
   getSiteRouteContext,
   localize,
-  mainJourneyStages,
   normalizeSitePath
 } from "@/lib/siteArchitecture";
 
@@ -19,21 +18,17 @@ export function PrimaryNavigation() {
   const actionLabel = context.primaryLabel
     ? localize(context.primaryLabel, language)
     : language === "zh"
-      ? "填写想法"
-      : "Paste idea";
+      ? "填写一个想法"
+      : "Write one idea";
+  const pathSummary =
+    language === "zh"
+      ? "首页输入 -> 第一轮判断 -> 编辑计划 -> 审核输出"
+      : "Home input -> first diagnosis -> editable plan -> reviewed output";
 
   return (
     <>
       <nav className="nav nav-static" aria-label="Main path status">
-        {mainJourneyStages.map((item) => {
-          const isActive = item.id === context.stage && context.role === "main";
-
-          return (
-            <span className={isActive ? "is-active" : undefined} key={item.id}>
-              {localize(item.shortLabel, language)}
-            </span>
-          );
-        })}
+        <span className="is-active">{pathSummary}</span>
       </nav>
       <Link
         prefetch={false}

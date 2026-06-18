@@ -28,12 +28,12 @@ type RouteRule = SiteRouteContext & {
 export const mainJourneyStages: MainJourneyStage[] = [
   {
     id: "test",
-    href: "/idea-risk-test/",
-    shortLabel: { en: "Idea", zh: "想法" },
-    label: { en: "Paste idea", zh: "填写想法" },
+    href: "/#start-idea",
+    shortLabel: { en: "Start", zh: "开始" },
+    label: { en: "Write one idea", zh: "填写一个想法" },
     body: {
-      en: "Start with one messy project description.",
-      zh: "先用一段零散描述开始。"
+      en: "The homepage gives the first diagnosis from one rough description.",
+      zh: "首页用一段粗略描述给出第一轮判断。"
     }
   },
   {
@@ -83,13 +83,13 @@ const routeRules: RouteRule[] = [
     match: ["/", "/start/"],
     role: "main",
     stage: "test",
-    title: { en: "Start with one idea input.", zh: "从一个想法输入开始。" },
+    title: { en: "Start on the homepage input.", zh: "从首页输入框开始。" },
     body: {
-      en: "The main path is not a menu. It is one sequence: idea, risk map, plan, review, output.",
-      zh: "主路径不是菜单，而是一条顺序：想法、风险图、计划、审核、输出。"
+      en: "Write the rough idea once. The first diagnosis appears before any page jump.",
+      zh: "只写一次粗略想法。第一轮判断会先在首页出现，不需要先跳页。"
     },
-    primaryHref: "/idea-risk-test/#idea-risk-test",
-    primaryLabel: { en: "Paste idea", zh: "填写想法" }
+    primaryHref: "/#start-idea",
+    primaryLabel: { en: "Write one idea", zh: "填写一个想法" }
   },
   {
     match: ["/idea-risk-test/"],
@@ -172,7 +172,7 @@ const routeRules: RouteRule[] = [
       en: "Support pages help diagnosis, but the product path starts with one project idea.",
       zh: "辅助页面可以帮助判断，但产品路径从一个项目想法开始。"
     },
-    primaryHref: "/idea-risk-test/",
+    primaryHref: "/#start-idea",
     primaryLabel: { en: "Start with idea", zh: "从想法开始" }
   },
   {
@@ -184,8 +184,8 @@ const routeRules: RouteRule[] = [
       en: "Policy and update pages are supporting context. Use the idea input to work on a project.",
       zh: "政策和更新页只是背景信息。处理项目请回到想法输入。"
     },
-    primaryHref: "/idea-risk-test/",
-    primaryLabel: { en: "Open free test", zh: "打开免费测试" }
+    primaryHref: "/#start-idea",
+    primaryLabel: { en: "Open idea input", zh: "打开想法输入" }
   }
 ];
 
@@ -231,7 +231,7 @@ export function getSiteRouteContext(pathname: string): SiteRouteContext {
         en: "If the next action is unclear, return to the idea input.",
         zh: "如果下一步不清楚，回到想法输入。"
       },
-      primaryHref: "/idea-risk-test/",
+      primaryHref: "/#start-idea",
       primaryLabel: { en: "Return to idea input", zh: "回到想法输入" }
     }
   );

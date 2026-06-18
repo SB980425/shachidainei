@@ -334,17 +334,15 @@ async function main() {
   await checkBrandIcon();
   await checkAnalyticsSummary();
   await checkPage("/", [
-    "Free idea risk test",
-    "Write the idea first. The site should prove why the next step is worth doing.",
+    "One input first",
+    "Put the rough idea here. See the first route diagnosis before you move.",
     "Continue to editable plan",
     "Open full risk map",
     "Your first result appears here.",
-    "Evidence used, not guessed",
-    "What the buyer receives is a route file, not a score",
-    "Market signals are context, not proof",
-    "Reference basis",
-    "Route File must include",
-    "Start free test"
+    "The site should take over the first pass.",
+    "The answer is useful only when the decision trail is visible.",
+    "If the idea survives the first pass, it becomes an editable route draft.",
+    "Route File"
   ]);
   await checkPage("/idea-risk-test/", [
     "Paste the project idea. Let the system challenge it before any plan.",
@@ -571,11 +569,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-75 Customer path architecture reset",
     "M4-74 Homepage first-pass decomposition and route module localization",
     "M4-73 Rough idea to editable plan handoff",
     "M4-72 Plan Studio Chinese workflow completion",
-    "M4-71 Idea test Chinese language completion",
-    "M4-70 System-takeover idea triage"
+    "M4-71 Idea test Chinese language completion"
   ]);
 
   const report = renderReport(generatedAt);

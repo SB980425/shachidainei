@@ -5419,7 +5419,7 @@ textarea {
 
 .site-journey-bar {
   display: grid;
-  grid-template-columns: minmax(260px, 0.9fr) minmax(420px, 1.2fr) auto;
+  grid-template-columns: minmax(260px, 1fr) auto;
   gap: 12px;
   align-items: stretch;
   border-bottom: 1px solid rgba(21, 25, 20, 0.14);
@@ -5712,11 +5712,13 @@ textarea {
   align-items: center;
   gap: 6px;
   pointer-events: none;
+  min-width: 0;
 }
 
 .site-header .nav-static span {
   display: inline-flex;
   align-items: center;
+  max-width: min(48vw, 620px);
   min-height: 32px;
   border: 1px solid rgba(19, 31, 26, 0.1);
   border-radius: 999px;
@@ -5726,6 +5728,9 @@ textarea {
   font-weight: 900;
   letter-spacing: 0;
   background: rgba(255, 255, 255, 0.42);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .site-header .nav-static span.is-active {
@@ -5775,10 +5780,10 @@ textarea {
 
 .ia-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.72fr);
+  grid-template-columns: minmax(0, 0.78fr) minmax(420px, 0.82fr);
   gap: clamp(28px, 5vw, 72px);
   align-items: stretch;
-  max-width: 1220px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: clamp(56px, 8vw, 104px) clamp(18px, 5vw, 64px) clamp(40px, 7vw, 84px);
 }
@@ -5787,15 +5792,15 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 620px;
+  min-height: 560px;
 }
 
 .ia-hero-copy h1 {
   max-width: 900px;
   margin: 0;
   color: #fbf1df;
-  font-size: clamp(3.5rem, 7vw, 6.8rem);
-  line-height: 0.91;
+  font-size: clamp(3.1rem, 5.8vw, 5.9rem);
+  line-height: 0.94;
   letter-spacing: 0;
 }
 
@@ -6088,7 +6093,9 @@ textarea {
 .ia-card-grid,
 .ia-credibility-grid,
 .ia-advantage-grid,
-.ia-source-grid {
+.ia-source-grid,
+.ia-process-grid,
+.ia-proof-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
@@ -6102,6 +6109,8 @@ textarea {
 .ia-credibility-grid article,
 .ia-advantage-grid article,
 .ia-source-grid article,
+.ia-process-grid article,
+.ia-proof-grid article,
 .ia-path-list li,
 .ia-contract-card {
   border: 1px solid rgba(254, 238, 204, 0.13);
@@ -6110,7 +6119,9 @@ textarea {
   color: rgba(248, 241, 226, 0.76);
 }
 
-.ia-card-grid article {
+.ia-card-grid article,
+.ia-process-grid article,
+.ia-proof-grid article {
   padding: 22px;
 }
 
@@ -6132,7 +6143,9 @@ textarea {
 }
 
 .ia-card-grid svg,
-.ia-advantage-grid svg {
+.ia-advantage-grid svg,
+.ia-process-grid svg,
+.ia-proof-grid svg {
   color: #45e297;
 }
 
@@ -6140,6 +6153,8 @@ textarea {
 .ia-credibility-grid h3,
 .ia-advantage-grid h3,
 .ia-source-grid h3,
+.ia-process-grid h3,
+.ia-proof-grid h3,
 .ia-path-list strong,
 .ia-contract-card h3 {
   margin: 12px 0 8px;
@@ -6151,10 +6166,45 @@ textarea {
 .ia-credibility-grid p,
 .ia-advantage-grid p,
 .ia-source-grid p,
+.ia-process-grid p,
+.ia-proof-grid p,
 .ia-path-list p,
 .ia-output-section p {
   color: rgba(248, 241, 226, 0.68);
   line-height: 1.65;
+}
+
+.ia-source-ticker {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.ia-source-ticker a {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  border: 1px solid rgba(69, 226, 151, 0.12);
+  border-radius: 8px;
+  padding: 14px;
+  background: rgba(69, 226, 151, 0.045);
+  color: rgba(248, 241, 226, 0.72);
+}
+
+.ia-source-ticker strong {
+  color: #45e297;
+  font-size: 0.78rem;
+}
+
+.ia-source-ticker span {
+  display: -webkit-box;
+  overflow: hidden;
+  color: rgba(248, 241, 226, 0.62);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .ia-credibility-grid article > span,
@@ -6285,6 +6335,9 @@ textarea {
   .ia-credibility-grid,
   .ia-advantage-grid,
   .ia-source-grid,
+  .ia-process-grid,
+  .ia-proof-grid,
+  .ia-source-ticker,
   .ia-path-list {
     grid-template-columns: 1fr;
   }

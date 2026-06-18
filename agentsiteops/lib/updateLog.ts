@@ -12,6 +12,43 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-18",
+    step: "M4-75 Customer path architecture reset",
+    status: "completed",
+    keyPoints: [
+      "Reframed the homepage as the single customer workbench: one rough idea input, immediate first-pass diagnosis, and a clear continuation into editable planning.",
+      "Removed the homepage's stacked explanation sections and replaced them with three scan-level blocks: what happens after typing, why the decision trail matters, and what the route draft can become.",
+      "Reduced the header from multiple stage pills into one path summary plus one primary action so the visitor no longer sees the site as a menu of unrelated pages.",
+      "Hid the global journey bar on the homepage and compressed it on secondary pages into a current-page context plus one return-or-next action.",
+      "Changed the main journey start link to the homepage idea input anchor instead of pushing first-time visitors to the separate full risk-test page."
+    ],
+    aiAngle:
+      "A new visitor should now understand that the product starts on the homepage with one rough idea, then moves to diagnosis and editable planning only if the first pass is useful.",
+    files: [
+      "components/HomePageContent.tsx",
+      "components/HomeIdeaStart.tsx",
+      "components/PrimaryNavigation.tsx",
+      "components/SiteJourneyBar.tsx",
+      "lib/siteArchitecture.ts",
+      "app/globals.css",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "npm run typecheck",
+      "npm run lint",
+      "npm run build",
+      "npm run routes:gate",
+      "npm run links:gate",
+      "npm run analytics:gate",
+      "npm run commercial:gate",
+      "npm run seo:ci",
+      "Playwright local customer entry check for homepage input, hidden homepage journey bar, simplified header, imported Plan Studio draft, and mobile overflow"
+    ],
+    next:
+      "Audit secondary pages for removal or consolidation only after the homepage-to-plan path proves understandable in direct browsing."
+  },
+  {
+    date: "2026-06-18",
     step: "M4-74 Homepage first-pass decomposition and route module localization",
     status: "completed",
     keyPoints: [

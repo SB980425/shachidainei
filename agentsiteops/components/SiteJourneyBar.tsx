@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ArrowRight, BookOpen, CheckCircle2, Circle, MousePointer2 } from "lucide-react";
+import { ArrowRight, BookOpen, MousePointer2 } from "lucide-react";
 import { usePreferredLanguage } from "@/components/LanguageToggle";
 import {
   getSiteRouteContext,
   localize,
-  mainJourneyStages,
   normalizeSitePath
 } from "@/lib/siteArchitecture";
 
@@ -23,13 +22,16 @@ export function SiteJourneyBar() {
   const pathname = normalizeSitePath(usePathname());
   const [language] = usePreferredLanguage();
   const context = getSiteRouteContext(pathname);
-  const currentIndex = mainJourneyStages.findIndex((item) => item.id === context.stage);
-  const primaryHref = context.primaryHref ?? "/idea-risk-test/";
+  const primaryHref = context.primaryHref ?? "/#start-idea";
   const primaryLabel = context.primaryLabel
     ? localize(context.primaryLabel, language)
     : language === "zh"
-      ? "填写想法"
-      : "Paste idea";
+      ? "回到首页输入"
+      : "Return to home input";
+
+  if (pathname === "/") {
+    return null;
+  }
 
   return (
     <aside className="site-journey-bar" aria-label="Current site path">
@@ -44,25 +46,6 @@ export function SiteJourneyBar() {
           <strong>{localize(context.title, language)}</strong>
           <p>{localize(context.body, language)}</p>
         </div>
-      </div>
-
-      <div className="journey-steps" aria-label="Main product path">
-        {mainJourneyStages.map((stage, index) => {
-          const isCurrent = stage.id === context.stage;
-          const isVisited = currentIndex > index;
-
-          return (
-            <span className={isCurrent ? "is-current" : isVisited ? "is-visited" : undefined} key={stage.id}>
-              {isVisited ? (
-                <CheckCircle2 aria-hidden="true" size={15} />
-              ) : (
-                <Circle aria-hidden="true" size={13} />
-              )}
-              <small>{String(index + 1).padStart(2, "0")}</small>
-              <strong>{localize(stage.shortLabel, language)}</strong>
-            </span>
-          );
-        })}
       </div>
 
       <Link prefetch={false} className="journey-next" href={primaryHref}>

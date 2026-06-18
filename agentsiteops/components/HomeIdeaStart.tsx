@@ -259,7 +259,7 @@ export function HomeIdeaStart() {
   }
 
   return (
-    <section className="home-idea-start" aria-label="Start with project idea">
+    <section className="home-idea-start" id="start-idea" aria-label="Start with project idea">
       <span>{labels.eyebrow}</span>
       <h2>{labels.title}</h2>
       <p>{labels.body}</p>
