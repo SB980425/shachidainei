@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   Activity,
@@ -8,6 +10,7 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
+import { usePreferredLanguage } from "@/components/LanguageToggle";
 import {
   getLocalizedRouteProjectStages,
   routeProjectObjects,
@@ -43,13 +46,16 @@ export function RouteProjectLifecycle({
   body,
   showObjects = false,
   showSupportLayer = false,
-  language = "en"
+  language
 }: RouteProjectLifecycleProps) {
-  const routeProjectStages = getLocalizedRouteProjectStages(language);
+  const [preferredLanguage] = usePreferredLanguage();
+  const activeLanguage = language ?? preferredLanguage;
+  const hasExplicitLanguage = typeof language !== "undefined";
+  const routeProjectStages = getLocalizedRouteProjectStages(activeLanguage);
   const currentIndex = routeProjectStages.findIndex((stage) => stage.id === current);
   const safeIndex = currentIndex >= 0 ? currentIndex : 0;
   const labels =
-    language === "zh"
+    activeLanguage === "zh"
       ? {
           aria: "路线项目生命周期",
           defaultEyebrow: "路线项目系统",
@@ -77,15 +83,20 @@ export function RouteProjectLifecycle({
           objectModel: "Route Project object model",
           supportLayer: "Support layer"
         };
+  const resolvedEyebrow = activeLanguage === "zh" && !hasExplicitLanguage ? labels.currentState : eyebrow ?? labels.defaultEyebrow;
+  const resolvedTitle =
+    activeLanguage === "zh" && !hasExplicitLanguage ? routeProjectStages[safeIndex].title : title ?? labels.defaultTitle;
+  const resolvedBody =
+    activeLanguage === "zh" && !hasExplicitLanguage ? routeProjectStages[safeIndex].body : body ?? labels.defaultBody;
 
   return (
     <section className="route-project-system" aria-label={labels.aria}>
       <div className="route-project-system-head">
         <div>
-          <span>{eyebrow ?? labels.defaultEyebrow}</span>
-          <h2>{title ?? labels.defaultTitle}</h2>
+          <span>{resolvedEyebrow}</span>
+          <h2>{resolvedTitle}</h2>
         </div>
-        <p>{body ?? labels.defaultBody}</p>
+        <p>{resolvedBody}</p>
       </div>
 
       <div className="route-project-lifecycle">

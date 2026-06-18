@@ -336,7 +336,9 @@ async function main() {
   await checkPage("/", [
     "Free idea risk test",
     "Write the idea first. The site should prove why the next step is worth doing.",
-    "Analyze idea",
+    "Continue to editable plan",
+    "Open full risk map",
+    "Your first result appears here.",
     "Evidence used, not guessed",
     "What the buyer receives is a route file, not a score",
     "Market signals are context, not proof",
@@ -569,11 +571,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-74 Homepage first-pass decomposition and route module localization",
     "M4-73 Rough idea to editable plan handoff",
     "M4-72 Plan Studio Chinese workflow completion",
     "M4-71 Idea test Chinese language completion",
-    "M4-70 System-takeover idea triage",
-    "M4-69 Homepage bilingual credibility model"
+    "M4-70 System-takeover idea triage"
   ]);
 
   const report = renderReport(generatedAt);

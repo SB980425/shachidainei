@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { usePreferredLanguage } from "@/components/LanguageToggle";
 import {
   getLocalizedRouteProjectStages,
   type RouteProjectLanguage,
@@ -13,8 +16,11 @@ type RouteStageHeaderProps = {
   language?: RouteProjectLanguage;
 };
 
-export function RouteStageHeader({ current, title, body, language = "en" }: RouteStageHeaderProps) {
-  const routeProjectStages = getLocalizedRouteProjectStages(language);
+export function RouteStageHeader({ current, title, body, language }: RouteStageHeaderProps) {
+  const [preferredLanguage] = usePreferredLanguage();
+  const activeLanguage = language ?? preferredLanguage;
+  const hasExplicitLanguage = typeof language !== "undefined";
+  const routeProjectStages = getLocalizedRouteProjectStages(activeLanguage);
   const currentIndex = Math.max(
     0,
     routeProjectStages.findIndex((stage) => stage.id === current)
@@ -22,7 +28,7 @@ export function RouteStageHeader({ current, title, body, language = "en" }: Rout
   const currentStage = routeProjectStages[currentIndex];
   const nextStage = routeProjectStages[Math.min(currentIndex + 1, routeProjectStages.length - 1)];
   const labels =
-    language === "zh"
+    activeLanguage === "zh"
       ? {
           aria: "当前路线项目阶段",
           rail: "路线项目状态条",
@@ -37,17 +43,19 @@ export function RouteStageHeader({ current, title, body, language = "en" }: Rout
           of: "of",
           next: "Next"
         };
+  const resolvedTitle = activeLanguage === "zh" && !hasExplicitLanguage ? currentStage.title : title ?? currentStage.label;
+  const resolvedBody = activeLanguage === "zh" && !hasExplicitLanguage ? currentStage.body : body ?? currentStage.body;
 
   return (
     <section className="route-stage-header" aria-label={labels.aria}>
       <div className="route-stage-copy">
         <span>
-          {language === "zh"
+          {activeLanguage === "zh"
             ? `${labels.step} ${currentIndex + 1} ${labels.of} ${routeProjectStages.length} 步`
             : `${labels.step} ${currentIndex + 1} ${labels.of} ${routeProjectStages.length}`}
         </span>
-        <h2>{title ?? currentStage.label}</h2>
-        <p>{body ?? currentStage.body}</p>
+        <h2>{resolvedTitle}</h2>
+        <p>{resolvedBody}</p>
       </div>
       <div className="route-stage-rail" aria-label={labels.rail}>
         {routeProjectStages.map((stage, index) => {

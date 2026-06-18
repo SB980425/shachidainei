@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   ArrowRight,
@@ -7,6 +9,7 @@ import {
   ShieldAlert,
   UserCheck
 } from "lucide-react";
+import { usePreferredLanguage } from "@/components/LanguageToggle";
 import {
   getLocalizedRouteProjectClientState,
   getLocalizedRouteProjectStage,
@@ -39,13 +42,16 @@ export function ClientRouteStatePanel({
   title,
   body,
   compact = false,
-  language = "en"
+  language
 }: ClientRouteStatePanelProps) {
-  const stage = getLocalizedRouteProjectStage(current, language);
-  const state = getLocalizedRouteProjectClientState(current, language);
-  const nextStage = getNextStage(current, language);
+  const [preferredLanguage] = usePreferredLanguage();
+  const activeLanguage = language ?? preferredLanguage;
+  const hasExplicitLanguage = typeof language !== "undefined";
+  const stage = getLocalizedRouteProjectStage(current, activeLanguage);
+  const state = getLocalizedRouteProjectClientState(current, activeLanguage);
+  const nextStage = getNextStage(current, activeLanguage);
   const labels =
-    language === "zh"
+    activeLanguage === "zh"
       ? {
           heading: "客户能从这个页面看懂什么。",
           body:
@@ -80,6 +86,8 @@ export function ClientRouteStatePanel({
             result: "Visible result"
           }
         };
+  const resolvedTitle = activeLanguage === "zh" && !hasExplicitLanguage ? labels.heading : title ?? labels.heading;
+  const resolvedBody = activeLanguage === "zh" && !hasExplicitLanguage ? labels.body : body ?? labels.body;
 
   const cards = [
     {
@@ -109,9 +117,9 @@ export function ClientRouteStatePanel({
       <div className="client-state-head">
         <div>
           <span>{labels.clientState}</span>
-          <h2>{title ?? labels.heading}</h2>
+          <h2>{resolvedTitle}</h2>
         </div>
-        <p>{body ?? labels.body}</p>
+        <p>{resolvedBody}</p>
       </div>
 
       <div className="client-state-current" aria-label="Current client state">

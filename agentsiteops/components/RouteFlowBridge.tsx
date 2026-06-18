@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   Activity,
@@ -8,6 +10,7 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
+import { usePreferredLanguage } from "@/components/LanguageToggle";
 import {
   getLocalizedRouteProjectStages,
   type RouteProjectLanguage,
@@ -37,16 +40,27 @@ export function RouteFlowBridge({
   eyebrow,
   nextHref,
   nextLabel,
-  language = "en"
+  language
 }: RouteFlowBridgeProps) {
-  const routeProjectStages = getLocalizedRouteProjectStages(language);
+  const [preferredLanguage] = usePreferredLanguage();
+  const activeLanguage = language ?? preferredLanguage;
+  const hasExplicitLanguage = typeof language !== "undefined";
+  const routeProjectStages = getLocalizedRouteProjectStages(activeLanguage);
   const currentIndex = routeProjectStages.findIndex((stage) => stage.id === current);
   const safeIndex = currentIndex >= 0 ? currentIndex : 0;
+  const defaultNext = routeProjectStages[Math.min(safeIndex + 1, routeProjectStages.length - 1)];
+  const matchedNext = nextHref ? routeProjectStages.find((stage) => stage.href === nextHref) : undefined;
   const resolvedNext = nextHref
-    ? { href: nextHref, label: nextLabel ?? (language === "zh" ? "继续" : "Continue") }
-    : routeProjectStages[Math.min(safeIndex + 1, routeProjectStages.length - 1)];
+    ? {
+        href: nextHref,
+        label:
+          activeLanguage === "zh" && !hasExplicitLanguage
+            ? matchedNext?.label ?? "继续"
+            : nextLabel ?? matchedNext?.label ?? (activeLanguage === "zh" ? "继续" : "Continue")
+      }
+    : defaultNext;
   const labels =
-    language === "zh"
+    activeLanguage === "zh"
       ? {
           aria: "AgentSiteOps 路线流程",
           eyebrow: "路线生成路径",
@@ -57,11 +71,12 @@ export function RouteFlowBridge({
           eyebrow: "Route Foundry path",
           stage: "Stage"
         };
+  const resolvedEyebrow = activeLanguage === "zh" && !hasExplicitLanguage ? labels.eyebrow : eyebrow ?? labels.eyebrow;
 
   return (
     <section className="route-flow-bridge" aria-label={labels.aria}>
       <div className="route-flow-bridge-head">
-        <span>{eyebrow ?? labels.eyebrow}</span>
+        <span>{resolvedEyebrow}</span>
         <strong>
           {labels.stage} {safeIndex + 1} / {routeProjectStages.length}: {routeProjectStages[safeIndex].label}
         </strong>

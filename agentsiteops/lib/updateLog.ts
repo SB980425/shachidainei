@@ -12,6 +12,45 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-18",
+    step: "M4-74 Homepage first-pass decomposition and route module localization",
+    status: "completed",
+    keyPoints: [
+      "Added an immediate homepage decomposition panel so a visitor can paste one rough idea and see the system's current understanding, likely route, first failure node, evidence need, and missing information before leaving the homepage.",
+      "Saved the homepage interpretation into the same Plan Studio local draft keys so continuing to the plan page opens with inferred fields instead of a blank form.",
+      "Changed shared Route Project modules to read the active language automatically when a page does not pass a language prop.",
+      "Made Chinese mode ignore stale English stage titles in shared workflow modules on Intake, Scope, Research, Gate, Route File, and Validation surfaces.",
+      "Updated production health expectations to check the new homepage actions instead of the retired Analyze idea button."
+    ],
+    aiAngle:
+      "A first-time visitor now gets a useful first-pass interpretation on the homepage, while the route workflow pages keep language context instead of reverting to English in shared stage modules.",
+    files: [
+      "components/HomeIdeaStart.tsx",
+      "components/RouteStageHeader.tsx",
+      "components/RouteFlowBridge.tsx",
+      "components/RouteProjectLifecycle.tsx",
+      "components/ClientRouteStatePanel.tsx",
+      "app/globals.css",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "npm run typecheck",
+      "npm run lint",
+      "npm run build",
+      "npm run routes:gate",
+      "npm run links:gate",
+      "npm run analytics:gate",
+      "npm run commercial:gate",
+      "npm run seo:ci",
+      "npm run production:health",
+      "npm run growth:snapshot",
+      "Playwright local and production checks for /intake/ Chinese shared modules, homepage immediate idea decomposition, and desktop/mobile overflow"
+    ],
+    next:
+      "Continue reducing static English-only content on secondary route pages only where it blocks the main idea-to-plan workflow."
+  },
+  {
+    date: "2026-06-18",
     step: "M4-73 Rough idea to editable plan handoff",
     status: "completed",
     keyPoints: [

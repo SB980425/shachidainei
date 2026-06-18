@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-18T01:11:33.414Z
+- Generated: 2026-06-18T01:37:33.478Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 361
+- Checks: 363
 - Blockers: 0
 - Warnings: 0
 
@@ -48,7 +48,9 @@
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
 | / | pass | Free idea risk test | [link](https://agentsiteops.com/) |
 | / | pass | Write the idea first. The site should prove why the next step is worth doing. | [link](https://agentsiteops.com/) |
-| / | pass | Analyze idea | [link](https://agentsiteops.com/) |
+| / | pass | Continue to editable plan | [link](https://agentsiteops.com/) |
+| / | pass | Open full risk map | [link](https://agentsiteops.com/) |
+| / | pass | Your first result appears here. | [link](https://agentsiteops.com/) |
 | / | pass | Evidence used, not guessed | [link](https://agentsiteops.com/) |
 | / | pass | What the buyer receives is a route file, not a score | [link](https://agentsiteops.com/) |
 | / | pass | Market signals are context, not proof | [link](https://agentsiteops.com/) |
@@ -367,11 +369,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-74 Homepage first-pass decomposition and route module localization | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-73 Rough idea to editable plan handoff | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-72 Plan Studio Chinese workflow completion | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-71 Idea test Chinese language completion | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-70 System-takeover idea triage | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-69 Homepage bilingual credibility model | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 
