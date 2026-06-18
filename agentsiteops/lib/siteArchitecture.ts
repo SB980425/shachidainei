@@ -148,7 +148,7 @@ const routeRules: RouteRule[] = [
       en: "This is proof of handoff shape, not the next action for a new project.",
       zh: "这里用于查看交付形态，不是新项目的下一步操作。"
     },
-    primaryHref: "/idea-risk-test/",
+    primaryHref: "/#start-idea",
     primaryLabel: { en: "Test another idea", zh: "测试另一个想法" }
   },
   {
@@ -160,7 +160,7 @@ const routeRules: RouteRule[] = [
       en: "Use it for details after the first idea is written.",
       zh: "先写想法，需要细节时再看这里。"
     },
-    primaryHref: "/idea-risk-test/",
+    primaryHref: "/#start-idea",
     primaryLabel: { en: "Return to idea input", zh: "回到想法输入" }
   },
   {

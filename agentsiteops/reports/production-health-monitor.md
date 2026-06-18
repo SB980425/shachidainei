@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-18T02:25:13.964Z
+- Generated: 2026-06-18T15:14:18.545Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 361
+- Checks: 364
 - Blockers: 0
 - Warnings: 0
 
@@ -52,6 +52,9 @@
 | / | pass | Open full risk map | [link](https://agentsiteops.com/) |
 | / | pass | Your first result appears here. | [link](https://agentsiteops.com/) |
 | / | pass | The site should take over the first pass. | [link](https://agentsiteops.com/) |
+| / | pass | A rough sentence should become a route, evidence gap, and stop rule. | [link](https://agentsiteops.com/) |
+| / | pass | AI companion memory service | [link](https://agentsiteops.com/) |
+| / | pass | Short-content planning tool | [link](https://agentsiteops.com/) |
 | / | pass | The answer is useful only when the decision trail is visible. | [link](https://agentsiteops.com/) |
 | / | pass | If the idea survives the first pass, it becomes an editable route draft. | [link](https://agentsiteops.com/) |
 | / | pass | Route File | [link](https://agentsiteops.com/) |
@@ -367,11 +370,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-76 Product shell and route example consolidation | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-75 Customer path architecture reset | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-74 Homepage first-pass decomposition and route module localization | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-73 Rough idea to editable plan handoff | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-72 Plan Studio Chinese workflow completion | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-71 Idea test Chinese language completion | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

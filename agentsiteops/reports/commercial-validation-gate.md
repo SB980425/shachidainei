@@ -1,6 +1,6 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-18T02:20:06.134Z
+- Generated: 2026-06-18T15:11:44.021Z
 - Status: pass
 - Checks: 304
 - Blockers: 0
@@ -253,8 +253,8 @@
 | launch_kit_visibility | pass | Launch Kit visibility snapshot records self-audit related link |
 | launch_kit_visibility | pass | Launch Kit visibility snapshot records evidence dashboard related link |
 | launch_kit_visibility | pass | Launch Kit visibility report blocks internal-link-as-demand logic |
-| launch_kit_visibility | pass | global footer links to Launch Kit |
-| launch_kit_visibility | pass | homepage links to Launch Kit |
+| evidence_library_visibility | pass | global footer links to the evidence library instead of exposing every support page |
+| evidence_library_visibility | pass | homepage links to evidence library as a support path |
 | launch_kit_visibility | pass | route related links include Launch Kit |
 | launch_kit_external_search | pass | Launch Kit external search recheck records direct confirmation field |
 | launch_kit_external_search | pass | Launch Kit external search recheck records home page fallback result |

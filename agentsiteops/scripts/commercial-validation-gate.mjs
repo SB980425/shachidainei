@@ -348,8 +348,8 @@ function checkCommercialBoundary() {
   requireText("launch_kit_visibility", launchKitVisibility, '"/examples/agentsiteops-self-audit/","/launch-kit/"', "Launch Kit visibility snapshot records self-audit related link");
   requireText("launch_kit_visibility", launchKitVisibility, '"/reports/route-evidence-dashboard/","/launch-kit/"', "Launch Kit visibility snapshot records evidence dashboard related link");
   requireText("launch_kit_visibility", launchKitVisibilityReport, "does not prove search impressions, ranking, clicks", "Launch Kit visibility report blocks internal-link-as-demand logic");
-  requireText("launch_kit_visibility", siteFooter, '["Launch Kit", "/launch-kit/"]', "global footer links to Launch Kit");
-  requireText("launch_kit_visibility", homePage, '"/launch-kit/"', "homepage links to Launch Kit");
+  requireText("evidence_library_visibility", siteFooter, '["Evidence library", "/evidence/"]', "global footer links to the evidence library instead of exposing every support page");
+  requireText("evidence_library_visibility", homePage, '"/evidence/"', "homepage links to evidence library as a support path");
   requireText("launch_kit_visibility", site, '{ label: "Launch Kit", href: "/launch-kit/" }', "route related links include Launch Kit");
   requireText("launch_kit_external_search", launchKitExternalSearchRecheck, '"confirmed_launch_kit_result"', "Launch Kit external search recheck records direct confirmation field");
   requireText("launch_kit_external_search", launchKitExternalSearchRecheck, '"no","https://agentsiteops.com/"', "Launch Kit external search recheck records home page fallback result");

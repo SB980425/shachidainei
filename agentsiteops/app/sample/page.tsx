@@ -5,6 +5,7 @@ import { ClientRouteStatePanel } from "@/components/ClientRouteStatePanel";
 import { RouteFlowBridge } from "@/components/RouteFlowBridge";
 import { RouteFileAcceptancePanel } from "@/components/RouteFileAcceptancePanel";
 import { RouteFileViewer } from "@/components/RouteFileViewer";
+import { RouteExampleCaseGrid } from "@/components/RouteExampleCaseGrid";
 import { RouteProjectLifecycle } from "@/components/RouteProjectLifecycle";
 import { RouteStageHeader } from "@/components/RouteStageHeader";
 import { siteUrl } from "@/lib/site";
@@ -246,6 +247,18 @@ export default function Page() {
             demand, ranking, AI citation, or customer outcomes.
           </p>
         </aside>
+      </section>
+
+      <section className="gate-section route-example-showcase">
+        <div className="section-head">
+          <h2>Three rough ideas, three different route decisions</h2>
+          <p>
+            A useful route file should change with the input. These cases show how the
+            same workflow handles a companion idea, an AI service idea, and a content-tool
+            idea without turning all of them into the same generic AI plan.
+          </p>
+        </div>
+        <RouteExampleCaseGrid />
       </section>
 
       <section className="gate-section sample-proof-section">

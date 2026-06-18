@@ -7,49 +7,27 @@ import { usePreferredLanguage, type SiteLanguage } from "@/components/LanguageTo
 const footerCopy = {
   en: {
     description:
-      "Research-to-Route File service for messy projects that need one selected route before build expansion.",
+      "Turn one rough project idea into a reviewable route file before building more.",
     links: [
-      ["Start", "/start/"],
-      ["Execution", "/execution/"],
-      ["How it works", "/how-it-works/"],
-      ["Launch Kit", "/launch-kit/"],
-      ["Method", "/methodology/route-selection/"],
-      ["Research", "/templates/route-research-prompt-pack/"],
-      ["Delivery Gate", "/delivery-gate/"],
-      ["Route Basis", "/reports/route-basis/"],
-      ["Updates", "/updates/"],
-      ["Pricing", "/pricing/"],
-      ["Sample", "/sample/"],
+      ["Start", "/#start-idea"],
+      ["Plan", "/plan/"],
+      ["Review", "/review-status/"],
+      ["Route File", "/sample/"],
+      ["Evidence library", "/evidence/"],
       ["Terms", "/terms/"],
-      ["Refunds", "/refund-policy/"],
-      ["Contact", "/contact/"],
-      ["Evidence", "/reports/route-evidence-dashboard/"],
-      ["Authors", "/authors/"],
-      ["Privacy", "/privacy/"],
-      ["Disclosure", "/disclosure/"]
+      ["Privacy", "/privacy/"]
     ]
   },
   zh: {
-    description: "把混乱项目材料整理成一个可检查的路线文件，在扩建页面、工具或内容系统前先选定一条路线。",
+    description: "把一个粗略项目想法整理成可审查的路线文件，再决定是否继续建设。",
     links: [
-      ["开始", "/start/"],
-      ["执行", "/execution/"],
-      ["工作原理", "/how-it-works/"],
-      ["启动包", "/launch-kit/"],
-      ["方法", "/methodology/route-selection/"],
-      ["研究", "/templates/route-research-prompt-pack/"],
-      ["交付门槛", "/delivery-gate/"],
-      ["路线依据", "/reports/route-basis/"],
-      ["更新", "/updates/"],
-      ["定价", "/pricing/"],
-      ["样例", "/sample/"],
+      ["开始", "/#start-idea"],
+      ["计划", "/plan/"],
+      ["审核", "/review-status/"],
+      ["路线文件", "/sample/"],
+      ["证据库", "/evidence/"],
       ["条款", "/terms/"],
-      ["退款", "/refund-policy/"],
-      ["联系", "/contact/"],
-      ["证据", "/reports/route-evidence-dashboard/"],
-      ["作者", "/authors/"],
-      ["隐私", "/privacy/"],
-      ["披露", "/disclosure/"]
+      ["隐私", "/privacy/"]
     ]
   }
 } satisfies Record<SiteLanguage, { description: string; links: Array<[string, string]> }>;

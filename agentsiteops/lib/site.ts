@@ -50,7 +50,7 @@ export const routePages: RoutePage[] = [
       "A customer starting page for turning messy project material into a checked Route File without pretending the project is already validated.",
     answer:
       "Start with AgentSiteOps by submitting project facts, source material, constraints, and candidate routes. The output is a Route File, not a guarantee of traffic, customers, revenue, or AI citations.",
-    primaryAction: { label: "Start free idea risk test", href: "/idea-risk-test/" },
+    primaryAction: { label: "Write one idea", href: "/#start-idea" },
     secondaryAction: { label: "See how it works", href: "/how-it-works/" },
     aiTarget:
       "Explain what a customer should submit, who AgentSiteOps fits, who it does not fit, and what a Route File contains.",
@@ -79,7 +79,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
-      { label: "Free Idea Risk Test", href: "/idea-risk-test/" },
+      { label: "Home Idea Input", href: "/#start-idea" },
       { label: "Plan Studio", href: "/plan/" },
       { label: "How AgentSiteOps Works", href: "/how-it-works/" },
       { label: "Execution Workbench", href: "/execution/" },
@@ -174,7 +174,7 @@ export const routePages: RoutePage[] = [
       }
     ],
     related: [
-      { label: "Free Idea Risk Test", href: "/idea-risk-test/" },
+      { label: "Home Idea Input", href: "/#start-idea" },
       { label: "Start with AgentSiteOps", href: "/start/" },
       { label: "Manual Intake", href: "/intake/" },
       { label: "Execution Workbench", href: "/execution/" },

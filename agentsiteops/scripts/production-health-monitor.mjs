@@ -340,6 +340,9 @@ async function main() {
     "Open full risk map",
     "Your first result appears here.",
     "The site should take over the first pass.",
+    "A rough sentence should become a route, evidence gap, and stop rule.",
+    "AI companion memory service",
+    "Short-content planning tool",
     "The answer is useful only when the decision trail is visible.",
     "If the idea survives the first pass, it becomes an editable route draft.",
     "Route File"
@@ -569,11 +572,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-76 Product shell and route example consolidation",
     "M4-75 Customer path architecture reset",
     "M4-74 Homepage first-pass decomposition and route module localization",
     "M4-73 Rough idea to editable plan handoff",
-    "M4-72 Plan Studio Chinese workflow completion",
-    "M4-71 Idea test Chinese language completion"
+    "M4-72 Plan Studio Chinese workflow completion"
   ]);
 
   const report = renderReport(generatedAt);

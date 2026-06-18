@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { HomeIdeaStart } from "@/components/HomeIdeaStart";
 import { usePreferredLanguage, type SiteLanguage } from "@/components/LanguageToggle";
+import { RouteExampleCaseGrid } from "@/components/RouteExampleCaseGrid";
 import { ideaRiskSources } from "@/lib/ideaRiskEngine";
 
 const copy = {
@@ -24,6 +25,10 @@ const copy = {
     promiseC: "No success, revenue, traffic, or buyer-demand guarantee.",
     processEyebrow: "What happens after typing",
     processTitle: "The site should take over the first pass.",
+    examplesEyebrow: "What this looks like",
+    examplesTitle: "A rough sentence should become a route, evidence gap, and stop rule.",
+    examplesBody:
+      "These examples show the expected product behavior. The system does not praise the idea first; it translates the idea into a reviewable route object.",
     sourceEyebrow: "Why this is different from asking any AI",
     sourceTitle: "The answer is useful only when the decision trail is visible.",
     outputEyebrow: "Where it can go next",
@@ -43,6 +48,10 @@ const copy = {
     promiseC: "不承诺成功、收入、流量或买家需求。",
     processEyebrow: "输入后发生什么",
     processTitle: "网站必须接管第一轮排查。",
+    examplesEyebrow: "示例",
+    examplesTitle: "一句粗略想法，应该变成路线、证据缺口和停止规则。",
+    examplesBody:
+      "这些示例展示产品应该怎样工作。系统不是先夸想法，而是把想法翻译成可审查的路线对象。",
     sourceEyebrow: "为什么不是随便问 AI",
     sourceTitle: "答案本身不稀缺，可见的决策轨迹才有价值。",
     outputEyebrow: "下一步去哪里",
@@ -175,6 +184,15 @@ export function HomePageContent() {
         </div>
       </section>
 
+      <section className="route-foundation-section ia-section ia-example-section">
+        <div className="route-section-heading">
+          <span>{labels.examplesEyebrow}</span>
+          <h2>{labels.examplesTitle}</h2>
+          <p>{labels.examplesBody}</p>
+        </div>
+        <RouteExampleCaseGrid />
+      </section>
+
       <section className="route-foundation-section ia-section ia-proof-section">
         <div className="route-section-heading">
           <span>{labels.sourceEyebrow}</span>
@@ -212,8 +230,8 @@ export function HomePageContent() {
             <Link prefetch={false} className="secondary-action" href="/sample/">
               {labels.sampleAction}
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/launch-kit/">
-              {language === "zh" ? "查看 Launch Kit" : "Launch Kit reference"}
+            <Link prefetch={false} className="secondary-action" href="/evidence/">
+              {language === "zh" ? "查看证据库" : "Evidence library"}
             </Link>
           </div>
         </div>

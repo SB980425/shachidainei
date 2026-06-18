@@ -12,6 +12,46 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-18",
+    step: "M4-76 Product shell and route example consolidation",
+    status: "completed",
+    keyPoints: [
+      "Reduced the public footer from a broad site directory to seven customer-facing links: Start, Plan, Review, Route File, Evidence library, Terms, and Privacy.",
+      "Added three reusable example cases for AI companion memory, AI workflow service, and short-content planning so visitors can inspect how rough language becomes a route, evidence gap, and stop rule.",
+      "Rendered the same examples on the homepage and sample Route File page without adding new routes, avoiding further navigation sprawl.",
+      "Changed remaining default return actions from the legacy full idea-risk page to the homepage idea input anchor.",
+      "Updated commercial validation to require evidence-library visibility instead of forcing Launch Kit into the homepage and footer."
+    ],
+    aiAngle:
+      "The site now competes less as a generic idea validator and more as a decision trail: one rough input becomes a reviewable route object with visible evidence gaps and stop rules.",
+    files: [
+      "components/SiteFooter.tsx",
+      "components/HomePageContent.tsx",
+      "components/RouteExampleCaseGrid.tsx",
+      "lib/routeExampleCases.ts",
+      "app/sample/page.tsx",
+      "lib/siteArchitecture.ts",
+      "lib/site.ts",
+      "app/globals.css",
+      "scripts/commercial-validation-gate.mjs",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "npm run typecheck",
+      "npm run lint",
+      "npm run build",
+      "npm run routes:gate",
+      "npm run links:gate",
+      "npm run analytics:gate",
+      "npm run commercial:gate",
+      "npm run seo:ci",
+      "Playwright local check: homepage examples, reduced footer, Plan import, sample examples, and mobile overflow"
+    ],
+    next:
+      "Use real user sessions to decide whether to consolidate secondary pages further into Evidence Library instead of adding new public pages."
+  },
+  {
+    date: "2026-06-18",
     step: "M4-75 Customer path architecture reset",
     status: "completed",
     keyPoints: [

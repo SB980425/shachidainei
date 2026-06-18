@@ -5412,6 +5412,118 @@ textarea {
   max-width: 920px;
 }
 
+.route-example-showcase,
+.ia-example-section {
+  display: grid;
+  gap: 22px;
+}
+
+.route-example-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.route-example-card {
+  display: grid;
+  min-width: 0;
+  gap: 14px;
+  border: 1px solid rgba(246, 241, 232, 0.14);
+  border-radius: 14px;
+  background:
+    linear-gradient(155deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    rgba(10, 16, 15, 0.88);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.24);
+  color: var(--foundry-text, #f6f1e8);
+  padding: 18px;
+}
+
+.route-example-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.route-example-title svg,
+.route-example-card dt svg,
+.route-example-stop svg {
+  color: var(--foundry-green, #37d98c);
+  flex: 0 0 auto;
+}
+
+.route-example-title h3 {
+  margin: 0;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.08;
+}
+
+.route-example-card dl {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.route-example-card dl div,
+.route-example-evidence,
+.route-example-stop {
+  border: 1px solid rgba(246, 241, 232, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  padding: 12px;
+}
+
+.route-example-card dt {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--foundry-green, #37d98c);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.route-example-card dd,
+.route-example-card p,
+.route-example-card li {
+  color: rgba(246, 241, 232, 0.74);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.route-example-card dd {
+  margin: 7px 0 0;
+}
+
+.route-example-evidence strong {
+  display: block;
+  color: var(--foundry-text, #f6f1e8);
+  font-size: 13px;
+}
+
+.route-example-evidence ul {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.route-example-stop {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 9px;
+}
+
+.route-example-stop p {
+  margin: 0;
+}
+
+@media (max-width: 1080px) {
+  .route-example-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* IA reset: keep one visible product path and reduce accidental jumps into support pages. */
 .site-header {
   grid-template-columns: auto minmax(0, 1fr) auto auto;

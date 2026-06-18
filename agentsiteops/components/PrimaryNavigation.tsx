@@ -14,7 +14,7 @@ export function PrimaryNavigation() {
   const pathname = normalizeSitePath(usePathname());
   const [language] = usePreferredLanguage();
   const context = getSiteRouteContext(pathname);
-  const actionHref = context.primaryHref ?? "/idea-risk-test/";
+  const actionHref = context.primaryHref ?? "/#start-idea";
   const actionLabel = context.primaryLabel
     ? localize(context.primaryLabel, language)
     : language === "zh"
