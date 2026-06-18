@@ -70,6 +70,17 @@ const exampleInputByLanguage: Record<SiteLanguage, PlanDraftInput> = {
 
 const planDraftStorageKey = "agentsiteops.planDraftInput.v1";
 const planBriefStorageKey = "agentsiteops.planDraftBrief.v1";
+const planDraftSourceStorageKey = "agentsiteops.planDraftSource.v1";
+
+type PlanDraftSource = {
+  rawIdeaText?: string;
+  optionalAssets?: string;
+  detectedSignals?: Array<{ label: string; value: string }>;
+  missingHints?: string[];
+  completionScore?: number;
+  savedAt?: string;
+  language?: SiteLanguage;
+};
 
 type PlanField = {
   key: keyof PlanDraftInput;
@@ -376,6 +387,15 @@ const ui = {
       "The draft updates in the browser. No API call, account, payment, or hidden research run is created from this screen.",
     inputRulesAria: "Plan Studio input rules",
     rules: ["No API call", "One field per decision", "Draft before intake"],
+    importedDraft: "Imported from your rough idea",
+    importedTitle: "The system already filled a draft. Edit what is wrong.",
+    importedBody:
+      "These fields are inferred from the first paragraph. Treat them as a working translation of the user's words, not confirmed facts.",
+    originalIdea: "Original outline",
+    guessedField: "Inferred field",
+    needsRepair: "Needs repair",
+    noImportedDraft: "No rough-idea draft was detected. Use the fields below or start from the idea page.",
+    reviewNext: "Review next missing field",
     stepsAria: "Plan Studio steps",
     completionAria: "Plan Studio completion state",
     inputCoverage: "Input coverage",
@@ -439,6 +459,14 @@ const ui = {
       "草稿会在浏览器中更新。这个页面不会创建 API 调用、账号、付款或隐藏研究运行。",
     inputRulesAria: "计划工作台输入规则",
     rules: ["不调用 API", "每个字段对应一个决策", "先草稿后提交"],
+    importedDraft: "已从你的粗略想法带入",
+    importedTitle: "系统已经填好一版草稿。你只需要改不准的地方。",
+    importedBody: "这些字段来自第一段白话大纲，是系统把客户语言翻译成专业计划字段，不等于已经被证实。",
+    originalIdea: "原始大纲",
+    guessedField: "已猜出字段",
+    needsRepair: "仍需补充",
+    noImportedDraft: "未检测到从想法页带入的草稿。可以直接填写下方字段，或先回想法页输入大纲。",
+    reviewNext: "检查下一个缺失项",
     stepsAria: "计划工作台步骤",
     completionAria: "计划工作台完成状态",
     inputCoverage: "输入覆盖度",
@@ -605,6 +633,54 @@ function buildLocalizedBrief(
   ].join("\n");
 }
 
+function planImportRows(input: PlanDraftInput, language: SiteLanguage) {
+  const labels =
+    language === "zh"
+      ? {
+          projectName: "项目名称",
+          targetUser: "目标用户",
+          currentGoal: "当前目标",
+          existingAssets: "已有资产",
+          blocker: "当前阻塞点",
+          constraints: "约束条件"
+        }
+      : {
+          projectName: "Project name",
+          targetUser: "Target user",
+          currentGoal: "Current goal",
+          existingAssets: "Existing assets",
+          blocker: "Current blocker",
+          constraints: "Constraints"
+        };
+
+  return [
+    { key: "projectName", label: labels.projectName, value: input.projectName },
+    { key: "targetUser", label: labels.targetUser, value: input.targetUser },
+    { key: "currentGoal", label: labels.currentGoal, value: input.currentGoal },
+    { key: "existingAssets", label: labels.existingAssets, value: input.existingAssets },
+    { key: "blocker", label: labels.blocker, value: input.blocker },
+    { key: "constraints", label: labels.constraints, value: input.constraints }
+  ].filter((row) => row.value.trim().length > 0);
+}
+
+function missingHintLabel(value: string, language: SiteLanguage) {
+  if (language === "en") {
+    return value;
+  }
+
+  const labels: Record<string, string> = {
+    "Name the first reachable buyer or user group.": "说清第一批可触达买家或用户群体。",
+    "Describe the smallest first offer or result.": "描述最小的首个交付或结果。",
+    "Add one proof asset, source, screenshot, case, or link.": "补充一个证明资产、来源、截图、案例或链接。",
+    "Name the first channel where real people will see it.": "说清真实用户会在哪个第一渠道看到它。",
+    "Define what evidence would count within 48 hours, 7 days, or 30 days.":
+      "定义 48 小时、7 天或 30 天内什么证据才算有效。",
+    "State what the route must not claim, use, or promise.": "写清这条路线不能声称、使用或承诺什么。"
+  };
+
+  return labels[value] ?? value;
+}
+
 function fieldIsComplete(input: PlanDraftInput, field: PlanField) {
   if (field.kind === "select") {
     return input[field.key].trim().length > 0;
@@ -634,9 +710,11 @@ export function PlanDraftStudio() {
   const [exported, setExported] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   const [saveState, setSaveState] = useState<SaveStateKey>("ready");
+  const [draftSource, setDraftSource] = useState<PlanDraftSource | null>(null);
   const draft = useMemo(() => createPlanDraft(input), [input]);
   const draftView = useMemo(() => buildLocalizedDraftView(input, draft, language), [draft, input, language]);
   const localizedBrief = useMemo(() => buildLocalizedBrief(input, draft, language), [draft, input, language]);
+  const importedRows = useMemo(() => planImportRows(input, language), [input, language]);
   const completedFieldCount = useMemo(
     () => planFields.filter((field) => fieldIsComplete(input, field)).length,
     [input]
@@ -657,6 +735,12 @@ export function PlanDraftStudio() {
         const parsedInput = JSON.parse(storedInput) as Partial<PlanDraftInput>;
         setInput({ ...emptyInput, ...parsedInput });
         setSaveState("restored");
+      }
+
+      const storedSource = window.localStorage.getItem(planDraftSourceStorageKey);
+
+      if (storedSource) {
+        setDraftSource(JSON.parse(storedSource) as PlanDraftSource);
       }
     } catch {
       setSaveState("unavailable");
@@ -728,6 +812,8 @@ export function PlanDraftStudio() {
     try {
       window.localStorage.removeItem(planDraftStorageKey);
       window.localStorage.removeItem(planBriefStorageKey);
+      window.localStorage.removeItem(planDraftSourceStorageKey);
+      setDraftSource(null);
     } catch {
       setSaveState("unavailable");
     }
@@ -835,6 +921,45 @@ export function PlanDraftStudio() {
               <span key={item}>{item}</span>
             ))}
           </div>
+
+          <section className="plan-import-summary">
+            <div className="plan-import-head">
+              <span>{labels.importedDraft}</span>
+              <h3>{draftSource ? labels.importedTitle : labels.noImportedDraft}</h3>
+              {draftSource ? <p>{labels.importedBody}</p> : null}
+            </div>
+
+            {draftSource?.rawIdeaText ? (
+              <blockquote>
+                <span>{labels.originalIdea}</span>
+                <p>{draftSource.rawIdeaText}</p>
+              </blockquote>
+            ) : null}
+
+            {importedRows.length ? (
+              <div className="plan-import-grid">
+                {importedRows.map((row) => (
+                  <article key={row.key}>
+                    <span>{labels.guessedField}</span>
+                    <strong>{row.label}</strong>
+                    <p>{row.value}</p>
+                  </article>
+                ))}
+                {draftSource?.missingHints?.slice(0, 3).map((item) => (
+                  <article className="is-missing" key={item}>
+                    <span>{labels.needsRepair}</span>
+                    <strong>{missingHintLabel(item, language)}</strong>
+                  </article>
+                ))}
+              </div>
+            ) : null}
+
+            <button type="button" onClick={focusNextMissingField} disabled={!nextMissingField}>
+              {nextMissingField
+                ? `${labels.reviewNext}: ${nextMissingField.label[language]}`
+                : labels.allCoreFields}
+            </button>
+          </section>
 
           <div className="plan-stepper" aria-label={labels.stepsAria}>
             {planQuestionGroups.map((group, index) => {

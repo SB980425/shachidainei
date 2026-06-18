@@ -36,14 +36,87 @@ export const exampleProjectBriefInput: ProjectBriefInput = {
 };
 
 const signalRules = {
-  buyer: ["target", "buyer", "user", "customer", "audience", "for ", "用户", "客户", "受众", "人群", "买家", "目标"],
-  offer: ["offer", "receive", "deliver", "service", "tool", "product", "提供", "交付", "服务", "工具", "产品", "得到"],
+  buyer: [
+    "target",
+    "buyer",
+    "user",
+    "customer",
+    "audience",
+    "for ",
+    "用户",
+    "客户",
+    "受众",
+    "人群",
+    "买家",
+    "目标",
+    "中年",
+    "老年",
+    "老人",
+    "相信ai",
+    "相信 ai"
+  ],
+  offer: [
+    "offer",
+    "receive",
+    "deliver",
+    "service",
+    "tool",
+    "product",
+    "提供",
+    "交付",
+    "服务",
+    "工具",
+    "产品",
+    "得到",
+    "训练",
+    "陪伴",
+    "女伴",
+    "另一半",
+    "记忆"
+  ],
   assets: ["asset", "proof", "demo", "screenshot", "source", "case", "link", "已有", "证据", "截图", "链接", "案例", "材料", "演示"],
   channel: ["channel", "outreach", "search", "community", "post", "email", "渠道", "推广", "流量", "私信", "社群", "搜索", "发布"],
   resources: ["resource", "budget", "operator", "days", "week", "time", "资源", "预算", "人手", "时间", "天", "周"],
-  constraints: ["constraint", "risk", "no ", "not ", "without", "限制", "风险", "不能", "不要", "不得", "合规", "隐私"],
+  constraints: [
+    "constraint",
+    "risk",
+    "no ",
+    "not ",
+    "without",
+    "限制",
+    "风险",
+    "不能",
+    "不要",
+    "不得",
+    "合规",
+    "隐私",
+    "记忆",
+    "永远保存",
+    "养老",
+    "另一半"
+  ],
   validation: ["validate", "validation", "test", "reply", "message", "signal", "验证", "测试", "回复", "反馈", "信号", "访谈"]
 };
+
+const aiCompanionTerms = [
+  "ai女伴",
+  "ai 女伴",
+  "ai伴侣",
+  "ai 伴侣",
+  "另一半ai",
+  "另一半 ai",
+  "未来的ai",
+  "未来的 ai",
+  "陪伴",
+  "养老",
+  "建立感情",
+  "记忆永远保存",
+  "接回家",
+  "ai companion",
+  "ai partner",
+  "virtual companion",
+  "digital companion"
+];
 
 function normalizeText(value: string) {
   return value.replace(/\r\n/g, "\n").replace(/\s+/g, " ").trim();
@@ -61,6 +134,10 @@ function includesAny(value: string, terms: string[]) {
   return terms.some((term) => text.includes(term.toLowerCase()));
 }
 
+function isAiCompanionIdea(raw: string) {
+  return includesAny(raw, aiCompanionTerms);
+}
+
 function firstMatchingLine(lines: string[], terms: string[]) {
   return lines.find((line) => includesAny(line, terms)) ?? "";
 }
@@ -71,6 +148,10 @@ function firstMeaningfulLine(lines: string[]) {
 
 function inferProjectName(lines: string[], raw: string) {
   const firstLine = firstMeaningfulLine(lines);
+  if (isAiCompanionIdea(raw) && (!firstLine || /[，。；,.]|需要|训练|记忆|陪伴|养老/.test(firstLine))) {
+    return "长期记忆型 AI 伴侣服务";
+  }
+
   if (
     firstLine &&
     !/^(i|we)\s+(want|need|plan|will|am|are)\b/i.test(firstLine) &&
@@ -101,7 +182,74 @@ function inferProjectName(lines: string[], raw: string) {
     return namedMatch[1].trim();
   }
 
+  if (isAiCompanionIdea(raw)) {
+    return "长期记忆型 AI 伴侣服务";
+  }
+
   return firstLine || "Untitled project";
+}
+
+function inferTargetUser(lines: string[], raw: string) {
+  const explicit = firstMatchingLine(lines, signalRules.buyer);
+
+  if (isAiCompanionIdea(raw) && (!explicit || explicit.length > 60 || /训练|记忆|接回家/.test(explicit))) {
+    return "相信 AI 陪伴、提前规划中老年陪伴或养老陪伴的人群，尤其是愿意为长期情感陪伴建立个人资料的人。";
+  }
+
+  if (explicit) {
+    return explicit;
+  }
+
+  if (isAiCompanionIdea(raw)) {
+    return "相信 AI 陪伴、提前规划中老年陪伴或养老陪伴的人群，尤其是愿意为长期情感陪伴建立个人资料的人。";
+  }
+
+  return "";
+}
+
+function inferOffer(lines: string[], raw: string) {
+  const explicit = firstMatchingLine(lines, signalRules.offer);
+
+  if (isAiCompanionIdea(raw) && (!explicit || explicit.length > 60 || /养老|接回家/.test(explicit))) {
+    return "根据用户提供的内容，先训练一个带长期记忆和陪伴设定的 AI 伴侣档案或原型体验。";
+  }
+
+  if (explicit) {
+    return explicit;
+  }
+
+  if (isAiCompanionIdea(raw)) {
+    return "根据用户提供的内容，先训练一个带长期记忆和陪伴设定的 AI 伴侣档案或原型体验。";
+  }
+
+  return "";
+}
+
+function inferConstraints(lines: string[], raw: string) {
+  const explicit = firstMatchingLine(lines, signalRules.constraints);
+
+  if (isAiCompanionIdea(raw)) {
+    return [
+      explicit && /不能|不要|不得|隐私|合规|限制|no |not |without/i.test(explicit) ? explicit : "",
+      "涉及长期记忆、亲密关系、隐私数据、情感依赖和养老陪伴；不能承诺替代真实伴侣、医疗养老照护、永久保存、安全无风险或未来硬件接回。"
+    ]
+      .filter(Boolean)
+      .join(" ");
+  }
+
+  return explicit;
+}
+
+function inferBlocker(input: IdeaRiskInput) {
+  if (isAiCompanionIdea(Object.values(input).join(" "))) {
+    return "需要先验证用户是否愿意提交私人内容来建立 AI 伴侣档案，以及长期记忆、隐私保存、情感依赖和养老陪伴承诺是否安全可交付。";
+  }
+
+  return (
+    input.constraints ||
+    input.validationPlan ||
+    "The route is not ready until buyer, proof, channel, and stop rule are visible."
+  );
 }
 
 function clipped(value: string, maxLength = 360) {
@@ -168,12 +316,12 @@ export function interpretProjectBrief(input: ProjectBriefInput): ProjectBriefInt
   const lines = splitLines(raw);
   const projectName = clipped(inferProjectName(lines, raw), 90);
   const ideaSummary = fallbackSummary(lines, raw);
-  const targetUser = firstMatchingLine(lines, signalRules.buyer);
-  const offer = firstMatchingLine(lines, signalRules.offer);
+  const targetUser = inferTargetUser(lines, raw);
+  const offer = inferOffer(lines, raw);
   const existingAssets = assets || firstMatchingLine(lines, signalRules.assets);
   const acquisitionChannel = firstMatchingLine(lines, signalRules.channel);
   const resources = firstMatchingLine(lines, signalRules.resources);
-  const constraints = firstMatchingLine(lines, signalRules.constraints);
+  const constraints = inferConstraints(lines, raw);
   const validationPlan = firstMatchingLine(lines, signalRules.validation);
 
   const ideaRiskInput: IdeaRiskInput = {
@@ -196,9 +344,11 @@ export function interpretProjectBrief(input: ProjectBriefInput): ProjectBriefInt
         ? "Tool or dashboard"
         : "AI service or automation",
     targetUser,
-    currentGoal: ideaSummary,
+    currentGoal: isAiCompanionIdea(raw)
+      ? "先判断能否做出安全、可解释、可验证的首个 AI 伴侣档案体验，而不是直接建设完整平台或承诺未来长期保存。"
+      : ideaSummary,
     existingAssets,
-    blocker: constraints || validationPlan || "The route is not ready until buyer, proof, channel, and stop rule are visible.",
+    blocker: inferBlocker(ideaRiskInput),
     timeWindow: includesAny(raw, ["48", "两天", "2天"]) ? "48 hours" : includesAny(raw, ["30", "一个月"]) ? "30 days" : "7 days",
     executionMode: includesAny(raw, ["帮我", "operator", "review", "人工", "服务"])
       ? "I need operator review"

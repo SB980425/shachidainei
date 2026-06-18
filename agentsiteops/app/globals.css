@@ -14831,6 +14831,108 @@ body {
   text-align: center;
 }
 
+.plan-import-summary {
+  display: grid;
+  gap: 14px;
+  border: 1px solid rgba(255, 104, 70, 0.24);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 104, 70, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(27, 21, 18, 0.92), rgba(8, 12, 12, 0.96));
+  padding: 18px;
+}
+
+.plan-import-head {
+  display: grid;
+  gap: 6px;
+}
+
+.plan-import-head span,
+.plan-import-grid article span,
+.plan-import-summary blockquote span {
+  color: var(--foundry-coral);
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.plan-import-head h3 {
+  max-width: 18ch;
+  margin: 0;
+  color: var(--foundry-text);
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.02;
+}
+
+.plan-import-head p,
+.plan-import-summary blockquote p,
+.plan-import-grid article p {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.7);
+  line-height: 1.55;
+}
+
+.plan-import-summary blockquote {
+  display: grid;
+  gap: 8px;
+  max-height: 170px;
+  margin: 0;
+  overflow: auto;
+  border: 1px solid rgba(246, 241, 232, 0.12);
+  border-radius: 14px;
+  background: rgba(0, 5, 7, 0.48);
+  padding: 14px;
+}
+
+.plan-import-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.plan-import-grid article {
+  display: grid;
+  gap: 7px;
+  min-height: 132px;
+  border: 1px solid rgba(246, 241, 232, 0.11);
+  border-radius: 14px;
+  background: rgba(7, 12, 13, 0.78);
+  padding: 13px;
+}
+
+.plan-import-grid article.is-missing {
+  border-color: rgba(255, 104, 70, 0.3);
+  background: rgba(255, 104, 70, 0.08);
+}
+
+.plan-import-grid article strong {
+  color: var(--foundry-text);
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.plan-import-summary button {
+  min-height: 42px;
+  justify-self: start;
+  border: 1px solid rgba(255, 104, 70, 0.36);
+  border-radius: 999px;
+  background: rgba(255, 104, 70, 0.12);
+  color: var(--foundry-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 950;
+  padding: 0 16px;
+}
+
+.plan-import-summary button:disabled {
+  border-color: rgba(55, 217, 140, 0.26);
+  background: rgba(55, 217, 140, 0.08);
+  color: #cbffdf;
+  cursor: default;
+}
+
 .plan-stepper {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -15088,6 +15190,7 @@ body {
   }
 
   .plan-input-summary,
+  .plan-import-grid,
   .plan-stepper,
   .plan-question-group legend {
     grid-template-columns: 1fr;
@@ -16892,6 +16995,62 @@ body {
   align-items: start;
 }
 
+.idea-risk-plan-preview {
+  display: grid;
+  gap: 13px;
+  border: 1px solid rgba(55, 217, 140, 0.22);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(55, 217, 140, 0.14), transparent 34%),
+    rgba(8, 16, 15, 0.86);
+  padding: 16px;
+}
+
+.idea-risk-plan-preview > p {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.68);
+}
+
+.idea-risk-plan-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.idea-risk-plan-preview-grid article {
+  display: grid;
+  gap: 7px;
+  min-height: 116px;
+  border: 1px solid rgba(246, 241, 232, 0.11);
+  border-radius: 14px;
+  background: rgba(0, 5, 7, 0.5);
+  padding: 12px;
+}
+
+.idea-risk-plan-preview-grid article.is-missing {
+  border-color: rgba(255, 104, 70, 0.28);
+  background: rgba(255, 104, 70, 0.08);
+}
+
+.idea-risk-plan-preview-grid span {
+  color: var(--foundry-green);
+  font-size: 11px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.idea-risk-plan-preview-grid strong {
+  color: var(--foundry-text);
+  line-height: 1.28;
+}
+
+.idea-risk-plan-preview-grid p {
+  margin: 0;
+  color: rgba(246, 241, 232, 0.66);
+  line-height: 1.45;
+}
+
 .idea-risk-boundary {
   display: inline-flex;
   gap: 8px;
@@ -17283,6 +17442,7 @@ body {
   .route-case-output-grid,
   .route-case-check-grid,
   .idea-risk-flow-grid,
+  .idea-risk-plan-preview-grid,
   .route-file-viewer-grid,
   .route-file-viewer-split,
   .review-example-grid,
@@ -17347,6 +17507,7 @@ body {
   .route-case-check-grid,
   .idea-risk-flow-grid,
   .idea-risk-source-grid,
+  .idea-risk-plan-preview-grid,
   .idea-risk-detected-grid,
   .route-file-viewer-grid,
   .route-file-viewer-split,

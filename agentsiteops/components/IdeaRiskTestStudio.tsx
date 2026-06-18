@@ -26,6 +26,7 @@ import { usePreferredLanguage, type SiteLanguage } from "@/components/LanguageTo
 const storageKey = "agentsiteops.projectBriefInput.v1";
 const planDraftStorageKey = "agentsiteops.planDraftInput.v1";
 const planBriefStorageKey = "agentsiteops.planDraftBrief.v1";
+const planDraftSourceStorageKey = "agentsiteops.planDraftSource.v1";
 
 const ui = {
   en: {
@@ -76,7 +77,12 @@ const ui = {
     sourceBody:
       "These sources explain why the risk nodes exist. They do not prove this specific project will succeed or fail.",
     stopRule: "Stop rule",
-    continue: "Continue to Plan Studio",
+    planPreview: "What will be carried into Plan Studio",
+    planPreviewBody:
+      "The next page will not start from a blank form. These inferred fields are saved locally and can be edited there.",
+    inferredDraft: "Inferred draft",
+    stillMissing: "Still needs repair",
+    continue: "Continue with draft",
     boundary:
       "Free test output is a reference map. Final Route File acceptance still needs evidence review and scope lock.",
     extractedScore: "input extracted"
@@ -127,7 +133,11 @@ const ui = {
     sources: "参考依据",
     sourceBody: "这些来源解释风险节点为什么存在，但不能证明某个具体项目一定成功或失败。",
     stopRule: "停止规则",
-    continue: "进入计划页",
+    planPreview: "下一页会自动带入什么",
+    planPreviewBody: "下一页不会从空白表单开始。以下字段会本地保存，到计划页后可以直接修改。",
+    inferredDraft: "已猜出的草稿",
+    stillMissing: "仍需补充",
+    continue: "带着草稿进入计划页",
     boundary: "免费测试输出只是参考地图。最终 Route File 仍需要证据审核和范围锁定。",
     extractedScore: "已提取信息"
   }
@@ -418,6 +428,33 @@ function sourceTypeLabel(value: string, language: SiteLanguage) {
   return labels[value] ?? value;
 }
 
+function planDraftPreviewRows(input: ReturnType<typeof interpretProjectBrief>["planDraftInput"], language: SiteLanguage) {
+  const labels =
+    language === "zh"
+      ? {
+          projectName: "项目名称",
+          targetUser: "目标用户",
+          currentGoal: "当前目标",
+          blocker: "当前阻塞点",
+          constraints: "约束条件"
+        }
+      : {
+          projectName: "Project name",
+          targetUser: "Target user",
+          currentGoal: "Current goal",
+          blocker: "Current blocker",
+          constraints: "Constraints"
+        };
+
+  return [
+    { key: "projectName", label: labels.projectName, value: input.projectName },
+    { key: "targetUser", label: labels.targetUser, value: input.targetUser },
+    { key: "currentGoal", label: labels.currentGoal, value: input.currentGoal },
+    { key: "blocker", label: labels.blocker, value: input.blocker },
+    { key: "constraints", label: labels.constraints, value: input.constraints }
+  ].filter((row) => row.value.trim().length > 0);
+}
+
 function localizedTimePlan(language: SiteLanguage, projectName: string, route: string, topRisk: string) {
   if (language === "en") {
     return null;
@@ -540,6 +577,7 @@ export function IdeaRiskTestStudio() {
     ? displayAssumptions.filter((check) => check.status === "missing")
     : displayAssumptions.slice(0, 3);
   const displayQuestions = report.handoffQuestions.map((question) => localizeQuestion(question, language));
+  const draftPreviewRows = planDraftPreviewRows(interpretation.planDraftInput, language);
   const displayTimePlan =
     localizedTimePlan(
       language,
@@ -628,6 +666,18 @@ export function IdeaRiskTestStudio() {
     try {
       window.localStorage.setItem(planDraftStorageKey, JSON.stringify(interpretation.planDraftInput));
       window.localStorage.setItem(planBriefStorageKey, localizedBrief);
+      window.localStorage.setItem(
+        planDraftSourceStorageKey,
+        JSON.stringify({
+          rawIdeaText: input.rawIdeaText,
+          optionalAssets: input.optionalAssets,
+          detectedSignals: interpretation.detectedSignals,
+          missingHints: interpretation.missingHints,
+          completionScore: interpretation.completionScore,
+          savedAt: new Date().toISOString(),
+          language
+        })
+      );
     } catch {
       // Plan Studio can still open; it will simply not find a saved draft.
     }
@@ -886,6 +936,29 @@ export function IdeaRiskTestStudio() {
                 ? "如果项目无法说明具体用户、第一证明资产、验证渠道、来源边界和复盘日期，就先停止或修复，不进入建设。"
                 : report.stopRule}
             </p>
+          </div>
+        </section>
+
+        <section className="idea-risk-plan-preview">
+          <div className="idea-risk-section-head">
+            <FileCheck2 aria-hidden="true" size={18} />
+            <h3>{labels.planPreview}</h3>
+          </div>
+          <p>{labels.planPreviewBody}</p>
+          <div className="idea-risk-plan-preview-grid">
+            {draftPreviewRows.map((row) => (
+              <article key={row.key}>
+                <span>{labels.inferredDraft}</span>
+                <strong>{row.label}</strong>
+                <p>{row.value}</p>
+              </article>
+            ))}
+            {interpretation.missingHints.slice(0, 3).map((item) => (
+              <article className="is-missing" key={item}>
+                <span>{labels.stillMissing}</span>
+                <strong>{missingHintLabel(item, language)}</strong>
+              </article>
+            ))}
           </div>
         </section>
 

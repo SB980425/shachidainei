@@ -1,6 +1,6 @@
 # Production Health Monitor
 
-- Generated: 2026-06-18T00:39:47.299Z
+- Generated: 2026-06-18T01:11:33.414Z
 - Status: pass
 - Site: https://agentsiteops.com
 - Checks: 361
@@ -367,11 +367,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-73 Rough idea to editable plan handoff | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-72 Plan Studio Chinese workflow completion | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-71 Idea test Chinese language completion | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-70 System-takeover idea triage | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-69 Homepage bilingual credibility model | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-68 First-input architecture and evidence-basis reset | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

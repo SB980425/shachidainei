@@ -569,11 +569,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-73 Rough idea to editable plan handoff",
     "M4-72 Plan Studio Chinese workflow completion",
     "M4-71 Idea test Chinese language completion",
     "M4-70 System-takeover idea triage",
-    "M4-69 Homepage bilingual credibility model",
-    "M4-68 First-input architecture and evidence-basis reset"
+    "M4-69 Homepage bilingual credibility model"
   ]);
 
   const report = renderReport(generatedAt);

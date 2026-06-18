@@ -12,6 +12,41 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-18",
+    step: "M4-73 Rough idea to editable plan handoff",
+    status: "completed",
+    keyPoints: [
+      "Improved rough-idea interpretation for AI companion, long-term memory, middle-age companionship, elderly-care companionship, emotional dependency, and privacy-sensitive pitch language.",
+      "Added an Idea Risk Test preview showing which plan fields will be carried into Plan Studio before the visitor clicks through.",
+      "Stored the source outline, detected signals, missing hints, and completion score with the generated Plan Studio draft.",
+      "Added a Plan Studio import summary that shows the original outline, inferred fields, and remaining repair prompts before the user edits any form field.",
+      "Verified the provided AI companion style outline becomes an editable draft instead of an untitled project or blank form."
+    ],
+    aiAngle:
+      "Visitors can now write one non-technical paragraph and see it translated into professional planning fields before editing, reducing subjective wording drift and blank-form confusion.",
+    files: [
+      "components/IdeaRiskTestStudio.tsx",
+      "components/PlanDraftStudio.tsx",
+      "lib/projectBriefInterpreter.ts",
+      "app/globals.css",
+      "lib/updateLog.ts",
+      "scripts/production-health-monitor.mjs"
+    ],
+    verification: [
+      "npm run typecheck",
+      "npm run lint",
+      "npm run build",
+      "npm run routes:gate",
+      "npm run links:gate",
+      "npm run analytics:gate",
+      "npm run commercial:gate",
+      "npm run seo:ci",
+      "Playwright local idea-to-plan handoff with AI companion outline and mobile overflow QA"
+    ],
+    next:
+      "Apply the same editable handoff pattern to Intake only after confirming Plan Studio reduces user confusion in real browsing sessions."
+  },
+  {
+    date: "2026-06-18",
     step: "M4-72 Plan Studio Chinese workflow completion",
     status: "completed",
     keyPoints: [
