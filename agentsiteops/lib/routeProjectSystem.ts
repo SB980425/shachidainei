@@ -40,6 +40,8 @@ export type RouteProjectClientState = {
   stopOrRepair: string;
 };
 
+export type RouteProjectLanguage = "en" | "zh";
+
 export const routeProjectStages: RouteProjectStage[] = [
   {
     id: "plan",
@@ -207,6 +209,151 @@ export const routeProjectClientStates: RouteProjectClientState[] = [
   }
 ];
 
+const routeProjectStageZh: Record<
+  RouteProjectStageId,
+  Omit<RouteProjectStage, "id" | "href" | "icon">
+> = {
+  plan: {
+    label: "计划草稿",
+    title: "把零散想法整理成一个路线问题",
+    body:
+      "访客用普通语言写下项目、目标用户、证据、备选方向、阻塞点、约束、执行方式和审核窗口。",
+    owner: "访客和浏览器本地草稿",
+    input: "尚不清晰的项目材料",
+    output: "初步路线简报",
+    pass: "用户、目标、资产、阻塞点、被否决方向和约束已经可见。",
+    repair: "只补充缺失的用户、证据、阻塞点或交付边界。",
+    notDelivery: "没有路线问题或可检查输入的宽泛愿望。"
+  },
+  intake: {
+    label: "提交材料",
+    title: "把草稿转成可审核材料包",
+    body:
+      "材料包把提交和通过分开，并显示请求是可审核、需修复、被阻塞，还是不属于交付。",
+    owner: "网站回执和人工审核",
+    input: "计划简报和安全来源材料",
+    output: "通过、修复、阻塞或不交付状态",
+    pass: "事实、权利、风险、付款角色和审核边界已经明确。",
+    repair: "只要求能判断路线所必需的缺失字段。",
+    notDelivery: "秘密信息、私有数据、危险承诺或无法兑现的交付承诺。"
+  },
+  scope: {
+    label: "锁定范围",
+    title: "冻结声明、来源、路线和非目标",
+    body:
+      "通过审核的材料会变成锁定决策框架，避免研究漂移成宽泛市场建议或无证据建设。",
+    owner: "操作员",
+    input: "已接受的材料包",
+    output: "锁定的研究和交付边界",
+    pass: "允许来源、禁止声明、候选路线和停止条件已经命名。",
+    repair: "收窄用户、来源集合、路线备选或交付范围。",
+    notDelivery: "没有来源权利、路线备选或禁止声明限制的研究请求。"
+  },
+  research: {
+    label: "研究运行",
+    title: "使用被批准的证据载体",
+    body:
+      "研究可以来自人工来源审查、客户报告、操作员控制的 AI 研究或其他被批准载体。载体可以更换，验收标准不变。",
+    owner: "被批准的载体",
+    input: "锁定简报和来源边界",
+    output: "带来源的发现和被否决路径",
+    pass: "返回材料包含来源、用户逻辑、备选方向、不确定性和证据需求。",
+    repair: "对未覆盖声明或弱来源生成二次补研简报。",
+    notDelivery: "隐藏自动研究承诺，或没有可检查来源覆盖的摘要。"
+  },
+  gate: {
+    label: "覆盖检查",
+    title: "接受、修复、阻塞或拒绝返回材料",
+    body:
+      "返回研究会先被检查，再进入综合，避免看起来很自信的报告变成弱路线文件。",
+    owner: "质量检查",
+    input: "返回研究或人工来源笔记",
+    output: "通过、修复提示、阻塞原因或拒绝",
+    pass: "用户逻辑、被否决备选、证据登记、首个证明资产、验证渠道和停止规则均已覆盖。",
+    repair: "发送聚焦缺口请求，而不是绕过缺失证据直接综合。",
+    notDelivery: "缺少否决逻辑、证据标签或停止条件的干净报告。"
+  },
+  "route-file": {
+    label: "路线文件",
+    title: "把已接受证据融合成一个决策包",
+    body:
+      "只有已接受材料会进入选定路线、被否决备选、证据登记、首个证明资产、验证渠道和停止规则。",
+    owner: "操作员交付",
+    input: "通过覆盖检查的研究和提交事实",
+    output: "客户可读路线文件",
+    pass: "客户能看到先做什么、不做什么、还缺什么、什么时候停止。",
+    repair: "在最终交付前降低信心或请求缺失证据。",
+    notDelivery: "多个方向并列、没有证据登记或没有停止规则的计划。"
+  },
+  validation: {
+    label: "验证",
+    title: "运行首个证明资产和停止规则",
+    body:
+      "路线文件不是系统终点。它必须指向首个证明资产、计数信号、忽略的弱信号，以及停止或修复决定。",
+    owner: "访客、操作员或创始人",
+    input: "已交付路线文件",
+    output: "继续、修复、转向或停止证据",
+    pass: "记录了合格回复、可用提交、付款加提交、重复异议或有来源的搜索证据。",
+    repair: "扩张前重写报价、证明资产、用户群或渠道。",
+    notDelivery: "把页面浏览、AI 夸奖、站点地图成功或 PayPal 点击当成需求验证。"
+  }
+};
+
+const routeProjectClientStateZh: Record<
+  RouteProjectStageId,
+  Omit<RouteProjectClientState, "stage">
+> = {
+  plan: {
+    customerAction: "只写一次混乱项目：用户、目标、资产、阻塞点、约束、执行方式和审核窗口。",
+    websiteAction: "在浏览器本地生成初步路线草稿、准备度分数、证据缺口、被否决方案和可导出简报。",
+    manualAction: "此时不会启动人工工作。只有草稿通过提交材料进入审核后，操作员才开始判断。",
+    nextVisibleResult: "一个可复制或下载的计划简报，可放入提交材料包。",
+    stopOrRepair: "如果用户、资产、阻塞点、约束或禁止声明仍然模糊，先修复再提交。"
+  },
+  intake: {
+    customerAction: "发送计划简报、安全来源材料、链接、截图、约束和可选订单确认。",
+    websiteAction: "整理材料包，检测本机保存的计划工作台草稿，复制材料包，并打开干净的邮件交接。",
+    manualAction: "人工判断通过、要求修复、阻塞，或标记为不交付。",
+    nextVisibleResult: "研究开始前显示通过、修复、阻塞或不交付状态。",
+    stopOrRepair: "出现私有数据、危险声明、来源权利缺口或无法交付承诺时，停止或修复。"
+  },
+  scope: {
+    customerAction: "确认路线问题、允许来源、非目标、禁止声明和交付边界。",
+    websiteAction: "显示冻结后的范围路径，避免项目漂移到无关模板或宽泛建议。",
+    manualAction: "操作员锁定简报、命名路线备选，并决定哪些证据载体可接受。",
+    nextVisibleResult: "一个之后可以检查的窄研究和交付边界。",
+    stopOrRepair: "如果简报不能命名来源、备选、不可接受声明或停止条件，先修复。"
+  },
+  research: {
+    customerAction: "提供被批准的来源材料，或等待选定载体按锁定简报返回覆盖结果。",
+    websiteAction: "保持载体中立的研究标准可见，不宣称某个隐藏 AI 平台拥有流程。",
+    manualAction: "可使用人工审查、客户报告、操作员控制的 AI 研究或其他被批准载体。",
+    nextVisibleResult: "带来源、不确定性、备选方向和证据需求的返回发现。",
+    stopOrRepair: "当用户逻辑、来源覆盖、备选方向或证明需求缺失时，触发二次补研。"
+  },
+  gate: {
+    customerAction: "先检查返回材料是否覆盖路线决策，再接受看起来完整的交付。",
+    websiteAction: "暴露通过、修复、阻塞和不交付逻辑，避免弱报告变成路线文件。",
+    manualAction: "操作员检查覆盖度，然后综合、修复、阻塞或拒绝材料。",
+    nextVisibleResult: "覆盖结论，以及需要时的缺失证据请求。",
+    stopOrRepair: "缺少证据标签、被否决备选、证明资产、渠道或停止规则时，修复或阻塞。"
+  },
+  "route-file": {
+    customerAction: "阅读一条选定路线、被否决路径、证据登记、首个证明资产、验证渠道和停止规则。",
+    websiteAction: "展示样例和证明案例结构，让最终交付在被信任前可检查。",
+    manualAction: "操作员把已接受证据融合成路线文件，并在证据弱时降低信心。",
+    nextVisibleResult: "客户可读的路线文件，解释先做什么以及不建设什么。",
+    stopOrRepair: "仍有多个并列路线、没有登记账或没有停止规则时，不交付。"
+  },
+  validation: {
+    customerAction: "在选定渠道运行首个证明资产，记录计数信号、忽略的弱信号和异议。",
+    websiteAction: "提供验证冲刺和证据语言，避免把页面活动误判为需求。",
+    manualAction: "操作员或创始人解释信号，并决定继续、修复、转向或停止。",
+    nextVisibleResult: "由合格回复、可用提交、付款加提交或重复异议支撑的验证决定。",
+    stopOrRepair: "只有页面浏览、AI 夸奖、站点地图成功或不合格点击时，停止或修复。"
+  }
+};
+
 export const routeProjectObjects = [
   {
     name: "Route Project",
@@ -258,4 +405,37 @@ export function getRouteProjectStage(id: RouteProjectStageId) {
 
 export function getRouteProjectClientState(id: RouteProjectStageId) {
   return routeProjectClientStates.find((state) => state.stage === id) ?? routeProjectClientStates[0];
+}
+
+export function getLocalizedRouteProjectStages(language: RouteProjectLanguage = "en") {
+  if (language === "en") {
+    return routeProjectStages;
+  }
+
+  return routeProjectStages.map((stage) => ({
+    ...stage,
+    ...routeProjectStageZh[stage.id]
+  }));
+}
+
+export function getLocalizedRouteProjectStage(
+  id: RouteProjectStageId,
+  language: RouteProjectLanguage = "en"
+) {
+  return getLocalizedRouteProjectStages(language).find((stage) => stage.id === id) ?? getLocalizedRouteProjectStages(language)[0];
+}
+
+export function getLocalizedRouteProjectClientState(
+  id: RouteProjectStageId,
+  language: RouteProjectLanguage = "en"
+) {
+  if (language === "en") {
+    return getRouteProjectClientState(id);
+  }
+
+  const base = getRouteProjectClientState(id);
+  return {
+    ...base,
+    ...routeProjectClientStateZh[id]
+  };
 }

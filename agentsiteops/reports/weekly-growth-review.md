@@ -1,6 +1,6 @@
 # Weekly Growth Review
 
-- Date: 2026-06-17
+- Date: 2026-06-18
 - Review type: production baseline evidence review
 - Decision: continue evidence collection; do not scale content clusters yet
 

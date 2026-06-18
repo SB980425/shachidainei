@@ -8,9 +8,10 @@ import {
   UserCheck
 } from "lucide-react";
 import {
-  getRouteProjectClientState,
-  getRouteProjectStage,
-  routeProjectStages,
+  getLocalizedRouteProjectClientState,
+  getLocalizedRouteProjectStage,
+  getLocalizedRouteProjectStages,
+  type RouteProjectLanguage,
   type RouteProjectStageId
 } from "@/lib/routeProjectSystem";
 
@@ -19,9 +20,11 @@ type ClientRouteStatePanelProps = {
   title?: string;
   body?: string;
   compact?: boolean;
+  language?: RouteProjectLanguage;
 };
 
-function getNextStage(current: RouteProjectStageId) {
+function getNextStage(current: RouteProjectStageId, language: RouteProjectLanguage) {
+  const routeProjectStages = getLocalizedRouteProjectStages(language);
   const currentIndex = routeProjectStages.findIndex((stage) => stage.id === current);
 
   if (currentIndex < 0) {
@@ -33,32 +36,69 @@ function getNextStage(current: RouteProjectStageId) {
 
 export function ClientRouteStatePanel({
   current,
-  title = "What the customer can tell from this page.",
-  body = "Each stage should separate automatic website behavior from manual judgment, then show the next visible result.",
-  compact = false
+  title,
+  body,
+  compact = false,
+  language = "en"
 }: ClientRouteStatePanelProps) {
-  const stage = getRouteProjectStage(current);
-  const state = getRouteProjectClientState(current);
-  const nextStage = getNextStage(current);
+  const stage = getLocalizedRouteProjectStage(current, language);
+  const state = getLocalizedRouteProjectClientState(current, language);
+  const nextStage = getNextStage(current, language);
+  const labels =
+    language === "zh"
+      ? {
+          heading: "客户能从这个页面看懂什么。",
+          body:
+            "每个阶段都要把网站自动处理和人工判断分开，并告诉客户下一个可见结果是什么。",
+          clientState: "客户状态",
+          now: "现在",
+          stopOrRepair: "何时停止或修复",
+          currentStage: "当前阶段",
+          reviewValidation: "查看验证",
+          nextRecommended: "下一步建议",
+          cards: {
+            customer: "你的动作",
+            website: "网站处理",
+            manual: "人工审核",
+            result: "可见结果"
+          }
+        }
+      : {
+          heading: "What the customer can tell from this page.",
+          body:
+            "Each stage should separate automatic website behavior from manual judgment, then show the next visible result.",
+          clientState: "Client state",
+          now: "Now",
+          stopOrRepair: "Stop or repair when",
+          currentStage: "Current stage",
+          reviewValidation: "Review validation",
+          nextRecommended: "Next recommended",
+          cards: {
+            customer: "Your action",
+            website: "Website handles",
+            manual: "Manual review",
+            result: "Visible result"
+          }
+        };
 
   const cards = [
     {
-      label: "Your action",
+      label: labels.cards.customer,
       text: state.customerAction,
       Icon: ClipboardList
     },
     {
-      label: "Website handles",
+      label: labels.cards.website,
       text: state.websiteAction,
       Icon: MonitorCheck
     },
     {
-      label: "Manual review",
+      label: labels.cards.manual,
       text: state.manualAction,
       Icon: UserCheck
     },
     {
-      label: "Visible result",
+      label: labels.cards.result,
       text: state.nextVisibleResult,
       Icon: Eye
     }
@@ -68,20 +108,20 @@ export function ClientRouteStatePanel({
     <section className={compact ? "client-state-panel is-compact" : "client-state-panel"}>
       <div className="client-state-head">
         <div>
-          <span>Client state</span>
-          <h2>{title}</h2>
+          <span>{labels.clientState}</span>
+          <h2>{title ?? labels.heading}</h2>
         </div>
-        <p>{body}</p>
+        <p>{body ?? labels.body}</p>
       </div>
 
       <div className="client-state-current" aria-label="Current client state">
         <div>
-          <span>Now</span>
+          <span>{labels.now}</span>
           <h3>{stage.label}</h3>
           <p>{stage.title}</p>
         </div>
         <div>
-          <span>Stop or repair when</span>
+          <span>{labels.stopOrRepair}</span>
           <p>
             <ShieldAlert aria-hidden="true" size={17} />
             {state.stopOrRepair}
@@ -112,7 +152,7 @@ export function ClientRouteStatePanel({
           data-analytics-label={stage.id}
           data-analytics-type="route_project"
         >
-          Current stage
+          {labels.currentStage}
         </Link>
         <Link
           prefetch={false}
@@ -122,7 +162,9 @@ export function ClientRouteStatePanel({
           data-analytics-label={`${stage.id}_to_${nextStage.id}`}
           data-analytics-type="route_project"
         >
-          {nextStage.id === stage.id ? "Review validation" : `Next recommended: ${nextStage.label}`}
+          {nextStage.id === stage.id
+            ? labels.reviewValidation
+            : `${labels.nextRecommended}: ${nextStage.label}`}
           <ArrowRight aria-hidden="true" size={16} />
         </Link>
       </div>

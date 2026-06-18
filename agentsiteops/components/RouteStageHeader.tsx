@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import {
-  routeProjectStages,
+  getLocalizedRouteProjectStages,
+  type RouteProjectLanguage,
   type RouteProjectStageId
 } from "@/lib/routeProjectSystem";
 
@@ -9,24 +10,46 @@ type RouteStageHeaderProps = {
   current: RouteProjectStageId;
   title?: string;
   body?: string;
+  language?: RouteProjectLanguage;
 };
 
-export function RouteStageHeader({ current, title, body }: RouteStageHeaderProps) {
+export function RouteStageHeader({ current, title, body, language = "en" }: RouteStageHeaderProps) {
+  const routeProjectStages = getLocalizedRouteProjectStages(language);
   const currentIndex = Math.max(
     0,
     routeProjectStages.findIndex((stage) => stage.id === current)
   );
   const currentStage = routeProjectStages[currentIndex];
   const nextStage = routeProjectStages[Math.min(currentIndex + 1, routeProjectStages.length - 1)];
+  const labels =
+    language === "zh"
+      ? {
+          aria: "当前路线项目阶段",
+          rail: "路线项目状态条",
+          step: "第",
+          of: "步，共",
+          next: "下一步"
+        }
+      : {
+          aria: "Current Route Project stage",
+          rail: "Route Project state rail",
+          step: "Step",
+          of: "of",
+          next: "Next"
+        };
 
   return (
-    <section className="route-stage-header" aria-label="Current Route Project stage">
+    <section className="route-stage-header" aria-label={labels.aria}>
       <div className="route-stage-copy">
-        <span>Step {currentIndex + 1} of {routeProjectStages.length}</span>
+        <span>
+          {language === "zh"
+            ? `${labels.step} ${currentIndex + 1} ${labels.of} ${routeProjectStages.length} 步`
+            : `${labels.step} ${currentIndex + 1} ${labels.of} ${routeProjectStages.length}`}
+        </span>
         <h2>{title ?? currentStage.label}</h2>
         <p>{body ?? currentStage.body}</p>
       </div>
-      <div className="route-stage-rail" aria-label="Route Project state rail">
+      <div className="route-stage-rail" aria-label={labels.rail}>
         {routeProjectStages.map((stage, index) => {
           const isCurrent = stage.id === current;
           const isPassed = index < currentIndex;
@@ -61,7 +84,7 @@ export function RouteStageHeader({ current, title, body }: RouteStageHeaderProps
         })}
       </div>
       <Link prefetch={false} className="route-stage-next" href={nextStage.href}>
-        Next: {nextStage.label}
+        {labels.next}: {nextStage.label}
         <ArrowRight aria-hidden="true" size={15} />
       </Link>
     </section>

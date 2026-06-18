@@ -8,7 +8,11 @@ import {
   SearchCheck,
   ShieldCheck
 } from "lucide-react";
-import { routeProjectStages, type RouteProjectStageId } from "@/lib/routeProjectSystem";
+import {
+  getLocalizedRouteProjectStages,
+  type RouteProjectLanguage,
+  type RouteProjectStageId
+} from "@/lib/routeProjectSystem";
 
 const iconMap = {
   activity: Activity,
@@ -25,26 +29,41 @@ type RouteFlowBridgeProps = {
   eyebrow?: string;
   nextHref?: string;
   nextLabel?: string;
+  language?: RouteProjectLanguage;
 };
 
 export function RouteFlowBridge({
   current,
-  eyebrow = "Route Foundry path",
+  eyebrow,
   nextHref,
-  nextLabel
+  nextLabel,
+  language = "en"
 }: RouteFlowBridgeProps) {
+  const routeProjectStages = getLocalizedRouteProjectStages(language);
   const currentIndex = routeProjectStages.findIndex((stage) => stage.id === current);
   const safeIndex = currentIndex >= 0 ? currentIndex : 0;
   const resolvedNext = nextHref
-    ? { href: nextHref, label: nextLabel ?? "Continue" }
+    ? { href: nextHref, label: nextLabel ?? (language === "zh" ? "继续" : "Continue") }
     : routeProjectStages[Math.min(safeIndex + 1, routeProjectStages.length - 1)];
+  const labels =
+    language === "zh"
+      ? {
+          aria: "AgentSiteOps 路线流程",
+          eyebrow: "路线生成路径",
+          stage: "阶段"
+        }
+      : {
+          aria: "AgentSiteOps route flow",
+          eyebrow: "Route Foundry path",
+          stage: "Stage"
+        };
 
   return (
-    <section className="route-flow-bridge" aria-label="AgentSiteOps route flow">
+    <section className="route-flow-bridge" aria-label={labels.aria}>
       <div className="route-flow-bridge-head">
-        <span>{eyebrow}</span>
+        <span>{eyebrow ?? labels.eyebrow}</span>
         <strong>
-          Stage {safeIndex + 1} / {routeProjectStages.length}: {routeProjectStages[safeIndex].label}
+          {labels.stage} {safeIndex + 1} / {routeProjectStages.length}: {routeProjectStages[safeIndex].label}
         </strong>
         <Link prefetch={false} href={resolvedNext.href}>
           {resolvedNext.label}

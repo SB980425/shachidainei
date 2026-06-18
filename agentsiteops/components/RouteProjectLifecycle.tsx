@@ -9,9 +9,10 @@ import {
   ShieldCheck
 } from "lucide-react";
 import {
+  getLocalizedRouteProjectStages,
   routeProjectObjects,
-  routeProjectStages,
   routeProjectSupportLayer,
+  type RouteProjectLanguage,
   type RouteProjectStageId
 } from "@/lib/routeProjectSystem";
 
@@ -32,27 +33,59 @@ type RouteProjectLifecycleProps = {
   body?: string;
   showObjects?: boolean;
   showSupportLayer?: boolean;
+  language?: RouteProjectLanguage;
 };
 
 export function RouteProjectLifecycle({
   current,
-  eyebrow = "Route Project OS",
-  title = "One project object moves through every page.",
-  body = "The site should not feel like separate explanations. Each page is one state in the same Route Project lifecycle.",
+  eyebrow,
+  title,
+  body,
   showObjects = false,
-  showSupportLayer = false
+  showSupportLayer = false,
+  language = "en"
 }: RouteProjectLifecycleProps) {
+  const routeProjectStages = getLocalizedRouteProjectStages(language);
   const currentIndex = routeProjectStages.findIndex((stage) => stage.id === current);
   const safeIndex = currentIndex >= 0 ? currentIndex : 0;
+  const labels =
+    language === "zh"
+      ? {
+          aria: "路线项目生命周期",
+          defaultEyebrow: "路线项目系统",
+          defaultTitle: "同一个项目对象穿过每个页面。",
+          defaultBody: "网站不应像一组分散说明。每个页面都是同一个路线项目生命周期中的一个状态。",
+          currentState: "当前状态",
+          owner: "负责人",
+          input: "输入",
+          passCondition: "通过条件",
+          repairRule: "修复规则",
+          objectModel: "路线项目对象模型",
+          supportLayer: "辅助层"
+        }
+      : {
+          aria: "Route Project lifecycle",
+          defaultEyebrow: "Route Project OS",
+          defaultTitle: "One project object moves through every page.",
+          defaultBody:
+            "The site should not feel like separate explanations. Each page is one state in the same Route Project lifecycle.",
+          currentState: "Current state",
+          owner: "Owner",
+          input: "Input",
+          passCondition: "Pass condition",
+          repairRule: "Repair rule",
+          objectModel: "Route Project object model",
+          supportLayer: "Support layer"
+        };
 
   return (
-    <section className="route-project-system" aria-label="Route Project lifecycle">
+    <section className="route-project-system" aria-label={labels.aria}>
       <div className="route-project-system-head">
         <div>
-          <span>{eyebrow}</span>
-          <h2>{title}</h2>
+          <span>{eyebrow ?? labels.defaultEyebrow}</span>
+          <h2>{title ?? labels.defaultTitle}</h2>
         </div>
-        <p>{body}</p>
+        <p>{body ?? labels.defaultBody}</p>
       </div>
 
       <div className="route-project-lifecycle">
@@ -94,32 +127,32 @@ export function RouteProjectLifecycle({
 
       <div className="route-project-current-card">
         <div>
-          <span>Current state</span>
+          <span>{labels.currentState}</span>
           <h3>{routeProjectStages[safeIndex].title}</h3>
           <p>{routeProjectStages[safeIndex].body}</p>
         </div>
         <dl>
           <div>
-            <dt>Owner</dt>
+            <dt>{labels.owner}</dt>
             <dd>{routeProjectStages[safeIndex].owner}</dd>
           </div>
           <div>
-            <dt>Input</dt>
+            <dt>{labels.input}</dt>
             <dd>{routeProjectStages[safeIndex].input}</dd>
           </div>
           <div>
-            <dt>Pass condition</dt>
+            <dt>{labels.passCondition}</dt>
             <dd>{routeProjectStages[safeIndex].pass}</dd>
           </div>
           <div>
-            <dt>Repair rule</dt>
+            <dt>{labels.repairRule}</dt>
             <dd>{routeProjectStages[safeIndex].repair}</dd>
           </div>
         </dl>
       </div>
 
       {showObjects ? (
-        <div className="route-project-object-grid" aria-label="Route Project object model">
+        <div className="route-project-object-grid" aria-label={labels.objectModel}>
           {routeProjectObjects.map((item) => (
             <article key={item.name}>
               <strong>{item.name}</strong>
@@ -131,7 +164,7 @@ export function RouteProjectLifecycle({
       ) : null}
 
       {showSupportLayer ? (
-        <div className="route-project-support-grid" aria-label="Support layer">
+        <div className="route-project-support-grid" aria-label={labels.supportLayer}>
           {routeProjectSupportLayer.map((item) => (
             <article key={item.label}>
               <span>{item.label}</span>

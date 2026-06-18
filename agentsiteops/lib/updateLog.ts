@@ -11,6 +11,46 @@ export type UpdateLogEntry = {
 
 export const updateLog: UpdateLogEntry[] = [
   {
+    date: "2026-06-18",
+    step: "M4-72 Plan Studio Chinese workflow completion",
+    status: "completed",
+    keyPoints: [
+      "Moved the Plan Studio page body into a language-aware client module so the hero, boundary, flow strip, lifecycle, client-state panel, and final action switch between English and Chinese.",
+      "Localized the Plan Draft Studio input flow, including grouped fields, placeholders, select labels, completion state, missing-field prompt, buttons, and autosave status.",
+      "Localized the visible route output: confidence label, selected route, route reason, evidence gaps, rejected alternatives, 7-day path, stop rule, handoff state, and next action.",
+      "Localized copied and downloaded plan briefs so Chinese-mode users do not receive an English handoff packet.",
+      "Added language-aware Route Project lifecycle, stage header, flow bridge, and client-state components so shared workflow modules no longer force English into the Plan page."
+    ],
+    aiAngle:
+      "Human visitors can now use Plan Studio in Chinese from browsing through filling, repair, output reading, copy/download, and intake continuation, while English static metadata remains available for search readers.",
+    files: [
+      "app/plan/page.tsx",
+      "components/PlanPageContent.tsx",
+      "components/PlanDraftStudio.tsx",
+      "components/RouteStageHeader.tsx",
+      "components/RouteFlowBridge.tsx",
+      "components/RouteProjectLifecycle.tsx",
+      "components/ClientRouteStatePanel.tsx",
+      "lib/routeProjectSystem.ts",
+      "scripts/production-health-monitor.mjs"
+    ],
+    verification: [
+      "npm run typecheck",
+      "npm run lint",
+      "npm run build",
+      "npm run routes:gate",
+      "npm run links:gate",
+      "npm run analytics:gate",
+      "npm run commercial:gate",
+      "npm run seo:ci",
+      "npm run production:health",
+      "npm run growth:snapshot",
+      "Playwright local /plan/ Chinese language switch, old-English residual, copy brief, example load, and mobile overflow QA"
+    ],
+    next:
+      "Continue applying the same language-aware output pattern to intake and review-status only when screenshots show customer-visible English residuals."
+  },
+  {
     date: "2026-06-17",
     step: "M4-71 Idea test Chinese language completion",
     status: "completed",

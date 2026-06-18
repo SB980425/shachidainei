@@ -23,6 +23,7 @@ import {
   timeWindowOptions,
   type PlanDraftInput
 } from "@/lib/planDraft";
+import { usePreferredLanguage, type SiteLanguage } from "@/components/LanguageToggle";
 
 const emptyInput: PlanDraftInput = {
   projectName: "",
@@ -37,17 +38,34 @@ const emptyInput: PlanDraftInput = {
   constraints: ""
 };
 
-const exampleInput: PlanDraftInput = {
-  projectName: "AI client support workflow",
-  projectType: "AI service or automation",
-  targetUser: "Small service teams that repeat manual support triage every week",
-  currentGoal: "Choose the first service route before building a dashboard or checkout page",
-  existingAssets: "One before-after workflow note, two support examples, a rough landing page, and manual delivery capacity",
-  blocker: "Too many possible offers: automation setup, dashboard, training pack, or done-for-you implementation",
-  timeWindow: "7 days",
-  executionMode: "I need operator review",
-  researchCarrier: "Operator-selected carrier",
-  constraints: "No guaranteed revenue, no private customer data in public output, no claim that the website runs hidden research"
+const exampleInputByLanguage: Record<SiteLanguage, PlanDraftInput> = {
+  en: {
+    projectName: "AI client support workflow",
+    projectType: "AI service or automation",
+    targetUser: "Small service teams that repeat manual support triage every week",
+    currentGoal: "Choose the first service route before building a dashboard or checkout page",
+    existingAssets:
+      "One before-after workflow note, two support examples, a rough landing page, and manual delivery capacity",
+    blocker:
+      "Too many possible offers: automation setup, dashboard, training pack, or done-for-you implementation",
+    timeWindow: "7 days",
+    executionMode: "I need operator review",
+    researchCarrier: "Operator-selected carrier",
+    constraints:
+      "No guaranteed revenue, no private customer data in public output, no claim that the website runs hidden research"
+  },
+  zh: {
+    projectName: "AI 客户支持流程",
+    projectType: "AI service or automation",
+    targetUser: "每周重复处理客服分流的小型服务团队",
+    currentGoal: "先选定第一个服务路线，再决定是否建设仪表板或收款页面",
+    existingAssets: "一份前后流程笔记、两个客服案例、一个粗糙页面和人工交付能力",
+    blocker: "可选方向太多：自动化搭建、仪表板、培训包或代实施服务",
+    timeWindow: "7 days",
+    executionMode: "I need operator review",
+    researchCarrier: "Operator-selected carrier",
+    constraints: "不承诺收入，不在公开输出中使用私有客户数据，不声称网站会运行隐藏研究"
+  }
 };
 
 const planDraftStorageKey = "agentsiteops.planDraftInput.v1";
@@ -55,13 +73,13 @@ const planBriefStorageKey = "agentsiteops.planDraftBrief.v1";
 
 type PlanField = {
   key: keyof PlanDraftInput;
-  label: string;
-  prompt: string;
-  helper: string;
+  label: Record<SiteLanguage, string>;
+  prompt: Record<SiteLanguage, string>;
+  helper: Record<SiteLanguage, string>;
 } & (
   | {
       kind: "input" | "textarea";
-      placeholder: string;
+      placeholder: Record<SiteLanguage, string>;
       rows?: number;
     }
   | {
@@ -72,119 +90,209 @@ type PlanField = {
 
 const planQuestionGroups: Array<{
   number: string;
-  title: string;
-  description: string;
+  title: Record<SiteLanguage, string>;
+  description: Record<SiteLanguage, string>;
   fields: PlanField[];
 }> = [
   {
     number: "01",
-    title: "Route frame",
-    description: "Name the project and define the decision this draft must resolve.",
+    title: { en: "Route frame", zh: "路线框架" },
+    description: {
+      en: "Name the project and define the decision this draft must resolve.",
+      zh: "先命名项目，并定义这份草稿必须解决的决策。"
+    },
     fields: [
       {
         key: "projectName",
         kind: "input",
-        label: "Project name",
-        prompt: "Give the work a short name so the route file can refer to it consistently.",
-        helper: "A working name is enough. Do not spend time branding the idea yet.",
-        placeholder: "Example: AI client support workflow"
+        label: { en: "Project name", zh: "项目名称" },
+        prompt: {
+          en: "Give the work a short name so the route file can refer to it consistently.",
+          zh: "给项目一个短名称，后续路线文件才能统一引用。"
+        },
+        helper: {
+          en: "A working name is enough. Do not spend time branding the idea yet.",
+          zh: "临时名称即可，不需要先做品牌命名。"
+        },
+        placeholder: {
+          en: "Example: AI client support workflow",
+          zh: "示例：AI 客户支持流程"
+        }
       },
       {
         key: "projectType",
         kind: "select",
-        label: "Project type",
-        prompt: "Choose the closest category so the draft can pick the right route pattern.",
-        helper: "If the project is still unclear, choose Unsure and use the blocker field to explain why.",
+        label: { en: "Project type", zh: "项目类型" },
+        prompt: {
+          en: "Choose the closest category so the draft can pick the right route pattern.",
+          zh: "选择最接近的类型，让草稿采用合适的路线模式。"
+        },
+        helper: {
+          en: "If the project is still unclear, choose Unsure and use the blocker field to explain why.",
+          zh: "如果项目仍不清楚，选择暂不确定，并在阻塞点里说明原因。"
+        },
         options: projectTypeOptions
       },
       {
         key: "currentGoal",
         kind: "textarea",
-        label: "Current goal",
-        prompt: "State the one decision the plan must make before more pages, tools, or offers are built.",
-        helper: "Good input names the next decision, not a broad ambition.",
-        placeholder: "Choose one first route before building a dashboard, checkout page, or content system.",
+        label: { en: "Current goal", zh: "当前目标" },
+        prompt: {
+          en: "State the one decision the plan must make before more pages, tools, or offers are built.",
+          zh: "说明继续做页面、工具或报价前，当前必须先做出的一个决定。"
+        },
+        helper: {
+          en: "Good input names the next decision, not a broad ambition.",
+          zh: "有效输入应命名下一个决策，而不是宽泛愿望。"
+        },
+        placeholder: {
+          en: "Choose one first route before building a dashboard, checkout page, or content system.",
+          zh: "先选定一条路线，再决定是否建设仪表板、收款页或内容系统。"
+        },
         rows: 4
       }
     ]
   },
   {
     number: "02",
-    title: "Audience and proof",
-    description: "Separate who this is for from what evidence already exists.",
+    title: { en: "Audience and proof", zh: "用户与证据" },
+    description: {
+      en: "Separate who this is for from what evidence already exists.",
+      zh: "把服务对象和已经存在的证据分开。"
+    },
     fields: [
       {
         key: "targetUser",
         kind: "textarea",
-        label: "Target user",
-        prompt: "Describe the first reachable buyer, operator, reader, or user with a repeated problem.",
-        helper: "Avoid everyone, creators, companies, or vague markets. Name a concrete user group.",
-        placeholder: "Small service teams that repeat manual support triage every week.",
+        label: { en: "Target user", zh: "目标用户" },
+        prompt: {
+          en: "Describe the first reachable buyer, operator, reader, or user with a repeated problem.",
+          zh: "描述第一个可触达、且有重复问题的买家、操作者、读者或用户。"
+        },
+        helper: {
+          en: "Avoid everyone, creators, companies, or vague markets. Name a concrete user group.",
+          zh: "避免“所有人、创作者、企业”等模糊市场，要写具体人群。"
+        },
+        placeholder: {
+          en: "Small service teams that repeat manual support triage every week.",
+          zh: "每周重复处理客服分流的小型服务团队。"
+        },
         rows: 4
       },
       {
         key: "existingAssets",
         kind: "textarea",
-        label: "Existing assets",
-        prompt: "List what can be inspected now: notes, links, screenshots, demos, examples, or source material.",
-        helper: "Only include material you can actually provide or verify.",
-        placeholder: "One workflow note, two examples, a rough page, screenshots, source links, manual delivery capacity.",
+        label: { en: "Existing assets", zh: "已有资产" },
+        prompt: {
+          en: "List what can be inspected now: notes, links, screenshots, demos, examples, or source material.",
+          zh: "列出现在可检查的材料：笔记、链接、截图、演示、案例或来源资料。"
+        },
+        helper: {
+          en: "Only include material you can actually provide or verify.",
+          zh: "只写你确实能提供或核验的材料。"
+        },
+        placeholder: {
+          en: "One workflow note, two examples, a rough page, screenshots, source links, manual delivery capacity.",
+          zh: "一份流程笔记、两个案例、一个粗糙页面、截图、来源链接、人工交付能力。"
+        },
         rows: 5
       }
     ]
   },
   {
     number: "03",
-    title: "Decision boundary",
-    description: "Make the blocked decision and the forbidden claims visible.",
+    title: { en: "Decision boundary", zh: "决策边界" },
+    description: {
+      en: "Make the blocked decision and the forbidden claims visible.",
+      zh: "把卡住的决策和不能声称的内容暴露出来。"
+    },
     fields: [
       {
         key: "blocker",
         kind: "textarea",
-        label: "Current blocker",
-        prompt: "Name the choice you cannot make yet and the alternatives that keep pulling attention.",
-        helper: "This is the reason the route draft exists.",
-        placeholder: "I cannot choose between automation setup, dashboard, training pack, and done-for-you implementation.",
+        label: { en: "Current blocker", zh: "当前阻塞点" },
+        prompt: {
+          en: "Name the choice you cannot make yet and the alternatives that keep pulling attention.",
+          zh: "写出现在无法做出的选择，以及不断分散注意力的备选方向。"
+        },
+        helper: {
+          en: "This is the reason the route draft exists.",
+          zh: "这就是路线草稿存在的原因。"
+        },
+        placeholder: {
+          en: "I cannot choose between automation setup, dashboard, training pack, and done-for-you implementation.",
+          zh: "我无法在自动化搭建、仪表板、培训包和代实施服务之间选择。"
+        },
         rows: 4
       },
       {
         key: "constraints",
         kind: "textarea",
-        label: "Constraints",
-        prompt: "Write the claims, data, delivery, payment, risk, and timeline limits that the route must respect.",
-        helper: "This prevents the plan from implying hidden automation, guaranteed outcomes, or unavailable proof.",
-        placeholder: "No guaranteed revenue, no private customer data in public output, no hidden research claim.",
+        label: { en: "Constraints", zh: "约束条件" },
+        prompt: {
+          en: "Write the claims, data, delivery, payment, risk, and timeline limits that the route must respect.",
+          zh: "写出路线必须遵守的声明、数据、交付、付款、风险和时间限制。"
+        },
+        helper: {
+          en: "This prevents the plan from implying hidden automation, guaranteed outcomes, or unavailable proof.",
+          zh: "这会防止计划暗示隐藏自动化、保证结果或不存在的证据。"
+        },
+        placeholder: {
+          en: "No guaranteed revenue, no private customer data in public output, no hidden research claim.",
+          zh: "不保证收入，不在公开输出中使用私有客户数据，不声称隐藏研究。"
+        },
         rows: 5
       }
     ]
   },
   {
     number: "04",
-    title: "Operating choices",
-    description: "Choose how this draft should move from browser-local plan to review or intake.",
+    title: { en: "Operating choices", zh: "执行选择" },
+    description: {
+      en: "Choose how this draft should move from browser-local plan to review or intake.",
+      zh: "选择这份浏览器本地草稿如何进入审核或提交。"
+    },
     fields: [
       {
         key: "executionMode",
         kind: "select",
-        label: "Execution mode",
-        prompt: "Decide whether you want to execute alone or send this for operator review.",
-        helper: "This affects whether the next step is self-run, manual review, implementation help, or research only.",
+        label: { en: "Execution mode", zh: "执行模式" },
+        prompt: {
+          en: "Decide whether you want to execute alone or send this for operator review.",
+          zh: "决定你是自己执行，还是发送给操作员审核。"
+        },
+        helper: {
+          en: "This affects whether the next step is self-run, manual review, implementation help, or research only.",
+          zh: "这会影响下一步是自助执行、人工审核、实施协助，还是只做研究。"
+        },
         options: executionModeOptions
       },
       {
         key: "researchCarrier",
         kind: "select",
-        label: "Research carrier",
-        prompt: "Choose the research source style without locking the product to one AI platform.",
-        helper: "Carrier-neutral keeps the plan portable across manual review, client reports, or AI research tools.",
+        label: { en: "Research carrier", zh: "研究载体" },
+        prompt: {
+          en: "Choose the research source style without locking the product to one AI platform.",
+          zh: "选择研究来源方式，但不把产品绑定到某一个 AI 平台。"
+        },
+        helper: {
+          en: "Carrier-neutral keeps the plan portable across manual review, client reports, or AI research tools.",
+          zh: "载体中立能让计划在人工审查、客户报告或 AI 研究工具之间迁移。"
+        },
         options: researchCarrierOptions
       },
       {
         key: "timeWindow",
         kind: "select",
-        label: "Review window",
-        prompt: "Set the time box for deciding whether to continue, repair, pivot, or stop.",
-        helper: "Shorter windows are better for route selection than open-ended exploration.",
+        label: { en: "Review window", zh: "审核窗口" },
+        prompt: {
+          en: "Set the time box for deciding whether to continue, repair, pivot, or stop.",
+          zh: "设定何时决定继续、修复、转向或停止。"
+        },
+        helper: {
+          en: "Shorter windows are better for route selection than open-ended exploration.",
+          zh: "路线选择更适合短窗口，不适合无限探索。"
+        },
         options: timeWindowOptions
       }
     ]
@@ -192,6 +300,310 @@ const planQuestionGroups: Array<{
 ];
 
 const planFields = planQuestionGroups.flatMap((group) => group.fields);
+
+type SaveStateKey = "ready" | "restored" | "unavailable" | "saved" | "example" | "cleared";
+
+const optionLabels: Record<SiteLanguage, Record<string, string>> = {
+  en: {},
+  zh: {
+    "AI service or automation": "AI 服务或自动化",
+    "Content or research product": "内容或研究产品",
+    "Tool or dashboard": "工具或仪表板",
+    "Local service offer": "本地服务报价",
+    "Template or workflow pack": "模板或流程包",
+    Unsure: "暂不确定",
+    "I will execute myself": "我将自己执行",
+    "I need operator review": "我需要操作员审核",
+    "I need manual implementation help": "我需要人工实施协助",
+    "I only need research first": "我只需要先做研究",
+    "Carrier-neutral": "载体中立",
+    "Manual source review": "人工来源审查",
+    "Client-provided report": "客户提供报告",
+    "ChatGPT Deep Research": "ChatGPT Deep Research",
+    "Gemini or Perplexity": "Gemini 或 Perplexity",
+    "Operator-selected carrier": "操作员选择载体",
+    "48 hours": "48 小时",
+    "7 days": "7 天",
+    "14 days": "14 天",
+    "30 days": "30 天",
+    "No deadline": "无截止时间"
+  }
+};
+
+const routeLabelsZh: Record<string, string> = {
+  "Research-to-route brief": "研究到路线简报",
+  "Implementation-backed route file": "实施支撑路线文件",
+  "Proof asset first: micro tool or dashboard": "先做证明资产：微型工具或仪表板",
+  "Research pack to public sample": "研究包转公开样例",
+  "Template pack with validation channel": "带验证渠道的模板包",
+  "Manual service route with first buyer proof": "带首个买家证据的人工服务路线",
+  "Narrow AI-service route file": "窄 AI 服务路线文件"
+};
+
+const evidenceGapZh: Record<string, string> = {
+  "Target user or buyer segment is not specific enough.": "目标用户或买家群体还不够具体。",
+  "Existing assets, examples, links, or source material are missing.": "缺少已有资产、案例、链接或来源材料。",
+  "The current decision blocker is not stated.": "当前决策阻塞点还没有说明。",
+  "Claim limits, delivery limits, source rights, or risk boundaries are not visible.":
+    "声明限制、交付限制、来源权利或风险边界还不可见。",
+  "Buyer proof, first-party usage, payment evidence, and qualified replies still need validation.":
+    "买家证明、第一方使用、付款证据和合格回复仍需要验证。"
+};
+
+const rejectedAlternativeZh: Record<string, string> = {
+  "Build a full product before the first proof asset exists.":
+    "在第一个证明资产出现之前就建设完整产品。",
+  "Publish broad content before the buyer and validation channel are named.":
+    "在买家和验证渠道未命名前发布宽泛内容。",
+  "Treat research-tool output as final delivery without coverage review.":
+    "未经覆盖检查，就把研究工具输出当成最终交付。",
+  "Sell implementation before delivery capacity and scope are visible.":
+    "在交付能力和范围清楚前销售实施服务。"
+};
+
+const confidenceLabelZh: Record<string, string> = {
+  "Needs input": "需要补充",
+  Draftable: "可生成草稿",
+  "Review ready": "可进入审核"
+};
+
+const ui = {
+  en: {
+    aria: "Plan draft studio",
+    input: "Input",
+    inputTitle: "Write the project once.",
+    inputBody:
+      "The draft updates in the browser. No API call, account, payment, or hidden research run is created from this screen.",
+    inputRulesAria: "Plan Studio input rules",
+    rules: ["No API call", "One field per decision", "Draft before intake"],
+    stepsAria: "Plan Studio steps",
+    completionAria: "Plan Studio completion state",
+    inputCoverage: "Input coverage",
+    fieldsReady: "fields ready",
+    savedDraftSuffix: "The intake page can detect the saved draft on this device.",
+    findNextMissing: "Find next missing",
+    allCoreFields: "All core fields filled",
+    ready: "Ready",
+    needsInput: "Needs input",
+    previous: "Previous",
+    nextStep: "Next step",
+    step: "Step",
+    loadExample: "Load example",
+    clear: "Clear",
+    inputReadiness: "/100 input readiness",
+    selectedDraftRoute: "Selected draft route",
+    evidenceGaps: "Evidence gaps",
+    rejectedAlternatives: "Rejected alternatives",
+    sevenDayPath: "7-day draft path",
+    stopRule: "Stop rule",
+    handoffAria: "Plan Studio handoff state",
+    handoffState: "Handoff state",
+    handoffBody:
+      "Copy or download the draft, then continue to intake when the project has enough buyer, asset, blocker, and constraint detail for manual acceptance.",
+    automatic:
+      "Automatic: browser-local draft, autosave, copied packet, email handoff.",
+    manual:
+      "Manual: scope acceptance, research carrier choice, repair request, Route File judgment.",
+    copied: "Copied",
+    copyBrief: "Copy plan brief",
+    downloaded: "Downloaded",
+    downloadDraft: "Download route draft",
+    copyIntake: "Copy + intake",
+    viewSample: "View sample",
+    savedDraftDetected: "Saved drafts can be detected by the intake packet builder on this device.",
+    saveState: {
+      ready: "Local autosave ready",
+      restored: "Restored local draft",
+      unavailable: "Local autosave unavailable",
+      saved: "Saved locally",
+      example: "Example loaded",
+      cleared: "Local draft cleared"
+    } satisfies Record<SaveStateKey, string>,
+    exportTitle: "# AgentSiteOps route draft",
+    exportStatus: "## Draft status",
+    exportReadiness: "Readiness score",
+    exportConfidence: "Confidence",
+    exportNextAction: "Next action",
+    exportBoundary: "## Boundary",
+    exportBoundaryItems: [
+      "This exported file is a browser-local draft.",
+      "It is not the final Route File.",
+      "Manual/operator review is still required before research acceptance or delivery."
+    ]
+  },
+  zh: {
+    aria: "计划草稿工作台",
+    input: "输入",
+    inputTitle: "项目只需要写一次。",
+    inputBody:
+      "草稿会在浏览器中更新。这个页面不会创建 API 调用、账号、付款或隐藏研究运行。",
+    inputRulesAria: "计划工作台输入规则",
+    rules: ["不调用 API", "每个字段对应一个决策", "先草稿后提交"],
+    stepsAria: "计划工作台步骤",
+    completionAria: "计划工作台完成状态",
+    inputCoverage: "输入覆盖度",
+    fieldsReady: "项已准备",
+    savedDraftSuffix: "提交材料页可以检测本机保存的草稿。",
+    findNextMissing: "查找下一个缺失项",
+    allCoreFields: "核心字段已填完",
+    ready: "已准备",
+    needsInput: "需要输入",
+    previous: "上一步",
+    nextStep: "下一步",
+    step: "步骤",
+    loadExample: "载入示例",
+    clear: "清空",
+    inputReadiness: "/100 输入准备度",
+    selectedDraftRoute: "选定草稿路线",
+    evidenceGaps: "证据缺口",
+    rejectedAlternatives: "被否决方案",
+    sevenDayPath: "7 天草稿路径",
+    stopRule: "停止规则",
+    handoffAria: "计划工作台交接状态",
+    handoffState: "交接状态",
+    handoffBody:
+      "复制或下载草稿。只有项目已经具备足够的用户、资产、阻塞点和约束细节时，再继续提交审核。",
+    automatic: "自动部分：浏览器本地草稿、自动保存、复制材料包、邮件交接。",
+    manual: "人工部分：范围接受、研究载体选择、修复请求、路线文件判断。",
+    copied: "已复制",
+    copyBrief: "复制计划简报",
+    downloaded: "已下载",
+    downloadDraft: "下载路线草稿",
+    copyIntake: "复制并提交",
+    viewSample: "查看样例",
+    savedDraftDetected: "提交材料生成器可以检测本机保存的草稿。",
+    saveState: {
+      ready: "本地自动保存已就绪",
+      restored: "已恢复本地草稿",
+      unavailable: "本地自动保存不可用",
+      saved: "已保存到本机",
+      example: "已载入示例",
+      cleared: "本地草稿已清空"
+    } satisfies Record<SaveStateKey, string>,
+    exportTitle: "# AgentSiteOps 路线草稿",
+    exportStatus: "## 草稿状态",
+    exportReadiness: "准备度分数",
+    exportConfidence: "信心状态",
+    exportNextAction: "下一步动作",
+    exportBoundary: "## 边界",
+    exportBoundaryItems: [
+      "这个导出文件是浏览器本地草稿。",
+      "它不是最终路线文件。",
+      "研究接受或交付之前，仍然需要人工或操作员审核。"
+    ]
+  }
+} satisfies Record<SiteLanguage, unknown>;
+
+function localizeOption(option: string, language: SiteLanguage) {
+  return optionLabels[language][option] ?? option;
+}
+
+function localizeRoute(route: string, language: SiteLanguage) {
+  return language === "zh" ? routeLabelsZh[route] ?? route : route;
+}
+
+function localizedConfidence(label: string, language: SiteLanguage) {
+  return language === "zh" ? confidenceLabelZh[label] ?? label : label;
+}
+
+function valueOr(input: string, fallback: string) {
+  return input.trim() || fallback;
+}
+
+function buildLocalizedSevenDayPlan(
+  input: PlanDraftInput,
+  selectedRoute: string,
+  language: SiteLanguage
+) {
+  if (language === "en") {
+    return createPlanDraft(input).sevenDayPlan;
+  }
+
+  const projectName = valueOr(input.projectName, "这个项目");
+  const route = localizeRoute(selectedRoute, language);
+  const carrier = localizeOption(input.researchCarrier || "Carrier-neutral", language);
+
+  return [
+    `第 1 天：冻结 ${projectName} 的路线问题，并列出不能声称的内容。`,
+    `第 2 天：围绕选定路线收集资产和来源：${route}。`,
+    `第 3 天：使用 ${carrier} 或人工来源审查，对照锁定简报检查。`,
+    "第 4 天：检查用户逻辑、被否决方案、证据登记、证明资产、渠道和停止规则是否覆盖。",
+    "第 5 天：修复缺失证据，或把弱路线标记为阻塞。",
+    "第 6 天：草拟第一个可检查的证明资产或公开样例。",
+    "第 7 天：依据可见证据决定继续、修复、转向或停止。"
+  ];
+}
+
+function buildLocalizedDraftView(
+  input: PlanDraftInput,
+  draft: ReturnType<typeof createPlanDraft>,
+  language: SiteLanguage
+) {
+  if (language === "en") {
+    return {
+      confidenceLabel: draft.confidenceLabel,
+      selectedRoute: draft.selectedRoute,
+      routeReason: draft.routeReason,
+      evidenceGaps: draft.evidenceGaps,
+      rejectedAlternatives: draft.rejectedAlternatives,
+      sevenDayPlan: draft.sevenDayPlan,
+      stopRule: draft.stopRule,
+      nextAction: draft.nextAction
+    };
+  }
+
+  const targetUser = valueOr(input.targetUser, "第一个可触达用户群体");
+  const blocker = valueOr(input.blocker, "当前路线决策");
+  const routeReason =
+    draft.confidenceLabel === "Needs input"
+      ? "系统可以先生成草稿结构，但当前输入还不足以进入人工审核。"
+      : `当前路线围绕 ${targetUser}，先解决 ${blocker}，再扩展建设。`;
+  const nextAction =
+    draft.confidenceLabel === "Review ready"
+      ? "复制计划简报，并继续进入人工提交审核。"
+      : draft.confidenceLabel === "Draftable"
+        ? "先补齐证据缺口，再复制简报进入审核。"
+        : "先完成缺失字段，再把它当作路线决策使用。";
+
+  return {
+    confidenceLabel: localizedConfidence(draft.confidenceLabel, language),
+    selectedRoute: localizeRoute(draft.selectedRoute, language),
+    routeReason,
+    evidenceGaps: draft.evidenceGaps.map((item) => evidenceGapZh[item] ?? item),
+    rejectedAlternatives: draft.rejectedAlternatives.map((item) => rejectedAlternativeZh[item] ?? item),
+    sevenDayPlan: buildLocalizedSevenDayPlan(input, draft.selectedRoute, language),
+    stopRule:
+      "如果草稿无法命名买家、首个证明资产、已接受证据、被否决方案、验证渠道和审核日期，就停止或修复。",
+    nextAction
+  };
+}
+
+function buildLocalizedBrief(
+  input: PlanDraftInput,
+  draft: ReturnType<typeof createPlanDraft>,
+  language: SiteLanguage
+) {
+  if (language === "en") {
+    return draft.brief;
+  }
+
+  const view = buildLocalizedDraftView(input, draft, language);
+
+  return [
+    `项目：${valueOr(input.projectName, "未命名项目")}`,
+    `类型：${localizeOption(input.projectType || "Unsure", language)}`,
+    `目标用户：${valueOr(input.targetUser, "第一个可触达用户群体")}`,
+    `当前目标：${valueOr(input.currentGoal, "未说明")}`,
+    `当前阻塞点：${valueOr(input.blocker, "当前路线决策")}`,
+    `已有资产：${valueOr(input.existingAssets, "未说明")}`,
+    `约束条件：${valueOr(input.constraints, "未说明")}`,
+    `执行模式：${localizeOption(input.executionMode || "I will execute myself", language)}`,
+    `研究载体：${localizeOption(input.researchCarrier || "Carrier-neutral", language)}`,
+    `选定草稿路线：${view.selectedRoute}`,
+    `证据缺口：${view.evidenceGaps.join(" | ")}`,
+    `停止规则：${view.stopRule}`
+  ].join("\n");
+}
 
 function fieldIsComplete(input: PlanDraftInput, field: PlanField) {
   if (field.kind === "select") {
@@ -214,13 +626,17 @@ function setInputValue(
 
 export function PlanDraftStudio() {
   const router = useRouter();
+  const [language] = usePreferredLanguage();
+  const labels = ui[language];
   const [input, setInput] = useState<PlanDraftInput>(emptyInput);
   const [activeGroupIndex, setActiveGroupIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [exported, setExported] = useState(false);
   const [hydrated, setHydrated] = useState(false);
-  const [saveState, setSaveState] = useState("Local autosave ready");
+  const [saveState, setSaveState] = useState<SaveStateKey>("ready");
   const draft = useMemo(() => createPlanDraft(input), [input]);
+  const draftView = useMemo(() => buildLocalizedDraftView(input, draft, language), [draft, input, language]);
+  const localizedBrief = useMemo(() => buildLocalizedBrief(input, draft, language), [draft, input, language]);
   const completedFieldCount = useMemo(
     () => planFields.filter((field) => fieldIsComplete(input, field)).length,
     [input]
@@ -240,10 +656,10 @@ export function PlanDraftStudio() {
       if (storedInput) {
         const parsedInput = JSON.parse(storedInput) as Partial<PlanDraftInput>;
         setInput({ ...emptyInput, ...parsedInput });
-        setSaveState("Restored local draft");
+        setSaveState("restored");
       }
     } catch {
-      setSaveState("Local autosave unavailable");
+      setSaveState("unavailable");
     } finally {
       setHydrated(true);
     }
@@ -256,19 +672,19 @@ export function PlanDraftStudio() {
 
     try {
       window.localStorage.setItem(planDraftStorageKey, JSON.stringify(input));
-      window.localStorage.setItem(planBriefStorageKey, draft.brief);
-      setSaveState("Saved locally");
+      window.localStorage.setItem(planBriefStorageKey, localizedBrief);
+      setSaveState("saved");
     } catch {
-      setSaveState("Local autosave unavailable");
+      setSaveState("unavailable");
     }
-  }, [draft.brief, hydrated, input]);
+  }, [hydrated, input, localizedBrief]);
 
   async function copyBrief() {
     let didCopy = false;
 
     try {
       if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(draft.brief);
+        await navigator.clipboard.writeText(localizedBrief);
         didCopy = true;
       }
     } catch {
@@ -277,7 +693,7 @@ export function PlanDraftStudio() {
 
     if (!didCopy) {
       const textarea = document.createElement("textarea");
-      textarea.value = draft.brief;
+      textarea.value = localizedBrief;
       textarea.setAttribute("readonly", "true");
       textarea.style.position = "fixed";
       textarea.style.left = "-9999px";
@@ -298,22 +714,22 @@ export function PlanDraftStudio() {
   }
 
   function loadExample() {
-    setInput(exampleInput);
+    setInput(exampleInputByLanguage[language]);
     setExported(false);
-    setSaveState("Example loaded");
+    setSaveState("example");
   }
 
   function clearDraft() {
     setInput(emptyInput);
     setCopied(false);
     setExported(false);
-    setSaveState("Local draft cleared");
+    setSaveState("cleared");
 
     try {
       window.localStorage.removeItem(planDraftStorageKey);
       window.localStorage.removeItem(planBriefStorageKey);
     } catch {
-      setSaveState("Local autosave unavailable");
+      setSaveState("unavailable");
     }
   }
 
@@ -326,21 +742,19 @@ export function PlanDraftStudio() {
         .replace(/^-+|-+$/g, "")
         .slice(0, 48) || "agentsiteops-plan";
     const content = [
-      "# AgentSiteOps route draft",
+      labels.exportTitle,
       "",
-      draft.brief,
+      localizedBrief,
       "",
-      "## Draft status",
+      labels.exportStatus,
       "",
-      `- Readiness score: ${draft.readinessScore}/100`,
-      `- Confidence: ${draft.confidenceLabel}`,
-      `- Next action: ${draft.nextAction}`,
+      `- ${labels.exportReadiness}: ${draft.readinessScore}/100`,
+      `- ${labels.exportConfidence}: ${draftView.confidenceLabel}`,
+      `- ${labels.exportNextAction}: ${draftView.nextAction}`,
       "",
-      "## Boundary",
+      labels.exportBoundary,
       "",
-      "- This exported file is a browser-local draft.",
-      "- It is not the final Route File.",
-      "- Manual/operator review is still required before research acceptance or delivery."
+      ...labels.exportBoundaryItems.map((item) => `- ${item}`)
     ].join("\n");
     const blob = new Blob([content], { type: "text/markdown;charset=utf-8" });
     const url = window.URL.createObjectURL(blob);
@@ -407,25 +821,22 @@ export function PlanDraftStudio() {
   }
 
   return (
-    <section className="plan-draft-studio" aria-label="Plan draft studio">
+    <section className="plan-draft-studio" aria-label={labels.aria}>
       <div className="plan-studio-grid">
         <form className="plan-input-panel" onSubmit={(event) => event.preventDefault()}>
           <div className="plan-panel-head">
-            <span>Input</span>
-            <h2>Write the project once.</h2>
-            <p>
-              The draft updates in the browser. No API call, account, payment, or hidden
-              research run is created from this screen.
-            </p>
+            <span>{labels.input}</span>
+            <h2>{labels.inputTitle}</h2>
+            <p>{labels.inputBody}</p>
           </div>
 
-          <div className="plan-input-summary" aria-label="Plan Studio input rules">
-            <span>No API call</span>
-            <span>One field per decision</span>
-            <span>Draft before intake</span>
+          <div className="plan-input-summary" aria-label={labels.inputRulesAria}>
+            {labels.rules.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
           </div>
 
-          <div className="plan-stepper" aria-label="Plan Studio steps">
+          <div className="plan-stepper" aria-label={labels.stepsAria}>
             {planQuestionGroups.map((group, index) => {
               const isActive = index === activeGroupIndex;
               const readyCount = group.fields.filter((field) => fieldIsComplete(input, field)).length;
@@ -435,14 +846,14 @@ export function PlanDraftStudio() {
                   aria-current={isActive ? "step" : undefined}
                   className={isActive ? "is-active" : readyCount === group.fields.length ? "is-complete" : undefined}
                   data-analytics-event="plan_step_selected"
-                  data-analytics-label={group.title}
+                  data-analytics-label={group.title.en}
                   data-analytics-type="plan_studio"
                   key={group.number}
                   onClick={() => setActiveGroupIndex(index)}
                   type="button"
                 >
                   <span>{group.number}</span>
-                  <strong>{group.title}</strong>
+                  <strong>{group.title[language]}</strong>
                   <small>
                     {readyCount}/{group.fields.length}
                   </small>
@@ -451,14 +862,14 @@ export function PlanDraftStudio() {
             })}
           </div>
 
-          <div className="plan-input-state" aria-label="Plan Studio completion state">
+          <div className="plan-input-state" aria-label={labels.completionAria}>
             <div>
-              <span>Input coverage</span>
+              <span>{labels.inputCoverage}</span>
               <strong>
-                {completedFieldCount}/{planFields.length} fields ready
+                {completedFieldCount}/{planFields.length} {labels.fieldsReady}
               </strong>
               <p>
-                {saveState}. The intake page can detect the saved draft on this device.
+                {labels.saveState[saveState]}. {labels.savedDraftSuffix}
               </p>
             </div>
             <button
@@ -469,7 +880,9 @@ export function PlanDraftStudio() {
               data-analytics-label={nextMissingField?.key ?? "all_fields_ready"}
               data-analytics-type="plan_studio"
             >
-              {nextMissingField ? `Find next missing: ${nextMissingField.label}` : "All core fields filled"}
+              {nextMissingField
+                ? `${labels.findNextMissing}: ${nextMissingField.label[language]}`
+                : labels.allCoreFields}
             </button>
           </div>
 
@@ -477,8 +890,8 @@ export function PlanDraftStudio() {
             <fieldset className="plan-question-group">
               <legend>
                 <span>{activeGroup.number}</span>
-                <strong>{activeGroup.title}</strong>
-                <small>{activeGroup.description}</small>
+                <strong>{activeGroup.title[language]}</strong>
+                <small>{activeGroup.description[language]}</small>
               </legend>
 
               <div className="plan-field-stack">
@@ -491,8 +904,8 @@ export function PlanDraftStudio() {
                     data-plan-field={field.key}
                     key={field.key}
                   >
-                    <span className="plan-field-label">{field.label}</span>
-                    <strong>{field.prompt}</strong>
+                    <span className="plan-field-label">{field.label[language]}</span>
+                    <strong>{field.prompt[language]}</strong>
                     {field.kind === "select" ? (
                       <select
                         data-plan-control={field.key}
@@ -500,27 +913,29 @@ export function PlanDraftStudio() {
                         onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
                       >
                         {field.options.map((option) => (
-                          <option key={option}>{option}</option>
+                          <option key={option} value={option}>
+                            {localizeOption(option, language)}
+                          </option>
                         ))}
                       </select>
                     ) : field.kind === "input" ? (
                       <input
                         data-plan-control={field.key}
                         value={input[field.key]}
-                        placeholder={field.placeholder}
+                        placeholder={field.placeholder[language]}
                         onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
                       />
                     ) : (
                       <textarea
                         data-plan-control={field.key}
                         value={input[field.key]}
-                        placeholder={field.placeholder}
+                        placeholder={field.placeholder[language]}
                         rows={field.rows ?? 5}
                         onChange={(event) => setInput(setInputValue(input, field.key, event.target.value))}
                       />
                     )}
-                    <small>{field.helper}</small>
-                    <em className="plan-field-status">{isComplete ? "Ready" : "Needs input"}</em>
+                    <small>{field.helper[language]}</small>
+                    <em className="plan-field-status">{isComplete ? labels.ready : labels.needsInput}</em>
                   </label>
                   );
                 })}
@@ -530,13 +945,14 @@ export function PlanDraftStudio() {
 
           <div className="plan-step-actions">
             <button type="button" onClick={goToPreviousGroup} disabled={activeGroupIndex === 0}>
-              Previous
+              {labels.previous}
             </button>
             <span>
-              Step {activeGroupIndex + 1}: {activeGroupCompleteCount}/{activeGroup.fields.length} fields ready
+              {labels.step} {activeGroupIndex + 1}: {activeGroupCompleteCount}/{activeGroup.fields.length}{" "}
+              {labels.fieldsReady}
             </span>
             <button type="button" onClick={goToNextGroup} disabled={activeGroupIndex === planQuestionGroups.length - 1}>
-              Next step
+              {labels.nextStep}
             </button>
           </div>
 
@@ -549,35 +965,35 @@ export function PlanDraftStudio() {
               data-analytics-type="plan_studio"
             >
               <RefreshCw aria-hidden="true" size={16} />
-              Load example
+              {labels.loadExample}
             </button>
             <button type="button" onClick={clearDraft}>
-              Clear
+              {labels.clear}
             </button>
           </div>
         </form>
 
         <aside className="plan-output-panel" aria-live="polite">
           <div className="plan-score-card">
-            <span>{draft.confidenceLabel}</span>
+            <span>{draftView.confidenceLabel}</span>
             <strong data-testid="plan-readiness-score">{draft.readinessScore}</strong>
-            <small>/100 input readiness</small>
+            <small>{labels.inputReadiness}</small>
           </div>
 
           <div className="plan-route-card">
-            <span>Selected draft route</span>
-            <h2 data-testid="plan-selected-route">{draft.selectedRoute}</h2>
-            <p>{draft.routeReason}</p>
+            <span>{labels.selectedDraftRoute}</span>
+            <h2 data-testid="plan-selected-route">{draftView.selectedRoute}</h2>
+            <p>{draftView.routeReason}</p>
           </div>
 
           <div className="plan-output-tabs">
             <section>
               <div>
                 <AlertTriangle aria-hidden="true" size={18} />
-                <h3>Evidence gaps</h3>
+                <h3>{labels.evidenceGaps}</h3>
               </div>
               <ul>
-                {draft.evidenceGaps.map((item) => (
+                {draftView.evidenceGaps.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -585,10 +1001,10 @@ export function PlanDraftStudio() {
             <section>
               <div>
                 <ShieldCheck aria-hidden="true" size={18} />
-                <h3>Rejected alternatives</h3>
+                <h3>{labels.rejectedAlternatives}</h3>
               </div>
               <ul>
-                {draft.rejectedAlternatives.map((item) => (
+                {draftView.rejectedAlternatives.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -598,10 +1014,10 @@ export function PlanDraftStudio() {
           <section className="plan-seven-day">
             <div>
               <SearchCheck aria-hidden="true" size={18} />
-              <h3>7-day draft path</h3>
+              <h3>{labels.sevenDayPath}</h3>
             </div>
             <ol>
-              {draft.sevenDayPlan.map((item) => (
+              {draftView.sevenDayPlan.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ol>
@@ -610,23 +1026,20 @@ export function PlanDraftStudio() {
           <section className="plan-stop-rule">
             <FileCheck2 aria-hidden="true" size={18} />
             <div>
-              <h3>Stop rule</h3>
-              <p>{draft.stopRule}</p>
+              <h3>{labels.stopRule}</h3>
+              <p>{draftView.stopRule}</p>
             </div>
           </section>
 
-          <section className="plan-handoff-card" aria-label="Plan Studio handoff state">
+          <section className="plan-handoff-card" aria-label={labels.handoffAria}>
             <div>
               <ClipboardList aria-hidden="true" size={18} />
-              <h3>Handoff state</h3>
+              <h3>{labels.handoffState}</h3>
             </div>
-            <p>
-              Copy or download the draft, then continue to intake when the project has enough
-              buyer, asset, blocker, and constraint detail for manual acceptance.
-            </p>
+            <p>{labels.handoffBody}</p>
             <ul>
-              <li>Automatic: browser-local draft, autosave, copied packet, email handoff.</li>
-              <li>Manual: scope acceptance, research carrier choice, repair request, Route File judgment.</li>
+              <li>{labels.automatic}</li>
+              <li>{labels.manual}</li>
             </ul>
           </section>
 
@@ -639,7 +1052,7 @@ export function PlanDraftStudio() {
               data-analytics-type="plan_studio"
             >
               <ClipboardCopy aria-hidden="true" size={16} />
-              {copied ? "Copied" : "Copy plan brief"}
+              {copied ? labels.copied : labels.copyBrief}
             </button>
             <button
               type="button"
@@ -649,7 +1062,7 @@ export function PlanDraftStudio() {
               data-analytics-type="plan_studio"
             >
               <Download aria-hidden="true" size={16} />
-              {exported ? "Downloaded" : "Download route draft"}
+              {exported ? labels.downloaded : labels.downloadDraft}
             </button>
             <button
               type="button"
@@ -659,17 +1072,17 @@ export function PlanDraftStudio() {
               data-analytics-type="plan_studio"
             >
               <ClipboardList aria-hidden="true" size={16} />
-              Copy + intake
+              {labels.copyIntake}
             </button>
             <Link prefetch={false} href="/sample/">
               <FileText aria-hidden="true" size={16} />
-              View sample
+              {labels.viewSample}
             </Link>
           </div>
 
           <p className="plan-next-action">
             <CheckCircle2 aria-hidden="true" size={16} />
-            {draft.nextAction} Saved drafts can be detected by the intake packet builder on this device.
+            {draftView.nextAction} {labels.savedDraftDetected}
           </p>
         </aside>
       </div>
