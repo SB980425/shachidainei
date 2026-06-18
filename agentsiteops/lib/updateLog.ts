@@ -12,6 +12,39 @@ export type UpdateLogEntry = {
 export const updateLog: UpdateLogEntry[] = [
   {
     date: "2026-06-18",
+    step: "M4-77 Evidence library and static route reference consolidation",
+    status: "completed",
+    keyPoints: [
+      "Changed static route sidebars from broad Related Pages lists into a fixed Main path: Start, Plan, Review, and Route File.",
+      "Added a single Evidence Library support link on secondary route pages while limiting page-specific reference links to three local items.",
+      "Reframed /evidence/ from an old self-score ledger into a compact reference library for route examples, evidence rules, method references, validation boundaries, and pending proof.",
+      "Kept the evidence library as support material behind the customer path instead of treating it as a primary onboarding surface."
+    ],
+    aiAngle:
+      "The site now gives AI and human visitors a clearer hierarchy: the main workflow starts with one idea, while evidence pages explain why a route is accepted, repaired, blocked, or rejected.",
+    files: [
+      "components/RoutePage.tsx",
+      "lib/site.ts",
+      "app/globals.css",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "npm run typecheck",
+      "npm run lint",
+      "npm run build",
+      "npm run routes:gate",
+      "npm run links:gate",
+      "npm run analytics:gate",
+      "npm run commercial:gate",
+      "npm run seo:ci",
+      "Playwright local check: evidence library, static route sidebar, homepage link count, footer link count, and mobile overflow"
+    ],
+    next:
+      "Use click and completion evidence to decide whether more legacy support pages should be merged into the evidence library."
+  },
+  {
+    date: "2026-06-18",
     step: "M4-76 Product shell and route example consolidation",
     status: "completed",
     keyPoints: [

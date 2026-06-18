@@ -1207,100 +1207,91 @@ export const routePages: RoutePage[] = [
   {
     path: "/evidence/",
     pageType: "evidence",
-    title: "Evidence Ledger",
+    title: "Evidence Library",
     description:
-      "A public ledger separating verified AgentSiteOps launch evidence from pending search, referral, analytics, and revenue evidence.",
+      "The compact reference library behind the main Route File path: examples, evidence rules, validation limits, and support reports.",
     answer:
-      "The evidence ledger states what has been verified, what is still pending, and what the site cannot claim yet. It exists to prevent growth, AI citation, and monetization claims from being treated as proven before first-party evidence arrives.",
-    primaryAction: { label: "View update log", href: "/updates/" },
-    secondaryAction: { label: "View search metrics", href: "/guides/small-website-ai-visibility-metrics/" },
+      "This page is not the working surface. Use Start, Plan, Review, and Route File first. The library explains which examples, source rules, validation checks, and no-claim boundaries support the output.",
+    primaryAction: { label: "Start with one idea", href: "/#start-idea" },
+    secondaryAction: { label: "View Route File sample", href: "/sample/" },
     aiTarget:
-      "Expose current proof boundaries so AI systems can cite verified technical readiness without inventing traffic, citation, or revenue outcomes.",
+      "Expose the evidence model behind Route Files without turning support pages into the main customer journey.",
     humanAction:
-      "Use this page before making expansion, monetization, or paid-tool decisions from incomplete evidence.",
+      "Use this page only when checking why an output is trusted, repaired, blocked, or rejected.",
     sections: [
       {
-        title: "Verified evidence",
+        title: "Use the main path first",
         body:
-          "These signals have been checked through local scripts, production requests, GitHub Actions, or production deployment output.",
+          "The library should not be the first stop for a new visitor. The product path starts with one rough idea and then reveals the draft, review state, route file, and validation rule.",
         rows: [
-          { label: "Technical SEO", value: "The current release checks 39 sitemap routes with no blocking issues." },
-          { label: "Code quality", value: "The project lint command runs a local code-quality gate that checks retired payment-test patterns, encoding corruption, production monitor drift, and search evidence contract drift." },
-          { label: "Crawler access", value: "Production crawler audit allows intended search and user-retrieval crawlers while keeping training crawler policy explicit." },
-          { label: "GitHub CI", value: "The agentsiteops-ci workflow is treated as a release target, while local release gates currently verify typecheck, build, code quality, SEO CI, crawler audit, commercial validation, search evidence import, and growth snapshot." },
-          { label: "Production health", value: "The production health monitor checks apex/www behavior, sitemap, robots, IndexNow key, updates, evidence, and privacy boundary pages." },
-          { label: "Commercial gate", value: "The commercial validation gate checks the manual PayPal path, refund boundary, terms, disclaimer, and no-guarantee claims." },
-          { label: "Manual fulfillment", value: "The intake page, fulfillment log template, and runbook define how Fit Review and Route File payment evidence, project details, delivery pauses, and completion are handled without storing sensitive payment data." },
-          { label: "Sample artifacts", value: "Public samples now show both the USD 29 Fit Review verdict format and the USD 99 Route File structure before payment." },
-          { label: "Analytics summary", value: "The public `/api/events/summary?days=2` endpoint returns aggregate counters only. Current threshold counts are still zero and do not prove demand." },
-          { label: "IndexNow", value: "The current production route list is submitted after deployment, with the response recorded in the update log." }
+          { label: "Start", value: "/#start-idea accepts one messy project idea and returns the first decomposition without asking for a full professional brief." },
+          { label: "Plan", value: "/plan/ turns the rough idea into editable fields only after the system has inferred the likely route, risk, and missing facts." },
+          { label: "Review", value: "/review-status/ explains whether the material is ready, needs repair, is blocked, or should not be delivered." },
+          { label: "Route File", value: "/sample/ shows the final structure: selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule." }
         ]
       },
       {
-        title: "Current objective self-score",
+        title: "Reference groups",
         body:
-          "The current weighted score is 52/100. This means the site is technically launchable but commercially unvalidated. The score is recorded in data/agentsiteops-self-score-2026-06-11.csv and should move only when first-party evidence changes.",
+          "Secondary pages are grouped by what they prove. They exist to support the main path, not to become a separate browsing maze.",
         rows: [
-          { label: "Technical foundation", value: "92/100: release gates, production health, sitemap, robots, mobile, and crawler access pass." },
-          { label: "Search evidence", value: "15/100: GSC and Bing exports are pending; no demand claim is allowed." },
-          { label: "AI visibility readiness", value: "45/100: crawler access exists, but no confirmed AI citation or referral data exists." },
-          { label: "Product clarity", value: "68/100: paid path, samples, objections, and intake exist, but buyer feedback is missing." },
-          { label: "Commercial validation", value: "18/100: payment links exist, but confirmed payment plus usable intake is absent." },
-          { label: "Delivery readiness", value: "70/100: delivery templates exist, but no real buyer artifact has been shipped." },
-          { label: "Overall verdict", value: "52/100: continue bounded validation; do not scale content, subscriptions, paid tools, or pricing yet." }
+          { label: "Route examples", value: "/sample/, /examples/route-file-from-messy-project/, /examples/ai-service-route-file/, and /examples/blocked-intake/ show how rough language becomes a decision object." },
+          { label: "Evidence rules", value: "/reports/route-evidence-dashboard/, /reports/route-basis/, and /templates/evidence-ledger-template/ show how claims are accepted, downgraded, or rejected." },
+          { label: "Method references", value: "/methodology/route-selection/, /templates/route-research-prompt-pack/, and /delivery-gate/ define the route logic and acceptance gate." },
+          { label: "Visibility and search", value: "/guides/small-website-ai-visibility-metrics/, /checklists/gsc-bing-indexnow-launch/, and /guides/indexnow-cloudflare-pages/ stay as support material, not customer onboarding." }
+        ]
+      },
+      {
+        title: "What decides the output",
+        body:
+          "The output is not determined by confidence in the user's wording. It is determined by the route pattern, buyer clarity, evidence strength, constraints, rejected alternatives, and the smallest proof asset that can be tested.",
+        rows: [
+          { label: "Route pattern", value: "The system maps the idea to a narrow execution pattern such as service, workflow, tool, content route, directory, marketplace, or not-delivery." },
+          { label: "Buyer clarity", value: "If the target user, urgent problem, and first reachable channel are vague, the route is downgraded before planning." },
+          { label: "Evidence strength", value: "Accepted evidence includes source material, examples, manual workflow proof, data rights, buyer replies, usage signals, or first-party search data." },
+          { label: "Stop rule", value: "Every route needs a dated condition for continue, repair, pivot, or stop so the project does not expand from personal preference alone." }
+        ]
+      },
+      {
+        title: "Verified boundaries",
+        body:
+          "These boundaries are currently treated as product rules. They prevent the site from presenting a generic AI answer as a validated business plan.",
+        rows: [
+          { label: "No hidden research claim", value: "The browser-local draft can structure and challenge the input, but it does not prove market demand by itself." },
+          { label: "No automatic authority", value: "A Route File is stronger than a chat answer only when it records source boundaries, rejected paths, evidence gaps, and stop conditions." },
+          { label: "No payment emphasis", value: "Current public flow keeps all route review behavior available in the free testing window." },
+          { label: "No scale before proof", value: "Content volume, paid traffic, or product build should wait until the first proof asset and channel test create evidence." }
         ]
       },
       {
         title: "Score update rules",
         body:
-          "The self-score can decrease whenever a gate fails, but it cannot increase from pageviews, sitemap success, IndexNow success, crawler access, generic praise, PayPal clicks without confirmed payment, or private confidence. Score increases require first-party evidence and a recorded change packet.",
-        rows: [
-          { label: "Protocol", value: "docs/self-score-maintenance-protocol.md defines the dimensions, thresholds, and release checks." },
-          { label: "Change log", value: "data/self-score-change-log-template.csv defines the minimum evidence packet for score changes." },
-          { label: "Commercial score", value: "Cannot increase until confirmed payment plus usable intake, qualified order, or delivered buyer artifact exists." },
-          { label: "Search score", value: "Cannot increase until first-party GSC or Bing export rows are imported from a defined date window." },
-          { label: "AI visibility score", value: "Cannot increase until crawler logs, AI referral examples, Bing AI Performance data, or repeatable citation evidence exists." }
-        ]
+          "The public self-score cannot increase from pageviews, sitemap success, IndexNow success, crawler access, generic praise, private confidence, or a narrative that sounds convincing. It can decrease when a gate fails. Any increase needs first-party evidence such as buyer replies, usage records, confirmed payment plus usable intake, search exports, or delivered artifact proof."
       },
       {
         title: "Pending evidence",
         body:
-          "These signals are intentionally not treated as proven until exports, endpoint data, or payment records exist.",
+          "The library also marks what is not yet proven. These items can improve the route after real evidence exists, but they cannot be assumed from a good-sounding idea.",
         rows: [
-          { label: "GSC", value: "Google Search Console query, page, index, and sitemap data is pending export." },
-          { label: "Bing", value: "Bing Webmaster Tools search, sitemap, URL, and AI Performance data is pending export." },
-          { label: "AI referrals", value: "ChatGPT, Claude, Perplexity, and other AI-search referral examples are pending analytics or log evidence." },
-          { label: "Audit intent", value: "Audit request clicks or GitHub issues are pending; the service page is an intent path only." },
-          { label: "Funnel movement", value: "Fit checker completion, sample inspection, Fit Review sample inspection, comparison views, Fit Review views, PayPal clicks, intake emails, and qualified orders are pending aggregate evidence." },
-          { label: "Revenue", value: "PayPal clicks and Fit Review page views are not revenue. Confirmed payments and qualified orders are pending PayPal and intake evidence outside the public repo." }
-        ]
-      },
-      {
-        title: "Import path",
-        body:
-          "When GSC, Bing, or launch-funnel exports exist, raw or sensitive files stay outside the public repo. Only normalized, aggregate, non-sensitive evidence should be committed.",
-        rows: [
-          { label: "Raw files", value: "gsc-pages.csv, gsc-queries.csv, bing-pages.csv, and bing-queries.csv." },
-          { label: "Templates", value: "Tracked example files live in data/search-evidence-import-templates/ so future exports use reproducible columns." },
-          { label: "Funnel template", value: "data/launch-funnel-evidence-template.csv defines aggregate review columns for fit, sample, compare, payment intent, intake, and confirmed-payment stages." },
-          { label: "Normalizer", value: "npm run search:evidence writes data/search-evidence-normalized.csv and reports/search-evidence-import.md." },
-          { label: "Snapshot", value: "npm run growth:snapshot updates route-level GSC and Bing status." }
+          { label: "Buyer demand", value: "No output should claim demand until there are buyer replies, usage records, waitlist proof, payment proof, or comparable first-party signals." },
+          { label: "Search evidence", value: "GSC, Bing, and AI-referral evidence require exported or logged data, not sitemap submission alone." },
+          { label: "Delivery proof", value: "A route is not proven until at least one proof asset, user response, or operational result has been recorded." },
+          { label: "Competitive position", value: "The site can cite known route examples and failure patterns, but it cannot claim category leadership without external evidence." }
         ]
       },
       {
         title: "Claims not made",
         body:
-          "The site does not claim guaranteed indexing, guaranteed AI citation, forced AI traffic, product-market fit, recurring revenue, or payback until those outcomes are supported by first-party evidence."
+          "The site does not claim guaranteed indexing, guaranteed AI citation, forced AI traffic, product-market fit, recurring revenue, investment value, or legal, financial, medical, or regulated advice."
       }
     ],
     related: [
-      { label: "Updates", href: "/updates/" },
-      { label: "Analytics Summary", href: "https://agentsiteops.com/api/events/summary?days=2" },
+      { label: "Home Idea Input", href: "/#start-idea" },
+      { label: "Plan Studio", href: "/plan/" },
+      { label: "Sample Route File", href: "/sample/" },
       { label: "Route Evidence Dashboard", href: "/reports/route-evidence-dashboard/" },
-      { label: "Evidence Ledger Template", href: "/templates/evidence-ledger-template/" },
-      { label: "Small Website AI Visibility Metrics", href: "/guides/small-website-ai-visibility-metrics/" },
-      { label: "GSC, Bing, and IndexNow Launch Checklist", href: "/checklists/gsc-bing-indexnow-launch/" },
-      { label: "AI Citation Readiness Checklist", href: "/checklists/ai-citation-readiness/" }
+      { label: "Route Basis Report", href: "/reports/route-basis/" },
+      { label: "Route Research Prompt Pack", href: "/templates/route-research-prompt-pack/" }
     ]
   },
   {

@@ -526,7 +526,13 @@ async function main() {
     "What is not automatic",
     "A response state must come before research."
   ]);
-  await checkPage("/evidence/", ["Evidence Ledger", "Verified evidence", "Current objective self-score", "Score update rules", "52/100", "Claims not made"]);
+  await checkPage("/evidence/", [
+    "Evidence Library",
+    "Use the main path first",
+    "Reference groups",
+    "What decides the output",
+    "Claims not made"
+  ]);
   await checkPage("/tools/audit-scope-builder/", ["Audit Scope Builder", "local-only", "No payment, account, identity"]);
   await checkPage("/tools/launch-blueprint-fit-checker/", ["Route File Fit Checker", "Do not buy", "No request, account, payment"]);
   await checkPage("/checklists/launch-validation-decision-gate/", [
@@ -572,11 +578,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-77 Evidence library and static route reference consolidation",
     "M4-76 Product shell and route example consolidation",
     "M4-75 Customer path architecture reset",
     "M4-74 Homepage first-pass decomposition and route module localization",
-    "M4-73 Rough idea to editable plan handoff",
-    "M4-72 Plan Studio Chinese workflow completion"
+    "M4-73 Rough idea to editable plan handoff"
   ]);
 
   const report = renderReport(generatedAt);

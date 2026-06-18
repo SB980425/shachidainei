@@ -2588,6 +2588,46 @@ textarea {
   font-weight: 800;
 }
 
+.route-reference-panel h3 {
+  margin: 22px 0 10px;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.route-reference-panel li a span {
+  display: grid;
+  gap: 3px;
+}
+
+.route-reference-panel li a small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.route-reference-panel li a.is-current {
+  border-color: #11b981;
+  background: #ecfdf5;
+  color: #07543f;
+}
+
+.evidence-library-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 16px;
+  border: 1px solid #b7d7c7;
+  border-radius: 8px;
+  background: #f3fbf6;
+  color: #07543f;
+  padding: 12px;
+  font-weight: 900;
+}
+
 .route-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

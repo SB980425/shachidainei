@@ -46,6 +46,37 @@ function DataRows({ rows }: { rows: NonNullable<RoutePageData["sections"][number
   );
 }
 
+const mainPathLinks = [
+  { label: "Start", href: "/#start-idea", note: "Paste one rough idea" },
+  { label: "Plan", href: "/plan/", note: "Edit the system draft" },
+  { label: "Review", href: "/review-status/", note: "Check ready, repair, or stop" },
+  { label: "Route File", href: "/sample/", note: "Inspect the output shape" }
+];
+
+function getReferenceLinks(page: RoutePageData) {
+  const blockedHrefs = new Set([
+    page.path,
+    "/evidence/",
+    ...mainPathLinks.map((link) => link.href)
+  ]);
+  const seen = new Set<string>();
+
+  return page.related
+    .filter((link) => {
+      if (link.href.startsWith("http")) {
+        return false;
+      }
+
+      if (blockedHrefs.has(link.href) || seen.has(link.href)) {
+        return false;
+      }
+
+      seen.add(link.href);
+      return true;
+    })
+    .slice(0, 3);
+}
+
 export function StaticRoutePage({ path }: Props) {
   const page = routeMap.get(path);
 
@@ -61,6 +92,7 @@ export function StaticRoutePage({ path }: Props) {
     url: `${siteUrl}${page.path}`,
     inLanguage: "en"
   };
+  const referenceLinks = getReferenceLinks(page);
 
   return (
     <main className="page-main">
@@ -120,18 +152,51 @@ export function StaticRoutePage({ path }: Props) {
             </section>
           ))}
         </article>
-        <aside className="side-panel">
-          <h2>Related Pages</h2>
+        <aside className="side-panel route-reference-panel">
+          <h2>Main path</h2>
           <ul>
-            {page.related.map((link) => (
-              <li key={link.href}>
-                <Link prefetch={false} href={link.href}>
-                  <Link2 aria-hidden="true" size={14} />
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {mainPathLinks.map((link) => {
+              const isCurrent = link.href === page.path;
+
+              return (
+                <li key={link.href}>
+                  <Link
+                    prefetch={false}
+                    href={link.href}
+                    className={isCurrent ? "is-current" : undefined}
+                    aria-current={isCurrent ? "page" : undefined}
+                  >
+                    <Link2 aria-hidden="true" size={14} />
+                    <span>
+                      <strong>{link.label}</strong>
+                      <small>{link.note}</small>
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
+          {page.path !== "/evidence/" ? (
+            <Link prefetch={false} className="evidence-library-link" href="/evidence/">
+              <ArrowRight aria-hidden="true" size={15} />
+              Evidence Library
+            </Link>
+          ) : null}
+          {referenceLinks.length ? (
+            <>
+              <h3>Reference links</h3>
+              <ul>
+                {referenceLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link prefetch={false} href={link.href}>
+                      <Link2 aria-hidden="true" size={14} />
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : null}
         </aside>
       </section>
     </main>

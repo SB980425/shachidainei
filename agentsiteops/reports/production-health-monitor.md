@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-18T15:14:18.545Z
+- Generated: 2026-06-18T15:39:07.893Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 364
+- Checks: 363
 - Blockers: 0
 - Warnings: 0
 
@@ -292,11 +292,10 @@
 | /evidence/ | pass | HTTP 200 | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | HTML title exists | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | canonical points to production URL | [link](https://agentsiteops.com/evidence/) |
-| /evidence/ | pass | Evidence Ledger | [link](https://agentsiteops.com/evidence/) |
-| /evidence/ | pass | Verified evidence | [link](https://agentsiteops.com/evidence/) |
-| /evidence/ | pass | Current objective self-score | [link](https://agentsiteops.com/evidence/) |
-| /evidence/ | pass | Score update rules | [link](https://agentsiteops.com/evidence/) |
-| /evidence/ | pass | 52/100 | [link](https://agentsiteops.com/evidence/) |
+| /evidence/ | pass | Evidence Library | [link](https://agentsiteops.com/evidence/) |
+| /evidence/ | pass | Use the main path first | [link](https://agentsiteops.com/evidence/) |
+| /evidence/ | pass | Reference groups | [link](https://agentsiteops.com/evidence/) |
+| /evidence/ | pass | What decides the output | [link](https://agentsiteops.com/evidence/) |
 | /evidence/ | pass | Claims not made | [link](https://agentsiteops.com/evidence/) |
 | /tools/audit-scope-builder/ | pass | HTTP 200 | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
 | /tools/audit-scope-builder/ | pass | HTML title exists | [link](https://agentsiteops.com/tools/audit-scope-builder/) |
@@ -370,11 +369,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-77 Evidence library and static route reference consolidation | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-76 Product shell and route example consolidation | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-75 Customer path architecture reset | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-74 Homepage first-pass decomposition and route module localization | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-73 Rough idea to editable plan handoff | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-72 Plan Studio Chinese workflow completion | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

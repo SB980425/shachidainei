@@ -1,6 +1,6 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-18T15:12:36.021Z
+- Generated: 2026-06-18T15:35:12.998Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
@@ -30,8 +30,8 @@
 | /ai-website-operating-system/ | pass | 200 | AI Website Operating System \| AgentSiteOps | https://agentsiteops.com/ai-website-operating-system/ | 1 | 11 | pass | - |
 | /tools/website-opportunity-scorer/ | pass | 200 | Website Opportunity Scorer \| AgentSiteOps | https://agentsiteops.com/tools/website-opportunity-scorer/ | 1 | 9 | pass | - |
 | /tools/ai-crawler-readiness/ | pass | 200 | AI Crawler Readiness Tool \| AgentSiteOps | https://agentsiteops.com/tools/ai-crawler-readiness/ | 1 | 9 | pass | - |
-| /examples/agentsiteops-self-audit/ | pass | 200 | AgentSiteOps Self-Audit Sample \| AgentSiteOps | https://agentsiteops.com/examples/agentsiteops-self-audit/ | 1 | 12 | pass | - |
-| /services/ai-website-opportunity-audit/ | pass | 200 | AI Website Opportunity Audit \| AgentSiteOps | https://agentsiteops.com/services/ai-website-opportunity-audit/ | 1 | 11 | pass | - |
+| /examples/agentsiteops-self-audit/ | pass | 200 | AgentSiteOps Self-Audit Sample \| AgentSiteOps | https://agentsiteops.com/examples/agentsiteops-self-audit/ | 1 | 11 | pass | - |
+| /services/ai-website-opportunity-audit/ | pass | 200 | AI Website Opportunity Audit \| AgentSiteOps | https://agentsiteops.com/services/ai-website-opportunity-audit/ | 1 | 10 | pass | - |
 | /tools/audit-scope-builder/ | pass | 200 | Audit Scope Builder \| AgentSiteOps | https://agentsiteops.com/tools/audit-scope-builder/ | 1 | 9 | pass | - |
 | /tools/launch-blueprint-fit-checker/ | pass | 200 | Route File Fit Checker \| AgentSiteOps | https://agentsiteops.com/tools/launch-blueprint-fit-checker/ | 1 | 11 | pass | - |
 | /tools/route-confidence-checker/ | pass | 200 | Route Confidence Checker \| AgentSiteOps | https://agentsiteops.com/tools/route-confidence-checker/ | 1 | 9 | pass | - |
@@ -39,31 +39,31 @@
 | /templates/seo-repo-skeleton/ | pass | 200 | SEO Repo Skeleton \| AgentSiteOps | https://agentsiteops.com/templates/seo-repo-skeleton/ | 1 | 10 | pass | - |
 | /checklists/ai-content-quality-gate/ | pass | 200 | AI Content Quality Gate \| AgentSiteOps | https://agentsiteops.com/checklists/ai-content-quality-gate/ | 1 | 11 | pass | - |
 | /checklists/programmatic-seo-gate/ | pass | 200 | Programmatic SEO Gate \| AgentSiteOps | https://agentsiteops.com/checklists/programmatic-seo-gate/ | 1 | 11 | pass | - |
-| /checklists/gsc-bing-indexnow-launch/ | pass | 200 | GSC, Bing, and IndexNow Launch Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/gsc-bing-indexnow-launch/ | 1 | 13 | pass | - |
-| /checklists/ai-citation-readiness/ | pass | 200 | AI Citation Readiness Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/ai-citation-readiness/ | 1 | 11 | pass | - |
-| /checklists/launch-validation-decision-gate/ | pass | 200 | Launch Validation Decision Gate \| AgentSiteOps | https://agentsiteops.com/checklists/launch-validation-decision-gate/ | 1 | 11 | pass | - |
+| /checklists/gsc-bing-indexnow-launch/ | pass | 200 | GSC, Bing, and IndexNow Launch Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/gsc-bing-indexnow-launch/ | 1 | 10 | pass | - |
+| /checklists/ai-citation-readiness/ | pass | 200 | AI Citation Readiness Checklist \| AgentSiteOps | https://agentsiteops.com/checklists/ai-citation-readiness/ | 1 | 10 | pass | - |
+| /checklists/launch-validation-decision-gate/ | pass | 200 | Launch Validation Decision Gate \| AgentSiteOps | https://agentsiteops.com/checklists/launch-validation-decision-gate/ | 1 | 10 | pass | - |
 | /checklists/route-file-delivery-gate/ | pass | 200 | Route File Delivery Gate \| AgentSiteOps | https://agentsiteops.com/checklists/route-file-delivery-gate/ | 1 | 10 | pass | - |
-| /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 12 | pass | - |
-| /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 12 | pass | - |
-| /evidence/ | pass | 200 | Evidence Ledger \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 14 | pass | - |
+| /guides/ai-citation-grounding-metrics/ | pass | 200 | AI Citation and Grounding Metrics \| AgentSiteOps | https://agentsiteops.com/guides/ai-citation-grounding-metrics/ | 1 | 11 | pass | - |
+| /guides/small-website-ai-visibility-metrics/ | pass | 200 | Small Website AI Visibility Metrics \| AgentSiteOps | https://agentsiteops.com/guides/small-website-ai-visibility-metrics/ | 1 | 10 | pass | - |
+| /evidence/ | pass | 200 | Evidence Library \| AgentSiteOps | https://agentsiteops.com/evidence/ | 1 | 10 | pass | - |
 | /reports/route-evidence-dashboard/ | pass | 200 | Route Evidence Dashboard \| AgentSiteOps | https://agentsiteops.com/reports/route-evidence-dashboard/ | 1 | 66 | pass | - |
 | /reports/route-basis/ | pass | 200 | Route Basis Report \| AgentSiteOps | https://agentsiteops.com/reports/route-basis/ | 1 | 10 | pass | - |
 | /reports/agentsiteops-route-run/ | pass | 200 | AgentSiteOps Route Run \| AgentSiteOps | https://agentsiteops.com/reports/agentsiteops-route-run/ | 1 | 10 | pass | - |
 | /reports/client-route-workflow/ | pass | 200 | Client Route Workflow \| AgentSiteOps | https://agentsiteops.com/reports/client-route-workflow/ | 1 | 14 | pass | - |
 | /templates/route-research-prompt-pack/ | pass | 200 | Route Research Prompt Pack \| AgentSiteOps | https://agentsiteops.com/templates/route-research-prompt-pack/ | 1 | 16 | pass | - |
-| /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 12 | pass | - |
+| /methodology/website-opportunity-scoring/ | pass | 200 | Website Opportunity Scoring Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/website-opportunity-scoring/ | 1 | 11 | pass | - |
 | /methodology/route-selection/ | pass | 200 | Route Selection Methodology \| AgentSiteOps | https://agentsiteops.com/methodology/route-selection/ | 1 | 10 | pass | - |
-| /guides/first-traffic-system/ | pass | 200 | First Traffic System \| AgentSiteOps | https://agentsiteops.com/guides/first-traffic-system/ | 1 | 11 | pass | - |
-| /guides/48-hour-exposure-sprint/ | pass | 200 | 48-Hour Exposure Sprint \| AgentSiteOps | https://agentsiteops.com/guides/48-hour-exposure-sprint/ | 1 | 12 | pass | - |
-| /launch-kit/ | pass | 200 | AgentSiteOps Launch Kit \| AgentSiteOps | https://agentsiteops.com/launch-kit/ | 1 | 15 | pass | - |
-| /answers/validate-ai-service-offer-before-building/ | pass | 200 | Validate an AI Service Offer Before Building \| AgentSiteOps | https://agentsiteops.com/answers/validate-ai-service-offer-before-building/ | 1 | 11 | pass | - |
+| /guides/first-traffic-system/ | pass | 200 | First Traffic System \| AgentSiteOps | https://agentsiteops.com/guides/first-traffic-system/ | 1 | 10 | pass | - |
+| /guides/48-hour-exposure-sprint/ | pass | 200 | 48-Hour Exposure Sprint \| AgentSiteOps | https://agentsiteops.com/guides/48-hour-exposure-sprint/ | 1 | 11 | pass | - |
+| /launch-kit/ | pass | 200 | AgentSiteOps Launch Kit \| AgentSiteOps | https://agentsiteops.com/launch-kit/ | 1 | 11 | pass | - |
+| /answers/validate-ai-service-offer-before-building/ | pass | 200 | Validate an AI Service Offer Before Building \| AgentSiteOps | https://agentsiteops.com/answers/validate-ai-service-offer-before-building/ | 1 | 10 | pass | - |
 | /answers/ai-service-route-vs-generic-chatgpt/ | pass | 200 | AI Service Route vs Generic ChatGPT Advice \| AgentSiteOps | https://agentsiteops.com/answers/ai-service-route-vs-generic-chatgpt/ | 1 | 10 | pass | - |
 | /answers/when-to-stop-an-ai-website-idea/ | pass | 200 | When to Stop an AI Website Idea \| AgentSiteOps | https://agentsiteops.com/answers/when-to-stop-an-ai-website-idea/ | 1 | 10 | pass | - |
 | /guides/ai-search-friendly-robots-txt/ | pass | 200 | AI Search Friendly Robots.txt \| AgentSiteOps | https://agentsiteops.com/guides/ai-search-friendly-robots-txt/ | 1 | 10 | pass | - |
-| /guides/indexnow-cloudflare-pages/ | pass | 200 | IndexNow on Cloudflare Pages \| AgentSiteOps | https://agentsiteops.com/guides/indexnow-cloudflare-pages/ | 1 | 12 | pass | - |
+| /guides/indexnow-cloudflare-pages/ | pass | 200 | IndexNow on Cloudflare Pages \| AgentSiteOps | https://agentsiteops.com/guides/indexnow-cloudflare-pages/ | 1 | 10 | pass | - |
 | /guides/gsc-bing-sitemap-verification/ | pass | 200 | GSC and Bing Sitemap Verification \| AgentSiteOps | https://agentsiteops.com/guides/gsc-bing-sitemap-verification/ | 1 | 10 | pass | - |
-| /templates/evidence-ledger-template/ | pass | 200 | Evidence Ledger Template \| AgentSiteOps | https://agentsiteops.com/templates/evidence-ledger-template/ | 1 | 12 | pass | - |
-| /templates/website-opportunity-scoring-template/ | pass | 200 | Website Opportunity Scoring Template \| AgentSiteOps | https://agentsiteops.com/templates/website-opportunity-scoring-template/ | 1 | 11 | pass | - |
+| /templates/evidence-ledger-template/ | pass | 200 | Evidence Ledger Template \| AgentSiteOps | https://agentsiteops.com/templates/evidence-ledger-template/ | 1 | 11 | pass | - |
+| /templates/website-opportunity-scoring-template/ | pass | 200 | Website Opportunity Scoring Template \| AgentSiteOps | https://agentsiteops.com/templates/website-opportunity-scoring-template/ | 1 | 10 | pass | - |
 | /authors/ | pass | 200 | Authors and Review Status \| AgentSiteOps | https://agentsiteops.com/authors/ | 1 | 9 | pass | - |
 | /editorial-policy/ | pass | 200 | Editorial Policy \| AgentSiteOps | https://agentsiteops.com/editorial-policy/ | 1 | 9 | pass | - |
 | /privacy/ | pass | 200 | Privacy Policy \| AgentSiteOps | https://agentsiteops.com/privacy/ | 1 | 10 | pass | - |
