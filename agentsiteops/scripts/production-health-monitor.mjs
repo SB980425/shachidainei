@@ -334,17 +334,19 @@ async function main() {
   await checkBrandIcon();
   await checkAnalyticsSummary();
   await checkPage("/", [
-    "One input first",
-    "Put the rough idea here. See the first route diagnosis before you move.",
+    "Free test window",
+    "Write one messy idea. Get the first route diagnosis on this page.",
+    "Paste one rough idea.",
+    "No hidden API research",
+    "Your first diagnosis appears here.",
+    "Copy diagnosis",
     "Continue to editable plan",
     "Open full risk map",
-    "Your first result appears here.",
-    "The site should take over the first pass.",
-    "A rough sentence should become a route, evidence gap, and stop rule.",
-    "AI companion memory service",
-    "Short-content planning tool",
-    "The answer is useful only when the decision trail is visible.",
-    "If the idea survives the first pass, it becomes an editable route draft.",
+    "The output must be different from a generic AI answer.",
+    "Reference sources used for risk checks",
+    "14-day validation",
+    "Keep the project only if the first evidence appears.",
+    "If the idea survives, it becomes a Route File.",
     "Route File"
   ]);
   await checkPage("/idea-risk-test/", [
@@ -578,11 +580,11 @@ async function main() {
     "Updates",
     "Latest five public entries",
     "Full history stays in git",
+    "M4-78 Homepage single-input triage reset",
     "M4-77 Evidence library and static route reference consolidation",
     "M4-76 Product shell and route example consolidation",
     "M4-75 Customer path architecture reset",
-    "M4-74 Homepage first-pass decomposition and route module localization",
-    "M4-73 Rough idea to editable plan handoff"
+    "M4-74 Homepage first-pass decomposition and route module localization"
   ]);
 
   const report = renderReport(generatedAt);

@@ -72,7 +72,7 @@ function checkCommercialBoundary() {
   const layout = read("app/layout.tsx");
   const siteFooter = read("components/SiteFooter.tsx");
   const pricingPage = read("app/pricing/page.tsx");
-  const homePage = `${read("app/page.tsx")}\n${read("components/HomePageContent.tsx")}`;
+  const homePage = `${read("app/page.tsx")}\n${read("components/HomePageContent.tsx")}\n${read("components/HomeIdeaStart.tsx")}`;
   const starterReviewPage = read("app/starter-review/page.tsx");
   const fitReviewSamplePage = read("app/examples/fit-review-sample/page.tsx");
   const buyPage = read("app/buy/page.tsx");
@@ -162,9 +162,9 @@ function checkCommercialBoundary() {
   requireText("service_boundary", pricingPage, "Objections that should block or redirect payment", "pricing page shows objection-based payment redirects");
   requireText("service_boundary", pricingPage, "do not pay", "pricing page can tell unclear buyers not to pay");
   requireText("service_boundary", pricingPage, "does not collect card data directly", "pricing page addresses new-site PayPal trust objection");
-  requireText("service_boundary", homePage, "Evidence used, not guessed", "homepage shows evidence-before-roadmap proof layer");
-  requireText("service_boundary", homePage, "What the buyer receives is a route file, not a score", "homepage shows paid artifact boundary");
-  requireText("service_boundary", homePage, "Market signals are context, not proof", "homepage separates market research from validation proof");
+  requireText("service_boundary", homePage, "A useful first pass is not a motivational plan", "homepage shows evidence-before-roadmap proof layer");
+  requireText("service_boundary", homePage, "If the idea survives, it becomes a Route File.", "homepage shows artifact boundary without forcing payment");
+  requireText("service_boundary", homePage, "does not prove demand", "homepage separates first-pass diagnosis from validation proof");
   requireText("service_boundary", pricingPage, "Why pay for a manual route", "pricing page explains paid route-selection value");
   requireText("service_boundary", pricingPage, "What USD {primaryOffer.price} must produce", "pricing page shows delivery standard for USD 99 offer");
   requireText("service_boundary", buyPage, "No login account, dashboard, or subscription workspace", "buy page blocks software expectation");
@@ -349,7 +349,7 @@ function checkCommercialBoundary() {
   requireText("launch_kit_visibility", launchKitVisibility, '"/reports/route-evidence-dashboard/","/launch-kit/"', "Launch Kit visibility snapshot records evidence dashboard related link");
   requireText("launch_kit_visibility", launchKitVisibilityReport, "does not prove search impressions, ranking, clicks", "Launch Kit visibility report blocks internal-link-as-demand logic");
   requireText("evidence_library_visibility", siteFooter, '["Evidence library", "/evidence/"]', "global footer links to the evidence library instead of exposing every support page");
-  requireText("evidence_library_visibility", homePage, '"/evidence/"', "homepage links to evidence library as a support path");
+  requireText("evidence_library_visibility", homePage, "Reference sources used for risk checks", "homepage keeps source support visible without making evidence library a required step");
   requireText("launch_kit_visibility", site, '{ label: "Launch Kit", href: "/launch-kit/" }', "route related links include Launch Kit");
   requireText("launch_kit_external_search", launchKitExternalSearchRecheck, '"confirmed_launch_kit_result"', "Launch Kit external search recheck records direct confirmation field");
   requireText("launch_kit_external_search", launchKitExternalSearchRecheck, '"no","https://agentsiteops.com/"', "Launch Kit external search recheck records home page fallback result");

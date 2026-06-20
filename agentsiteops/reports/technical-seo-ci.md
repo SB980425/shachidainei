@@ -1,6 +1,6 @@
 # Technical SEO CI Report
 
-- Generated: 2026-06-18T15:35:12.998Z
+- Generated: 2026-06-20T09:53:57.564Z
 - Status: PASS
 - Base URL: http://127.0.0.1:3000
 - Public URL: https://agentsiteops.com
@@ -19,7 +19,7 @@
 
 | Route | Status | HTTP | Title | Canonical | JSON-LD | Links | Mobile | Issues |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| / | pass | 200 | Free Idea Risk Test to Route File | https://agentsiteops.com/ | 1 | 8 | pass | - |
+| / | pass | 200 | Free Idea Risk Test Before Planning | https://agentsiteops.com/ | 1 | 8 | pass | - |
 | /start/ | pass | 200 | Start with AgentSiteOps \| AgentSiteOps | https://agentsiteops.com/start/ | 1 | 12 | pass | - |
 | /idea-risk-test/ | pass | 200 | Free Idea Risk Test \| AgentSiteOps | https://agentsiteops.com/idea-risk-test/ | 1 | 7 | pass | - |
 | /plan/ | pass | 200 | Plan Studio \| AgentSiteOps | https://agentsiteops.com/plan/ | 1 | 9 | pass | - |

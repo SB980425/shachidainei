@@ -3,18 +3,18 @@ import { HomePageContent } from "@/components/HomePageContent";
 import { siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Free Idea Risk Test to Route File",
+  title: "Free Idea Risk Test Before Planning",
   description:
-    "AgentSiteOps starts with one rough project idea, maps likely failure nodes and evidence gaps, then turns usable inputs into a checked Route File path."
+    "Paste one rough project idea and get the first route diagnosis: system read, likely failure node, missing evidence, 7-day validation path, and stop rule."
 };
 
 export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "AgentSiteOps Research-to-Route File",
+    name: "AgentSiteOps Free Idea Risk Test",
     description:
-      "An operator-reviewed route-selection workflow that turns messy project material into one Route File with rejected alternatives, evidence ledger, validation channel, and stop rule.",
+      "A browser-local first-pass workflow that turns one messy project idea into a route diagnosis, evidence gaps, validation path, and stop rule before planning.",
     inLanguage: "en",
     url: siteUrl,
     provider: {

@@ -11,6 +11,40 @@ export type UpdateLogEntry = {
 
 export const updateLog: UpdateLogEntry[] = [
   {
+    date: "2026-06-20",
+    step: "M4-78 Homepage single-input triage reset",
+    status: "completed",
+    keyPoints: [
+      "Rebuilt the homepage around one rough-idea input and one immediate diagnosis panel instead of presenting the site as a directory of product pages.",
+      "Added direct homepage outputs for system read, likely route, first failure node, required evidence, missing facts, 7-day validation, and stop rule.",
+      "Added sample-fill, clear, and copy-diagnosis controls so a non-technical visitor can test the workflow without learning internal terminology first.",
+      "Reduced homepage support content to decision basis, reference sources, and a 14-day continue/repair/pivot/stop standard."
+    ],
+    aiAngle:
+      "The product value is now tested on the first screen: if one messy idea does not become a useful failure-node diagnosis, the project should not expand into more pages.",
+    files: [
+      "app/page.tsx",
+      "components/HomePageContent.tsx",
+      "components/HomeIdeaStart.tsx",
+      "app/globals.css",
+      "scripts/production-health-monitor.mjs",
+      "lib/updateLog.ts"
+    ],
+    verification: [
+      "npm run typecheck",
+      "npm run lint",
+      "npm run build",
+      "npm run routes:gate",
+      "npm run links:gate",
+      "npm run analytics:gate",
+      "npm run commercial:gate",
+      "npm run seo:ci",
+      "Playwright local check: homepage sample input, English/Chinese diagnosis, readable source cards, plan handoff, and mobile overflow"
+    ],
+    next:
+      "Run 10 rough ideas through the homepage and compare the diagnosis against generic AI answers before adding more site sections."
+  },
+  {
     date: "2026-06-18",
     step: "M4-77 Evidence library and static route reference consolidation",
     status: "completed",

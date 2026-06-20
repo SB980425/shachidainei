@@ -1,134 +1,105 @@
 "use client";
 
 import Link from "next/link";
-import {
-  ArrowRight,
-  CheckCircle2,
-  FileText,
-  Gauge,
-  SearchCheck,
-  ShieldCheck
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, FileText, Gauge, SearchCheck, ShieldCheck } from "lucide-react";
 import { HomeIdeaStart } from "@/components/HomeIdeaStart";
 import { usePreferredLanguage, type SiteLanguage } from "@/components/LanguageToggle";
-import { RouteExampleCaseGrid } from "@/components/RouteExampleCaseGrid";
 import { ideaRiskSources } from "@/lib/ideaRiskEngine";
 
 const copy = {
   en: {
-    eyebrow: "One input first",
-    title: "Put the rough idea here. See the first route diagnosis before you move.",
+    eyebrow: "Free test window",
+    title: "Write one messy idea. Get the first route diagnosis on this page.",
     body:
-      "AgentSiteOps is not a menu of research pages. The product starts when a visitor writes one unclear project idea and receives a first interpretation, failure-node warning, evidence gap, and next route.",
-    promiseA: "No setup vocabulary required.",
-    promiseB: "No hidden research or server-side idea storage.",
-    promiseC: "No success, revenue, traffic, or buyer-demand guarantee.",
-    processEyebrow: "What happens after typing",
-    processTitle: "The site should take over the first pass.",
-    examplesEyebrow: "What this looks like",
-    examplesTitle: "A rough sentence should become a route, evidence gap, and stop rule.",
-    examplesBody:
-      "These examples show the expected product behavior. The system does not praise the idea first; it translates the idea into a reviewable route object.",
-    sourceEyebrow: "Why this is different from asking any AI",
-    sourceTitle: "The answer is useful only when the decision trail is visible.",
-    outputEyebrow: "Where it can go next",
-    outputTitle: "If the idea survives the first pass, it becomes an editable route draft.",
-    outputBody:
-      "The next useful page is Plan Studio. It receives the homepage interpretation and lets the visitor repair fields instead of starting from a blank form.",
+      "The current version is no longer a page directory. It is a first-pass idea triage surface: one rough description becomes a project read, failure node, missing evidence, 7-day test, and stop rule before any plan.",
+    promiseA: "One input, no professional brief required",
+    promiseB: "Browser-local draft; no hidden API research",
+    promiseC: "No success, revenue, traffic, or buyer-demand claim",
+    basisEyebrow: "Decision basis",
+    basisTitle: "The output must be different from a generic AI answer.",
+    basisBody:
+      "A useful first pass is not a motivational plan. It must show what the system inferred, which assumption can fail first, what proof is missing, and when to stop.",
+    validationEyebrow: "14-day validation",
+    validationTitle: "Keep the project only if the first evidence appears.",
+    validationBody:
+      "The site should help decide whether an idea deserves more work. It should not create a larger plan when the buyer, proof, channel, or boundary is still missing.",
+    sourceLabel: "Reference sources used for risk checks",
+    routeFileTitle: "If the idea survives, it becomes a Route File.",
+    routeFileBody:
+      "The next artifact is still small: selected route, rejected alternatives, evidence ledger, first proof asset, validation channel, and stop rule.",
     planAction: "Open editable plan",
     sampleAction: "Inspect Route File sample"
   },
   zh: {
-    eyebrow: "先填一个输入框",
-    title: "把粗略想法写在这里。跳转之前先看第一轮路线判断。",
+    eyebrow: "免费测试窗口",
+    title: "只写一个混乱想法，先在首页看到第一版路线诊断。",
     body:
-      "AgentSiteOps 不是一堆研究页面菜单。这个产品从一个动作开始：客户写下一段不清晰的项目想法，然后立即看到系统理解、失败节点、证据缺口和下一步路线。",
-    promiseA: "不需要懂产品、创业或技术术语。",
-    promiseB: "不运行隐藏研究，也不把想法存到服务器。",
-    promiseC: "不承诺成功、收入、流量或买家需求。",
-    processEyebrow: "输入后发生什么",
-    processTitle: "网站必须接管第一轮排查。",
-    examplesEyebrow: "示例",
-    examplesTitle: "一句粗略想法，应该变成路线、证据缺口和停止规则。",
-    examplesBody:
-      "这些示例展示产品应该怎样工作。系统不是先夸想法，而是把想法翻译成可审查的路线对象。",
-    sourceEyebrow: "为什么不是随便问 AI",
-    sourceTitle: "答案本身不稀缺，可见的决策轨迹才有价值。",
-    outputEyebrow: "下一步去哪里",
-    outputTitle: "如果想法通过第一轮，它会进入可编辑路线草稿。",
-    outputBody:
-      "下一页是 Plan Studio。它会接收首页解释出来的字段，让客户修改，而不是重新面对空白表单。",
+      "当前版本不再把首页当成页面目录。它只做第一轮想法排查：一段粗糙描述会变成项目理解、失败节点、证据缺口、7 天验证动作和停止规则，然后才决定要不要继续计划。",
+    promiseA: "只需要一个输入，不要求专业项目书",
+    promiseB: "浏览器本地草稿，不伪装隐藏 API 研究",
+    promiseC: "不承诺成功、收入、流量或买家需求",
+    basisEyebrow: "判断依据",
+    basisTitle: "输出必须区别于随便问一个通用 AI。",
+    basisBody:
+      "有价值的第一版不是鼓励式计划。它必须显示系统理解了什么、哪个假设最可能先失败、缺什么证据、什么时候该停止。",
+    validationEyebrow: "14 天验证",
+    validationTitle: "只有出现第一批证据，项目才值得继续。",
+    validationBody:
+      "网站的作用是判断想法是否值得继续投入。买家、证明、渠道或边界仍然不清楚时，不应该生成更大的计划。",
+    sourceLabel: "风险判断参考来源",
+    routeFileTitle: "如果想法通过第一轮，再进入 Route File。",
+    routeFileBody:
+      "下一步产物仍然要小：选定路线、被否方案、证据账本、第一证明资产、验证渠道和停止规则。",
     planAction: "打开可编辑计划",
     sampleAction: "查看 Route File 样例"
   }
 } satisfies Record<SiteLanguage, Record<string, string>>;
 
-const processRows = {
+const basisCards = {
   en: [
     {
-      label: "1. Interpret",
-      body: "Extract the likely project, buyer, first offer, proof, channel, constraints, and missing fields."
+      title: "It translates messy language",
+      body: "The user can write in plain speech. The system extracts buyer, offer, proof, channel, constraint, and missing fields."
     },
     {
-      label: "2. Challenge",
-      body: "Name the first likely failure node and the evidence needed before more planning."
+      title: "It challenges the first weak node",
+      body: "The output names the most likely failure point instead of expanding the idea into more features."
     },
     {
-      label: "3. Move",
-      body: "Continue to an imported editable plan, open the full risk map, or stop and repair the idea."
+      title: "It gives a stop condition",
+      body: "Every route needs a test window and a condition for continue, repair, pivot, or stop."
     }
   ],
   zh: [
     {
-      label: "1. 理解",
-      body: "提取可能的项目、用户、首个交付、证明资产、渠道、约束和缺失字段。"
+      title: "它先翻译混乱表达",
+      body: "用户可以说白话。系统负责提取买家、交付物、证明、渠道、约束和缺失字段。"
     },
     {
-      label: "2. 挑战",
-      body: "指出第一个可能失败节点，以及继续计划前必须补的证据。"
+      title: "它先挑战最弱节点",
+      body: "输出要指出最可能先失败的地方，而不是把想法扩写成更多功能。"
     },
     {
-      label: "3. 移动",
-      body: "带着已识别字段进入计划页，查看完整风险图，或者先停止修复想法。"
+      title: "它必须给出停止条件",
+      body: "每条路线都要有测试窗口，以及继续、修复、转向或停止的条件。"
     }
   ]
-} satisfies Record<SiteLanguage, Array<{ label: string; body: string }>>;
+} satisfies Record<SiteLanguage, Array<{ title: string; body: string }>>;
 
-const proofRows = {
+const validationRows = {
   en: [
-    {
-      label: "Evidence used, not guessed",
-      body: "The page shows what it inferred, what is missing, what route it selected, and what still needs evidence before a roadmap."
-    },
-    {
-      label: "Market signals are context, not proof",
-      body: "Failure nodes are tied to startup failure, validated learning, user-discovery, premature-scaling, and customer-development sources."
-    },
-    {
-      label: "What the buyer receives is a route file, not a score",
-      body: "If buyer, proof, channel, rights, or validation remain vague, the correct output is repair or stop, not a bigger plan."
-    }
+    "Day 0: write the rough idea once and freeze the current interpretation.",
+    "48 hours: repair the highest-risk missing fact before adding features.",
+    "Day 7: test one channel or proof asset and record replies, objections, or silence.",
+    "Day 14: continue, repair, pivot, or stop. Do not scale without evidence."
   ],
   zh: [
-    {
-      label: "决策轨迹",
-      body: "页面会显示系统理解了什么、缺什么、选了哪条路线，以及哪些判断仍需要证据。"
-    },
-    {
-      label: "来源依据",
-      body: "失败节点对应创业失败、验证式学习、用户访谈、过早扩张和客户发展等公开来源。"
-    },
-    {
-      label: "停止规则",
-      body: "如果用户、证据、渠道、权利或验证仍然模糊，正确输出是修复或停止，而不是扩展计划。"
-    }
+    "第 0 天：只写一次粗糙想法，并冻结当前系统理解。",
+    "48 小时：先修复最高风险缺口，不增加功能。",
+    "第 7 天：测试一个渠道或证明资产，记录回复、反对意见或沉默。",
+    "第 14 天：继续、修复、转向或停止。没有证据前不扩张。"
   ]
-} satisfies Record<SiteLanguage, Array<{ label: string; body: string }>>;
-
-const contractRows = {
-  en: ["Selected route", "Rejected alternatives", "Evidence ledger", "First proof asset", "Validation channel", "Stop rule"],
-  zh: ["选定路线", "被否替代方案", "证据账本", "第一证明资产", "验证渠道", "停止规则"]
-};
+} satisfies Record<SiteLanguage, string[]>;
 
 const sourceUses: Record<SiteLanguage, Record<string, string>> = {
   en: Object.fromEntries(ideaRiskSources.map((source) => [source.id, source.useFor])),
@@ -137,9 +108,14 @@ const sourceUses: Record<SiteLanguage, Record<string, string>> = {
     "lean-startup-validated-learning": "用于把想法拆成可测试假设、可衡量检查点，以及继续或转向的决策。",
     "yc-talk-to-users": "用于检查目标用户、痛点和第一验证渠道是否具体到可以行动。",
     "startup-genome-premature-scaling": "用于检查是否在核心证据出现前过早招聘、投放、扩渠道、扩内容或扩产品。",
-    "steve-blank-customer-development": "用于把创业理解为寻找可重复商业模型，而不是执行一个未经验证的计划。"
+    "steve-blank-customer-development": "用于把创业理解为寻找可重复商业模式，而不是执行一个未经验证的计划。"
   }
 };
+
+const routeFileParts = {
+  en: ["Selected route", "Rejected alternatives", "Evidence ledger", "First proof asset", "Validation channel", "Stop rule"],
+  zh: ["选定路线", "被否方案", "证据账本", "第一证明资产", "验证渠道", "停止规则"]
+} satisfies Record<SiteLanguage, string[]>;
 
 export function HomePageContent() {
   const [language] = usePreferredLanguage();
@@ -147,8 +123,8 @@ export function HomePageContent() {
 
   return (
     <>
-      <section className="ia-hero ia-hero-workbench">
-        <div className="ia-hero-copy">
+      <section className="ia-hero ia-hero-workbench home-core-hero">
+        <div className="ia-hero-copy home-core-copy">
           <p className="eyebrow">{labels.eyebrow}</p>
           <h1>{labels.title}</h1>
           <p>{labels.body}</p>
@@ -168,46 +144,23 @@ export function HomePageContent() {
         <HomeIdeaStart />
       </section>
 
-      <section className="route-foundation-section ia-section ia-process-section">
+      <section className="route-foundation-section ia-section home-core-basis">
         <div className="route-section-heading">
-          <span>{labels.processEyebrow}</span>
-          <h2>{labels.processTitle}</h2>
+          <span>{labels.basisEyebrow}</span>
+          <h2>{labels.basisTitle}</h2>
+          <p>{labels.basisBody}</p>
         </div>
-        <div className="ia-process-grid">
-          {processRows[language].map((item) => (
-            <article key={item.label}>
-              <Gauge aria-hidden="true" size={18} />
-              <h3>{item.label}</h3>
-              <p>{item.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="route-foundation-section ia-section ia-example-section">
-        <div className="route-section-heading">
-          <span>{labels.examplesEyebrow}</span>
-          <h2>{labels.examplesTitle}</h2>
-          <p>{labels.examplesBody}</p>
-        </div>
-        <RouteExampleCaseGrid />
-      </section>
-
-      <section className="route-foundation-section ia-section ia-proof-section">
-        <div className="route-section-heading">
-          <span>{labels.sourceEyebrow}</span>
-          <h2>{labels.sourceTitle}</h2>
-        </div>
-        <div className="ia-proof-grid">
-          {proofRows[language].map((item) => (
-            <article key={item.label}>
+        <div className="home-core-card-grid">
+          {basisCards[language].map((item) => (
+            <article key={item.title}>
               <SearchCheck aria-hidden="true" size={18} />
-              <h3>{item.label}</h3>
+              <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
           ))}
         </div>
-        <div className="ia-source-ticker" aria-label="Reference basis">
+        <strong className="home-core-source-label">{labels.sourceLabel}</strong>
+        <div className="home-core-source-rail" aria-label={labels.sourceLabel}>
           {ideaRiskSources.map((source) => (
             <a href={source.url} key={source.id} rel="noreferrer" target="_blank">
               <strong>{source.publisher}</strong>
@@ -217,11 +170,29 @@ export function HomePageContent() {
         </div>
       </section>
 
-      <section className="route-foundation-section ia-section ia-output-section">
+      <section className="route-foundation-section ia-section home-core-validation">
         <div>
-          <span>{labels.outputEyebrow}</span>
-          <h2>{labels.outputTitle}</h2>
-          <p>{labels.outputBody}</p>
+          <span>{labels.validationEyebrow}</span>
+          <h2>{labels.validationTitle}</h2>
+          <p>{labels.validationBody}</p>
+          <ol>
+            {validationRows[language].map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ol>
+        </div>
+        <aside className="home-core-route-file">
+          <FileText aria-hidden="true" size={24} />
+          <h3>{labels.routeFileTitle}</h3>
+          <p>{labels.routeFileBody}</p>
+          <ul>
+            {routeFileParts[language].map((item) => (
+              <li key={item}>
+                <CheckCircle2 aria-hidden="true" size={15} />
+                {item}
+              </li>
+            ))}
+          </ul>
           <div className="hero-actions">
             <Link prefetch={false} className="primary-action" href="/plan/">
               {labels.planAction}
@@ -230,23 +201,8 @@ export function HomePageContent() {
             <Link prefetch={false} className="secondary-action" href="/sample/">
               {labels.sampleAction}
             </Link>
-            <Link prefetch={false} className="secondary-action" href="/evidence/">
-              {language === "zh" ? "查看证据库" : "Evidence library"}
-            </Link>
           </div>
-        </div>
-        <div className="ia-contract-card">
-          <FileText aria-hidden="true" size={24} />
-          <h3>Route File</h3>
-          <ul>
-            {contractRows[language].map((item) => (
-              <li key={item}>
-                <CheckCircle2 aria-hidden="true" size={15} />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
+        </aside>
       </section>
     </>
   );

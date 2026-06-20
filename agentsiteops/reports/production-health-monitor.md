@@ -1,9 +1,9 @@
 # Production Health Monitor
 
-- Generated: 2026-06-18T15:39:07.893Z
+- Generated: 2026-06-20T09:55:55.689Z
 - Status: pass
 - Site: https://agentsiteops.com
-- Checks: 363
+- Checks: 365
 - Blockers: 0
 - Warnings: 0
 
@@ -46,17 +46,19 @@
 | / | pass | HTTP 200 | [link](https://agentsiteops.com/) |
 | / | pass | HTML title exists | [link](https://agentsiteops.com/) |
 | / | pass | canonical points to production URL | [link](https://agentsiteops.com/) |
-| / | pass | One input first | [link](https://agentsiteops.com/) |
-| / | pass | Put the rough idea here. See the first route diagnosis before you move. | [link](https://agentsiteops.com/) |
+| / | pass | Free test window | [link](https://agentsiteops.com/) |
+| / | pass | Write one messy idea. Get the first route diagnosis on this page. | [link](https://agentsiteops.com/) |
+| / | pass | Paste one rough idea. | [link](https://agentsiteops.com/) |
+| / | pass | No hidden API research | [link](https://agentsiteops.com/) |
+| / | pass | Your first diagnosis appears here. | [link](https://agentsiteops.com/) |
+| / | pass | Copy diagnosis | [link](https://agentsiteops.com/) |
 | / | pass | Continue to editable plan | [link](https://agentsiteops.com/) |
 | / | pass | Open full risk map | [link](https://agentsiteops.com/) |
-| / | pass | Your first result appears here. | [link](https://agentsiteops.com/) |
-| / | pass | The site should take over the first pass. | [link](https://agentsiteops.com/) |
-| / | pass | A rough sentence should become a route, evidence gap, and stop rule. | [link](https://agentsiteops.com/) |
-| / | pass | AI companion memory service | [link](https://agentsiteops.com/) |
-| / | pass | Short-content planning tool | [link](https://agentsiteops.com/) |
-| / | pass | The answer is useful only when the decision trail is visible. | [link](https://agentsiteops.com/) |
-| / | pass | If the idea survives the first pass, it becomes an editable route draft. | [link](https://agentsiteops.com/) |
+| / | pass | The output must be different from a generic AI answer. | [link](https://agentsiteops.com/) |
+| / | pass | Reference sources used for risk checks | [link](https://agentsiteops.com/) |
+| / | pass | 14-day validation | [link](https://agentsiteops.com/) |
+| / | pass | Keep the project only if the first evidence appears. | [link](https://agentsiteops.com/) |
+| / | pass | If the idea survives, it becomes a Route File. | [link](https://agentsiteops.com/) |
 | / | pass | Route File | [link](https://agentsiteops.com/) |
 | /idea-risk-test/ | pass | HTTP 200 | [link](https://agentsiteops.com/idea-risk-test/) |
 | /idea-risk-test/ | pass | HTML title exists | [link](https://agentsiteops.com/idea-risk-test/) |
@@ -369,11 +371,11 @@
 | /updates/ | pass | Updates | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Latest five public entries | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | Full history stays in git | [link](https://agentsiteops.com/updates/) |
+| /updates/ | pass | M4-78 Homepage single-input triage reset | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-77 Evidence library and static route reference consolidation | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-76 Product shell and route example consolidation | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-75 Customer path architecture reset | [link](https://agentsiteops.com/updates/) |
 | /updates/ | pass | M4-74 Homepage first-pass decomposition and route module localization | [link](https://agentsiteops.com/updates/) |
-| /updates/ | pass | M4-73 Rough idea to editable plan handoff | [link](https://agentsiteops.com/updates/) |
 
 ## Blocking Issues
 

@@ -113,8 +113,8 @@ function checkProductionHealthAssertions() {
   const monitor = read("scripts/production-health-monitor.mjs");
   addCheck(
     "production_health",
-    monitor.includes("One input first") && monitor.includes("The site does not create a hidden research result.") ? "pass" : "fail",
-    "production monitor checks the homepage idea workbench and channel-neutral research workflow path"
+    monitor.includes("Free test window") && monitor.includes("No hidden API research") ? "pass" : "fail",
+    "production monitor checks the homepage single-input test and no-hidden-research boundary"
   );
   addCheck(
     "production_health",

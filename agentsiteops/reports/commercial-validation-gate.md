@@ -1,6 +1,6 @@
 # Commercial Validation Gate
 
-- Generated: 2026-06-18T15:34:30.952Z
+- Generated: 2026-06-20T09:53:07.616Z
 - Status: pass
 - Checks: 304
 - Blockers: 0
@@ -68,8 +68,8 @@
 | service_boundary | pass | pricing page can tell unclear buyers not to pay |
 | service_boundary | pass | pricing page addresses new-site PayPal trust objection |
 | service_boundary | pass | homepage shows evidence-before-roadmap proof layer |
-| service_boundary | pass | homepage shows paid artifact boundary |
-| service_boundary | pass | homepage separates market research from validation proof |
+| service_boundary | pass | homepage shows artifact boundary without forcing payment |
+| service_boundary | pass | homepage separates first-pass diagnosis from validation proof |
 | service_boundary | pass | pricing page explains paid route-selection value |
 | service_boundary | pass | pricing page shows delivery standard for USD 99 offer |
 | service_boundary | pass | buy page blocks software expectation |
@@ -254,7 +254,7 @@
 | launch_kit_visibility | pass | Launch Kit visibility snapshot records evidence dashboard related link |
 | launch_kit_visibility | pass | Launch Kit visibility report blocks internal-link-as-demand logic |
 | evidence_library_visibility | pass | global footer links to the evidence library instead of exposing every support page |
-| evidence_library_visibility | pass | homepage links to evidence library as a support path |
+| evidence_library_visibility | pass | homepage keeps source support visible without making evidence library a required step |
 | launch_kit_visibility | pass | route related links include Launch Kit |
 | launch_kit_external_search | pass | Launch Kit external search recheck records direct confirmation field |
 | launch_kit_external_search | pass | Launch Kit external search recheck records home page fallback result |

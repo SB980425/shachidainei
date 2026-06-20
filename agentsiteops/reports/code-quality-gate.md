@@ -1,6 +1,6 @@
 # Code Quality Gate
 
-- Generated: 2026-06-18T15:33:57.950Z
+- Generated: 2026-06-20T09:52:14.261Z
 - Status: pass
 - Checks: 16
 - Blockers: 0
@@ -15,7 +15,7 @@
 | package | pass | root CI runs the internal link gate after build |
 | payment_boundary | pass | retired 1 USD payment test patterns are absent from source files |
 | encoding | pass | visible mojibake markers are absent from scanned source files |
-| production_health | pass | production monitor checks the homepage idea workbench and channel-neutral research workflow path |
+| production_health | pass | production monitor checks the homepage single-input test and no-hidden-research boundary |
 | production_health | pass | production monitor does not check retired homepage payment CTA |
 | production_health | pass | production monitor checks the Route File Fit Checker route |
 | search_evidence | pass | search importer writes normalized evidence CSV |
